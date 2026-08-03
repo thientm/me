@@ -10,6 +10,9 @@ Router cho agent/bản thân: đọc file nào tuỳ câu hỏi/tác vụ.
 | Review định kỳ portfolio | `portfolio/reviews/{kỳ}-review.md` |
 | Snapshot dòng tiền hiện tại | `finance/cashflow.md` |
 | Log thu/chi theo ngày hoặc tuần | `finance/logs/{YYYY-MM}.md` |
+| Kế hoạch BĐS (sổ đỏ, pháp lý, tài chính) | `real-estate/real-estate-plan.md` |
+| Kế hoạch Crypto (exit strategy, playbook) | `crypto/crypto-plan.md` |
+| Log giao dịch/review crypto theo tuần/tháng | `crypto/logs/{YYYY-MM}.md` |
 
 ## Quy tắc chung
 - File `*-plan.md`: bán tĩnh, chỉ sửa khi chiến lược/mục tiêu thật sự đổi.
