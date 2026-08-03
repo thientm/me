@@ -26,7 +26,10 @@
 #### 2. Kế hoạch tài chính & Trả góp
 *Dòng tiền thực tế hàng tháng (trả nợ, tích luỹ...) ghi ở `finance/logs/{YYYY-MM}.md`, mỗi entry liên quan tới dự án này gắn tag `[G-01]` trong `note` để dễ lọc. Mục này chỉ ghi tổng quan/mục tiêu.*
 - **Tổng ngân sách dự kiến:** ~3 tỷ (nếu vay đủ để làm sớm)
-- **Vốn tự có:** 2.4 tỷ
+- **Vốn tự có:** ~2.4 tỷ
+  - 1.3 tỷ: Tiền bố mẹ cho (đang gửi tiết kiệm kỳ hạn 1 tháng).
+  - 705 triệu: Tiền cá nhân (đang để tại Techcombank).
+  - ~400 triệu: Đang nằm trong Crypto (có plan tracking cơ cấu riêng).
 - **Số tiền cần vay:** 0 - 0.6 tỷ (chưa chốt, tuỳ quyết định — xem Research & Đánh giá bên dưới)
 - **Kế hoạch vay:** 
   - Vay ai / Ngân hàng nào:
