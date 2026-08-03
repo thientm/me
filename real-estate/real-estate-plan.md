@@ -63,7 +63,8 @@
   - 2026-08-03: Đã research xong phần cơ chế/luật (xem chi tiết ở mục "Thủ tục pháp lý & chi phí" bên dưới). Còn thiếu: tra đúng Phụ lục (theo vị trí thửa đất) kèm Nghị quyết 52/2025/NQ-HĐND để xác nhận chính xác mức áp cho thửa đất của mình (hiện mới biết mặt bằng chung khu vực Gia Lâm, chưa khớp đúng thửa). Task vẫn mở.
   - 2026-08-03 (update): Đã xác nhận qua luật sư — thửa đất thuộc Vị trí 2 (VT2), giảm 20% do xa mặt đường >500m → đúng 38tr/m² (xem "Thông tin thửa đất" ở đầu mục). Phần xác minh con số coi như xong; task này giờ chỉ còn phần **quyết định** vay đủ 3 tỷ làm sớm hay delay qua Tết — chưa chốt.
   - 2026-08-03 (cross-check độc lập, không qua luật sư): Đã tự tra lại **cơ chế** — khớp đúng luật: VT2 = thửa giáp ngõ/ngách ≥3.5m (đúng định nghĩa NQ 52/2025/NQ-HĐND); quy định giảm 20% cho khoảng cách ≥500m so với đường chính là có thật, tìm thấy nguyên văn khớp. Xã Phù Đổng thuộc Khu vực giá đất số 8 (cùng Thuận An, Gia Lâm, Bát Tràng). **Không tự verify lại được con số gốc VT2 khu vực 8** vì không truy cập được file Phụ lục PDF/Excel chính thức (các nguồn online đều 403 hoặc chỉ có bản dự thảo/tóm tắt). → Kết luận: cơ chế luật sư dùng là đúng luật, nhưng con số 38tr cuối cùng vẫn dựa vào việc tin luật sư đã tra đúng file gốc, chưa tự đối chiếu số học được.
-- [ ] Xác nhận thời gian xử lý thực tế bước 2-5 (đặc biệt bước 5 — chuyển mục đích sử dụng đất) tại VP đăng ký đất đai/UBND xã Phù Đổng, hoặc hỏi luật sư — để biết bắt đầu tháng nào thì kịp có quyết định chuyển mục đích **trước 31/12/2026** (né được rủi ro bảng giá đất 2027). Nếu xử lý mất >2 tháng, phương án bắt đầu tháng 11 không còn né được rủi ro này, nên ưu tiên tài chính (phương án B, chờ tới T2/2027). *(mở từ 2026-08-03)*
+- [x] Xác nhận thời gian xử lý thực tế bước 2-5 (đặc biệt bước 5 — chuyển mục đích sử dụng đất) tại VP đăng ký đất đai/UBND xã Phù Đổng, hoặc hỏi luật sư — để biết bắt đầu tháng nào thì kịp có quyết định chuyển mục đích **trước 31/12/2026** (né được rủi ro bảng giá đất 2027). Nếu xử lý mất >2 tháng, phương án bắt đầu tháng 11 không còn né được rủi ro này, nên ưu tiên tài chính (phương án B, chờ tới T2/2027). *(mở từ 2026-08-03)*
+  - 2026-08-04 (update): Luật sư xác nhận thời gian xử lý tối đa là **1 đến 2 tháng**. → **Chốt chọn Phương án C (Nộp hồ sơ đầu Tháng 11/2026)**: Đảm bảo có Quyết định trước 31/12/2026 để khóa giá 38tr/m² (né rủi ro tăng giá 2027), đồng thời tối ưu thêm được 4 tháng tích luỹ (T8-T11/2026) ~175tr vốn tự có, giảm tiền vay xuống còn ~433tr. Hết nợ hoàn toàn vào T1/2028.
 
 **Thủ tục pháp lý & chi phí (thuế TNCN, lệ phí trước bạ, điều kiện lên thổ cư ở địa phương...)**
 - 2026-08-03: Research khung giá đất / bảng giá đất (để đánh giá rủi ro tăng giá cho quyết định vay ở trên):
@@ -78,7 +79,7 @@
   - **Đã xác minh (update 2026-08-03)**: 38tr/m² là đúng cho thửa đất của mình — luật sư tra cứu xác nhận thửa thuộc Vị trí 2 (VT2), giảm 20% do cách mặt đường >500m. Chi tiết vị trí: xem "Thông tin thửa đất" ở đầu mục Dự án 01.
 
 **Khác**
-- (Chưa có)
+- 2026-08-04: Đánh giá sự đồng bộ với mục tiêu cá nhân (Hôn nhân). Đối tác (nữ, sinh năm 2000 - Canh Thìn) phạm Kim Lâu năm 2027 (28 tuổi mụ), hết Kim Lâu vào năm 2028 (29 tuổi mụ). Do đó bắt buộc phải cưới sau Tết Âm lịch 2028 (sang năm Mậu Thân). Mốc thời gian này **khớp hoàn hảo 100% với Phương án C**: Hết nợ hoàn toàn vào Tháng 1/2028 (sát Tết). Bước sang năm 2028 vừa cầm sổ đỏ chính chủ, vừa sạch nợ, vừa đẹp tuổi cưới.
 
 ## Lưu trữ dự án cũ (Completed)
 - (Chưa có)
