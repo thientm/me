@@ -10,7 +10,7 @@
 ## Chi phí cố định
 | Khoản | Số tiền | Chu kỳ |
 |---|---|---|
-| | | |
+| Trả góp vay mua/lên thổ cư đất | (điền số) | Hàng tháng |
 
 ## Quỹ / mục tiêu tiết kiệm
 | Quỹ | Mục tiêu | Hiện có | % đạt |

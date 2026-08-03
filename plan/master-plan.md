@@ -8,20 +8,20 @@
 
 ## Mục tiêu lớn (theo năm)
 
-### [Năm]
-- Mục tiêu:
-- Vì sao quan trọng:
-- Liên quan domain: (goals / portfolio / finance / research / ...)
+### 2026
+- Mục tiêu: Chuyển tên sổ đỏ đất nông nghiệp (cây lâu năm) ở quê từ bố mẹ sang tên mình, và chuyển mục đích sử dụng sang đất thổ cư.
+- Vì sao quan trọng: (Sẽ bổ sung chi tiết sau)
+- Liên quan domain: pháp lý / finance / portfolio
 
 ## Mục tiêu nhỏ (đang active)
 
-### G-01: [tên mục tiêu]
-- loại: dài hạn / ngắn hạn
-- target:
-- deadline:
+### G-01: Chuyển tên và lên thổ cư sổ đỏ ở quê
+- loại: dài hạn
+- target: Sang tên sổ đỏ thành công và chuyển mục đích sử dụng sang thổ cư.
+- deadline: (Chưa xác định)
 - progress: 0%
-- linked_to: (mục ở trên nếu có)
-- last_updated:
+- linked_to: Mục tiêu 2026
+- last_updated: 2026-08-03
 
 <!-- thêm G-02, G-03... khi cần -->
 
