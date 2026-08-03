@@ -46,11 +46,24 @@
   - Nếu khung giá đất không biến động nhiều → delay sang đầu năm sau (~sau Tết): vẫn phải vay, nhưng vay ít hơn — nhờ (1) lãi gửi tiết kiệm từ khoản 2.4 tỷ trong lúc chờ, (2) có thêm khoản thưởng Tết bổ sung vào vốn.
   - Chưa chốt phương án; phụ thuộc kết quả research khung giá đất (xem "Việc cần chốt" bên dưới).
 
+- 2026-08-03 (đánh giá tài chính chi tiết A/B/C): Input xác nhận — vay cấu trúc 50% 0% lãi / 50% lãi 7%/năm, vay 1 năm đáo hạn, trả 35tr/tháng ưu tiên phần 7% trước (tối ưu lãi), lãi tiết kiệm giả định 4.5%/năm kỳ hạn 3 tháng (private bank — quốc doanh chỉ ~2.6-2.9%), thưởng Tết 50tr. Điểm mấu chốt: 35tr/tháng là dòng tiền có sẵn từ bây giờ — nếu chưa vay thì dùng để **tích luỹ vốn** thay vì trả nợ, nên các phương án delay không chỉ hưởng lãi tiết kiệm + thưởng Tết mà còn hưởng thêm tích luỹ chủ động này.
+
+  | Phương án | Bắt đầu | Cần vay | Tổng lãi vay | Hết nợ hoàn toàn |
+  |---|---|---|---|---|
+  | A. Làm ngay | T8/2026 | 600tr | ~8.7tr | ~T2/2028 |
+  | C. Chờ 4 tháng | T11/2026 (tích luỹ T8-T11, chưa có thưởng Tết) | ~433tr | ~4.7tr | ~T1/2028 |
+  | B. Chờ hết Tết | T2/2027 (tích luỹ T8-T1 + thưởng Tết) | ~321tr | ~2.7tr | ~T12/2027 |
+
+  - Thuần tài chính: B tối ưu nhất (ít lãi vay nhất, hết nợ sớm nhất theo lịch thực tế — vì khoản vay nhỏ hơn nhiều bù lại cả thời gian chờ). A kém nhất về tài chính nhưng chắc chắn nhất về giá đất (không phải chờ đợi gì).
+  - **Phát hiện quan trọng nhất, làm thay đổi cách nhìn về "an toàn"**: Rủi ro bảng giá đất không nằm ở *ngày nộp hồ sơ*, mà nằm ở **ngày cơ quan nhà nước ra quyết định cho phép chuyển mục đích sử dụng đất (bước 5)** — đây mới là thời điểm áp giá đất tính "tiền sử dụng đất" (bước 6, khoản chi phí lớn nhất, nhạy giá đất nhất). Bảng giá đất điều chỉnh hằng năm có hiệu lực từ 1/1. Nên: bắt đầu sớm hơn (vd. tháng 11 thay vì tháng 2) **chỉ thực sự né được rủi ro nếu toàn bộ quy trình đến lúc có quyết định chuyển mục đích hoàn tất trước 31/12/2026** — nếu xử lý hồ sơ ở địa phương mất >2 tháng (khá phổ biến ở VN cho thủ tục chuyển mục đích), thì bắt đầu tháng 11 hay tháng 2 không khác biệt về mặt né rủi ro giá đất, và lúc đó nên quay lại chọn theo tài chính thuần tuý (ưu tiên B).
+  - Chưa chốt: cần biết thời gian xử lý thực tế bước 2-5 tại địa phương (xem "Việc cần chốt" bên dưới) mới chọn được giữa A/B/C.
+
 **Việc cần chốt (Open)**
 - [ ] Research & chốt khung giá đất khu vực — kết quả quyết định: làm sớm (vay đủ 3 tỷ) hay delay qua Tết (vẫn vay, nhưng ít hơn). *(mở từ 2026-08-03)*
   - 2026-08-03: Đã research xong phần cơ chế/luật (xem chi tiết ở mục "Thủ tục pháp lý & chi phí" bên dưới). Còn thiếu: tra đúng Phụ lục (theo vị trí thửa đất) kèm Nghị quyết 52/2025/NQ-HĐND để xác nhận chính xác mức áp cho thửa đất của mình (hiện mới biết mặt bằng chung khu vực Gia Lâm, chưa khớp đúng thửa). Task vẫn mở.
   - 2026-08-03 (update): Đã xác nhận qua luật sư — thửa đất thuộc Vị trí 2 (VT2), giảm 20% do xa mặt đường >500m → đúng 38tr/m² (xem "Thông tin thửa đất" ở đầu mục). Phần xác minh con số coi như xong; task này giờ chỉ còn phần **quyết định** vay đủ 3 tỷ làm sớm hay delay qua Tết — chưa chốt.
   - 2026-08-03 (cross-check độc lập, không qua luật sư): Đã tự tra lại **cơ chế** — khớp đúng luật: VT2 = thửa giáp ngõ/ngách ≥3.5m (đúng định nghĩa NQ 52/2025/NQ-HĐND); quy định giảm 20% cho khoảng cách ≥500m so với đường chính là có thật, tìm thấy nguyên văn khớp. Xã Phù Đổng thuộc Khu vực giá đất số 8 (cùng Thuận An, Gia Lâm, Bát Tràng). **Không tự verify lại được con số gốc VT2 khu vực 8** vì không truy cập được file Phụ lục PDF/Excel chính thức (các nguồn online đều 403 hoặc chỉ có bản dự thảo/tóm tắt). → Kết luận: cơ chế luật sư dùng là đúng luật, nhưng con số 38tr cuối cùng vẫn dựa vào việc tin luật sư đã tra đúng file gốc, chưa tự đối chiếu số học được.
+- [ ] Xác nhận thời gian xử lý thực tế bước 2-5 (đặc biệt bước 5 — chuyển mục đích sử dụng đất) tại VP đăng ký đất đai/UBND xã Phù Đổng, hoặc hỏi luật sư — để biết bắt đầu tháng nào thì kịp có quyết định chuyển mục đích **trước 31/12/2026** (né được rủi ro bảng giá đất 2027). Nếu xử lý mất >2 tháng, phương án bắt đầu tháng 11 không còn né được rủi ro này, nên ưu tiên tài chính (phương án B, chờ tới T2/2027). *(mở từ 2026-08-03)*
 
 **Thủ tục pháp lý & chi phí (thuế TNCN, lệ phí trước bạ, điều kiện lên thổ cư ở địa phương...)**
 - 2026-08-03: Research khung giá đất / bảng giá đất (để đánh giá rủi ro tăng giá cho quyết định vay ở trên):
