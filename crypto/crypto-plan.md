@@ -103,18 +103,170 @@ Ngoài lịch tuần/tháng, các tình huống sau **kích hoạt hành động
 | **Tổng port > 450 triệu** | Xả ngay phần vượt (>414tr) về USDC/VND | Lock lại phần "lãi bất ngờ", đưa về safe zone. Phần còn lại tiếp tục theo kế hoạch. |
 | **Tin xấu macro lớn** (FED tăng lãi suất đột ngột, sàn bị hack...) | Đánh giá ngay trong 1h, nếu port giảm >5% → xả 50% ngay | Không chờ "hồi phục", vì deadline là cố định (T11/2026). |
 
-## 7. Quy trình khi Agent hỗ trợ review
+## 7. Quy trình Weekly Deep Review (khi có Agent hỗ trợ)
 
-Mỗi khi bạn nhờ tôi review (hàng tuần hoặc hàng tháng), tôi sẽ thực hiện theo quy trình sau:
+> Quy trình này dành cho agent. Section 6 là checklist thao tác tay của bạn — hai phần bổ trợ nhau, không thay thế nhau.
+>
+> **Về cách chạy research ở bước 7.2:** nếu tool hỗ trợ subagent → chạy 4 nhóm song song rồi tổng hợp. Nếu không → làm tuần tự theo thứ tự 1→4. Trong mọi trường hợp, Nhóm 4 phải được đọc sau cùng khi tổng hợp, vì nhóm này có quyền phủ quyết.
 
-1. **Đọc file này** (`crypto-plan.md`) để nắm chiến lược hiện tại và milestone.
-2. **Đọc log gần nhất** (`logs/{YYYY-MM}.md`) để biết tiến độ rút vốn và action đã thực hiện.
-3. **Hỏi bạn 3 câu nhanh:**
-   - Tổng giá trị port hiện tại? (hoặc bạn chụp screenshot)
+### 7.0 Khi nào chạy
+
+- **Mặc định:** mỗi Thứ 2 đầu tuần.
+- **Chạy ngay, không chờ Thứ 2**, nếu có bất kỳ điều nào sau đây:
+  - BTC biến động >10% trong tuần (tăng hoặc giảm)
+  - BNSOL hoặc ONDO biến động >15%
+  - TTS (xem 7.3) tụt dưới 400tr, hoặc vượt 450tr
+  - Tin macro lớn: Fed đổi lãi suất đột ngột, sàn bị hack, tin siết pháp lý crypto tại VN
+  - Còn dưới 14 ngày tới deadline 25/10/2026
+
+### 7.1 Bước 1 — Thu thập input
+
+1. Đọc file này để nắm chiến lược, milestone (Section 5) và cơ cấu danh mục (Section 2).
+2. Đọc `crypto/logs/{YYYY-MM}.md` gần nhất — tiến độ rút và action đã thực hiện.
+3. Đọc `real-estate/real-estate-plan.md` mục "Kế hoạch tài chính & Trả góp" — lấy số liệu vốn/vay hiện hành.
+4. Hỏi user 3 câu:
+   - Tổng giá trị crypto hiện tại? (hoặc chụp màn hình Binance)
    - Đã rút được bao nhiêu VND kể từ lần review trước?
-   - Có giao dịch nào đặc biệt (mua/bán ngoài kế hoạch) không?
-4. **Đưa ra đánh giá:**
-   - Tiến độ exit so với milestone: Đúng / Nhanh / Chậm.
-   - Gợi ý action cụ thể cho tuần/tháng tới.
-   - Cảnh báo nếu có rủi ro (giá giảm sâu, chậm tiến độ, sát deadline...).
-5. **Cập nhật log** và điều chỉnh plan nếu cần.
+   - Có giao dịch nào ngoài kế hoạch không?
+5. Tự tính: TTS, % luỹ kế đã rút, số ngày còn tới 25/10/2026, trạng thái tiến độ (theo 7.3).
+
+### 7.2 Bước 2 — Research 4 nhóm yếu tố
+
+Mỗi nhóm trả lời đúng các câu hỏi của nhóm đó, dùng nguồn được liệt kê, và kết luận theo đúng định dạng output — để so sánh được giữa các tuần.
+
+**Nhóm 1 — Vĩ mô toàn cầu**
+- Hỏi: Tuần/tháng tới có FOMC không (lịch 2026: 15-16/9, 27-28/10, 8-9/12)? Kỳ vọng lãi suất trên CME FedWatch (hiện 3.50-3.75%)? CPI/PCE mới nhất? DXY tăng hay giảm? Nasdaq/S&P tuần qua? Có sự kiện địa chính trị lớn?
+- Nguồn: federalreserve.gov (lịch họp), CME FedWatch, TradingEconomics, Yahoo Finance
+- Output: `risk-on` / `risk-off` / `neutral` + 1-2 câu lý do
+
+**Nhóm 2 — Vĩ mô crypto**
+- Hỏi: Dòng tiền ETF BTC tuần qua (inflow/outflow bao nhiêu)? Fear & Greed hiện tại và xu hướng 7 ngày? BTC dominance tăng hay giảm (tăng = altcoin yếu)? Có tin quy định lớn (SEC, ETF)?
+- Nguồn: alternative.me/crypto/fear-and-greed-index, Coinglass, CoinMarketCap
+- Output: sentiment tổng thể + có tin nào đủ lớn để đổi kế hoạch không
+
+**Nhóm 3 — Vi mô từng tài sản**
+- BTC: giá, %Δ tuần, vị trí so EMA20/50/200, RSI, vị trí trong chu kỳ (tham chiếu: đỉnh $126k T10/2025 → đáy $60.8k T6/2026)
+- BNSOL: giá SOL, tỷ lệ quy đổi BNSOL/SOL có bị discount không, thanh khoản khi redeem, lịch unlock SOL, dòng ETF SOL
+- ONDO: giá, lịch unlock (áp lực bán mang tính hệ thống), TVL, tin sector RWA
+- USDC: không research, chỉ đọc số dư
+- Nguồn: Binance spot, TradingView, Coinglass, token unlock trackers
+- Output: mỗi coin một dòng — momentum `tăng`/`giảm`/`ngang` + lý do ưu tiên xả trước (nếu có)
+
+**Nhóm 4 — Pháp lý VN + kênh rút tiền** ⚠️
+- Hỏi: VN có quy định mới về tài sản số / sàn được cấp phép / siết P2P? Tỷ giá USDT/VND trên Binance P2P so với tuần trước? Spread và thanh khoản merchant? Có tin ngân hàng block tài khoản giao dịch P2P?
+- Nguồn: VnExpress, CafeF, Thư viện pháp luật, Binance P2P
+- Output: `kênh rút THÔNG` / `TẮC NGHẼN` / `RỦI RO` + tỷ giá + cảnh báo
+
+> **Quyền phủ quyết của Nhóm 4:** nếu Nhóm 4 báo `RỦI RO`, kết quả này override toàn bộ tính toán giá của Nhóm 1-3, kích hoạt override ưu tiên 1 ở mục 7.3. Lý do: giá coin đẹp mà không chuyển được thành VND trước 25/10 thì vô nghĩa — và rủi ro này không thể "chờ hồi phục" như rủi ro giá.
+
+Kết thúc bước này, tổng hợp Nhóm 1-3 thành **điều kiện thị trường**:
+- `THUẬN LỢI` — risk-on, momentum tăng, F&G >60
+- `TRUNG TÍNH` — tín hiệu hỗn hợp
+- `BẤT LỢI` — risk-off, momentum giảm, F&G <40
+
+### 7.3 Bước 3 — Decision Matrix
+
+**Định nghĩa TTS (Tổng tài sản dự án) = VND đã rút + giá trị crypto còn lại.**
+Mọi ngưỡng trong mục này đo trên TTS, vì đây là con số trả lời đúng câu hỏi "còn đủ tiền làm sổ đỏ không". Không đo trên riêng phần crypto — phần đã rút ra VND là tiền đã an toàn, không còn chịu rủi ro giá.
+
+**Trục 1 — Sàn tiến độ bắt buộc (luỹ kế đã rút ra VND):**
+
+| Mốc | Tối thiểu | Quy ra VND |
+|---|---|---|
+| 31/8/2026 | ≥20% | ~83tr |
+| 30/9/2026 | ≥55% | ~228tr |
+| 25/10/2026 | 100% | ~414tr |
+
+Trạng thái: **CHẬM** (dưới sàn) / **ĐÚNG** (đạt sàn, vượt dưới 10 điểm phần trăm) / **NHANH** (vượt sàn từ 10 điểm phần trăm trở lên).
+*Ví dụ tại mốc 30/9 (sàn 55%): rút được 50% → CHẬM; 55-64% → ĐÚNG; ≥65% → NHANH.*
+
+**Matrix:**
+
+| | THUẬN LỢI | TRUNG TÍNH | BẤT LỢI |
+|---|---|---|---|
+| **CHẬM** | Market sell bù đủ sàn + xả thêm 10-15% crypto còn lại | Market sell bù đủ sàn ngay, không canh giá | Market sell bù đủ sàn ngay. Không chờ hồi. |
+| **ĐÚNG** | Xả thêm 10-20% crypto còn lại bằng limit ở giá cao | Xả đúng sàn tuần này, limit sát giá thị trường | Xả đúng sàn, ưu tiên market sell phần altcoin |
+| **NHANH** | Limit giá cao, kiên nhẫn chờ khớp | Giữ nhịp, xả nhỏ giọt theo tuần | Xả đúng sàn — không lấy "đang nhanh" làm cớ dừng |
+
+*Mọi tỷ lệ % trong bảng tính trên **giá trị crypto còn lại tại thời điểm review**, không phải trên 414tr gốc. "Bù đủ sàn" = rút thêm cho đủ mức luỹ kế tối thiểu của mốc gần nhất.*
+
+> **Nguyên tắc xuyên suốt: cột BẤT LỢI không bao giờ có nghĩa là "dừng bán".** Đây chính là cái bẫy đã đưa danh mục từ 650tr xuống 414tr — giảm → chờ hồi → giảm tiếp.
+
+**Thứ tự ưu tiên xả:** ONDO → USDC (convert luôn) → BNSOL → BTC. Rủi ro cao và thanh khoản kém đi trước; BTC giữ lại sau cùng vì an toàn nhất và thanh khoản tốt nhất, xả lúc nào cũng được.
+
+**Override — đè lên toàn bộ matrix:**
+
+| Điều kiện | Hành động | Ưu tiên |
+|---|---|---|
+| Còn <14 ngày tới 25/10 | Market sell ALL, bất kể giá | 1 |
+| Nhóm 4 báo RỦI RO kênh rút | Market sell ALL → VND trong 24h | 1 |
+| TTS < 380tr | Market sell ALL → VND | 2 |
+| TTS > 450tr | Xả ngay phần vượt 414tr, lock về VND | 3 |
+| BTC pump >10%/tuần | Xả 30-50% BTC đang giữ | 4 |
+| BNSOL/ONDO pump >15% | Market sell toàn bộ vị thế đó | 4 |
+
+### 7.4 Bước 4 — Đối chiếu kế hoạch BĐS
+
+```
+Vốn tự có dự phóng tại T11/2026
+  = 1.3 tỷ (bố mẹ, tiết kiệm)
+  + 705tr (cá nhân, Techcombank)
+  + TTS crypto thực tế          ← thay cho giả định 400tr
+  + 35tr × số tháng còn lại tới T11
+  + lãi tiết kiệm ước tính
+
+Số cần vay = 3 tỷ − Vốn tự có dự phóng
+Δ = Số cần vay − 433tr (mức đã chốt ở Phương án C)
+Ảnh hưởng timeline = Δ ÷ 35tr/tháng → dịch mốc hết nợ T1/2028
+```
+
+Ngưỡng cảnh báo:
+- **Δ > +50tr** → nêu rõ mốc hết nợ bị lùi bao lâu; cảnh báo nếu chạm/vượt mốc cưới đầu 2028.
+- **Số cần vay > 500tr** → cờ đỏ: cấu trúc vay đang giả định 50% vay 0% lãi từ người thân. Cần kiểm tra phần 0% có scale lên được không, hay phải vay ngân hàng toàn bộ phần vượt (lãi 7%, đội chi phí).
+
+### 7.5 Bước 5 — Ghi log
+
+Append vào `crypto/logs/{YYYY-MM}.md` theo đúng format sau (không sửa entry cũ):
+
+```
+## Tuần DD/MM - DD/MM (Deep Review)
+
+### Input
+- TTS: XXXtr (VND đã rút XXXtr + crypto còn lại XXXtr) | Tuần trước: XXXtr | Δ: ±X%
+- Tiến độ luỹ kế: XXX/414tr (XX%) | Sàn yêu cầu: XX% → CHẬM/ĐÚNG/NHANH
+- Còn XX ngày tới 25/10
+
+### Research
+- N1 vĩ mô toàn cầu: risk-on/off/neutral — [lý do]
+- N2 vĩ mô crypto: [F&G, ETF flow, dominance]
+- N3 vi mô: BTC [...] | BNSOL [...] | ONDO [...]
+- N4 pháp lý VN/P2P: THÔNG/TẮC/RỦI RO | tỷ giá XXX
+→ Điều kiện thị trường: THUẬN LỢI/TRUNG TÍNH/BẤT LỢI
+
+### Quyết định
+- Ô matrix: [tiến độ] × [thị trường]
+- Override kích hoạt: [không / tên override]
+- Action: [lệnh cụ thể: coin nào, bao nhiêu, market hay limit ở giá nào]
+- Judgment call: [nếu có — nêu rõ]
+
+### Đối chiếu BĐS
+- Vốn tự có dự phóng T11/2026: X.XXX tỷ
+- Cần vay: XXXtr (kế hoạch 433tr, Δ: ±XXtr)
+- Mốc hết nợ: T1/2028 → [giữ nguyên / lùi X tháng]
+```
+
+### 7.6 Ngoại lệ & Judgment call
+
+Áp dụng khi gặp tình huống mà matrix và override đều không cover (black swan, sự cố sàn, thay đổi hoàn cảnh cá nhân, tin chưa có tiền lệ). Quy tắc:
+
+1. **Phải nói rõ đây là judgment call** — không được trình bày như thể đang theo rule có sẵn.
+2. **Mặc định nghiêng về bảo toàn vốn** — lưỡng lự giữa bán và giữ thì chọn bán. Deadline cứng, sai lầm không còn thời gian sửa.
+3. **Nêu rõ đánh đổi** — chọn phương án này thì đang từ bỏ điều gì.
+4. **Ghi vào log** để tuần sau cân nhắc nâng thành rule chính thức.
+
+**3 nguyên tắc bất biến — không judgment call nào được phép vi phạm:**
+- Không bao giờ khuyến nghị **nạp thêm tiền mới** vào crypto.
+- Không bao giờ khuyến nghị **mua lại/DCA** để gỡ lỗ.
+- Không bao giờ **dời deadline 25/10** để chờ giá tốt hơn.
+
+Ba điều này chốt cứng vì chúng là những quyết định mà bản thân lúc đang lỗ sẽ dễ bị cám dỗ nhất — và cũng chính là cơ chế đã đưa 650tr xuống 414tr.
