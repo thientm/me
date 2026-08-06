@@ -245,7 +245,15 @@ Append vào `crypto/logs/{YYYY-MM}.md` theo đúng format sau (không sửa entr
 - Vốn tự có dự phóng T11/2026: X.XXX tỷ
 - Cần vay: XXXtr (kế hoạch 433tr, Δ: ±XXtr)
 - Mốc hết nợ: T1/2028 → [giữ nguyên / lùi X tháng]
+
+### Kịch bản & Insight
+- Xếp hạng vấn đề theo ĐỘ LỚN TÁC ĐỘNG TIỀN, không theo thứ tự phát hiện
+- Bảng nhạy cảm: TTS thay đổi ra sao nếu tài sản lớn nhất ±5/10/15/20%
+- 3-4 kịch bản, mỗi kịch bản có điều kiện kích hoạt rõ ràng và hành động tương ứng
+- "Điều gì làm đổi khuyến nghị" — danh sách trigger kiểm chứng được
 ```
+
+> **Vì sao bắt buộc có mục "Kịch bản & Insight":** bốn mục trên chỉ là bản ghi trạng thái — chúng trả lời "đang thế nào", không trả lời "nên làm gì và vì sao". Không có mục này thì review dễ sa vào việc phân tích kỹ những khoản nhỏ dễ đo (spread, phí, chiết khấu vài %) trong khi bỏ qua rủi ro lớn gấp cả chục lần nhưng khó đo (timing trên vị thế lớn nhất, rủi ro đuôi như khoá tài khoản). **Quy tắc: luôn xếp hạng theo số tiền, và luôn hỏi "cái gì lớn nhất mà mình chưa nhắc tới?"**
 
 ### 7.6 Ngoại lệ & Judgment call
 
