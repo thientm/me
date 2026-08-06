@@ -61,15 +61,7 @@ Checklist thực hiện mỗi tuần (ước tính ~15 phút):
   - Có đặt lệnh bán (Limit Sell) mới không? Ở mốc giá nào?
   - Có cần Market Sell ngay (nếu đang pump mạnh) không?
   - Có cần kích hoạt Hard Stop (nếu port < 380 triệu) không?
-- [ ] **Ghi log:** Append kết quả vào `logs/{YYYY-MM}.md` với format:
-  ```
-  ## Tuần DD/MM - DD/MM
-  - Tổng port: XXX triệu | Tuần trước: XXX triệu | Δ: +/-X%
-  - Đã rút trong tuần: XXX triệu VND
-  - Tổng đã rút luỹ kế: XXX / 414 triệu (XX%)
-  - Action: [Mô tả lệnh đã đặt / đã khớp / điều chỉnh]
-  - Nhận định tuần tới: [Canh xả thêm / Giữ nguyên / Cảnh giác]
-  ```
+- [ ] **Ghi log:** Append kết quả vào `logs/{YYYY-MM}.md`. Dùng format chuẩn ở mục **7.5** — không dùng format riêng, tránh hai format song song gây khó so sánh giữa các tuần.
 
 ### 6.2 Monthly Review — Đầu mỗi tháng (T9/2026, T10/2026)
 
