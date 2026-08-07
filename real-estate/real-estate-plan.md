@@ -100,6 +100,17 @@
 - **Kết luận cho quyết định của mình:** diễn biến chung cư **không đủ mạnh để làm căn cứ hành động**. Đất nền vùng ven vẫn trong xu hướng tăng, tức áp lực tăng bảng giá đất 2027 **không giảm đi**. Thời điểm nộp hồ sơ nên quyết theo tiến độ pháp lý, không theo tâm lý thị trường chung cư.
 - **Nguồn**: [Tuổi Trẻ - chung cư HN rao cắt lỗ](https://tuoitre.vn/chung-cu-ha-noi-rao-cat-lo-ca-ti-dong-van-kho-ban-ap-luc-lai-vay-lau-ngay-100260707064935522.htm), [VnExpress - CBRE tốc độ tăng giá giảm một nửa](https://vnexpress.net/cbre-toc-do-tang-gia-chung-cu-cu-o-ha-noi-giam-mot-nua-5094899.html), [CafeBiz - thực chất là cắt lãi](https://cafebiz.vn/bat-dong-san-cat-lo-tran-lan-chuyen-gia-noi-thang-nhieu-noi-thuc-chat-chi-dang-cat-lai-176260726104540397.chn), [CafeF - dự báo giá chung cư 2026-2027](https://cafef.vn/du-bao-bat-ngo-ve-dien-bien-gia-chung-cu-ha-noi-tphcm-trong-giai-doan-2026-2027-188260802065633487.chn), [Dân Việt - bảng giá đất HN 2026 17 khu vực](https://danviet.vn/bang-gia-dat-ha-noi-2026-tu-ranh-gioi-hanh-chinh-den-17-khu-vuc-dinh-gia-thuc-te-d1373856.html).
 
+**Cập nhật 2026-08-07 (deep-dive sóng thoát hàng — câu hỏi riêng: có nên chờ mua chung cư năm sau 2027?)**
+- **Case cắt lỗ cụ thể (mới hơn, cho thấy điều chỉnh sâu hơn nhận định tháng 7)**: Nguyễn Xiển 6.2→4 tỷ (-35%), Kim Văn-Kim Lũ 3.9→2.4 tỷ (-38%), 19T Kiến Hưng 4.4→2.8 tỷ (-36%), Ngoại Giao Đoàn 110-120→75-80tr/m² (-30%), Dương Nội -1.2 tỷ, một case lỗ >1.5 tỷ **so với giá hợp đồng gốc** (lỗ thật, không chỉ "cắt lãi" như nhận định tháng 7). Nguyên nhân: áp lực thanh toán 45% giá trị HĐ còn lại khi bàn giao + hết ân hạn gốc + lãi vay 12-16%/năm (thả nổi lên 15-16%) đè nặng nhà đầu tư đòn bẩy cao. Tập trung dự án sắp bàn giao, phía Đông (dọc Đại lộ Thăng Long) và Tây/Tây Nam.
+- **Điểm mấu chốt cho câu hỏi "chờ mua năm sau"**: đây là hiện tượng ở **thị trường thứ cấp** (nhà đầu tư kẹt dòng tiền bán lại). **Sơ cấp** (căn hộ mới từ chủ đầu tư) **vẫn tăng** — ~95tr/m², +12% QoQ, dự báo khu trung tâm +10-13%/năm trong 2026. → Nếu mục tiêu là mua căn mới/chủ đầu tư, chờ không có cơ sở giá sẽ giảm. Nếu mục tiêu là mua lại từ NĐT đang cần thoát hàng, ở đúng khu vực/phân khúc bị stress, cơ hội là thật và "quá trình điều chỉnh chưa dừng lại" theo chuyên gia.
+- **Lịch sử 2011-2013 (giảm tới 50%, về giá 2006) có lặp lại không**: đa số chuyên gia được trích dẫn cho là **không** — bản chất khác nhau: 2011-2013 là dư cung + đóng băng tín dụng toàn hệ thống; hiện tại cung khan hiếm hơn, chi phí đất/xây tăng mạnh nâng giá sàn sơ cấp, thị trường được đánh giá "đang trên đà phục hồi" chứ không đóng băng.
+- **Dự báo 2027 phân hoá 3 nhóm** (đã xác minh nguồn — cập nhật lại ghi chú "chưa xác minh" ở mục dự báo phía trên):
+  1. CBRE/One Mount (mainstream): vẫn tăng, chậm lại về hai chữ số → dài hạn ~3-5%/năm. Không dự báo giảm.
+  2. Phạm Đức Toản (TGĐ EZ Property): giá "sẽ phải giảm" do 298 dự án gỡ vướng đồng loạt khởi công 2026-2027 tăng cung — không đưa số % cụ thể.
+  3. Nguyễn Anh Quê (Chủ tịch G6 Group — nguồn đã xác định, không còn là ý kiến ẩn danh): đi ngang hết 2025 → vào chu kỳ giảm dài, đáy 2028-2030, giảm **15-30%** (có nơi nói 10-30%) từ đỉnh Q4/2024. Bi quan nhất trong số có tên tuổi, nhưng vẫn thiểu số so với CBRE/Savills.
+- **Trả lời trực tiếp**: không nguồn nào (kể cả bi quan nhất) dự báo giá **về lại** mức trước sốt hoặc giảm sâu kiểu 2011-2013 (50%). Cơ sở thực tế nhất để "chờ giá giảm mua năm sau" là nhắm vào **thứ cấp đang cắt lỗ** ở khu vực/dự án cụ thể đang bị stress đòn bẩy, không phải chờ mặt bằng giá chung cư đảo chiều.
+- **Nguồn**: [VnExpress - Sóng thoát hàng chung cư sắp bàn giao](https://vnexpress.net/song-thoat-hang-chung-cu-sap-ban-giao-5104548.html), [Dân Trí - cắt lỗ cả tỷ đồng mỗi căn](https://dantri.com.vn/bat-dong-san/chung-cu-ha-noi-ha-nhiet-nhieu-nguoi-ban-cat-lo-ca-ty-dong-moi-can-20260807014428157.htm), [CafeF - dự báo bất ngờ giai đoạn 2026-2027](https://cafef.vn/du-bao-bat-ngo-ve-dien-bien-gia-chung-cu-ha-noi-tphcm-trong-giai-doan-2026-2027-188260802065633487.chn), [CafeF - Phạm Đức Toản: giá sẽ phải giảm](https://cafef.vn/sep-bds-khang-dinh-nam-2026-2027-nguon-cung-tang-manh-gia-chung-cu-ha-noi-se-phai-giam-188260122102146633.chn), [NguoiQuanSat - lịch sử đáy có lặp lại](https://nguoiquansat.vn/thi-truong-bds-ha-noi-den-het-nam-2025-lich-su-roi-vao-day-co-lap-lai-169525.html), [Stockbiz - Nguyễn Anh Quê dự báo giảm 15-30%](https://stockbiz.vn/tin-tuc/bat-dong-san-tinh-se-bat-dau-sot-vao-quy-32026-gia-chung-cu-ha-noi-se-ha-khoang-15-30-vao-giai-doan-2027-2029/27089754).
+
 **⚠️ Rủi ro thời điểm — Phương án C có thể KHÔNG còn biên an toàn (2026-08-06)**
 - **Cơ sở pháp lý bắt buộc**: Điều 159 khoản 3 Luật Đất đai 2024 quy định UBND cấp tỉnh **hàng năm** phải trình HĐND quyết định điều chỉnh bảng giá đất, công bố áp dụng **từ 1/1 năm sau**. Đây là nghĩa vụ bắt buộc, không phải tuỳ chọn.
 - **Tiền lệ**: NQ 52/2025 được HĐND thông qua **26/11/2025**, hiệu lực 1/1/2026. → Bảng giá 2027 nhiều khả năng được trình/thông qua **khoảng tháng 10-11/2026**, hiệu lực 1/1/2027.
@@ -110,6 +121,37 @@
 
 **Khác**
 - 2026-08-04: Đánh giá sự đồng bộ với mục tiêu cá nhân (Hôn nhân). Đối tác (nữ, sinh năm 2000 - Canh Thìn) phạm Kim Lâu năm 2027 (28 tuổi mụ), hết Kim Lâu vào năm 2028 (29 tuổi mụ). Do đó bắt buộc phải cưới sau Tết Âm lịch 2028 (sang năm Mậu Thân). Mốc thời gian này **khớp hoàn hảo 100% với Phương án C**: Hết nợ hoàn toàn vào Tháng 1/2028 (sát Tết). Bước sang năm 2028 vừa cầm sổ đỏ chính chủ, vừa sạch nợ, vừa đẹp tuổi cưới.
+
+### Dự án 02: Mua nhà ở cho bản thân (chung cư hoặc đất) — đang ngắm
+
+> **Trạng thái đầu vào**: thông tin cung cấp rời rạc dần theo thời gian, không phải 1 lần đủ hết. Mục này là nơi chắt lọc/tổng hợp để nhìn ra bài toán quyết định, không phải log thô — cập nhật liên tục, không xoá mục cũ, chỉ thêm entry mới có ngày khi có input/research mới.
+
+#### 1. Bài toán cần quyết
+- Mua nhà ở riêng, đang cân nhắc giữa **3 chung cư** (Vinhomes Smart City, Hope Residence, Le Grand Jardin) và **1 lựa chọn đất nền** (Việt Hưng, Long Biên — phải bán một phần đất quê ở Dự án 01 sau khi ra sổ để có tiền mua).
+- Tiêu chí đã biết tính đến giờ: **gần bố mẹ** (ưu tiên khu Long Biên/Việt Hưng/Phúc Đồng/Sài Đồng), có cơ hội mua rẻ nếu đúng lúc "sóng thoát hàng", pháp lý an toàn (sang tên bình thường, không vướng ràng buộc).
+- Còn thiếu (xem "Việc cần chốt"): ngân sách tổng, mua để ở hay đầu tư, mốc thời gian mong muốn, có gắn với sự kiện khác không (vd. mốc cưới 2028 như Dự án 01).
+
+#### 2. Các lựa chọn đang so sánh (research 2026-08-07)
+
+| Lựa chọn | Vị trí | Giá hiện tại | Tình trạng thị trường | Pháp lý / rủi ro |
+|---|---|---|---|---|
+| Vinhomes Smart City | Tây Mỗ, Nam Từ Liêm — xa Long Biên/bố mẹ | Thứ cấp 3-5 tỷ/căn, cắt lỗ từ 2,4 tỷ, rẻ hơn thị trường 300-500tr ở một số căn | **Sóng thoát hàng rõ nhất trong 4 lựa chọn** — CĐT đã hết quỹ sơ cấp, hầu hết giao dịch là thứ cấp cắt lỗ | Sổ đỏ đầy đủ, giao dịch thông thường |
+| Hope Residence | Phúc Đồng, Long Biên — gần | Giá gốc: NOXH ~16tr/m², thương mại ~22-25tr/m². Giá thứ cấp rao hiện tại **55,5-77,1tr/m²** (gấp 3,5-4,5 lần giá gốc) | **Không phải cắt lỗ — đang tăng vọt** do khan hiếm suất NOXH (93% dự án là NOXH, 1.397/1.504 căn; 107 căn còn lại là thương mại) | ⚠️ **Cần xác minh trước khi đi xa hơn**: bàn giao cuối 2025, luật cấm chuyển nhượng NOXH trong 5 năm đầu (trừ bán cho người đủ điều kiện mua NOXH khác) → nếu đang xem là suất NOXH mà chưa đủ 5 năm, giao dịch trên thị trường nhiều khả năng qua **ủy quyền/vi bằng** — không sang tên ngay, không thế chấp vay bình thường, rủi ro tranh chấp. Cần hỏi rõ môi giới: NOXH hay 1/107 căn thương mại. |
+| Le Grand Jardin (Sài Đồng/Phúc Đồng, CĐT Handico3/BRG) | Long Biên — gần | Bàn giao thô 3PN ~2,3-2,6 tỷ; căn góc 97-106m² ~2,9-3,3 tỷ (1 listing ghi 77m²/6,5 tỷ — nghi outlier, cần kiểm tra thực tế khi xem) | Đã bàn giao xong, ổn định — không có áp lực "sóng thoát hàng do đến hạn thanh toán" như 2 dự án trên | Đã có sổ hồng, sang tên bình thường — rủi ro thấp nhất trong 3 chung cư |
+| Đất nền Việt Hưng | Long Biên — gần nhất | ~171tr/m² (lô 63m², ngõ, mặt tiền 4,1m, phố Ngô Gia Tự) đến 250-270tr/m² (mặt phố/view công viên — outlier cao). Lô nhỏ 60-63m² trong ngõ đã **~10-10,8 tỷ** | Khu đã đô thị hoá hoàn chỉnh, giá ổn định neo cao, không phải thị trường đang cắt lỗ | Sổ đỏ, nhưng **vấn đề là tài chính**: đắt gấp 3-5 lần đất quê Phù Đổng cùng m² (38tr/m² bảng giá NN). Một lô nhỏ nhất đã vượt xa tổng ngân sách hiện có của Dự án 01 (~3 tỷ) — cần bán đất quê + có thêm vốn khác mới đủ. |
+
+**Kết luận sơ bộ (2026-08-07)**:
+- Chỉ Smart City đang có làn sóng cắt lỗ đúng nghĩa để "chờ mua rẻ"; nhưng vị trí mâu thuẫn với tiêu chí gần bố mẹ.
+- Hope Residence và Le Grand Jardin đáp ứng vị trí, nhưng Hope Residence đang tăng giá (không giảm) và có rủi ro pháp lý NOXH cần làm rõ trước; Le Grand Jardin an toàn pháp lý nhất nhưng không có động lực giảm giá thêm.
+- Đất nền Việt Hưng đáp ứng vị trí tốt nhất nhưng khoảng cách tài chính với ngân sách hiện có là vấn đề lớn nhất, chưa tính được chính xác vì thiếu diện tích thửa đất quê.
+- **Nguồn**: [Batdongsan - Bảng giá Smart City cắt lỗ T5/2026](https://batdongsan.com.vn/ban-can-ho-chung-cu-phuong-tay-mo-vinhomes-smart-city/bang-gia-cap-nhat-t5-2026-gia-cat-lo-view-ep-san-so-ban-gap-lh-pr45732109), [Canhovinhomes - giá cắt lỗ từ 2,4 tỷ T7/2026](https://canhovinhomes.info/gia-mua-ban-chuyen-nhuong-can-ho-chung-cu-vinhomes-smart-city/), [Batdongsan - Hope Residence giá bán T1/2026](https://batdongsan.com.vn/du-an-nha-o-xa-hoi-long-bien/hope-residence-pj3744), [Vietnammoi - NOXH Long Biên giá 16tr/m2](https://vietnammoi.vn/ha-noi-cho-mo-ban-hon-300-can-noxh-gia-16-trieum2-20255419937824.htm), [Thuvienphapluat - tổng quan Hope Residence Phúc Đồng](https://thuvienphapluat.vn/phap-luat-nha-dat/tong-quan-du-an-hope-residence-phuc-dong-ha-noi-1577.html), [Homedy - Le Grand Jardin Sài Đồng](https://homedy.com/ban-can-ho-le-grand-jardin-sai-dong), [Dandautu - Le Grand Jardin tiến độ](https://dandautu.vn/du-an/le-grand-jardin-sai-dong), [Mogi - nhà đất Việt Hưng T2/2026](https://mogi.vn/ha-noi/quan-long-bien/mua-nha-dat/duong-viet-hung-long-bien-sid13657).
+
+#### 3. Việc cần chốt (Open)
+- [ ] **Diện tích thực tế thửa đất quê Phù Đổng** (Dự án 01) — cần để tính bán 1 phần thu về bao nhiêu, đủ mua bao nhiêu m² đất Việt Hưng. *(mở từ 2026-08-07)*
+- [ ] **Xác minh căn Hope Residence đang xem là suất NOXH hay 1 trong 107 căn thương mại** — quyết định rủi ro pháp lý (ủy quyền/vi bằng) có chấp nhận được không. *(mở từ 2026-08-07)*
+- [ ] **Ngân sách tổng dự kiến cho quyết định này** — vốn tự có, có vay không, độc lập hay dùng chung nguồn với ngân sách Dự án 01? *(mở từ 2026-08-07)*
+- [ ] **Timeline mong muốn** — chờ đến khi nào, có gắn với mốc nào khác không (vd. mốc cưới 2028)? *(mở từ 2026-08-07)*
+- [ ] Kiểm tra thực tế outlier giá 77m²/6,5 tỷ ở Le Grand Jardin khi đi xem — có thể là loại căn khác (villa/shophouse) trong cùng khu, không đại diện mặt bằng chung. *(mở từ 2026-08-07)*
 
 ## Lưu trữ dự án cũ (Completed)
 - (Chưa có)
