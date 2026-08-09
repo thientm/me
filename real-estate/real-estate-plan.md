@@ -4,85 +4,93 @@
 
 ## Dự án đang thực hiện (Active)
 
-### Dự án 01: Sang tên và lên thổ cư đất ở quê (Linked to G-01)
+### Dự án 01: Sang tên, làm thổ cư 80m² đất ở quê & Bán toàn bộ (Linked to G-01)
 
 **Thông tin thửa đất**
 - Vị trí: đất sau ga Yên Viên, gần cửa hàng Duy LiNing, gần đình làng Vân — thuộc xã Yên Viên cũ, nay là xã Phù Đổng.
 - Phân vị trí theo bảng giá đất: Vị trí 2 (VT2), giảm 20% do cách mặt đường >500m.
 - Giá theo Bảng giá đất Hà Nội 2026 (NQ 52/2025/NQ-HĐND, hiệu lực 1/1/2026): **38tr/m²** — đã xác nhận qua luật sư tra cứu (2026-08-03).
+- **Mục tiêu quy hoạch thửa đất**: Làm thổ cư 1 phần **80m²**, sau khi ra sổ thổ cư hoàn chỉnh sẽ **bán hết toàn bộ thửa đất**, tất toán nợ vay và dùng số tiền mặt ròng thu về để tìm mua nhà Việt Hưng.
 
 #### 1. Lộ trình pháp lý & Thủ tục
 | Bước | Trạng thái | Ngày cập nhật | Ghi chú |
 |---|---|---|---|
-| 1. Ký hợp đồng tặng cho tại phòng công chứng | Chưa bắt đầu | | |
-| 2. Nộp hồ sơ đăng ký sang tên tại VP Đăng ký đất đai / Bộ phận một cửa | Chưa bắt đầu | | |
-| 3. Đóng thuế, phí (TNCN, lệ phí trước bạ - nếu không được miễn) | Chưa bắt đầu | | |
-| 4. Nhận sổ đỏ mang tên mình | Chưa bắt đầu | | |
-| 5. Nộp đơn xin chuyển mục đích sử dụng đất sang thổ cư + bản vẽ trích lục | Chưa bắt đầu | | |
-| 6. Đóng tiền sử dụng đất khi lên thổ cư | Chưa bắt đầu | | |
+| 1. Ký hợp đồng tặng cho tại phòng công chứng | Chưa bắt đầu | 2026-08-09 | Dự kiến T8-T9/2026 |
+| 2. Nộp hồ sơ đăng ký sang tên tại VP Đăng ký đất đai / Bộ phận một cửa | Chưa bắt đầu | 2026-08-09 | Dự kiến T9-T10/2026 |
+| 3. Đóng thuế, phí (TNCN, lệ phí trước bạ - nếu không được miễn) | Chưa bắt đầu | 2026-08-09 | |
+| 4. Nhận sổ đỏ mang tên mình | Chưa bắt đầu | 2026-08-09 | |
+| 5. Nộp đơn xin chuyển mục đích sử dụng đất sang thổ cư (80m²) + bản vẽ trích lục | Chưa bắt đầu | 2026-08-09 | Dự kiến nộp đầu T11/2026 (Phương án C) |
+| 6. Đóng tiền sử dụng đất khi lên thổ cư 80m² (dùng khoản vay ~700tr) | Chưa bắt đầu | 2026-08-09 | Khóa giá 38tr/m² trước 31/12/2026 |
+| 7. Nhận sổ đỏ mới có 80m² thổ cư | Chưa bắt đầu | 2026-08-09 | Dự kiến T12/2026 - T1/2027 |
+| 8. Đăng bán toàn bộ thửa đất quê & Chốt giao dịch | Chưa bắt đầu | 2026-08-09 | Dự kiến T1/2027 - T4/2027 |
+| 9. Tất toán nợ vay 700tr & Rút tiền mặt ròng | Chưa bắt đầu | 2026-08-09 | Ngay sau khi nhận tiền bán đất |
 
 > Trạng thái dùng: `Chưa bắt đầu` / `Đang làm` / `Chờ (bên ngoài)` / `Xong`. Cập nhật cột Ngày + Ghi chú mỗi khi trạng thái đổi; không xoá lịch sử, chỉ ghi đè trạng thái hiện tại (bảng này là snapshot, không phải log).
 
 #### 2. Kế hoạch tài chính & Trả góp
-*Dòng tiền thực tế hàng tháng (trả nợ, tích luỹ...) ghi ở `finance/logs/{YYYY-MM}.md`, mỗi entry liên quan tới dự án này gắn tag `[G-01]` trong `note` để dễ lọc. Mục này chỉ ghi tổng quan/mục tiêu.*
-- **Tổng ngân sách dự kiến:** ~3 tỷ (nếu vay đủ để làm sớm)
-- **Vốn tự có:** ~2.4 tỷ
-  - 1.3 tỷ: Tiền bố mẹ cho (đang gửi tiết kiệm kỳ hạn 1 tháng).
-  - 705 triệu: Tiền cá nhân (đang để tại Techcombank).
-  - ~400 triệu: Đang nằm trong Crypto (có plan tracking cơ cấu riêng).
-- **Số tiền cần vay:** 0 - 0.6 tỷ (chưa chốt, tuỳ quyết định — xem Research & Đánh giá bên dưới)
-- **Kế hoạch vay:** 
-  - Vay ai / Ngân hàng nào:
-  - Lãi suất:
-  - Thời hạn:
-  - Số tiền trả góp dự kiến hàng tháng: (điền số tiền - sau đó update sang `finance/cashflow.md`)
-- **Tích luỹ trước khi nộp hồ sơ:**
-  - Mục tiêu cần có trước bước nộp hồ sơ/đóng thuế: (điền số tiền)
-  - Hiện có: (điền số tiền, cập nhật khi có log tháng mới ở `finance/logs/`)
+- **Tổng ngân sách nộp tiền thổ cư 80m² + Phí**: Dự kiến khoảng ~700 triệu VND vay ngoài/ngân hàng.
+- **Kế hoạch vay**:
+  - **Số tiền vay**: ~700 triệu VND.
+  - **Mục đích vay**: Đóng tiền sử dụng đất cho 80m² thổ cư + lệ phí trích đo, sang tên.
+  - **Thời hạn vay**: Ngắn hạn đến trung hạn (tất toán dứt điểm ngay khi bán thành công thửa đất quê).
+  - **Trả góp hàng tháng trong lúc chờ bán**: Dự kiến ~35tr/tháng (trả gốc + lãi ưu tiên).
+- **Quy tắc Dòng tiền Ròng (Net Cash Proceeds)**:
+  $$\text{Số tiền mặt ròng để mua nhà mới} = \text{Tổng tiền bán đất quê} - 700\text{ triệu (tất toán nợ)}$$
 
 #### 3. Research & Đánh giá
 *Ghi phát hiện/quyết định research vào đây khi có, kèm ngày. Không xoá mục cũ, thêm mục mới bên dưới nếu có cập nhật/đổi ý.*
 
-**Phương án vay**
-- 2026-08-03: Đang ở bước lên kế hoạch. Vốn tự có sẵn 2.4 tỷ; cần thêm ~0.6 tỷ nếu vay đủ 3 tỷ. Chiến lược thời điểm/vay phụ thuộc diễn biến khung giá đất khu vực (hiện tại mức 38):
-  - Nếu khung giá đất biến động tăng thêm nhiều → vay đủ 3 tỷ, làm sớm để tránh thuế/lệ phí bị tính theo khung giá mới cao hơn.
-  - Nếu khung giá đất không biến động nhiều → delay sang đầu năm sau (~sau Tết): vẫn phải vay, nhưng vay ít hơn — nhờ (1) lãi gửi tiết kiệm từ khoản 2.4 tỷ trong lúc chờ, (2) có thêm khoản thưởng Tết bổ sung vào vốn.
-  - Chưa chốt phương án; phụ thuộc kết quả research khung giá đất (xem "Việc cần chốt" bên dưới).
+- 2026-08-09: **Chốt chiến lược mới cho đất quê**: Thay vì giữ đất hay lên thổ cư toàn bộ, chốt lên **80m² thổ cư** để tối ưu bài toán tài chính & giá trị pháp lý, sau đó **BÁN HẾT toàn bộ**. Khoản vay 700tr làm sổ sẽ được trả dứt điểm ngay khi tiền bán đất về. Tiền mặt ròng còn lại là dòng tiền sạch để tìm mua nhà Việt Hưng.
 
-- 2026-08-03 (đánh giá tài chính chi tiết A/B/C): Input xác nhận — vay cấu trúc 50% 0% lãi / 50% lãi 7%/năm, vay 1 năm đáo hạn, trả 35tr/tháng ưu tiên phần 7% trước (tối ưu lãi), lãi tiết kiệm giả định 4.5%/năm kỳ hạn 3 tháng (private bank — quốc doanh chỉ ~2.6-2.9%), thưởng Tết 50tr. Điểm mấu chốt: 35tr/tháng là dòng tiền có sẵn từ bây giờ — nếu chưa vay thì dùng để **tích luỹ vốn** thay vì trả nợ, nên các phương án delay không chỉ hưởng lãi tiết kiệm + thưởng Tết mà còn hưởng thêm tích luỹ chủ động này.
+- 2026-08-03: Đang ở bước lên kế hoạch. Vốn tự có sẵn 2.4 tỷ... (Giữ nguyên lịch sử cũ bên dưới).
 
-  | Phương án | Bắt đầu | Cần vay | Tổng lãi vay | Hết nợ hoàn toàn |
-  |---|---|---|---|---|
-  | A. Làm ngay | T8/2026 | 600tr | ~8.7tr | ~T2/2028 |
-  | C. Chờ 4 tháng | T11/2026 (tích luỹ T8-T11, chưa có thưởng Tết) | ~433tr | ~4.7tr | ~T1/2028 |
-  | B. Chờ hết Tết | T2/2027 (tích luỹ T8-T1 + thưởng Tết) | ~321tr | ~2.7tr | ~T12/2027 |
+- 2026-08-04 (update): Luật sư xác nhận thời gian xử lý tối đa là **1 đến 2 tháng**. → **Chốt chọn Phương án C (Nộp hồ sơ đầu Tháng 11/2026)**: Đảm bảo có Quyết định trước 31/12/2026 để khóa giá 38tr/m² (né rủi ro tăng giá 2027), đồng thời tối ưu thêm được 4 tháng tích luỹ (T8-T11/2026) ~175tr vốn tự có, giảm tiền vay xuống còn ~433tr. Hết nợ hoàn toàn vào T1/2028. *(Ghi chú: Lịch trình nộp T11/2026 giữ nguyên, nhưng nợ 700tr sẽ được tất toán sớm hơn ngay khi bán xong đất quê vào HĐ2/2027).*
 
-  - Thuần tài chính: B tối ưu nhất (ít lãi vay nhất, hết nợ sớm nhất theo lịch thực tế — vì khoản vay nhỏ hơn nhiều bù lại cả thời gian chờ). A kém nhất về tài chính nhưng chắc chắn nhất về giá đất (không phải chờ đợi gì).
-  - **Phát hiện quan trọng nhất, làm thay đổi cách nhìn về "an toàn"**: Rủi ro bảng giá đất không nằm ở *ngày nộp hồ sơ*, mà nằm ở **ngày cơ quan nhà nước ra quyết định cho phép chuyển mục đích sử dụng đất (bước 5)** — đây mới là thời điểm áp giá đất tính "tiền sử dụng đất" (bước 6, khoản chi phí lớn nhất, nhạy giá đất nhất). Bảng giá đất điều chỉnh hằng năm có hiệu lực từ 1/1. Nên: bắt đầu sớm hơn (vd. tháng 11 thay vì tháng 2) **chỉ thực sự né được rủi ro nếu toàn bộ quy trình đến lúc có quyết định chuyển mục đích hoàn tất trước 31/12/2026** — nếu xử lý hồ sơ ở địa phương mất >2 tháng (khá phổ biến ở VN cho thủ tục chuyển mục đích), thì bắt đầu tháng 11 hay tháng 2 không khác biệt về mặt né rủi ro giá đất, và lúc đó nên quay lại chọn theo tài chính thuần tuý (ưu tiên B).
-  - Chưa chốt: cần biết thời gian xử lý thực tế bước 2-5 tại địa phương (xem "Việc cần chốt" bên dưới) mới chọn được giữa A/B/C.
+---
 
-**Việc cần chốt (Open)**
-- [ ] Research & chốt khung giá đất khu vực — kết quả quyết định: làm sớm (vay đủ 3 tỷ) hay delay qua Tết (vẫn vay, nhưng ít hơn). *(mở từ 2026-08-03)*
-  - 2026-08-03: Đã research xong phần cơ chế/luật (xem chi tiết ở mục "Thủ tục pháp lý & chi phí" bên dưới). Còn thiếu: tra đúng Phụ lục (theo vị trí thửa đất) kèm Nghị quyết 52/2025/NQ-HĐND để xác nhận chính xác mức áp cho thửa đất của mình (hiện mới biết mặt bằng chung khu vực Gia Lâm, chưa khớp đúng thửa). Task vẫn mở.
-  - 2026-08-03 (update): Đã xác nhận qua luật sư — thửa đất thuộc Vị trí 2 (VT2), giảm 20% do xa mặt đường >500m → đúng 38tr/m² (xem "Thông tin thửa đất" ở đầu mục). Phần xác minh con số coi như xong; task này giờ chỉ còn phần **quyết định** vay đủ 3 tỷ làm sớm hay delay qua Tết — chưa chốt.
-  - 2026-08-03 (cross-check độc lập, không qua luật sư): Đã tự tra lại **cơ chế** — khớp đúng luật: VT2 = thửa giáp ngõ/ngách ≥3.5m (đúng định nghĩa NQ 52/2025/NQ-HĐND); quy định giảm 20% cho khoảng cách ≥500m so với đường chính là có thật, tìm thấy nguyên văn khớp. Xã Phù Đổng thuộc Khu vực giá đất số 8 (cùng Thuận An, Gia Lâm, Bát Tràng). **Không tự verify lại được con số gốc VT2 khu vực 8** vì không truy cập được file Phụ lục PDF/Excel chính thức (các nguồn online đều 403 hoặc chỉ có bản dự thảo/tóm tắt). → Kết luận: cơ chế luật sư dùng là đúng luật, nhưng con số 38tr cuối cùng vẫn dựa vào việc tin luật sư đã tra đúng file gốc, chưa tự đối chiếu số học được.
-- [x] Xác nhận thời gian xử lý thực tế bước 2-5 (đặc biệt bước 5 — chuyển mục đích sử dụng đất) tại VP đăng ký đất đai/UBND xã Phù Đổng, hoặc hỏi luật sư — để biết bắt đầu tháng nào thì kịp có quyết định chuyển mục đích **trước 31/12/2026** (né được rủi ro bảng giá đất 2027). Nếu xử lý mất >2 tháng, phương án bắt đầu tháng 11 không còn né được rủi ro này, nên ưu tiên tài chính (phương án B, chờ tới T2/2027). *(mở từ 2026-08-03)*
-  - 2026-08-04 (update): Luật sư xác nhận thời gian xử lý tối đa là **1 đến 2 tháng**. → **Chốt chọn Phương án C (Nộp hồ sơ đầu Tháng 11/2026)**: Đảm bảo có Quyết định trước 31/12/2026 để khóa giá 38tr/m² (né rủi ro tăng giá 2027), đồng thời tối ưu thêm được 4 tháng tích luỹ (T8-T11/2026) ~175tr vốn tự có, giảm tiền vay xuống còn ~433tr. Hết nợ hoàn toàn vào T1/2028.
+### Dự án 02: Tìm kiếm & Mua nhà đất tại Việt Hưng, Long Biên (Linked to G-02)
 
-**Thủ tục pháp lý & chi phí (thuế TNCN, lệ phí trước bạ, điều kiện lên thổ cư ở địa phương...)**
-- 2026-08-03: Research khung giá đất / bảng giá đất (để đánh giá rủi ro tăng giá cho quyết định vay ở trên):
-  - Luật Đất đai 2024 (hiệu lực 1/8/2024) **bỏ hẳn "khung giá đất"** cũ (cơ chế Chính phủ ban hành trần/sàn 5 năm/lần theo Luật Đất đai 2013). Mức 4.5tr/m² trước đây ở khu vực mình là theo khung cũ này, áp dụng đến hết 31/12/2025.
-  - Từ 1/1/2026, Hà Nội áp dụng **"Bảng giá đất lần đầu"** theo Nghị quyết 52/2025/NQ-HĐND (HĐND TP thông qua 26/11/2025), xây dựng theo **nguyên tắc thị trường** (không còn bị khung giá đất cũ khống chế trần), chia theo vị trí VT1-VT4 (theo tên đường/mặt đường) + hệ số điều chỉnh cho nhà nhiều mặt tiền, giảm giá theo khoảng cách tới đường chính. → Đây là nguồn gốc mức 38tr đang thấy.
-  - **Kết luận sơ bộ**: mức tăng 4.5tr → 38tr chủ yếu do **đổi hẳn phương pháp luận một lần** (chuyển từ khung giá đất bị khống chế thấp hơn thị trường nhiều năm, sang bảng giá theo thị trường), không phải biến động thị trường thông thường của 1 năm — bản chất giống "one-time reset" hơn là bước đầu của một chuỗi tăng dồn dập.
-  - **Cơ chế điều chỉnh sau 2026**: Luật quy định bảng giá đất áp dụng/điều chỉnh **hàng năm** (khác chu kỳ 5 năm cũ), nhưng Nghị quyết 52/2025 không quy định mức tăng tự động — mỗi lần điều chỉnh vẫn cần UBND TP trình HĐND TP xem xét, quyết nghị lại. Không có cơ chế leo thang tự động.
-  - **2 yếu tố khiến rủi ro tăng tiếp vẫn thật, không chỉ lý thuyết**:
-    1. Giá rao bán thị trường thực tế quanh Yên Viên hiện ~50-70tr/m² (mặt đường thương mại 70-120tr/m²) — cao hơn nhiều so với 38tr bảng giá NN → dù đã "nhảy" ~8 lần, bảng giá vẫn thấp hơn thị trường, còn dư địa điều chỉnh tăng tiếp theo đúng nguyên tắc thị trường của luật mới.
-    2. Gia Lâm đang tái cơ cấu hành chính (vận hành mô hình mới từ 1/7/2025, gộp còn 17 đơn vị cấp xã) và có định hướng lên quận — chất xúc tác riêng có thể khiến giá khu vực này tăng nhanh hơn mặt bằng chung trong các đợt điều chỉnh tới.
-  - **Nguồn**: [cafef.vn - Từ 1/8 Luật Đất đai bỏ khung giá đất](https://cafef.vn/tu-1-8-luat-dat-dai-bo-khung-gia-dat-bang-gia-dat-lan-dau-duoc-ap-dung-tu-1-1-2026-188240716105310487.chn), [luatvietnam.vn - Bỏ khung giá đất ảnh hưởng thế nào đến người dân](https://luatvietnam.vn/dat-dai-nha-o/bo-khung-gia-dat-anh-huong-nhu-the-nao-den-nguoi-dan-567-96754-article.html), [luatvietnam.vn - Nghị quyết 52/2025/NQ-HĐND](https://luatvietnam.vn/dat-dai/nghi-quyet-52-2025-nq-hdnd-ha-noi-bang-gia-dat-lan-dau-ap-dung-tu-01-01-2026-420193-d2.html), [thanhuyhanoi.vn - Gia Lâm hoàn tất sắp xếp đơn vị hành chính](https://thanhuyhanoi.vn/tin-tuc/huyen-gia-lam/huyen-gia-lam-hoan-tat-sap-xep-don-vi-hanh-chinh-san-sang-van-hanh-mo-hinh-moi-tu-2025-50018267.html).
-  - **Đã xác minh (update 2026-08-03)**: 38tr/m² là đúng cho thửa đất của mình — luật sư tra cứu xác nhận thửa thuộc Vị trí 2 (VT2), giảm 20% do cách mặt đường >500m. Chi tiết vị trí: xem "Thông tin thửa đất" ở đầu mục Dự án 01.
+**Thông tin tiêu chí mua**
+- **Vị trí**: Quanh khu Việt Hưng (Long Biên), gần nhà bố mẹ (các tuyến phố: Việt Hưng, Lệ Mật, Hoa Lâm, Ngô Gia Tự, Bùi Thiện Ngộ, giáp KĐT Việt Hưng).
+- **Loại hình**: Nhà đất thổ cư có nhà sẵn ở (35-50m², 4-5 tầng, sổ đỏ chính chủ sẵn sàng giao dịch).
+- **Ngân sách mục tiêu**: **~8 tỷ VND** (tùy thuộc vào số tiền mặt ròng thu về sau khi bán đất quê trừ 700tr nợ).
+- **Tiêu chuẩn "Must-have"**: **Ô tô vào được** (ô tô vào nhà hoặc đỗ cửa ngõ rộng ≥3.5m).
 
-**Khác**
-- 2026-08-04: Đánh giá sự đồng bộ với mục tiêu cá nhân (Hôn nhân). Đối tác (nữ, sinh năm 2000 - Canh Thìn) phạm Kim Lâu năm 2027 (28 tuổi mụ), hết Kim Lâu vào năm 2028 (29 tuổi mụ). Do đó bắt buộc phải cưới sau Tết Âm lịch 2028 (sang năm Mậu Thân). Mốc thời gian này **khớp hoàn hảo 100% với Phương án C**: Hết nợ hoàn toàn vào Tháng 1/2028 (sát Tết). Bước sang năm 2028 vừa cầm sổ đỏ chính chủ, vừa sạch nợ, vừa đẹp tuổi cưới.
+#### 1. Lộ trình Tìm kiếm & Giao dịch
+| Bước | Trạng thái | Ngày cập nhật | Ghi chú |
+|---|---|---|---|
+| 1. Khảo sát thị trường & Thu thập nguồn tin (môi giới, batdongsan, nhatot) | Đang làm | 2026-08-09 | Tập trung khu Việt Hưng, Hoa Lâm, Lệ Mật |
+| 2. Đánh giá danh sách nhà candidate (xem thực tế ngõ ô tô, chất lượng nhà) | Chưa bắt đầu | 2026-08-09 | |
+| 3. Kiểm tra pháp lý (sổ đỏ, quy hoạch phân khu, quy hoạch chỉ giới đường đỏ) | Chưa bắt đầu | 2026-08-09 | |
+| 4. Khóa cọc & Đàm phán giá (kích hoạt sau khi đất quê sắp/đã chốt bán) | Chưa bắt đầu | 2026-08-09 | Khớp thời gian dòng tiền bán đất quê |
+| 5. Ký hợp đồng mua bán công chứng & Giải ngân | Chưa bắt đầu | 2026-08-09 | Dùng tiền ròng bán đất quê |
+| 6. Sang tên sổ đỏ & Nhận nhà | Chưa bắt đầu | 2026-08-09 | hoàn tất mục tiêu an cư gần bố mẹ |
+
+#### 2. Research & Đánh giá Thị trường Việt Hưng (~8 tỷ)
+- **Mặt bằng giá (Cập nhật T8/2026)**:
+  - Phân khúc 7.5 - 8.5 tỷ tại Việt Hưng phổ biến là nhà xây mới 4-5 tầng, diện tích 35m² - 50m².
+  - Yếu tố ô tô: Nhà ngõ ô tô thông hoặc ô tô đỗ cửa / vào nhà ở Việt Hưng cực kỳ thanh khoản. Cần khảo sát trực tiếp lối vào ngõ (tránh ngõ bị thắt nút chai hoặc góc cua gắt ô tô không vào thực tế được).
+- **Checklist khi xem nhà**:
+  1. *Độ rộng ngõ*: Ô tô 4 chỗ/7 chỗ vào tận đâu (vào nhà hay đỗ cửa, ngõ thông hay ngõ cụt)?
+  2. *Pháp lý*: Sổ đỏ vuông vắn, không tranh chấp, không vướng quy hoạch mở đường của quận Long Biên.
+  3. *Chất lượng xây dựng*: Xây thương mại hay gia chủ tự xây, kết cấu bê tông, hệ thống điện nước, chống thấm.
+  4. *Khoảng cách*: Thời gian di chuyển thực tế về nhà bố mẹ (ưu tiên < 10 phút đi xe).
+
+---
+
+## Master Timeline Tổng thể (Dự án 01 & 02)
+
+| Thời gian | Tác vụ trọng tâm | Chi tiết |
+|---|---|---|
+| **T8/2026 - T10/2026** | Pháp lý bước 1-4 | Ký tặng cho, sang tên sổ đỏ đất quê đứng tên mình |
+| **T11/2026 - T12/2026** | Vay 700tr & Nộp thổ cư | Vay 700tr nộp tiền sử dụng đất 80m² thổ cư (khóa giá 38tr/m² 2026) |
+| **T12/2026 - T3/2027** | Nhận sổ & Đăng bán đất quê | Thu hút môi giới, định giá & rao bán toàn bộ thửa đất quê |
+| **T11/2026 - T3/2027** | Research song song nhà Việt Hưng | Đi xem thực tế các căn candidate 8 tỷ ô tô vào quanh Việt Hưng |
+| **T4/2027** | Chốt bán đất quê & Trả nợ | Nhận tiền bán đất -> Tất toán khoản vay 700tr -> Nhận tiền mặt ròng |
+| **T4/2027 - T6/2027** | Chốt mua & Sang tên nhà Việt Hưng | Xuống tiền mua nhà Việt Hưng bằng tiền mặt ròng, hoàn tất an cư |
+
+---
 
 ## Lưu trữ dự án cũ (Completed)
 - (Chưa có)
+
