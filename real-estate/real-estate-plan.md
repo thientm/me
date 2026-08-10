@@ -90,6 +90,14 @@
 **Khác**
 - 2026-08-04: Đánh giá sự đồng bộ với mục tiêu cá nhân (Hôn nhân). Đối tác (nữ, sinh năm 2000 - Canh Thìn) phạm Kim Lâu năm 2027 (28 tuổi mụ), hết Kim Lâu vào năm 2028 (29 tuổi mụ). Do đó bắt buộc phải cưới sau Tết Âm lịch 2028 (sang năm Mậu Thân). *(Mốc "hết nợ hoàn toàn T1/2028" từng khớp với Phương án C cũ — cần tính lại mốc tất toán 700tr theo lộ trình mới (dự kiến T4/2027, xem Master Timeline) để xác nhận vẫn khớp thời điểm cưới.)*
 
+- 2026-08-10 (⚠️ CHƯA CHỐT — còn bàn thêm, chỉ là phân tích tại thời điểm này): Rà lại mốc cưới với điều kiện mới từ người yêu — **phải sạch nợ + có chỗ ở trước cưới**.
+  - Năm nay (2026) **không phạm Kim Lâu**, nhưng cửa sổ để cưới trong 2026 chỉ còn ~2-3 tháng. Tiền mặt hiện có ~2,3 tỷ — không đủ mua kể cả 1 chung cư tạm; đất quê chưa lên sổ nên không thể bán kịp trong 2-3 tháng (kể cả vay 700tr làm sổ ngay thì quy trình chuyển mục đích + rao bán cũng không xong kịp). → **Cưới 2026 không khả thi** (do tài chính/pháp lý, không phải do Kim Lâu).
+  - 2027 vẫn phạm Kim Lâu → loại.
+  - → Target khả thi duy nhất còn lại: **đầu 2028 (sau Tết)**. Từ giờ tới đó là ~18 tháng, không phải 2-3 tháng — dư địa rộng hơn nhiều so với giả định ban đầu.
+  - Hệ quả: vì cả năm 2027 dù sao cũng không cưới được, **không cần bán đất quê gấp/cắt giá để chạy deadline cưới** — có thể ưu tiên bán được giá tốt trong suốt 2027, miễn xong trước cuối 2027 (đệm ~8-10 tháng tới đầu 2028 theo Master Timeline hiện tại). Mốc nộp hồ sơ thổ cư T11/2026 vẫn giữ nguyên, nhưng lý do là né giá đất 2027 (mục "⚠️ Rủi ro thời điểm" trên), không liên quan tới mốc cưới — hai lý do độc lập, không xung đột.
+  - Rủi ro còn mở: nếu việc bán đất trễ quá cuối 2027 (đệm co lại), quay lại đúng vấn đề "sạch nợ + có nhà trước cưới" — cần phương án dự phòng (tách trả 700tr nợ ra khỏi việc bán đất, chấp nhận mua nhà trễ hơn) nếu tới gần cuối 2027 vẫn chưa bán xong.
+  - *Chưa chốt: đây là phân tích dựa trên input tới giờ, còn cần bàn thêm với người yêu/gia đình trước khi coi là quyết định cuối.*
+
 ---
 
 ### Dự án 02: Tìm kiếm & Mua nhà đất tại Việt Hưng, Long Biên (Linked to G-02)
