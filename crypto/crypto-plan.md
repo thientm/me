@@ -26,7 +26,7 @@ Vì toàn bộ số tiền này **được dùng làm quỹ dự trữ làm sổ
 - **Chiến lược Rút vốn (Take profit / Exit):** 
   - Đặt sẵn các lệnh Limit bán (Sell) ở các mốc giá cao để chốt dần BTC và BNSOL từ nay cho đến hết tháng 10/2026.
   - Phân bổ rút dần ra VND (P2P) theo từng đợt, tránh đợi đến sát deadline T11/2026 mới xả một cục (đề phòng thị trường dump sập đúng lúc cần tiền).
-- **Chiến lược Cắt lỗ (Stop loss):** Phải xác định một mốc "Hard Stop" cho danh mục (Ví dụ: Nếu tổng tài sản tụt xuống dưới 380 triệu thì bắt buộc cắt máu cash-out toàn bộ ra VND để đảm bảo không bị thiếu hụt tiền làm BĐS).
+- **Chiến lược Cắt lỗ (Stop loss):** Phải xác định một mốc "Hard Stop" cho danh mục (Nếu tổng tài sản tụt xuống dưới 405 triệu thì bắt buộc cắt máu cash-out toàn bộ ra VND để đảm bảo không bị thiếu hụt tiền làm BĐS). *(Nâng từ 380tr → 405tr ngày 2026-08-07, theo yêu cầu user — xem lý do/rủi ro ở `logs/2026-08.md`.)*
 
 ## 4. Nhật ký giao dịch gần nhất
 - **2026-08-04:** Khởi tạo danh mục. Vốn 650tr -> Còn 414tr. Cơ cấu: 64.5% BTC, 25.7% BNSOL, 5.1% USDC, 4.6% ONDO. Xác định phương hướng cash-out toàn bộ phục vụ Dự án 01 BĐS.
@@ -60,7 +60,7 @@ Checklist thực hiện mỗi tuần (ước tính ~15 phút):
 - [ ] **Quyết định action tuần này:**
   - Có đặt lệnh bán (Limit Sell) mới không? Ở mốc giá nào?
   - Có cần Market Sell ngay (nếu đang pump mạnh) không?
-  - Có cần kích hoạt Hard Stop (nếu port < 380 triệu) không?
+  - Có cần kích hoạt Hard Stop (nếu port < 405 triệu) không?
 - [ ] **Ghi log:** Append kết quả vào `logs/{YYYY-MM}.md`. Dùng format chuẩn ở mục **7.5** — không dùng format riêng, tránh hai format song song gây khó so sánh giữa các tuần.
 
 ### 6.2 Monthly Review — Đầu mỗi tháng (T9/2026, T10/2026)
@@ -74,7 +74,7 @@ Checklist review sâu hơn (ước tính ~30 phút):
 - [ ] **Review chiến lược — Có cần điều chỉnh không?**
   - Nếu rút **nhanh hơn kế hoạch** → Tốt, giảm áp lực tháng sau. Có thể linh hoạt hơn (canh giá tốt hơn trước khi xả phần còn lại).
   - Nếu rút **chậm hơn kế hoạch** → Cảnh báo! Cần tăng tốc xả hàng tháng tới, thậm chí Market Sell không cần canh giá.
-  - Mốc Hard Stop (380 triệu) có cần điều chỉnh không? (Ví dụ nếu đã rút được 100tr rồi thì port chỉ còn ~314tr, mốc Hard Stop cũng nên hạ theo phần còn lại).
+  - Mốc Hard Stop (405 triệu) có cần điều chỉnh không? (Ví dụ nếu đã rút được 100tr rồi thì port chỉ còn ~314tr, mốc Hard Stop cũng nên hạ theo phần còn lại).
 - [ ] **Research macro tháng tới:**
   - Có sự kiện lớn nào sắp tới? (FOMC, CPI, ETF deadline, Solana unlock schedule...)
   - Tỷ giá P2P USDT/VND có biến động không? (Ảnh hưởng trực tiếp số VND thực nhận khi rút).
@@ -91,7 +91,7 @@ Ngoài lịch tuần/tháng, các tình huống sau **kích hoạt hành động
 |---|---|---|
 | **BTC pump >10% trong tuần** | Xả 30-50% lượng BTC đang giữ | Tranh thủ thanh khoản cao, giá tốt — không tham. |
 | **BNSOL/ONDO pump >15%** | Market Sell toàn bộ vị thế đó | Altcoin pump mạnh thường kéo theo dump nhanh. Cơ hội thoát hàng hiếm có. |
-| **Tổng port < 380 triệu** | **EMERGENCY: Market Sell ALL → VND** | Hard Stop. Bảo vệ vốn tối thiểu cho BĐS. Không bàn cãi, không chờ đợi. |
+| **Tổng port < 405 triệu** | **EMERGENCY: Market Sell ALL → VND** | Hard Stop. Bảo vệ vốn tối thiểu cho BĐS. Không bàn cãi, không chờ đợi. |
 | **Tổng port > 450 triệu** | Xả ngay phần vượt (>414tr) về USDC/VND | Lock lại phần "lãi bất ngờ", đưa về safe zone. Phần còn lại tiếp tục theo kế hoạch. |
 | **Tin xấu macro lớn** (FED tăng lãi suất đột ngột, sàn bị hack...) | Đánh giá ngay trong 1h, nếu port giảm >5% → xả 50% ngay | Không chờ "hồi phục", vì deadline là cố định (T11/2026). |
 
@@ -192,7 +192,7 @@ Trạng thái: **CHẬM** (dưới sàn) / **ĐÚNG** (đạt sàn, vượt dư�
 |---|---|---|
 | Còn <14 ngày tới 25/10 | Market sell ALL, bất kể giá | 1 |
 | Nhóm 4 báo RỦI RO kênh rút | Market sell ALL → VND trong 24h | 1 |
-| TTS < 380tr | Market sell ALL → VND | 2 |
+| TTS < 405tr | Market sell ALL → VND | 2 |
 | TTS > 450tr | Xả ngay phần vượt 414tr, lock về VND | 3 |
 | BTC pump >10%/tuần | Xả 30-50% BTC đang giữ | 4 |
 | BNSOL/ONDO pump >15% | Market sell toàn bộ vị thế đó | 4 |
