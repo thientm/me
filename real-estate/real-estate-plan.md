@@ -50,15 +50,47 @@
   2. **Chi phí đúng là 80m² × 38tr/m² = ~3,04 tỷ + phí trích đo** — con số "~700tr" ở bản kế hoạch 08-09 là **sai**, nhiều khả năng do nhầm giữa "tổng chi phí" và "phần cần vay/bù" của bản tính gốc 08-03 (ngân sách 3 tỷ, vốn tự có 2.4 tỷ, vay thêm 0-0.6 tỷ — khớp với gap ~740tr bây giờ). Đã sửa lại toàn bộ số liệu trong file theo đúng 3,04 tỷ + gap 740tr.
   - Hệ quả: vốn tự có hiện tại (2,3 tỷ) **không đủ** để tự đóng toàn bộ, thiếu ~740tr. Nếu không muốn vay ngân hàng (điều kiện người yêu), cần tìm nguồn khác cho phần thiếu — xem "Việc cần chốt".
 
+- 2026-08-11 (bổ sung, chiều — research pháp lý NQ 254/2025 + làm rõ điều kiện cưới). ⚠️ Đây là research, chưa phải quyết định; 2 điểm dưới có xác nhận trực tiếp từ user được đánh dấu rõ.
+
+  1. **NQ 254/2025/QH15 (hiệu lực 1/1/2026, hướng dẫn bởi NĐ 50/2026/NĐ-CP) — cơ chế "giảm 70%" thực chất là gì**: tiền sử dụng đất khi chuyển đất nông nghiệp → đất ở chỉ nộp **30%** phần chênh lệch (giá đất ở − giá đất NN) cho diện tích **trong hạn mức** giao đất ở; **50%** cho phần vượt ≤1 lần hạn mức; **100%** cho phần vượt >1 lần. Áp dụng **1 lần duy nhất / hộ gia đình / 1 thửa**.
+     - **→ KHÔNG áp dụng cho thửa này.** Bộ NN&MT đã làm rõ mức 30% chỉ dành cho đất vườn/ao/nông nghiệp **trong cùng thửa có đất ở** (tách trước 1/7/2014, hoặc tách khi chuyển nhượng). **User xác nhận 2026-08-11: thửa 150m² là thửa đất trồng cây lâu năm độc lập từ đầu**, chưa từng gắn với đất ở trong cùng thửa → không đủ điều kiện, nộp mức chuẩn.
+     - Hệ quả: câu hỏi mở "có được giảm 70% tiền sử dụng đất không?" (mở từ 2026-08-06) coi như **đã có câu trả lời: KHÔNG**.
+
+  2. **Hướng "ghi nợ tiền sử dụng đất" — KHÔNG dùng được**: NĐ 226/2025 quy định ghi nợ chỉ áp cho trường hợp **cấp Giấy chứng nhận lần đầu** (đối tượng: cá nhân/hộ gia đình đang sử dụng đất), **không áp cho chuyển mục đích sử dụng đất**. Thời hạn nợ kéo dài tới khi thực hiện quyền chuyển nhượng/thế chấp/tặng cho. → Đóng hướng này; vẫn nên để luật sư xác nhận lại bằng 1 câu, nhưng không xây kế hoạch lên nó.
+
+  3. **Cách tính có thể kéo con số 3,04 tỷ xuống**: tiền sử dụng đất khi chuyển NN → đất ở tính trên **phần chênh lệch** giữa giá đất ở và giá đất nông nghiệp, **không phải nguyên giá đất ở 38tr/m²**. Công thức: `80m² × (38tr − giá CLN theo bảng giá 2026)`. Nếu giá CLN của thửa trong bảng giá là ~2-5tr/m² thì chi phí thực ≈ **2,64 - 2,88 tỷ**, tức gap so với vốn tự có 2,3 tỷ chỉ còn **~340-580tr** thay vì 740tr. *Chưa xác minh: chưa biết giá đất CLN của thửa trong Bảng giá đất HN 2026 (NQ 52/2025) — phải hỏi luật sư, đây là câu rẻ nhất trong nhóm câu hỏi còn lại.*
+
+  4. **Điều kiện cưới đã được làm rõ — nút thắt 740tr KHÔNG còn là rào cản.** **User xác nhận 2026-08-11: đã hỏi trực tiếp người yêu, "sạch nợ" nghĩa là sạch nợ TẠI THỜI ĐIỂM CƯỚI**, không phải "không bao giờ được vay". → Lộ trình hiện tại đã thỏa mãn sẵn: tất toán khoản bù T4/2027 (khi bán đất quê) → cưới đầu 2028, cách nhau ~10 tháng đệm. Việc vay ngắn hạn để đóng tiền sử dụng đất là **chấp nhận được** và không xung đột với mốc cưới.
+     - Điều này **đảo ngược kết luận bi quan của entry 2026-08-11 (bản sáng)** ở trên — entry đó giả định "sạch nợ = không được vay" và từ đó kết luận phải lùi target về đầu 2028 vì lý do tài chính. Theo quy tắc append-only, entry cũ giữ nguyên; đọc entry này để lấy kết luận đúng.
+     - Lưu ý vẫn còn ràng buộc **Kim Lâu 2027** (entry 2026-08-04) → đầu 2028 vẫn là mốc cưới khả thi, nhưng bây giờ là do **tử vi**, không phải do **tiền**. Hai lý do độc lập.
+
+  5. **Phép thử ROI của việc lên thổ cư — biến số DUY NHẤT còn thiếu**: quyết định "có nên bỏ ~2,64-3,04 tỷ để lên 80m² thổ cư" không phụ thuộc giá thổ cư đơn lẻ, mà phụ thuộc **chênh lệch giá bán thị trường giữa thổ cư và CLN trên cùng thửa này**.
+     - Điều kiện có lời: `(giá bán thổ cư/m² − giá bán CLN/m²) > chi phí/m² (~33-38tr)`.
+     - **User nêu 2026-08-11**: giá thổ cư khu vực có thể đạt **85-90tr/m²** khi **cầu Đuống mới thông xe** — cao hơn hẳn dải 50-70tr ghi ở research 2026-08-06. Nếu đúng và giá CLN thị trường ~30tr/m² → uplift ~55tr/m² × 80m² ≈ **+4,4 tỷ** so với chi phí ~2,9 tỷ → **lãi ~1,5 tỷ, làm là đúng**. *Chưa xác minh: mức 85-90tr/m² chưa có nguồn, mâu thuẫn với dải 50-70tr đã ghi ngày 08-06 — cần đối chiếu.*
+     - **Rủi ro của phép tính trên**: biến chưa ai đo là **giá bán thị trường của đất CLN cùng khu**. Ở vùng mà ai cũng biết có thể chuyển mục đích, CLN thường được giao dịch ở **50-70% giá thổ cư** vì người mua đã tự chiết khấu chi phí lên thổ cư vào giá. Nếu thổ cư 85tr mà CLN đã 45-55tr thì uplift chỉ 30-40tr/m² → **biên lãi rất mỏng, có thể âm**. Lên thổ cư khi đó chỉ là trả trước hộ người mua khoản họ vốn đã trừ vào giá.
+     - **→ Hành động quyết định**: xin **3 môi giới báo giá 2 kịch bản trên đúng thửa này** — (a) bán nguyên trạng 150m² CLN, (b) bán sau khi 80m² đã lên thổ cư. Hiệu số hai con số đó là toàn bộ câu trả lời. Chi phí 0đ, làm được trong 1 tuần.
+
+  - Nguồn: [thuvienphapluat — Điều kiện giảm còn 30% theo NQ 254/2025/QH15](https://thuvienphapluat.vn/phap-luat-nha-dat/dieu-kien-giam-con-30-tien-chuyen-dat-nong-nghiep-sang-dat-o-tu-nam-2026-theo-nghi-quyet-2542025qh1-12952.html), [Bộ NN&MT làm rõ trường hợp tính 30%](https://luatphaply.com/dan-su/bo-nn-mt-lam-ro-truong-hop-tinh-30-tien-su-dung-dat-khi-chuyen-dat-vuon-len-tho-cu-1139.html), [Chính phủ — tính lại tiền sử dụng đất theo NQ 254/2025 & NĐ 50/2026](https://xaydungchinhsach.chinhphu.vn/day-nhanh-tinh-lai-tien-su-dung-dat-voi-truong-hop-chuyen-muc-dich-su-dung-dat-theo-nghi-quyet-254-2025-qh15-va-nghi-dinh-50-2026-nd-cp-11926060112102151.htm), [thuvienphapluat — NĐ 226/2025 ghi nợ tiền sử dụng đất](https://thuvienphapluat.vn/phap-luat-nha-dat/nghi-dinh-226-nam-2025-sua-quy-dinh-ve-ghi-no-tien-su-dung-dat-khi-cap-giay-chung-nhan-quyen-su-dun-6699.html), [Tuổi Trẻ — trường hợp nào được giảm 50-70%](https://tuoitre.vn/nhung-truong-hop-nao-duoc-giam-50-70-tien-su-dung-dat-khi-chuyen-sang-dat-o-2025121510595009.htm).
+
 **Việc cần chốt (Open)**
-- [ ] **Hỏi luật sư: có cơ chế "ghi nợ tiền sử dụng đất" với nhà nước không** (trả góp dần cho nhà nước theo quy định pháp luật đất đai, thường điều kiện/lãi nhẹ hơn vay ngân hàng, áp dụng cho hộ khó khăn tài chính khi chuyển mục đích sử dụng đất) — nếu có, đây có thể là cách bù 740tr mà không phải "vay ngân hàng" theo đúng nghĩa người yêu đang lo. *(mở từ 2026-08-11)*
-- [ ] **Gia đình có thể hỗ trợ thêm phần thiếu ~740tr không** (bố mẹ đã cho 1,3 tỷ trước đó) — và quan trọng hơn: **người yêu có coi tiền từ gia đình là "nợ" không**, hay chỉ tính nợ vay ngân hàng/bên ngoài. Đây là câu hỏi giá trị cần hỏi trực tiếp cô ấy, không tự suy đoán. *(mở từ 2026-08-11)*
-- [ ] Nếu cả 2 hướng trên không có: tính lại chính xác thời gian cần tích luỹ thuần 740tr theo dòng tiền thực tế (không phải áng chừng "1 năm") — ảnh hưởng trực tiếp tới việc cưới năm nay còn khả thi hay phải delay tới đầu 2028. *(mở từ 2026-08-11)*
-- [ ] **Hỏi luật sư: hệ số K có bị tính chồng lên bảng giá 2026 không?** Đang có tranh luận rằng bảng giá đất 2026 vốn đã bao gồm hệ số K, nếu cơ quan thuế áp thêm K lần nữa khi tính tiền sử dụng đất thì số phải nộp **tăng thêm 1-1.5 lần**. Vẫn áp dụng cho khoản đóng tiền sử dụng đất 80m² ở lộ trình mới — độ lớn tác động rất cao, phải làm rõ trước khi nộp hồ sơ. *(mở từ 2026-08-06)*
-- [ ] **Hỏi luật sư: có được giảm 70% tiền sử dụng đất khi chuyển lên thổ cư không?** Quy định áp dụng từ 1/1/2026 cho một số trường hợp chuyển mục đích ([VOV](https://vov.vn/kinh-te/bat-dong-san/tu-112026-truong-hop-nao-duoc-giam-70-tien-su-dung-dat-khi-chuyen-len-tho-cu-post1256789.vov)). Chưa rõ thửa đất có thuộc diện được giảm không — nếu có, khoản vay 700tr có thể giảm mạnh. *(mở từ 2026-08-06)*
-- [x] ~~Research & chốt khung giá đất khu vực — vay đủ 3 tỷ hay delay qua Tết~~ — **moot**: chiến lược mới (2026-08-09) chỉ vay 700tr để lên 80m² rồi bán hết, không còn phương án A/B/C giữ đất.
+
+*Cập nhật 2026-08-11 (chiều): 4 mục đã có câu trả lời, đánh dấu xong bên dưới. Mục còn mở được xếp lại theo độ lớn tác động tiền.*
+
+- [ ] 🔴 **[QUYẾT ĐỊNH ĐI/DỪNG] Định giá 2 kịch bản trên đúng thửa này qua môi giới địa phương** — rút gọn thành 1 ngưỡng: **đất CLN quanh khu đang bán bằng bao nhiêu % giá đất thổ cư?**
+  - **< 55% → lên thổ cư CÓ LỜI. ≥ 55% → không lên, bán nguyên trạng.**
+  - Lý do ngưỡng 55%: break-even khi chênh lệch giá bán (thổ cư − CLN) đúng bằng chi phí 38tr/m². Xem bảng kịch bản ở entry Research 2026-08-11 (chiều).
+  - Yêu cầu: **tối thiểu 3 môi giới không quen nhau**, ưu tiên số **giao dịch đã chốt** hơn giá rao. Phải xong trước khi nộp hồ sơ (đầu T10). *(mở từ 2026-08-11)*
+- [ ] 🔴 **Hỏi luật sư: hệ số K có bị tính chồng lên bảng giá 2026 không?** Đang có tranh luận rằng bảng giá đất 2026 vốn đã bao gồm hệ số K, nếu cơ quan thuế áp thêm K lần nữa khi tính tiền sử dụng đất thì số phải nộp **tăng thêm 1-1.5 lần** (3,04 tỷ → 6-7,6 tỷ). Độ lớn tác động cao nhất trong các mục còn mở, phải làm rõ trước khi nộp hồ sơ. *(mở từ 2026-08-06)*
+  - *Bối cảnh 2026-08-11: luật sư đã chốt "38tr/m² là con số cuối cùng để nhân với số m² muốn lên thổ cư". Cần xác nhận lại rõ rằng câu này đã bao gồm cả việc KHÔNG áp thêm K — nếu chưa hỏi thẳng thì mục này vẫn mở.*
+- [ ] 🟡 **Chốt hình thức vay 740tr + lãi suất thực tế** — nay đã rõ là **được phép vay** (người yêu xác nhận "sạch nợ" = sạch nợ tại thời điểm cưới, xem Research 2026-08-11 chiều). Cần so: vay ngân hàng thế chấp sổ vs vay người thân 0% vs kết hợp. Ảnh hưởng số trả góp hàng tháng T11/2026 - T4/2027 (`finance/cashflow.md` đang ghi ước tính ~35tr/tháng, cần thay bằng số thật). *(mở từ 2026-08-11)*
+- [ ] 🟡 **Nếu bước định giá cho kết quả CÓ LỜI: tính lại nên lên bao nhiêu m² thổ cư, không mặc định 80m².** 80m² là mức tối thiểu bắt buộc, không phải mức tối ưu. Mỗi m² vượt thêm lời `(chênh lệch giá bán − 38tr)` nhưng ngốn thêm 38tr vốn. Cần kiểm tra thêm: quy hoạch/kế hoạch sử dụng đất hằng năm của xã có giới hạn diện tích tối đa được chuyển không. *(mở từ 2026-08-11)*
+- [x] ~~**Hỏi luật sư: có được giảm 70% tiền sử dụng đất khi chuyển lên thổ cư không?**~~ — **ĐÃ TRẢ LỜI: KHÔNG** (2026-08-11). Cơ chế thật là NQ 254/2025/QH15 (nộp 30% chênh lệch trong hạn mức), nhưng chỉ áp cho đất vườn/ao trong cùng thửa có đất ở; thửa này là CLN độc lập từ đầu → không đủ điều kiện. Chi tiết ở Research 2026-08-11 (chiều).
+- [x] ~~**Hỏi luật sư: có cơ chế "ghi nợ tiền sử dụng đất" với nhà nước không**~~ — **ĐÃ TRẢ LỜI: KHÔNG DÙNG ĐƯỢC** (2026-08-11). NĐ 226/2025 chỉ cho ghi nợ khi cấp GCN lần đầu, không áp cho chuyển mục đích sử dụng đất.
+- [x] ~~**Gia đình có thể hỗ trợ thêm ~740tr không / người yêu có coi tiền gia đình là nợ không**~~ — **MOOT** (2026-08-11): người yêu xác nhận chỉ yêu cầu sạch nợ tại thời điểm cưới, nên vay bất kỳ hình thức nào cũng được miễn tất toán trước đầu 2028. Vẫn có thể hỏi gia đình vì lý do lãi suất, nhưng không còn là điều kiện chặn.
+- [x] ~~Nếu cả 2 hướng trên không có: tính lại thời gian tích luỹ thuần 740tr~~ — **MOOT** cùng lý do trên; không cần tích luỹ đủ trước khi nộp hồ sơ.
+- [x] ~~**Diện tích thực tế toàn bộ thửa đất quê**~~ — **ĐÃ XÁC NHẬN: 150m²** (user, 2026-08-11).
+- [x] ~~Research & chốt khung giá đất khu vực — vay đủ 3 tỷ hay delay qua Tết~~ — **moot**: chiến lược mới (2026-08-09) chỉ vay phần thiếu để lên 80m² rồi bán hết, không còn phương án A/B/C giữ đất.
 - [x] Xác nhận thời gian xử lý thực tế bước chuyển mục đích tại VP đăng ký đất đai/UBND xã Phù Đổng — luật sư xác nhận tối đa 1-2 tháng (2026-08-04).
-- [ ] **Diện tích thực tế toàn bộ thửa đất quê** — cần để ước tính tổng tiền bán ra (bán hết, không phải 1 phần), từ đó biết ngân sách thực tế còn lại cho nhà Việt Hưng có đủ ~8 tỷ (mục tiêu ở Dự án 02) sau khi trừ 700tr trả nợ hay không. *(mở từ 2026-08-07, vẫn mở)*
 
 **Thủ tục pháp lý & chi phí (thuế TNCN, lệ phí trước bạ, điều kiện lên thổ cư ở địa phương...)**
 - 2026-08-03: Research khung giá đất / bảng giá đất (để đánh giá rủi ro tăng giá cho quyết định vay ở trên):
@@ -164,7 +196,12 @@
 **Việc cần chốt (Open)**
 - [x] Ngân sách tổng → đã chốt ~8 tỷ (2026-08-09).
 - [x] Loại hình (chung cư vs đất) → đã chốt nhà đất thổ cư có sẵn nhà (2026-08-09).
-- [ ] **Diện tích/giá trị thực tế đất quê bán được** — quyết định số tiền ròng thực tế có đủ ~8 tỷ ngân sách Việt Hưng sau khi trừ 700tr nợ hay không (xem mục mở tương ứng ở Dự án 01). *(mở từ 2026-08-07)*
+- [x] ~~Diện tích thực tế đất quê~~ — **150m²** (xác nhận 2026-08-11).
+- [ ] 🔴 **Ngân sách 8 tỷ có rủi ro hụt — cần chuẩn bị sẵn phương án 6-7 tỷ.** Với thửa 150m² (lên 80m² thổ cư, trừ thuế TNCN 2% và trả nợ 740tr), số tiền ròng còn lại phụ thuộc hoàn toàn vào giá bán thực tế:
+  - Thổ cư 85tr/m² + CLN 30tr/m² → còn **~7,98 tỷ** (vừa đủ mục tiêu)
+  - Thổ cư 70tr/m² + CLN 30tr/m² → còn **~6,81 tỷ**
+  - Thổ cư 60tr/m² + CLN 30tr/m² → còn **~6,02 tỷ**
+  - → Chờ kết quả định giá môi giới (mục 🔴 ở Dự án 01) rồi chốt lại ngân sách thật. Không nên tới T4/2027 mới điều chỉnh kỳ vọng. *(mở từ 2026-08-11, thay cho mục "diện tích/giá trị thực tế" mở từ 2026-08-07)*
 - [ ] Kiểm tra thực tế outlier giá cao bất thường khi so sánh nguồn (Le Grand Jardin 77m²/6,5 tỷ) — không còn ảnh hưởng quyết định chính nhưng nên biết khi định giá thị trường khu vực.
 
 ---
@@ -173,7 +210,7 @@
 
 | Thời gian | Tác vụ trọng tâm | Chi tiết |
 |---|---|---|
-| **T8/2026 - T10/2026** | Chuẩn bị hồ sơ & Nguồn bù ~740tr | Chuẩn bị bản vẽ trích đo; chốt nguồn bù phần thiếu ~740tr (ghi nợ tiền sử dụng đất / gia đình hỗ trợ / vay — chưa chốt, xem Việc cần chốt) |
+| **T8/2026 - T10/2026** | ⚠️ **Định giá quyết định ĐI/DỪNG** + chuẩn bị hồ sơ & nguồn bù 740tr | (1) **3 môi giới định giá 2 kịch bản** → ngưỡng 55% quyết định có lên thổ cư hay không; (2) xác nhận luật sư về hệ số K; (3) chốt hình thức vay 740tr (đã rõ là **được phép vay** — người yêu chỉ yêu cầu sạch nợ tại thời điểm cưới); (4) chuẩn bị bản vẽ trích đo. Xem "Việc cần chốt" Dự án 01 |
 | **T11/2026 - T12/2026** | Đóng tiền sử dụng đất (~3,04 tỷ) & Nộp thổ cư | Bố mẹ đứng tên nộp hồ sơ xin 80m² thổ cư (khóa giá 38tr/m² 2026) |
 | **T12/2026 - T3/2027** | Nhận sổ & Đăng bán đất quê | Thu hút môi giới, định giá & rao bán toàn bộ thửa đất quê |
 | **T11/2026 - T3/2027** | Research song song nhà Việt Hưng | Đi xem thực tế các căn candidate 8 tỷ ô tô vào quanh Việt Hưng |
