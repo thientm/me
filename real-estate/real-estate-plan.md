@@ -10,28 +10,29 @@
 - Vị trí: đất sau ga Yên Viên, gần cửa hàng Duy LiNing, gần đình làng Vân — thuộc xã Yên Viên cũ, nay là xã Phù Đổng.
 - Phân vị trí theo bảng giá đất: Vị trí 2 (VT2), giảm 20% do cách mặt đường >500m.
 - Giá theo Bảng giá đất Hà Nội 2026 (NQ 52/2025/NQ-HĐND, hiệu lực 1/1/2026): **38tr/m²** — đã xác nhận qua luật sư tra cứu (2026-08-03).
-- **Mục tiêu quy hoạch thửa đất**: Bố mẹ đứng tên làm hồ sơ lên **80m² thổ cư** (bỏ qua bước sang tên sang con để tiết kiệm thời gian & chi phí công chứng). Sau khi ra sổ thổ cư mới, **bố mẹ ký bán trực tiếp cho người mua**, tất toán khoản vay 700tr và chuyển toàn bộ tiền mặt ròng cho con mua nhà Việt Hưng.
+- **Mục tiêu quy hoạch thửa đất**: Bố mẹ đứng tên làm hồ sơ lên **80m² thổ cư** — luật sư xác nhận đây là diện tích tối thiểu bắt buộc để lên thổ cư đất ở nông thôn (thửa 150m² đang là đất cây lâu năm) (bỏ qua bước sang tên sang con để tiết kiệm thời gian & chi phí công chứng). Sau khi ra sổ thổ cư mới, **bố mẹ ký bán trực tiếp cho người mua**, tất toán phần vốn đã dùng để đóng tiền sử dụng đất và chuyển toàn bộ tiền mặt ròng cho con mua nhà Việt Hưng.
+- **⚠️ Đính chính chi phí (2026-08-11, luật sư xác nhận)**: 80m² × 38tr/m² = **~3,04 tỷ + phí trích đo** — không phải 700tr như bản 08-09 ghi (con số đó là gap/vay, bị ghi nhầm thành tổng chi phí, xem "Research & Đánh giá" bên dưới).
 
 #### 1. Lộ trình pháp lý & Thủ tục (Đã tối ưu - Bố mẹ trực tiếp làm)
 | Bước | Trạng thái | Ngày cập nhật | Ghi chú |
 |---|---|---|---|
 | 1. Nộp đơn xin chuyển mục đích sử dụng đất sang thổ cư (80m²) đứng tên Bố mẹ + trích lục | Chưa bắt đầu | 2026-08-09 | Dự kiến nộp đầu T11/2026 (Né rủi ro giá đất 2027) |
-| 2. Đóng tiền sử dụng đất khi lên thổ cư 80m² (dùng khoản vay ~700tr) | Chưa bắt đầu | 2026-08-09 | Khóa giá 38tr/m² trước 31/12/2026 |
+| 2. Đóng tiền sử dụng đất khi lên thổ cư 80m² (~3,04 tỷ + phí — nguồn tiền: 2,3 tỷ vốn tự có + ~740tr còn thiếu, **nguồn bù chưa chốt**, xem Việc cần chốt) | Chưa bắt đầu | 2026-08-11 | Khóa giá 38tr/m² trước 31/12/2026 |
 | 3. Nhận sổ đỏ mới có 80m² thổ cư đứng tên Bố mẹ | Chưa bắt đầu | 2026-08-09 | Dự kiến T12/2026 - T1/2027 |
 | 4. Đăng bán toàn bộ thửa đất quê & Bố mẹ ký chuyển nhượng trực tiếp cho bên mua | Chưa bắt đầu | 2026-08-09 | Dự kiến T1/2027 - T4/2027 |
-| 5. Tất toán nợ vay 700tr & Rút tiền mặt ròng mua nhà Việt Hưng | Chưa bắt đầu | 2026-08-09 | Ngay sau khi nhận tiền bán đất |
+| 5. Tất toán phần vốn/nợ đã dùng để đóng tiền sử dụng đất & Rút tiền mặt ròng mua nhà Việt Hưng | Chưa bắt đầu | 2026-08-11 | Ngay sau khi nhận tiền bán đất |
 
 > Trạng thái dùng: `Chưa bắt đầu` / `Đang làm` / `Chờ (bên ngoài)` / `Xong`. Cập nhật cột Ngày + Ghi chú mỗi khi trạng thái đổi; không xoá lịch sử, chỉ ghi đè trạng thái hiện tại (bảng này là snapshot, không phải log).
 
 #### 2. Kế hoạch tài chính & Trả góp
-- **Tổng ngân sách nộp tiền thổ cư 80m² + Phí**: Dự kiến khoảng ~700 triệu VND vay ngoài/ngân hàng.
-- **Kế hoạch vay**:
-  - **Số tiền vay**: ~700 triệu VND.
-  - **Mục đích vay**: Đóng tiền sử dụng đất cho 80m² thổ cư + lệ phí trích đo.
-  - **Thời hạn vay**: Ngắn hạn đến trung hạn (tất toán dứt điểm ngay khi bán thành công thửa đất quê).
-  - **Trả góp hàng tháng trong lúc chờ bán**: Dự kiến ~35tr/tháng (trả gốc + lãi ưu tiên).
+- **Tổng ngân sách nộp tiền thổ cư 80m²**: **~3,04 tỷ + phí trích đo** (80m² × 38tr/m², luật sư xác nhận 2026-08-11 — đính chính con số 700tr ghi sai ở bản 08-09).
+- **Vốn tự có**: ~2,3 tỷ.
+- **Còn thiếu**: **~740tr** (3,04 tỷ - 2,3 tỷ). *Nguồn bù chưa chốt — xem "Việc cần chốt" bên dưới, đang cân nhắc ghi nợ tiền sử dụng đất với nhà nước hoặc gia đình hỗ trợ thêm, thay vì vay ngân hàng (điều kiện "không nợ" từ người yêu trước khi cưới).*
+- **Nếu phải vay/ghi nợ phần thiếu 740tr**:
+  - **Thời hạn**: Ngắn hạn đến trung hạn (tất toán dứt điểm ngay khi bán thành công thửa đất quê).
+  - **Trả góp hàng tháng trong lúc chờ bán**: Dự kiến ~35tr/tháng (trả gốc + lãi ưu tiên) — *số này cần tính lại theo hình thức bù thực tế (vay ngân hàng vs ghi nợ tiền sử dụng đất vs gia đình hỗ trợ), mỗi hình thức có lãi suất/điều kiện khác nhau.*
 - **Quy tắc Dòng tiền Ròng (Net Cash Proceeds)**:
-  $$\text{Số tiền mặt ròng để mua nhà mới} = \text{Tổng tiền bán đất quê} - 700\text{ triệu (tất toán nợ)}$$
+  $$\text{Số tiền mặt ròng để mua nhà mới} = \text{Tổng tiền bán đất quê} - \text{Phần vốn/nợ đã dùng để đóng tiền sử dụng đất (tối đa 740tr, hoặc 0 nếu tự đủ)}$$
 
 #### 3. Research & Đánh giá
 *Ghi phát hiện/quyết định research vào đây khi có, kèm ngày. Không xoá mục cũ, thêm mục mới bên dưới nếu có cập nhật/đổi ý.*
@@ -44,7 +45,15 @@
 
 - 2026-08-04 (update): Luật sư xác nhận thời gian xử lý tối đa là **1 đến 2 tháng**. → **Chốt chọn Phương án C (Nộp hồ sơ đầu Tháng 11/2026)**: Đảm bảo có Quyết định trước 31/12/2026 để khóa giá 38tr/m² (né rủi ro tăng giá 2027). *(Mốc T11/2026 này vẫn được giữ trong lộ trình mới ở mục 1 — xem cảnh báo biên an toàn ở "⚠️ Rủi ro thời điểm" bên dưới, vẫn áp dụng.)*
 
+- 2026-08-11 (⚠️ ĐÍNH CHÍNH quan trọng): Luật sư xác nhận lại 2 điểm khi rà soát vì điều kiện mới từ người yêu (sạch nợ + có chỗ ở trước cưới):
+  1. **80m² là diện tích tối thiểu bắt buộc** để chuyển mục đích lên đất ở tại nông thôn cho thửa 150m² đang là đất cây lâu năm — không thể chọn diện tích nhỏ hơn để giảm chi phí.
+  2. **Chi phí đúng là 80m² × 38tr/m² = ~3,04 tỷ + phí trích đo** — con số "~700tr" ở bản kế hoạch 08-09 là **sai**, nhiều khả năng do nhầm giữa "tổng chi phí" và "phần cần vay/bù" của bản tính gốc 08-03 (ngân sách 3 tỷ, vốn tự có 2.4 tỷ, vay thêm 0-0.6 tỷ — khớp với gap ~740tr bây giờ). Đã sửa lại toàn bộ số liệu trong file theo đúng 3,04 tỷ + gap 740tr.
+  - Hệ quả: vốn tự có hiện tại (2,3 tỷ) **không đủ** để tự đóng toàn bộ, thiếu ~740tr. Nếu không muốn vay ngân hàng (điều kiện người yêu), cần tìm nguồn khác cho phần thiếu — xem "Việc cần chốt".
+
 **Việc cần chốt (Open)**
+- [ ] **Hỏi luật sư: có cơ chế "ghi nợ tiền sử dụng đất" với nhà nước không** (trả góp dần cho nhà nước theo quy định pháp luật đất đai, thường điều kiện/lãi nhẹ hơn vay ngân hàng, áp dụng cho hộ khó khăn tài chính khi chuyển mục đích sử dụng đất) — nếu có, đây có thể là cách bù 740tr mà không phải "vay ngân hàng" theo đúng nghĩa người yêu đang lo. *(mở từ 2026-08-11)*
+- [ ] **Gia đình có thể hỗ trợ thêm phần thiếu ~740tr không** (bố mẹ đã cho 1,3 tỷ trước đó) — và quan trọng hơn: **người yêu có coi tiền từ gia đình là "nợ" không**, hay chỉ tính nợ vay ngân hàng/bên ngoài. Đây là câu hỏi giá trị cần hỏi trực tiếp cô ấy, không tự suy đoán. *(mở từ 2026-08-11)*
+- [ ] Nếu cả 2 hướng trên không có: tính lại chính xác thời gian cần tích luỹ thuần 740tr theo dòng tiền thực tế (không phải áng chừng "1 năm") — ảnh hưởng trực tiếp tới việc cưới năm nay còn khả thi hay phải delay tới đầu 2028. *(mở từ 2026-08-11)*
 - [ ] **Hỏi luật sư: hệ số K có bị tính chồng lên bảng giá 2026 không?** Đang có tranh luận rằng bảng giá đất 2026 vốn đã bao gồm hệ số K, nếu cơ quan thuế áp thêm K lần nữa khi tính tiền sử dụng đất thì số phải nộp **tăng thêm 1-1.5 lần**. Vẫn áp dụng cho khoản đóng tiền sử dụng đất 80m² ở lộ trình mới — độ lớn tác động rất cao, phải làm rõ trước khi nộp hồ sơ. *(mở từ 2026-08-06)*
 - [ ] **Hỏi luật sư: có được giảm 70% tiền sử dụng đất khi chuyển lên thổ cư không?** Quy định áp dụng từ 1/1/2026 cho một số trường hợp chuyển mục đích ([VOV](https://vov.vn/kinh-te/bat-dong-san/tu-112026-truong-hop-nao-duoc-giam-70-tien-su-dung-dat-khi-chuyen-len-tho-cu-post1256789.vov)). Chưa rõ thửa đất có thuộc diện được giảm không — nếu có, khoản vay 700tr có thể giảm mạnh. *(mở từ 2026-08-06)*
 - [x] ~~Research & chốt khung giá đất khu vực — vay đủ 3 tỷ hay delay qua Tết~~ — **moot**: chiến lược mới (2026-08-09) chỉ vay 700tr để lên 80m² rồi bán hết, không còn phương án A/B/C giữ đất.
@@ -98,6 +107,8 @@
   - Rủi ro còn mở: nếu việc bán đất trễ quá cuối 2027 (đệm co lại), quay lại đúng vấn đề "sạch nợ + có nhà trước cưới" — cần phương án dự phòng (tách trả 700tr nợ ra khỏi việc bán đất, chấp nhận mua nhà trễ hơn) nếu tới gần cuối 2027 vẫn chưa bán xong.
   - *Chưa chốt: đây là phân tích dựa trên input tới giờ, còn cần bàn thêm với người yêu/gia đình trước khi coi là quyết định cuối.*
 
+- 2026-08-11 (⚠️ CHƯA CHỐT — cập nhật sau khi đính chính chi phí thổ cư): Người yêu xác nhận **thuê nhà tạm được**, miễn là **có sổ thổ cư đất quê làm tài sản rõ ràng** + **không nợ**. Nhưng chi phí ra sổ thật là ~3,04 tỷ (không phải 700tr — xem đính chính ở Research & Đánh giá Dự án 01), vốn tự có 2,3 tỷ, thiếu ~740tr. Nếu không tìm được nguồn bù phi-ngân-hàng (ghi nợ tiền sử dụng đất, hoặc gia đình hỗ trợ) trong vài tháng tới, thì bài toán "cưới năm nay" của mục 2026-08-10 quay lại **không khả thi**, và target lùi về đầu 2028 như đã phân tích. Kết luận cuối phụ thuộc hoàn toàn vào 3 câu hỏi mở ở mục Research & Đánh giá Dự án 01.
+
 ---
 
 ### Dự án 02: Tìm kiếm & Mua nhà đất tại Việt Hưng, Long Biên (Linked to G-02)
@@ -105,7 +116,7 @@
 **Thông tin tiêu chí mua**
 - **Vị trí**: Quanh khu Việt Hưng (Long Biên), gần nhà bố mẹ (các tuyến phố: Việt Hưng, Lệ Mật, Hoa Lâm, Ngô Gia Tự, Bùi Thiện Ngộ, giáp KĐT Việt Hưng).
 - **Loại hình**: Nhà đất thổ cư có nhà sẵn ở (35-50m², 4-5 tầng, sổ đỏ chính chủ đứng tên mình sau khi mua).
-- **Ngân sách mục tiêu**: **~8 tỷ VND** (tùy thuộc vào số tiền mặt ròng thu về sau khi bán đất quê trừ 700tr nợ).
+- **Ngân sách mục tiêu**: **~8 tỷ VND** (tùy thuộc vào số tiền mặt ròng thu về sau khi bán đất quê, trừ phần vốn/nợ ~740tr đã dùng để đóng tiền sử dụng đất — xem đính chính chi phí ở Dự án 01, 2026-08-11).
 - **Tiêu chuẩn "Must-have"**: **Ô tô vào được** (ô tô vào nhà hoặc đỗ cửa ngõ rộng ≥3.5m).
 
 #### 1. Lộ trình Tìm kiếm & Giao dịch
@@ -162,11 +173,11 @@
 
 | Thời gian | Tác vụ trọng tâm | Chi tiết |
 |---|---|---|
-| **T8/2026 - T10/2026** | Chuẩn bị hồ sơ & Nguồn vay | Chuẩn bị bản vẽ trích đo, chốt nguồn vay 700tr nộp thuế |
-| **T11/2026 - T12/2026** | Vay 700tr & Nộp thổ cư | Bố mẹ đứng tên nộp hồ sơ xin 80m² thổ cư (khóa giá 38tr/m² 2026) |
+| **T8/2026 - T10/2026** | Chuẩn bị hồ sơ & Nguồn bù ~740tr | Chuẩn bị bản vẽ trích đo; chốt nguồn bù phần thiếu ~740tr (ghi nợ tiền sử dụng đất / gia đình hỗ trợ / vay — chưa chốt, xem Việc cần chốt) |
+| **T11/2026 - T12/2026** | Đóng tiền sử dụng đất (~3,04 tỷ) & Nộp thổ cư | Bố mẹ đứng tên nộp hồ sơ xin 80m² thổ cư (khóa giá 38tr/m² 2026) |
 | **T12/2026 - T3/2027** | Nhận sổ & Đăng bán đất quê | Thu hút môi giới, định giá & rao bán toàn bộ thửa đất quê |
 | **T11/2026 - T3/2027** | Research song song nhà Việt Hưng | Đi xem thực tế các căn candidate 8 tỷ ô tô vào quanh Việt Hưng |
-| **T4/2027** | Chốt bán đất quê & Trả nợ | Bố mẹ ký bán -> Nhận tiền -> Tất toán khoản vay 700tr -> Rút tiền ròng |
+| **T4/2027** | Chốt bán đất quê & Trả nợ | Bố mẹ ký bán -> Nhận tiền -> Tất toán phần vốn/nợ ~740tr đã dùng đóng tiền sử dụng đất -> Rút tiền ròng |
 | **T4/2027 - T6/2027** | Chốt mua & Sang tên nhà Việt Hưng | Xuống tiền mua nhà Việt Hưng đứng tên mình bằng tiền mặt ròng |
 
 ## Lưu trữ dự án cũ (Completed)
