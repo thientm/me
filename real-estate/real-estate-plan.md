@@ -21,8 +21,10 @@ Chi tiết thực thi: **Dự án 01** bên dưới.
 >
 > **4 câu hỏi khi ra UBND xã Phù Đổng — đi 1 buổi, chi phí 0đ:**
 > 1. Thửa (số tờ/số thửa) có nằm trong **kế hoạch sử dụng đất hằng năm** với chỉ tiêu **đất ở** không? Kế hoạch năm được **niêm yết công khai** tại trụ sở + cổng thông tin xã/huyện — có quyền yêu cầu xem.
-> 2. 🔴 **Diện tích tối thiểu được phép chuyển mục đích thực sự là bao nhiêu — có bắt buộc phải đủ 80m² không, hay chuyển 50-60m² được?**
->    - **Đây là đòn bẩy chi phí lớn nhất còn lại.** Luật sư đã nói 80m² là mức tối thiểu bắt buộc (2026-08-11), nhưng câu hỏi này 0đ và tác động cực lớn:
+> 2. 🔴 **Diện tích tối thiểu thực sự là bao nhiêu?** Hỏi đúng câu này, không hỏi chung chung:
+>    > *"Thửa 150m² đất trồng cây lâu năm. Tôi muốn chuyển **60m² sang đất ở**, giữ **90m² CLN trên cùng một thửa, một sổ, KHÔNG tách thửa**. Trường hợp này có bị áp diện tích tối thiểu tách thửa 80m² của QĐ 61/2024 không, hay chỉ áp khi tách thành thửa riêng?"*
+>    - **Căn cứ để đối chiếu**: mức 80m² là **diện tích tối thiểu TÁCH THỬA** đất ở tại xã đồng bằng (QĐ 61/2024/QĐ-UBND HN). Nhưng **NQ 254/2025/QH15 khoản 3 Điều 11** quy định chuyển mục đích một phần thửa **không bắt buộc tách thửa** — và nếu không tách thửa thì **không bắt buộc áp diện tích tối thiểu** (Bộ NN&MT trả lời trên Cổng TTĐT Chính phủ 06/07/2026). Xem Research 2026-08-12 (bổ sung 3).
+>    - **Đây là đòn bẩy chi phí lớn nhất còn lại — ~760tr:**
 >
 >    | Diện tích chuyển | Chi phí (×38tr/m²) | So với vốn tự có 2,3 tỷ | Hệ quả |
 >    |---|---|---|---|
@@ -30,7 +32,9 @@ Chi tiết thực thi: **Dự án 01** bên dưới.
 >    | 60m² | 2,28 tỷ | **vừa đủ** | **không cần vay đồng nào** |
 >    | 50m² | 1,90 tỷ | **dư ~400tr** | không vay, còn đệm |
 >
->    - → Nếu chuyển được <65m²: **khoản vay 740tr biến mất hoàn toàn** → không nợ, không lãi, không áp lực bán coin gấp, và điều kiện "sạch nợ lúc cưới" tự động thoả bất kể cưới năm nào.
+>    - → Nếu chuyển được <65m²: **khoản vay 740tr biến mất hoàn toàn** → không nợ, không lãi, không nghĩa vụ trả góp ~35tr/tháng, và điều kiện "sạch nợ lúc cưới" tự động thoả bất kể cưới năm nào.
+>    - ⚠️ **Hỏi cả cán bộ địa chính xã (người duyệt hồ sơ), không chỉ hỏi luật sư** — luật cho phép nhưng thực tế thực thi có thể vẫn bị áp sàn 80m² theo thói quen.
+>    - 🔴 **KHÔNG được dùng việc nộp hồ sơ để thử.** Chỉ đủ runway cho đúng MỘT lần nộp — xem Research 2026-08-12 (bổ sung 3) điểm (e).
 > 3. **Hạn mức giao đất ở nông thôn** tại địa phương là bao nhiêu m²? (xác định 80m² nằm trong hay vượt hạn mức; cũng là input cho mục "nên lên bao nhiêu m²")
 > 4. Nếu xã chỉ trả lời miệng → xin **văn bản cung cấp thông tin quy hoạch / trích lục** tại Văn phòng đăng ký đất đai để có căn cứ giấy trắng mực đen. Phí nhỏ.
 >
@@ -226,6 +230,62 @@ Hai nhánh loại trừ nhau, chọn nhánh nào phụ thuộc mốc cưới:
   3. Chốt hình thức + số tiền vay thật (phụ thuộc kết quả câu 2 của Gate 0)
   4. Nộp hồ sơ chuyển mục đích — **giữ mốc trước T11/2026** để khoá giá 38tr/m²
   5. *(bước sau)* Định giá môi giới — phục vụ lúc rao bán, không còn là cổng đi/dừng
+
+- 2026-08-12 (bổ sung 3 — 🔴 **PHÁT HIỆN LỚN: con số 80m² có thể KHÔNG bắt buộc**, tác động ~760tr): truy nguyên xem mức tối thiểu 80m² đến từ đâu, và tìm ra khả năng nó không áp cho trường hợp này.
+
+  **(a) Nguồn gốc con số 80m² — ĐÃ XÁC MINH**: đây là **diện tích tối thiểu TÁCH THỬA đất ở** theo **Quyết định 61/2024/QĐ-UBND Hà Nội** (hiệu lực 7/10/2024): phường/thị trấn 50m², **xã vùng đồng bằng 80m²**, xã trung du 100m², xã miền núi 150m². Phù Đổng là xã vùng đồng bằng → **80m²**. Con số khớp chính xác với mức luật sư đưa ra 2026-08-11 → **nhiều khả năng luật sư đang áp quy tắc TÁCH THỬA.**
+
+  **(b) Nhưng chuyển mục đích một phần thửa KHÔNG bắt buộc tách thửa** — Bộ NN&MT trả lời trên Cổng TTĐT Chính phủ (06/07/2026), dẫn **Nghị quyết 254/2025/QH15, khoản 3 Điều 11**: *"Trường hợp chuyển mục đích sử dụng một phần thửa đất thì không bắt buộc thực hiện tách thửa."*
+  - **Nếu KHÔNG tách thửa** → **không bắt buộc áp diện tích tối thiểu**, chỉ cần đáp ứng điều kiện cho phép chuyển mục đích.
+  - **Nếu CHỌN tách thửa** → phần tách ra mới phải đủ diện tích tối thiểu (80m²) + phải có lối đi ra đường công cộng.
+  - Theo nội dung trả lời, quy định này **áp cho cả thửa thuần nông nghiệp**, không giới hạn ở thửa đã có sẵn đất ở.
+  - *Ghi chú: NQ 254/2025/QH15 chính là văn bản đã bị loại ở mục "giảm 70%" (Research 2026-08-11) — nhưng đó là điều khoản khác. Khoản 3 Điều 11 này là điều khoản độc lập và có thể áp được.*
+
+  **(c) Kẽ hở cụ thể cho thửa này**: chuyển **60m² sang đất ở, giữ 90m² CLN trên CÙNG MỘT THỬA, MỘT SỔ, KHÔNG tách thửa** → có khả năng **không bị áp sàn 80m²**.
+  - Tiết kiệm: **20m² × 38tr = 760tr** — **đúng bằng khoản gap 740tr đang phải đi vay.**
+  - Hệ quả dây chuyền nếu đúng: không vay → không lãi → không nghĩa vụ trả góp ~35tr/tháng → điều kiện "sạch nợ lúc cưới" tự động thoả bất kể cưới năm nào → `finance/cashflow.md` bỏ được dòng nợ duy nhất.
+  - Sổ khi đó ghi: 1 thửa gồm 60m² đất ở + 90m² CLN. Vẫn là **tài sản chính danh có đất ở** → thoả đúng mục đích "tiền đề" user đặt ra.
+
+  **(d) ⚠️ Chưa xác minh — 4 chỗ có thể làm hỏng kết luận trên, phải hỏi trước khi tin:**
+  1. Đọc từ **nguồn thứ cấp trả lời cho trường hợp của người khác**, chưa đọc văn bản gốc NQ 254/2025/QH15 khoản 3 Điều 11 và chưa áp vào đúng thửa này.
+  2. **Kế hoạch sử dụng đất hằng năm** của xã có thể tự ghi diện tích cụ thể cho thửa → khống chế độc lập với quy tắc tách thửa.
+  3. **Hạn mức giao đất ở** tại địa phương có thể tạo ràng buộc riêng.
+  4. **Thực tế thực thi**: dù luật cho phép, cán bộ địa chính vẫn có thể từ chối hồ sơ theo thói quen áp sàn 80m². → Phải hỏi thẳng **người sẽ duyệt hồ sơ**, không chỉ hỏi luật sư.
+
+  **(e) 🔴 NGUYÊN TẮC MỚI — CHỈ CÓ MỘT LẦN NỘP, KHÔNG THỬ-SAI:**
+  - Từ 12/8/2026 tới hạn 31/12/2026 (khoá giá 38tr/m²) còn **~4,5 tháng**; thời gian xử lý hồ sơ **1-2 tháng** (luật sư xác nhận 08-04) → nộp chậm nhất đầu T11, an toàn là **đầu T10**.
+  - → **Chỉ đủ runway cho ĐÚNG MỘT lần nộp.** Nộp 60m² mà bị từ chối thì mất 1-2 tháng, nộp lại 80m² vào T12 → quyết định rơi vào T1-T2/2027 → **mất giá 38tr/m²**, chi phí đội lên hàng trăm triệu tới cả tỷ.
+  - **→ Tuyệt đối không dùng việc nộp hồ sơ để "thử xem có được không". Thử bằng cách HỎI — miễn phí, mất vài ngày thay vì 1-2 tháng.**
+
+  - Nguồn: [Cổng TTĐT Chính phủ — Bộ NN&MT: Chuyển mục đích một phần thửa đất có phải tách thửa?](https://baochinhphu.vn/chuyen-muc-dich-mot-phan-thua-dat-co-phai-tach-thua-102260706114206284.htm), [thuvienphapluat — Từ 2026 không còn bắt buộc tách thửa khi chuyển mục đích một phần thửa đất](https://thuvienphapluat.vn/phap-luat-nha-dat/tu-2026-khong-con-bat-buoc-tach-thua-khi-chuyen-muc-dich-su-dung-mot-phan-thua-dat-13430.html), [PBGDPL Hà Nội — Diện tích tối thiểu tách thửa tại Hà Nội (QĐ 61/2024/QĐ-UBND)](https://pbgdpl.hanoi.gov.vn/tin-moi/-/asset_publisher/sxBNLsQSLyY8/content/quy-inh-dien-tich-toi-thieu-tach-thua-at-tai-ha-noi), [Tuổi Trẻ — Quy định tách thửa đất ở tại Hà Nội từ 7-10-2024](https://tuoitre.vn/quy-dinh-tach-thua-dat-o-tai-ha-noi-tu-ngay-7-10-2024-20241009163221993.htm).
+
+- 2026-08-12 (bổ sung 4 — **BẢN ĐỒ SONG SONG / NỐI TIẾP**, trả lời câu "có làm song song được không để tối ưu thời gian"):
+
+  **Chạy được SONG SONG ngay tuần này (không phụ thuộc nhau):**
+
+  | Việc | Ai làm / hỏi ai | Thời gian | Chi phí |
+  |---|---|---|---|
+  | Bán coin theo lịch 3 tuần | tự làm trên Binance | tới 1/9 | — |
+  | Gate 0: được phép chuyển không + tối thiểu bao nhiêu m² | **cán bộ địa chính xã Phù Đổng** (người sẽ duyệt hồ sơ) | 1 buổi | 0đ |
+  | Cơ sở pháp lý cho phương án 60m² không tách thửa | **luật sư** | 1 buổi | phí tư vấn |
+  | Báo giá phí sang tên chính xác | **văn phòng công chứng** (không phải luật sư) | 1 cuộc gọi | 0đ |
+  | **Đo đạc / trích đo bản đồ địa chính thửa đất** | đơn vị đo đạc | 1-2 tuần | có phí |
+
+  > 💡 **Trích đo làm được NGAY, không cần chờ chốt diện tích** — phải đo cả thửa 150m² trong mọi kịch bản, phần chuyển mục đích chỉ là khoanh vùng trên bản vẽ đã có. Khởi động sớm tiết kiệm 1-2 tuần ở khâu chuẩn bị hồ sơ.
+
+  **KHÔNG song song được — chuỗi nối tiếp cứng, mỗi mắt xích phải xong mới sang mắt kế:**
+
+  ```
+  nộp hồ sơ chuyển mục đích
+    → quyết định + thông báo thuế        (1-2 tháng, KHÔNG rút ngắn được)
+      → đóng tiền sử dụng đất
+        → cấp sổ mới có đất ở
+          → sang tên bố mẹ → tôi          (15-30 ngày)
+            → đủ 183 ngày sở hữu          (điều kiện miễn thuế 2%)
+              → bán
+  ```
+
+  **→ Kết luận về tối ưu thời gian**: khâu duy nhất không nén được và không làm lại được là **lần nộp hồ sơ**. Vậy cách tối ưu thời gian **không phải** làm nhanh hơn ở khâu sau, mà là **dồn hết mọi câu hỏi 0đ lên phía trước** để lần nộp duy nhất đó đúng ngay từ đầu.
 
 **Việc cần chốt (Open)**
 
