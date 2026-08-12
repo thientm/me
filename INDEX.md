@@ -4,6 +4,7 @@ Router cho agent/bản thân: đọc file nào tuỳ câu hỏi/tác vụ.
 
 | Cần gì | Đọc file |
 |---|---|
+| **🧭 Main process đang chạy (Việc 1 làm sổ / Việc 2 chỗ ở & hôn nhân)** | `real-estate/real-estate-plan.md` → mục "Cấu trúc chủ đạo" (đầu file) |
 | Tầm nhìn dài hạn, mục tiêu to/nhỏ | `plan/master-plan.md` |
 | Chiến lược, mục tiêu phân bổ đầu tư | `portfolio/portfolio-plan.md` |
 | Log giao dịch/thay đổi portfolio | `portfolio/logs/{YYYY-MM}.md` |

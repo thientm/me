@@ -2,6 +2,49 @@
 
 > Lưu trữ lộ trình pháp lý, giấy tờ, và kế hoạch tài chính tổng thể cho các dự án bất động sản.
 
+---
+
+## 🧭 CẤU TRÚC CHỦ ĐẠO (MAIN PROCESS) — thiết lập 2026-08-12
+
+> **Nguồn**: người yêu guide trực tiếp (2026-08-12). Đây là khung điều hành chính từ nay: **tách bạch 2 việc, không trộn**. Mọi quyết định/research/log về sau phải quy được về đúng 1 trong 2 việc.
+
+### Nguyên tắc gốc
+**Việc 1 và Việc 2 nối tiếp nhau, không song song.** Chưa ra sổ thổ cư thì chưa mở bàn Việc 2.
+Cổng chuyển (gate): **sổ đỏ 80m² thổ cư đã cầm trên tay**.
+
+### VIỆC 1 — Làm sổ 80m² thổ cư *(đang chạy, ưu tiên tuyệt đối)*
+Chi tiết thực thi: **Dự án 01** bên dưới.
+
+| # | Hạng mục | Trạng thái | Tham chiếu |
+|---|---|---|---|
+| 1.1 | **Bán coin** lấy thanh khoản (~410tr) — deadline nội bộ 1/9/2026 | Đang làm | `crypto/crypto-plan.md`, `crypto/logs/2026-08.md` |
+| 1.2 | **Vay thêm ~740tr** bù phần thiếu (3,04 tỷ − 2,3 tỷ vốn tự có) | Chưa chốt hình thức | Dự án 01 → Kế hoạch tài chính |
+| 1.3 | **Sang tên sang tôi TRƯỚC khi lên thổ cư** để tối ưu thuế | 🆕 Chưa quyết — cần luật sư | Research 2026-08-12 |
+| 1.4 | Nộp hồ sơ chuyển mục đích → đóng tiền sử dụng đất → nhận sổ | Chưa bắt đầu | Dự án 01 → Lộ trình pháp lý |
+
+> ⚠️ **1.3 đảo ngược quyết định 2026-08-09** ("bố mẹ đứng tên bán thẳng, bỏ bước sang tên"). Không xoá quyết định cũ — xem Research 2026-08-12 để biết vì sao đảo và cái giá phải trả (thời gian).
+
+### VIỆC 2 — Chỗ ở & Hôn nhân *(KHOÁ — chỉ mở sau khi có sổ)*
+Hai nhánh loại trừ nhau, chọn nhánh nào phụ thuộc mốc cưới:
+
+- **Nhánh A — Cưới trong 2026**: về ở chung tạm (nhà bố mẹ), tối ưu chi phí, chưa mua gì cả.
+- **Nhánh B — Không cưới 2026**: tôi trả hết nợ trước → chờ hết Kim Lâu → **cưới đầu 2028** → hai đứa **góp mua chung cư**.
+
+> 🔴 **Nhánh A đang có mâu thuẫn lịch chưa gỡ được** — xem "Xung đột đã phát hiện" ngay dưới. Đừng coi A là lựa chọn còn sống cho tới khi làm rõ với người yêu.
+> 🟡 **Nhánh B mâu thuẫn với G-02 hiện hành** (đang là "mua nhà đất Việt Hưng ~8 tỷ đứng tên mình, T4-T6/2027"). Xem Dự án 02.
+
+### Xung đột đã phát hiện (chưa gỡ — cần hỏi lại người yêu)
+
+1. **"Cưới năm nay" vs "sạch nợ tại thời điểm cưới"** — hai điều kiện này gần như triệt tiêu nhau:
+   - Nợ 740tr phát sinh khi đóng tiền sử dụng đất (**T10-T11/2026**), tất toán sớm nhất khi bán được đất (**T4/2027 trở đi**).
+   - → Muốn cưới 2026 mà vẫn sạch nợ thì phải cưới **trước T10/2026**, tức chỉ còn ~1-1,5 tháng. Không đủ thời gian tổ chức.
+   - → Mà guide lại nói "**ra sổ xong mới tính Việc 2**"; sổ ra T12/2026 - T1/2027 — lúc đó hoặc đã sang 2027 (Kim Lâu), hoặc còn tháng 12/2026 nhưng **đang mang nợ 740tr**.
+   - **Câu cần hỏi**: cưới 2026 nghĩa là (a) chấp nhận cưới khi đang có khoản vay 740tr có lộ trình tất toán rõ, hay (b) phải cưới trước khi giải ngân? Nếu (b) → nhánh A coi như đóng, mặc định về nhánh B.
+2. **Việc 2 nhánh B đổi cả loại hình lẫn người đứng tên**: "hai đứa góp mua **chung cư**" ≠ "mua **nhà đất** Việt Hưng ~8 tỷ **đứng tên mình**" đã chốt 2026-08-09. Khác nhau ở 4 điểm: thời điểm (2028 vs 2027), loại hình, quyền sở hữu, và ngân sách. Chưa chốt — xem Dự án 02.
+3. **Tiền nằm không ~10 tháng nếu theo nhánh B**: bán đất T4/2027 → mua nhà 2028. ~7-8 tỷ nằm chờ. Cần quyết định gửi ở đâu, và chấp nhận rủi ro giá nhà tăng trong lúc chờ.
+
+---
+
 ## Dự án đang thực hiện (Active)
 
 ### Dự án 01: Bố mẹ đứng tên làm 80m² thổ cư & Bán toàn bộ đất quê (Linked to G-01)
@@ -72,14 +115,56 @@
 
   - Nguồn: [thuvienphapluat — Điều kiện giảm còn 30% theo NQ 254/2025/QH15](https://thuvienphapluat.vn/phap-luat-nha-dat/dieu-kien-giam-con-30-tien-chuyen-dat-nong-nghiep-sang-dat-o-tu-nam-2026-theo-nghi-quyet-2542025qh1-12952.html), [Bộ NN&MT làm rõ trường hợp tính 30%](https://luatphaply.com/dan-su/bo-nn-mt-lam-ro-truong-hop-tinh-30-tien-su-dung-dat-khi-chuyen-dat-vuon-len-tho-cu-1139.html), [Chính phủ — tính lại tiền sử dụng đất theo NQ 254/2025 & NĐ 50/2026](https://xaydungchinhsach.chinhphu.vn/day-nhanh-tinh-lai-tien-su-dung-dat-voi-truong-hop-chuyen-muc-dich-su-dung-dat-theo-nghi-quyet-254-2025-qh15-va-nghi-dinh-50-2026-nd-cp-11926060112102151.htm), [thuvienphapluat — NĐ 226/2025 ghi nợ tiền sử dụng đất](https://thuvienphapluat.vn/phap-luat-nha-dat/nghi-dinh-226-nam-2025-sua-quy-dinh-ve-ghi-no-tien-su-dung-dat-khi-cap-giay-chung-nhan-quyen-su-dun-6699.html), [Tuổi Trẻ — trường hợp nào được giảm 50-70%](https://tuoitre.vn/nhung-truong-hop-nao-duoc-giam-50-70-tien-su-dung-dat-khi-chuyen-sang-dat-o-2025121510595009.htm).
 
+- 2026-08-12: **Người yêu guide tách 2 việc + đặt câu hỏi "sang tên trước hay sau, thuế bao nhiêu"** → đã tra luật đang hiệu lực. Đây là research, chưa phải quyết định; phần luật đã kiểm chứng được đánh dấu rõ, phần suy luận áp vào thửa này thì chưa.
+
+  **(a) Nền pháp lý — ĐÃ XÁC MINH (Nghị định 253/2026/NĐ-CP, hiệu lực 1/7/2026, tức đang áp dụng ngay lúc này):**
+  - Thuế TNCN chuyển nhượng BĐS = **giá chuyển nhượng × 2%**, **cố định, KHÔNG phân biệt thời gian nắm giữ, không tính trên lãi**. → Bản dự thảo từng đề xuất thang 10%/6%/4%/2% theo thời gian nắm giữ (và phương án 20% trên lãi) **KHÔNG được ban hành**. Đây là điểm gỡ rủi ro lớn nhất: sang tên xong bán sớm **không** bị phạt thuế suất cao.
+  - Giá tính thuế: giá ghi trên hợp đồng; nếu **thấp hơn bảng giá đất nhà nước thì lấy theo bảng giá** (tức không kê khai hai giá để né được).
+  - **Miễn thuế TNCN khi bán nhà/đất ở duy nhất — 3 điều kiện đồng thời**: (1) tại thời điểm chuyển nhượng chỉ sở hữu **duy nhất** một nhà ở / một thửa **đất ở** tại VN; (2) đã sở hữu **tối thiểu 183 ngày** tính từ ngày cấp sổ (sổ cấp đổi/cấp lại được **tính nối tiếp** từ ngày cấp sổ cũ); (3) chuyển nhượng **toàn bộ**.
+  - ⚠️ Miễn thuế này **chỉ áp cho đất ở** — **không áp cho đất nông nghiệp**.
+
+  **(b) Suy ra cho thửa này — CHƯA XÁC MINH, phải hỏi luật sư:**
+
+  | | PA-A: Bố mẹ đứng tên bán thẳng *(quyết định 08-09 hiện hành)* | PA-B: Sang tên cho tôi trước, tôi lên thổ cư & bán *(người yêu đề xuất)* |
+  |---|---|---|
+  | Bước tặng cho cha mẹ → con | không có | **Miễn TNCN 10% quà tặng + miễn lệ phí trước bạ 0,5%** (quan hệ trực hệ). Chỉ mất phí công chứng/thẩm định/cấp sổ — ước vài triệu tới ~10tr |
+  | Thuế khi bán, phần **80m² đất ở** | 2% — bố mẹ đã có nhà ở khác nên **không** thuộc diện "duy nhất" | **Có khả năng được MIỄN** nếu tôi đủ 3 điều kiện ở (a) |
+  | Thuế khi bán, phần **70m² đất CLN** | 2% | 2% (không được miễn — miễn thuế không áp cho đất nông nghiệp) |
+  | Chi phí thời gian | 0 | **+15 đến 30 ngày** thủ tục sang tên, nén vào timeline vốn đã sát |
+
+  **Ước lượng tiền tiết kiệm được của PA-B** (dùng đúng dải giá đang giả định ở mục "Phép thử ROI"):
+  - Giá bán thổ cư **85tr/m²**: miễn 2% × (80 × 85tr) = **~136tr**
+  - Giá bán thổ cư **70tr/m²**: miễn 2% × (80 × 70tr) = **~112tr**
+  - Giá bán thổ cư **60tr/m²**: miễn 2% × (80 × 60tr) = **~96tr**
+  - Phần 70m² CLN vẫn nộp 2% ở cả hai phương án (~42tr nếu CLN 30tr/m²) → không phải biến so sánh.
+  - **→ Chênh lệch ròng PA-B so với PA-A: khoảng +90tr đến +130tr**, sau khi trừ vài triệu phí sang tên. **Người yêu nhận định đúng hướng.**
+
+  **(c) 4 rủi ro có thể xoá sạch khoản lợi trên — phải hỏi luật sư trước khi làm:**
+  1. 🔴 **Mốc đếm 183 ngày bắt đầu từ đâu?** Trước khi chuyển mục đích, thửa là **CLN chứ chưa phải đất ở** — điều kiện luật viết là "sở hữu **quyền sử dụng đất ở** tối thiểu 183 ngày". Nếu cơ quan thuế đếm từ ngày thửa **trở thành đất ở** (T12/2026 - T1/2027) chứ không phải từ ngày sang tên (T9/2026), thì mốc miễn thuế rơi vào **~T6-T7/2027**, tức **phải lùi ngày bán 2-3 tháng** so với mốc T4/2027 ở Master Timeline. Đây là câu hỏi đắt nhất trong nhóm này.
+  2. 🔴 **Điều kiện "duy nhất" là ràng buộc CỨNG lên thứ tự giao dịch**: tại thời điểm bán đất quê, tôi **không được đứng tên bất kỳ nhà ở/đất ở nào khác**. → **Bắt buộc BÁN đất quê xong mới được MUA nhà Việt Hưng/chung cư**, không được đặt cọc-sang tên song song. Thứ tự trong Master Timeline hiện tại đã đúng, nhưng từ nay đây là ràng buộc pháp lý chứ không còn là lựa chọn thuận tiện.
+  3. 🟡 **Con đứng tên có được nộp hồ sơ chuyển mục đích không, và hạn mức giao đất ở tính theo hộ hay theo cá nhân?** Nếu hạn mức tính theo hộ gia đình bố mẹ thì việc tách sang tên con có thể ảnh hưởng diện tích được phép chuyển.
+  4. 🟡 **Rủi ro thời gian là cái giá thật của PA-B**: +15-30 ngày sang tên đẩy mốc nộp hồ sơ chuyển mục đích lùi lại, trong khi biên an toàn so với bảng giá đất 2027 vốn đã ~bằng 0 (xem "⚠️ Rủi ro thời điểm"). Nếu trượt qua 1/1/2027, đơn giá có thể tăng từ 38tr/m² → tổng chi phí đội lên **hàng trăm triệu tới cả tỷ**, tức **lớn hơn nhiều lần khoản 90-130tr tiết kiệm được**. → **Nếu buộc phải chọn một, ưu tiên khoá giá 38tr/m² trước, tối ưu thuế sau.**
+
+  **(d) Đính chính nhận định cũ**: lý do bỏ bước sang tên ở quyết định 2026-08-09 là "tiết kiệm chi phí công chứng/lệ phí sang tên 2 lần". Nay thấy lý do này **bị đánh giá quá cao** — sang tên cha mẹ → con ruột được **miễn cả TNCN lẫn lệ phí trước bạ**, chi phí thực gần như chỉ còn phí công chứng. **Cái giá thật của việc sang tên là THỜI GIAN, không phải tiền.** Quyết định 08-09 vẫn giữ nguyên trong file (append-only), nhưng căn cứ của nó nay đã yếu.
+
+  - Nguồn: [luatvietnam — Thuế TNCN chuyển nhượng BĐS từ 01/7/2026 (NĐ 253/2026/NĐ-CP)](https://luatvietnam.vn/thue-phi-le-phi/tu-01-7-2026-thue-tncn-doi-voi-thu-nhap-tu-chuyen-nhuong-bat-dong-san-duoc-tinh-the-nao-565-110646-article.html), [Nhân Dân — Điều kiện miễn thuế TNCN khi bán nhà đất duy nhất](https://nhandan.vn/ban-nha-dat-duy-nhat-muon-duoc-mien-thue-thu-nhap-ca-nhan-phai-dap-ung-nhung-dieu-kien-gi-post973798.html), [Tuổi Trẻ — Muốn miễn thuế khi bán nhà đất duy nhất phải sở hữu đủ 183 ngày](https://tuoitre.vn/muon-mien-thue-khi-ban-nha-dat-duy-nhat-phai-so-huu-du-183-ngay-100260705120106214.htm), [thuvienphapluat — Cách tính thuế TNCN chuyển nhượng BĐS theo NĐ 253/2026](https://thuvienphapluat.vn/banan/tin-tuc/cach-tinh-thue-tncn-tu-chuyen-nhuong-bat-dong-san-moi-nhat-2026-theo-nghi-dinh-2532026ndcp-51115.html).
+
 **Việc cần chốt (Open)**
 
 *Cập nhật 2026-08-11 (chiều): 4 mục đã có câu trả lời, đánh dấu xong bên dưới. Mục còn mở được xếp lại theo độ lớn tác động tiền.*
+*Cập nhật 2026-08-12: thêm 2 mục về sang tên/thuế (mục 🔴 và 🟡 đầu danh sách), gộp chung buổi hỏi luật sư với mục hệ số K.*
 
 - [ ] 🔴 **[QUYẾT ĐỊNH ĐI/DỪNG] Định giá 2 kịch bản trên đúng thửa này qua môi giới địa phương** — rút gọn thành 1 ngưỡng: **đất CLN quanh khu đang bán bằng bao nhiêu % giá đất thổ cư?**
   - **< 55% → lên thổ cư CÓ LỜI. ≥ 55% → không lên, bán nguyên trạng.**
   - Lý do ngưỡng 55%: break-even khi chênh lệch giá bán (thổ cư − CLN) đúng bằng chi phí 38tr/m². Xem bảng kịch bản ở entry Research 2026-08-11 (chiều).
   - Yêu cầu: **tối thiểu 3 môi giới không quen nhau**, ưu tiên số **giao dịch đã chốt** hơn giá rao. Phải xong trước khi nộp hồ sơ (đầu T10). *(mở từ 2026-08-11)*
+- [ ] 🔴 **[MỚI 08-12] Hỏi luật sư — gói câu hỏi "sang tên trước hay sau"** (4 câu, hỏi 1 buổi cùng câu hệ số K):
+  1. Điều kiện miễn thuế "đất ở duy nhất, đủ 183 ngày" — **183 ngày đếm từ ngày sang tên, hay từ ngày thửa được chuyển thành đất ở?** (quyết định mốc bán được sớm nhất là T4/2027 hay T6-T7/2027)
+  2. Thửa 150m² sau khi lên 80m² thổ cư + 70m² CLN: bán cả thửa thì **phần 80m² đất ở có được coi là "chuyển nhượng toàn bộ đất ở" để miễn thuế không**, và phần 70m² CLN có phá vỡ điều kiện "duy nhất" không?
+  3. **Con đứng tên có được nộp hồ sơ chuyển mục đích không**, hạn mức giao đất ở tính theo hộ gia đình hay cá nhân?
+  4. Tặng cho cha mẹ → con ruột: xác nhận **miễn TNCN + miễn lệ phí trước bạ**, tổng chi phí thực tế (công chứng + thẩm định + cấp sổ) là bao nhiêu và **mất bao nhiêu ngày**?
+  - Tác động tiền: **+90tr đến +130tr** nếu làm được, nhưng có thể **âm hàng trăm triệu** nếu làm chậm mà trượt bảng giá 2027. Xem Research 2026-08-12. *(mở từ 2026-08-12)*
+- [ ] 🟡 **[MỚI 08-12] Hỏi lại người yêu: "cưới năm nay" hiểu thế nào khi đang có khoản vay 740tr?** Hai điều kiện "cưới 2026" + "sạch nợ lúc cưới" gần như loại trừ nhau về mặt lịch (chi tiết ở mục 🧭 Cấu trúc chủ đạo → Xung đột đã phát hiện). Câu trả lời quyết định nhánh A hay B của Việc 2, và qua đó quyết định luôn Dự án 02 mua gì / khi nào. *(mở từ 2026-08-12)*
 - [ ] 🔴 **Hỏi luật sư: hệ số K có bị tính chồng lên bảng giá 2026 không?** Đang có tranh luận rằng bảng giá đất 2026 vốn đã bao gồm hệ số K, nếu cơ quan thuế áp thêm K lần nữa khi tính tiền sử dụng đất thì số phải nộp **tăng thêm 1-1.5 lần** (3,04 tỷ → 6-7,6 tỷ). Độ lớn tác động cao nhất trong các mục còn mở, phải làm rõ trước khi nộp hồ sơ. *(mở từ 2026-08-06)*
   - *Bối cảnh 2026-08-11: luật sư đã chốt "38tr/m² là con số cuối cùng để nhân với số m² muốn lên thổ cư". Cần xác nhận lại rõ rằng câu này đã bao gồm cả việc KHÔNG áp thêm K — nếu chưa hỏi thẳng thì mục này vẫn mở.*
 - [ ] 🟡 **Chốt hình thức vay 740tr + lãi suất thực tế** — nay đã rõ là **được phép vay** (người yêu xác nhận "sạch nợ" = sạch nợ tại thời điểm cưới, xem Research 2026-08-11 chiều). Cần so: vay ngân hàng thế chấp sổ vs vay người thân 0% vs kết hợp. Ảnh hưởng số trả góp hàng tháng T11/2026 - T4/2027 (`finance/cashflow.md` đang ghi ước tính ~35tr/tháng, cần thay bằng số thật). *(mở từ 2026-08-11)*
@@ -145,6 +230,11 @@
 
 ### Dự án 02: Tìm kiếm & Mua nhà đất tại Việt Hưng, Long Biên (Linked to G-02)
 
+> 🟡 **CẢNH BÁO 2026-08-12 — toàn bộ dự án này đang bị treo, chưa xoá cũng chưa chốt lại.**
+> Guide mới của người yêu (xem 🧭 Cấu trúc chủ đạo ở đầu file) mô tả Việc 2 nhánh B là "**hai đứa góp mua chung cư**" vào **2028**, khác với dự án này ở **4 điểm**: thời điểm (2028 vs T4-T6/2027), loại hình (chung cư vs nhà đất), người đứng tên (góp chung vs đứng tên mình), và do đó cả ngân sách.
+> **Chưa chốt** — giữ nguyên toàn bộ nội dung dưới đây làm phương án hiện hành cho tới khi làm rõ xung đột "cưới 2026 hay 2028". Không đi xem nhà/đặt cọc theo dự án này cho tới lúc đó; bước 1 (khảo sát thị trường) vẫn chạy được vì chi phí bằng 0.
+> ⚠️ Ràng buộc mới bắt buộc phải giữ dù chốt nhánh nào: **bán xong đất quê rồi mới được đứng tên mua BĐS tiếp theo** — nếu không sẽ mất điều kiện "đất ở duy nhất" và mất luôn khoản miễn thuế ~90-130tr (xem Research 2026-08-12, Dự án 01).
+
 **Thông tin tiêu chí mua**
 - **Vị trí**: Quanh khu Việt Hưng (Long Biên), gần nhà bố mẹ (các tuyến phố: Việt Hưng, Lệ Mật, Hoa Lâm, Ngô Gia Tự, Bùi Thiện Ngộ, giáp KĐT Việt Hưng).
 - **Loại hình**: Nhà đất thổ cư có nhà sẵn ở (35-50m², 4-5 tầng, sổ đỏ chính chủ đứng tên mình sau khi mua).
@@ -202,6 +292,7 @@
   - Thổ cư 70tr/m² + CLN 30tr/m² → còn **~6,81 tỷ**
   - Thổ cư 60tr/m² + CLN 30tr/m² → còn **~6,02 tỷ**
   - → Chờ kết quả định giá môi giới (mục 🔴 ở Dự án 01) rồi chốt lại ngân sách thật. Không nên tới T4/2027 mới điều chỉnh kỳ vọng. *(mở từ 2026-08-11, thay cho mục "diện tích/giá trị thực tế" mở từ 2026-08-07)*
+- [ ] 🔴 **[MỚI 08-12] Chốt lại Việc 2 mua GÌ, KHI NÀO, ĐỨNG TÊN AI** — nhà đất Việt Hưng ~8 tỷ đứng tên mình (T4-T6/2027, quyết định 08-09) vs chung cư góp chung hai đứa (2028, guide 08-12). Phụ thuộc trực tiếp câu trả lời "cưới 2026 hay 2028". Kèm theo: nếu chọn 2028 thì **~7-8 tỷ nằm chờ ~10 tháng** từ lúc bán đất (T4/2027) — cần chốt gửi ở đâu và chấp nhận rủi ro giá nhà tăng trong lúc chờ. *(mở từ 2026-08-12)*
 - [ ] Kiểm tra thực tế outlier giá cao bất thường khi so sánh nguồn (Le Grand Jardin 77m²/6,5 tỷ) — không còn ảnh hưởng quyết định chính nhưng nên biết khi định giá thị trường khu vực.
 
 ---
@@ -210,12 +301,13 @@
 
 | Thời gian | Tác vụ trọng tâm | Chi tiết |
 |---|---|---|
-| **T8/2026 - T10/2026** | ⚠️ **Định giá quyết định ĐI/DỪNG** + chuẩn bị hồ sơ & nguồn bù 740tr | (1) **3 môi giới định giá 2 kịch bản** → ngưỡng 55% quyết định có lên thổ cư hay không; (2) xác nhận luật sư về hệ số K; (3) chốt hình thức vay 740tr (đã rõ là **được phép vay** — người yêu chỉ yêu cầu sạch nợ tại thời điểm cưới); (4) chuẩn bị bản vẽ trích đo. Xem "Việc cần chốt" Dự án 01 |
+| **T8/2026 - T10/2026** | ⚠️ **Định giá quyết định ĐI/DỪNG** + chuẩn bị hồ sơ & nguồn bù 740tr | (1) **3 môi giới định giá 2 kịch bản** → ngưỡng 55% quyết định có lên thổ cư hay không; (2) xác nhận luật sư về hệ số K **+ gói 4 câu về sang tên/thuế (mới 08-12)**; (3) chốt hình thức vay 740tr (đã rõ là **được phép vay** — người yêu chỉ yêu cầu sạch nợ tại thời điểm cưới); (4) chuẩn bị bản vẽ trích đo. Xem "Việc cần chốt" Dự án 01 |
+| **T9/2026 (điều kiện)** | 🆕 **Sang tên thửa đất từ bố mẹ → tôi** *(chỉ làm nếu luật sư xác nhận có lợi VÀ không đẩy mốc nộp hồ sơ qua T11)* | Tặng cho trực hệ, miễn TNCN + trước bạ. Mục đích: bán sau này được miễn 2% TNCN phần đất ở (~90-130tr). **Nếu có nguy cơ trễ mốc khoá giá 38tr/m² thì BỎ bước này** — xem Research 2026-08-12 điểm (c)4 |
 | **T11/2026 - T12/2026** | Đóng tiền sử dụng đất (~3,04 tỷ) & Nộp thổ cư | Bố mẹ đứng tên nộp hồ sơ xin 80m² thổ cư (khóa giá 38tr/m² 2026) |
 | **T12/2026 - T3/2027** | Nhận sổ & Đăng bán đất quê | Thu hút môi giới, định giá & rao bán toàn bộ thửa đất quê |
 | **T11/2026 - T3/2027** | Research song song nhà Việt Hưng | Đi xem thực tế các căn candidate 8 tỷ ô tô vào quanh Việt Hưng |
-| **T4/2027** | Chốt bán đất quê & Trả nợ | Bố mẹ ký bán -> Nhận tiền -> Tất toán phần vốn/nợ ~740tr đã dùng đóng tiền sử dụng đất -> Rút tiền ròng |
-| **T4/2027 - T6/2027** | Chốt mua & Sang tên nhà Việt Hưng | Xuống tiền mua nhà Việt Hưng đứng tên mình bằng tiền mặt ròng |
+| **T4/2027** *(có thể lùi T6-T7/2027)* | Chốt bán đất quê & Trả nợ | Ký bán -> Nhận tiền -> Tất toán ~740tr -> Rút tiền ròng. ⚠️ **Nếu đi đường sang tên**: phải đợi đủ 183 ngày sở hữu mới được miễn thuế — mốc bắt đầu đếm chưa rõ, có thể đẩy ngày bán sang T6-T7/2027 (Research 2026-08-12, điểm (c)1) |
+| **T4/2027 - T6/2027** ❓ | Chốt mua & Sang tên nhà Việt Hưng | 🟡 **ĐANG TREO** — guide 08-12 đề xuất thay bằng "góp mua chung cư 2028". Xem cảnh báo đầu Dự án 02. Ràng buộc cứng: **chỉ được đứng tên mua sau khi đã bán xong đất quê** |
 
 ## Lưu trữ dự án cũ (Completed)
 - (Chưa có)
