@@ -23,8 +23,13 @@ Chi tiết thực thi: **Dự án 01** bên dưới.
 > 1. Thửa (số tờ/số thửa) có nằm trong **kế hoạch sử dụng đất hằng năm** với chỉ tiêu **đất ở** không? Kế hoạch năm được **niêm yết công khai** tại trụ sở + cổng thông tin xã/huyện — có quyền yêu cầu xem.
 > 2. 🔴 **Diện tích tối thiểu thực sự là bao nhiêu?** Hỏi đúng câu này, không hỏi chung chung:
 >    > *"Thửa 150m² đất trồng cây lâu năm. Tôi muốn chuyển **60m² sang đất ở**, giữ **90m² CLN trên cùng một thửa, một sổ, KHÔNG tách thửa**. Trường hợp này có bị áp diện tích tối thiểu tách thửa 80m² của QĐ 61/2024 không, hay chỉ áp khi tách thành thửa riêng?"*
->    - **Căn cứ để đối chiếu**: mức 80m² là **diện tích tối thiểu TÁCH THỬA** đất ở tại xã đồng bằng (QĐ 61/2024/QĐ-UBND HN). Nhưng **NQ 254/2025/QH15 khoản 3 Điều 11** quy định chuyển mục đích một phần thửa **không bắt buộc tách thửa** — và nếu không tách thửa thì **không bắt buộc áp diện tích tối thiểu** (Bộ NN&MT trả lời trên Cổng TTĐT Chính phủ 06/07/2026). Xem Research 2026-08-12 (bổ sung 3).
->    - **Đây là đòn bẩy chi phí lớn nhất còn lại — ~760tr:**
+>    - **Cách hỏi: đưa MÂU THUẪN ra cho luật sư phân xử, đừng hỏi chung chung.** Ba mảnh ghép cần đối chiếu:
+>      - **QĐ 61/2024/QĐ-UBND HN**: 80m² là diện tích tối thiểu **TÁCH THỬA** đất ở tại xã đồng bằng.
+>      - **NQ 254/2025/QH15 khoản 3 Điều 11** (hiệu lực 1/1/2026), nguyên văn **không kèm điều kiện nào**: *"Trường hợp chuyển mục đích sử dụng một phần thửa đất thì không bắt buộc thực hiện tách thửa."* Kèm **khoản 3 Điều 13**: NQ này **được ưu tiên** khi khác với luật khác.
+>      - **⚠️ NHƯNG hướng dẫn Bộ NN&MT** thu hẹp lại: chỉ áp cho *"thửa đất **có đất ở và đất khác**"*; **thửa thuần nông nghiệp vẫn áp diện tích tối thiểu**. → **Thửa mình là CLN thuần, rơi vào vế bị loại.**
+>    - **Câu chốt để hỏi**: *"Nguyên văn khoản 3 Điều 11 NQ 254 không kèm điều kiện 'có đất ở', và khoản 3 Điều 13 cho NQ quyền ưu tiên. Vậy hướng dẫn của Bộ giới hạn ở thửa 'có đất ở và đất khác' có căn cứ ở điều khoản nào, và có áp được cho thửa CLN thuần của tôi không?"*
+>    - 🔴 **Tâm thế đúng: đây là KIỂM TRA MỘT KHẢ NĂNG, không phải xác nhận một kết luận.** Ngân sách vẫn lập theo 80m² / 3,04 tỷ. Xem Research 2026-08-12 (bổ sung 5 — đính chính).
+>    - **Nếu trúng thì đòn bẩy là ~760tr:**
 >
 >    | Diện tích chuyển | Chi phí (×38tr/m²) | So với vốn tự có 2,3 tỷ | Hệ quả |
 >    |---|---|---|---|
@@ -258,6 +263,40 @@ Hai nhánh loại trừ nhau, chọn nhánh nào phụ thuộc mốc cưới:
   - **→ Tuyệt đối không dùng việc nộp hồ sơ để "thử xem có được không". Thử bằng cách HỎI — miễn phí, mất vài ngày thay vì 1-2 tháng.**
 
   - Nguồn: [Cổng TTĐT Chính phủ — Bộ NN&MT: Chuyển mục đích một phần thửa đất có phải tách thửa?](https://baochinhphu.vn/chuyen-muc-dich-mot-phan-thua-dat-co-phai-tach-thua-102260706114206284.htm), [thuvienphapluat — Từ 2026 không còn bắt buộc tách thửa khi chuyển mục đích một phần thửa đất](https://thuvienphapluat.vn/phap-luat-nha-dat/tu-2026-khong-con-bat-buoc-tach-thua-khi-chuyen-muc-dich-su-dung-mot-phan-thua-dat-13430.html), [PBGDPL Hà Nội — Diện tích tối thiểu tách thửa tại Hà Nội (QĐ 61/2024/QĐ-UBND)](https://pbgdpl.hanoi.gov.vn/tin-moi/-/asset_publisher/sxBNLsQSLyY8/content/quy-inh-dien-tich-toi-thieu-tach-thua-at-tai-ha-noi), [Tuổi Trẻ — Quy định tách thửa đất ở tại Hà Nội từ 7-10-2024](https://tuoitre.vn/quy-dinh-tach-thua-dat-o-tai-ha-noi-tu-ngay-7-10-2024-20241009163221993.htm).
+
+- 2026-08-12 (bổ sung 5 — ⚠️ **ĐÍNH CHÍNH bổ sung 3: khả năng cao 80m² VẪN bắt buộc**. Đọc entry này để lấy kết luận đúng; entry bổ sung 3 giữ nguyên theo quy tắc append-only):
+
+  Truy tiếp văn bản gốc + hướng dẫn của Bộ thì phát hiện **đúng cái bẫy đã làm hỏng phương án "giảm 70%" ngày 2026-08-11**: điều kiện *"thửa đất có đất ở và đất khác"*.
+
+  **(a) Nguyên văn khoản 3 Điều 11 NQ 254/2025/QH15** (hiệu lực 1/1/2026) — **không kèm điều kiện gì**:
+  > *"Trường hợp chuyển mục đích sử dụng một phần thửa đất thì không bắt buộc thực hiện tách thửa. Việc hợp các thửa đất không bắt buộc cùng mục đích sử dụng đất, cùng hình thức trả tiền sử dụng đất, tiền thuê đất, cùng thời hạn sử dụng đất."*
+
+  **(b) Và NQ 254 có quyền ưu tiên** — khoản 3 Điều 13:
+  > *"Trường hợp Nghị quyết này và các luật khác có quy định khác nhau về cùng một vấn đề thì thực hiện theo quy định của Nghị quyết này."*
+  → Về nguyên tắc, NQ 254 (Quốc hội) đè lên QĐ 61/2024 (UBND TP Hà Nội).
+
+  **(c) 🔴 NHƯNG hướng dẫn của Bộ NN&MT lại thu hẹp phạm vi — và thu hẹp đúng vào chỗ giết phương án này:**
+  > *"Trường hợp thửa đất **có đất ở và đất khác** thì không bắt buộc thực hiện tách thửa khi chuyển mục đích sử dụng một phần thửa đất."*
+  >
+  > Và nêu rõ: với **thửa thuần nông nghiệp chưa có đất ở** thì **vẫn áp quy định tách thửa thông thường, gồm cả diện tích tối thiểu sau tách**.
+
+  - **Thửa của mình là 150m² CLN độc lập, CHƯA có đất ở** (user đã xác nhận 2026-08-11) → rơi đúng vào vế bị loại.
+  - **→ Kết luận sửa lại: nhiều khả năng 80m² VẪN là mức tối thiểu bắt buộc.** Phương án 60m² **chưa chết hẳn** (vì nguyên văn khoản 3 Điều 11 không hề kèm điều kiện "có đất ở", và Điều 13 cho quyền ưu tiên), nhưng **không được xây kế hoạch tài chính lên nó**.
+  - **Mô thức lặp lại lần 2**: cả NQ 254 "giảm 70%" (08-11) lẫn NQ 254 "không tách thửa" (08-12) đều bị Bộ NN&MT diễn giải hẹp lại thành *"chỉ áp cho thửa đã có đất ở"*. **Bài học: mọi ưu đãi tìm được từ nay phải kiểm tra ngay xem có kèm điều kiện "trong cùng thửa có đất ở" không — thửa này luôn trượt điều kiện đó.**
+
+  **(d) Hệ quả thực tế:**
+  - **Ngân sách quay về mặc định 3,04 tỷ / gap 740tr.** Không được lập kế hoạch dựa trên 2,28 tỷ.
+  - Vẫn **nên hỏi** (0đ, và nếu trúng thì được 760tr) — nhưng hỏi với tâm thế *kiểm tra một khả năng*, không phải *xác nhận một kết luận*.
+  - Cách hỏi sắc nhất: đưa **mâu thuẫn** ra cho luật sư phân xử, chứ đừng hỏi chung chung — xem Gate 0 câu 2.
+
+  - Nguồn: [Cổng TTĐT Chính phủ — Chuyển mục đích một phần thửa đất: Áp dụng Nghị quyết 254](https://baochinhphu.vn/chuyen-muc-dich-mot-phan-thua-dat-ap-dung-nghi-quyet-254-102260711182444544.htm), [VietnamNet — Bộ nói rõ trường hợp chuyển đất nông nghiệp sang đất ở không cần tách thửa](https://vietnamnet.vn/bo-noi-ro-truong-hop-chuyen-dat-nong-nghiep-sang-dat-o-khong-can-tach-thua-2533074.html), [luatvietnam — Thống nhất tách thửa theo NQ 254/2025/QH15 khi khác quy định địa phương](https://luatvietnam.vn/tin-van-ban-moi/thong-nhat-tach-thua-theo-nghi-quyet-254-2025-qh15-khi-khac-quy-dinh-dia-phuong-186-108161-article.html).
+
+- 2026-08-12 (bổ sung 6 — **việc sang tên KHÔNG ảnh hưởng câu hỏi 80m²**): user nêu khả năng *"không sang tên vội cho con, tên vẫn bố mẹ"*.
+  - **Với câu hỏi diện tích tối thiểu: ai đứng tên hoàn toàn không liên quan.** Quy tắc tách thửa / chuyển mục đích áp theo **thửa đất**, không theo chủ sở hữu. Bố mẹ đứng tên hay con đứng tên thì câu trả lời 80m² y hệt nhau. → Hoãn sang tên **không làm hỏng** gì ở Việc 1.
+  - **Nhưng hoãn ≠ bỏ.** Nếu cuối cùng bán mà vẫn để bố mẹ đứng tên thì mất 2 thứ:
+    1. **~90-130tr** miễn thuế TNCN (bố mẹ đã có nhà ở khác → không thuộc diện "đất ở duy nhất"; bán thì chịu đủ 2%).
+    2. **Chính cái tiền đề user đặt ra** — "tài sản chính danh **của tôi**". Sổ đứng tên bố mẹ không tạo được điều đó.
+  - → Giữ nguyên khuyến nghị: **hoãn sang tên tới sau khi có sổ là đúng và an toàn; nhưng vẫn phải sang tên trước khi bán.**
 
 - 2026-08-12 (bổ sung 4 — **BẢN ĐỒ SONG SONG / NỐI TIẾP**, trả lời câu "có làm song song được không để tối ưu thời gian"):
 
