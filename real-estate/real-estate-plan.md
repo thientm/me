@@ -15,11 +15,24 @@ Cổng chuyển (gate): **sổ đỏ 80m² thổ cư đã cầm trên tay**.
 ### VIỆC 1 — Làm sổ 80m² thổ cư *(đang chạy, ưu tiên tuyệt đối)*
 Chi tiết thực thi: **Dự án 01** bên dưới.
 
+> ### 🚧 GATE 0 — "Thửa này có được phép lên thổ cư không?" *(user đặt ưu tiên 2026-08-12)*
+> **Phải trả lời trước mọi thứ khác.** Điều kiện luật để được chuyển mục đích sang đất ở: thửa phải **phù hợp quy hoạch sử dụng đất** VÀ nằm trong **kế hoạch sử dụng đất hằng năm cấp huyện/xã đã được phê duyệt**, có chỉ tiêu đất ở. **Nếu không nằm trong kế hoạch năm → không chuyển được, bất kể có bao nhiêu tiền.**
+> Toàn bộ kế hoạch hiện tại (3,04 tỷ, bán coin, vay 740tr, định giá môi giới, tối ưu thuế) đều **đang giả định cổng này mở mà chưa ai kiểm tra**. Chi phí kiểm tra ≈ 0.
+>
+> **Cách làm, rẻ → chắc:**
+> 1. Ra **UBND xã Phù Đổng** hỏi trực tiếp: thửa (số tờ/số thửa) có nằm trong kế hoạch sử dụng đất hằng năm với chỉ tiêu đất ở không? Kế hoạch năm được **niêm yết công khai** tại trụ sở + cổng thông tin xã/huyện. Miễn phí.
+> 2. Nếu xã trả lời miệng → xin **văn bản cung cấp thông tin quy hoạch / trích lục** tại Văn phòng đăng ký đất đai để có căn cứ giấy trắng mực đen. Phí nhỏ.
+> 3. Hỏi luôn **hạn mức giao đất ở nông thôn** tại địa phương — để biết 80m² nằm trong hay vượt hạn mức, và tối đa được chuyển bao nhiêu m² (liên quan mục "nên lên bao nhiêu m²").
+>
+> **Nếu Gate 0 đóng** → toàn bộ Việc 1 dừng, chuyển sang phương án bán nguyên trạng 150m² CLN, và bài toán tiền/cưới phải tính lại từ đầu.
+> **Nếu Gate 0 mở** → mới tới định giá môi giới (ngưỡng 55%) rồi mới tới tiền.
+
 | # | Hạng mục | Trạng thái | Tham chiếu |
 |---|---|---|---|
+| **1.0** | 🚧 **GATE 0 — xác minh thửa có được phép chuyển mục đích không** | 🔴 **Chưa làm — ưu tiên số 1** | Gate 0 ở trên |
 | 1.1 | **Bán coin** lấy thanh khoản (~410tr) — deadline nội bộ 1/9/2026 | Đang làm | `crypto/crypto-plan.md`, `crypto/logs/2026-08.md` |
 | 1.2 | **Vay thêm ~740tr** bù phần thiếu (3,04 tỷ − 2,3 tỷ vốn tự có) | Chưa chốt hình thức | Dự án 01 → Kế hoạch tài chính |
-| 1.3 | **Sang tên sang tôi TRƯỚC khi lên thổ cư** để tối ưu thuế | 🆕 Chưa quyết — cần luật sư | Research 2026-08-12 |
+| 1.3 | **Sang tên sang tôi để tối ưu thuế** — nay nghiêng về làm **SAU** khi đã có sổ thổ cư | 🆕 Chưa quyết — cần luật sư | Research 2026-08-12 (bổ sung) |
 | 1.4 | Nộp hồ sơ chuyển mục đích → đóng tiền sử dụng đất → nhận sổ | Chưa bắt đầu | Dự án 01 → Lộ trình pháp lý |
 
 > ⚠️ **1.3 đảo ngược quyết định 2026-08-09** ("bố mẹ đứng tên bán thẳng, bỏ bước sang tên"). Không xoá quyết định cũ — xem Research 2026-08-12 để biết vì sao đảo và cái giá phải trả (thời gian).
@@ -149,10 +162,45 @@ Hai nhánh loại trừ nhau, chọn nhánh nào phụ thuộc mốc cưới:
 
   - Nguồn: [luatvietnam — Thuế TNCN chuyển nhượng BĐS từ 01/7/2026 (NĐ 253/2026/NĐ-CP)](https://luatvietnam.vn/thue-phi-le-phi/tu-01-7-2026-thue-tncn-doi-voi-thu-nhap-tu-chuyen-nhuong-bat-dong-san-duoc-tinh-the-nao-565-110646-article.html), [Nhân Dân — Điều kiện miễn thuế TNCN khi bán nhà đất duy nhất](https://nhandan.vn/ban-nha-dat-duy-nhat-muon-duoc-mien-thue-thu-nhap-ca-nhan-phai-dap-ung-nhung-dieu-kien-gi-post973798.html), [Tuổi Trẻ — Muốn miễn thuế khi bán nhà đất duy nhất phải sở hữu đủ 183 ngày](https://tuoitre.vn/muon-mien-thue-khi-ban-nha-dat-duy-nhat-phai-so-huu-du-183-ngay-100260705120106214.htm), [thuvienphapluat — Cách tính thuế TNCN chuyển nhượng BĐS theo NĐ 253/2026](https://thuvienphapluat.vn/banan/tin-tuc/cach-tinh-thue-tncn-tu-chuyen-nhuong-bat-dong-san-moi-nhat-2026-theo-nghi-dinh-2532026ndcp-51115.html).
 
+- 2026-08-12 (bổ sung — ĐÍNH CHÍNH & đảo khuyến nghị về "sang trước hay sang sau"): user hỏi lại "tặng cho cha mẹ → con có thật sự không mất khoản % nào không, và sang trước/sang sau có lệch nhau không". Tra kỹ lại, entry sáng nay nói **"chi phí sang tên gần như bằng 0" là nói lỏng**, và **khuyến nghị "sang trước" là sai hướng**. Số đúng:
+
+  **(a) Ba khoản khi tặng cho cha mẹ đẻ → con đẻ — ĐÃ XÁC MINH:**
+
+  | Khoản | Bản chất | Cha mẹ → con ruột |
+  |---|---|---|
+  | Thuế TNCN quà tặng/thừa kế **10%** | % giá trị | **MIỄN** |
+  | Lệ phí trước bạ **0,5%** | % giá trị | **MIỄN** |
+  | **Phí công chứng** | **CŨNG tính theo % giá trị** (lũy tiến, TT 257/2016/TT-BTC) | **KHÔNG miễn** |
+  | Lệ phí hành chính (cấp/cập nhật sổ, thẩm định hồ sơ) | cố định | ~300k - 1tr |
+
+  Biểu phí công chứng: 100tr-1 tỷ = **0,1%** · 1-3 tỷ = 1tr + **0,06%** phần vượt 1 tỷ · 3-5 tỷ = 2,2tr + **0,05%** phần vượt 3 tỷ.
+  → Nói "không mất khoản % nào" là **chưa đúng**: hai khoản lớn được miễn, nhưng phí công chứng vẫn là %. Chỉ là bậc rất mỏng.
+
+  **(b) So sánh sang TRƯỚC vs sang SAU — điểm mấu chốt là giá trị thửa đất chênh ~7 lần giữa hai thời điểm, mà phí công chứng tính trên giá trị đó:**
+
+  | | Sang tên **TRƯỚC** (T9/2026 — còn là 150m² CLN) | Sang tên **SAU** (T1/2027 — đã có 80m² thổ cư) |
+  |---|---|---|
+  | Giá trị tính phí công chứng | ~300-750tr (theo bảng giá CLN) | ~3,2-3,4 tỷ |
+  | Phí công chứng | **~300-750k** | **~2,3-2,4tr** |
+  | TNCN + trước bạ | 0 | 0 |
+  | Mốc 183 ngày | sớm hơn ~4 tháng — *nhưng chỉ có ý nghĩa nếu thuế đếm từ ngày sang tên; nếu đếm từ lúc thửa thành đất ở thì **hoà***| muộn hơn |
+  | Ai đứng tên vay 740tr | tôi (thế chấp sổ của chính mình — gọn hơn) | bố mẹ |
+  | 🔴 **Rủi ro timeline** | **chèn 15-30 ngày vào đúng giai đoạn chạy đua khoá giá 38tr/m² trước 1/1/2027** | **làm lúc T1/2027, rảnh — không đụng mốc khoá giá** |
+
+  **→ Chênh lệch tiền phí giữa hai phương án chỉ ~2tr. Trên tổng 3 tỷ là bằng 0. User nhận định đúng: về phí thì trước/sau không lệch nhau.**
+
+  **(c) ĐẢO KHUYẾN NGHỊ: nên sang tên SAU, không phải trước.** Lý do: khoản tiết kiệm thuế ~90-130tr **không phụ thuộc sang trước hay sang sau** — nó chỉ phụ thuộc **cuối cùng ai đứng tên lúc BÁN**. Vậy nên không có lý do gì phải trả giá bằng 15-30 ngày ở đúng giai đoạn nhạy cảm nhất của cả kế hoạch. Entry sáng nay nghiêng về "sang trước" là do chưa tách bạch được điều này.
+
+  **(d) Hệ quả tới gói câu hỏi luật sư**: câu số 1 (mốc đếm 183 ngày) **vẫn là câu quan trọng nhất** — nó quyết định bán được từ T4/2027 hay phải đợi ~T7/2027. Câu số 3 (con đứng tên có được nộp hồ sơ chuyển mục đích không) **giảm mức ưu tiên** vì nếu sang tên sau thì bố mẹ vẫn là người nộp hồ sơ, không phát sinh vấn đề.
+
+  - Nguồn: [luatvietnam — Mức phí công chứng mới nhất 2026](https://luatvietnam.vn/hanh-chinh/muc-phi-cong-chung-moi-nhat-570-21497-article.html), [thuvienphapluat — Phí công chứng hợp đồng mua bán nhà đất 2026](https://thuvienphapluat.vn/phap-luat-nha-dat/cap-nhat-muc-phi-cong-chung-hop-dong-mua-nha-ban-dat-moi-nhat-nam-2026-6028.html), [PBGDPL Hà Nội — tặng cho nhà đất trực hệ miễn TNCN và lệ phí trước bạ](https://pbgdpl.hanoi.gov.vn/giai-dap-phap-luat/-/asset_publisher/M248tqbaPaRY/content/anh-chi-em-ruot-tang-cho-nhau-nha-at-uoc-mien-thue-thu-nhap-ca-nhan-va-le-phi-truoc-ba), [Công văn 427/TCT-DNNCN — hướng dẫn miễn TNCN & lệ phí trước bạ khi tặng cho/thừa kế nhà đất](https://luatdungtrinh.vn/cong-van-427-tct-dnncn-huong-dan-mien-thue-tncn-va-le-phi-truoc-ba-khi-tang-cho-thua-ke-nha-dat/).
+
 **Việc cần chốt (Open)**
 
 *Cập nhật 2026-08-11 (chiều): 4 mục đã có câu trả lời, đánh dấu xong bên dưới. Mục còn mở được xếp lại theo độ lớn tác động tiền.*
-*Cập nhật 2026-08-12: thêm 2 mục về sang tên/thuế (mục 🔴 và 🟡 đầu danh sách), gộp chung buổi hỏi luật sư với mục hệ số K.*
+*Cập nhật 2026-08-12: thêm Gate 0 (ưu tiên số 1) + 2 mục về sang tên/thuế, gộp chung buổi hỏi luật sư với mục hệ số K.*
+
+- [ ] 🚧 **[ƯU TIÊN SỐ 1 — 08-12] GATE 0: xác minh thửa có được phép chuyển mục đích sang đất ở không.** Ra UBND xã Phù Đổng hỏi kế hoạch sử dụng đất hằng năm + hạn mức giao đất ở; xin văn bản cung cấp thông tin quy hoạch nếu cần. **Chi phí ≈ 0, nhưng đóng/mở toàn bộ Việc 1.** Chi tiết cách làm ở mục 🧭 Cấu trúc chủ đạo → Gate 0. *(mở từ 2026-08-12)*
 
 - [ ] 🔴 **[QUYẾT ĐỊNH ĐI/DỪNG] Định giá 2 kịch bản trên đúng thửa này qua môi giới địa phương** — rút gọn thành 1 ngưỡng: **đất CLN quanh khu đang bán bằng bao nhiêu % giá đất thổ cư?**
   - **< 55% → lên thổ cư CÓ LỜI. ≥ 55% → không lên, bán nguyên trạng.**
@@ -161,7 +209,7 @@ Hai nhánh loại trừ nhau, chọn nhánh nào phụ thuộc mốc cưới:
 - [ ] 🔴 **[MỚI 08-12] Hỏi luật sư — gói câu hỏi "sang tên trước hay sau"** (4 câu, hỏi 1 buổi cùng câu hệ số K):
   1. Điều kiện miễn thuế "đất ở duy nhất, đủ 183 ngày" — **183 ngày đếm từ ngày sang tên, hay từ ngày thửa được chuyển thành đất ở?** (quyết định mốc bán được sớm nhất là T4/2027 hay T6-T7/2027)
   2. Thửa 150m² sau khi lên 80m² thổ cư + 70m² CLN: bán cả thửa thì **phần 80m² đất ở có được coi là "chuyển nhượng toàn bộ đất ở" để miễn thuế không**, và phần 70m² CLN có phá vỡ điều kiện "duy nhất" không?
-  3. **Con đứng tên có được nộp hồ sơ chuyển mục đích không**, hạn mức giao đất ở tính theo hộ gia đình hay cá nhân?
+  3. ~~**Con đứng tên có được nộp hồ sơ chuyển mục đích không**~~ — *giảm ưu tiên (08-12 bổ sung): đã đổi sang phương án sang tên SAU khi có sổ, nên bố mẹ vẫn là người nộp hồ sơ, không phát sinh vấn đề.* Vẫn hỏi phần **hạn mức giao đất ở tính theo hộ gia đình hay cá nhân** (gộp vào Gate 0).
   4. Tặng cho cha mẹ → con ruột: xác nhận **miễn TNCN + miễn lệ phí trước bạ**, tổng chi phí thực tế (công chứng + thẩm định + cấp sổ) là bao nhiêu và **mất bao nhiêu ngày**?
   - Tác động tiền: **+90tr đến +130tr** nếu làm được, nhưng có thể **âm hàng trăm triệu** nếu làm chậm mà trượt bảng giá 2027. Xem Research 2026-08-12. *(mở từ 2026-08-12)*
 - [ ] 🟡 **[MỚI 08-12] Hỏi lại người yêu: "cưới năm nay" hiểu thế nào khi đang có khoản vay 740tr?** Hai điều kiện "cưới 2026" + "sạch nợ lúc cưới" gần như loại trừ nhau về mặt lịch (chi tiết ở mục 🧭 Cấu trúc chủ đạo → Xung đột đã phát hiện). Câu trả lời quyết định nhánh A hay B của Việc 2, và qua đó quyết định luôn Dự án 02 mua gì / khi nào. *(mở từ 2026-08-12)*
@@ -302,7 +350,7 @@ Hai nhánh loại trừ nhau, chọn nhánh nào phụ thuộc mốc cưới:
 | Thời gian | Tác vụ trọng tâm | Chi tiết |
 |---|---|---|
 | **T8/2026 - T10/2026** | ⚠️ **Định giá quyết định ĐI/DỪNG** + chuẩn bị hồ sơ & nguồn bù 740tr | (1) **3 môi giới định giá 2 kịch bản** → ngưỡng 55% quyết định có lên thổ cư hay không; (2) xác nhận luật sư về hệ số K **+ gói 4 câu về sang tên/thuế (mới 08-12)**; (3) chốt hình thức vay 740tr (đã rõ là **được phép vay** — người yêu chỉ yêu cầu sạch nợ tại thời điểm cưới); (4) chuẩn bị bản vẽ trích đo. Xem "Việc cần chốt" Dự án 01 |
-| **T9/2026 (điều kiện)** | 🆕 **Sang tên thửa đất từ bố mẹ → tôi** *(chỉ làm nếu luật sư xác nhận có lợi VÀ không đẩy mốc nộp hồ sơ qua T11)* | Tặng cho trực hệ, miễn TNCN + trước bạ. Mục đích: bán sau này được miễn 2% TNCN phần đất ở (~90-130tr). **Nếu có nguy cơ trễ mốc khoá giá 38tr/m² thì BỎ bước này** — xem Research 2026-08-12 điểm (c)4 |
+| **T1/2027 (ngay sau khi có sổ)** | 🆕 **Sang tên thửa đất từ bố mẹ → tôi** *(chỉ làm nếu luật sư xác nhận điều kiện miễn thuế áp được)* | Tặng cho trực hệ: **miễn TNCN 10% + miễn lệ phí trước bạ 0,5%**, chỉ mất phí công chứng ~2,3tr + lệ phí ~1tr. Mục đích: khi bán được miễn 2% TNCN phần đất ở (**~90-130tr**). **Làm SAU chứ không phải trước** — khoản tiết kiệm không phụ thuộc thời điểm sang tên, nên không đánh đổi bằng rủi ro trễ mốc khoá giá 38tr/m². Xem Research 2026-08-12 (bổ sung) |
 | **T11/2026 - T12/2026** | Đóng tiền sử dụng đất (~3,04 tỷ) & Nộp thổ cư | Bố mẹ đứng tên nộp hồ sơ xin 80m² thổ cư (khóa giá 38tr/m² 2026) |
 | **T12/2026 - T3/2027** | Nhận sổ & Đăng bán đất quê | Thu hút môi giới, định giá & rao bán toàn bộ thửa đất quê |
 | **T11/2026 - T3/2027** | Research song song nhà Việt Hưng | Đi xem thực tế các căn candidate 8 tỷ ô tô vào quanh Việt Hưng |
