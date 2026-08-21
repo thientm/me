@@ -49,13 +49,13 @@
   - **Việc 1 — Sang tên + làm sổ 80m² thổ cư, rồi bán** *(đang chạy, ưu tiên tuyệt đối)*.
   - **Cổng chuyển**: tiền bán đất đã về tay.
   - **Việc 2 — Chỗ ở** *(khoá tới khi qua cổng)*: góp mua chung cư.
-  - **Việc cưới** nay tách riêng sang `wedding/wedding-plan.md`, được phép khảo sát song song (chi phí 0đ), nhưng **không cam kết/đặt cọc** khi chưa gỡ xong xung đột "sạch nợ lúc cưới".
+  - **Việc cưới** tách riêng sang `wedding/wedding-plan.md` (DRAFT, tạm gác). Chi bằng **lương**, không đụng dòng tiền Việc 1 → hai việc không tranh nhau tiền. Chưa đặt cọc gì.
   - **Quy tắc vận hành**: mọi research/quyết định/log phải quy được về đúng một việc. Việc chưa mở thì không tiêu tiền theo nó.
 
 - **Nguyên tắc tài chính & pháp lý BĐS** *(chốt 2026-08-21 sau khi hỏi luật sư)*: sang tên bố mẹ → mình **TRƯỚC** (lúc thửa còn là CLN, phí công chứng thấp), rồi **tự đứng tên nộp hồ sơ chuyển mục đích** → sổ thổ cư ra thẳng tên mình, không phải sang tên lần hai sau khi đã đóng 3 tỷ.
   - ⏱️ **Cái giá của thứ tự này là 15-30 ngày.** Chốt hạn: cuối T9/2026 chưa sang tên xong thì bỏ bước sang tên, để bố mẹ nộp hồ sơ — vì trượt bảng giá 2027 tốn hàng trăm triệu tới cả tỷ.
   - 💰 Giữ được **~90-130tr** miễn thuế TNCN khi bán, nhờ điều kiện "đất ở duy nhất đã sở hữu ≥183 ngày" (NĐ 253/2026). Tặng cho cha mẹ → con miễn TNCN 10% + miễn lệ phí trước bạ.
   - ⚠️ **Ràng buộc cứng**: phải **bán xong đất quê rồi mới được đứng tên BĐS tiếp theo**, nếu không mất điều kiện "duy nhất" và mất luôn khoản miễn thuế.
-  - 🔴 **Còn mở**: mốc đếm 183 ngày tính từ sổ mới hay nối từ sổ cũ · con đứng tên có được nộp hồ sơ chuyển mục đích không · thửa có nằm trong kế hoạch sử dụng đất hằng năm của xã không. Chi tiết ở `real-estate/real-estate-plan.md` → "Rủi ro đang mở".
+  - 🔴 **Còn mở, xếp theo độ lớn tác động tiền**: ① **ghi nợ tiền sử dụng đất** (Điều 22 NĐ 103/2024) — nếu được thì khỏi vay 615tr · ② mốc đếm 183 ngày (~90-130tr) · ③ con đứng tên có được nộp hồ sơ chuyển mục đích không (chặn cả bước 2) · ④ thửa có nằm trong kế hoạch sử dụng đất hằng năm của xã không. Chi tiết ở `real-estate/real-estate-plan.md` → "Rủi ro đang mở".
 
 
