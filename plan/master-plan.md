@@ -4,48 +4,58 @@
 
 ## Tầm nhìn dài hạn
 - 5-10 năm:
-- 1-3 năm: An cư lập nghiệp — hoàn tất bán đất quê sau khi lên 80m² thổ cư, sở hữu nhà đất ngõ ô tô tại Việt Hưng (Long Biên) gần nhà bố mẹ.
+- 1-3 năm: An cư lập nghiệp — sang tên & lên 80m² thổ cư đất quê, bán toàn bộ lấy tiền mặt ròng, rồi cùng vợ góp mua chung cư.
 
 ## Mục tiêu lớn (theo năm)
 
 ### 2026 - 2027
-- **2026**: Bố mẹ đứng tên nộp hồ sơ xin 80m² thổ cư đất quê (đóng tiền sử dụng đất ~3,04 tỷ + phí — 2,3 tỷ vốn tự có, còn thiếu ~740tr nguồn bù chưa chốt, xem `real-estate/real-estate-plan.md`).
-- **2027**: Bố mẹ ký bán toàn bộ thửa đất quê cho bên mua -> Tất toán phần vốn/nợ ~740tr đã dùng đóng tiền sử dụng đất -> Dùng toàn bộ số tiền mặt ròng mua nhà đất có sẵn tại Việt Hưng (~8 tỷ, ngõ ô tô vào được, đứng tên mình).
-- Vì sao quan trọng: Tối ưu hóa giá trị tài sản ở quê, giảm chi phí công chứng/thuế 2 lần, giải phóng nợ vay và sở hữu nhà ở thực tế gần bố mẹ trước khi lập gia đình.
-- Liên quan domain: real-estate / finance / portfolio
+- **2026**: Sang tên thửa đất quê từ bố mẹ sang mình (T9), rồi tự đứng tên nộp hồ sơ xin 80m² thổ cư (T10) — đóng tiền sử dụng đất ~3,02 tỷ (2,3 tỷ vốn tự có, vay thêm ~730tr). Xem `real-estate/real-estate-plan.md`.
+- **2027**: Nhận sổ (T12/2026-T1/2027) → đủ 183 ngày → ký bán toàn bộ thửa (~T6-T7/2027) → tất toán khoản vay ~730tr → giữ tiền mặt ròng.
+- **2028**: Cùng vợ góp mua chung cư *(trừ khi mốc cưới đổi — xem `wedding/wedding-plan.md`)*.
+- Vì sao quan trọng: đưa tài sản về chính danh đứng tên mình, tối ưu giá trị thửa đất, và tạo dòng tiền sạch cho chỗ ở.
+- Liên quan domain: real-estate / finance / portfolio / wedding
 
 ## Mục tiêu nhỏ (đang active)
 
-### G-01: Bố mẹ làm 80m² thổ cư & Bán toàn bộ đất quê
+### G-01: Sang tên + làm 80m² thổ cư & Bán toàn bộ đất quê
 - loại: dài hạn
-- target: Bố mẹ nộp hồ sơ lên 80m² thổ cư (~3,04 tỷ + phí, thiếu ~740tr so với vốn tự có 2,3 tỷ — nguồn bù chưa chốt), ra sổ mới, ký bán toàn bộ thửa đất và tất toán phần vốn/nợ đã dùng.
-- deadline: T4/2027
+- target: Sang tên bố mẹ → mình (T9/2026), tự đứng tên nộp hồ sơ lên 80m² thổ cư (T10/2026, ~3,02 tỷ — vay thêm ~730tr), ra sổ, đủ 183 ngày rồi bán toàn bộ và tất toán nợ.
+- deadline: T7/2027
 - progress: 10%
 - linked_to: Mục tiêu 2026-2027
-- last_updated: 2026-08-11
+- last_updated: 2026-08-21
 
-### G-02: Mua nhà đất có sẵn tại Việt Hưng (~8 tỷ, ô tô vào) — 🟡 ĐANG TREO (2026-08-12)
-> Guide mới đề xuất Việc 2 là "hai đứa **góp mua chung cư** vào **2028**" — khác mục tiêu này về thời điểm, loại hình, người đứng tên và ngân sách. Giữ nguyên G-02 làm phương án hiện hành, **chưa thay**, cho tới khi làm rõ mốc cưới 2026 hay 2028. Chỉ tiếp tục khảo sát thị trường (chi phí 0), **không đi cọc**.
+### G-02: Góp mua chung cư cùng vợ
 - loại: dài hạn
-- target: Tìm kiếm, thẩm định pháp lý/vị trí ngõ ô tô và giao dịch nhà đất tại Việt Hưng (Long Biên) gần bố mẹ từ nguồn tiền mặt ròng bán đất quê (đứng tên cá nhân).
-- deadline: T6/2027
-- progress: 5% (đang khảo sát mặt bằng giá & nguồn tin)
+- target: Sau khi bán xong đất quê và có tiền mặt ròng, hai đứa góp chung mua chung cư.
+- deadline: 2028 *(có thể đổi nếu mốc cưới đổi — xem `wedding/wedding-plan.md`)*
+- progress: 0% — **khoá tới khi bán xong đất**
+- ⚠️ Ràng buộc cứng: **bán xong đất quê rồi mới được đứng tên BĐS khác**, nếu không mất điều kiện "đất ở duy nhất" và mất ~90-130tr miễn thuế.
 - linked_to: Mục tiêu 2026-2027
-- last_updated: 2026-08-09
+- last_updated: 2026-08-21
+- *(Phương án cũ "mua nhà đất Việt Hưng ~8 tỷ, ngõ ô tô" đã huỷ 2026-08-12.)*
+
+### G-03: Khảo sát tổ chức cưới trong 2026 — 🟡 MỚI MỞ (2026-08-21)
+- loại: ngắn hạn
+- target: Xác định có tổ chức cưới được trong 2026 không, và nếu có thì ngân sách/quy mô ra sao.
+- 🔴 Chặn ở 1 câu hỏi 0đ: điều kiện "sạch nợ lúc cưới" có còn giữ không, khi cưới 2026 rơi đúng lúc nợ ~730tr ở đỉnh?
+- progress: 0% — đang khảo sát, **chưa cam kết, chưa đặt cọc**
+- chi tiết: `wedding/wedding-plan.md`
+- last_updated: 2026-08-21
 
 ## Ghi chú / nguyên tắc chỉ đạo
 
-- **🧭 MAIN PROCESS (thiết lập 2026-08-12, theo guide của người yêu): tách bạch 2 việc, làm nối tiếp, không trộn.**
-  - **Việc 1 — Làm sổ 80m² thổ cư** *(đang chạy, ưu tiên tuyệt đối)*: bán coin + vay ~740tr + cân nhắc sang tên sang mình trước để tối ưu thuế + nộp hồ sơ chuyển mục đích.
-  - **Cổng chuyển**: cầm được sổ đỏ 80m² thổ cư trên tay.
-  - **Việc 2 — Chỗ ở & Hôn nhân** *(KHOÁ tới khi qua cổng)*: nhánh A cưới 2026 → ở chung tạm; nhánh B không cưới 2026 → trả hết nợ → cưới đầu 2028 (hết Kim Lâu) → hai đứa góp mua chung cư.
-  - **Quy tắc vận hành**: mọi research/quyết định/log về sau phải quy được về đúng một trong hai việc. Việc 2 chưa mở thì không tiêu tiền, không đặt cọc, không cam kết theo nó.
-  - Chi tiết + **3 xung đột chưa gỡ** (đặc biệt: "cưới 2026" mâu thuẫn với "sạch nợ lúc cưới"): `real-estate/real-estate-plan.md` mục 🧭 Cấu trúc chủ đạo.
+- **🧭 MAIN PROCESS: tách bạch, làm nối tiếp, không trộn.**
+  - **Việc 1 — Sang tên + làm sổ 80m² thổ cư, rồi bán** *(đang chạy, ưu tiên tuyệt đối)*.
+  - **Cổng chuyển**: tiền bán đất đã về tay.
+  - **Việc 2 — Chỗ ở** *(khoá tới khi qua cổng)*: góp mua chung cư.
+  - **Việc cưới** nay tách riêng sang `wedding/wedding-plan.md`, được phép khảo sát song song (chi phí 0đ), nhưng **không cam kết/đặt cọc** khi chưa gỡ xong xung đột "sạch nợ lúc cưới".
+  - **Quy tắc vận hành**: mọi research/quyết định/log phải quy được về đúng một việc. Việc chưa mở thì không tiêu tiền theo nó.
 
-- **Nguyên tắc tài chính & Pháp lý BĐS**: Bố mẹ đứng tên làm sổ thổ cư và ký bán thẳng cho người mua (tiết kiệm thời gian/chi phí sang tên sang con 2 lần) -> Trả dứt điểm phần vốn/nợ ~740tr đã dùng đóng tiền sử dụng đất -> Rút tiền ròng còn lại mua nhà Việt Hưng đứng tên mình.
-  - ⚠️ *Cập nhật 2026-08-12: vế đầu ("bố mẹ đứng tên, bỏ bước sang tên") đang được xem xét đảo ngược — nhưng là **sang tên SAU khi đã có sổ thổ cư**, không phải trước.* Luật hiện hành (NĐ 253/2026, hiệu lực 1/7/2026) giữ thuế TNCN 2% cố định và cho **miễn thuế khi bán đất ở duy nhất đã sở hữu ≥183 ngày** → để tôi đứng tên lúc bán thì tiết kiệm **~90-130tr**. Tặng cho cha mẹ → con **miễn TNCN 10% + miễn lệ phí trước bạ 0,5%**, chỉ còn phí công chứng ~2,3tr. Khoản tiết kiệm **không phụ thuộc sang tên trước hay sau**, nên làm sau để không đánh đổi bằng 15-30 ngày ở giai đoạn chạy đua khoá giá 38tr/m². Chưa chốt — chờ luật sư.
-  - 🚧 **GATE 0 (ưu tiên số 1 từ 2026-08-12)**: chưa ai xác minh **thửa có được phép chuyển mục đích sang đất ở không** (phải nằm trong kế hoạch sử dụng đất hằng năm của xã Phù Đổng), và **diện tích tối thiểu thực sự phải chuyển là bao nhiêu** — nếu <65m² được thì khoản vay 740tr biến mất hoàn toàn. Toàn bộ kế hoạch đang giả định cổng này mở. Chi phí kiểm tra ≈ 0. Xem `real-estate/real-estate-plan.md` → Gate 0.
-  - 🔄 **Đổi khung quyết định (2026-08-12, user chỉ đạo)**: lên thổ cư là **tiền đề bắt buộc** (tài sản phải chính danh là đất ở, và là điều kiện người yêu đã nêu), **không phải phép thử đầu tư**. → Ngưỡng ROI 55% mất quyền phủ quyết, định giá môi giới hạ xuống bước sau. → Bước **sang tên sang mình** được nâng thành **mục đích chính**, vì sổ đứng tên bố mẹ không tạo được tiền đề đó; khoản miễn thuế ~90-130tr chỉ còn là phần thưởng kèm theo.
-  - ⚠️ **Ràng buộc cứng mới**: phải **bán xong đất quê rồi mới được đứng tên mua BĐS tiếp theo**, nếu không mất điều kiện "đất ở duy nhất" và mất luôn khoản miễn thuế.
+- **Nguyên tắc tài chính & pháp lý BĐS** *(chốt 2026-08-21 sau khi hỏi luật sư)*: sang tên bố mẹ → mình **TRƯỚC** (lúc thửa còn là CLN, phí công chứng thấp), rồi **tự đứng tên nộp hồ sơ chuyển mục đích** → sổ thổ cư ra thẳng tên mình, không phải sang tên lần hai sau khi đã đóng 3 tỷ.
+  - ⏱️ **Cái giá của thứ tự này là 15-30 ngày.** Chốt hạn: cuối T9/2026 chưa sang tên xong thì bỏ bước sang tên, để bố mẹ nộp hồ sơ — vì trượt bảng giá 2027 tốn hàng trăm triệu tới cả tỷ.
+  - 💰 Giữ được **~90-130tr** miễn thuế TNCN khi bán, nhờ điều kiện "đất ở duy nhất đã sở hữu ≥183 ngày" (NĐ 253/2026). Tặng cho cha mẹ → con miễn TNCN 10% + miễn lệ phí trước bạ.
+  - ⚠️ **Ràng buộc cứng**: phải **bán xong đất quê rồi mới được đứng tên BĐS tiếp theo**, nếu không mất điều kiện "duy nhất" và mất luôn khoản miễn thuế.
+  - 🔴 **Còn mở**: mốc đếm 183 ngày tính từ sổ mới hay nối từ sổ cũ · con đứng tên có được nộp hồ sơ chuyển mục đích không · thửa có nằm trong kế hoạch sử dụng đất hằng năm của xã không. Chi tiết ở `real-estate/real-estate-plan.md` → "Rủi ro đang mở".
 
 

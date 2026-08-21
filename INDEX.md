@@ -4,7 +4,7 @@ Router cho agent/bản thân: đọc file nào tuỳ câu hỏi/tác vụ.
 
 | Cần gì | Đọc file |
 |---|---|
-| **🧭 Main process đang chạy (Việc 1 làm sổ / Việc 2 chỗ ở & hôn nhân)** | `real-estate/real-estate-plan.md` → mục "Cấu trúc chủ đạo" (đầu file) |
+| **🧭 Main process đang chạy (Việc 1 sang tên + làm sổ / Việc 2 chỗ ở)** | `real-estate/real-estate-plan.md` → mục "Cấu trúc chủ đạo" (đầu file) |
 | Tầm nhìn dài hạn, mục tiêu to/nhỏ | `plan/master-plan.md` |
 | Chiến lược, mục tiêu phân bổ đầu tư | `portfolio/portfolio-plan.md` |
 | Log giao dịch/thay đổi portfolio | `portfolio/logs/{YYYY-MM}.md` |
@@ -12,8 +12,10 @@ Router cho agent/bản thân: đọc file nào tuỳ câu hỏi/tác vụ.
 | Snapshot dòng tiền hiện tại | `finance/cashflow.md` |
 | Log thu/chi theo ngày hoặc tuần | `finance/logs/{YYYY-MM}.md` |
 | Kế hoạch BĐS (sổ đỏ, pháp lý, tài chính) | `real-estate/real-estate-plan.md` |
+| Log diễn biến BĐS theo tháng | `real-estate/logs/{YYYY-MM}.md` |
 | Kế hoạch Crypto (exit strategy, playbook) | `crypto/crypto-plan.md` |
 | Log giao dịch/review crypto theo tuần/tháng | `crypto/logs/{YYYY-MM}.md` |
+| Kế hoạch cưới (khảo sát, ngân sách) | `wedding/wedding-plan.md` |
 
 ## Quy tắc chung
 - File `*-plan.md`: bán tĩnh, chỉ sửa khi chiến lược/mục tiêu thật sự đổi.

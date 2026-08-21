@@ -5,7 +5,8 @@
 
 ## 1. Thông tin dòng vốn
 - **Tổng vốn gốc (initial):** 650,000,000 VND
-- **Giá trị hiện tại (2026-08-04):** ~414,100,000 VND (Đang tạm lỗ ~236 triệu / -36%)
+- **Giá trị hiện tại (2026-08-21):** **~472,500,000 VND** (tạm lỗ ~178tr / -27%) — ước tính, chưa đo trực tiếp số dư Binance. Tăng +14,3% so với ~410tr ngày 07/08 nhờ nhịp BTC +15,5%/3 ngày. **Đã vượt ngưỡng 450tr → override "xả phần vượt" kích hoạt.** Xem `logs/2026-08.md` entry 21/08.
+- **⏰ Deadline nội bộ: 1/9/2026 — còn 11 ngày (tính từ 21/08).** Override ưu tiên 1 (`<14 ngày → market sell ALL`) **đang có hiệu lực**.
 - **Mục tiêu đầu tư:** Quỹ dự phòng thanh khoản **bắt buộc phải rút (cash-out) để làm sổ đỏ**. Không phải danh mục hold dài hạn.
 - **Time Horizon:** Cực ngắn. Deadline nộp hồ sơ sổ đỏ là **Đầu tháng 11/2026** (Chỉ còn khoảng 3 tháng).
 - **Khẩu vị rủi ro:** Cực kỳ thận trọng. Ưu tiên bảo toàn số vốn >400tr hiện có để kịp đắp vào tiền làm sổ đỏ BĐS, không được phép để hao hụt thêm quá sâu.
@@ -30,6 +31,8 @@ Vì toàn bộ số tiền này **được dùng làm quỹ dự trữ làm sổ
 
 ## 4. Nhật ký giao dịch gần nhất
 - **2026-08-04:** Khởi tạo danh mục. Vốn 650tr -> Còn 414tr. Cơ cấu: 64.5% BTC, 25.7% BNSOL, 5.1% USDC, 4.6% ONDO. Xác định phương hướng cash-out toàn bộ phục vụ Dự án 01 BĐS.
+- **2026-08-11:** User xác nhận **chưa bán gì**. Chốt deadline nội bộ 1/9, bỏ thứ tự "BTC bán cuối", chuyển sang xả song song.
+- **2026-08-21:** Nhịp tăng mạnh (BTC +15,5%/3 ngày), TTS ~472,5tr, **3 override cùng kích hoạt** → quyết định bán dứt điểm. Bác đề xuất "vay bù để giữ coin chờ nhịp lớn" (vi phạm 2/3 nguyên tắc bất biến; để về bờ 650tr cần thêm +37,6%). Vẫn **chưa xác nhận đã bán**.
 
 ---
 
