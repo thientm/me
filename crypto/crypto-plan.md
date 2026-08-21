@@ -5,8 +5,13 @@
 
 ## 1. Thông tin dòng vốn
 - **Tổng vốn gốc (initial):** 650,000,000 VND
-- **Giá trị hiện tại (2026-08-21):** **~472,500,000 VND** (tạm lỗ ~178tr / -27%) — ước tính, chưa đo trực tiếp số dư Binance. Tăng +14,3% so với ~410tr ngày 07/08 nhờ nhịp BTC +15,5%/3 ngày. **Đã vượt ngưỡng 450tr → override "xả phần vượt" kích hoạt.** Xem `logs/2026-08.md` entry 21/08.
-- **⏰ Deadline: 1/9/2026 — còn 11 ngày (tính từ 21/08). ĐÂY LÀ MỐC PHÁP LÝ, không phải mốc tự đặt.** **NĐ 284/2026/NĐ-CP** (hiệu lực 01/09/2026) phạt **15-25tr với cá nhân giao dịch tài sản mã hoá không qua tổ chức được cấp phép** — Binance không được cấp phép tại VN. Override ưu tiên 1 (`<14 ngày → market sell ALL`) **đang có hiệu lực**.
+- **Giá trị hiện tại (2026-08-21):** **~498,300,000 VND** (tạm lỗ ~152tr / -23%). BTC 313,4tr · BNSOL 145,6tr · USDC 21,0tr · ONDO 18,3tr. **Đã vượt ngưỡng 450tr → override "xả phần vượt" kích hoạt.**
+  - ⚠️ **BNSOL không phải 1:1 với SOL**: giá spot BNSOL/USDT = $101,90 vs SOL $90,36 → **1,1277 SOL/BNSOL** (rewards staking tích luỹ, tỷ lệ chỉ tăng). Mọi lần định giá trước đây quy BNSOL theo giá SOL đều **thiếu ~13%**.
+  - ✅ **Không cần Standard Redemption 4 ngày** — có cặp spot BNSOL/USDT (vol $2,56M/24h), bán trực tiếp, phí taker 0,1%.
+- **⏰ Deadline: 1/9/2026 — còn 11 ngày (tính từ 21/08). MỐC PHÁP LÝ CỨNG.** **NĐ 284/2026/NĐ-CP Điều 9 khoản 1**: *"Phạt tiền từ 30.000.000 đến 50.000.000 đồng đối với **nhà đầu tư trong nước** giao dịch tài sản mã hóa không thông qua tổ chức cung cấp dịch vụ do Bộ Tài chính cấp phép."* Đây là mức áp **trực tiếp cho cá nhân** (không chia đôi), không có ngoại lệ cho việc tự bán tài sản của mình.
+  - 🔴 **Sau 1/9 có thể KHÔNG CÒN kênh hợp pháp nào**: chưa sàn nào được cấp phép (dự kiến Q3/2026), và Binance **không thể** được cấp phép (NQ 05/2025 yêu cầu doanh nghiệp VN, vốn ≥10.000 tỷ, ≥65% vốn nội).
+  - ✅ **Nắm giữ KHÔNG bị phạt**, chỉ *giao dịch* mới bị (UBCKNN 05/06/2026) → phương án dự phòng hợp pháp là giữ nguyên và chờ sàn nội, nhưng **tiền kẹt vô thời hạn** và gap BĐS phình lên ~1,1 tỷ.
+  - Override ưu tiên 1 (`<14 ngày → market sell ALL`) **đang có hiệu lực**. Chốt hạn nội bộ cho phần coin→USDT: **27/08** (trước keynote Jackson Hole của Warsh 28/08).
 - **🔑 Nguyên tắc thực thi: tách 2 quyết định.** *Coin → USDT* gỡ rủi ro giá, làm được tức thì → **làm ngay**. *USDT → VND* gỡ rủi ro pháp lý, bị chặn bởi AML (20-50tr/lệnh) → rải đều 11 ngày. Đừng giữ coin chờ theo tiến độ rút VND.
 - **Mục tiêu đầu tư:** Quỹ dự phòng thanh khoản **bắt buộc phải rút (cash-out) để làm sổ đỏ**. Không phải danh mục hold dài hạn.
 - **Time Horizon:** Cực ngắn. Deadline nộp hồ sơ sổ đỏ là **Đầu tháng 11/2026** (Chỉ còn khoảng 3 tháng).
