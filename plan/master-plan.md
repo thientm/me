@@ -9,8 +9,8 @@
 ## Mục tiêu lớn (theo năm)
 
 ### 2026 - 2027
-- **2026**: Sang tên thửa đất quê từ bố mẹ sang mình (T9), rồi tự đứng tên nộp hồ sơ xin 80m² thổ cư (T10) — đóng tiền sử dụng đất ~3,02 tỷ (2,3 tỷ vốn tự có, vay thêm ~730tr). Xem `real-estate/real-estate-plan.md`.
-- **2027**: Nhận sổ (T12/2026-T1/2027) → đủ 183 ngày → ký bán toàn bộ thửa (~T6-T7/2027) → tất toán khoản vay ~730tr → giữ tiền mặt ròng.
+- **2026**: Sang tên thửa đất quê từ bố mẹ sang mình (T9), rồi tự đứng tên nộp hồ sơ xin 80m² thổ cư (T10) — tổng chi ra sổ **~3,1 tỷ**, vốn tự có **2.485tr** (705tr cá nhân + 1.300tr bố mẹ + 480tr crypto), **vay thêm 615tr**. Xem `real-estate/real-estate-plan.md`.
+- **2027**: Nhận sổ (T12/2026-T1/2027) → đủ 183 ngày → ký bán toàn bộ thửa (~T6-T7/2027) → tất toán khoản vay 615tr → giữ tiền mặt ròng.
 - **2028**: Cùng vợ góp mua chung cư *(trừ khi mốc cưới đổi — xem `wedding/wedding-plan.md`)*.
 - Vì sao quan trọng: đưa tài sản về chính danh đứng tên mình, tối ưu giá trị thửa đất, và tạo dòng tiền sạch cho chỗ ở.
 - Liên quan domain: real-estate / finance / portfolio / wedding
@@ -19,7 +19,7 @@
 
 ### G-01: Sang tên + làm 80m² thổ cư & Bán toàn bộ đất quê
 - loại: dài hạn
-- target: Sang tên bố mẹ → mình (T9/2026), tự đứng tên nộp hồ sơ lên 80m² thổ cư (T10/2026, ~3,02 tỷ — vay thêm ~730tr), ra sổ, đủ 183 ngày rồi bán toàn bộ và tất toán nợ.
+- target: Sang tên bố mẹ → mình (T9/2026), tự đứng tên nộp hồ sơ lên 80m² thổ cư (T10/2026, tổng chi ~3,1 tỷ — vay thêm 615tr), ra sổ, đủ 183 ngày rồi bán toàn bộ và tất toán nợ.
 - deadline: T7/2027
 - progress: 10%
 - linked_to: Mục tiêu 2026-2027
@@ -35,11 +35,11 @@
 - last_updated: 2026-08-21
 - *(Phương án cũ "mua nhà đất Việt Hưng ~8 tỷ, ngõ ô tô" đã huỷ 2026-08-12.)*
 
-### G-03: Khảo sát tổ chức cưới trong 2026 — 🟡 MỚI MỞ (2026-08-21)
+### G-03: Tổ chức cưới trong 2026 — 📝 DRAFT, tạm gác (2026-08-21)
 - loại: ngắn hạn
-- target: Xác định có tổ chức cưới được trong 2026 không, và nếu có thì ngân sách/quy mô ra sao.
-- 🔴 Chặn ở 1 câu hỏi 0đ: điều kiện "sạch nợ lúc cưới" có còn giữ không, khi cưới 2026 rơi đúng lúc nợ ~730tr ở đỉnh?
-- progress: 0% — đang khảo sát, **chưa cam kết, chưa đặt cọc**
+- target: Cưới trong 2026. **Chi phí lấy từ lương**, tách hẳn khỏi khoản vay 615tr làm sổ — người yêu đã chấp nhận, đối ứng bằng việc sau này bên đó cũng lấy tiền nhà ra khi cần mua đất.
+- ✅ Xung đột "sạch nợ lúc cưới" **đã gỡ**: điều kiện hiểu là "nợ có lộ trình tất toán rõ ràng và không do đám cưới tạo ra".
+- progress: DRAFT — tạm gác để tập trung dòng tiền Việc 1. Mở lại sau khi biết con số tiền sử dụng đất chính thức (~T10-T11/2026).
 - chi tiết: `wedding/wedding-plan.md`
 - last_updated: 2026-08-21
 
