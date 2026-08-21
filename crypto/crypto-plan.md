@@ -6,7 +6,8 @@
 ## 1. Thông tin dòng vốn
 - **Tổng vốn gốc (initial):** 650,000,000 VND
 - **Giá trị hiện tại (2026-08-21):** **~472,500,000 VND** (tạm lỗ ~178tr / -27%) — ước tính, chưa đo trực tiếp số dư Binance. Tăng +14,3% so với ~410tr ngày 07/08 nhờ nhịp BTC +15,5%/3 ngày. **Đã vượt ngưỡng 450tr → override "xả phần vượt" kích hoạt.** Xem `logs/2026-08.md` entry 21/08.
-- **⏰ Deadline nội bộ: 1/9/2026 — còn 11 ngày (tính từ 21/08).** Override ưu tiên 1 (`<14 ngày → market sell ALL`) **đang có hiệu lực**.
+- **⏰ Deadline: 1/9/2026 — còn 11 ngày (tính từ 21/08). ĐÂY LÀ MỐC PHÁP LÝ, không phải mốc tự đặt.** **NĐ 284/2026/NĐ-CP** (hiệu lực 01/09/2026) phạt **15-25tr với cá nhân giao dịch tài sản mã hoá không qua tổ chức được cấp phép** — Binance không được cấp phép tại VN. Override ưu tiên 1 (`<14 ngày → market sell ALL`) **đang có hiệu lực**.
+- **🔑 Nguyên tắc thực thi: tách 2 quyết định.** *Coin → USDT* gỡ rủi ro giá, làm được tức thì → **làm ngay**. *USDT → VND* gỡ rủi ro pháp lý, bị chặn bởi AML (20-50tr/lệnh) → rải đều 11 ngày. Đừng giữ coin chờ theo tiến độ rút VND.
 - **Mục tiêu đầu tư:** Quỹ dự phòng thanh khoản **bắt buộc phải rút (cash-out) để làm sổ đỏ**. Không phải danh mục hold dài hạn.
 - **Time Horizon:** Cực ngắn. Deadline nộp hồ sơ sổ đỏ là **Đầu tháng 11/2026** (Chỉ còn khoảng 3 tháng).
 - **Khẩu vị rủi ro:** Cực kỳ thận trọng. Ưu tiên bảo toàn số vốn >400tr hiện có để kịp đắp vào tiền làm sổ đỏ BĐS, không được phép để hao hụt thêm quá sâu.
