@@ -5,11 +5,11 @@
 
 ## 1. Thông tin dòng vốn
 - **Tổng vốn gốc (initial):** 650,000,000 VND
-- **Giá trị hiện tại (2026-08-21):** **~498,300,000 VND** (tạm lỗ ~152tr / -23%). BTC 313,4tr · BNSOL 145,6tr · USDC 21,0tr · ONDO 18,3tr. **Đã vượt ngưỡng 450tr → override "xả phần vượt" kích hoạt.**
+- **Giá trị hiện tại (2026-08-25):** **~534,800,000 VND** (tạm lỗ ~115tr / -17,7%). BTC 331,1tr · BNSOL 163,4tr · USDC 21,0tr · ONDO 19,4tr. BTC $80.792 (phá $80k), đỉnh $81.273. **Ladder mức 1 ($80k) đã chạm.** Gap BĐS còn 560tr.
   - ⚠️ **BNSOL không phải 1:1 với SOL**: giá spot BNSOL/USDT = $101,90 vs SOL $90,36 → **1,1277 SOL/BNSOL** (rewards staking tích luỹ, tỷ lệ chỉ tăng). Mọi lần định giá trước đây quy BNSOL theo giá SOL đều **thiếu ~13%**.
   - ✅ **Không cần Standard Redemption 4 ngày** — có cặp spot BNSOL/USDT (vol $2,56M/24h), bán trực tiếp, phí taker 0,1%.
 - **⏰ DEADLINE MỚI: 31/10/2026** *(đổi 2026-08-21 bổ sung 2)*. User có **kênh bán USDT trao tay**, không qua P2P/ngân hàng → không bị NĐ 284 ép về 1/9. Deadline thật là lúc cần tiền đóng tiền sử dụng đất (~T11). **31/10 vừa là hạn an toàn cho dòng tiền, vừa trùng đỉnh mùa vụ** (T10 trung vị +15,6%, dương 7/9 năm).
-  - 🎯 **Chiến lược đang chạy: "Khoá sàn + BTC chạy"** — alt bán hết (khoá 185tr), BTC 313tr chạy với **trailing stop 15% + ladder $80k/$88k/$98k**. Mô phỏng 19 mẫu lịch sử: trung vị 522tr, xấu nhất 439tr, tốt nhất 677tr, P(không lỗ hơn bán ngay) = 74%.
+  - 🎯 **Chiến lược đang chạy (sửa 25/08): trailing stop 10-12% + ladder $80k/$88k/$98k, áp cho TOÀN BỘ danh mục.** Bỏ vế "bán alt trước" — dự báo dominance ngày 21/08 đã sai (dominance giảm chứ không tăng; alt vượt BTC), lời khuyên đó đắt 19tr. Đối xử alt y hệt BTC, không ưu tiên bán trước cũng không giữ đặc cách.
   - **Hard floor 440tr** — thủng thì bán sạch ngay.
   - ⚠️ Trao tay **vẫn cấu thành "giao dịch"** theo Điều 9 NĐ 284, chỉ khó bị phát hiện hơn; dấu vết chuyển sang bước nộp tiền mặt vào bank → giữ chứng từ nguồn tiền.
 - ~~**Deadline cũ: 1/9/2026 — MỐC PHÁP LÝ**~~ *(hạ xuống thành khuyến nghị, không còn ràng buộc)*. **NĐ 284/2026/NĐ-CP Điều 9 khoản 1**: *"Phạt tiền từ 30.000.000 đến 50.000.000 đồng đối với **nhà đầu tư trong nước** giao dịch tài sản mã hóa không thông qua tổ chức cung cấp dịch vụ do Bộ Tài chính cấp phép."* Đây là mức áp **trực tiếp cho cá nhân** (không chia đôi), không có ngoại lệ cho việc tự bán tài sản của mình.
