@@ -56,6 +56,7 @@
   - ⏱️ **Cái giá của thứ tự này là 15-30 ngày.** Chốt hạn: cuối T9/2026 chưa sang tên xong thì bỏ bước sang tên, để bố mẹ nộp hồ sơ — vì trượt bảng giá 2027 tốn hàng trăm triệu tới cả tỷ.
   - 💰 Giữ được **~90-130tr** miễn thuế TNCN khi bán, nhờ điều kiện "đất ở duy nhất đã sở hữu ≥183 ngày" (NĐ 253/2026). Tặng cho cha mẹ → con miễn TNCN 10% + miễn lệ phí trước bạ.
   - ⚠️ **Ràng buộc cứng**: phải **bán xong đất quê rồi mới được đứng tên BĐS tiếp theo**, nếu không mất điều kiện "duy nhất" và mất luôn khoản miễn thuế.
-  - 🔴 **Còn mở, xếp theo độ lớn tác động tiền**: ① **ghi nợ tiền sử dụng đất** (Điều 22 NĐ 103/2024) — nếu được thì khỏi vay 615tr · ② mốc đếm 183 ngày (~90-130tr) · ③ con đứng tên có được nộp hồ sơ chuyển mục đích không (chặn cả bước 2) · ④ thửa có nằm trong kế hoạch sử dụng đất hằng năm của xã không. Chi tiết ở `real-estate/real-estate-plan.md` → "Rủi ro đang mở".
+  - 🔴 **Còn mở, xếp theo độ lớn tác động tiền** *(cập nhật 2026-08-26)*: ① **ghi nợ tiền sử dụng đất** (Điều 22 NĐ 103/2024) — nếu được thì khỏi vay 615tr · ② mốc đếm 183 ngày (~90-130tr) · ③ con đứng tên có được nộp hồ sơ chuyển mục đích không (chặn cả bước 2) · ④ thửa có nằm trong kế hoạch sử dụng đất hằng năm của xã không. Chi tiết ở `real-estate/real-estate-plan.md` → "Rủi ro đang mở".
+  - ⚠️ **Mốc thời gian đã siết** *(2026-08-25)*: giá áp theo **ngày ban hành quyết định cho phép chuyển mục đích**, KHÔNG phải ngày nộp hồ sơ → phải **có quyết định trước 31/12/2026**, nên sang tên xong **giữa T9**, nộp hồ sơ **đầu T10**. Trượt sang bảng giá 2027 tốn kỳ vọng **~370tr** (dải 240-460tr, xấu nhất ~900tr).
 
 

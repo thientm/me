@@ -32,6 +32,9 @@
 **Bảng giá đầy đủ tuyến Hà Huy Tập** (đọc từ bản scan gốc, để đối chiếu khi nhận giấy báo thuế):
 VT1 = 85,47tr · VT2 = 48,6tr · **VT3 = 38,0tr** · VT4 = 33,69tr (đ/m²)
 
+**Lịch sử bảng giá tuyến này** *(research 2026-08-25)*: QĐ 30/2019 → QĐ 71/2024 (áp 2025): VT1 lên **68,145tr**, tăng ~gấp 3 · NQ 52/2025 (áp 2026): VT1 **85,47tr** = **+25,4%**, đúng trần dải "ngoại thành +15-26%" (nội đô cùng kỳ chỉ +2%). Bảng giá 2026 đã làm thửa này đắt thêm **~600tr** so với làm trong 2025.
+**Dự báo bảng giá 2027** (HĐND chốt khoảng T11-T12/2026; Điều 159 Luật Đất đai 2024 buộc rà soát hằng năm): giữ nguyên/tăng tượng trưng 0-5% *(25%)* · **cơ sở +8-15%** *(55%)* · lặp lại 2026 +20-30% *(20%)*. **Kỳ vọng ~+12% → tốn thêm ~370tr trên 80m².** Lực đẩy: bảng giá mới bằng ~55-75% giá thị trường (thổ cư Yên Viên 50-70tr/m²), cầu Đuống mới về đích T9/2026, tuyến ĐSĐT số 1 Yên Viên–Ngọc Hồi, dự kiến có Nghị định giá đất mới 2027. Lực kìm: đất nền Hà Nội Q2/2026 -20% cùng kỳ, tồn kho tăng, chính sách trung ương đang giảm gánh nặng cho dân.
+
 > ⚠️ **Khi nhận giấy báo nộp tiền, phải kiểm 2 thứ**: (1) tuyến đường ghi là Hà Huy Tập, (2) vị trí ghi là VT3 → đơn giá 38tr. Luật sư từng báo miệng "45tr giảm 20% còn hơn 38tr" — con số 45tr **không khớp dòng nào** trong Khu vực 8 và phép tính cũng sai (45 × 0,8 = 36). Số 38tr đúng, nhưng cách giải thích thì không — nên luôn đối chiếu giấy tờ, không nghe báo miệng.
 
 ### Hai bước thực thi *(chốt 2026-08-21 sau khi hỏi luật sư)*
@@ -43,13 +46,14 @@ Luật sư chốt làm **2 bước, theo thứ tự: sang tên trước → làm
 | **0** | Bán coin lấy thanh khoản | 🔴 Đang chạy, **chậm** | Deadline nội bộ **1/9/2026** | Xem `crypto/crypto-plan.md`. Tới 21/8 vẫn **chưa bán gì**. |
 | **0** | Đo đạc / trích đo bản đồ địa chính | ⬜ Chưa bắt đầu | Làm ngay | Làm song song, tiết kiệm 1-2 tuần khi nộp hồ sơ. |
 | **1** | **Sang tên: bố mẹ → con** (tặng cho, toàn bộ 150m² CLN) | ⬜ Chưa bắt đầu | T9/2026 | Miễn TNCN 10% + miễn lệ phí trước bạ 0,5%. Phí công chứng tính trên giá trị CLN (thấp) → chỉ ~300-750k + lệ phí hành chính ~300k-1tr. Cần giấy khai sinh chứng minh quan hệ. |
-| **2** | **Làm sổ: nộp hồ sơ chuyển mục đích 80m²** (con đứng tên nộp) | ⬜ Chưa bắt đầu | Nộp **T10/2026** | Phải nộp sớm để khoá đơn giá 38tr/m² trước khi bảng giá 2027 có hiệu lực. |
+| **2** | **Làm sổ: nộp hồ sơ chuyển mục đích 80m²** (con đứng tên nộp) | ⬜ Chưa bắt đầu | Nộp **đầu T10/2026** | ⚠️ **Nộp hồ sơ KHÔNG khoá được giá.** Giá áp theo **ngày ban hành quyết định cho phép chuyển mục đích**, không phải ngày nộp (Luật Đất đai 2024; NĐ 50/2026 cũng chốt hạn mức theo mốc này). → Mốc thật cần về đích: **có quyết định trước 31/12/2026**. Nộp đầu T10 để còn ~3 tháng đệm. |
 | **2** | Đóng tiền sử dụng đất (~3,02 tỷ; tổng chi kể cả phí ~3,1 tỷ) | ⬜ Chưa bắt đầu | T10-T11/2026 | Yêu cầu **giấy báo nộp tiền chính thức** từ cơ quan thuế. Nộp trong **30 ngày** kể từ ngày có quyết định. |
 | **3** | Nhận sổ đỏ mới (80m² đất ở + 70m² CLN, đứng tên con) | ⬜ Chưa bắt đầu | T12/2026 - T1/2027 | |
 | **4** | Chờ đủ 183 ngày → bán toàn bộ 150m² | ⬜ Chưa bắt đầu | ~T6-T7/2027 | 🔴 Mốc đếm chưa chắc chắn — xem "Rủi ro đang mở". |
 
 > **Vì sao sang tên trước** (đảo lại khuyến nghị cũ "sang tên sau"): sang tên khi thửa còn là CLN thì phí công chứng tính trên giá trị thấp (~300-750k thay vì ~2,3tr), và quan trọng hơn — con trực tiếp đứng tên nộp hồ sơ chuyển mục đích, nên **sổ thổ cư ra thẳng tên con**, không phải sang tên lần nữa sau khi đã đóng 3 tỷ.
-> **Cái giá phải trả:** chèn 15-30 ngày vào đúng giai đoạn chạy đua khoá giá 38tr/m². → **Đây là rủi ro số 1 cần theo dõi**: nếu tới **cuối T9/2026** mà bước 1 chưa xong, phải cân nhắc bỏ qua sang tên và để bố mẹ nộp hồ sơ luôn, vì trượt bảng giá 2027 tốn hàng trăm triệu tới cả tỷ, lớn hơn nhiều mọi khoản tiết kiệm của việc sang tên trước.
+> **Cái giá phải trả:** chèn 15-30 ngày vào đúng giai đoạn chạy đua giá 38tr/m². → Chốt hạn: nếu tới **giữa T9/2026** (không phải cuối T9 — vì mốc thật là *ngày có quyết định*, không phải ngày nộp) mà bước 1 chưa xong, cân nhắc bỏ qua sang tên và để bố mẹ nộp hồ sơ luôn.
+> 💸 **Giá của việc trượt sang bảng giá 2027** *(research 2026-08-25)*: kỳ vọng **~370tr**, dải cơ sở 240-460tr, xấu nhất ~900tr. Đủ lớn để giữ mốc cứng và chạy đua với thời gian.
 
 ### Tài chính *(chốt 2026-08-21 theo số user xác nhận)*
 
@@ -106,8 +110,8 @@ Luật sư chốt làm **2 bước, theo thứ tự: sang tên trước → làm
 | **Chỉ làm 60m² thay vì 80m²** để né vay | 80m² là sàn bắt buộc (QĐ 61/2024 — xã đồng bằng). Khoản 3 Điều 11 NQ 254/2025 (không bắt buộc tách thửa) bị Bộ NN&MT diễn giải hẹp: chỉ áp cho thửa **đã có sẵn đất ở**; thửa CLN thuần không đủ điều kiện. Luật sư xác nhận lại 2026-08-19. |
 | **Nhờ người có chính sách thân nhân liệt sĩ đứng tên**, ràng buộc bán lại 1,5 tỷ | Rủi ro trục lợi chính sách; giấy ràng buộc không cưỡng chế được việc sang tên BĐS; rủi ro biến cố từ người đứng tên (mất, ly hôn, nợ, thừa kế); tiết kiệm ròng sau chi phí ẩn chỉ còn ~700tr-1 tỷ — không tương xứng với việc mất thế chủ động. |
 | **Kỳ vọng khấu trừ lớn từ giá đất CLN** (Điều 8 NĐ 103/2024) | Giá CLN thật chỉ 182-218 **nghìn**/m², không phải 2-10 triệu như từng giả định → chỉ giảm ~15tr, không đáng kể. |
-| **Giảm 70% tiền sử dụng đất** theo NQ 254 | Chỉ áp cho đất vườn/ao trong cùng thửa **có đất ở**. Thửa CLN thuần không đủ điều kiện. |
+| **Giảm 70% (thu 30%) tiền sử dụng đất** theo NQ 254 và NĐ 50/2026 | Chỉ áp cho đất vườn/ao trong cùng thửa **có đất ở** hoặc **có nguồn gốc tách ra từ thửa có đất ở**. Đã xác minh (2026-08-26): thửa đất là nguyên 1 miếng từ xưa, chưa từng có nhà, sổ cấp full CLN → Không đủ điều kiện áp dụng bất kỳ nhánh nào. Vẫn phải đóng 100%. |
 | **Hệ số K = 1,1** | QĐ 19/2026 quy định K = 1 cho chuyển mục đích. |
 | **Bố mẹ đứng tên bán thẳng, bỏ hẳn bước sang tên** | Mất ~90-130tr miễn thuế (bố mẹ có nhà khác nên không thuộc diện "duy nhất"), và không đạt mục tiêu "tài sản chính danh đứng tên mình". |
 
-> **Bài học lặp lại 2 lần:** mọi ưu đãi tìm được từ NQ 254 đều bị Bộ NN&MT thu hẹp về điều kiện *"thửa phải có sẵn đất ở"* — thửa này luôn trượt. Ưu đãi nào mới tìm ra cũng phải kiểm ngay điều kiện đó trước khi mừng.
+> **Bài học lặp lại:** mọi ưu đãi giảm tiền sử dụng đất (NQ 254, NĐ 50/2026) đều bị chặn ở điều kiện *"có đất ở trên cùng thửa"* hoặc *"nguồn gốc tách ra từ thửa có đất ở"*. Thửa đất thuần CLN, chưa từng có nhà trên đất như của mình thì luôn trượt. Chấp nhận thực tế đóng full 100% (hơn 3 tỷ).
