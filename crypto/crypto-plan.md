@@ -11,7 +11,8 @@
 - **⏰ DEADLINE MỚI: 31/10/2026** *(đổi 2026-08-21 bổ sung 2)*. User có **kênh bán USDT trao tay**, không qua P2P/ngân hàng → không bị NĐ 284 ép về 1/9. Deadline thật là lúc cần tiền đóng tiền sử dụng đất (~T11). **31/10 vừa là hạn an toàn cho dòng tiền, vừa trùng đỉnh mùa vụ** (T10 trung vị +15,6%, dương 7/9 năm).
   - 🎯 **Chiến lược đang chạy (sửa 25/08): trailing stop 10-12% + ladder $80k/$88k/$98k, áp cho TOÀN BỘ danh mục.** Bỏ vế "bán alt trước" — dự báo dominance ngày 21/08 đã sai (dominance giảm chứ không tăng; alt vượt BTC), lời khuyên đó đắt 19tr. Đối xử alt y hệt BTC, không ưu tiên bán trước cũng không giữ đặc cách.
   - *Cách tính % trailing:* `max(12%, 3×ATR14/giá)` từ đỉnh nhịp — thị trường êm thì giữ 12%, biến động phình thì stop tự nới theo ATR để không bị quét bởi nhiễu thường nhật. **Stop phải là lệnh thật trên sàn, không phải "để ý trong đầu".**
-  - **Hard floor 440tr** — thủng thì bán sạch ngay.
+  - 🔴 **RED ALERT 505tr — tiệm cận 500tr** *(user đặt 04/09/2026)*: TTS đo realtime chạm ≤505tr → cảnh báo đỏ NGAY LẬP TỨC ở đầu mọi output, kèm hành động mặc định **market sell ≥50% crypto còn lại trong 24h** (user có quyền phủ quyết nhưng phải ghi lý do vào log). Ý nghĩa kỹ thuật: với beta SOL ~1,3, mốc này tương đương BTC ~$75-76k — trùng sàn kép $76,3k, tức RED ALERT ≈ cấu trúc tăng đã gãy. Mốc này nổ TRƯỚC trailing stop $72,4k — nó là chuông sớm, không thay thế stop.
+  - **Hard floor 440tr** — thủng thì bán sạch ngay, không bàn.
   - ⚠️ Trao tay **vẫn cấu thành "giao dịch"** theo Điều 9 NĐ 284, chỉ khó bị phát hiện hơn; dấu vết chuyển sang bước nộp tiền mặt vào bank → giữ chứng từ nguồn tiền.
 - ~~**Deadline cũ: 1/9/2026 — MỐC PHÁP LÝ**~~ *(hạ xuống thành khuyến nghị, không còn ràng buộc)*. **NĐ 284/2026/NĐ-CP Điều 9 khoản 1**: *"Phạt tiền từ 30.000.000 đến 50.000.000 đồng đối với **nhà đầu tư trong nước** giao dịch tài sản mã hóa không thông qua tổ chức cung cấp dịch vụ do Bộ Tài chính cấp phép."* Đây là mức áp **trực tiếp cho cá nhân** (không chia đôi), không có ngoại lệ cho việc tự bán tài sản của mình.
   - 🔴 **Sau 1/9 có thể KHÔNG CÒN kênh hợp pháp nào**: chưa sàn nào được cấp phép (dự kiến Q3/2026), và Binance **không thể** được cấp phép (NQ 05/2025 yêu cầu doanh nghiệp VN, vốn ≥10.000 tỷ, ≥65% vốn nội).
@@ -43,7 +44,7 @@ Vì toàn bộ số tiền này **được dùng làm quỹ dự trữ làm sổ
   - **BNSOL mang thêm rủi ro sản phẩm staking của chính Binance** (chuộc/thanh khoản phụ thuộc sàn) → khi cần giảm rủi ro mà các yếu tố khác ngang nhau, trim BNSOL trước BTC.
   - Bất kỳ dấu hiệu hạn chế tài khoản (yêu cầu KYC lại, treo rút, cảnh báo AML) → **kích hoạt ngay override N4 RỦI RO** (7.3), không chờ review.
   - Bật whitelist địa chỉ rút + 2FA; không dùng tài khoản Binance này cho bất kỳ hoạt động nào khác ngoài kế hoạch exit.
-- **Chiến lược Cắt lỗ (Stop loss):** Phải xác định một mốc "Hard Stop" cho danh mục (Nếu tổng tài sản tụt xuống dưới 405 triệu thì bắt buộc cắt máu cash-out toàn bộ ra VND để đảm bảo không bị thiếu hụt tiền làm BĐS). *(Nâng từ 380tr → 405tr ngày 2026-08-07, theo yêu cầu user — xem lý do/rủi ro ở `logs/2026-08.md`.)*
+- **Chiến lược Cắt lỗ (Stop loss):** Phải xác định một mốc "Hard Stop" cho danh mục (Nếu tổng tài sản tụt xuống dưới 440 triệu thì bắt buộc cắt máu cash-out toàn bộ ra VND để đảm bảo không bị thiếu hụt tiền làm BĐS). *(Lịch sử: 380tr → 405tr ngày 07/08 → 440tr ngày 21/08 cùng chiến lược trailing. Tầng cảnh báo hiện hành: RED ALERT 505tr → hard floor 440tr.)*
 
 ## 4. Nhật ký giao dịch gần nhất
 - **2026-08-04:** Khởi tạo danh mục. Vốn 650tr -> Còn 414tr. Cơ cấu: 64.5% BTC, 25.7% BNSOL, 5.1% USDC, 4.6% ONDO. Xác định phương hướng cash-out toàn bộ phục vụ Dự án 01 BĐS.
@@ -110,7 +111,8 @@ Ngoài lịch tuần/tháng, các tình huống sau **kích hoạt hành động
 |---|---|---|
 | **BTC pump >10% trong tuần** | Xả 30-50% lượng BTC đang giữ | Tranh thủ thanh khoản cao, giá tốt — không tham. |
 | **BNSOL/ONDO pump >15%** | Market Sell toàn bộ vị thế đó | Altcoin pump mạnh thường kéo theo dump nhanh. Cơ hội thoát hàng hiếm có. |
-| **Tổng port < 405 triệu** | **EMERGENCY: Market Sell ALL → VND** | Hard Stop. Bảo vệ vốn tối thiểu cho BĐS. Không bàn cãi, không chờ đợi. |
+| **🔴 TTS ≤ 505tr (RED ALERT — tiệm cận 500tr)** | Cảnh báo đỏ ngay + mặc định market sell ≥50% crypto còn lại trong 24h (phủ quyết phải ghi log) | User đặt 04/09. Chuông sớm trước hard floor; trùng vùng gãy cấu trúc BTC ~$75-76k. |
+| **Tổng port < 440 triệu** | **EMERGENCY: Market Sell ALL → VND** | Hard floor (nâng 405→440 ngày 21/08 theo chiến lược trailing). Bảo vệ vốn tối thiểu cho BĐS. Không bàn cãi, không chờ đợi. |
 | **Tổng port > 450 triệu** | Xả ngay phần vượt (>414tr) về USDC/VND | Lock lại phần "lãi bất ngờ", đưa về safe zone. Phần còn lại tiếp tục theo kế hoạch. |
 | **Tin xấu macro lớn** (FED tăng lãi suất đột ngột, sàn bị hack...) | Đánh giá ngay trong 1h, nếu port giảm >5% → xả 50% ngay | Không chờ "hồi phục", vì deadline là cố định (T11/2026). |
 
@@ -236,7 +238,8 @@ Trạng thái: **CHẬM** (dưới sàn) / **ĐÚNG** (đạt sàn, vượt dư�
 |---|---|---|
 | Còn <14 ngày tới 25/10 | Market sell ALL, bất kể giá | 1 |
 | Nhóm 4 báo RỦI RO kênh rút | Market sell ALL → VND trong 24h | 1 |
-| TTS < 405tr | Market sell ALL → VND | 2 |
+| TTS ≤ 505tr — 🔴 RED ALERT (user đặt 04/09) | Cảnh báo đỏ đầu output + mặc định sell ≥50% crypto còn lại trong 24h | 2 |
+| TTS < 440tr (hard floor, nâng từ 405 ngày 21/08) | Market sell ALL → VND | 2 |
 | TTS > 450tr | Xả ngay phần vượt 414tr, lock về VND | 3 |
 | BTC pump >10%/tuần | Xả 30-50% BTC đang giữ | 4 |
 | BNSOL/ONDO pump >15% | Market sell toàn bộ vị thế đó | 4 |
