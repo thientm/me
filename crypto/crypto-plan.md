@@ -176,7 +176,7 @@ Mọi endpoint dưới đây thêm header `User-Agent: Mozilla/5.0`. Lưu ý mô
 | Fear & Greed — bản alternative.me (đối chiếu) | N2 | `api.alternative.me/fng/?limit=N` |
 | Altcoin Season Index + altcoin mcap (đo breadth rotation) | N2 | `api.coinmarketcap.com/data-api/v3/altcoin-season/chart?start=<epoch>&end=<epoch>` |
 | BTC dominance + stablecoin mcap (snapshot hiện tại) | N2 | `api.coinmarketcap.com/data-api/v3/global-metrics/quotes/latest` (endpoint `/dominance/chart` hay lỗi 500, đừng dựa vào) |
-| Tỷ giá USDT/VND thực rút được | N4 | POST `p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search` body `{"page":1,"rows":10,"payTypes":[],"asset":"USDT","tradeType":"SELL","fiat":"VND","transAmount":"50000000"}` — giá ở `data[].adv.price` |
+| **Tỷ giá USDT/VND realtime** (bắt buộc lấy MỚI NHẤT mỗi lần review/tính port) | N4 | Trang tham chiếu user chỉ định: [pricedancing.com USDT-VND chart](https://www.pricedancing.com/vi/Binance-P2P-USDT-VND-chart-ZqzaQWc) — chart của chính dữ liệu Binance P2P, xem trend/MA bằng mắt. Trang render JS + chống bot PoW nên agent KHÔNG tự đọc được (xác minh 06/08 & 04/09) → số realtime lấy qua **cùng nguồn gốc**: POST `p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search` body `{"page":1,"rows":10,"payTypes":[],"asset":"USDT","tradeType":"SELL","fiat":"VND","transAmount":"50000000"}` — giá ở `data[].adv.price`, lấy giá tốt nhất trong top ads. KHÔNG dùng nguồn tổng hợp (goonus/webgia — từng sai 8%). |
 
 ⚠️ Dominance của CMC (~59-60%) lệch hệ quy chiếu với TradingView (~56%) — chỉ so **trend trong cùng một nguồn**, không so chéo số tuyệt đối giữa hai nguồn (lỗi này từng gây khuyến nghị sai 19tr ngày 21/08).
 
