@@ -10,6 +10,7 @@
   - ✅ **Không cần Standard Redemption 4 ngày** — có cặp spot BNSOL/USDT (vol $2,56M/24h), bán trực tiếp, phí taker 0,1%.
 - **⏰ DEADLINE MỚI: 31/10/2026** *(đổi 2026-08-21 bổ sung 2)*. User có **kênh bán USDT trao tay**, không qua P2P/ngân hàng → không bị NĐ 284 ép về 1/9. Deadline thật là lúc cần tiền đóng tiền sử dụng đất (~T11). **31/10 vừa là hạn an toàn cho dòng tiền, vừa trùng đỉnh mùa vụ** (T10 trung vị +15,6%, dương 7/9 năm).
   - 🎯 **Chiến lược đang chạy (sửa 25/08): trailing stop 10-12% + ladder $80k/$88k/$98k, áp cho TOÀN BỘ danh mục.** Bỏ vế "bán alt trước" — dự báo dominance ngày 21/08 đã sai (dominance giảm chứ không tăng; alt vượt BTC), lời khuyên đó đắt 19tr. Đối xử alt y hệt BTC, không ưu tiên bán trước cũng không giữ đặc cách.
+  - *Cách tính % trailing:* `max(12%, 3×ATR14/giá)` từ đỉnh nhịp — thị trường êm thì giữ 12%, biến động phình thì stop tự nới theo ATR để không bị quét bởi nhiễu thường nhật. **Stop phải là lệnh thật trên sàn, không phải "để ý trong đầu".**
   - **Hard floor 440tr** — thủng thì bán sạch ngay.
   - ⚠️ Trao tay **vẫn cấu thành "giao dịch"** theo Điều 9 NĐ 284, chỉ khó bị phát hiện hơn; dấu vết chuyển sang bước nộp tiền mặt vào bank → giữ chứng từ nguồn tiền.
 - ~~**Deadline cũ: 1/9/2026 — MỐC PHÁP LÝ**~~ *(hạ xuống thành khuyến nghị, không còn ràng buộc)*. **NĐ 284/2026/NĐ-CP Điều 9 khoản 1**: *"Phạt tiền từ 30.000.000 đến 50.000.000 đồng đối với **nhà đầu tư trong nước** giao dịch tài sản mã hóa không thông qua tổ chức cung cấp dịch vụ do Bộ Tài chính cấp phép."* Đây là mức áp **trực tiếp cho cá nhân** (không chia đôi), không có ngoại lệ cho việc tự bán tài sản của mình.
@@ -37,6 +38,11 @@ Vì toàn bộ số tiền này **được dùng làm quỹ dự trữ làm sổ
 - **Chiến lược Rút vốn (Take profit / Exit):** 
   - Đặt sẵn các lệnh Limit bán (Sell) ở các mốc giá cao để chốt dần BTC và BNSOL từ nay cho đến hết tháng 10/2026.
   - Phân bổ rút dần ra VND (P2P) theo từng đợt, tránh đợi đến sát deadline T11/2026 mới xả một cục (đề phòng thị trường dump sập đúng lúc cần tiền).
+- **Rủi ro tập trung sàn (Platform risk):** 100% danh mục nằm trên Binance — một lần khoá tài khoản là mất quyền truy cập toàn bộ, đúng lúc pháp lý VN đang siết. Quy tắc giảm thiểu:
+  - **USDT sau khi bán coin KHÔNG nằm ỳ trên sàn**: chuyển ra theo đúng nhịp kênh rút (P2P/trao tay) ngay khi có thể, mục tiêu số dư USDT trên sàn không vượt ~1 tuần khối lượng rút.
+  - **BNSOL mang thêm rủi ro sản phẩm staking của chính Binance** (chuộc/thanh khoản phụ thuộc sàn) → khi cần giảm rủi ro mà các yếu tố khác ngang nhau, trim BNSOL trước BTC.
+  - Bất kỳ dấu hiệu hạn chế tài khoản (yêu cầu KYC lại, treo rút, cảnh báo AML) → **kích hoạt ngay override N4 RỦI RO** (7.3), không chờ review.
+  - Bật whitelist địa chỉ rút + 2FA; không dùng tài khoản Binance này cho bất kỳ hoạt động nào khác ngoài kế hoạch exit.
 - **Chiến lược Cắt lỗ (Stop loss):** Phải xác định một mốc "Hard Stop" cho danh mục (Nếu tổng tài sản tụt xuống dưới 405 triệu thì bắt buộc cắt máu cash-out toàn bộ ra VND để đảm bảo không bị thiếu hụt tiền làm BĐS). *(Nâng từ 380tr → 405tr ngày 2026-08-07, theo yêu cầu user — xem lý do/rủi ro ở `logs/2026-08.md`.)*
 
 ## 4. Nhật ký giao dịch gần nhất
@@ -131,9 +137,11 @@ Ngoài lịch tuần/tháng, các tình huống sau **kích hoạt hành động
 3. Đọc `real-estate/real-estate-plan.md` mục "Kế hoạch tài chính & Trả góp" — lấy số liệu vốn/vay hiện hành.
 4. **Tự tính giá trị port, KHÔNG hỏi user**: lấy số lượng coin từ log gần nhất (bảng danh mục 21/08: BTC 0,1584 · BNSOL 55,2454 · USDC 812,32 · ONDO 1.898,69), nhân giá spot Binance, quy VND theo tỷ giá P2P.
    **⚠️ QUY TẮC CỨNG: giá spot và tỷ giá P2P phải fetch REALTIME tại đúng thời điểm tính** (API ở block 7.2) — không tái sử dụng số của lần review trước, không dùng số cũ trong log kể cả cùng ngày, không ước lượng. Áp dụng cho MỌI lần quy đổi VND: deep review, check nhanh, cập nhật port, đối chiếu ngưỡng (hard floor 440tr, ladder...). Lý do: mọi ngưỡng quyết định đo bằng VND, tỷ giá lệch 1-2% là đủ đổi kết luận trigger; và đã từng sai 8% vì dùng số không tươi (06/08).
-   Chỉ hỏi user 2 câu:
+   Chỉ hỏi user 3 câu:
    - Đã rút được bao nhiêu VND kể từ lần review trước?
    - Có giao dịch nào ngoài kế hoạch không? (nếu có → cập nhật lại số lượng coin dùng để tính)
+   - **Lệnh nào đang THẬT SỰ nằm trên sàn?** (trailing stop, ladder limit — liệt kê từng lệnh: loại, giá, khối lượng)
+5. **Kiểm kê thực thi (BẮT BUỘC, làm trước khi phân tích):** đối chiếu mọi khuyến nghị của các review trước với câu trả lời câu 3. Phân biệt rõ ba trạng thái: `ĐÃ THỰC THI` / `CÓ LỆNH SỐNG TRÊN SÀN` / `CHỈ LÀ KHUYẾN NGHỊ TRÊN GIẤY`. **Khuyến nghị xuất hiện lần thứ 2 mà vẫn chưa thực thi → phải nêu bật ở ĐẦU output kèm câu hỏi trực tiếp "vì sao chưa làm / có quyết định KHÔNG làm không?"** — không được lặp lại khuyến nghị lần 3 như thể lần đầu. Lý do: từ 06/08 đến 04/09 có ≥6 lần khuyến nghị bán chưa được thực thi mà không lần nào bị chặn lại hỏi; chênh lệch kế hoạch–thực tế là rủi ro lớn nhất của toàn hệ thống, lớn hơn mọi sai số chỉ báo.
 5. Tự tính: TTS, % luỹ kế đã rút, số ngày còn tới 25/10/2026, trạng thái tiến độ (theo 7.3).
 
 ### 7.2 Bước 2 — Research 4 nhóm yếu tố
@@ -175,6 +183,7 @@ Mọi endpoint dưới đây thêm header `User-Agent: Mozilla/5.0`. Lưu ý mô
 |---|---|---|
 | Giá spot + klines (tính EMA/RSI/MACD/volume) | N3 | `api.binance.com/api/v3/ticker/price?symbols=[...]` · `api.binance.com/api/v3/klines?symbol=X&interval=1d\|4h\|1w&limit=N` |
 | Funding rate + Open Interest (đo độ nóng đòn bẩy) | N3 | `fapi.binance.com/fapi/v1/fundingRate?symbol=X&limit=6` · `fapi.binance.com/futures/data/openInterestHist?symbol=X&period=1d&limit=10` |
+| Order book depth (tường bid/ask quanh hỗ trợ/kháng cự) | N3 | `api.binance.com/api/v3/depth?symbol=X&limit=1000` — cộng dồn khối lượng theo dải giá 0,5-1%, tìm cụm lệnh lớn bất thường |
 | **ETF BTC net flow theo ngày** (thay Coinglass/Farside vốn JS-rendered) | N2 | `api.coinmarketcap.com/data-api/v3/etf/overview/netflow/chart?category=btc&range=1m` |
 | Fear & Greed — bản CMC (kèm btcPrice, btcVolume) | N2 | `api.coinmarketcap.com/data-api/v3/fear-greed/chart?start=<epoch giây>&end=<epoch giây>` ⚠️ truyền nhầm năm là lấy data năm cũ mà không báo lỗi |
 | Fear & Greed — bản alternative.me (đối chiếu) | N2 | `api.alternative.me/fng/?limit=N` |
@@ -193,6 +202,8 @@ Kết thúc bước này, tổng hợp Nhóm 1-3 thành **điều kiện thị t
 
 **Định nghĩa TTS (Tổng tài sản dự án) = VND đã rút + giá trị crypto còn lại.**
 Mọi ngưỡng trong mục này đo trên TTS, vì đây là con số trả lời đúng câu hỏi "còn đủ tiền làm sổ đỏ không". Không đo trên riêng phần crypto — phần đã rút ra VND là tiền đã an toàn, không còn chịu rủi ro giá.
+
+> **Vì sao ngưỡng neo bằng VND (chủ ý thiết kế, không phải lỗi):** nghĩa vụ cuối (tiền sử dụng đất) tính bằng VND, nên tỷ giá USDT/VND giảm làm TTS giảm là **rủi ro thật** phải được ngưỡng bắt — neo USD sẽ che mất rủi ro này. Điều kiện để cách neo này đúng: mọi lần đo TTS đều dùng tỷ giá P2P realtime (quy tắc cứng 7.1 bước 4). Sự cố lệch 8% ngày 06/08 là do trộn tỷ giá ngân hàng với P2P — đã bịt bằng quy tắc realtime, không phải bằng đổi neo.
 
 **Trục 1 — Sàn tiến độ bắt buộc (luỹ kế đã rút ra VND):**
 
