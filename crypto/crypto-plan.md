@@ -5,7 +5,7 @@
 
 ## 1. Thông tin dòng vốn
 - **Tổng vốn gốc (initial):** 650,000,000 VND
-- **Giá trị hiện tại (2026-08-25):** **~534,800,000 VND** (tạm lỗ ~115tr / -17,7%). BTC 331,1tr · BNSOL 163,4tr · USDC 21,0tr · ONDO 19,4tr. BTC $80.792 (phá $80k), đỉnh $81.273. **Ladder mức 1 ($80k) đã chạm.** Gap BĐS còn 560tr.
+- **Giá trị hiện tại (2026-09-04):** **~535,200,000 VND** (tạm lỗ ~115tr / -17,7%). BTC 330,2tr · BNSOL 166,3tr · USDC 21,0tr · ONDO 17,7tr. BTC $80.785, đỉnh nhịp $82.300 (03/09) → trailing stop 12% = $72.400. **Ladder mức 1 ($80k) đã chạm 2 lần (25/08 và 03-04/09), chưa chốt.** Chưa bán gì (tiến độ 0%). Gap BĐS còn ~560tr. Còn 57 ngày tới hạn cứng 31/10.
   - ⚠️ **BNSOL không phải 1:1 với SOL**: giá spot BNSOL/USDT = $101,90 vs SOL $90,36 → **1,1277 SOL/BNSOL** (rewards staking tích luỹ, tỷ lệ chỉ tăng). Mọi lần định giá trước đây quy BNSOL theo giá SOL đều **thiếu ~13%**.
   - ✅ **Không cần Standard Redemption 4 ngày** — có cặp spot BNSOL/USDT (vol $2,56M/24h), bán trực tiếp, phí taker 0,1%.
 - **⏰ DEADLINE MỚI: 31/10/2026** *(đổi 2026-08-21 bổ sung 2)*. User có **kênh bán USDT trao tay**, không qua P2P/ngân hàng → không bị NĐ 284 ép về 1/9. Deadline thật là lúc cần tiền đóng tiền sử dụng đất (~T11). **31/10 vừa là hạn an toàn cho dòng tiền, vừa trùng đỉnh mùa vụ** (T10 trung vị +15,6%, dương 7/9 năm).
