@@ -129,10 +129,9 @@ Ngoài lịch tuần/tháng, các tình huống sau **kích hoạt hành động
 1. Đọc file này để nắm chiến lược, milestone (Section 5) và cơ cấu danh mục (Section 2).
 2. Đọc `crypto/logs/{YYYY-MM}.md` gần nhất — tiến độ rút và action đã thực hiện.
 3. Đọc `real-estate/real-estate-plan.md` mục "Kế hoạch tài chính & Trả góp" — lấy số liệu vốn/vay hiện hành.
-4. Hỏi user 3 câu:
-   - Tổng giá trị crypto hiện tại? (hoặc chụp màn hình Binance)
+4. **Tự tính giá trị port, KHÔNG hỏi user**: lấy số lượng coin từ log gần nhất (bảng danh mục 21/08: BTC 0,1584 · BNSOL 55,2454 · USDC 812,32 · ONDO 1.898,69), nhân giá spot Binance, quy VND theo tỷ giá P2P (xem block API ở 7.2). Chỉ hỏi user 2 câu:
    - Đã rút được bao nhiêu VND kể từ lần review trước?
-   - Có giao dịch nào ngoài kế hoạch không?
+   - Có giao dịch nào ngoài kế hoạch không? (nếu có → cập nhật lại số lượng coin dùng để tính)
 5. Tự tính: TTS, % luỹ kế đã rút, số ngày còn tới 25/10/2026, trạng thái tiến độ (theo 7.3).
 
 ### 7.2 Bước 2 — Research 4 nhóm yếu tố
@@ -163,6 +162,23 @@ Mỗi nhóm trả lời đúng các câu hỏi của nhóm đó, dùng nguồn �
 - Output: `kênh rút THÔNG` / `TẮC NGHẼN` / `RỦI RO` + tỷ giá + cảnh báo
 
 > **Quyền phủ quyết của Nhóm 4:** nếu Nhóm 4 báo `RỦI RO`, kết quả này override toàn bộ tính toán giá của Nhóm 1-3, kích hoạt override ưu tiên 1 ở mục 7.3. Lý do: giá coin đẹp mà không chuyển được thành VND trước 25/10 thì vô nghĩa — và rủi ro này không thể "chờ hồi phục" như rủi ro giá.
+
+**📡 Nguồn API chuẩn (miễn phí, curl trực tiếp — dùng TRƯỚC khi cào web hay dùng nguồn tổng hợp):**
+
+Mọi endpoint dưới đây thêm header `User-Agent: Mozilla/5.0`. Lưu ý môi trường: python `urllib` hay lỗi SSL trên máy này → tải bằng `curl` ra file rồi mới parse.
+
+| Dữ liệu | Nhóm | Endpoint |
+|---|---|---|
+| Giá spot + klines (tính EMA/RSI/MACD/volume) | N3 | `api.binance.com/api/v3/ticker/price?symbols=[...]` · `api.binance.com/api/v3/klines?symbol=X&interval=1d\|4h\|1w&limit=N` |
+| Funding rate + Open Interest (đo độ nóng đòn bẩy) | N3 | `fapi.binance.com/fapi/v1/fundingRate?symbol=X&limit=6` · `fapi.binance.com/futures/data/openInterestHist?symbol=X&period=1d&limit=10` |
+| **ETF BTC net flow theo ngày** (thay Coinglass/Farside vốn JS-rendered) | N2 | `api.coinmarketcap.com/data-api/v3/etf/overview/netflow/chart?category=btc&range=1m` |
+| Fear & Greed — bản CMC (kèm btcPrice, btcVolume) | N2 | `api.coinmarketcap.com/data-api/v3/fear-greed/chart?start=<epoch giây>&end=<epoch giây>` ⚠️ truyền nhầm năm là lấy data năm cũ mà không báo lỗi |
+| Fear & Greed — bản alternative.me (đối chiếu) | N2 | `api.alternative.me/fng/?limit=N` |
+| Altcoin Season Index + altcoin mcap (đo breadth rotation) | N2 | `api.coinmarketcap.com/data-api/v3/altcoin-season/chart?start=<epoch>&end=<epoch>` |
+| BTC dominance + stablecoin mcap (snapshot hiện tại) | N2 | `api.coinmarketcap.com/data-api/v3/global-metrics/quotes/latest` (endpoint `/dominance/chart` hay lỗi 500, đừng dựa vào) |
+| Tỷ giá USDT/VND thực rút được | N4 | POST `p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search` body `{"page":1,"rows":10,"payTypes":[],"asset":"USDT","tradeType":"SELL","fiat":"VND","transAmount":"50000000"}` — giá ở `data[].adv.price` |
+
+⚠️ Dominance của CMC (~59-60%) lệch hệ quy chiếu với TradingView (~56%) — chỉ so **trend trong cùng một nguồn**, không so chéo số tuyệt đối giữa hai nguồn (lỗi này từng gây khuyến nghị sai 19tr ngày 21/08).
 
 Kết thúc bước này, tổng hợp Nhóm 1-3 thành **điều kiện thị trường**:
 - `THUẬN LỢI` — risk-on, momentum tăng, F&G >60
