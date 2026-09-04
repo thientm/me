@@ -129,7 +129,9 @@ Ngoài lịch tuần/tháng, các tình huống sau **kích hoạt hành động
 1. Đọc file này để nắm chiến lược, milestone (Section 5) và cơ cấu danh mục (Section 2).
 2. Đọc `crypto/logs/{YYYY-MM}.md` gần nhất — tiến độ rút và action đã thực hiện.
 3. Đọc `real-estate/real-estate-plan.md` mục "Kế hoạch tài chính & Trả góp" — lấy số liệu vốn/vay hiện hành.
-4. **Tự tính giá trị port, KHÔNG hỏi user**: lấy số lượng coin từ log gần nhất (bảng danh mục 21/08: BTC 0,1584 · BNSOL 55,2454 · USDC 812,32 · ONDO 1.898,69), nhân giá spot Binance, quy VND theo tỷ giá P2P (xem block API ở 7.2). Chỉ hỏi user 2 câu:
+4. **Tự tính giá trị port, KHÔNG hỏi user**: lấy số lượng coin từ log gần nhất (bảng danh mục 21/08: BTC 0,1584 · BNSOL 55,2454 · USDC 812,32 · ONDO 1.898,69), nhân giá spot Binance, quy VND theo tỷ giá P2P.
+   **⚠️ QUY TẮC CỨNG: giá spot và tỷ giá P2P phải fetch REALTIME tại đúng thời điểm tính** (API ở block 7.2) — không tái sử dụng số của lần review trước, không dùng số cũ trong log kể cả cùng ngày, không ước lượng. Áp dụng cho MỌI lần quy đổi VND: deep review, check nhanh, cập nhật port, đối chiếu ngưỡng (hard floor 440tr, ladder...). Lý do: mọi ngưỡng quyết định đo bằng VND, tỷ giá lệch 1-2% là đủ đổi kết luận trigger; và đã từng sai 8% vì dùng số không tươi (06/08).
+   Chỉ hỏi user 2 câu:
    - Đã rút được bao nhiêu VND kể từ lần review trước?
    - Có giao dịch nào ngoài kế hoạch không? (nếu có → cập nhật lại số lượng coin dùng để tính)
 5. Tự tính: TTS, % luỹ kế đã rút, số ngày còn tới 25/10/2026, trạng thái tiến độ (theo 7.3).
@@ -166,6 +168,8 @@ Mỗi nhóm trả lời đúng các câu hỏi của nhóm đó, dùng nguồn �
 **📡 Nguồn API chuẩn (miễn phí, curl trực tiếp — dùng TRƯỚC khi cào web hay dùng nguồn tổng hợp):**
 
 Mọi endpoint dưới đây thêm header `User-Agent: Mozilla/5.0`. Lưu ý môi trường: python `urllib` hay lỗi SSL trên máy này → tải bằng `curl` ra file rồi mới parse.
+
+**Quy tắc tươi dữ liệu:** giá spot và tỷ giá P2P luôn fetch mới tại thời điểm sử dụng (xem quy tắc cứng ở 7.1 bước 4). Các dữ liệu chậm hơn (ETF flow, F&G, Altcoin Index, dominance) cập nhật theo ngày là đủ.
 
 | Dữ liệu | Nhóm | Endpoint |
 |---|---|---|
