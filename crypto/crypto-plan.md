@@ -5,7 +5,7 @@
 
 ## 1. Thông tin dòng vốn
 - **Tổng vốn gốc (initial):** 650,000,000 VND
-- **Giá trị hiện tại (2026-09-04, SỐ ĐO từ app):** **$20.067 ≈ ~517,800,000 VND** (P2P 25.801; tạm lỗ ~132tr / -20,3%). ⚠️ Bảng số lượng coin trong log 21/08 là số SUY, lệch +3,7% so với app — đang chờ user đọc số lượng từng coin từ app để thay. BTC $81.016, đỉnh nhịp $82.300 (03/09) → trailing stop 12% = $72.424. **Ladder mức 1 ($80k) đã chạm 2 lần, chưa chốt. Buffer tới RED ALERT 505tr chỉ còn +2,5%.** Chưa bán gì (tiến độ 0%). Còn 57 ngày tới hạn cứng 31/10.
+- **Giá trị hiện tại (2026-09-07, SỐ ĐO từ app):** **$19.965 ≈ ~515,100,000 VND** (P2P 25.802; tạm lỗ ~135tr / -20,8%). ✅ ONDO đã bán (~$721 USDT). Cơ cấu đo: BTC 63,71% · BNSOL 29,19% · USDT 3,61% · USDC 3,48%. BTC $79.840 (ngay trên MA50 tuần $79.727), đỉnh nhịp $82.300 → trailing stop $72.424. **Buffer RED ALERT 505tr chỉ +2,0% (≈BTC $78,3k).** Tiến độ rút VND 0%. Còn 54 ngày tới hạn cứng 31/10. Tuần này: CPI 11/09 + FOMC 15-16/09 (NFP đã ra nóng: +162K vs 56K, tăng khả năng Fed hike).
   - ⚠️ **BNSOL không phải 1:1 với SOL**: giá spot BNSOL/USDT = $101,90 vs SOL $90,36 → **1,1277 SOL/BNSOL** (rewards staking tích luỹ, tỷ lệ chỉ tăng). Mọi lần định giá trước đây quy BNSOL theo giá SOL đều **thiếu ~13%**.
   - ✅ **Không cần Standard Redemption 4 ngày** — có cặp spot BNSOL/USDT (vol $2,56M/24h), bán trực tiếp, phí taker 0,1%.
 - **⏰ DEADLINE MỚI: 31/10/2026** *(đổi 2026-08-21 bổ sung 2)*. User có **kênh bán USDT trao tay**, không qua P2P/ngân hàng → không bị NĐ 284 ép về 1/9. Deadline thật là lúc cần tiền đóng tiền sử dụng đất (~T11). **31/10 vừa là hạn an toàn cho dòng tiền, vừa trùng đỉnh mùa vụ** (T10 trung vị +15,6%, dương 7/9 năm).
@@ -23,15 +23,18 @@
 - **Time Horizon:** Cực ngắn. Deadline nộp hồ sơ sổ đỏ là **Đầu tháng 11/2026** (Chỉ còn khoảng 3 tháng).
 - **Khẩu vị rủi ro:** Cực kỳ thận trọng. Ưu tiên bảo toàn số vốn >400tr hiện có để kịp đắp vào tiền làm sổ đỏ BĐS, không được phép để hao hụt thêm quá sâu.
 
-## 2. Target Allocation & Tình trạng hiện tại (Snapshot 2026-08-04)
+## 2. Target Allocation & Tình trạng hiện tại (Snapshot ĐO từ app 2026-09-07)
 
-| Tài sản | Tỷ trọng | Phân loại | Định hướng xử lý (Chuẩn bị cash-out) |
-|---|---|---|---|
-| **BTC** | 64.53% | Coin dây sống | Tỷ trọng lớn nhất, an toàn nhất danh mục hiện tại. Canh các nhịp giá hồi phục từ nay đến T10/2026 để xả dần sang VND/USDT. |
-| **BNSOL** | 25.74% | Altcoin / Staking | Rủi ro biến động cao hơn BTC. Cần theo dõi sát hệ sinh thái Solana, ưu tiên chốt lời/cắt lỗ dứt khoát sớm để đưa về an toàn. |
-| **USDC** | 5.13% | Stablecoin | Tiền mặt có sẵn. Giữ nguyên không mua thêm Altcoin, sẵn sàng quy đổi P2P sang VND. |
-| **ONDO** | 4.58% | RWA Altcoin | Tỷ trọng nhỏ nhưng độ rủi ro cao, thanh lý dần khi được giá. |
-| **BNB** | 0.01% | Coin lẻ sàn | Dùng làm phí giao dịch (Dust). |
+| Tài sản | Tỷ trọng | SL (suy từ % đo 07/09) | Phân loại | Định hướng xử lý (Chuẩn bị cash-out) |
+|---|---|---|---|---|
+| **BTC** | 63.71% | ~0,1593 | Coin dây sống | Trailing stop $72.424 + ladder $80k/$88k/$98k (mức 1 đã chạm, chưa chốt 20%). |
+| **BNSOL** | 29.19% | ~49,10 | Altcoin / Staking | Trim 50% vùng SOL $103-111 (limit $107-108); phần còn lại stop dưới $97. Bán trên spot BNSOL/USDT (ratio ~1,13 SOL/BNSOL, KHÔNG quy theo giá SOL). |
+| **USDT** | 3.61% | ~721 | Stablecoin | Tiền bán ONDO — chuyển ra VND ngay, không nằm ỳ trên sàn (rule platform-risk). |
+| **USDC** | 3.48% | ~695 | Stablecoin | Chuyển ra VND cùng đợt với USDT. |
+| **BNB** | 0.01% | dust | Coin lẻ sàn | Phí giao dịch. |
+
+> **Quy tắc số lượng (thêm 07/09): số lượng coin dùng để tính port phải là số ĐO** (đọc từ app/số dư sàn, hoặc suy từ % phân bổ user chụp từ app) — **không bao giờ là số SUY từ cơ cấu cũ**. Bảng suy 21/08 từng lệch -11% ở BNSOL, gây báo sai port +3,7% (~20tr) và báo sai buffer RED ALERT (+6,5% ảo vs +2,5% thật). Mỗi lần user báo số mới từ app → cập nhật bảng này, ghi ngày.
+> ~~Snapshot cũ 04/08: BTC 64,53 · BNSOL 25,74 · USDC 5,13 · ONDO 4,58 (ONDO đã bán 05-07/09).~~
 
 ## 3. Nguyên tắc & Chiến lược tối ưu (Optimization Strategy)
 Vì toàn bộ số tiền này **được dùng làm quỹ dự trữ làm sổ đỏ (deadline T11/2026)**, chiến lược sẽ thiên về **phòng thủ & rút lui (Exit Strategy)** thay vì tối ưu lợi nhuận:
