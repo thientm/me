@@ -5,7 +5,7 @@
 
 ## 1. Thông tin dòng vốn
 - **Tổng vốn gốc (initial):** 650,000,000 VND
-- **Giá trị hiện tại (2026-09-07, SỐ ĐO từ app):** **$19.965 ≈ ~515,100,000 VND** (P2P 25.802; tạm lỗ ~135tr / -20,8%). ✅ ONDO đã bán (~$721 USDT). Cơ cấu đo: BTC 63,71% · BNSOL 29,19% · USDT 3,61% · USDC 3,48%. BTC $79.840 (ngay trên MA50 tuần $79.727), đỉnh nhịp $82.300 → trailing stop $72.424. **Buffer RED ALERT 505tr chỉ +2,0% (≈BTC $78,3k).** Tiến độ rút VND 0%. Còn 54 ngày tới hạn cứng 31/10. Tuần này: CPI 11/09 + FOMC 15-16/09 (NFP đã ra nóng: +162K vs 56K, tăng khả năng Fed hike).
+- **Giá trị hiện tại (2026-09-07, SỐ ĐO từ app):** **$19.965 ≈ ~515,100,000 VND** (P2P 25.802; tạm lỗ ~135tr / -20,8%). ✅ ONDO đã bán (~$721 USDT) · ✅ BNSOL đã redeem → **SOL ~55,3** (xác nhận 07/09). Cơ cấu đo: BTC 63,71% · SOL 29,19% · USDT 3,61% · USDC 3,48%. BTC $80.032 (ngay trên MA50 tuần $79.727), đỉnh nhịp $82.300 → trailing stop $72.424. **Buffer RED ALERT 505tr chỉ +2,0% (≈BTC $78,3k).** Tiến độ rút VND 0%. Còn 54 ngày tới hạn cứng 31/10. Tuần này: CPI 11/09 + FOMC 15-16/09 (NFP đã ra nóng: +162K vs 56K, tăng khả năng Fed hike).
   - ⚠️ **BNSOL không phải 1:1 với SOL**: giá spot BNSOL/USDT = $101,90 vs SOL $90,36 → **1,1277 SOL/BNSOL** (rewards staking tích luỹ, tỷ lệ chỉ tăng). Mọi lần định giá trước đây quy BNSOL theo giá SOL đều **thiếu ~13%**.
   - ✅ **Không cần Standard Redemption 4 ngày** — có cặp spot BNSOL/USDT (vol $2,56M/24h), bán trực tiếp, phí taker 0,1%.
 - **⏰ DEADLINE MỚI: 31/10/2026** *(đổi 2026-08-21 bổ sung 2)*. User có **kênh bán USDT trao tay**, không qua P2P/ngân hàng → không bị NĐ 284 ép về 1/9. Deadline thật là lúc cần tiền đóng tiền sử dụng đất (~T11). **31/10 vừa là hạn an toàn cho dòng tiền, vừa trùng đỉnh mùa vụ** (T10 trung vị +15,6%, dương 7/9 năm).
@@ -28,7 +28,7 @@
 | Tài sản | Tỷ trọng | SL (suy từ % đo 07/09) | Phân loại | Định hướng xử lý (Chuẩn bị cash-out) |
 |---|---|---|---|---|
 | **BTC** | 63.71% | ~0,1593 | Coin dây sống | Trailing stop $72.424 + ladder $80k/$88k/$98k (mức 1 đã chạm, chưa chốt 20%). |
-| **BNSOL** | 29.19% | ~49,10 | Altcoin / Staking | Trim 50% vùng SOL $103-111 (limit $107-108); phần còn lại stop dưới $97. Bán trên spot BNSOL/USDT (ratio ~1,13 SOL/BNSOL, KHÔNG quy theo giá SOL). |
+| **SOL** | 29.19% | ~55,3 | Altcoin (đã redeem từ BNSOL, xác nhận 07/09) | Trim 50% bằng limit $108-111; phần còn lại stop dưới $97. Bán trực tiếp SOL/USDT — hết ràng buộc ratio BNSOL, hết rủi ro sản phẩm staking Binance. |
 | **USDT** | 3.61% | ~721 | Stablecoin | Tiền bán ONDO — chuyển ra VND ngay, không nằm ỳ trên sàn (rule platform-risk). |
 | **USDC** | 3.48% | ~695 | Stablecoin | Chuyển ra VND cùng đợt với USDT. |
 | **BNB** | 0.01% | dust | Coin lẻ sàn | Phí giao dịch. |
@@ -140,7 +140,7 @@ Ngoài lịch tuần/tháng, các tình huống sau **kích hoạt hành động
 1. Đọc file này để nắm chiến lược, milestone (Section 5) và cơ cấu danh mục (Section 2).
 2. Đọc `crypto/logs/{YYYY-MM}.md` gần nhất — tiến độ rút và action đã thực hiện.
 3. Đọc `real-estate/real-estate-plan.md` mục "Kế hoạch tài chính & Trả góp" — lấy số liệu vốn/vay hiện hành.
-4. **Tự tính giá trị port, KHÔNG hỏi user**: lấy số lượng coin từ log gần nhất (bảng danh mục 21/08: BTC 0,1584 · BNSOL 55,2454 · USDC 812,32 · ONDO 1.898,69), nhân giá spot Binance, quy VND theo tỷ giá P2P.
+4. **Tự tính giá trị port, KHÔNG hỏi user**: lấy số lượng coin từ **bảng cơ cấu ĐO ở Section 2** (bản mới nhất, có ghi ngày đo), nhân giá spot Binance, quy VND theo tỷ giá P2P.
    **⚠️ QUY TẮC CỨNG: giá spot và tỷ giá P2P phải fetch REALTIME tại đúng thời điểm tính** (API ở block 7.2) — không tái sử dụng số của lần review trước, không dùng số cũ trong log kể cả cùng ngày, không ước lượng. Áp dụng cho MỌI lần quy đổi VND: deep review, check nhanh, cập nhật port, đối chiếu ngưỡng (hard floor 440tr, ladder...). Lý do: mọi ngưỡng quyết định đo bằng VND, tỷ giá lệch 1-2% là đủ đổi kết luận trigger; và đã từng sai 8% vì dùng số không tươi (06/08).
    Chỉ hỏi user 3 câu:
    - Đã rút được bao nhiêu VND kể từ lần review trước?
@@ -165,7 +165,7 @@ Mỗi nhóm trả lời đúng các câu hỏi của nhóm đó, dùng nguồn �
 
 **Nhóm 3 — Vi mô từng tài sản**
 - BTC: giá, %Δ tuần, vị trí so EMA20/50/200, RSI, vị trí trong chu kỳ (tham chiếu: đỉnh $126k T10/2025 → đáy $60.8k T6/2026)
-- BNSOL: giá SOL, tỷ lệ quy đổi BNSOL/SOL có bị discount không, thanh khoản khi redeem, lịch unlock SOL, dòng ETF SOL
+- SOL *(đã redeem từ BNSOL 09/2026, nắm SOL trực tiếp)*: giá, %Δ tuần, vị trí so EMA/MA50 tuần, lịch unlock SOL, dòng ETF SOL
 - ONDO: giá, lịch unlock (áp lực bán mang tính hệ thống), TVL, tin sector RWA
 - USDC: không research, chỉ đọc số dư
 - Nguồn: Binance spot, TradingView, Coinglass, token unlock trackers
