@@ -26,7 +26,6 @@ chk() { # chk "tên" <điều kiện đã eval> <có tự vá được không>
 echo "── healthcheck"
 chk "ffmpeg"            "$(command -v ffmpeg >/dev/null && echo 1 || echo 0)" 0
 chk "uv"                "$(command -v uv      >/dev/null && echo 1 || echo 0)" 0
-chk "ca-bundle.pem"     "$([ -s ca-bundle.pem ] && echo 1 || echo 0)"
 chk ".venv"             "$([ -x .venv/bin/python ] && echo 1 || echo 0)"
 chk "font Be Vietnam"   "$([ -f "$FONT" ] && echo 1 || echo 0)"
 chk "chromium"          "$(ls -d "$CHROME_DIR"/chromium* >/dev/null 2>&1 && echo 1 || echo 0)"
@@ -43,8 +42,11 @@ if [ "$need" = "1" ]; then
   echo "── bootstrap xong"
 fi
 
-export SSL_CERT_FILE="$PWD/ca-bundle.pem"
-export REQUESTS_CA_BUNDLE="$PWD/ca-bundle.pem"
+# chỉ máy sau proxy MITM mới có file này (bootstrap tự quyết)
+if [ -f ca-bundle.pem ]; then
+  export SSL_CERT_FILE="$PWD/ca-bundle.pem"
+  export REQUESTS_CA_BUNDLE="$PWD/ca-bundle.pem"
+fi
 
 # kiểm tra import thật — bắt được venv hỏng mà thư mục vẫn còn
 if ! ./.venv/bin/python -c "import vieneu, faster_whisper, playwright, numpy, scipy" 2>/dev/null; then
