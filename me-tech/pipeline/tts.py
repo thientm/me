@@ -125,9 +125,11 @@ def main():
         opts = dict(defaults); opts.update(s.get("opts", {}))
         said = spell(s["say"])
         a, dur, exp, tries, log, flag, heard = render_segment(tts, said, voice, opts, verify=VERIFY)
-        timing.append({"id": s["id"], "scene": s["scene"],
+        timing.append({"id": s["id"], "scene": s.get("group", s["id"]),
                        "start": round(cursor, 3), "end": round(cursor + dur, 3),
-                       "dur": round(dur, 3), "show": s["show"]})
+                       "dur": round(dur, 3),
+                       # mọi thứ của câu trừ lời đọc — hình lấy từ đây
+                       "show": {k: v for k, v in s.items() if k != "say"}})
         print(f"  [{i+1:2}/{len(c['segments'])}] {s['id']:<6} {dur:5.2f}s  thử {tries}x {log}  {time.time()-t0:4.1f}s{flag}", flush=True)
         if flag and heard:
             print(f"           nghe được: «{heard}»", flush=True)

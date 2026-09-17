@@ -1,0 +1,344 @@
+<!doctype html><meta charset="utf-8">
+<title>Me Tech scene</title>
+<style>
+:root{
+  --ink:#0E0D0B;          /* nền mực ấm, không phải đen xanh */
+  --paper:#F5F1E8;        /* chữ đã đọc */
+  --ghost:rgba(245,241,232,.11);   /* chữ chưa đọc */
+  --mute:#8C8479;
+  --now:#FFAE2B;          /* đang nói · con số mới · trạng thái sau */
+  --was:#7E9A87;          /* trạng thái trước · cái bị thay thế */
+}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink);
+  font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--paper);
+  -webkit-font-smoothing:antialiased}
+
+#plane{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;
+  background-image:radial-gradient(rgba(245,241,232,.20) 2px, transparent 2.1px);
+  background-size:60px 60px}
+#glow{position:absolute;left:0;top:0;width:1600px;height:1600px;margin:-800px 0 0 -800px;
+  pointer-events:none;will-change:transform,opacity;
+  background:radial-gradient(circle, rgba(255,174,43,.16), transparent 62%)}
+
+.st{position:absolute;will-change:opacity}
+.lab{font-size:23px;letter-spacing:.34em;font-weight:800;color:var(--now);
+  margin-bottom:28px;min-height:26px}
+.line{font-weight:800;letter-spacing:-.022em;line-height:1.16}
+.line + .line{margin-top:26px}
+.w{display:inline-block;margin-right:.24em;position:relative;color:var(--ghost)}
+.w.on{color:var(--paper)}
+.w.hot.on{color:var(--now)}
+.w i{position:absolute;left:0;bottom:-.08em;height:4px;width:0;
+  background:var(--now);display:block}
+.und{height:5px;background:var(--now);width:0;margin-top:30px}
+
+.dwrap{position:relative}
+.dwrap canvas{display:block}
+.dread{margin-top:26px;display:flex;align-items:baseline;gap:16px}
+.dread .big{font-size:120px;font-weight:800;letter-spacing:-.045em;line-height:1;
+  font-variant-numeric:tabular-nums}
+.dread .u{font-size:32px;font-weight:700;color:var(--mute)}
+.dleg{margin-top:8px;font-size:24px;font-weight:600;color:var(--mute)}
+
+.card{position:relative;width:900px}
+.card + .card{margin-top:54px}
+.card .n{font-size:26px;font-weight:800;letter-spacing:.26em;color:var(--now);
+  margin-bottom:18px}
+.card .t{font-size:62px;font-weight:800;letter-spacing:-.022em;line-height:1.1}
+.card .d{margin-top:16px;font-size:30px;font-weight:600;color:var(--mute);line-height:1.35}
+.card .bar{height:5px;background:var(--now);width:0;margin-top:20px}
+.card .line{font-size:34px;margin-top:24px;opacity:.85}
+
+.outro{text-align:center}
+.outro .mark{font-size:132px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.outro .hd{margin-top:22px;font-size:28px;font-weight:600;letter-spacing:.24em;
+  color:var(--mute)}
+.outro canvas{position:absolute;left:50%;top:50%;margin:-450px 0 0 -450px;
+  pointer-events:none}
+
+#vig{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(138% 84% at 50% 47%, transparent 40%, rgba(14,13,11,.93) 100%)}
+.hud{position:absolute;font-size:22px;letter-spacing:.28em;font-weight:700;
+  color:rgba(245,241,232,.34)}
+#hudL{left:90px;top:150px}
+#hudR{right:90px;top:150px;color:rgba(245,241,232,.22)}
+#hudB{left:90px;bottom:150px}
+.prog{position:absolute;left:0;bottom:0;height:5px;background:var(--now)}
+</style>
+<div id="stage">
+  <div id="plane"><div id="glow"></div></div>
+  <div id="vig"></div>
+  <div class="hud" id="hudL"></div>
+  <div class="hud" id="hudR"></div>
+  <div class="hud" id="hudB"></div>
+  <div class="prog" id="prog"></div>
+</div>
+<script src="deck.js"></script>
+<script src="data.js"></script>
+<script>
+const TL=window.TL, SEG=TL.segments, D=window.DECK, G=D.groups;
+const cl=(x,a,b)=>Math.min(b,Math.max(a,x));
+const ease=x=>1-Math.pow(1-x,3);
+const eSine=x=>-(Math.cos(Math.PI*x)-1)/2;
+const fmt=n=>(Math.round(n*10)/10).toFixed(1).replace('.',',');
+
+document.getElementById('hudL').textContent=D.brand;
+document.getElementById('hudR').textContent=D.date;
+document.getElementById('hudB').textContent=D.kicker;
+
+const plane=document.getElementById('plane'), glow=document.getElementById('glow');
+
+// ---- chữ ăn theo giọng: xương sống, có mặt ở mọi chế độ ----
+function words(si, size, from, to){
+  const seg=SEG[si], hot=new Set(D.hot[si]||[]);
+  from=from||0; to=(to===undefined)?seg.words.length:to;
+  const d=document.createElement('div');
+  d.className='line'; d.style.fontSize=size+'px';
+  d.dataset.from=from; d.dataset.seg=si;
+  for(let k=from;k<to;k++){
+    const e=document.createElement('span');
+    e.className='w'+(hot.has(k)?' hot':'');
+    e.innerHTML=seg.words[k].w+'<i></i>';
+    d.appendChild(e);
+  }
+  return d;
+}
+const LIT=[];                                   // mọi dòng chữ cần bật sáng
+function lit(node){ LIT.push(node); return node; }
+function litAll(t){
+  for(const n of LIT){
+    const seg=SEG[+n.dataset.seg], from=+n.dataset.from;
+    for(let j=0;j<n.children.length;j++){
+      const w=seg.words[from+j], sp=n.children[j];
+      const on=t>=w.a-0.02;
+      sp.classList.toggle('on',on);
+      const r=cl((t-w.a)/Math.max(w.b-w.a,.08),0,1);
+      sp.firstElementChild.style.width=(on&&r<1? r*100:0)+'%';
+    }
+  }
+}
+
+// cỡ chữ theo độ dài câu VÀ số câu trong trạm — trạm ba dòng thì chữ phải nhỏ lại
+function sayFont(si, lines){
+  const n=SEG[si].plain.length;
+  const base = n>52?68 : n>38?80 : n>26?92 : 104;
+  return Math.round(base * (lines>=3 ? 0.62 : lines===2 ? 0.78 : 1));
+}
+
+// ---- dựng các trạm: mỗi group một trạm, xếp so le trên mặt phẳng ----
+const STEP_Y=1500, X_ODD=150, X_EVEN=210;
+const PW=2400, PH=400+G.length*STEP_Y+800;
+plane.style.width=PW+'px'; plane.style.height=PH+'px';
+
+const ST=[];
+G.forEach((g,gi)=>{
+  const el=document.createElement('div');
+  el.className='st'+(g.mode==='outro'?' outro':'');
+  const x=(gi%2===0)?X_ODD:X_EVEN, y=340+gi*STEP_Y;
+  el.style.left=x+'px'; el.style.top=y+'px';
+  el.style.width=(g.mode==='step'?900:960)+'px';
+  plane.appendChild(el);
+
+  if(g.lab && g.mode!=='outro')
+    el.insertAdjacentHTML('beforeend','<div class="lab">'+g.lab+'</div>');
+
+  const rec={el, g, gi, x, y, bars:[], und:null, cards:[]};
+
+  if(g.mode==='say'){
+    g.segs.forEach(si=>el.appendChild(lit(words(si, sayFont(si, g.segs.length)))));
+    el.insertAdjacentHTML('beforeend','<div class="und"></div>');
+    rec.und=el.querySelector('.und');
+
+  }else if(g.mode==='data'){
+    el.insertAdjacentHTML('beforeend',
+      '<div class="dwrap"><canvas class="grid" width="1000" height="560"></canvas>'+
+      '<div class="dread"><span class="big">0,0</span>'+
+      '<span class="u">'+(D.data.suffix||'')+'</span></div>'+
+      '<div class="dleg"></div></div>');
+    g.segs.forEach(si=>el.appendChild(lit(words(si, 44))));
+    rec.grid=el.querySelector('.grid').getContext('2d');
+    rec.big=el.querySelector('.big'); rec.leg=el.querySelector('.dleg');
+
+  }else if(g.mode==='step'){
+    const sp=g.splitAt, seg0=g.segs[0], w=SEG[seg0].words.length;
+    (g.cards||[]).forEach((c,i)=>{
+      const cd=document.createElement('div'); cd.className='card';
+      cd.innerHTML='<div class="n">'+c.n+'</div><div class="t">'+c.t+'</div>'+
+                   '<div class="d">'+(c.d||'')+'</div><div class="bar"></div>';
+      // thẻ nào mang chữ nấy: hoặc theo câu riêng, hoặc cắt một câu tại splitAt
+      if(g.segs.length>1 && g.segs[i]!==undefined) cd.appendChild(lit(words(g.segs[i],34)));
+      else if(sp!==null && sp!==undefined) cd.appendChild(lit(words(seg0,34, i===0?0:sp, i===0?sp:w)));
+      el.appendChild(cd);
+      rec.cards.push({el:cd, bar:cd.querySelector('.bar')});
+    });
+
+  }else{  // outro — cảnh kết dùng chung, không bao giờ đổi
+    el.insertAdjacentHTML('beforeend','<canvas class="ring" width="900" height="900"></canvas>');
+    const m=lit(words(g.segs[0],132)); m.classList.add('mark'); el.appendChild(m);
+    el.insertAdjacentHTML('beforeend','<div class="hd">'+D.outro.handle+'</div>');
+    rec.ring=el.querySelector('.ring').getContext('2d');
+  }
+  ST.push(rec);
+});
+// Xếp lại theo chiều cao THẬT của từng trạm, chừa khoảng đủ rộng để khi máy quay
+// dừng ở trạm này thì trạm bên cạnh nằm ngoài khung. Zoom cũng theo chiều cao:
+// trạm ba dòng tự lùi ra, trạm một dòng tự tiến vào — khung hình luôn đầy vừa phải.
+const GAP_Y=980, FIT=1480;
+let cur=340;
+ST.forEach(r=>{
+  const h=r.el.offsetHeight;
+  r.y=cur; r.el.style.top=cur+'px';
+  const w=r.el.offsetWidth;
+  r.cy=cur+h/2; r.cx=r.x+w/2;
+  // zoom bị chặn cả bởi chiều cao lẫn chiều ngang — phóng quá là chữ bị cắt mép
+  r.wmax=1080/(w+90);
+  r.zoom=cl(Math.min(FIT/Math.max(h,320), r.wmax), 0.58, 1.05);
+  cur += h + GAP_Y;
+});
+plane.style.height=(cur+600)+'px';
+
+// ---- lưới số liệu: số nói bằng hình, mỗi ô là một đơn vị thật ----
+const DD=D.data||{};
+const COLS=20, CW=48, CH=50, SQ=38, GX=2, GY=6, PARK_Y=506;
+const gp=i=>[GX+(i%COLS)*CW, GY+((i/COLS)|0)*CH];
+const pk=k=>[GX+(k%84)*11.3, PARK_Y+((k/84)|0)*22];
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const HUE={now:'#FFAE2B', was:'#7E9A87'};
+const wordAt=a=>SEG[a[0]].words[a[1]];
+
+function dataState(t){
+  let from=0, cur=0, col='now', leg='', peak=0;
+  for(const s of (DD.stages||[])){
+    const w=wordAt(s.at), A=w.a, B=w.b+0.30;
+    const p=eio(cl((t-A)/Math.max(B-A,.2),0,1));
+    cur=from+(s.fill-from)*p;
+    if(t>=A) { col=s.color||'now'; leg=s.label||''; }
+    peak=Math.max(peak, from, s.fill*(p>0?1:0));
+    if(p<1) break;
+    from=s.fill;
+  }
+  return {cur, col, leg, peak:Math.max(peak,cur)};
+}
+
+function drawData(rec,t){
+  const g=rec.grid, S=dataState(t), shown=Math.round(S.cur);
+  g.clearRect(0,0,1000,560);
+  g.strokeStyle='rgba(245,241,232,.09)'; g.lineWidth=1;
+  for(let i=0;i<DD.cells;i++){ const [x,y]=gp(i); g.strokeRect(x+.5,y+.5,SQ,SQ); }
+
+  for(let i=0;i<DD.cells;i++){
+    const [gx,gy]=gp(i);
+    if(i<shown){ g.globalAlpha=1; g.fillStyle=HUE[S.col]; g.fillRect(gx,gy,SQ,SQ); continue; }
+    if(i>=S.peak) continue;
+    const p=cl((i-S.cur)/26,0,1);            // ô vừa bị bỏ đi thì đang bay xuống
+    const [sx,sy]=pk(i-shown);
+    const x=gx+(sx-gx)*p, y=gy+(sy-gy)*p, s=SQ+(7-SQ)*p;
+    g.globalAlpha=1-0.42*p; g.fillStyle=HUE.was; g.fillRect(x,y,s,s);
+  }
+  g.globalAlpha=1;
+  if(DD.parkLabel && S.peak>shown+2){
+    g.fillStyle='rgba(126,154,135,.6)';
+    g.font='600 21px "Be Vietnam Pro", sans-serif';
+    g.fillText(DD.parkLabel, GX, PARK_Y-16);
+  }
+  // đơn vị nguyên (việc làm, người, con chip) thì không hiện số lẻ
+  const v=S.cur*(DD.unit||1);
+  rec.big.textContent=Number.isInteger(DD.unit||1)
+    ? Math.round(v).toLocaleString('vi-VN') : fmt(v);
+  rec.big.style.color=HUE[S.col];
+  rec.leg.textContent=[S.leg, DD.unitLabel].filter(Boolean).join(' · ');
+}
+
+// ---- cảnh kết: vòng sóng nở theo đúng tiếng chuông ----
+const OUTRO_A=SEG[SEG.length-1].start, CHIME=OUTRO_A-0.30;
+function drawRing(rec,t){
+  const g=rec.ring; g.clearRect(0,0,900,900);
+  for(let k=0;k<2;k++){
+    const p=cl((t-CHIME-k*0.17)/1.5,0,1);
+    if(p<=0||p>=1) continue;
+    const e=1-Math.pow(1-p,2.4);
+    g.strokeStyle='rgba(255,174,43,'+(0.55*(1-p)).toFixed(3)+')';
+    g.lineWidth=5-3.2*p;
+    g.beginPath(); g.arc(450,450,50+e*390,0,7); g.stroke();
+  }
+}
+
+// ---- máy quay: mỗi trạm một điểm dừng ----
+// Tốc độ giữ quanh 1.150 px/giây và vào–ra bằng nhịp sin, nên không nhức mắt.
+// Đây là con số đã chốt: đừng tăng lên cho "đỡ sốt ruột".
+const SPEED=1150, MV_MIN=0.85, MV_MAX=1.80;
+
+const KEY=[];
+ST.forEach((r,i)=>{
+  const first=SEG[r.g.segs[0]];
+  const prev=KEY.length?KEY[KEY.length-1].c:null;
+  const cam={x:r.cx, y:r.cy, s:r.zoom};
+  const dist=prev?Math.hypot(cam.x-prev.x, cam.y-prev.y):0;
+  KEY.push({t:first.start-0.15, c:cam,
+            mv:i===0?0.6:cl(dist/SPEED, MV_MIN, MV_MAX)});
+  // trạm số liệu: đẩy chậm vào đúng lúc con số cuối được đọc
+  if(r.g.mode==='data' && (DD.stages||[]).length){
+    const last=DD.stages[DD.stages.length-1];
+    KEY.push({t:wordAt(last.at).a-0.55,
+              c:{x:r.cx, y:r.cy-30, s:Math.min(r.zoom*1.09, r.wmax)}, mv:1.80});
+  }
+});
+function camAt(t){
+  let a=KEY[0].c, b=KEY[0].c, p=1;
+  for(let i=1;i<KEY.length;i++){
+    const st=KEY[i].t-KEY[i].mv;
+    if(t>=st){ a=KEY[i-1].c; b=KEY[i].c; p=eSine(cl((t-st)/KEY[i].mv,0,1)); }
+  }
+  return {x:a.x+(b.x-a.x)*p, y:a.y+(b.y-a.y)*p, s:a.s+(b.s-a.s)*p};
+}
+
+const prog=document.getElementById('prog');
+const N=SEG.length;
+
+window.seek=function(t){
+  const c=camAt(t);
+  const dx=Math.sin(t*0.26)*7, dy=Math.cos(t*0.19)*5;   // trôi rất nhẹ, không chết cứng
+  const s=c.s*(1+Math.sin(t*0.16)*0.0022);
+  plane.style.transform='translate('+(540-c.x*s+dx).toFixed(2)+'px,'
+    +(960-c.y*s+dy).toFixed(2)+'px) scale('+s.toFixed(4)+')';
+  glow.style.transform='translate('+c.x.toFixed(0)+'px,'+c.y.toFixed(0)+'px)';
+  glow.style.opacity=(0.62+0.30*Math.sin(t*0.55)).toFixed(3);
+
+  litAll(t);
+
+  ST.forEach(r=>{
+    const segs=r.g.segs;
+    const a=SEG[segs[0]].start-0.95;
+    const last=segs[segs.length-1];
+    const z=last===N-1 ? TL.total : SEG[last+1].start-0.45;
+    const near=cl((t-a)/0.75,0,1)*(1-cl((t-z)/0.75,0,1));
+    r.el.style.opacity=(0.13+0.87*near).toFixed(3);
+
+    if(r.und){
+      const g0=SEG[segs[0]], g1=SEG[last];
+      r.und.style.width=(ease(cl((t-g0.start)/Math.max(g1.end-g0.start,.1),0,1))*900).toFixed(0)+'px';
+    }
+    if(r.grid) drawData(r,t);
+    if(r.ring) drawRing(r,t);
+
+    // hai thẻ bước cùng khung: chuyển chú ý bằng độ sáng, máy quay đứng yên
+    r.cards.forEach((cd,i)=>{
+      const sp=r.g.splitAt, s0=SEG[segs[0]];
+      let A,B;
+      if(segs.length>1 && segs[i]!==undefined){ A=SEG[segs[i]].start; B=SEG[segs[i]].end; }
+      else { A=i===0?s0.words[0].a:s0.words[sp].a;
+             B=i===0?s0.words[sp-1].b:s0.words[s0.words.length-1].b; }
+      const nxt=(i<r.cards.length-1)
+        ? (segs.length>1&&segs[i+1]!==undefined ? SEG[segs[i+1]].start : s0.words[sp].a)
+        : 1e9;
+      const on=cl((t-A+0.7)/0.6,0,1)*(1-cl((t-nxt+0.15)/0.6,0,1)*0.62);
+      cd.el.style.opacity=(0.30+0.70*on).toFixed(3);
+      cd.bar.style.width=(ease(cl((t-A)/Math.max(B-A,.1),0,1))*820).toFixed(0)+'px';
+    });
+  });
+
+  prog.style.width=(t/TL.total*1080).toFixed(1)+'px';
+};
+window.seek(0);
+</script>

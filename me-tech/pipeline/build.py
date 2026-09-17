@@ -1,94 +1,149 @@
 #!/usr/bin/env python3
 """Dựng một video Mê Tech từ file nội dung.
 
-    python build.py content/gemini-live.json
+    ./run.sh content/lawzero.json
 
-Thứ tự: giọng đọc trước, timeline suy ra từ giọng, rồi mới dựng hình.
-Không có mốc thời gian nào viết tay.
-
-    content/<slug>.json ──► tts.py ──► <slug>.vo.wav + <slug>.timing.json
-                                          │
-                                          ├─► render.py ──► frames/
-                                          └─► music.py  ──► bed.wav
-                                                  │
-                                                  └─► ffmpeg ──► <slug>_music.mp4
-                                                                 <slug>_vo_only.mp4
+Chuỗi việc:
+    tts.py    lời đọc  -> <slug>.vo.wav + <slug>.timing.json   (nguồn sự thật về thời gian)
+    words.py  mốc TỪNG CHỮ -> .work/data.js
+    deck.py   nội dung -> .work/deck.js (gom câu thành trạm, chọn chế độ hình)
+    music.py  nhạc nền -> .work/bed.wav
+    chime.py  chuông kết -> .work/chime.wav
+    scene.html + Playwright -> .work/frames/
+    ffmpeg    -> render/<slug>.mp4
 """
-import json, os, subprocess, sys, shutil, argparse
+import argparse, json, os, shutil, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PY = sys.executable
-WORK   = os.path.join(HERE, ".work")
+WORK = os.path.join(HERE, ".work")
 VO_DIR = os.path.join(HERE, "..", "render", "vo")
 OUT_DIR = os.path.join(HERE, "..", "render")
-BED_DB = "-9"           # mức nhạc nền (-12 kín, -9 vừa, -5 rõ)
-DUCK_RATIO = "3"        # nhạc né giọng: càng cao càng né mạnh (9 = biến mất)
-# ngưỡng 0.03 để cả những chữ nói nhỏ ở cuối câu cũng đẩy được nhạc xuống;
-# release 450ms để nhạc không trồi lên giữa lúc câu chưa dứt
+PY = sys.executable
+FPS, W, H = 30, 1080, 1920
+
+BED_DB = "-9"          # mức nhạc nền (-12 kín, -9 vừa, -5 rõ)
+DUCK_RATIO = "3"
+TARGET = (32.0, 38.0)  # độ dài chốt cho một file đăng cả 3 nền tảng
+
 
 def run(cmd, **kw):
-    print("»", " ".join(str(c) for c in cmd[:4]), "...", flush=True)
+    print("»", " ".join(str(c) for c in cmd[:3]), "...", flush=True)
     subprocess.run(cmd, check=True, **kw)
+
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("content")
     ap.add_argument("--skip-tts", action="store_true", help="dùng lại giọng đã render, chỉ dựng lại hình")
     ap.add_argument("--no-verify", action="store_true", help="bỏ cổng Whisper cho nhanh")
-    ap.add_argument("--vo-only", action="store_true",
-                    help="xuất thêm bản KHÔNG nhạc nền (chỉ dùng khi muốn đè sound native của TikTok)")
+    ap.add_argument("--vo-only", action="store_true", help="xuất thêm bản KHÔNG nhạc nền")
+    ap.add_argument("--preview", action="store_true", help="xuất thêm bản 540x960 nhẹ để gửi duyệt")
     a = ap.parse_args()
+
     cpath = os.path.abspath(a.content)
     slug = json.load(open(cpath, encoding="utf-8"))["slug"]
-    skip_tts = a.skip_tts
+    os.makedirs(WORK, exist_ok=True); os.makedirs(VO_DIR, exist_ok=True); os.makedirs(OUT_DIR, exist_ok=True)
 
     vo = os.path.join(VO_DIR, f"{slug}.vo.wav")
     tim = os.path.join(VO_DIR, f"{slug}.timing.json")
 
-    if not skip_tts:
+    if not a.skip_tts:
         cmd = [PY, os.path.join(HERE, "tts.py"), cpath, VO_DIR]
         if a.no_verify: cmd.append("--no-verify")
         run(cmd)
-    man = json.load(open(tim, encoding="utf-8"))
-    total = man["total"]
-    last_end = man["segments"][-1]["end"]
-    print(f"== tổng {total:.2f}s, câu cuối kết thúc {last_end:.2f}s")
 
-    run([PY, os.path.join(HERE, "render.py"), tim, vo])
+    total = json.load(open(tim, encoding="utf-8"))["total"]
+    print(f"== tổng {total:.2f}s", end="")
+    if TARGET[0] <= total <= TARGET[1]:
+        print(f"  ✅ trong khoảng chốt {TARGET[0]:.0f}–{TARGET[1]:.0f}s")
+    else:
+        print(f"  ⚠ NGOÀI khoảng chốt {TARGET[0]:.0f}–{TARGET[1]:.0f}s — thêm/bớt câu rồi chạy lại")
+
+    run([PY, os.path.join(HERE, "words.py"), tim, vo, os.path.join(WORK, "data.js")])
+    run([PY, os.path.join(HERE, "deck.py"), cpath, os.path.join(WORK, "deck.js")])
     run([PY, os.path.join(HERE, "music.py"), str(total + 0.6)])
+    run([PY, os.path.join(HERE, "chime.py"), os.path.join(WORK, "chime.wav")])
+    shutil.copy(os.path.join(HERE, "scene.html"), os.path.join(WORK, "scene.html"))
 
-    fade = f"{max(last_end + 0.45, total - 2.4):.2f}"   # chỉ fade SAU khi câu cuối nói xong
-    # giọng TTS vốn đã sạch — không cần khử nhiễu
+    shoot(total)
+    encode(slug, total, a)
+
+
+def shoot(total):
+    fr = os.path.join(WORK, "frames")
+    shutil.rmtree(fr, ignore_errors=True); os.makedirs(fr)
+    n = int(total * FPS)
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        b = p.chromium.launch(args=["--no-sandbox", "--font-render-hinting=none"])
+        pg = b.new_page(viewport={"width": W, "height": H}, device_scale_factor=1)
+        errs = []
+        pg.on("pageerror", lambda e: errs.append(str(e)))
+        pg.goto("file://" + os.path.join(WORK, "scene.html"))
+        try:
+            pg.wait_for_function("() => !!window.seek")
+        except Exception:
+            raise SystemExit("scene.html không chạy được:\n  " + "\n  ".join(errs) or "không rõ lỗi")
+        pg.wait_for_timeout(700)
+        for i in range(n):
+            pg.evaluate("t => window.seek(t)", i / FPS)
+            pg.screenshot(path=os.path.join(fr, f"f{i:05d}.jpg"), type="jpeg", quality=90)
+        b.close()
+    print(f"   {n} khung")
+
+
+def encode(slug, total, a):
+    vo = os.path.join(VO_DIR, f"{slug}.vo.wav")
+    tim = json.load(open(os.path.join(VO_DIR, f"{slug}.timing.json"), encoding="utf-8"))
+    outro = tim["segments"][-1]["start"]
+    ch_ms = int(max(outro - 0.30, 0) * 1000)      # chuông vào trước tên kênh một nhịp
+    fade = max(total - 1.05, 1.0)                 # nhạc chỉ tắt sau khi chuông ngân hết
+
     voch = ("aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
             "highpass=f=85,acompressor=threshold=-18dB:ratio=3:attack=6:release=180")
-    fc = (f"[0:v]format=yuv420p,eq=saturation=1.04:contrast=1.03[v];"
+    fc = (f"[0:v]format=yuv420p,eq=saturation=1.03[v];"
           f"[1:a]{voch},loudnorm=I=-15:TP=-1.5:LRA=9,asplit=2[vo1][vo2];"
           f"[2:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
           f"atrim=0:{total},volume={BED_DB}dB[bedq];"
-          f"[bedq][vo2]sidechaincompress=threshold=0.03:ratio={DUCK_RATIO}:attack=12:release=450:makeup=1[bedduck];"
-          f"[vo1][bedduck]amix=inputs=2:duration=longest:dropout_transition=0:normalize=0,"
-          f"apad=whole_dur={total},atrim=0:{total},"          # sidechain+amix hay nuốt mất phần đuôi
-          f"afade=t=out:st={fade}:d=1.6,loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.97[a]")
+          f"[bedq][vo2]sidechaincompress=threshold=0.03:ratio={DUCK_RATIO}:attack=12:"
+          f"release=450:makeup=1[bd];"
+          f"[3:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
+          f"adelay={ch_ms}|{ch_ms},volume=-8dB[ch];"
+          f"[vo1][bd][ch]amix=inputs=3:duration=longest:dropout_transition=0:normalize=0,"
+          f"apad=whole_dur={total},atrim=0:{total},"      # sidechain+amix hay nuốt mất đuôi
+          f"afade=t=out:st={fade:.2f}:d=1.0,"
+          f"loudnorm=I=-14:TP=-1.5:LRA=11,alimiter=limit=0.97[a]")
 
-    mus = os.path.join(OUT_DIR, f"{slug}.mp4")           # BẢN CHÍNH — dùng cho cả 3 nền tảng
-    run(["ffmpeg","-y","-loglevel","error","-framerate","30","-i",os.path.join(WORK,"frames","f%05d.jpg"),
-         "-i",vo,"-i",os.path.join(WORK,"bed.wav"),"-filter_complex",fc,"-map","[v]","-map","[a]",
-         "-c:v","libx264","-preset","slow","-crf","21","-maxrate","4500k","-bufsize","9M",
-         "-profile:v","high","-pix_fmt","yuv420p","-movflags","+faststart",
-         "-c:a","aac","-b:a","224k","-ar","48000","-t",str(total),mus], cwd=HERE)
+    src = ["-framerate", str(FPS), "-i", os.path.join(WORK, "frames", "f%05d.jpg"),
+           "-i", vo, "-i", os.path.join(WORK, "bed.wav"), "-i", os.path.join(WORK, "chime.wav")]
+    mus = os.path.join(OUT_DIR, f"{slug}.mp4")     # BẢN CHÍNH — cả 3 nền tảng dùng chung
+    run(["ffmpeg", "-y", "-loglevel", "error", *src, "-filter_complex", fc,
+         "-map", "[v]", "-map", "[a]",
+         "-c:v", "libx264", "-preset", "slow", "-crf", "21",
+         "-maxrate", "4500k", "-bufsize", "9M",
+         "-profile:v", "high", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+         "-c:a", "aac", "-b:a", "224k", "-ar", "48000", "-t", str(total), mus], cwd=HERE)
 
     outs = [mus]
     if a.vo_only:
         only = os.path.join(OUT_DIR, f"{slug}.vo-only.mp4")
-        run(["ffmpeg","-y","-loglevel","error","-i",mus,"-i",vo,"-filter_complex",
+        run(["ffmpeg", "-y", "-loglevel", "error", "-i", mus, "-i", vo, "-filter_complex",
              f"[1:a]{voch},loudnorm=I=-14:TP=-1.5:LRA=9,apad=whole_dur={total},atrim=0:{total}[a]",
-             "-map","0:v","-map","[a]","-c:v","copy","-c:a","aac","-b:a","224k","-ar","48000",
-             "-movflags","+faststart",only], cwd=HERE)
+             "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "224k",
+             "-ar", "48000", "-movflags", "+faststart", only], cwd=HERE)
         outs.append(only)
+    if a.preview:
+        prev = os.path.join(OUT_DIR, f"{slug}.preview.mp4")
+        run(["ffmpeg", "-y", "-loglevel", "error", "-i", mus,
+             "-vf", "scale=540:960:flags=lanczos", "-c:v", "libx264", "-preset", "slow",
+             "-crf", "24", "-maxrate", "1400k", "-bufsize", "3M", "-pix_fmt", "yuv420p",
+             "-movflags", "+faststart", "-c:a", "aac", "-b:a", "128k", prev], cwd=HERE)
+        outs.append(prev)
 
-    shutil.rmtree(os.path.join(WORK,"frames"), ignore_errors=True)
+    shutil.rmtree(os.path.join(WORK, "frames"), ignore_errors=True)
     print("\n" + "\n".join("✅ " + o for o in outs))
     print("   Facebook Reels · YouTube Shorts · TikTok — dùng chung file đầu tiên.")
+
 
 if __name__ == "__main__":
     main()

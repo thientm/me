@@ -1,90 +1,106 @@
-# Pipeline dựng video Mê Tech
-
-Một lệnh, ra một file, đăng cả ba nền tảng.
+# pipeline — dựng video Mê Tech
 
 ```bash
-cd me-tech/pipeline
-python build.py content/gemini-live.json
+./run.sh content/<slug>.json            # → ../render/<slug>.mp4
+./run.sh content/<slug>.json --preview  # thêm bản 540x960 nhẹ để gửi duyệt
+./run.sh content/<slug>.json --skip-tts # giữ giọng cũ, chỉ dựng lại hình
+./run.sh --doctor                       # kiểm tra môi trường, không dựng
 ```
 
-→ `../render/<slug>.mp4` — **dùng chung cho Facebook Reels, YouTube Shorts và TikTok.**
+Luật nội dung và ngữ pháp hình nằm ở `../AGENTS.md`. File này chỉ nói **cách viết
+file nội dung** và **mỗi script làm gì**.
 
-## Cấu trúc
+## Chuỗi việc
 
 ```
-me-tech/
-├── me-tech-plan.md              📌 rule nhịp đăng + quy trình đầy đủ (mục 9)
-├── logs/2026-09.md              📌 index bài đã đăng — tra trước khi chọn tin
-│
-├── pipeline/                    ── TOÀN BỘ SOURCE Ở ĐÂY
-│   ├── README.md                   file này
-│   ├── SETUP.md                    cài đặt, cách chạy trong Claude Code
-│   │
-│   ├── content/<slug>.json      ✏️  KỊCH BẢN TỪNG BÀI — thứ duy nhất soạn mỗi ngày
-│   ├── pronounce.json           ✏️  từ điển phát âm (AI → ây ai). Thêm khi gặp từ đọc sai
-│   │
-│   ├── build.py                    điều phối cả chuỗi
-│   ├── tts.py                      giọng đọc + cổng Whisper + timing.json
-│   ├── render.py                   timing.json → HTML → frame
-│   ├── music.py                    nhạc nền
-│   │
-│   ├── .venv/                   🚫 ignore
-│   └── .work/                   🚫 ignore — frames, video.html, bed.wav, file tạm
-│
-└── render/                      🚫 ignore — toàn bộ đầu ra
-    ├── <slug>.mp4                  bản chính
-    └── vo/                         vo.wav, timing.json, probe/
+content/<slug>.json
+   │
+   ├─ tts.py ──► render/vo/<slug>.vo.wav  +  .timing.json     ← nguồn sự thật về thời gian
+   ├─ words.py ─► .work/data.js       mốc TỪNG CHỮ (Whisper)
+   ├─ deck.py ──► .work/deck.js       gom câu thành trạm, chọn chế độ hình
+   ├─ music.py ─► .work/bed.wav       nhạc nền tự tổng hợp
+   ├─ chime.py ─► .work/chime.wav     chuông cảnh kết tự tổng hợp
+   │
+   ├─ scene.html + Playwright ──► .work/frames/
+   └─ ffmpeg ──────────────────► render/<slug>.mp4
 ```
 
-## Mỗi ngày cần @ những file nào
-
-| Việc | @ file |
-|---|---|
-| Chọn tin, tránh trùng | `me-tech/logs/2026-09.md` |
-| Nhớ rule nhịp đăng, khung giờ, gotcha từng nền tảng | `me-tech/me-tech-plan.md` |
-| Viết kịch bản bài mới | `pipeline/content/<slug-bài-cũ>.json` (làm mẫu) |
-
-Ba file đó là đủ. Không cần @ code — agent tự đọc khi chạy `build.py`.
-
-## Các cờ
-
-| Cờ | Dùng khi |
-|---|---|
-| *(không có)* | mặc định — ra 1 file có nhạc nền, đăng cả 3 nơi |
-| `--vo-only` | xuất thêm bản **không nhạc**, chỉ khi muốn đè sound native của TikTok |
-| `--skip-tts` | đã có giọng, chỉ dựng lại hình (sửa layout, đổi màu…) |
-| `--no-verify` | bỏ cổng Whisper cho nhanh — chỉ khi đang thử nghiệm |
+Không có lệnh gọi API AI nào. TTS và Whisper đều chạy local.
 
 ## Viết `content/<slug>.json`
 
 ```jsonc
 {
-  "slug": "ten-bai",
+  "slug": "lawzero",
   "voice": "Xuân Vĩnh",
-  "date_label": "TIN AI · 17.09.2026",
-  "gap": 0.30,        // nghỉ giữa hai câu
-  "lead_in": 0.60,    // im lặng đầu video
-  "tail": 2.20,       // im lặng cuối, cho nhạc fade
-  "segments": [
-    { "id": "hook", "scene": "hook",
-      "say":  "Câu này sẽ được đọc.",
-      "show": { "type": "hook", "line1": "…", "line2": "…" } }
+  "brand": "MÊ TECH",
+  "kicker": "LAWZERO · 16.09.2026",   // góc dưới trái
+  "date": "17.09.2026",               // góc trên phải
+  "gap": 0.24, "lead_in": 0.40, "tail": 2.20,
+  "outro": {"mark": "Mê Tech", "handle": "mecongnghe40"},
+
+  "data": { ... },                    // chỉ cần khi có câu mode "data"
+  "segments": [ ... ]
+}
+```
+
+### Mỗi câu
+
+| Khoá | Bắt buộc | Nghĩa |
+|---|---|---|
+| `id` | ✅ | tên ngắn, hiện trong log dựng |
+| `group` | ✅ | các câu liên tiếp cùng `group` chung MỘT trạm — máy quay chỉ lia giữa các trạm |
+| `mode` | ✅ | `say` · `data` · `step` · `outro`. Câu cuối **bắt buộc** là `outro` |
+| `lab` | | nhãn nhỏ trên trạm; chỉ lấy từ câu ĐẦU của group |
+| `say` | ✅ | lời đọc. Số viết bằng chữ, từ viết tắt viết như cách đọc |
+| `plain` | ✅ | câu ở dạng người đọc — dùng để chọn cỡ chữ |
+| `words` | ✅ | chữ hiện trên hình, tách rời để bật sáng theo giọng |
+| `weights` | ✅ | mỗi chữ ứng với mấy âm tiết khi đọc. `"20 GB"` ↔ "hai mươi gi-ga" → `4` |
+| `hot` | | chỉ số chữ được tô hổ phách |
+| `cards` | với `step` | `[{n, t, d}]` — số thứ tự, tiêu đề, mô tả |
+| `splitAt` | với `step` | khi MỘT câu tả cả hai bước: cắt tại chữ thứ mấy |
+
+`weights` là chỗ dễ sai nhất. Sai thì chữ sáng lệch nhịp nói.
+Đếm đúng số âm tiết mà chữ đó thay mặt trong `say`.
+
+### Khối `data`
+
+```jsonc
+"data": {
+  "cells": 36, "unit": 10, "suffix": "việc làm",
+  "unitLabel": "1 ô = 10 việc làm",
+  "parkLabel": "phần nằm lại trên SSD",     // nhãn cho các ô bị bỏ đi, nếu có
+  "stages": [
+    {"at": [8, 3], "fill": 36, "color": "now", "label": "toàn thời gian, tại Canada"}
   ]
 }
 ```
 
-**Luật viết:**
+- `at` = `[chỉ số câu, chỉ số chữ]` — khối chạy đúng lúc chữ đó được đọc
+- `fill` = số ô sau chặng này. Tăng thì ô hiện thêm, **giảm thì ô rơi xuống vạch dưới**
+- `color` = `now` (hổ phách) hoặc `was` (xanh rêu)
+- Số đọc ra = `ô đang có × unit`, nên luôn khớp với hình. `unit` nguyên thì không hiện số lẻ
 
-- **Mỗi câu = một nhịp hình.** Câu nào đọc lên thì thứ tương ứng hiện ra.
-- Các câu cùng một khung hình để chung `scene`.
-- **Không kết câu bằng từ viết tắt hoặc con số** — luôn có từ tiếng Việt đứng cuối.
-- Số trong `say` viết bằng chữ ("tám mươi hai phẩy sáu"); trong `show` viết bằng chữ số.
-- Từ viết tắt viết bình thường — `pronounce.json` lo phần đọc.
+## Kiểm tra trước khi giao
 
-**Các `show.type` có sẵn:** `hook`, `title`, `body`, `header`, `num`, `bullet`, `cta`.
+- `build.py` tự báo nếu tổng thời lượng lệch khỏi **32–38 giây**
+- Cổng Whisper chạy trên từng câu; câu nào không đạt sẽ in `⚠ KHÔNG BẢN NÀO ĐẠT`
+  kèm text nghe được — đọc dòng đó rồi sửa `say`, đừng bỏ qua
+- Soi vài khung hình trước khi gửi duyệt:
+  ```bash
+  ffmpeg -i ../render/<slug>.preview.mp4 \
+    -vf "select='eq(n\,60)+eq(n\,400)+eq(n\,900)',scale=240:-2,tile=3x1" \
+    -frames:v 1 .work/sheet.jpg
+  ```
 
-## Lưu ý
+## Thông số đã chốt — đừng đổi nếu không có lý do đo được
 
-- Độ dài video **do kịch bản quyết định**. Muốn ngắn lại thì cắt câu.
-- `.work/` phình lên ~200MB lúc render rồi tự dọn.
-- Máy này có proxy MITM của công ty → mọi lệnh Python/uv cần `SSL_CERT_FILE`. Xem `SETUP.md`.
+| Ở đâu | Là gì |
+|---|---|
+| `scene.html` `SPEED=1150` | tốc độ lia, px/giây. Bản cũ 3.000 và bị chê nhức mắt |
+| `scene.html` `MV_MIN/MAX` | 0,85–1,80 giây mỗi cú lia |
+| `scene.html` `eSine` | easing sin, không phải cubic — cubic có đoạn giật tốc |
+| `scene.html` `:root` | bảng màu có nghĩa, xem `../AGENTS.md` |
+| `build.py` `BED_DB=-9` | mức nhạc nền |
+| `build.py` `TARGET` | khoảng thời lượng 32–38s |
+| `chime.py` `NOTES` | chuông A5 → E6, lệch 0,17s |

@@ -9,3 +9,10 @@ me-tech/pipeline/.work/
 me-tech/pipeline/.venv/
 Claude outputs/
 **/.DS_Store
+
+# demo dựng thử: giữ mã, bỏ file nặng
+me-tech/pipeline/demo/out/
+me-tech/pipeline/demo/*.wav
+me-tech/pipeline/demo/.frames/
+me-tech/pipeline/demo/snap/
+**/__pycache__/
