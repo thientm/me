@@ -1,2 +1,11 @@
 .DS_Store
 .superpowers/
+
+me-tech/render/
+.env
+*.env
+.DS_Store
+me-tech/pipeline/.work/
+me-tech/pipeline/.venv/
+Claude outputs/
+**/.DS_Store
