@@ -4,8 +4,13 @@
 
 ```bash
 brew install uv ffmpeg
-cd me-tech/pipeline && ./bootstrap.sh
+cd me-tech/pipeline && ./run.sh content/<slug>.json
 ```
+
+**Không cần gọi `bootstrap.sh` bằng tay.** `run.sh` chạy healthcheck trước mỗi lần dựng
+và tự gọi bootstrap nếu thiếu thứ gì. Máy đã sẵn sàng thì healthcheck mất ~0,3 giây.
+
+`./run.sh --doctor` để kiểm tra mà không dựng.
 
 `bootstrap.sh` lo hết: sinh `ca-bundle.pem` từ keychain (máy công ty có proxy MITM nên uv và Python không tin root CA của CITIGO, mọi lệnh tải về sẽ chết vì `CERTIFICATE_VERIFY_FAILED`), `uv sync`, Chromium cho Playwright, font Be Vietnam Pro. Chạy lại nhiều lần không sao.
 

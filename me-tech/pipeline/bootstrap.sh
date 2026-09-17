@@ -21,10 +21,10 @@ echo "   ca-bundle.pem: $N chứng chỉ"
 export SSL_CERT_FILE="$PWD/ca-bundle.pem"
 export REQUESTS_CA_BUNDLE="$PWD/ca-bundle.pem"
 export NODE_EXTRA_CA_CERTS="$PWD/ca-bundle.pem"
-export UV_NATIVE_TLS=1
+export UV_SYSTEM_CERTS=1
 
 echo "── 3/5 · Môi trường Python"
-uv sync --native-tls
+uv sync --system-certs
 echo "   .venv ✓"
 
 echo "── 4/5 · Chromium cho Playwright"

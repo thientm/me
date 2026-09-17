@@ -4,15 +4,19 @@
 > Kênh: Facebook Page "Mê Tech" (facebook.com/mecongnghe40) · TikTok · YouTube Shorts
 > Định vị: "AI dễ hiểu" — tin AI tiếng Việt, ngắn, luôn có góc ứng dụng thực tế.
 
-## Máy mới — cài một lần
+## Môi trường — agent không cần lo
+
+`run.sh` **tự kiểm tra và tự vá** trước mỗi lần dựng: ffmpeg, uv, chứng chỉ,
+`.venv`, font Be Vietnam Pro, Chromium, và phụ thuộc có khớp `pyproject.toml` không.
+Thiếu gì thì tự gọi `bootstrap.sh`. Máy đã sẵn sàng thì mất **~0,3 giây**.
+
+Chỉ hai thứ agent không tự cài được — thiếu thì dừng và báo người dùng:
 
 ```bash
-cd pipeline && ./bootstrap.sh          # ~5 phút
+brew install uv ffmpeg
 ```
 
-Tự lo: chứng chỉ (proxy MITM công ty), `.venv`, Chromium, font Be Vietnam Pro.
-Cần sẵn: `uv` và `ffmpeg` (`brew install uv ffmpeg`).
-Lần chạy đầu tải model VieNeu ~580MB + Whisper ~460MB rồi cache.
+Muốn kiểm tra mà không dựng: `./run.sh --doctor`
 
 ## Chạy một bài (câu lệnh cho agent)
 
