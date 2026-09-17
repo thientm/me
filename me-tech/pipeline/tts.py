@@ -113,6 +113,9 @@ def main():
     c = json.load(open(cpath, encoding="utf-8"))
     slug, voice = c["slug"], c["voice"]
     gap, lead_in, tail = c.get("gap", .3), c.get("lead_in", .6), c.get("tail", 2.0)
+    # Ranh giới giữa hai TRẠM cần lặng lâu hơn: cú lia phải diễn ra trong khoảng
+    # lặng đó, chứ không được ăn vào đuôi câu đang nói.
+    gap_group = c.get("gap_group", 0.60)
 
     tts = Vieneu()
     defaults = {}
@@ -136,8 +139,10 @@ def main():
         parts.append(a)
         cursor += dur
         if i < len(c["segments"]) - 1:
-            parts.append(np.zeros(int(gap * SR), dtype=np.float32))
-            cursor += gap
+            nxt = c["segments"][i + 1]
+            g = gap_group if nxt.get("group") != s.get("group") else gap
+            parts.append(np.zeros(int(g * SR), dtype=np.float32))
+            cursor += g
 
     parts.append(np.zeros(int(tail * SR), dtype=np.float32))
     total = cursor + tail

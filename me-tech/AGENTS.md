@@ -85,8 +85,19 @@ tự tổng hợp, vào trước lời 0,30 giây · hai vòng sóng nở theo c
 | Mực ấm `#0E0D0B` | nền — ngả nâu, không ngả xanh |
 | Giấy ngà `#F5F1E8` | chữ đã đọc (chữ chưa đọc là chính nó ở 11%) |
 
+**Luật cứng về thời điểm lia** — máy quay **không bao giờ** rời một trạm trước khi
+chữ cuối của trạm đó đã sáng xong và đứng yên thêm `HOLD` = 0,40 giây.
+Thà tới trạm sau muộn còn hơn cắt mất đuôi câu.
+Ranh giới giữa hai trạm dùng `gap_group` = 0,60s (thay vì `gap` = 0,24s giữa các câu
+trong cùng trạm) để cú lia diễn ra trong khoảng lặng, không ăn vào lời nói.
+
+> Lỗi đã từng mắc: neo máy quay vào lúc câu *sau* bắt đầu, rồi để thời gian lia
+> ăn ngược vào câu *đang* nói → cả 6 trạm đều bắt đầu trôi **trước khi chữ cuối
+> kịp sáng**. Nếu sửa lại chỗ này, đo lại bằng bảng "chữ cuối tắt / lia bắt đầu".
+
 **Đừng đụng vào** trong `scene.html` nếu không có lý do đo được:
-`SPEED=1150` px/giây · `MV_MIN/MAX` 0,85–1,80 giây mỗi cú lia · easing `eSine`.
+`SPEED=1150` px/giây · `MV_MIN/MAX` 0,85–1,80 giây mỗi cú lia · easing `eSine` ·
+`HOLD=0,40` · chữ chạy trước giọng 0,08s.
 Bản trước lia ~3.000 px/giây và bị đánh giá là nhức mắt.
 
 ---

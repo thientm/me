@@ -110,10 +110,11 @@ function litAll(t){
   for(const n of LIT){
     const seg=SEG[+n.dataset.seg], from=+n.dataset.from;
     for(let j=0;j<n.children.length;j++){
-      const w=seg.words[from+j], sp=n.children[j];
-      const on=t>=w.a-0.02;
+      // chữ chạy TRƯỚC giọng một chút: đi sau thì thấy hỏng, đi trước thì thấy tự nhiên
+      const w=seg.words[from+j], sp=n.children[j], wa=w.a-0.08;
+      const on=t>=wa;
       sp.classList.toggle('on',on);
-      const r=cl((t-w.a)/Math.max(w.b-w.a,.08),0,1);
+      const r=cl((t-wa)/Math.max(w.b-wa,.08),0,1);
       sp.firstElementChild.style.width=(on&&r<1? r*100:0)+'%';
     }
   }
@@ -268,27 +269,44 @@ function drawRing(rec,t){
 // Tốc độ giữ quanh 1.150 px/giây và vào–ra bằng nhịp sin, nên không nhức mắt.
 // Đây là con số đã chốt: đừng tăng lên cho "đỡ sốt ruột".
 const SPEED=1150, MV_MIN=0.85, MV_MAX=1.80;
+// LUẬT CỨNG: không bao giờ rời một trạm trước khi chữ cuối của nó đã sáng xong
+// và đứng yên đủ HOLD giây để đọc. Thà tới trạm sau muộn còn hơn cắt mất đuôi câu.
+const HOLD=0.40;
+const lastWordEnd=r=>{
+  const s=SEG[r.g.segs[r.g.segs.length-1]];
+  return s.words[s.words.length-1].b;
+};
 
 const KEY=[];
 ST.forEach((r,i)=>{
   const first=SEG[r.g.segs[0]];
-  const prev=KEY.length?KEY[KEY.length-1].c:null;
   const cam={x:r.cx, y:r.cy, s:r.zoom};
-  const dist=prev?Math.hypot(cam.x-prev.x, cam.y-prev.y):0;
-  KEY.push({t:first.start-0.15, c:cam,
-            mv:i===0?0.6:cl(dist/SPEED, MV_MIN, MV_MAX)});
+  if(i===0){ KEY.push({s0:0, s1:Math.max(first.start-0.15, 0.2), c:cam}); }
+  else{
+    const prev=KEY[KEY.length-1];
+    const dist=Math.hypot(cam.x-prev.c.x, cam.y-prev.c.y);
+    const mv=cl(dist/SPEED, MV_MIN, MV_MAX);
+    const want=first.start-0.15-mv;             // lý tưởng: tới ngay trước câu sau
+    const s0=Math.max(want, lastWordEnd(ST[i-1])+HOLD, prev.s1);
+    KEY.push({s0, s1:s0+mv, c:cam});
+  }
   // trạm số liệu: đẩy chậm vào đúng lúc con số cuối được đọc
   if(r.g.mode==='data' && (DD.stages||[]).length){
-    const last=DD.stages[DD.stages.length-1];
-    KEY.push({t:wordAt(last.at).a-0.55,
-              c:{x:r.cx, y:r.cy-30, s:Math.min(r.zoom*1.09, r.wmax)}, mv:1.80});
+    const last=DD.stages[DD.stages.length-1], prev=KEY[KEY.length-1];
+    const s0=Math.max(wordAt(last.at).a-0.55, prev.s1);
+    KEY.push({s0, s1:s0+1.80,
+              c:{x:r.cx, y:r.cy-30, s:Math.min(r.zoom*1.09, r.wmax)}});
   }
 });
+// lúc trạm thứ i bắt đầu bị bỏ lại — dùng cho cả việc mờ dần
+ST.forEach((r,i)=>{ r.leave = (i+1<ST.length)
+  ? KEY.find(k=>k.c.x===ST[i+1].cx && k.c.y===ST[i+1].cy).s0 : TL.total; });
+
 function camAt(t){
   let a=KEY[0].c, b=KEY[0].c, p=1;
   for(let i=1;i<KEY.length;i++){
-    const st=KEY[i].t-KEY[i].mv;
-    if(t>=st){ a=KEY[i-1].c; b=KEY[i].c; p=eSine(cl((t-st)/KEY[i].mv,0,1)); }
+    if(t>=KEY[i].s0){ a=KEY[i-1].c; b=KEY[i].c;
+      p=eSine(cl((t-KEY[i].s0)/Math.max(KEY[i].s1-KEY[i].s0,.01),0,1)); }
   }
   return {x:a.x+(b.x-a.x)*p, y:a.y+(b.y-a.y)*p, s:a.s+(b.s-a.s)*p};
 }
@@ -311,8 +329,8 @@ window.seek=function(t){
     const segs=r.g.segs;
     const a=SEG[segs[0]].start-0.95;
     const last=segs[segs.length-1];
-    const z=last===N-1 ? TL.total : SEG[last+1].start-0.45;
-    const near=cl((t-a)/0.75,0,1)*(1-cl((t-z)/0.75,0,1));
+    // chỉ mờ đi khi máy quay thật sự bắt đầu rời trạm, không mờ theo mốc cứng
+    const near=cl((t-a)/0.75,0,1)*(1-cl((t-r.leave)/0.75,0,1));
     r.el.style.opacity=(0.13+0.87*near).toFixed(3);
 
     if(r.und){
