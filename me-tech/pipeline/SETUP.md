@@ -1,36 +1,26 @@
-# Chạy Mê Tech trong Claude Code (macOS)
+# Cài đặt & chạy
 
-Pipeline này dựng xong trong Cowork, nhưng **chạy được nguyên xi trong Claude Code** — và nên chuyển sang đó, vì Cowork bị chặn egress nên không gọi được API TTS (FPT.AI, Google) từ script.
-
-## 1. Cài một lần
+## Máy mới
 
 ```bash
-brew install ffmpeg
-npm i playwright && npx playwright install chromium
-pip3 install numpy scipy pillow
-uv add --native-tls vieneu faster-whisper playwright   # trong venv của pipeline
+brew install uv ffmpeg
+cd me-tech/pipeline && ./bootstrap.sh
 ```
 
-Font: tải **Be Vietnam Pro** từ Google Fonts, kéo vào Font Book. Không có font thì Chromium rơi về font mặc định và bố cục chữ trong video sẽ vỡ.
+`bootstrap.sh` lo hết: sinh `ca-bundle.pem` từ keychain (máy công ty có proxy MITM nên uv và Python không tin root CA của CITIGO, mọi lệnh tải về sẽ chết vì `CERTIFICATE_VERIFY_FAILED`), `uv sync`, Chromium cho Playwright, font Be Vietnam Pro. Chạy lại nhiều lần không sao.
 
-Kiểm tra:
-```bash
-ffmpeg -version | head -1
-node -e "require.resolve('playwright')" && echo playwright ok
-python3 -c "import numpy,scipy,PIL; print('py ok')"
-fc-list 2>/dev/null | grep -ci "be vietnam" || ls ~/Library/Fonts | grep -i bevietnam
-```
+Lần chạy đầu tải model VieNeu ~580MB + Whisper ~460MB rồi cache ở `~/.cache/huggingface`.
 
-## 2. Dựng video
+## Chạy
 
 ```bash
-cd me-tech/pipeline
-# sửa nội dung bài mới trong scene.js (xem README.md)
-./build.sh <slug>
+./run.sh content/<slug>.json              # mặc định — 1 file cho cả 3 nền tảng
+./run.sh content/<slug>.json --skip-tts   # đã có giọng, chỉ dựng lại hình
+./run.sh content/<slug>.json --vo-only    # xuất thêm bản không nhạc
+./run.sh content/<slug>.json --no-verify  # bỏ cổng Whisper cho nhanh
 ```
 
-Ra `<slug>_music.mp4` (Facebook Reels + YouTube Shorts) và `<slug>_mute.mp4` (TikTok).
-Chuyển vào `../render/` khi xong. Khoảng 2,5 phút cho video 32 giây.
+**Luôn dùng `run.sh`**, đừng gọi `python build.py` trực tiếp — nó set biến môi trường chứng chỉ.
 
 ## 3. Chrome — đăng bài
 

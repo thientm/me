@@ -4,6 +4,16 @@
 > Kênh: Facebook Page "Mê Tech" (facebook.com/mecongnghe40) · TikTok · YouTube Shorts
 > Định vị: "AI dễ hiểu" — tin AI tiếng Việt, ngắn, luôn có góc ứng dụng thực tế.
 
+## Máy mới — cài một lần
+
+```bash
+cd pipeline && ./bootstrap.sh          # ~5 phút
+```
+
+Tự lo: chứng chỉ (proxy MITM công ty), `.venv`, Chromium, font Be Vietnam Pro.
+Cần sẵn: `uv` và `ffmpeg` (`brew install uv ffmpeg`).
+Lần chạy đầu tải model VieNeu ~580MB + Whisper ~460MB rồi cache.
+
 ## Chạy một bài (câu lệnh cho agent)
 
 > "chạy daily Mê Tech"
@@ -21,7 +31,7 @@ Agent làm theo đúng thứ tự dưới. Dừng lại ở hai chốt duyệt.
 
 ### 3 · Dựng
 ```bash
-cd pipeline && python build.py content/<slug>.json
+cd pipeline && ./run.sh content/<slug>.json
 ```
 → `render/<slug>.mp4` (~4 phút). Một file, dùng cho cả ba nền tảng.
 - 🛑 **CHỐT 2 — Thiện duyệt video.** Nghe kỹ câu cuối và các mốc số đếm
