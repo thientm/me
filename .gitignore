@@ -16,3 +16,4 @@ me-tech/pipeline/demo/*.wav
 me-tech/pipeline/demo/.frames/
 me-tech/pipeline/demo/snap/
 **/__pycache__/
+me-tech/pipeline/publish/_scratch/

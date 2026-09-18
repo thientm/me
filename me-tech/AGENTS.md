@@ -47,9 +47,13 @@ cd pipeline && ./run.sh content/<slug>.json
 ### 4 · Đăng
 | Nền tảng | Khung giờ | Ghi chú |
 |---|---|---|
-| Facebook Reels | 12:00 / 21:00 | đăng với tư cách Page, Public |
+| Facebook Reels | 12:00 / 21:00 | qua **Business Suite**, tư cách Page, Public |
 | YouTube Shorts | cùng khung | cùng file, không xuất lại |
-| TikTok | lệch 30 phút | cùng file (đã có nhạc nền sẵn) |
+| TikTok | lệch 30 phút | cùng file · **không chọn nhạc TikTok**, giữ Original sound |
+
+Đăng bằng Playwright nối CDP vào hồ sơ Chrome riêng `~/.me-tech-browser`.
+Cách mở, các selector và **toàn bộ bẫy đã gặp**: `pipeline/publish/README.md`.
+Caption từng nền tảng: `pipeline/publish/meta.py`.
 
 ### 5 · Ghi log
 1 dòng/bài vào `logs/{YYYY-MM}.md`. Sau 24h cập nhật reach/views.
