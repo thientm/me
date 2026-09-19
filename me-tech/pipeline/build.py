@@ -90,6 +90,8 @@ def shoot(total):
             pg.screenshot(path=os.path.join(fr, f"f{i:05d}.jpg"), type="jpeg", quality=90)
         b.close()
     print(f"   {n} khung")
+    import safezone
+    safezone.check(fr)
 
 
 def encode(slug, total, a):

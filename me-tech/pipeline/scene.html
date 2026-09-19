@@ -41,7 +41,7 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--i
 .dread .u{font-size:32px;font-weight:700;color:var(--mute)}
 .dleg{margin-top:8px;font-size:24px;font-weight:600;color:var(--mute)}
 
-.card{position:relative;width:900px}
+.card{position:relative;width:830px}
 .card + .card{margin-top:54px}
 .card .n{font-size:26px;font-weight:800;letter-spacing:.26em;color:var(--now);
   margin-bottom:18px}
@@ -61,10 +61,13 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--i
   background:radial-gradient(138% 84% at 50% 47%, transparent 40%, rgba(14,13,11,.93) 100%)}
 .hud{position:absolute;font-size:22px;letter-spacing:.28em;font-weight:700;
   color:rgba(245,241,232,.34)}
-#hudL{left:90px;top:150px}
-#hudR{right:90px;top:150px;color:rgba(245,241,232,.22)}
-#hudB{left:90px;bottom:150px}
-.prog{position:absolute;left:0;bottom:0;height:5px;background:var(--now)}
+/* VÙNG AN TOÀN 3 NỀN TẢNG: x 80–930 · y 250–1500. Mọi thứ phải nằm trong đây.
+   Trên y<250: logo/tab/search · dưới y>1500: caption+username · x>930 khi y>900: cột nút.
+   Đo ngày 19.09.2026 trên chính Short của kênh, không lấy theo blog. */
+#hudL{left:85px;top:276px}
+#hudR{right:85px;top:276px;color:rgba(245,241,232,.22)}
+#hudB{left:85px;top:318px;color:rgba(245,241,232,.20);font-size:20px}
+.prog{position:absolute;left:0;top:254px;height:5px;background:var(--now)}
 </style>
 <div id="stage">
   <div id="plane"><div id="glow"></div></div>
@@ -138,7 +141,7 @@ G.forEach((g,gi)=>{
   el.className='st'+(g.mode==='outro'?' outro':'');
   const x=(gi%2===0)?X_ODD:X_EVEN, y=340+gi*STEP_Y;
   el.style.left=x+'px'; el.style.top=y+'px';
-  el.style.width=(g.mode==='step'?900:960)+'px';
+  el.style.width='830px';          // 850 an toàn − 10px hở mỗi bên
   plane.appendChild(el);
 
   if(g.lab && g.mode!=='outro')
@@ -153,7 +156,7 @@ G.forEach((g,gi)=>{
 
   }else if(g.mode==='data'){
     el.insertAdjacentHTML('beforeend',
-      '<div class="dwrap"><canvas class="grid" width="1000" height="560"></canvas>'+
+      '<div class="dwrap"><canvas class="grid" width="840" height="560"></canvas>'+
       '<div class="dread"><span class="big">0,0</span>'+
       '<span class="u">'+(D.data.suffix||'')+'</span></div>'+
       '<div class="dleg"></div></div>');
@@ -185,7 +188,7 @@ G.forEach((g,gi)=>{
 // Xếp lại theo chiều cao THẬT của từng trạm, chừa khoảng đủ rộng để khi máy quay
 // dừng ở trạm này thì trạm bên cạnh nằm ngoài khung. Zoom cũng theo chiều cao:
 // trạm ba dòng tự lùi ra, trạm một dòng tự tiến vào — khung hình luôn đầy vừa phải.
-const GAP_Y=980, FIT=1480;
+const GAP_Y=980, FIT=1250;   // 1250 = chiều cao vùng an toàn (250→1500)
 let cur=340;
 ST.forEach(r=>{
   const h=r.el.offsetHeight;
@@ -193,7 +196,7 @@ ST.forEach(r=>{
   const w=r.el.offsetWidth;
   r.cy=cur+h/2; r.cx=r.x+w/2;
   // zoom bị chặn cả bởi chiều cao lẫn chiều ngang — phóng quá là chữ bị cắt mép
-  r.wmax=1080/(w+90);
+  r.wmax=830/w;                  // phóng to quá là chữ chui dưới cột nút phải
   r.zoom=cl(Math.min(FIT/Math.max(h,320), r.wmax), 0.58, 1.05);
   cur += h + GAP_Y;
 });
@@ -201,9 +204,9 @@ plane.style.height=(cur+600)+'px';
 
 // ---- lưới số liệu: số nói bằng hình, mỗi ô là một đơn vị thật ----
 const DD=D.data||{};
-const COLS=20, CW=48, CH=50, SQ=38, GX=2, GY=6, PARK_Y=506;
+const COLS=20, CW=41, CH=44, SQ=32, GX=2, GY=6, PARK_Y=506;   // 20×41=820 ≤ 830
 const gp=i=>[GX+(i%COLS)*CW, GY+((i/COLS)|0)*CH];
-const pk=k=>[GX+(k%84)*11.3, PARK_Y+((k/84)|0)*22];
+const pk=k=>[GX+(k%74)*11.3, PARK_Y+((k/74)|0)*22];
 const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
 const HUE={now:'#FFAE2B', was:'#7E9A87'};
 const wordAt=a=>SEG[a[0]].words[a[1]];
@@ -224,7 +227,7 @@ function dataState(t){
 
 function drawData(rec,t){
   const g=rec.grid, S=dataState(t), shown=Math.round(S.cur);
-  g.clearRect(0,0,1000,560);
+  g.clearRect(0,0,840,560);
   g.strokeStyle='rgba(245,241,232,.09)'; g.lineWidth=1;
   for(let i=0;i<DD.cells;i++){ const [x,y]=gp(i); g.strokeRect(x+.5,y+.5,SQ,SQ); }
 
@@ -318,8 +321,10 @@ window.seek=function(t){
   const c=camAt(t);
   const dx=Math.sin(t*0.26)*7, dy=Math.cos(t*0.19)*5;   // trôi rất nhẹ, không chết cứng
   const s=c.s*(1+Math.sin(t*0.16)*0.0022);
-  plane.style.transform='translate('+(540-c.x*s+dx).toFixed(2)+'px,'
-    +(960-c.y*s+dy).toFixed(2)+'px) scale('+s.toFixed(4)+')';
+  // tâm vùng an toàn là (505, 875), KHÔNG phải tâm khung (540, 960):
+  // neo vào tâm khung thì đuôi trạm rơi xuống dưới caption, đầu trạm chừa trống 250px.
+  plane.style.transform='translate('+(505-c.x*s+dx).toFixed(2)+'px,'
+    +(875-c.y*s+dy).toFixed(2)+'px) scale('+s.toFixed(4)+')';
   glow.style.transform='translate('+c.x.toFixed(0)+'px,'+c.y.toFixed(0)+'px)';
   glow.style.opacity=(0.62+0.30*Math.sin(t*0.55)).toFixed(3);
 
@@ -335,7 +340,7 @@ window.seek=function(t){
 
     if(r.und){
       const g0=SEG[segs[0]], g1=SEG[last];
-      r.und.style.width=(ease(cl((t-g0.start)/Math.max(g1.end-g0.start,.1),0,1))*900).toFixed(0)+'px';
+      r.und.style.width=(ease(cl((t-g0.start)/Math.max(g1.end-g0.start,.1),0,1))*830).toFixed(0)+'px';
     }
     if(r.grid) drawData(r,t);
     if(r.ring) drawRing(r,t);
@@ -352,7 +357,7 @@ window.seek=function(t){
         : 1e9;
       const on=cl((t-A+0.7)/0.6,0,1)*(1-cl((t-nxt+0.15)/0.6,0,1)*0.62);
       cd.el.style.opacity=(0.30+0.70*on).toFixed(3);
-      cd.bar.style.width=(ease(cl((t-A)/Math.max(B-A,.1),0,1))*820).toFixed(0)+'px';
+      cd.bar.style.width=(ease(cl((t-A)/Math.max(B-A,.1),0,1))*760).toFixed(0)+'px';
     });
   });
 

@@ -1,10 +1,11 @@
 import sys
 sys.path.insert(0, ".")
-from _conn import connect
+from _conn import connect, require_login
 from meta import VIDEO, YT_TITLE, YT_DESC
 
 CH = "UCnElgDX9q_AYGdFc2oDuWUA"
 pw, b, ctx = connect()
+require_login(ctx, 'youtube').close()
 p = ctx.pages[0] if ctx.pages else ctx.new_page()
 p.set_default_timeout(120000)
 

@@ -3,6 +3,26 @@
 Hồ sơ riêng `~/.me-tech-browser` (đã đăng nhập sẵn FB Mê Tech · TikTok Mê Tech ·
 YouTube "Mê Tech vn"). Chạy song song được với Chrome cá nhân vì khác `user-data-dir`.
 
+## ⛔ Chỉ nối CDP. Không bao giờ tự mở hồ sơ này bằng Playwright.
+
+**19.09.2026 — mất sạch phiên đăng nhập cả ba nền tảng.** Điều tra:
+
+| Bằng chứng | Kết luận |
+|---|---|
+| Bảng cookie còn **15 dòng** (hồ sơ Chrome thường của Thiện: ~1,2 MB) | các dòng bị **xoá**, không phải không giải mã được |
+| `Default/Preferences` → `exit_type: Crashed` | Chrome bị giết cứng bằng `pkill` |
+| 18.09: chỉ `connect_over_cdp`, không khởi động lại hồ sơ lần nào → không mất gì | |
+| 19.09: hai lần `launch_persistent_context` lên đúng thư mục này (một lần giả lập iPhone) + một lần `pkill` | đây là thứ mới xuất hiện |
+
+Không tách bạch được 100% giữa `launch_persistent_context` và `pkill`, nhưng cả hai
+đều bị cấm từ nay, vì bản sửa giống nhau:
+
+- Chrome mở **một lần bằng tay**, để nguyên đó. Script chỉ `connect_over_cdp` vào
+- `_conn.connect()` **thoát ngay** nếu cổng 9333 chưa sống — không tự mở thay
+- Cần đóng thì `_conn.quit_browser()` (osascript quit), **không `pkill`**
+- Muốn đo giao diện di động → tạo hồ sơ vứt đi riêng, đừng đụng `~/.me-tech-browser`
+- Mỗi script đăng gọi `require_login()` trước khi upload, hỏng thì hỏng sớm và nói rõ
+
 ## Mở trình duyệt một lần, rồi mới chạy script
 
 ```bash

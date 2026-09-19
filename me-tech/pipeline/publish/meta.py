@@ -1,25 +1,25 @@
-VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/glm53.mp4"
+VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/rnd-index.mp4"
 
-YT_TITLE = "AI tự viết hạ tầng cho chính nó — GLM-5.3 chạy 100.000 chip Trung Quốc #shorts"
+YT_TITLE = "AI giờ chủ trì 26% việc nghiên cứu của chính công ty làm ra nó #shorts"
 
-YT_DESC = """GLM-5.3 của Z.ai (Trung Quốc): 320 tỉ tham số, mỗi lượt chỉ dùng 18 tỉ. Ra mắt cuối tháng 8, một tuần sau đã dẫn đầu lượt dùng.
+YT_DESC = """Anthropic vừa công bố "chỉ số tự động hoá nghiên cứu": tháng 2/2026 Claude chủ trì chưa tới 1% việc nghiên cứu nội bộ, tới tháng 8 là 26%. Khoảng 30.000 tác nhân chạy cùng lúc.
 
-Điểm đáng chú ý: chính mô hình viết ra phần mềm chạy suy luận cho nó — trên hơn 100.000 con chip nội địa, không phải NVIDIA. Chưa đầy hai tuần, tốc độ tăng gấp ba.
+"Chủ trì" ở đây nghĩa là nhận một câu yêu cầu rồi tự chạy gần trọn đầu đuôi, người đứng giám sát. Anthropic nói chưa mảng nào để AI chạy hoàn toàn một mình.
 
-Nói cho đúng: Z.ai khẳng định đây chưa phải là tự cải tiến đệ quy, và các con số này chưa ai kiểm chứng độc lập. Nhưng nếu đúng, Trung Quốc bớt phụ thuộc chip Mỹ.
+Nói cho đúng: điểm số này phần lớn do chính Claude tự chấm, và chỉ trùng với đánh giá của nhân viên 59%. Chưa bên thứ ba nào kiểm chứng lại. Cứ coi như một công ty tự khoe sổ sách — nhưng hướng đi thì khó cãi.
 
 Mê Tech — AI dễ hiểu, mỗi ngày một tin.
 
-#AI #GLM #ZAI #TriTueNhanTao #CongNghe #MeTech #shorts"""
+#AI #Anthropic #Claude #TriTueNhanTao #CongNghe #MeTech #shorts"""
 
-FB_CAPTION = """Một mô hình AI vừa tự viết lấy hạ tầng phục vụ chính nó.
+FB_CAPTION = """Công ty làm ra AI vừa nói: AI đang chủ trì một phần tư việc nghiên cứu của chính họ.
 
-GLM-5.3 của Z.ai (Trung Quốc) — 320 tỉ tham số, mỗi lượt chỉ dùng 18 tỉ. Ra mắt cuối tháng 8, một tuần sau đã dẫn đầu lượt dùng.
+Anthropic công bố "chỉ số tự động hoá nghiên cứu". Tháng 2 con số này chưa tới 1%. Tới tháng 8 là 26%. Khoảng 30.000 tác nhân chạy cùng lúc trong nội bộ.
 
-Nó đang chạy trên hơn 100.000 con chip nội địa, không phải NVIDIA. Và chính mô hình viết ra phần mềm chạy suy luận cho nó — chưa đầy hai tuần, tốc độ tăng gấp ba.
+"Chủ trì" nghĩa là nhận một câu yêu cầu rồi tự chạy gần hết, người chỉ đứng duyệt. Vẫn chưa mảng nào để nó chạy một mình.
 
-Nói cho đúng: Z.ai khẳng định đây chưa phải tự cải tiến đệ quy, và các con số chưa ai kiểm chứng độc lập. Nhưng nếu đúng, đây là bước bớt phụ thuộc chip Mỹ.
+Nói cho đúng: phần lớn điểm là do chính Claude tự chấm, chỉ trùng với người 59%, và chưa bên thứ ba nào kiểm chứng. Cứ coi như một công ty tự khoe sổ sách — nhưng hướng đi thì khó cãi: người làm ít dần đi.
 
-#AI #GLM #congnghe #MeTech"""
+#AI #Anthropic #congnghe #MeTech"""
 
-TT_CAPTION = """AI tự viết hạ tầng cho chính nó 😮 GLM-5.3 của Z.ai chạy trên hơn 100.000 chip Trung Quốc, không phải NVIDIA. Chưa đầy 2 tuần, tốc độ gấp 3. Nhưng con số chưa ai kiểm chứng độc lập. #AI #GLM #congnghe #MeTech #LearnOnTikTok"""
+TT_CAPTION = """AI giờ chủ trì 26% việc nghiên cứu của chính công ty làm ra nó 😳 Tháng 2 còn chưa tới 1%. 30.000 tác nhân chạy cùng lúc. Nhưng điểm này do chính nó tự chấm, chưa ai kiểm chứng độc lập. #AI #Anthropic #Claude #congnghe #MeTech #LearnOnTikTok"""

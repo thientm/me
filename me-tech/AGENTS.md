@@ -99,6 +99,45 @@ trong cùng trạm) để cú lia diễn ra trong khoảng lặng, không ăn v�
 > ăn ngược vào câu *đang* nói → cả 6 trạm đều bắt đầu trôi **trước khi chữ cuối
 > kịp sáng**. Nếu sửa lại chỗ này, đo lại bằng bảng "chữ cuối tắt / lia bắt đầu".
 
+---
+
+## Vùng an toàn 3 nền tảng — chốt 19.09.2026
+
+Đo bằng cách mở chính Short của kênh trên Chrome giả lập iPhone rồi lấy toạ độ thật
+của từng nút, quy về hệ 1080×1920 — **không lấy theo blog** (các blog lệch nhau nhiều).
+
+```
+        x 80 ─────────────── 930
+ y 250  ┌──────────────────────┐   trên y<250 : logo · tìm kiếm · tab For You
+        │                      │   dưới y>1500: username + caption + tên nhạc
+        │   TẤT CẢ NỘI DUNG    │                (Facebook Reels ngặt nhất: 420px)
+ y 900  │ ─ ─ ─ ─ ─ ─ ─┐       │   x>930 khi y>900: cột like/bình luận/chia sẻ
+        │              │ cột   │                   — cột này KHÔNG chạy hết khung,
+ y1500  └──────────────┴───────┘                     trên y=900 vẫn dùng được
+```
+
+Ba mốc trong `scene.html` giữ cho nội dung nằm đúng hộp này:
+
+| Hằng | Giá trị | Vì sao |
+|---|---|---|
+| neo máy quay | `(505, 875)` | tâm **vùng an toàn**, không phải tâm khung `(540, 960)` |
+| `FIT` | `1250` | = chiều cao vùng an toàn (250→1500) |
+| bề ngang trạm · `r.wmax` | `830` | 850 an toàn − 10px hở mỗi bên cho nhoè JPEG |
+
+HUD: thương hiệu + ngày ở `top:276px`, kicker `top:318px`, thanh tiến độ `top:254px`.
+Chân khung không còn gì — chỗ đó bị caption che 100%.
+
+`safezone.py` chạy tự động cuối bước dựng: đếm % mực rơi ngoài hộp, ngưỡng **2%**.
+Nó **bỏ qua khung đang lia** — lúc máy quay chạy thì hai trạm cùng quét qua vùng chết,
+đếm vào là sai; chỉ đo khung đứng yên vì đó mới là lúc người xem phải đọc được.
+
+> Bài 18/09 có **16% mực bị UI che**, dải y 250–500 thì trống 0,02%. Sau khi sửa: **0,86%**.
+
+Chưa tính quảng cáo. Nếu boost bài thì Facebook ăn tới 670px đáy — lúc đó hạ `BOT`
+xuống 1250 trong `safezone.py` và viết câu ngắn lại.
+
+---
+
 **Đừng đụng vào** trong `scene.html` nếu không có lý do đo được:
 `SPEED=1150` px/giây · `MV_MIN/MAX` 0,85–1,80 giây mỗi cú lia · easing `eSine` ·
 `HOLD=0,40` · chữ chạy trước giọng 0,08s.

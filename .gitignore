@@ -17,3 +17,4 @@ me-tech/pipeline/demo/.frames/
 me-tech/pipeline/demo/snap/
 **/__pycache__/
 me-tech/pipeline/publish/_scratch/
+me-tech/pipeline/publish/*.png
