@@ -3,10 +3,19 @@
 Đăng bằng business.facebook.com chứ KHÔNG phải facebook.com/reels/create —
 đường kia đăng nhầm sang trang cá nhân.
 """
-import re, sys
+import argparse, datetime as dt, re, sys
 sys.path.insert(0, ".")
-from _conn import connect, require_login
+from _conn import confirm_schedule, connect, require_login
 from meta import VIDEO, FB_CAPTION
+
+_ap = argparse.ArgumentParser(); _ap.add_argument("--at")
+AT = _ap.parse_known_args()[0].at
+if AT:
+    _h, _m = (int(x) for x in AT.split(":"))
+    WHEN = dt.datetime.now().replace(hour=_h, minute=_m, second=0, microsecond=0)
+    if WHEN <= dt.datetime.now() + dt.timedelta(minutes=20):
+        WHEN += dt.timedelta(days=1)
+    print("hen:", WHEN.strftime("%d/%m/%Y %H:%M"))
 
 ASSET = "403727472998689"          # Page Mê Tech
 
@@ -52,18 +61,49 @@ t = q.inner_text("body")
 print("Original sound giữ nguyên:", "Original audio" in t)
 print("Public:", "Public" in t)
 
+if AT:
+    # Business Suite có sẵn "Schedule" ở bước Share
+    q.get_by_text("Schedule", exact=True).first.click()
+    q.wait_for_timeout(3000)
+    print("== o hen gio ==")
+    ins = q.locator("input")
+    for i in range(min(ins.count(), 16)):
+        e = ins.nth(i)
+        try:
+            if e.is_visible():
+                print(" ", i, repr(e.get_attribute("aria-label") or e.get_attribute("placeholder")),
+                      "=", repr(e.input_value()))
+        except Exception:
+            pass
+    for lab, val in (("hours", WHEN.strftime("%H")), ("minutes", WHEN.strftime("%M"))):
+        f = q.locator(f"input[aria-label='{lab}']").first
+        f.click()
+        q.keyboard.press("Meta+a"); q.keyboard.press("Delete")
+        f.type(val, delay=110)
+        q.wait_for_timeout(900)
+    # LUẬT: đọc lại rồi mới được bấm. Bấm khi ô giờ trống = Facebook tự lấy now+1h.
+    confirm_schedule(q,
+                     {"ngày": "input[aria-label='dd/mm/yyyy']",
+                      "giờ": "input[aria-label='hours']",
+                      "phút": "input[aria-label='minutes']"},
+                     {"giờ": WHEN.strftime("%H"), "phút": WHEN.strftime("%M")})
+    q.screenshot(path="_scratch/fb_sched.png")
+
 # nút Share thật nằm cuối danh sách (đầu danh sách là tab "Share")
 bt = q.get_by_role("button")
 tgt = None
 for i in range(bt.count()):
     e = bt.nth(i)
     try:
-        if e.is_visible() and (e.get_attribute("aria-label") or e.inner_text() or "").strip() == "Share":
+        lab = (e.get_attribute("aria-label") or e.inner_text() or "").strip()
+        if e.is_visible() and lab == ("Schedule" if AT else "Share"):
             tgt = e
     except Exception:
         pass
+if tgt is None:
+    raise SystemExit("❌ khong tim thay nut " + ("Schedule" if AT else "Share"))
 tgt.click()
-print("da bam Share — dang publish, DUNG dieu huong tab nay")
+print("da bam", "Schedule" if AT else "Share", "— DUNG dieu huong tab nay")
 q.wait_for_timeout(45000)
 q.screenshot(path="_scratch/fb_done.png")
 pw.stop()

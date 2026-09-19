@@ -18,3 +18,4 @@ me-tech/pipeline/demo/snap/
 **/__pycache__/
 me-tech/pipeline/publish/_scratch/
 me-tech/pipeline/publish/*.png
+me-tech/pipeline/publish/__pycache__/

@@ -38,9 +38,20 @@ def main():
     ap.add_argument("--no-verify", action="store_true", help="bỏ cổng Whisper cho nhanh")
     ap.add_argument("--vo-only", action="store_true", help="xuất thêm bản KHÔNG nhạc nền")
     ap.add_argument("--preview", action="store_true", help="xuất thêm bản 540x960 nhẹ để gửi duyệt")
+    ap.add_argument("--tts-only", action="store_true",
+                    help="chỉ chạy giọng rồi dừng — sửa chữ cho khớp độ dài thì dùng cái này, nhanh gấp 3")
+    ap.add_argument("--force", action="store_true",
+                    help="dựng kể cả khi độ dài ngoài khoảng chốt")
     a = ap.parse_args()
 
     cpath = os.path.abspath(a.content)
+
+    # Soát cấu trúc TRƯỚC khi chạy TTS: lỗi chính tả trong file nội dung
+    # hỏng trong 1 giây thay vì sau 100 giây dựng.
+    import validate
+    if not validate.check(cpath):
+        raise SystemExit("❌ file nội dung có lỗi — sửa rồi chạy lại")
+
     slug = json.load(open(cpath, encoding="utf-8"))["slug"]
     os.makedirs(WORK, exist_ok=True); os.makedirs(VO_DIR, exist_ok=True); os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -57,7 +68,17 @@ def main():
     if TARGET[0] <= total <= TARGET[1]:
         print(f"  ✅ trong khoảng chốt {TARGET[0]:.0f}–{TARGET[1]:.0f}s")
     else:
-        print(f"  ⚠ NGOÀI khoảng chốt {TARGET[0]:.0f}–{TARGET[1]:.0f}s — thêm/bớt câu rồi chạy lại")
+        print(f"  ⚠ NGOÀI khoảng chốt {TARGET[0]:.0f}–{TARGET[1]:.0f}s")
+        if not a.force:
+            # Dừng ngay. Dựng tiếp là ném đi 100 giây cho một file sẽ phải bỏ.
+            raise SystemExit(
+                f"❌ dừng. Sửa chữ trong {os.path.basename(cpath)} rồi chạy lại với --tts-only "
+                f"(nhanh gấp 3) cho tới khi vào khoảng, sau đó dựng đầy đủ.\n"
+                f"   Muốn dựng bằng mọi giá: thêm --force")
+
+    if a.tts_only:
+        print("── dừng ở đây (--tts-only)")
+        return
 
     run([PY, os.path.join(HERE, "words.py"), tim, vo, os.path.join(WORK, "data.js")])
     run([PY, os.path.join(HERE, "deck.py"), cpath, os.path.join(WORK, "deck.js")])

@@ -57,3 +57,33 @@ Script nối vào qua CDP (`_conn.py`), **không tự mở trình duyệt** — 
 
 `meta.py` giữ caption của từng nền tảng. `_scratch/` là script dùng một lần khi dò
 selector — xoá được.
+
+## Hẹn giờ
+
+Cả ba nền tảng đều có hẹn giờ sẵn — dùng cái đó, **không** dựng cron chạy lúc 21h
+(cron đòi máy phải thức, Chrome phải còn đăng nhập, mạng phải thông đúng lúc).
+
+```bash
+python3 post.py --at 21:00        # cả ba
+python3 post.py --only youtube --at 21:00
+```
+
+| Nền tảng | Tình trạng script | Ghi chú |
+|---|---|---|
+| YouTube | ✅ tự động được | Phần hẹn giờ nằm sau `#second-container-expand-button`. Ngày phải **bấm ô trong lịch**, gõ chữ là bị backdrop chặn. |
+| Facebook | ⚠ điền được, cần kiểm | Ô `hours`/`minutes` ở bước Share. Bấm Schedule khi còn trống → FB tự lấy **now+1h**. |
+| TikTok | ❌ phải bật tay | Radio `input[value=schedule]` là input ẩn, click không ăn; chưa dò ra phần tử hiện đúng. `tt.py --at` dừng lại nhờ người bật, rồi `python3 tt_finish.py`. |
+
+### Luật cứng
+
+`_conn.confirm_schedule()` **đọc lại** ngày/giờ trên giao diện trước khi cho bấm nút
+hẹn. Trống hoặc sai thì thoát, không bấm.
+
+> 19.09.2026: bấm Schedule trên Facebook lúc ô giờ còn trống → bài bị hẹn 16:02
+> thay vì 21:00, phải nhờ Thiện vào sửa tay. Cùng ngày, YouTube nhận cú bấm
+> Publish nhưng video vẫn nằm ở Draft. **Không bao giờ tin cú bấm — luôn đọc lại.**
+
+### Script dò selector
+
+Vứt vào `_scratch/` (đã gitignore). Đừng để lẫn ở thư mục gốc — 19.09 để rơi vãi
+13 file dò dẫm ra ngoài.

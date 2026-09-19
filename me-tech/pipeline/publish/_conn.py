@@ -69,3 +69,32 @@ def quit_browser():
     """Đóng SẠCH. Không bao giờ pkill."""
     import subprocess
     subprocess.run(["osascript", "-e", 'quit app "Google Chrome"'], check=False)
+
+
+def confirm_schedule(page, fields, want):
+    """Đọc LẠI giá trị ngày/giờ trên giao diện trước khi bấm nút hẹn. Trống thì dừng.
+
+    19.09.2026: bấm Schedule trên Facebook lúc ô giờ còn trống → nền tảng tự lấy
+    mốc sớm nhất (now+1h) và bài suýt lên sai khung giờ. Không bao giờ tin cú bấm;
+    luôn đọc lại cái mình vừa điền.
+
+        fields = {"giờ": "input[aria-label='hours']", ...}
+        want   = {"giờ": "21", ...}
+    """
+    import sys
+    bad = []
+    for name, sel in fields.items():
+        loc = page.locator(sel).first
+        try:
+            val = loc.input_value().replace("\u202f", " ").strip()
+        except Exception:
+            val = (loc.inner_text() or "").strip()
+        print(f"   {name}: {val!r}")
+        if not val:
+            bad.append(f"{name} đang TRỐNG")
+        elif want.get(name) and want[name].lstrip("0") not in val.replace(":", " "):
+            bad.append(f"{name} là {val!r}, muốn {want[name]!r}")
+    if bad:
+        sys.exit("❌ KHÔNG bấm nút hẹn giờ: " + " · ".join(bad) +
+                 "\n   Điền tay trên giao diện rồi chạy lại, hoặc bỏ --at để đăng ngay.")
+    print("   ✅ ngày giờ đã đúng, được phép bấm")

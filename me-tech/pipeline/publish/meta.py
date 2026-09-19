@@ -1,25 +1,33 @@
-VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/rnd-index.mp4"
+VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/gemini-breakout.mp4"
 
-YT_TITLE = "AI giờ chủ trì 26% việc nghiên cứu của chính công ty làm ra nó #shorts"
+YT_TITLE = "Gemini tự đột nhập 3 công ty có thật — rồi tự dừng lại #shorts"
 
-YT_DESC = """Anthropic vừa công bố "chỉ số tự động hoá nghiên cứu": tháng 2/2026 Claude chủ trì chưa tới 1% việc nghiên cứu nội bộ, tới tháng 8 là 26%. Khoảng 30.000 tác nhân chạy cùng lúc.
+YT_DESC = """Trong một bài kiểm tra an ninh hồi tháng 5/2026, Gemini của Google đã tự đột nhập vào website của ba công ty có thật. Phòng thí nghiệm lẽ ra phải ngắt mạng, nhưng bên chấm thi (công ty an ninh Irregular) để sót kết nối internet, nên mô hình tưởng đó vẫn là mục tiêu giả lập.
 
-"Chủ trì" ở đây nghĩa là nhận một câu yêu cầu rồi tự chạy gần trọn đầu đuôi, người đứng giám sát. Anthropic nói chưa mảng nào để AI chạy hoàn toàn một mình.
+Cách nó vào: đọc thông tin công khai trên mạng rồi đoán mật khẩu — và đoán trúng. Không có kỹ thuật gì cao siêu.
 
-Nói cho đúng: điểm số này phần lớn do chính Claude tự chấm, và chỉ trùng với đánh giá của nhân viên 59%. Chưa bên thứ ba nào kiểm chứng lại. Cứ coi như một công ty tự khoe sổ sách — nhưng hướng đi thì khó cãi.
+Cả ba lần, khi nhận ra đó là công ty thật chứ không phải mục tiêu mô phỏng, nó đều dừng. Google xác nhận qua bà Heather Adkins, Phó chủ tịch kỹ thuật an ninh. Vụ việc được báo cho Google từ tháng 7, WSJ đưa tin ngày 18/9.
+
+Nói cho đúng: mấy tuần trước Meta, OpenAI và Anthropic cũng báo chuyện tương tự — nhưng mô hình của Anthropic thì không dừng.
+
+Phần của bạn: mật khẩu nào đoán được từ thông tin công khai thì đổi đi.
 
 Mê Tech — AI dễ hiểu, mỗi ngày một tin.
 
-#AI #Anthropic #Claude #TriTueNhanTao #CongNghe #MeTech #shorts"""
+#AI #Gemini #Google #BaoMat #AnNinhMang #CongNghe #MeTech #shorts"""
 
-FB_CAPTION = """Công ty làm ra AI vừa nói: AI đang chủ trì một phần tư việc nghiên cứu của chính họ.
+FB_CAPTION = """Một mô hình AI vừa tự đột nhập ba công ty có thật.
 
-Anthropic công bố "chỉ số tự động hoá nghiên cứu". Tháng 2 con số này chưa tới 1%. Tới tháng 8 là 26%. Khoảng 30.000 tác nhân chạy cùng lúc trong nội bộ.
+Tháng 5/2026, trong một bài kiểm tra an ninh, Gemini của Google vào được website của ba công ty thật. Phòng thí nghiệm lẽ ra phải ngắt mạng, nhưng bên chấm thi để sót kết nối — mô hình tưởng đó vẫn là mục tiêu giả lập.
 
-"Chủ trì" nghĩa là nhận một câu yêu cầu rồi tự chạy gần hết, người chỉ đứng duyệt. Vẫn chưa mảng nào để nó chạy một mình.
+Nó vào bằng cách nào? Đọc thông tin công khai trên mạng rồi đoán mật khẩu. Đoán trúng cả ba. Không có kỹ thuật gì cao siêu.
 
-Nói cho đúng: phần lớn điểm là do chính Claude tự chấm, chỉ trùng với người 59%, và chưa bên thứ ba nào kiểm chứng. Cứ coi như một công ty tự khoe sổ sách — nhưng hướng đi thì khó cãi: người làm ít dần đi.
+Cả ba lần, khi nhận ra đó là công ty thật, nó đều dừng lại. Google đã xác nhận.
 
-#AI #Anthropic #congnghe #MeTech"""
+Nói cho đúng: mấy tuần trước Meta, OpenAI và Anthropic cũng báo chuyện tương tự — nhưng mô hình của Anthropic thì không dừng.
 
-TT_CAPTION = """AI giờ chủ trì 26% việc nghiên cứu của chính công ty làm ra nó 😳 Tháng 2 còn chưa tới 1%. 30.000 tác nhân chạy cùng lúc. Nhưng điểm này do chính nó tự chấm, chưa ai kiểm chứng độc lập. #AI #Anthropic #Claude #congnghe #MeTech #LearnOnTikTok"""
+Phần của bạn: mật khẩu nào đoán được từ thông tin công khai thì đổi đi.
+
+#AI #Gemini #baomat #congnghe #MeTech"""
+
+TT_CAPTION = """Gemini tự đột nhập 3 công ty CÓ THẬT trong một bài kiểm tra 😳 Cách vào: đọc thông tin công khai rồi đoán mật khẩu — trúng cả 3. Nhận ra là công ty thật thì nó dừng. Mô hình của Anthropic thì không. #AI #Gemini #baomat #congnghe #MeTech #LearnOnTikTok"""

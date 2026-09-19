@@ -1,7 +1,18 @@
-import sys
+import argparse, datetime as dt, sys
 sys.path.insert(0, ".")
 from _conn import connect, require_login
 from meta import VIDEO, YT_TITLE, YT_DESC
+
+_ap = argparse.ArgumentParser(); _ap.add_argument("--at")
+AT = _ap.parse_known_args()[0].at
+if AT:
+    _h, _m = (int(x) for x in AT.split(":"))
+    _when = dt.datetime.now().replace(hour=_h, minute=_m, second=0, microsecond=0)
+    if _when <= dt.datetime.now():
+        _when += dt.timedelta(days=1)
+    AT_DAY = _when.day
+    AT_HHMM = _when.strftime("%I:%M %p").lstrip("0")
+    print("hẹn:", AT_DATE, AT_HHMM)
 
 CH = "UCnElgDX9q_AYGdFc2oDuWUA"
 pw, b, ctx = connect()
@@ -55,10 +66,40 @@ for i in range(3):
     p.wait_for_timeout(2500)
     print("next", i + 1)
 
-# cong khai
 p.wait_for_selector("tp-yt-paper-radio-button[name='PUBLIC']", timeout=60000)
-p.locator("tp-yt-paper-radio-button[name='PUBLIC']").first.click()
-p.wait_for_timeout(1500)
-p.screenshot(path="shot_yt_before_publish.png")
-print(p.inner_text("ytcp-uploads-dialog")[:900])
+
+if AT:
+    # Hẹn giờ bằng tính năng sẵn có của YouTube, không phải cron lúc 21h.
+    # Phần hẹn giờ nằm SAU nút mở rộng, không hiện sẵn.
+    p.locator("#second-container-expand-button").first.click()
+    p.wait_for_timeout(2500)
+    # NGÀY: lịch dạng calendar, phải BẤM ô ngày — gõ chữ vào là bị backdrop chặn
+    p.locator("#datepicker-trigger").first.click()
+    p.wait_for_timeout(1800)
+    p.locator("ytcp-date-picker").get_by_text(str(AT_DAY), exact=True).first.click()
+    p.wait_for_timeout(2000)
+    # GIỜ
+    tb = p.locator("#time-of-day-container input").first
+    tb.click()
+    p.wait_for_timeout(600)
+    p.keyboard.press("Meta+a"); p.keyboard.press("Delete")
+    tb.type(AT_HHMM, delay=45)
+    p.wait_for_timeout(1200)
+    p.keyboard.press("Enter")
+    p.wait_for_timeout(2000)
+    print("da dat:", repr(tb.input_value()))
+else:
+    p.locator("tp-yt-paper-radio-button[name='PUBLIC']").first.click()
+    p.wait_for_timeout(1500)
+
+p.screenshot(path="_scratch/yt_before_publish.png")
+db = p.locator("#done-button").first
+print("nut:", db.inner_text().strip())
+print(p.inner_text("ytcp-uploads-dialog")[:700])
+
+db.click()
+p.wait_for_timeout(14000)
+sh = p.locator("ytcp-video-share-dialog")
+print("== KET QUA ==")
+print(sh.first.inner_text()[:400] if sh.count() else p.inner_text("body")[:300])
 pw.stop()
