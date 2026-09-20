@@ -1,33 +1,35 @@
-VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/suno-lawsuit.mp4"
+VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/hacktron-openai.mp4"
 
-YT_TITLE = "Sony và Universal kiện Suno lần hai — đòi tới 9 tỉ đô #shorts"
+YT_TITLE = "Ba người dùng Claude vào được tài khoản nhân viên OpenAI #shorts"
 
-YT_DESC = """Ngày 18/9/2026, Sony Music và Universal Music Group nộp đơn kiện Suno — công ty làm nhạc bằng AI. Đây là lần thứ hai hai hãng này kiện chính Suno.
+YT_DESC = """Ngày 25/7/2026, nhóm nghiên cứu bảo mật Hacktron — Harsh Jaiswal, Mohan Pedhapati và Rahul Maini — ghép hai lỗ hổng lại và vào được tài khoản ChatGPT của nhiều nhân viên OpenAI. Từ đó họ sang được kho mã nội bộ của công ty.
 
-Quy mô: đơn kiện nêu hơn 60.000 bản ghi âm (con số cụ thể là 60.202). Tiền bồi thường theo luật bản quyền có thể lên tới 9 tỉ đô la, chưa kể khoản phạt cho mỗi lần bị cho là lách công cụ chống tải của YouTube.
+Để chứng minh mà không đụng vào dữ liệu nhạy cảm, họ dùng Codex của một nhân viên mở một pull request vô hại trong kho openai/openai.
 
-Kiện về gì: Suno nói mô hình v6 được huấn luyện bằng nội dung có giấy phép — công ty đã ký với Warner Music và BMG trước khi ra mắt. Nhưng Sony và Universal cho rằng v6 vẫn kế thừa từ các mô hình đời trước, vốn được xây bằng nhạc chép không xin phép.
+Đây là nhóm mũ trắng. Họ báo cho OpenAI ngay khi vào được. OpenAI vá lỗi trong khoảng 14 tiếng và trả thưởng 6.500 đô qua chương trình bug bounty.
 
-Nói cho đúng: Suno phản hồi rằng cáo buộc "sai cả về sự thật lẫn luật". Toà chưa xử, nên chưa bên nào thắng cả.
+Điều đáng chú ý không phải là ai bị hack — mà là chỉ ba người, với một mô hình AI, đã làm được việc đó.
 
-Phần của bạn: nếu bạn hay lấy nhạc AI bỏ vào video, đọc kỹ điều khoản của công cụ để biết mình được dùng tới đâu — nhất là khi video có kiếm tiền.
+Toàn bộ chi tiết do chính nhóm tự công bố trên trang của họ ngày 13/9/2026.
+
+Nguồn: hacktron.ai/blog/hacking-openai
 
 Mê Tech — AI dễ hiểu, mỗi ngày một tin.
 
-#AI #Suno #NhacAI #BanQuyen #CongNghe #MeTech #shorts"""
+#AI #Claude #OpenAI #BaoMat #AnNinhMang #CongNghe #MeTech #shorts"""
 
-FB_CAPTION = """Hai hãng nhạc lớn nhất thế giới vừa kiện tiếp một công ty nhạc AI.
+FB_CAPTION = """Một nhóm ba người dùng Claude để vào được tài khoản nhân viên OpenAI.
 
-Ngày 18/9, Sony Music và Universal nộp đơn kiện Suno. Và đây đã là lần thứ hai họ kiện chính công ty này.
+Chính họ viết lại toàn bộ trên trang của mình. Ngày 25/7, họ ghép hai lỗ hổng lại với nhau — bài viết ghi rõ ngày giờ, tên ba người, và từng bước họ đi.
 
-Quy mô: đơn kiện nêu hơn 60.000 bản ghi âm. Tiền bồi thường có thể lên tới 9 tỉ đô la.
+Họ vào tới đâu: tài khoản ChatGPT của nhân viên, kéo theo cả Codex, GitHub, Slack, email đang nối vào đó. Từ đó sang được kho mã nội bộ của công ty. Rồi mở một pull request vô hại để chứng minh, không lấy gì thêm.
 
-Kiện về gì: Suno nói bản mới đã có giấy phép — đã ký với Warner Music và BMG. Nhưng hai hãng nói nó vẫn xây trên nền các mô hình cũ, vốn dùng nhạc chép không xin phép.
+Nói cho đúng: đây là nhóm mũ trắng. Họ báo ngay cho OpenAI. 14 tiếng sau thì lỗi đã được vá xong, và nhóm nhận thưởng 6.500 đô.
 
-Nói cho đúng: Suno nói cáo buộc sai cả về sự thật lẫn luật. Toà thì chưa xử, nên chưa bên nào thắng cả.
+Điều đáng chú ý không phải là ai bị hack. Mà là chỉ ba người, với một mô hình AI, đã làm được việc đó.
 
-Phần của bạn: nếu bạn hay lấy nhạc AI bỏ vào video, đọc kỹ điều khoản của công cụ, xem mình được dùng tới đâu.
+Nguồn: hacktron.ai/blog/hacking-openai · 13.09.2026
 
-#AI #Suno #nhacAI #banquyen #congnghe #MeTech"""
+#AI #Claude #OpenAI #baomat #congnghe #MeTech"""
 
-TT_CAPTION = """Sony + Universal kiện Suno lần 2 ⚖️ Hơn 60.000 bản ghi âm trong đơn, đòi bồi thường tới 9 tỉ đô. Suno nói bản mới có giấy phép rồi, hai hãng nói vẫn xây trên nền mô hình cũ. Toà chưa xử. Hay dùng nhạc AI cho video thì đọc kỹ điều khoản nhé. #AI #Suno #nhacAI #banquyen #MeTech #LearnOnTikTok"""
+TT_CAPTION = """3 người + 1 mô hình AI = vào được tài khoản nhân viên OpenAI 😳 Ghép 2 lỗ hổng, sang tới kho mã nội bộ, mở 1 pull request vô hại để chứng minh. Nhóm mũ trắng, báo ngay, OpenAI vá trong 14 tiếng, thưởng 6.500 đô. Nguồn: hacktron.ai #AI #Claude #OpenAI #baomat #MeTech #LearnOnTikTok"""

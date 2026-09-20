@@ -87,3 +87,15 @@ hẹn. Trống hoặc sai thì thoát, không bấm.
 
 Vứt vào `_scratch/` (đã gitignore). Đừng để lẫn ở thư mục gốc — 19.09 để rơi vãi
 13 file dò dẫm ra ngoài.
+
+## Dọn rác sau khi upload hỏng
+
+Upload lại vì bất kỳ lý do gì → **bản upload trước vẫn nằm lại trên kênh dưới dạng
+Draft**, tên là tên file (`glm53`), không tiêu đề, không mô tả. Nó không công khai,
+nhưng nó là rác trên dashboard của Thiện.
+
+18.09.2026 để lại đúng một bản như vậy và **không nói với Thiện** — mấy ngày sau anh
+ấy tự phát hiện. Đừng lặp lại.
+
+Luật: upload lại thì phải **báo ngay** là trên kênh còn một bản nháp thừa, kèm tên nó,
+để Thiện tự xoá. Không tự xoá hộ — xoá video là không lấy lại được.
