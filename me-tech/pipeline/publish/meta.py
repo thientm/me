@@ -1,37 +1,33 @@
-VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/gemini4-leak.mp4"
+VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/suno-lawsuit.mp4"
 
-YT_TITLE = "Gemini 4 lộ thông số: 10 triệu token một lượt #shorts"
+YT_TITLE = "Sony và Universal kiện Suno lần hai — đòi tới 9 tỉ đô #shorts"
 
-YT_DESC = """Gemini 4 vừa lộ thông số, và nếu đúng thì nó lớn hơn mọi thứ đang có.
+YT_DESC = """Ngày 18/9/2026, Sony Music và Universal Music Group nộp đơn kiện Suno — công ty làm nhạc bằng AI. Đây là lần thứ hai hai hãng này kiện chính Suno.
 
-Ngày 17/9, một mô hình lạ xuất hiện trên Arena.ai với tên mã ARGON, vài tiếng sau là biến mất.
+Quy mô: đơn kiện nêu hơn 60.000 bản ghi âm (con số cụ thể là 60.202). Tiền bồi thường theo luật bản quyền có thể lên tới 9 tỉ đô la, chưa kể khoản phạt cho mỗi lần bị cho là lách công cụ chống tải của YouTube.
 
-Thông số được đồn:
-• Nhận vào 10 triệu token một lượt — gấp khoảng 10 lần cửa sổ ngữ cảnh của các mô hình phổ biến hiện nay
-• Xuất ra tới 256 nghìn token trong một lần trả lời
-• Vượt GPT-6 Astra theo vài bài đo không chính thức
+Kiện về gì: Suno nói mô hình v6 được huấn luyện bằng nội dung có giấy phép — công ty đã ký với Warner Music và BMG trước khi ra mắt. Nhưng Sony và Universal cho rằng v6 vẫn kế thừa từ các mô hình đời trước, vốn được xây bằng nhạc chép không xin phép.
 
-Nói cho đúng: tất cả mới chỉ là ảnh chụp màn hình lan truyền trên mạng. Google chưa xác nhận một chữ nào, và mỗi nơi lại gọi nó một tên mã khác nhau.
+Nói cho đúng: Suno phản hồi rằng cáo buộc "sai cả về sự thật lẫn luật". Toà chưa xử, nên chưa bên nào thắng cả.
 
-Tin đồn nói ra mắt trong tháng 10. Còn Google thì vẫn im lặng.
+Phần của bạn: nếu bạn hay lấy nhạc AI bỏ vào video, đọc kỹ điều khoản của công cụ để biết mình được dùng tới đâu — nhất là khi video có kiếm tiền.
 
 Mê Tech — AI dễ hiểu, mỗi ngày một tin.
 
-#AI #Gemini #Gemini4 #Google #CongNghe #MeTech #shorts"""
+#AI #Suno #NhacAI #BanQuyen #CongNghe #MeTech #shorts"""
 
-FB_CAPTION = """Gemini 4 vừa lộ thông số. Và nó lớn hơn mọi thứ đang có.
+FB_CAPTION = """Hai hãng nhạc lớn nhất thế giới vừa kiện tiếp một công ty nhạc AI.
 
-Ngày 17/9, một mô hình lạ xuất hiện trên Arena.ai. Tên mã ARGON. Vài tiếng sau là biến mất.
+Ngày 18/9, Sony Music và Universal nộp đơn kiện Suno. Và đây đã là lần thứ hai họ kiện chính công ty này.
 
-Thông số được đồn:
-• Nhận vào 10 triệu token một lượt — gấp 10 lần cửa sổ của các mô hình phổ biến bây giờ
-• Một lần trả lời dài tới 256 nghìn token
-• Và đồn là nó vượt GPT-6 Astra
+Quy mô: đơn kiện nêu hơn 60.000 bản ghi âm. Tiền bồi thường có thể lên tới 9 tỉ đô la.
 
-Nói cho đúng: tất cả mới chỉ là ảnh chụp màn hình trên mạng. Google chưa xác nhận một chữ nào. Và mỗi nơi lại gọi nó một tên mã khác nhau.
+Kiện về gì: Suno nói bản mới đã có giấy phép — đã ký với Warner Music và BMG. Nhưng hai hãng nói nó vẫn xây trên nền các mô hình cũ, vốn dùng nhạc chép không xin phép.
 
-Tin đồn nói ra mắt trong tháng 10. Còn Google thì vẫn im lặng.
+Nói cho đúng: Suno nói cáo buộc sai cả về sự thật lẫn luật. Toà thì chưa xử, nên chưa bên nào thắng cả.
 
-#AI #Gemini4 #Google #congnghe #MeTech"""
+Phần của bạn: nếu bạn hay lấy nhạc AI bỏ vào video, đọc kỹ điều khoản của công cụ, xem mình được dùng tới đâu.
 
-TT_CAPTION = """Gemini 4 lộ thông số 👀 10 TRIỆU token một lượt, gấp 10 lần hiện nay. Xuất ra 256 nghìn token. Đồn là vượt GPT-6 Astra. Tên mã ARGON, hiện vài tiếng trên Arena.ai rồi biến mất. Google chưa xác nhận gì. #AI #Gemini4 #Google #congnghe #MeTech #LearnOnTikTok"""
+#AI #Suno #nhacAI #banquyen #congnghe #MeTech"""
+
+TT_CAPTION = """Sony + Universal kiện Suno lần 2 ⚖️ Hơn 60.000 bản ghi âm trong đơn, đòi bồi thường tới 9 tỉ đô. Suno nói bản mới có giấy phép rồi, hai hãng nói vẫn xây trên nền mô hình cũ. Toà chưa xử. Hay dùng nhạc AI cho video thì đọc kỹ điều khoản nhé. #AI #Suno #nhacAI #banquyen #MeTech #LearnOnTikTok"""
