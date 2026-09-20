@@ -10,7 +10,7 @@ trỏ ra ngoài mảng `words` sau khi rút gọn câu. Cả hai lỗi đó đ�
 """
 import json, sys
 
-MODES = {"say", "data", "step", "outro"}
+MODES = {"say", "data", "step", "shot", "outro"}
 
 # Hiệu chỉnh từ ba bài đã dựng thật (lawzero · glm53 · rnd-index):
 # 136–141 âm tiết ↔ 36,6–37,6 giây → 0,268 giây/âm tiết, sai số ±3%.
@@ -47,6 +47,9 @@ def check(path):
                 err.append(f"{tag}: hot {h} vượt quá {len(s['words'])} chữ")
         if not s.get("say", "").strip():
             err.append(f"{tag}: thiếu 'say'")
+        # ảnh dẫn nguồn mà không ghi xuất xứ là dùng ảnh người khác không ghi công
+        if s.get("mode") == "shot" and s.get("shot") and not s.get("src"):
+            err.append(f"{tag}: có 'shot' nhưng thiếu 'src' — ảnh dẫn nguồn BẮT BUỘC ghi xuất xứ")
 
     if segs[-1].get("mode") != "outro":
         err.append("câu cuối phải là mode 'outro'")

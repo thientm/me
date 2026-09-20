@@ -9,7 +9,7 @@ có 6 cú lia.
 """
 import json, sys
 
-MODES = {"say", "data", "step", "outro"}
+MODES = {"say", "data", "step", "shot", "outro"}
 
 
 def groups(segs):
@@ -27,7 +27,8 @@ def groups(segs):
         else:
             out.append({"key": key, "mode": mode, "segs": [i],
                         "lab": s.get("lab", ""), "cards": s.get("cards"),
-                        "icon": s.get("icon"), "splitAt": s.get("splitAt")})
+                        "icon": s.get("icon"), "splitAt": s.get("splitAt"),
+                        "shot": s.get("shot"), "src": s.get("src")})
     return out
 
 

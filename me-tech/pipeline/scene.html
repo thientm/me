@@ -59,6 +59,17 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--i
 .card .bar{height:5px;background:var(--now);width:0;margin-top:20px}
 .card .line{font-size:34px;margin-top:24px;opacity:.85}
 
+/* Trạm dẫn nguồn: ảnh chụp CHÍNH TRANG GỐC, luôn kèm dòng ghi xuất xứ.
+   Không dùng cho ảnh trong bài báo — xem capture.py. */
+/* 740 chứ không phải 830: ảnh dẫn nguồn cao theo tỉ lệ, để full width thì trạm
+   cao quá và đuôi chữ rơi xuống dải caption. */
+.shotwrap{position:relative;width:740px}
+.shotwrap img{display:block;width:740px;height:auto;border:3px solid rgba(255,174,43,.55);
+  clip-path:inset(0 100% 0 0)}
+.shotwrap .src{margin-top:14px;font-size:22px;font-weight:600;color:var(--mute);
+  letter-spacing:.04em}
+.shotwrap .src b{color:var(--now);font-weight:700}
+
 .outro{text-align:center}
 .outro .mark{font-size:132px;font-weight:800;letter-spacing:-.03em;line-height:1}
 .outro .hd{margin-top:22px;font-size:28px;font-weight:600;letter-spacing:.24em;
@@ -238,6 +249,13 @@ G.forEach((g,gi)=>{
       rec.cards.push({el:cd, bar:cd.querySelector('.bar')});
     });
 
+  }else if(g.mode==='shot'){
+    el.insertAdjacentHTML('beforeend',
+      '<div class="shotwrap"><img src="'+g.shot+'" alt="">'+
+      '<div class="src"><b>Nguồn:</b> '+(g.src||'')+'</div></div>');
+    g.segs.forEach(si=>el.appendChild(lit(words(si, 40))));
+    rec.shot=el.querySelector('.shotwrap img');
+
   }else{  // outro — cảnh kết dùng chung, không bao giờ đổi
     el.insertAdjacentHTML('beforeend','<canvas class="ring" width="900" height="900"></canvas>');
     const m=lit(words(g.segs[0],132)); m.classList.add('mark'); el.appendChild(m);
@@ -415,6 +433,12 @@ window.seek=function(t){
         if(e.classList.contains('fill')){ e.style.opacity=(p>0.85?(p-0.85)/0.15:0).toFixed(3); return; }
         e.style.strokeDashoffset=((+e.dataset.len)*(1-p)).toFixed(1);
       });
+    }
+    if(r.shot){
+      // ảnh lộ dần từ trái sang trong 0,9 giây, bắt đầu cùng lúc câu đầu
+      const a=SEG[segs[0]].start-0.35;
+      const p=ease(cl((t-a)/0.90,0,1));
+      r.shot.style.clipPath='inset(0 '+((1-p)*100).toFixed(1)+'% 0 0)';
     }
     if(r.grid) drawData(r,t);
     if(r.ring) drawRing(r,t);

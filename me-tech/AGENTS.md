@@ -72,6 +72,25 @@ Agent chọn `mode` cho từng câu theo đúng luật này:
 | `step` | từ hai bước trở lên, có thứ tự | Các thẻ cùng nằm trong một khung, sáng dần theo lời |
 | `outro` | **luôn là câu cuối**, không bao giờ đổi | Cảnh kết dùng chung |
 
+**Ảnh dẫn nguồn** (`mode: "shot"`) — chụp CHÍNH TRANG GỐC rồi dẫn trong video.
+
+```bash
+python capture.py <url> ../render/shots/<tên>.png     # hồ sơ vứt đi, không đụng me-tech-browser
+```
+rồi khai trong câu: `"shot": "<tên>.png"` và `"src": "domain/đường-dẫn · ngày"`.
+
+| Được chụp | Không được chụp |
+|---|---|
+| Blog chính hãng, hồ sơ toà án, trang tài liệu, bảng đo chính thức | **Ảnh trong bài báo** — có giấy phép của hãng tin |
+| Chỉ phần đang được dẫn (tiêu đề, đoạn nêu số) | Cả bài, hay phần hướng dẫn kỹ thuật |
+
+`validate.py` chặn nếu có `shot` mà thiếu `src` — ảnh dẫn nguồn **bắt buộc** ghi xuất xứ
+trên màn hình. Ảnh rộng 740px (không phải 830): để full width thì trạm cao quá,
+đuôi chữ rơi xuống dải caption.
+
+Phiên hiện tại **không có công cụ sinh ảnh AI**. Bài nào không có nguồn để chụp thì
+dùng hình vẽ bằng nét, đừng chèn ảnh kho cho có.
+
 **Hình vẽ bằng nét** — khai `"icon"` ở câu đầu của trạm. Hình được **vẽ dần** trong
 0,7 giây ngay trước chữ đầu tiên, cùng nhịp với chữ ăn theo giọng.
 

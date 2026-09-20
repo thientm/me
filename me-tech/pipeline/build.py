@@ -86,6 +86,16 @@ def main():
     run([PY, os.path.join(HERE, "chime.py"), os.path.join(WORK, "chime.wav")])
     shutil.copy(os.path.join(HERE, "scene.html"), os.path.join(WORK, "scene.html"))
 
+    # ảnh dẫn nguồn của trạm mode 'shot' phải nằm cạnh scene.html thì trình duyệt mới tải được
+    for seg in json.load(open(cpath, encoding="utf-8"))["segments"]:
+        if seg.get("shot"):
+            src = os.path.join(OUT_DIR, "shots", seg["shot"])
+            if not os.path.exists(src):
+                raise SystemExit(f"❌ thiếu ảnh dẫn nguồn: {src}\n"
+                                 f"   chụp bằng: python capture.py <url> ../render/shots/{seg['shot']}")
+            shutil.copy(src, os.path.join(WORK, seg["shot"]))
+            print(f"  ảnh dẫn nguồn: {seg['shot']}")
+
     shoot(total)
     encode(slug, total, a)
 
