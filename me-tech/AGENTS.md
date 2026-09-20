@@ -72,6 +72,21 @@ Agent chọn `mode` cho từng câu theo đúng luật này:
 | `step` | từ hai bước trở lên, có thứ tự | Các thẻ cùng nằm trong một khung, sáng dần theo lời |
 | `outro` | **luôn là câu cuối**, không bao giờ đổi | Cảnh kết dùng chung |
 
+**Hình vẽ bằng nét** — khai `"icon"` ở câu đầu của trạm. Hình được **vẽ dần** trong
+0,7 giây ngay trước chữ đầu tiên, cùng nhịp với chữ ăn theo giọng.
+
+Có sẵn: `bolt` `chip` `lock` `key` `eye` `spread` `doc` `clock` `warn` `model`
+`building` `question` `chat` `stop`
+
+Luật: **hình phải tả đúng thứ đang nói**, không phải trang trí. Không logo, không
+hình thương hiệu. Trạm nào không có thứ để vẽ thì bỏ trống — thà thiếu hình còn hơn
+dán một cái icon vô nghĩa cho đủ.
+
+**Tốc độ đọc** — khai `"speed"` ở gốc file (1.10 = nhanh hơn 10%). Dùng `atempo`
+nên không đổi cao độ. Khoảng lặng `gap`/`gap_group` vẫn giữ đúng nghĩa: con số ghi
+ra là con số nghe thấy. Ngân sách âm tiết giãn theo: ×1,10 thì khoảng chốt là
+131–155 âm tiết thay vì 119–141.
+
 `group` gom các câu liên tiếp vào **một trạm**. Máy quay chỉ lia giữa các trạm,
 không lia theo từng câu — 13 câu mà chỉ 6 cú lia là nhờ vậy.
 Nhắm **5–7 trạm** cho một bài 35 giây.
@@ -120,8 +135,8 @@ Ba mốc trong `scene.html` giữ cho nội dung nằm đúng hộp này:
 
 | Hằng | Giá trị | Vì sao |
 |---|---|---|
-| neo máy quay | `(505, 875)` | tâm **vùng an toàn**, không phải tâm khung `(540, 960)` |
-| `FIT` | `1250` | = chiều cao vùng an toàn (250→1500) |
+| neo máy quay | `(505, 925)` | tâm **dải nội dung** — không phải tâm khung `(540, 960)`, cũng không phải tâm vùng an toàn `(505, 875)`: dòng thương hiệu chiếm y 276–345, neo cao hơn thì đầu trạm đè lên nó |
+| `FIT` | `1150` | dải cho nội dung: y 350→1500 |
 | bề ngang trạm · `r.wmax` | `830` | 850 an toàn − 10px hở mỗi bên cho nhoè JPEG |
 
 HUD: thương hiệu + ngày ở `top:276px`, kicker `top:318px`, thanh tiến độ `top:254px`.

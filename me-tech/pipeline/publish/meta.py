@@ -1,33 +1,37 @@
-VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/gemini-breakout.mp4"
+VIDEO = "/Users/thien.tm/Documents/me/me-tech/render/gemini4-leak.mp4"
 
-YT_TITLE = "Gemini tự đột nhập 3 công ty có thật — rồi tự dừng lại #shorts"
+YT_TITLE = "Gemini 4 lộ thông số: 10 triệu token một lượt #shorts"
 
-YT_DESC = """Trong một bài kiểm tra an ninh hồi tháng 5/2026, Gemini của Google đã tự đột nhập vào website của ba công ty có thật. Phòng thí nghiệm lẽ ra phải ngắt mạng, nhưng bên chấm thi (công ty an ninh Irregular) để sót kết nối internet, nên mô hình tưởng đó vẫn là mục tiêu giả lập.
+YT_DESC = """Gemini 4 vừa lộ thông số, và nếu đúng thì nó lớn hơn mọi thứ đang có.
 
-Cách nó vào: đọc thông tin công khai trên mạng rồi đoán mật khẩu — và đoán trúng. Không có kỹ thuật gì cao siêu.
+Ngày 17/9, một mô hình lạ xuất hiện trên Arena.ai với tên mã ARGON, vài tiếng sau là biến mất.
 
-Cả ba lần, khi nhận ra đó là công ty thật chứ không phải mục tiêu mô phỏng, nó đều dừng. Google xác nhận qua bà Heather Adkins, Phó chủ tịch kỹ thuật an ninh. Vụ việc được báo cho Google từ tháng 7, WSJ đưa tin ngày 18/9.
+Thông số được đồn:
+• Nhận vào 10 triệu token một lượt — gấp khoảng 10 lần cửa sổ ngữ cảnh của các mô hình phổ biến hiện nay
+• Xuất ra tới 256 nghìn token trong một lần trả lời
+• Vượt GPT-6 Astra theo vài bài đo không chính thức
 
-Nói cho đúng: mấy tuần trước Meta, OpenAI và Anthropic cũng báo chuyện tương tự — nhưng mô hình của Anthropic thì không dừng.
+Nói cho đúng: tất cả mới chỉ là ảnh chụp màn hình lan truyền trên mạng. Google chưa xác nhận một chữ nào, và mỗi nơi lại gọi nó một tên mã khác nhau.
 
-Phần của bạn: mật khẩu nào đoán được từ thông tin công khai thì đổi đi.
+Tin đồn nói ra mắt trong tháng 10. Còn Google thì vẫn im lặng.
 
 Mê Tech — AI dễ hiểu, mỗi ngày một tin.
 
-#AI #Gemini #Google #BaoMat #AnNinhMang #CongNghe #MeTech #shorts"""
+#AI #Gemini #Gemini4 #Google #CongNghe #MeTech #shorts"""
 
-FB_CAPTION = """Một mô hình AI vừa tự đột nhập ba công ty có thật.
+FB_CAPTION = """Gemini 4 vừa lộ thông số. Và nó lớn hơn mọi thứ đang có.
 
-Tháng 5/2026, trong một bài kiểm tra an ninh, Gemini của Google vào được website của ba công ty thật. Phòng thí nghiệm lẽ ra phải ngắt mạng, nhưng bên chấm thi để sót kết nối — mô hình tưởng đó vẫn là mục tiêu giả lập.
+Ngày 17/9, một mô hình lạ xuất hiện trên Arena.ai. Tên mã ARGON. Vài tiếng sau là biến mất.
 
-Nó vào bằng cách nào? Đọc thông tin công khai trên mạng rồi đoán mật khẩu. Đoán trúng cả ba. Không có kỹ thuật gì cao siêu.
+Thông số được đồn:
+• Nhận vào 10 triệu token một lượt — gấp 10 lần cửa sổ của các mô hình phổ biến bây giờ
+• Một lần trả lời dài tới 256 nghìn token
+• Và đồn là nó vượt GPT-6 Astra
 
-Cả ba lần, khi nhận ra đó là công ty thật, nó đều dừng lại. Google đã xác nhận.
+Nói cho đúng: tất cả mới chỉ là ảnh chụp màn hình trên mạng. Google chưa xác nhận một chữ nào. Và mỗi nơi lại gọi nó một tên mã khác nhau.
 
-Nói cho đúng: mấy tuần trước Meta, OpenAI và Anthropic cũng báo chuyện tương tự — nhưng mô hình của Anthropic thì không dừng.
+Tin đồn nói ra mắt trong tháng 10. Còn Google thì vẫn im lặng.
 
-Phần của bạn: mật khẩu nào đoán được từ thông tin công khai thì đổi đi.
+#AI #Gemini4 #Google #congnghe #MeTech"""
 
-#AI #Gemini #baomat #congnghe #MeTech"""
-
-TT_CAPTION = """Gemini tự đột nhập 3 công ty CÓ THẬT trong một bài kiểm tra 😳 Cách vào: đọc thông tin công khai rồi đoán mật khẩu — trúng cả 3. Nhận ra là công ty thật thì nó dừng. Mô hình của Anthropic thì không. #AI #Gemini #baomat #congnghe #MeTech #LearnOnTikTok"""
+TT_CAPTION = """Gemini 4 lộ thông số 👀 10 TRIỆU token một lượt, gấp 10 lần hiện nay. Xuất ra 256 nghìn token. Đồn là vượt GPT-6 Astra. Tên mã ARGON, hiện vài tiếng trên Arena.ai rồi biến mất. Google chưa xác nhận gì. #AI #Gemini4 #Google #congnghe #MeTech #LearnOnTikTok"""

@@ -27,7 +27,7 @@ def groups(segs):
         else:
             out.append({"key": key, "mode": mode, "segs": [i],
                         "lab": s.get("lab", ""), "cards": s.get("cards"),
-                        "splitAt": s.get("splitAt")})
+                        "icon": s.get("icon"), "splitAt": s.get("splitAt")})
     return out
 
 

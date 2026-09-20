@@ -116,6 +116,14 @@ def main():
     # Ranh giới giữa hai TRẠM cần lặng lâu hơn: cú lia phải diễn ra trong khoảng
     # lặng đó, chứ không được ăn vào đuôi câu đang nói.
     gap_group = c.get("gap_group", 0.60)
+    # Tốc độ đọc. 1.10 = nhanh hơn 10%. Dùng atempo của ffmpeg nên KHÔNG đổi cao độ
+    # (kéo dãn mẫu thẳng thì giọng bị the như chuột).
+    # Khoảng lặng được nhân lên trước rồi chia lại sau, nên gap/gap_group trong
+    # file nội dung vẫn giữ đúng nghĩa: con số ghi ra là con số nghe thấy.
+    speed = float(c.get("speed", 1.0))
+    if speed != 1.0:
+        print(f"  tốc độ đọc ×{speed:.2f}")
+        lead_in *= speed; tail *= speed; gap *= speed; gap_group *= speed
 
     tts = Vieneu()
     defaults = {}
@@ -154,6 +162,18 @@ def main():
     wp = os.path.join(outdir, f"{slug}.vo.wav")
     with wave.open(wp, "wb") as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(vo.tobytes())
+
+    if speed != 1.0:
+        import subprocess, shutil as _sh
+        fast = wp + ".fast.wav"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wp,
+                        "-filter:a", f"atempo={speed}", fast], check=True)
+        _sh.move(fast, wp)
+        # mọi mốc thời gian co lại đúng cùng một tỉ lệ
+        for t in timing:
+            for k in ("start", "end", "dur"):
+                t[k] = round(t[k] / speed, 3)
+        total /= speed
 
     manifest = {"slug": slug, "voice": voice, "total": round(total, 3),
                 "lead_in": lead_in, "gap": gap, "tail": tail,

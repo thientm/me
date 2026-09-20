@@ -86,17 +86,21 @@ def check(path):
                 warn.append(f"group '{g}': {len(cards)} thẻ nhưng {n} câu — cần 'splitAt'")
 
     syl = sum(syllables(s) for s in segs)
-    est = syl * SEC_PER_SYL
-    lo, hi = int(TARGET[0] / SEC_PER_SYL), int(TARGET[1] / SEC_PER_SYL)
+    speed = float(d.get("speed", 1.0))
+    est = syl * SEC_PER_SYL / speed
+    lo = int(TARGET[0] / SEC_PER_SYL * speed)
+    hi = int(TARGET[1] / SEC_PER_SYL * speed)
     ngroups = len({s["group"] for s in segs})
 
-    print(f"  {len(segs)} câu · {ngroups} trạm · {syl} âm tiết")
+    print(f"  {len(segs)} câu · {ngroups} trạm · {syl} âm tiết"
+          + (f" · tốc độ ×{speed:.2f}" if speed != 1.0 else ""))
     print(f"  ước lượng {est:.1f}s (khoảng chốt {TARGET[0]:.0f}–{TARGET[1]:.0f}s "
           f"↔ {lo}–{hi} âm tiết)")
-    if not lo + 4 <= syl <= hi - 4:
-        d_syl = (lo + 6) - syl if syl < lo else syl - (hi - 6)
-        warn.append(f"số âm tiết sát mép — {'thêm' if syl < lo else 'bớt'} khoảng "
-                    f"{abs(d_syl)} âm tiết cho chắc")
+    # so với NGƯỠNG CÓ ĐỆM, không phải lo/hi trần — so nhầm thì báo ngược chiều
+    if syl < lo + 4:
+        warn.append(f"số âm tiết sát mép dưới — thêm khoảng {(lo + 8) - syl} âm tiết cho chắc")
+    elif syl > hi - 4:
+        warn.append(f"số âm tiết sát mép trên — bớt khoảng {syl - (hi - 8)} âm tiết cho chắc")
     if not 5 <= ngroups <= 7:
         warn.append(f"{ngroups} trạm — nhắm 5–7 trạm cho bài ~35 giây")
 
