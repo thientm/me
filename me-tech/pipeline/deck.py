@@ -28,7 +28,8 @@ def groups(segs):
             out.append({"key": key, "mode": mode, "segs": [i],
                         "lab": s.get("lab", ""), "cards": s.get("cards"),
                         "icon": s.get("icon"), "splitAt": s.get("splitAt"),
-                        "shot": s.get("shot"), "src": s.get("src")})
+                        "shot": s.get("shot"), "src": s.get("src"),
+                        "view": s.get("view"), "focus": s.get("focus"), "hl": s.get("hl")})
     return out
 
 

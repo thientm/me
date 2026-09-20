@@ -75,9 +75,25 @@ Agent chọn `mode` cho từng câu theo đúng luật này:
 **Ảnh dẫn nguồn** (`mode: "shot"`) — chụp CHÍNH TRANG GỐC rồi dẫn trong video.
 
 ```bash
-python capture.py <url> ../render/shots/<tên>.png     # hồ sơ vứt đi, không đụng me-tech-browser
+python capture.py <url> ../render/shots/<tên>.png --phone   # hồ sơ vứt đi, không đụng me-tech-browser
 ```
-rồi khai trong câu: `"shot": "<tên>.png"` và `"src": "domain/đường-dẫn · ngày"`.
+
+**Luôn chụp `--phone`.** Chụp khổ máy tính rồi thu vào khung 1080 thì chữ thân bài
+chỉ còn **5 px thật** trên điện thoại — đó là ảnh trang trí, không phải trích dẫn.
+Khổ điện thoại làm trang xuống dòng ~40 ký tự, đẩy vào đúng đoạn thì chữ đạt ~32 px.
+
+Khai trong câu:
+
+```json
+"shot":  "<tên>.png",
+"src":   "domain/đường-dẫn · ngày",
+"view":  [x, y, w, h],   ô mở đầu — tiêu đề + tác giả, để thấy là trang thật
+"focus": [x, y, w, h],   ô chốt — ĐÚNG đoạn đang dẫn, đây là chỗ phải đọc được
+"hl":    [x, y, w, h]    vệt tô sáng chạy qua dòng then chốt
+```
+
+Toạ độ tính bằng pixel trong file ảnh. Hai nhịp: mở ra cả trang (0,55s) → đẩy vào
+đoạn đang dẫn (1,30s) → vệt tô sáng chạy qua (0,70s). Ô kính 830×430.
 
 | Được chụp | Không được chụp |
 |---|---|

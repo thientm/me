@@ -20,8 +20,11 @@
    "hot":[5,13]},
 
   {"id":"p1","group":"g2","mode":"shot","lab":"HỌ TỰ CÔNG BỐ","icon":"doc",
-   "shot":"hacktron-crop.png",
+   "shot":"hacktron-phone.png",
    "src":"hacktron.ai/blog/hacking-openai · 13.09.2026",
+   "view":[0,480,1290,668],
+   "focus":[30,1660,1230,637],
+   "hl":[48,1735,1000,58],
    "say":"Chính họ viết lại toàn bộ trên trang của mình.",
    "plain":"Chính họ viết lại toàn bộ trên trang của mình",
    "words":["Chính","họ","viết","lại","toàn","bộ","trên","trang","của","mình"],
