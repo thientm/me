@@ -76,6 +76,19 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--i
   letter-spacing:.04em}
 .shotwrap .src b{color:var(--now);font-weight:700}
 
+/* Chuỗi bước: mỗi hộp một chặng THẬT trong câu chuyện, sáng dần theo lời.
+   Dùng khi nội dung là "từ A sang B sang C" — đừng dùng để trang trí. */
+.flow{width:830px}
+.fnode{position:relative;border:3px solid rgba(245,241,232,.16);border-radius:6px;
+  padding:26px 30px;opacity:.22}
+.fnode.on{border-color:var(--now);opacity:1}
+.fnode .ft{font-size:46px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.fnode .fd{margin-top:10px;font-size:27px;font-weight:600;color:var(--mute);line-height:1.3}
+.farrow{height:52px;display:flex;align-items:center;justify-content:center;opacity:.22}
+.farrow.on{opacity:1}
+.farrow svg{width:34px;height:44px;overflow:visible}
+.farrow path{fill:none;stroke:var(--now);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+
 .outro{text-align:center}
 .outro .mark{font-size:132px;font-weight:800;letter-spacing:-.03em;line-height:1}
 .outro .hd{margin-top:22px;font-size:28px;font-weight:600;letter-spacing:.24em;
@@ -266,6 +279,20 @@ G.forEach((g,gi)=>{
     rec.inner=el.querySelector('.shotinner');
     rec.hl=el.querySelector('.hl');
     rec.view=g.view; rec.focus=g.focus;
+
+  }else if(g.mode==='flow'){
+    const fw=document.createElement('div'); fw.className='flow';
+    (g.nodes||[]).forEach((nd,i)=>{
+      if(i) fw.insertAdjacentHTML('beforeend',
+        '<div class="farrow"><svg viewBox="0 0 34 44"><path d="M17 2v34M6 27l11 11 11-11"/></svg></div>');
+      fw.insertAdjacentHTML('beforeend',
+        '<div class="fnode"><div class="ft">'+nd.t+'</div>'+
+        (nd.d?'<div class="fd">'+nd.d+'</div>':'')+'</div>');
+    });
+    el.appendChild(fw);
+    g.segs.forEach(si=>el.appendChild(lit(words(si, 34))));
+    rec.fnodes=[...fw.querySelectorAll('.fnode')];
+    rec.farrows=[...fw.querySelectorAll('.farrow')];
 
   }else{  // outro — cảnh kết dùng chung, không bao giờ đổi
     el.insertAdjacentHTML('beforeend','<canvas class="ring" width="900" height="900"></canvas>');
@@ -464,6 +491,15 @@ window.seek=function(t){
         const q=ease(cl((t-a1-1.30)/0.70,0,1));
         r.hl.style.width=(q*(+r.hl.dataset.w)).toFixed(0)+'px';
       }
+    }
+    if(r.fnodes){
+      // chia đều các chặng trong khoảng thời gian trạm đang nói
+      const s0=SEG[segs[0]].start, s1=SEG[segs[segs.length-1]].end;
+      const n=r.fnodes.length, step=(s1-s0)/Math.max(n,1);
+      r.fnodes.forEach((e,i)=>{
+        e.classList.toggle('on', t>=s0+step*i-0.20);
+        if(i) r.farrows[i-1].classList.toggle('on', t>=s0+step*i-0.45);
+      });
     }
     if(r.grid) drawData(r,t);
     if(r.ring) drawRing(r,t);

@@ -72,6 +72,11 @@ Agent chọn `mode` cho từng câu theo đúng luật này:
 | `step` | từ hai bước trở lên, có thứ tự | Các thẻ cùng nằm trong một khung, sáng dần theo lời |
 | `outro` | **luôn là câu cuối**, không bao giờ đổi | Cảnh kết dùng chung |
 
+**Chuỗi bước** (`mode: "flow"`) — khai `"nodes": [{"t","d"}, ...]`. Các hộp sáng dần
+theo lời, có mũi tên nối. Dùng khi nội dung thật sự là "từ A sang B sang C"
+(leo thang quyền, chuỗi sự kiện). **Không** dùng để trang trí — nội dung không có
+thứ tự thì dùng `step`.
+
 **Ảnh dẫn nguồn** (`mode: "shot"`) — chụp CHÍNH TRANG GỐC rồi dẫn trong video.
 
 ```bash

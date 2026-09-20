@@ -10,7 +10,7 @@ trỏ ra ngoài mảng `words` sau khi rút gọn câu. Cả hai lỗi đó đ�
 """
 import json, sys
 
-MODES = {"say", "data", "step", "shot", "outro"}
+MODES = {"say", "data", "step", "shot", "flow", "outro"}
 
 # Hiệu chỉnh từ ba bài đã dựng thật (lawzero · glm53 · rnd-index):
 # 136–141 âm tiết ↔ 36,6–37,6 giây → 0,268 giây/âm tiết, sai số ±3%.
