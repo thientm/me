@@ -36,4 +36,7 @@ q.wait_for_timeout(22000)
 
 print("url:", q.url)
 print(q.inner_text("body")[:600])
+import ledger
+from meta import VIDEO
+ledger.record(VIDEO, "tiktok", "bam tay qua tt_finish")
 pw.stop()

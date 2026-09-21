@@ -85,13 +85,28 @@ def confirm_schedule(page, fields, want):
     bad = []
     for name, sel in fields.items():
         loc = page.locator(sel).first
-        try:
-            val = loc.input_value().replace("\u202f", " ").strip()
-        except Exception:
-            val = (loc.inner_text() or "").strip()
+        # Đọc NHANH rồi thôi. Để nguyên timeout mặc định 120 giây thì một ô
+        # biến mất khiến hàm này treo bốn phút rồi mới chết — 21.09.2026 đã
+        # mất hai lần 120 giây đúng kiểu đó. Ô không đọc được = ô TRỐNG,
+        # và trống thì đằng nào cũng không được bấm.
+        val = ""
+        # Ba cach doc, lay cai dau tien ra chu. Facebook dung o nhap do React
+        # dieu khien: `input_value()` tra ve RONG trong khi man hinh hien ro
+        # "12 : 30" — chu nam o the cha. Doc thieu cach thu ba thi guard bao
+        # TRONG cho mot lich da dat dung (21.09.2026 hong hai lan vi the).
+        for read in (lambda: loc.input_value(timeout=6000),
+                     lambda: loc.inner_text(timeout=6000),
+                     lambda: loc.evaluate(
+                         "e => (e.parentElement && e.parentElement.innerText) || ''")):
+            try:
+                val = (read() or "").replace("\u202f", " ").strip()
+                if val:
+                    break      # RONG khong phai la doc duoc -> thu cach sau
+            except Exception:
+                continue
         print(f"   {name}: {val!r}")
         if not val:
-            bad.append(f"{name} đang TRỐNG")
+            bad.append(f"{name} không đọc được hoặc đang TRỐNG")
         elif want.get(name) and want[name].lstrip("0") not in val.replace(":", " "):
             bad.append(f"{name} là {val!r}, muốn {want[name]!r}")
     if bad:

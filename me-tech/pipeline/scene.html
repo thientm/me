@@ -5,6 +5,7 @@
   --ink:#0E0D0B;          /* nền mực ấm, không phải đen xanh */
   --paper:#F5F1E8;        /* chữ đã đọc */
   --ghost:rgba(245,241,232,.11);   /* chữ chưa đọc */
+  --ghost0:rgba(245,241,232,.56);  /* chữ chưa đọc Ở TRẠM ĐẦU — xem mục MÓC ở dưới */
   --mute:#8C8479;
   --now:#FFAE2B;          /* đang nói · con số mới · trạng thái sau */
   --was:#7E9A87;          /* trạng thái trước · cái bị thay thế */
@@ -38,6 +39,16 @@ html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--i
 .w{display:inline-block;margin-right:.24em;position:relative;color:var(--ghost)}
 .w.on{color:var(--paper)}
 .w.hot.on{color:var(--now)}
+/* MÓC — hai giây đầu quyết định người xem ở lại hay lướt qua.
+   Ở các trạm sau, chữ chưa đọc mờ 11% là đúng: người xem đang NGHE, chữ chỉ
+   theo giọng. Nhưng ở trạm ĐẦU thì chưa có gì để nghe — người vừa lướt tới,
+   mắt đọc trước tai. Hiện từng chữ một ở đó nghĩa là hai giây đầu gần như
+   trống. Nên trạm đầu: CẢ CÂU đọc được ngay từ khung hình số 1, vệt vàng vẫn
+   chạy theo giọng để mắt biết đang tới đâu. */
+/* CHỈ chữ chưa đọc. `.st.hook .w` là BA lớp, đè cả `.w.on` lẫn `.w.hot.on`
+   — viết thiếu `:not(.on)` thì vệt vàng theo giọng tắt ngóm, cả câu xám đều. */
+.st.hook .w:not(.on){color:var(--ghost0)}
+.st.hook .lab{opacity:.55;font-size:21px}   /* nhãn nhường chỗ cho câu móc */
 .w i{position:absolute;left:0;bottom:-.08em;height:4px;width:0;
   background:var(--now);display:block}
 .und{height:5px;background:var(--now);width:0;margin-top:30px}
@@ -224,7 +235,7 @@ plane.style.width=PW+'px'; plane.style.height=PH+'px';
 const ST=[];
 G.forEach((g,gi)=>{
   const el=document.createElement('div');
-  el.className='st'+(g.mode==='outro'?' outro':'');
+  el.className='st'+(g.mode==='outro'?' outro':'')+(gi===0?' hook':'');
   const x=(gi%2===0)?X_ODD:X_EVEN, y=340+gi*STEP_Y;
   el.style.left=x+'px'; el.style.top=y+'px';
   el.style.width='830px';          // 850 an toàn − 10px hở mỗi bên
@@ -267,6 +278,11 @@ G.forEach((g,gi)=>{
       el.appendChild(cd);
       rec.cards.push({el:cd, bar:cd.querySelector('.bar')});
     });
+    // MỤC LỤC (điểm tin nhanh): nhiều thẻ nhưng chỉ MỘT câu và không splitAt.
+    // Câu đó nói về cả cụm, không thuộc thẻ nào — cho nó một dòng riêng dưới
+    // các thẻ, và các thẻ sáng lên đều tay theo thời lượng câu.
+    rec.index = (g.segs.length===1 && (sp===null||sp===undefined) && rec.cards.length>1);
+    if(rec.index) el.appendChild(lit(words(seg0, 40)));
 
   }else if(g.mode==='shot'){
     const hl=g.hl ? '<div class="hl" style="left:'+g.hl[0]+'px;top:'+g.hl[1]+
@@ -456,7 +472,9 @@ window.seek=function(t){
     const a=SEG[segs[0]].start-0.95;
     const last=segs[segs.length-1];
     // chỉ mờ đi khi máy quay thật sự bắt đầu rời trạm, không mờ theo mốc cứng
-    const near=cl((t-a)/0.75,0,1)*(1-cl((t-r.leave)/0.75,0,1));
+    // TRẠM ĐẦU không có nhịp hiện ra: người vừa lướt tới, khung hình đầu tiên
+    // phải đã đọc được. Hiện dần ở đây = vứt đi nửa giây đắt nhất của clip.
+    const near=(r.gi===0?1:cl((t-a)/0.75,0,1))*(1-cl((t-r.leave)/0.75,0,1));
     r.el.style.opacity=(0.13+0.87*near).toFixed(3);
 
     if(r.und){
@@ -509,13 +527,23 @@ window.seek=function(t){
       const sp=r.g.splitAt, s0=SEG[segs[0]];
       let A,B;
       if(segs.length>1 && segs[i]!==undefined){ A=SEG[segs[i]].start; B=SEG[segs[i]].end; }
+      else if(r.index){
+        // mục lục: chia đều thời lượng câu cho các thẻ — không có splitAt để bám
+        const d=(s0.end-s0.start)/r.cards.length;
+        A=s0.start+d*i; B=A+d;
+      }
       else { A=i===0?s0.words[0].a:s0.words[sp].a;
              B=i===0?s0.words[sp-1].b:s0.words[s0.words.length-1].b; }
       const nxt=(i<r.cards.length-1)
-        ? (segs.length>1&&segs[i+1]!==undefined ? SEG[segs[i+1]].start : s0.words[sp].a)
+        ? (segs.length>1&&segs[i+1]!==undefined ? SEG[segs[i+1]].start
+           : r.index ? B : s0.words[sp].a)
         : 1e9;
       const on=cl((t-A+0.7)/0.6,0,1)*(1-cl((t-nxt+0.15)/0.6,0,1)*0.62);
-      cd.el.style.opacity=(0.30+0.70*on).toFixed(3);
+      // Thẻ bước: thẻ chưa tới thì mờ hẳn, vì người xem chỉ cần nhìn một thẻ.
+      // MỤC LỤC thì ngược lại — cả ba tiêu đề phải đọc được ngay giây đầu,
+      // đó chính là lý do người ta ở lại xem. Nên sàn 0,62 thay vì 0,30.
+      const floor=r.index?0.62:0.30;
+      cd.el.style.opacity=(floor+(1-floor)*on).toFixed(3);
       cd.bar.style.width=(ease(cl((t-A)/Math.max(B-A,.1),0,1))*760).toFixed(0)+'px';
     });
   });

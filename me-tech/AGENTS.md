@@ -303,3 +303,131 @@ Bằng chứng cho rule này, cùng toàn bộ gotcha từng nền tảng: `me-t
 Bước 3 đã là script hoàn toàn: TTS chạy local, Whisper chạy local, ffmpeg. Không có lệnh gọi API AI nào.
 
 Bước 4 hiện dùng Chrome vì selector hay đổi. **Có thể script hoá bằng API chính thức** — Facebook Graph API (Reels lên Page), YouTube Data API (`videos.insert`), TikTok Content Posting API. Cả ba đều cần đăng ký app và được duyệt. Khi xong bước đó thì bước 4 cũng thành script, và cả quy trình chỉ còn bước 1–2 cần agent.
+
+
+## Chống đăng trùng — ba lớp, đừng gỡ lớp nào
+
+21.09.2026 kênh YouTube có **hai bản công khai trùng nhau**. Nguyên nhân: phiên
+tự động đọc "dòng mới nhất" trên kênh thay vì đối chiếu tiêu đề, tưởng chưa đăng
+nên upload lại. Ba lớp chặn hiện nay:
+
+| Lớp | Ở đâu | Chặn được gì |
+|---|---|---|
+| 1. Sổ đăng bài | `publish/ledger.py` → `logs/posted.json` | chạy lại cùng một video, **không cần mở trình duyệt**, chặn trong 1 giây |
+| 2. Đối chiếu kênh | `yt.py` gọi `yt_verify.scan()` **trước khi** upload | hai phiên chạy song song, hoặc sổ bị xoá |
+| 3. Kiểm chứng sau | `yt_verify.py` · `fb_verify.py` · `tt_verify.py` | cú bấm im lặng không ăn, và đếm bản trùng |
+
+Cùng ngày lớp 1 + lớp 2 đã **bắt được một lần chạy đôi thật**: một lệnh bị timeout
+ở tầng công cụ nhưng vẫn chạy tiếp trên máy, lệnh thứ hai chạy đè lên. Không có
+hai lớp này thì hôm đó lại thêm một bản trùng nữa.
+
+`post.py` **đọc MÃ THOÁT**, không đọc chữ in ra:
+`0` xong · `1` chưa thấy · `2` còn ở Draft · `3` đã trùng, người phải xoá bớt.
+
+`--force` bỏ qua lớp 1 và 2. Chỉ dùng khi thật sự muốn đăng lại.
+
+`fb_verify.py` cũ dò chuỗi `"chủ trì một phần tư"` gõ cứng từ một bài tháng trước,
+nên nó báo "không thấy" cho **mọi** bài mới — tức là chưa bao giờ kiểm chứng gì.
+Mốc phải lấy từ `meta.FB_CAPTION`, đừng bao giờ gõ cứng.
+
+## Xếp hàng nhiều bài trong ngày
+
+`publish/meta.py` giờ là **con trỏ**, không phải nơi gõ nội dung. Mỗi bài một file
+`meta_<slug>.py`; chọn bài bằng `python3 use.py <slug>`, xem đang chọn gì và bài
+nào đã lên nền tảng nào bằng `python3 use.py`. Trước đây mỗi lần đổi bài phải sửa
+tay `meta.py` nên không chuẩn bị trước hai bài trong một ngày được.
+
+## Hẹn giờ — ba nền tảng đều tự động được
+
+Không dùng cron chờ tới giờ. Đặt lịch bằng tính năng sẵn có của nền tảng: đặt
+xong là xong, tắt máy vẫn chạy.
+
+### TikTok — lớp phủ chặn mọi cú bấm
+
+Đây là cái làm hỏng nhiều nhất và khó nhìn ra nhất. TikTok mở hộp thoại bằng
+`div.TUXModal-overlay` trùm cả trang; Playwright báo
+`TUXModal-overlay ... intercepts pointer events` rồi thử lại 112 lần trong 60
+giây và chết. Nhìn màn hình thì thấy nút rất rõ nên rất dễ tưởng sai selector.
+
+> **Luật: gọi `tt_sched.clear_overlay(q)` TRƯỚC mỗi cú bấm, không phải sau.**
+> 21.09 đặt sau cú bấm submit → mất nguyên khung 12:30.
+
+Hộp "Continue to post?" hiện khi TikTok chưa soát xong video. Cách đúng là **chờ**
+hai mục Checks báo "No issues found" rồi hãy bấm — bấm trước thì bị hỏi, bấm sau
+thì đi thẳng. Còn hiện thì mới bấm xác nhận.
+
+Ghi chú cũ *"radio Schedule là input ẩn, click không ăn nên phải bật tay"* là
+**SAI**, và đã bắt làm tay ba tuần. `get_by_text("Schedule").click()` ăn bình
+thường, miễn là hết lớp phủ. Ô giờ thì không gõ chữ vào được, phải **bấm** trong
+bảng chọn:
+
+    giờ   .tiktok-timepicker-option-text.tiktok-timepicker-left
+    phút  .tiktok-timepicker-option-text.tiktok-timepicker-right
+
+Phút nhảy 5 một nấc → ba khung chốt 07:45 · 12:30 · 21:00 đều đặt được.
+Chỉ hẹn được **trong ngày**; khác ngày thì dừng hẳn, đừng đoán.
+
+### Facebook — ô giờ đọc ngược
+
+Ô ngày **không có** `aria-label`, chỉ có `placeholder='dd/mm/yyyy'`. Ô giờ/phút do
+React điều khiển: `input_value()` trả về **rỗng** trong khi màn hình hiện rõ
+"12 : 30" — chữ nằm ở thẻ cha. Nên `confirm_schedule` đọc ba cách theo thứ tự
+`input_value` → `inner_text` → `parentElement.innerText`, và **rỗng không tính là
+đọc được** (phải thử cách sau, đừng `break`). Thiếu bước này thì cổng báo TRỐNG
+cho một lịch đã đặt đúng.
+
+Mọi ô đọc lại đều để timeout **6 giây**, không để mặc định 120 — một ô biến mất là
+treo bốn phút rồi mới chết.
+
+`fb_finish.py` bấm nút cho composer **đang mở sẵn**, dùng khi fb.py dừng ở cổng
+`confirm_schedule`. Chạy lại `fb.py` sẽ tải video LẦN NỮA và bỏ lại một composer
+bỏ hoang trên Page.
+
+### Chrome đóng hết cửa sổ thì không nối CDP được
+
+Triệu chứng: cổng 9333 vẫn trả lời `/json/version`, nhưng `connect_over_cdp` chết
+với `Protocol error (Browser.setDownloadBehavior): Browser context management is
+not supported`, và `/json/list` rỗng. Nghĩa là Chrome còn sống nhưng **không còn
+tab nào**. Không được mở lại hồ sơ bằng Playwright. Mở lại một tab bằng chính
+DevTools:
+
+```bash
+curl -s -X PUT "http://127.0.0.1:9333/json/new?https://www.tiktok.com/tiktokstudio/content"
+```
+
+## Hai giây đầu — móc giữ người xem
+
+Ở các trạm sau, chữ chưa đọc mờ 11% là đúng: người xem đang **nghe**, chữ chỉ đi
+theo giọng. Trạm **đầu** thì ngược lại — người vừa lướt tới, chưa có gì để nghe,
+mắt đọc trước tai. Hiện từng chữ một ở đó nghĩa là hai giây đắt nhất của clip gần
+như trống.
+
+- `.st.hook .w:not(.on)` sáng **56%** thay vì 11% → cả câu đọc được từ khung hình số 1
+- trạm đầu **không có nhịp hiện ra** (`r.gi===0 → near=1`)
+- nhãn trạm đầu mờ đi, nhường chỗ cho câu móc
+- `hot` vẫn chạy theo giọng để mắt biết đang tới đâu
+
+**Bẫy CSS đã trả giá:** `.st.hook .w` là **ba lớp**, đè cả `.w.on` lẫn `.w.hot.on`.
+Viết thiếu `:not(.on)` thì vệt vàng tắt ngóm và cả câu xám đều — nhìn ảnh mới thấy,
+đọc code không thấy.
+
+Kéo theo một luật nội dung: `lab` của trạm đầu phải **mang tin**, đừng để
+"TIN CHÍNH". `HAI NGHÌN TỶ ĐÔ` nói được điều gì đó; `TIN CHÍNH` thì không.
+
+## Điểm tin nhanh — khi không đủ một tin đủ nóng
+
+Ngày nào không có tin nào đủ sức đứng riêng thì gộp **3 tin** thành một bài, thay
+vì bỏ khung. Chép `content/_roundup-template.json`, đặt `"kind": "roundup"`.
+
+Cấu trúc: **trạm mục lục** (`mode: "step"`, 3 thẻ đánh số = 3 tiêu đề) → mỗi tin
+một trạm `say` hai–ba câu, `lab` ghi nguồn → outro. 5 trạm, vẫn 32–38 giây.
+
+Mục lục là chỗ giữ người: cả ba tiêu đề phải **đọc được ngay giây đầu** — đó chính
+là lý do người ta ở lại. Nên thẻ mục lục có sàn độ sáng **0,62** (thẻ bước thường
+là 0,30), và các thẻ sáng lên đều tay theo thời lượng câu thay vì bám `splitAt`
+(trạm mục lục có nhiều thẻ nhưng chỉ **một** câu, `splitAt: null` — `scene.html`
+nhận ra bằng `rec.index`).
+
+`validate.py` soát riêng cho `roundup`: mục lục phải là trạm đầu, **số thẻ phải
+bằng số trạm tin**, 3–4 tin, mỗi trạm tin phải có `lab`. Thiếu một trạm thì mục
+lục nói ba mà clip chỉ kể hai — bắt trong một giây, thay vì phát hiện sau khi đăng.

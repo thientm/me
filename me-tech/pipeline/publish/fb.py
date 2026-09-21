@@ -8,8 +8,13 @@ sys.path.insert(0, ".")
 from _conn import confirm_schedule, connect, require_login
 from meta import VIDEO, FB_CAPTION
 
+import ledger
+
 _ap = argparse.ArgumentParser(); _ap.add_argument("--at")
-AT = _ap.parse_known_args()[0].at
+_ap.add_argument("--force", action="store_true")
+_a = _ap.parse_known_args()[0]
+AT, FORCE = _a.at, _a.force
+ledger.guard(VIDEO, "facebook", FORCE)
 if AT:
     _h, _m = (int(x) for x in AT.split(":"))
     WHEN = dt.datetime.now().replace(hour=_h, minute=_m, second=0, microsecond=0)
@@ -83,7 +88,8 @@ if AT:
         q.wait_for_timeout(900)
     # LUẬT: đọc lại rồi mới được bấm. Bấm khi ô giờ trống = Facebook tự lấy now+1h.
     confirm_schedule(q,
-                     {"ngày": "input[aria-label='dd/mm/yyyy']",
+                     # O ngay KHONG co aria-label, chi co placeholder.
+                     {"ngày": "input[placeholder='dd/mm/yyyy']",
                       "giờ": "input[aria-label='hours']",
                       "phút": "input[aria-label='minutes']"},
                      {"giờ": WHEN.strftime("%H"), "phút": WHEN.strftime("%M")})
@@ -106,4 +112,5 @@ tgt.click()
 print("da bam", "Schedule" if AT else "Share", "— DUNG dieu huong tab nay")
 q.wait_for_timeout(45000)
 q.screenshot(path="_scratch/fb_done.png")
+ledger.record(VIDEO, "facebook", ("hen " + AT) if AT else "dang ngay")
 pw.stop()

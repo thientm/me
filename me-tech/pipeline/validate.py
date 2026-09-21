@@ -85,8 +85,36 @@ def check(path):
         if "step" in m:
             cards = next((s.get("cards") for s in segs if s["group"] == g and s.get("cards")), None)
             n = sum(1 for s in segs if s["group"] == g)
-            if cards and len(cards) != n and not any(s.get("splitAt") for s in segs if s["group"] == g):
+            # n==1 + nhiều thẻ = trạm MỤC LỤC của bài điểm tin: hợp lệ, thẻ sáng
+            # đều tay theo thời lượng câu (xem scene.html, rec.index)
+            if cards and len(cards) != n and n != 1 \
+                    and not any(s.get("splitAt") for s in segs if s["group"] == g):
                 warn.append(f"group '{g}': {len(cards)} thẻ nhưng {n} câu — cần 'splitAt'")
+
+    # ĐIỂM TIN NHANH — bài gộp nhiều tin, chốt riêng vì dễ hỏng theo kiểu riêng:
+    # thiếu một trạm tin thì thẻ mục lục nói ba mà clip chỉ kể hai.
+    if d.get("kind") == "roundup":
+        idx = [s for s in segs if s["mode"] == "step"]
+        if not idx:
+            err.append("roundup: thiếu trạm mục lục (mode 'step') mở đầu")
+        elif segs[0]["mode"] != "step":
+            err.append("roundup: trạm mục lục phải là trạm ĐẦU TIÊN")
+        else:
+            ncards = len(idx[0].get("cards") or [])
+            # trạm tin = mọi group trừ mục lục và outro
+            nstory = len({s["group"] for s in segs}) - 2
+            if ncards != nstory:
+                err.append("roundup: mục lục %d thẻ nhưng %d trạm tin — phải bằng nhau"
+                           % (ncards, nstory))
+            if not 3 <= ncards <= 4:
+                err.append("roundup: %d tin — chốt 3–4 tin, ít hơn thì đăng tin lẻ, "
+                           "nhiều hơn thì không kịp đọc" % ncards)
+        for g in {s["group"] for s in segs}:
+            gs = [s for s in segs if s["group"] == g]
+            if gs[0]["mode"] in ("step", "outro"):
+                continue
+            if not gs[0].get("lab"):
+                err.append("roundup: trạm tin '%s' thiếu 'lab' — mỗi tin phải ghi nguồn" % g)
 
     syl = sum(syllables(s) for s in segs)
     speed = float(d.get("speed", 1.0))
