@@ -60,6 +60,45 @@ Caption từng nền tảng: `pipeline/publish/meta.py`.
 
 ---
 
+## Chốt lại — mọi quyết định đã khoá
+
+Sửa bất kỳ dòng nào dưới đây thì phải **đo được lý do**, đừng đổi theo cảm tính.
+
+| Hạng mục | Chốt | Vì sao |
+|---|---|---|
+| Độ dài | **32–38 giây** | vùng giao của cả ba nền tảng, một file đăng cả ba |
+| Tốc độ đọc | **×1,10** (`"speed"`) | dùng `atempo` nên không the giọng; ngân sách 131–155 âm tiết |
+| Số trạm | **5–7** | 12–13 câu, máy quay chỉ lia giữa trạm |
+| Neo máy quay | **(505, 925)** | tâm dải nội dung, không phải tâm khung |
+| `FIT` | **1150** | dải nội dung y 350→1500, dưới dòng thương hiệu |
+| Bề ngang trạm | **830px** | 850 an toàn − 10px hở mỗi bên |
+| Tốc độ lia | **1150 px/s**, 0,85–1,80s | bản cũ ~3.000 px/s bị chê nhức mắt |
+| `HOLD` | **0,40s** | không rời trạm trước khi chữ cuối sáng xong |
+| Vùng an toàn | **x 80–930 · y 250–1500** | đo thật trên Short của kênh, không lấy theo blog |
+| Ngưỡng cổng | **2%** mực bị UI che | `safezone.py` chặn build nếu vượt |
+| Khung đăng | **07:45 · 12:30 · 21:00** | xem "Vì sao 3 khung" ở dưới |
+
+**Bốn cổng tự động — đừng gỡ:**
+
+1. `validate.py` — soát file nội dung **trước** TTS (1 giây thay vì 100)
+2. `build.py` — **dừng** nếu độ dài ngoài 32–38s (dùng `--tts-only` để sửa nhanh gấp 3)
+3. `safezone.py` — **chặn** nếu >2% mực rơi vào vùng bị UI che
+4. `_conn.confirm_schedule()` — **không cho bấm** nút hẹn giờ khi ô giờ còn trống
+
+**Ba luật nội dung:**
+
+- Luôn có một trạm **"NÓI CHO ĐÚNG"** nêu điều chưa kiểm chứng
+- Hình phải **tả đúng thứ đang nói** — không có gì để vẽ thì bỏ trống, đừng dán icon cho đủ
+- Ảnh dẫn nguồn chỉ chụp **nguồn gốc** (`--phone`), bắt buộc ghi `src` trên màn hình
+
+**Ba bẫy đã trả giá:**
+
+- `pkill` / `launch_persistent_context` lên `~/.me-tech-browser` → **mất sạch đăng nhập**
+- Tin cú bấm mà không kiểm lại → YouTube **đăng trùng 2 bản công khai**
+- Upload lại mà không báo → để **rác trên kênh** cho Thiện tự phát hiện
+
+---
+
 ## Ngữ pháp hình — chốt 17.09.2026
 
 Không phải mỗi tin một phong cách. **Mỗi câu một chế độ, trong cùng một nhận diện.**
@@ -202,11 +241,36 @@ Bản trước lia ~3.000 px/giây và bị đánh giá là nhức mắt.
 
 ## Rule cứng
 
-- **2 bài/ngày mỗi nền tảng, cách nhau ≥ 8 tiếng.** Khung 12:00 và 21:00
+- **3 khung/ngày: 07:45 · 12:30 · 21:00.** Chỉ đăng khung nào có tin xứng đáng
 - **Video 32–38 giây.** Vùng giao của cả ba nền tảng, một file đăng cả ba
 - Không đăng 00:00–06:00
 - Không đủ tin hay thì đăng 1 bài, hoặc nghỉ. **Không lấp chỗ**
 - Không lấy ảnh từ bài báo
+
+### Vì sao 3 khung, không phải 5–6
+
+Đo trên chính số liệu Page ngày 21.09.2026 — video đã đủ 24h:
+
+| đăng lúc | bài | reach |
+|---|---|---|
+| 18/09 17:33 | GLM-5.3 | 222 |
+| 19/09 14:36 | R&D Index | 206 |
+| 19/09 21:00 | Gemini đột nhập | 194 |
+| 20/09 12:39 | Gemini 4 | 201 |
+
+Chênh lệch cao nhất/thấp nhất chỉ **1,14 lần** — quá nhỏ để kết luận khung giờ nào
+hơn. Reach dừng ở **~206, tức 2,1% của 9.600 người theo dõi**, bất kể giờ nào.
+
+**Nút thắt không phải số khung giờ, mà là 2,1% đó.** Thêm khung chỉ tạo thêm bài
+cùng chạm ~200 người, trong khi mỗi bài tốn >30 phút và mỗi lượt đăng đều có rủi ro
+hỏng (đã gặp: YouTube đăng trùng 2 lần, Facebook composer trắng trang).
+
+Điểm sáng duy nhất trong số liệu: **video reach gấp ~11 lần bài ảnh/chữ** (206 vs 19).
+
+### Cách đo cho đúng
+
+Đừng so reach thô — bài mới luôn thấp vì reach cộng dồn. **Chỉ so reach tại mốc 24h.**
+Ghi vào `logs/` cột reach-24h cho mỗi bài, sau 2 tuần mới đủ mẫu để nói khung giờ nào hơn.
 
 Bằng chứng cho rule này, cùng toàn bộ gotcha từng nền tảng: `me-tech-plan.md`
 
