@@ -116,6 +116,25 @@ def check(path):
             if not gs[0].get("lab"):
                 err.append("roundup: trạm tin '%s' thiếu 'lab' — mỗi tin phải ghi nguồn" % g)
 
+    # === CỔNG ẢNH DẪN NGUỒN — đừng gỡ ===
+    # 21.09.2026: 4/5 bài gần nhất KHÔNG có trạm 'shot' nào. Luật về ảnh dẫn
+    # nguồn có trong AGENTS.md nhưng chỉ là MÔ TẢ cách làm, không cổng nào bắt
+    # buộc — nên nó lặng lẽ rơi mất qua từng bài mà không ai báo. Cổng cũ chỉ
+    # chặn "có shot mà thiếu src", tức là không có shot nào thì cho qua êm.
+    # Ảnh chụp chính trang gốc là thứ trực quan nhất và là bằng chứng bài viết
+    # có thật, nên mặc định BẮT BUỘC. Không có thì phải NÓI RÕ vì sao.
+    nshot = sum(1 for s in segs if s.get("mode") == "shot")
+    if not nshot and not d.get("no_shot"):
+        err.append(
+            "không có trạm 'shot' nào — mỗi bài phải dẫn ảnh chụp nguồn gốc.\n"
+            "      Chụp:  .venv/bin/python capture.py <url> shots/<tên>.png --phone\n"
+            "      Thật sự không có nguồn để chụp thì khai lý do ở khoá gốc:\n"
+            '        "no_shot": "tin đồn rò rỉ, chưa có trang chính thức nào"')
+    if d.get("no_shot"):
+        warn.append("bỏ ảnh dẫn nguồn, lý do: %s" % d["no_shot"])
+    if d.get("kind") == "roundup" and nshot and nshot < 2:
+        warn.append("điểm tin nhanh mới có %d tin dẫn ảnh — nhắm mỗi tin một ảnh" % nshot)
+
     syl = sum(syllables(s) for s in segs)
     speed = float(d.get("speed", 1.0))
     est = syl * SEC_PER_SYL / speed

@@ -76,19 +76,22 @@ Sửa bất kỳ dòng nào dưới đây thì phải **đo được lý do**, �
 | `HOLD` | **0,40s** | không rời trạm trước khi chữ cuối sáng xong |
 | Vùng an toàn | **x 80–930 · y 250–1500** | đo thật trên Short của kênh, không lấy theo blog |
 | Ngưỡng cổng | **2%** mực bị UI che | `safezone.py` chặn build nếu vượt |
+| Ảnh dẫn nguồn | **≥1 trạm `shot` mỗi bài** | `validate.py` chặn; bỏ thì phải khai `no_shot` |
 | Khung đăng | **07:45 · 12:30 · 21:00** | xem "Vì sao 3 khung" ở dưới |
 
-**Bốn cổng tự động — đừng gỡ:**
+**Năm cổng tự động — đừng gỡ:**
 
 1. `validate.py` — soát file nội dung **trước** TTS (1 giây thay vì 100)
 2. `build.py` — **dừng** nếu độ dài ngoài 32–38s (dùng `--tts-only` để sửa nhanh gấp 3)
 3. `safezone.py` — **chặn** nếu >2% mực rơi vào vùng bị UI che
 4. `_conn.confirm_schedule()` — **không cho bấm** nút hẹn giờ khi ô giờ còn trống
+5. `validate.py` — **chặn** bài không có trạm `shot` nào (xem "Ảnh dẫn nguồn là bắt buộc")
 
-**Ba luật nội dung:**
+**Bốn luật nội dung:**
 
 - Luôn có một trạm **"NÓI CHO ĐÚNG"** nêu điều chưa kiểm chứng
 - Hình phải **tả đúng thứ đang nói** — không có gì để vẽ thì bỏ trống, đừng dán icon cho đủ
+- **Mỗi bài phải có ít nhất một trạm `shot`** dẫn ảnh chụp trang gốc
 - Ảnh dẫn nguồn chỉ chụp **nguồn gốc** (`--phone`), bắt buộc ghi `src` trên màn hình
 
 **Ba bẫy đã trả giá:**
@@ -116,10 +119,33 @@ theo lời, có mũi tên nối. Dùng khi nội dung thật sự là "từ A sa
 (leo thang quyền, chuỗi sự kiện). **Không** dùng để trang trí — nội dung không có
 thứ tự thì dùng `step`.
 
-**Ảnh dẫn nguồn** (`mode: "shot"`) — chụp CHÍNH TRANG GỐC rồi dẫn trong video.
+### Ảnh dẫn nguồn là BẮT BUỘC, không phải tuỳ chọn
+
+**Mỗi bài phải có ít nhất một trạm `mode: "shot"`** — chụp CHÍNH TRANG GỐC rồi dẫn
+trong video. Đây là thứ trực quan nhất trong cả bài, và là bằng chứng nhìn thấy
+được rằng nguồn có thật.
+
+> **21.09.2026 — luật này đã lặng lẽ rơi mất.** Kiểm lại 5 bài gần nhất: chỉ
+> `hacktron-openai` có trạm `shot`, 4 bài còn lại **không có ảnh nào**. Lý do:
+> mục này chỉ **mô tả cách làm**, không cổng nào bắt buộc; cổng cũ chỉ chặn
+> "có `shot` mà thiếu `src`", nên không có `shot` nào thì nó cho qua êm ru.
+> Luật mà không có cổng thì chỉ là ghi chú — và ghi chú thì rơi.
+> Giờ `validate.py` **chặn hẳn** bài không có trạm `shot`.
+
+Thật sự không có nguồn để chụp (tin đồn rò rỉ, chưa hãng nào công bố) thì phải
+**khai lý do** ở khoá gốc, chứ không được im lặng bỏ qua:
+
+```json
+"no_shot": "tin đồn rò rỉ, chưa có trang chính thức nào để chụp"
+```
+
+Ảnh nguồn nằm ở **`pipeline/shots/`** — đây là **đầu vào**, được commit.
+Không để ở `render/shots/`: `render/` nằm trong `.gitignore`, để đó là mất ảnh,
+mà mất ảnh thì **không dựng lại được bài cũ** (đã xảy ra với `hacktron-openai`).
 
 ```bash
-python capture.py <url> ../render/shots/<tên>.png --phone   # hồ sơ vứt đi, không đụng me-tech-browser
+cd pipeline
+.venv/bin/python capture.py <url> shots/<tên>.png --phone   # hồ sơ vứt đi, không đụng me-tech-browser
 ```
 
 **Luôn chụp `--phone`.** Chụp khổ máy tính rồi thu vào khung 1080 thì chữ thân bài
@@ -149,7 +175,11 @@ trên màn hình. Ảnh rộng 740px (không phải 830): để full width thì 
 đuôi chữ rơi xuống dải caption.
 
 Phiên hiện tại **không có công cụ sinh ảnh AI**. Bài nào không có nguồn để chụp thì
-dùng hình vẽ bằng nét, đừng chèn ảnh kho cho có.
+dùng hình vẽ bằng nét, đừng chèn ảnh kho cho có — và nhớ khai `no_shot`.
+
+**Bài điểm tin nhanh:** trạm tin dùng `mode: "shot"` được (thay cho `say`), nên
+nhắm **mỗi tin một ảnh nguồn**. `validate.py` cảnh báo nếu bài `roundup` có ảnh
+nhưng chỉ có một.
 
 **Hình vẽ bằng nét** — khai `"icon"` ở câu đầu của trạm. Hình được **vẽ dần** trong
 0,7 giây ngay trước chữ đầu tiên, cùng nhịp với chữ ăn theo giọng.

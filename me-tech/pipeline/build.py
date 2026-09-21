@@ -89,10 +89,19 @@ def main():
     # ảnh dẫn nguồn của trạm mode 'shot' phải nằm cạnh scene.html thì trình duyệt mới tải được
     for seg in json.load(open(cpath, encoding="utf-8"))["segments"]:
         if seg.get("shot"):
-            src = os.path.join(OUT_DIR, "shots", seg["shot"])
+            # Ảnh dẫn nguồn là ĐẦU VÀO -> pipeline/shots/ (được commit).
+            # render/shots/ là chỗ cũ và nằm trong .gitignore: để đó là mất ảnh,
+            # mất ảnh thì không dựng lại được bài cũ. Vẫn đọc chỗ cũ cho bài cũ.
+            src = os.path.join(HERE, "shots", seg["shot"])
+            if not os.path.exists(src):
+                cu = os.path.join(OUT_DIR, "shots", seg["shot"])
+                if os.path.exists(cu):
+                    print(f"  ⚠ ảnh còn ở chỗ cũ, chuyển sang pipeline/shots/: {seg['shot']}")
+                    src = cu
             if not os.path.exists(src):
                 raise SystemExit(f"❌ thiếu ảnh dẫn nguồn: {src}\n"
-                                 f"   chụp bằng: python capture.py <url> ../render/shots/{seg['shot']}")
+                                 f"   chụp bằng: .venv/bin/python capture.py <url> "
+                                 f"shots/{seg['shot']} --phone")
             shutil.copy(src, os.path.join(WORK, seg["shot"]))
             print(f"  ảnh dẫn nguồn: {seg['shot']}")
 
