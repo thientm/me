@@ -47,7 +47,7 @@ cd pipeline && ./run.sh content/<slug>.json
 ### 4 · Đăng
 | Nền tảng | Khung giờ | Ghi chú |
 |---|---|---|
-| Facebook Reels | 12:00 / 21:00 | qua **Business Suite**, tư cách Page, Public |
+| Facebook Reels | 08:00 / 12:00 / 20:00 | qua **Business Suite**, tư cách Page, Public |
 | YouTube Shorts | cùng khung | cùng file, không xuất lại |
 | TikTok | lệch 30 phút | cùng file · **không chọn nhạc TikTok**, giữ Original sound |
 
@@ -77,7 +77,9 @@ Sửa bất kỳ dòng nào dưới đây thì phải **đo được lý do**, �
 | Vùng an toàn | **x 80–930 · y 250–1500** | đo thật trên Short của kênh, không lấy theo blog |
 | Ngưỡng cổng | **2%** mực bị UI che | `safezone.py` chặn build nếu vượt |
 | Ảnh dẫn nguồn | **≥1 trạm `shot` mỗi bài** | `validate.py` chặn; bỏ thì phải khai `no_shot` |
-| Khung đăng | **07:45 · 12:30 · 21:00** | xem "Vì sao 3 khung" ở dưới |
+| Khung **đăng** | **08:00 · 12:00 · 20:00** | xem "Vì sao 3 khung" ở dưới |
+| Khung **dựng** | **07:00 · 11:00 · 19:00** | trước giờ đăng 1 tiếng, tác vụ định kỳ tự chạy |
+| Thứ tự đăng | **YouTube → TikTok → Facebook** | ít lỗi nhất trước, hỏng thì hỏng ở cái cuối |
 
 **Năm cổng tự động — đừng gỡ:**
 
@@ -271,7 +273,7 @@ Bản trước lia ~3.000 px/giây và bị đánh giá là nhức mắt.
 
 ## Rule cứng
 
-- **3 khung/ngày: 07:45 · 12:30 · 21:00.** Chỉ đăng khung nào có tin xứng đáng
+- **3 khung/ngày: 08:00 · 12:00 · 20:00**, dựng trước mỗi khung 1 tiếng
 - **Video 32–38 giây.** Vùng giao của cả ba nền tảng, một file đăng cả ba
 - Không đăng 00:00–06:00
 - Không đủ tin hay thì đăng 1 bài, hoặc nghỉ. **Không lấp chỗ**
@@ -394,7 +396,7 @@ bảng chọn:
     giờ   .tiktok-timepicker-option-text.tiktok-timepicker-left
     phút  .tiktok-timepicker-option-text.tiktok-timepicker-right
 
-Phút nhảy 5 một nấc → ba khung chốt 07:45 · 12:30 · 21:00 đều đặt được.
+Phút nhảy 5 một nấc → ba khung chốt 08:00 · 12:00 · 20:00 đều đặt được.
 Chỉ hẹn được **trong ngày**; khác ngày thì dừng hẳn, đừng đoán.
 
 ### Facebook — ô giờ đọc ngược
@@ -461,3 +463,38 @@ nhận ra bằng `rec.index`).
 `validate.py` soát riêng cho `roundup`: mục lục phải là trạm đầu, **số thẻ phải
 bằng số trạm tin**, 3–4 tin, mỗi trạm tin phải có `lab`. Thiếu một trạm thì mục
 lục nói ba mà clip chỉ kể hai — bắt trong một giây, thay vì phát hiện sau khi đăng.
+
+
+## Chạy tự động — tác vụ định kỳ
+
+Chốt 21.09.2026. Một tác vụ định kỳ chạy **07:00 · 11:00 · 19:00** (cron UTC
+`0 0,4,12 * * *`), mỗi lần dựng một bài và hẹn đăng vào khung sau đó **một tiếng**:
+**08:00 · 12:00 · 20:00**.
+
+Tác vụ **bị buộc vào máy của Thiện** (cần Chrome hồ sơ Mê Tech ở cổng 9333 và
+pipeline ở `/Users/thien.tm/Documents/me/me-tech`) và chạy ở chế độ **tự duyệt** —
+không dừng lại hỏi ai. Nên mọi cổng an toàn trong file này phải còn nguyên: không
+có ai ngồi đó để bắt lỗi thay.
+
+Một tiếng đệm là để **có chỗ hỏng mà sửa**, không phải để làm cho nhanh. Một bài
+mất ~30 phút, còn lại là biên an toàn.
+
+### Thứ tự đăng: YouTube → TikTok → Facebook
+
+Xếp theo mức ít lỗi, đo từ thực tế 18–21.09:
+
+| Nền tảng | Độ tin | Bẫy riêng |
+|---|---|---|
+| YouTube | cao nhất | hẹn giờ gốc, chạy phát ăn ngay; từng có cú Publish im lặng rơi về Draft → `yt_finish.py` |
+| TikTok | vừa | `div.TUXModal-overlay` chặn cú bấm; phải chờ Checks xong rồi mới bấm |
+| Facebook | thấp nhất | Business Suite trắng trang, ô giờ đọc ngược, hay phải `fb_finish.py` |
+
+Làm cái chắc trước để nếu hết giờ hoặc hỏng thì **hỏng ở cái cuối**, không mất cả ba.
+Đổi lại: nền tảng khó nhất nhận ít thời gian sửa nhất — chấp nhận, vì đằng nào
+cũng còn ~50 phút đệm.
+
+### Nếu không dựng được bài
+
+Báo rõ vì sao rồi **dừng**. Đừng đăng bài kém chất lượng cho đủ khung — bỏ một
+khung không mất gì (reach trần ~2% số người theo dõi bất kể giờ nào), còn một bài
+sai nguồn thì ở lại trên kênh.
