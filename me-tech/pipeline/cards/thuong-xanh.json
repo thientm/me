@@ -1,0 +1,246 @@
+{
+ "_doc": "30 thẻ kiến thức tech thường xanh cho Facebook. Thường xanh = không phụ thuộc tin nóng, đăng lúc nào cũng đúng. Mỗi thẻ 1080×1350. Vẽ bằng: .venv/bin/python card.py cards/thuong-xanh.json",
+ "cards": [
+
+  {"slug":"token-la-gi","kicker":"AI dễ hiểu",
+   "title":"Vì sao AI tính tiền theo <em>token</em> chứ không theo chữ?",
+   "sub":"Token là mẩu chữ mô hình đọc được — không phải từ, không phải ký tự.",
+   "rows":[
+    {"k":"VI","t":"Tiếng Việt tốn token hơn tiếng Anh","d":"Cùng một ý, bản tiếng Việt thường tốn nhiều token hơn vì dấu và cách tách âm tiết."},
+    {"k":"₫","t":"Trả tiền cả phần bạn gõ vào","d":"Hoá đơn tính <b>cả đầu vào lẫn đầu ra</b>. Dán nguyên file dài vào chat là tốn tiền thật."},
+    {"k":"↺","t":"Mỗi lượt chat gửi lại toàn bộ lịch sử","d":"Chat càng dài, mỗi câu hỏi mới càng đắt. Việc mới thì mở đoạn chat mới."}]},
+
+  {"slug":"context-window","kicker":"AI dễ hiểu",
+   "title":"<em>Cửa sổ ngữ cảnh</em> là trí nhớ ngắn hạn, không phải bộ nhớ",
+   "sub":"Mô hình chỉ thấy những gì nằm trong cửa sổ đó. Trôi ra ngoài là quên sạch.",
+   "rows":[
+    {"k":"1","t":"Không phải cứ to là tốt","d":"Nhồi 500 trang vào rồi hỏi một câu thì mô hình vẫn dễ bỏ sót đoạn giữa."},
+    {"k":"2","t":"Thông tin quan trọng đặt đầu hoặc cuối","d":"Phần giữa là chỗ bị bỏ quên nhiều nhất."},
+    {"k":"3","t":"Cắt nhỏ vẫn hơn nhồi to","d":"Hỏi ba lần về ba phần thường chính xác hơn hỏi một lần về cả tập."}]},
+
+  {"slug":"ai-bia-dat","kicker":"AI dễ hiểu",
+   "title":"AI <em>bịa</em> không phải vì nó nói dối",
+   "sub":"Mô hình đoán chữ tiếp theo hợp lý nhất. Nghe trôi chảy không có nghĩa là đúng.",
+   "rows":[
+    {"k":"!","t":"Bịa tự tin nhất ở chỗ cụ thể nhất","d":"Số liệu, ngày tháng, tên người, số điều luật, link — kiểm hết những thứ này."},
+    {"k":"✓","t":"Bắt nó dẫn nguồn rồi tự mở link","d":"Không mở được link nào thì coi như chưa có nguồn."},
+    {"k":"→","t":"Cho tài liệu thay vì hỏi chay","d":"Dán đúng đoạn cần hỏi vào, tỉ lệ bịa giảm hẳn."}]},
+
+  {"slug":"prompt-ro-rang","kicker":"Mẹo dùng AI",
+   "title":"Prompt tốt là prompt nói rõ <em>ai đọc</em> và <em>dài bao nhiêu</em>",
+   "sub":"Phần lớn câu trả lời lạc đề là do đề bài thiếu, không phải do mô hình dốt.",
+   "rows":[
+    {"k":"1","t":"Nói ai sẽ đọc","d":"Giải thích cho sếp không rành kỹ thuật cho kết quả khác hẳn giải thích chung chung."},
+    {"k":"2","t":"Nói độ dài và định dạng","d":"<b>3 gạch đầu dòng, mỗi dòng dưới 20 chữ</b> — đo được thì làm đúng được."},
+    {"k":"3","t":"Cho một ví dụ mẫu","d":"Một ví dụ đúng ý thường hiệu quả hơn ba đoạn mô tả yêu cầu."}]},
+
+  {"slug":"rag-la-gi","kicker":"AI dễ hiểu",
+   "title":"<em>RAG</em>: cho AI tra tài liệu trước khi trả lời",
+   "sub":"Thay vì bắt mô hình nhớ, ta tìm đúng đoạn rồi đưa cho nó đọc.",
+   "rows":[
+    {"k":"1","t":"Cắt tài liệu thành đoạn nhỏ","d":"Mỗi đoạn một ý trọn vẹn, đừng cắt giữa câu."},
+    {"k":"2","t":"Tìm đoạn liên quan tới câu hỏi","d":"Tìm theo ý nghĩa, không phải theo từ khoá trùng."},
+    {"k":"3","t":"Đưa đoạn đó kèm câu hỏi","d":"Mô hình trả lời dựa trên đoạn thật, và <b>dẫn được nguồn</b>."}]},
+
+  {"slug":"nhiet-do","kicker":"Mẹo dùng AI",
+   "title":"<em>Temperature</em> không phải nút chỉnh thông minh",
+   "sub":"Nó chỉnh mức ngẫu nhiên khi chọn chữ tiếp theo. Cao không phải là giỏi hơn.",
+   "rows":[
+    {"k":"↓","t":"Thấp cho việc cần đúng","d":"Trích xuất dữ liệu, phân loại, viết code, tóm tắt — cần lặp lại được."},
+    {"k":"↑","t":"Cao cho việc cần nhiều phương án","d":"Đặt tên, nghĩ ý tưởng, viết nháp sáng tạo."},
+    {"k":"=","t":"Cùng câu hỏi vẫn ra khác nhau","d":"Đừng kết luận mô hình kém đi chỉ vì một lần trả lời hỏng."}]},
+
+  {"slug":"agent-la-gi","kicker":"AI dễ hiểu",
+   "title":"<em>Agent</em> khác chatbot ở chỗ nó được phép làm, không chỉ nói",
+   "sub":"Chatbot trả lời. Agent gọi công cụ, đọc kết quả, rồi quyết định bước tiếp theo.",
+   "rows":[
+    {"k":"1","t":"Có công cụ để gọi","d":"Đọc file, chạy lệnh, tra web, gọi API — mỗi cái là một tay chân."},
+    {"k":"2","t":"Có vòng lặp","d":"Làm một bước, nhìn kết quả, tự sửa, làm tiếp — thay vì trả lời một phát."},
+    {"k":"!","t":"Quyền tới đâu, rủi ro tới đó","d":"Cho quyền xoá file thì có ngày nó xoá thật. Bắt đầu bằng quyền chỉ đọc."}]},
+
+  {"slug":"mo-hinh-mo","kicker":"AI dễ hiểu",
+   "title":"<em>Mã nguồn mở</em> và <em>trọng số mở</em> không giống nhau",
+   "sub":"Phần lớn mô hình gọi là mở thực ra chỉ mở trọng số, kèm giấy phép riêng.",
+   "rows":[
+    {"k":"1","t":"Trọng số mở","d":"Tải về chạy được trên máy mình. Nhưng dữ liệu huấn luyện thì không công bố."},
+    {"k":"2","t":"Giấy phép mới là chỗ phải đọc","d":"Nhiều mô hình <b>cấm dùng thương mại</b> hoặc giới hạn quy mô người dùng."},
+    {"k":"3","t":"Đọc file LICENSE trước khi đưa vào sản phẩm","d":"Đổi giấy phép giữa chừng là chuyện đã xảy ra nhiều lần."}]},
+
+  {"slug":"chay-may-minh","kicker":"Mẹo dùng AI",
+   "title":"Khi nào nên chạy mô hình <em>trên máy mình</em>?",
+   "sub":"Không phải lúc nào cũng rẻ hơn hay riêng tư hơn — tuỳ việc.",
+   "rows":[
+    {"k":"✓","t":"Dữ liệu không được rời khỏi máy","d":"Hồ sơ khách, mã nội bộ, giấy tờ cá nhân."},
+    {"k":"✓","t":"Chạy đi chạy lại một việc đơn giản","d":"Phân loại, trích xuất, gắn nhãn hàng loạt — mô hình nhỏ là đủ."},
+    {"k":"✗","t":"Việc cần suy luận sâu","d":"Mô hình chạy trên laptop còn cách khá xa mô hình lớn trên mây."}]},
+
+  {"slug":"benchmark","kicker":"AI dễ hiểu",
+   "title":"Đừng chọn mô hình theo <em>điểm benchmark</em>",
+   "sub":"Điểm cao trên bảng xếp hạng không có nghĩa là làm tốt việc của bạn.",
+   "rows":[
+    {"k":"1","t":"Đề thi có thể đã nằm trong dữ liệu huấn luyện","d":"Gọi là rò rỉ dữ liệu. Điểm đẹp mà năng lực thật không đổi."},
+    {"k":"2","t":"Bài thi không giống việc thật","d":"Giỏi toán thi đấu không suy ra giỏi đọc hợp đồng tiếng Việt."},
+    {"k":"→","t":"Tự làm bộ thử 20 câu của riêng mình","d":"Lấy đúng việc bạn hay làm. Đó mới là bảng xếp hạng có ích."}]},
+
+  {"slug":"fine-tune-hay-prompt","kicker":"Mẹo dùng AI",
+   "title":"Thử <em>prompt</em> cho kỹ trước khi nghĩ tới <em>fine-tune</em>",
+   "sub":"Phần lớn bài toán được giải bằng đề bài tốt hơn, không phải mô hình riêng.",
+   "rows":[
+    {"k":"1","t":"Prompt rõ + vài ví dụ","d":"Rẻ, sửa trong vài phút, đổi mô hình lúc nào cũng được."},
+    {"k":"2","t":"Cho đọc tài liệu (RAG)","d":"Khi vấn đề là mô hình <b>thiếu thông tin</b>, không phải thiếu kỹ năng."},
+    {"k":"3","t":"Fine-tune","d":"Chỉ khi cần giọng văn hoặc định dạng rất riêng, và có dữ liệu sạch."}]},
+
+  {"slug":"du-lieu-ban","kicker":"Kỹ thuật",
+   "title":"Dữ liệu bẩn làm hỏng AI nhanh hơn mô hình yếu",
+   "sub":"Mô hình tốt cỡ nào cũng không cứu được đầu vào sai.",
+   "rows":[
+    {"k":"1","t":"Trùng lặp","d":"Cùng một tài liệu nằm ba chỗ thì kết quả tìm kiếm bị nó chiếm hết."},
+    {"k":"2","t":"Cũ mà không ghi ngày","d":"Mô hình không biết bản nào mới, cứ thế trộn lẫn hai phiên bản."},
+    {"k":"3","t":"Cắt sai chỗ","d":"Cắt giữa bảng biểu hoặc giữa câu là mất nghĩa, tìm ra cũng vô dụng."}]},
+
+  {"slug":"embedding","kicker":"AI dễ hiểu",
+   "title":"<em>Embedding</em>: biến chữ thành toạ độ để đo độ gần nghĩa",
+   "sub":"Nhờ nó, máy tìm được ý tương đương dù không trùng một chữ nào.",
+   "rows":[
+    {"k":"1","t":"Gần nghĩa = gần nhau","d":"“xe máy” và “mô tô” nằm sát nhau, dù không chung ký tự."},
+    {"k":"2","t":"Dùng để tìm, không dùng để trả lời","d":"Nó chỉ chọn ra đoạn liên quan; việc trả lời vẫn là của mô hình."},
+    {"k":"!","t":"Đổi mô hình embedding thì phải tính lại hết","d":"Toạ độ cũ và mới không so sánh được với nhau."}]},
+
+  {"slug":"bao-mat-prompt","kicker":"Bảo mật",
+   "title":"Đừng dán <em>khoá API</em> vào chat",
+   "sub":"Một lần dán là một lần khoá đó có thể nằm trong log ở đâu đó.",
+   "rows":[
+    {"k":"1","t":"Thay bằng chỗ giữ bí mật","d":"Biến môi trường hoặc trình quản lý khoá — đừng để trong mã nguồn."},
+    {"k":"2","t":"Lỡ dán rồi thì thu hồi ngay","d":"Đổi khoá mới. Xoá tin nhắn không lấy lại được thứ đã gửi đi."},
+    {"k":"3","t":"Cẩn thận cả ảnh chụp màn hình","d":"Khoá lộ trong ảnh là chuyện rất hay gặp."}]},
+
+  {"slug":"prompt-injection","kicker":"Bảo mật",
+   "title":"<em>Prompt injection</em>: trang web ra lệnh cho AI của bạn",
+   "sub":"Khi AI đọc nội dung bên ngoài, nội dung đó có thể chứa mệnh lệnh giấu trong.",
+   "rows":[
+    {"k":"1","t":"Nội dung đọc được là DỮ LIỆU, không phải lệnh","d":"Trang web, email, file — không thứ nào được quyền sai khiến AI."},
+    {"k":"2","t":"Nguy nhất là khi AI có quyền làm","d":"Đọc thì không sao; gửi mail hay xoá file thay bạn mới là vấn đề."},
+    {"k":"3","t":"Việc có hậu quả thì hỏi người","d":"Gửi, xoá, thanh toán — chốt bằng một cú xác nhận của con người."}]},
+
+  {"slug":"ai-viet-code","kicker":"Mẹo dùng AI",
+   "title":"AI viết code nhanh, nhưng <em>đọc</em> vẫn là việc của bạn",
+   "sub":"Code chạy được không đồng nghĩa với code đúng.",
+   "rows":[
+    {"k":"1","t":"Hỏi nó giải thích từng đoạn","d":"Chỗ nào nó giải thích lòng vòng thường là chỗ nó không chắc."},
+    {"k":"2","t":"Bắt viết test trước","d":"Test là cách rẻ nhất để biết đoạn code làm đúng thứ bạn cần."},
+    {"k":"3","t":"Cảnh giác với thư viện nó bịa ra","d":"Tên nghe rất thật nhưng không tồn tại — kiểm trước khi cài."}]},
+
+  {"slug":"multimodal","kicker":"AI dễ hiểu",
+   "title":"Mô hình <em>đa phương thức</em> đọc được ảnh, không chỉ chữ",
+   "sub":"Mở ra những việc trước đây phải gõ tay lại từ đầu.",
+   "rows":[
+    {"k":"1","t":"Đọc hoá đơn, bảng biểu, ảnh chụp màn hình","d":"Không cần OCR riêng rồi mới đưa vào."},
+    {"k":"2","t":"Ảnh rõ thì kết quả rõ","d":"Ảnh mờ hoặc chụp nghiêng vẫn làm nó đọc sai như người."},
+    {"k":"!","t":"Vẫn phải kiểm số","d":"Đọc nhầm một chữ số trong hoá đơn là sai cả bảng."}]},
+
+  {"slug":"chi-phi-that","kicker":"Kỹ thuật",
+   "title":"Chi phí thật của AI nằm ở chỗ bạn không nhìn thấy",
+   "sub":"Giá mỗi triệu token chỉ là một phần của hoá đơn cuối tháng.",
+   "rows":[
+    {"k":"1","t":"Thử đi thử lại lúc phát triển","d":"Giai đoạn dò prompt thường tốn hơn cả lúc chạy thật."},
+    {"k":"2","t":"Lịch sử chat gửi lại mỗi lượt","d":"Hội thoại dài làm chi phí tăng theo cấp số, không phải cộng dần."},
+    {"k":"3","t":"Dùng bộ nhớ đệm nếu có","d":"Phần đầu vào lặp lại giữa các lượt thường được giảm giá rất sâu."}]}
+,
+  {"slug":"ai-tieng-viet","kicker":"AI dễ hiểu",
+   "title":"Vì sao AI làm tiếng Việt kém hơn tiếng Anh?",
+   "sub":"Không phải vì tiếng Việt khó, mà vì lượng dữ liệu chênh nhau quá xa.",
+   "rows":[
+    {"k":"1","t":"Dữ liệu huấn luyện lệch hẳn","d":"Tiếng Anh chiếm phần áp đảo trong hầu hết bộ dữ liệu lớn."},
+    {"k":"2","t":"Tốn token hơn cho cùng một ý","d":"Nghĩa là đắt hơn và chiếm cửa sổ ngữ cảnh nhiều hơn."},
+    {"k":"→","t":"Mẹo: hỏi tiếng Anh, bắt trả lời tiếng Việt","d":"Với việc cần suy luận sâu, cách này thường cho kết quả chắc hơn."}]},
+
+  {"slug":"mcp-la-gi","kicker":"AI dễ hiểu",
+   "title":"<em>MCP</em>: chuẩn cắm công cụ vào AI",
+   "sub":"Thay vì mỗi ứng dụng tự viết một kiểu, dùng chung một đầu nối.",
+   "rows":[
+    {"k":"1","t":"Một chuẩn, nhiều công cụ","d":"Viết một lần, cắm được vào nhiều ứng dụng AI khác nhau."},
+    {"k":"2","t":"AI gọi được dữ liệu thật","d":"Cơ sở dữ liệu, file, hệ thống nội bộ — không phải chỉ kiến thức cũ."},
+    {"k":"!","t":"Cắm gì thì cân nhắc quyền của cái đó","d":"Một công cụ có quyền ghi là AI cũng có quyền ghi."}]},
+
+  {"slug":"kiem-tra-nguon","kicker":"Mẹo dùng AI",
+   "title":"Ba câu hỏi trước khi tin một tin công nghệ",
+   "sub":"Tin AI lan rất nhanh, và bản gốc thường khác xa bản được chia sẻ lại.",
+   "rows":[
+    {"k":"1","t":"Ai công bố đầu tiên?","d":"Hãng tự công bố, hay một tài khoản nói lại lời của ai đó?"},
+    {"k":"2","t":"Có con số cụ thể không?","d":"Không có số, không có ngày — thường là tin đồn được viết cho kêu."},
+    {"k":"3","t":"Đã ai xác nhận chưa?","d":"Tin rò rỉ chưa xác nhận thì phải nói rõ là chưa xác nhận."}]},
+
+  {"slug":"tu-dong-hoa","kicker":"Mẹo dùng AI",
+   "title":"Việc nào nên giao cho AI làm tự động?",
+   "sub":"Tiêu chí không phải khó hay dễ, mà là <b>sai thì mất gì</b>.",
+   "rows":[
+    {"k":"✓","t":"Sai thì sửa được ngay","d":"Nháp thư, đặt tên, tóm tắt, phân loại nội bộ."},
+    {"k":"~","t":"Sai thì tốn công","d":"Đổi tên hàng loạt file, dọn dữ liệu — nên xem lại trước khi chạy."},
+    {"k":"✗","t":"Sai thì không lấy lại được","d":"Gửi cho khách, xoá vĩnh viễn, chuyển tiền — luôn phải có người duyệt."}]},
+
+  {"slug":"do-tre","kicker":"Kỹ thuật",
+   "title":"Mô hình lớn nhất không phải lúc nào cũng là lựa chọn đúng",
+   "sub":"Người dùng cảm nhận độ trễ rõ hơn cảm nhận chất lượng.",
+   "rows":[
+    {"k":"1","t":"Việc đơn giản dùng mô hình nhỏ","d":"Phân loại, trích xuất, định tuyến — nhanh hơn nhiều lần, rẻ hơn nhiều lần."},
+    {"k":"2","t":"Dồn mô hình lớn cho chỗ cần","d":"Suy luận nhiều bước, viết dài, quyết định phức tạp."},
+    {"k":"3","t":"Trả lời dần thay vì chờ trọn gói","d":"Chữ chạy ra ngay làm người dùng thấy nhanh hơn hẳn."}]},
+
+  {"slug":"sao-luu","kicker":"Kỹ thuật",
+   "title":"Bản sao lưu chưa từng phục hồi thử thì chưa phải bản sao lưu",
+   "sub":"Điều duy nhất chứng minh sao lưu chạy được là một lần phục hồi thật.",
+   "rows":[
+    {"k":"1","t":"Thử phục hồi định kỳ","d":"File sao lưu hỏng thầm lặng là chuyện rất thường."},
+    {"k":"2","t":"Giữ ở chỗ khác máy chính","d":"Sao lưu nằm cùng ổ với bản gốc thì mất là mất cả hai."},
+    {"k":"3","t":"Giữ nhiều mốc thời gian","d":"Chỉ giữ bản mới nhất thì lỗi phát hiện muộn đã kịp ghi đè."}]},
+
+  {"slug":"mat-khau","kicker":"Bảo mật",
+   "title":"Đổi mật khẩu định kỳ không còn là lời khuyên tốt",
+   "sub":"Bắt đổi thường xuyên khiến người ta chọn mật khẩu dễ đoán hơn.",
+   "rows":[
+    {"k":"1","t":"Mật khẩu dài, mỗi nơi một cái","d":"Độ dài quan trọng hơn ký tự đặc biệt."},
+    {"k":"2","t":"Dùng trình quản lý mật khẩu","d":"Nhớ một cái để mở tất cả, còn lại máy nhớ hộ."},
+    {"k":"3","t":"Bật xác thực hai lớp","d":"Đây là thứ tạo khác biệt lớn nhất, hơn mọi mẹo đặt mật khẩu."}]},
+
+  {"slug":"deepfake","kicker":"AI dễ hiểu",
+   "title":"Video giả giờ đủ tốt để không còn nhìn ra bằng mắt",
+   "sub":"Mẹo đếm ngón tay hay xem chớp mắt đã lỗi thời.",
+   "rows":[
+    {"k":"1","t":"Xét nguồn, đừng xét hình","d":"Ai đăng đầu tiên, có kênh chính thức nào đăng lại không."},
+    {"k":"2","t":"Cảnh giác khi video giục gấp","d":"Giả mạo giọng người quen để mượn tiền đang phổ biến."},
+    {"k":"3","t":"Gọi lại bằng số bạn đã lưu","d":"Không gọi vào số trong tin nhắn vừa nhận."}]},
+
+  {"slug":"toc-do-web","kicker":"Kỹ thuật",
+   "title":"Ảnh là thứ làm web chậm nhiều nhất",
+   "sub":"Trước khi tối ưu code, xem lại ảnh đã.",
+   "rows":[
+    {"k":"1","t":"Đừng tải ảnh to rồi thu nhỏ bằng CSS","d":"Trình duyệt vẫn tải nguyên ảnh gốc."},
+    {"k":"2","t":"Dùng định dạng mới","d":"WebP hoặc AVIF thường nhẹ hơn JPEG đáng kể ở cùng chất lượng."},
+    {"k":"3","t":"Ảnh dưới màn hình thì tải sau","d":"Chỉ một thuộc tính <b>loading=lazy</b>."}]},
+
+  {"slug":"git-commit","kicker":"Kỹ thuật",
+   "title":"Commit tốt trả lời câu <em>vì sao</em>, không phải <em>cái gì</em>",
+   "sub":"Diff đã nói cái gì thay đổi rồi. Thứ nó không nói là lý do.",
+   "rows":[
+    {"k":"✗","t":"“sửa bug”, “update”","d":"Sáu tháng sau đọc lại không hiểu gì."},
+    {"k":"✓","t":"Nêu triệu chứng và nguyên nhân","d":"“Ô giờ đọc ra rỗng vì React giữ giá trị ở thẻ cha”."},
+    {"k":"→","t":"Commit nhỏ, một việc một commit","d":"Dễ xem lại, dễ lùi lại khi hỏng."}]},
+
+  {"slug":"hop-hieu-qua","kicker":"Làm việc",
+   "title":"Họp mà không có tài liệu đọc trước thì phần lớn là đọc to cho nhau nghe",
+   "sub":"Một trang viết sẵn tiết kiệm được cả giờ họp.",
+   "rows":[
+    {"k":"1","t":"Gửi tài liệu trước","d":"Dành 10 phút đầu buổi để mọi người đọc tại chỗ cũng được."},
+    {"k":"2","t":"Ghi rõ buổi họp cần quyết gì","d":"Không có quyết định nào cần chốt thì gửi tin nhắn là đủ."},
+    {"k":"3","t":"Kết thúc bằng ai làm gì, hạn nào","d":"Không có dòng này thì buổi họp chưa xong."}]},
+
+  {"slug":"do-luong","kicker":"Làm việc",
+   "title":"Đo sai chỉ số còn tệ hơn không đo gì",
+   "sub":"Con số nào được thưởng thì con số đó sẽ đẹp lên — kể cả khi việc tệ đi.",
+   "rows":[
+    {"k":"1","t":"Đo kết quả, đừng đo hoạt động","d":"Số bài đăng không nói gì; số người đọc hết mới nói."},
+    {"k":"2","t":"Đo cùng mốc thời gian","d":"So bài hôm nay với bài tuần trước là so nhầm — chúng chưa chạy đủ lâu."},
+    {"k":"3","t":"Chênh nhỏ thường là nhiễu","d":"Hơn kém 10-20% giữa vài mẫu thì chưa kết luận được gì."}]}
+
+ ]
+}

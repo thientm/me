@@ -1,0 +1,146 @@
+<!doctype html><meta charset="utf-8">
+<title>Me Tech card</title>
+<style>
+/* THẺ ẢNH 1080×1350 cho Facebook — bảng màu "nhiều màu" bản gốc của kênh
+   (me-tech-plan.md mục 4). KHÁC hẳn bảng màu video (mực ấm + hổ phách):
+   video là chữ chạy theo giọng nên cần nền trầm; thẻ ảnh đứng yên trong
+   feed nên cần bắt mắt. Đừng hợp nhất hai bảng màu. */
+:root{
+  --bg:#05070F;
+  --a:#4F9CFF;          /* xanh */
+  --b:#7C5CFF;          /* tím */
+  --gold:#FFC978;       /* số liệu */
+  --paper:#FFFFFF;
+  --mute:rgba(255,255,255,.62);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:var(--bg)}
+#card{position:relative;width:1080px;height:1350px;overflow:hidden;
+  font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(820px 720px at 10% 6%, rgba(79,156,255,.32), transparent 62%),
+    radial-gradient(860px 820px at 94% 94%, rgba(124,92,255,.30), transparent 60%),
+    linear-gradient(160deg,#0A1024 0%,#0E1430 55%,#080D1E 100%)}
+#grid{position:absolute;inset:-200px;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:64px 64px}
+#vig{position:absolute;inset:0;
+  background:radial-gradient(120% 78% at 50% 44%,transparent 46%,rgba(0,0,0,.55) 100%)}
+
+/* Lề an toàn 80px mỗi bên — Facebook cắt vuông ở một số chỗ hiển thị,
+   nên không để chữ nào chạm mép. */
+#body{position:absolute;left:80px;top:150px;width:920px}
+
+.pill{display:inline-flex;align-items:center;gap:16px;
+  background:rgba(79,156,255,.14);border:2px solid rgba(79,156,255,.45);
+  color:#8FC2FF;font-weight:700;letter-spacing:.14em;border-radius:999px;
+  padding:16px 34px;font-size:27px;text-transform:uppercase}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--a);
+  box-shadow:0 0 22px var(--a)}
+
+h1{margin-top:46px;font-size:82px;font-weight:800;line-height:1.1;
+  letter-spacing:-.025em;text-wrap:balance}
+h1 em{font-style:normal;
+  background:linear-gradient(100deg,#7FC0FF,#B79BFF);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+.rule{height:7px;width:300px;border-radius:99px;margin-top:40px;
+  background:linear-gradient(90deg,var(--a),var(--b),transparent)}
+
+.sub{margin-top:40px;font-size:37px;line-height:1.45;color:var(--mute);font-weight:500}
+.sub b{color:var(--gold);font-weight:700}
+
+.rows{margin-top:48px;display:flex;flex-direction:column;gap:22px}
+.row{display:flex;gap:26px;align-items:flex-start;
+  background:rgba(255,255,255,.055);border:2px solid rgba(255,255,255,.10);
+  border-radius:26px;padding:30px 34px}
+.row .k{flex:0 0 74px;height:74px;border-radius:20px;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:34px;color:#0A0F22}
+.row .t{font-size:36px;font-weight:700;line-height:1.3}
+.row .d{margin-top:10px;font-size:29px;color:var(--mute);font-weight:500;line-height:1.4}
+.row .t b,.row .d b{color:var(--gold);font-weight:700}
+
+/* Dòng thương hiệu — mọi thẻ đều có, không bỏ */
+#brand{position:absolute;left:80px;bottom:78px;display:flex;align-items:center;gap:20px;
+  color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.06em;font-size:29px}
+#blogo{width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,var(--a),var(--b));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#0A0F22;font-size:25px}
+#tag{position:absolute;right:80px;bottom:78px;font-size:27px;
+  color:rgba(255,255,255,.38);font-weight:600}
+</style>
+
+<div id="card">
+  <div id="grid"></div>
+  <div id="body">
+    <div class="pill"><span class="dot"></span><span id="kicker"></span></div>
+    <h1 id="title"></h1>
+    <div class="rule"></div>
+    <div class="sub" id="sub"></div>
+    <div class="rows" id="rows"></div>
+  </div>
+  <div id="vig"></div>
+  <div id="brand"><div id="blogo">MT</div><span>MÊ TECH</span></div>
+  <div id="tag">AI dễ hiểu, mỗi ngày một tin</div>
+</div>
+
+<script>
+// BỌC TRONG HÀM — đừng gỡ. card.py vẽ 30 thẻ trên CÙNG một trang bằng
+// set_content, mà set_content dùng document.write nên scope toàn cục KHÔNG
+// bị xoá giữa các lần. Khai `const D` ở tầng toàn cục thì từ thẻ thứ hai trở
+// đi nổ "Identifier 'D' has already been declared" NGAY DÒNG ĐẦU — thẻ ra
+// đúng khung nền, đúng logo, nhưng KHÔNG một chữ nào. Nhìn ảnh mới thấy,
+// đọc log không thấy: screenshot vẫn thành công, dung lượng file giống hệt nhau.
+(function(){
+const D = window.CARD;
+const $ = id => document.getElementById(id);
+
+$('kicker').textContent = D.kicker || 'MÊ TECH';
+$('title').innerHTML = D.title;
+$('sub').innerHTML = D.sub || '';
+if (!D.sub) $('sub').style.display = 'none';
+
+const rows = $('rows');
+(D.rows || []).forEach((r, i) => {
+  const el = document.createElement('div');
+  el.className = 'row';
+  el.innerHTML = '<div class="k">' + (r.k || (i + 1)) + '</div>' +
+                 '<div><div class="t">' + r.t + '</div>' +
+                 (r.d ? '<div class="d">' + r.d + '</div>' : '') + '</div>';
+  rows.appendChild(el);
+});
+
+// Chữ tràn ra ngoài khung là hỏng thẻ. Hai nhịp co, theo đúng thứ tự:
+//   1) co TIÊU ĐỀ trước — tiêu đề dài là nguyên nhân hay gặp nhất, và co riêng
+//      nó thì phần thân vẫn giữ nguyên cỡ đọc tốt
+//   2) vẫn tràn thì co CẢ KHỐI bằng transform — giữ đúng tỉ lệ giữa các phần,
+//      thay vì thu từng thứ một rồi thẻ trông lệch lạc
+// Chỉ co tiêu đề là không đủ: thẻ 3 dòng luôn tràn dù tiêu đề nhỏ cỡ nào.
+(function fit(){
+  const b = $('body');
+  const limit = 1350 - 150 - 200;        // trừ lề trên và dải thương hiệu
+  let size = 82;
+  while (b.scrollHeight > limit && size > 52){
+    size -= 3;
+    $('title').style.fontSize = size + 'px';
+  }
+  let scale = 1;
+  while (b.scrollHeight * scale > limit && scale > 0.62){
+    scale -= 0.02;
+  }
+  if (scale < 1){
+    b.style.transformOrigin = 'left top';
+    b.style.transform = 'scale(' + scale.toFixed(3) + ')';
+    b.style.width = (920 / scale) + 'px';   // giữ nguyên bề ngang sau khi co
+  }
+  const h = b.scrollHeight * scale;
+  window.__fit = {size, scale: +scale.toFixed(3), h: Math.round(h), limit,
+                  ok: h <= limit + 1};
+})();
+})();
+</script>
