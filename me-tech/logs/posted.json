@@ -1,4 +1,8 @@
 {
+  "ai-bia-dat:facebook-photo": {
+    "ghi_chu": "hen 22/09 14:00",
+    "luc": "22.09.2026 01:00"
+  },
   "anthropic-ipo:facebook": {
     "ghi_chu": "hen 12:30",
     "luc": "21.09.2026 09:45"
@@ -10,6 +14,10 @@
   "anthropic-ipo:youtube": {
     "ghi_chu": "hen 12:30",
     "luc": "21.09.2026 09:29"
+  },
+  "context-window:facebook-photo": {
+    "ghi_chu": "hen 22/09 11:00",
+    "luc": "22.09.2026 00:59"
   },
   "diemtin-2109:facebook": {
     "ghi_chu": "hen 21:00",
@@ -46,5 +54,9 @@
   "suno-lawsuit:youtube": {
     "ghi_chu": "backfill",
     "luc": "20.09.2026 21:07"
+  },
+  "token-la-gi:facebook-photo": {
+    "ghi_chu": "hen 22/09 09:30",
+    "luc": "22.09.2026 00:55"
   }
 }

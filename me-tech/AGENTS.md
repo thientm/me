@@ -498,3 +498,69 @@ cũng còn ~50 phút đệm.
 Báo rõ vì sao rồi **dừng**. Đừng đăng bài kém chất lượng cho đủ khung — bỏ một
 khung không mất gì (reach trần ~2% số người theo dõi bất kể giờ nào), còn một bài
 sai nguồn thì ở lại trên kênh.
+
+
+## Thẻ ảnh Facebook — bộ thứ hai, KHÁC bộ video
+
+Chốt 22.09.2026, khi Facebook giao nhiệm vụ 30 bài photo công khai trong tuần.
+
+    cd pipeline
+    .venv/bin/python card.py cards/thuong-xanh.json      # vẽ 30 thẻ → render/cards/
+    cd publish
+    ../.venv/bin/python fb_photo_batch.py --plan         # xem lịch
+    ../.venv/bin/python fb_photo_batch.py                # xếp lịch thật
+
+### Hai bảng màu, cố ý khác nhau — đừng hợp nhất
+
+| | Video | Thẻ ảnh |
+|---|---|---|
+| Nền | mực ấm `#0E0D0B` | xanh đêm `#05070F` + gradient |
+| Nhấn | hổ phách `#FFAE2B` | xanh `#4F9CFF` → tím `#7C5CFF`, số liệu vàng `#FFC978` |
+| Khổ | 1080×1920 | 1080×1350 |
+| Vì sao | chữ chạy theo giọng nên nền phải trầm, không giành mắt | đứng yên trong feed, phải bắt mắt mới có người dừng lại |
+
+### Bẫy đã trả giá: 5 thẻ ra ảnh rỗng mà báo thành công
+
+`card.py` vẽ cả 30 thẻ trên **cùng một trang** bằng `set_content`, mà
+`set_content` dùng `document.write` nên **scope toàn cục không bị xoá** giữa các
+lần. Khai `const D` ở tầng toàn cục thì từ thẻ thứ hai trở đi nổ
+`Identifier 'D' has already been declared` **ngay dòng đầu** — thẻ ra đúng nền,
+đúng logo, nhưng **không một chữ nào**.
+
+Lỗi JS trong trang **không** làm `screenshot()` thất bại. Log báo đẹp, chỉ có
+dung lượng file giống hệt nhau là dấu hiệu duy nhất. Chỉ mở ảnh ra xem mới thấy.
+
+Hai cái chặn giờ đã có: script trong `card.html` **bọc trong hàm**, và `card.py`
+bắt `pageerror` + đếm chữ trong `#title` và số `.row`, thẻ rỗng thì coi là hỏng.
+
+Chữ tràn khung: co tiêu đề trước (82 → 52px), vẫn tràn thì co cả khối bằng
+`transform: scale()` — giữ đúng tỉ lệ giữa các phần thay vì thu từng thứ một.
+
+### Composer ảnh khác composer reel
+
+| | Reel (`reels_composer`) | Ảnh (`composer`) |
+|---|---|---|
+| Ô caption | có `role=textbox` | **không có** — là `contenteditable`, và có hai cái cùng `aria-label`, cái đầu **ẩn** |
+| Chọn file | "Add video" | "Add photo/video" |
+
+Cả hai đều mở hộp chọn file chứ không có `input[type=file]` sẵn trong DOM →
+phải dùng `expect_file_chooser()`.
+
+Ô ngày/giờ đọc ngược y hệt reel — dùng chung `_conn.confirm_schedule()`.
+
+### Khung giờ ảnh: 09:30 · 11:00 · 14:00 · 16:30 · 18:30
+
+Né hẳn ba khung video (08:00 · 12:00 · 20:00) để hai loại bài không giành chỗ
+nhau trong feed.
+
+`fb_photo_batch.py` **chạy lại được**: thẻ nào đã xếp đều nằm trong sổ đăng bài
+(khoá `<slug>:facebook-photo`), chạy lại thì bỏ qua và đi tiếp từ chỗ hỏng.
+
+### Nói thẳng về hiệu quả
+
+Log của kênh: bài ảnh tĩnh đạt reach **20–47** và **0 follow suốt 90 ngày**,
+trong khi video đạt ~206. Bộ thẻ này làm để **hoàn thành nhiệm vụ Facebook giao**,
+không phải để kéo tương tác. Đừng lấy nó làm cớ quay lại đăng ảnh thay video.
+
+Hết 30 thẻ mà tuần sau vẫn cần thì viết thêm vào `cards/thuong-xanh.json` —
+đừng đăng lại thẻ cũ.
