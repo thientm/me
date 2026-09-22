@@ -54,6 +54,19 @@ def main():
         for name, url in TABS.items():
             p.goto(url, wait_until="domcontentloaded")
             p.wait_for_timeout(14000)
+            # Danh sach nay PHAN TRANG: 22.09.2026 co 30 the anh trong hang doi,
+            # bai reel hen 08:00 khong duoc ve ra -> doc body tho tra ve 0 cho
+            # mot bai DA hen dung. Phai loc bang o Search truoc khi dem.
+            try:
+                box = p.get_by_placeholder("Search by ID or caption")
+                if box.count():
+                    box.first.click()
+                    box.first.fill(want_raw[:30])
+                    p.wait_for_timeout(9000)
+                else:
+                    print("   [!] khong thay o Search - dem tren ca trang")
+            except Exception as e:
+                print("   [!] o Search loi (%s) - dem tren ca trang" % e)
             body = norm(p.inner_text("body"))
             n = body.count(want)
             total += n

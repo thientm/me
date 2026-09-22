@@ -1,7 +1,19 @@
 {
+  "agent-la-gi:facebook-photo": {
+    "ghi_chu": "hen 23/09 11:00",
+    "luc": "22.09.2026 01:06"
+  },
   "ai-bia-dat:facebook-photo": {
     "ghi_chu": "hen 22/09 14:00",
     "luc": "22.09.2026 01:00"
+  },
+  "ai-tieng-viet:facebook-photo": {
+    "ghi_chu": "hen 25/09 16:30",
+    "luc": "22.09.2026 01:23"
+  },
+  "ai-viet-code:facebook-photo": {
+    "ghi_chu": "hen 25/09 09:30",
+    "luc": "22.09.2026 01:19"
   },
   "anthropic-ipo:facebook": {
     "ghi_chu": "hen 12:30",
@@ -15,9 +27,29 @@
     "ghi_chu": "hen 12:30",
     "luc": "21.09.2026 09:29"
   },
+  "bao-mat-prompt:facebook-photo": {
+    "ghi_chu": "hen 24/09 16:30",
+    "luc": "22.09.2026 01:16"
+  },
+  "benchmark:facebook-photo": {
+    "ghi_chu": "hen 23/09 18:30",
+    "luc": "22.09.2026 01:10"
+  },
+  "chay-may-minh:facebook-photo": {
+    "ghi_chu": "hen 23/09 16:30",
+    "luc": "22.09.2026 01:09"
+  },
+  "chi-phi-that:facebook-photo": {
+    "ghi_chu": "hen 25/09 14:00",
+    "luc": "22.09.2026 01:22"
+  },
   "context-window:facebook-photo": {
     "ghi_chu": "hen 22/09 11:00",
     "luc": "22.09.2026 00:59"
+  },
+  "deepfake:facebook-photo": {
+    "ghi_chu": "hen 27/09 09:30",
+    "luc": "22.09.2026 01:33"
   },
   "diemtin-2109:facebook": {
     "ghi_chu": "hen 21:00",
@@ -31,6 +63,30 @@
     "ghi_chu": "hen 21:00",
     "luc": "21.09.2026 20:01"
   },
+  "do-luong:facebook-photo": {
+    "ghi_chu": "hen 27/09 18:30",
+    "luc": "22.09.2026 01:39"
+  },
+  "do-tre:facebook-photo": {
+    "ghi_chu": "hen 26/09 14:00",
+    "luc": "22.09.2026 01:29"
+  },
+  "du-lieu-ban:facebook-photo": {
+    "ghi_chu": "hen 24/09 11:00",
+    "luc": "22.09.2026 01:13"
+  },
+  "embedding:facebook-photo": {
+    "ghi_chu": "hen 24/09 14:00",
+    "luc": "22.09.2026 01:14"
+  },
+  "fine-tune-hay-prompt:facebook-photo": {
+    "ghi_chu": "hen 24/09 09:30",
+    "luc": "22.09.2026 01:12"
+  },
+  "git-commit:facebook-photo": {
+    "ghi_chu": "hen 27/09 14:00",
+    "luc": "22.09.2026 01:36"
+  },
   "hacktron-openai:facebook": {
     "ghi_chu": "dang tay sau khi composer Business Suite trang trang",
     "luc": "21.09.2026 08:53"
@@ -42,6 +98,50 @@
   "hacktron-openai:youtube": {
     "ghi_chu": "backfill - phien nay tung upload 2 ban, da xoa 1",
     "luc": "21.09.2026 08:05"
+  },
+  "hop-hieu-qua:facebook-photo": {
+    "ghi_chu": "hen 27/09 16:30",
+    "luc": "22.09.2026 01:38"
+  },
+  "kiem-tra-nguon:facebook-photo": {
+    "ghi_chu": "hen 26/09 09:30",
+    "luc": "22.09.2026 01:26"
+  },
+  "mat-khau:facebook-photo": {
+    "ghi_chu": "hen 26/09 18:30",
+    "luc": "22.09.2026 01:32"
+  },
+  "mcp-la-gi:facebook-photo": {
+    "ghi_chu": "hen 25/09 18:30",
+    "luc": "22.09.2026 01:25"
+  },
+  "mo-hinh-mo:facebook-photo": {
+    "ghi_chu": "hen 23/09 14:00",
+    "luc": "22.09.2026 01:07"
+  },
+  "multimodal:facebook-photo": {
+    "ghi_chu": "hen 25/09 11:00",
+    "luc": "22.09.2026 01:20"
+  },
+  "nhiet-do:facebook-photo": {
+    "ghi_chu": "hen 23/09 09:30",
+    "luc": "22.09.2026 01:05"
+  },
+  "prompt-injection:facebook-photo": {
+    "ghi_chu": "hen 24/09 18:30",
+    "luc": "22.09.2026 01:17"
+  },
+  "prompt-ro-rang:facebook-photo": {
+    "ghi_chu": "hen 22/09 16:30",
+    "luc": "22.09.2026 01:02"
+  },
+  "rag-la-gi:facebook-photo": {
+    "ghi_chu": "hen 22/09 18:30",
+    "luc": "22.09.2026 01:03"
+  },
+  "sao-luu:facebook-photo": {
+    "ghi_chu": "hen 26/09 16:30",
+    "luc": "22.09.2026 01:30"
   },
   "suno-lawsuit:facebook": {
     "ghi_chu": "backfill",
@@ -55,8 +155,28 @@
     "ghi_chu": "backfill",
     "luc": "20.09.2026 21:07"
   },
+  "toc-do-web:facebook-photo": {
+    "ghi_chu": "hen 27/09 11:00",
+    "luc": "22.09.2026 01:35"
+  },
   "token-la-gi:facebook-photo": {
     "ghi_chu": "hen 22/09 09:30",
     "luc": "22.09.2026 00:55"
+  },
+  "tu-dong-hoa:facebook-photo": {
+    "ghi_chu": "hen 26/09 11:00",
+    "luc": "22.09.2026 01:27"
+  },
+  "un-agent-brief:facebook": {
+    "ghi_chu": "hen 08:00",
+    "luc": "22.09.2026 07:23"
+  },
+  "un-agent-brief:tiktok": {
+    "ghi_chu": "hen 08:00",
+    "luc": "22.09.2026 07:20"
+  },
+  "un-agent-brief:youtube": {
+    "ghi_chu": "hen 08:00",
+    "luc": "22.09.2026 07:18"
   }
 }

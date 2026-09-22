@@ -411,6 +411,13 @@ cho một lịch đã đặt đúng.
 Mọi ô đọc lại đều để timeout **6 giây**, không để mặc định 120 — một ô biến mất là
 treo bốn phút rồi mới chết.
 
+**22.09.2026 — `fb_verify.py` báo "chưa thấy" cho một bài ĐÃ hẹn đúng.** Danh sách
+`scheduled_posts` **phân trang**: hôm đó có 30 thẻ ảnh trong hàng đợi, nên bài reel
+hẹn 08:00 không được vẽ ra, `inner_text("body")` đếm được 0. Cổng trả mã `1`, mà mã
+`1` nghĩa là "chạy fb.py để đăng" — tin theo là **upload lần nữa**. Đã vá: lọc bằng ô
+`Search by ID or caption` trước khi đếm. Luật chung: cổng đọc một danh sách dài thì
+phải lọc trước, "không thấy trong màn hình đầu" **không phải** là "chưa có".
+
 `fb_finish.py` bấm nút cho composer **đang mở sẵn**, dùng khi fb.py dừng ở cổng
 `confirm_schedule`. Chạy lại `fb.py` sẽ tải video LẦN NỮA và bỏ lại một composer
 bỏ hoang trên Page.
