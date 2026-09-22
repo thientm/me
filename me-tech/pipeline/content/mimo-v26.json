@@ -1,0 +1,118 @@
+{
+ "slug": "mimo-v26",
+ "voice": "Xuân Vĩnh",
+ "brand": "MÊ TECH",
+ "kicker": "XIAOMI · MÃ NGUỒN MỞ",
+ "date": "22.09.2026",
+ "gap": 0.24,
+ "gap_group": 0.60,
+ "lead_in": 0.40,
+ "tail": 2.20,
+ "speed": 1.10,
+ "outro": {"mark": "Mê Tech", "handle": "mecongnghe40"},
+
+ "data": {
+  "cells": 100, "unit": 5, "suffix": "xu",
+  "unitLabel": "1 ô = 5 xu cho 1 triệu token đầu vào",
+  "parkLabel": "phần Opus 5 đắt hơn",
+  "stages": [
+   {"at":[4,7], "fill":100, "color":"was", "label":"Claude Opus 5 · 5 đô"},
+   {"at":[5,4], "fill":9,   "color":"now", "label":"MiMo-V2.6-Pro · ~45 xu"}
+  ]
+ },
+
+ "segments": [
+  {"id":"hook","group":"g1","mode":"say","lab":"RẺ HƠN 11 LẦN","icon":"bolt",
+   "say":"Xiao-mi vừa mở mã nguồn mô hình ngang Clốt Ô-pớt năm.",
+   "plain":"Xiaomi vừa mở mã nguồn mô hình ngang Claude Opus 5",
+   "words":["Xiaomi","vừa","mở","mã","nguồn","mô","hình","ngang","Claude","Opus","5"],
+   "weights":[2,1,1,1,1,1,1,1,1,2,1],
+   "hot":[0,8,9,10]},
+
+  {"id":"hook2","group":"g1","mode":"say",
+   "say":"Giá rẻ hơn mười một lần, và ai cũng tải về được.",
+   "plain":"Giá rẻ hơn 11 lần, và ai cũng tải về được",
+   "words":["Giá","rẻ","hơn","11","lần,","và","ai","cũng","tải","về","được"],
+   "weights":[1,1,1,2,1,1,1,1,1,1,1],
+   "hot":[1,2,3,8,9,10]},
+
+  {"id":"s1","group":"g2","mode":"shot","lab":"TRANG CỦA XIAOMI","icon":"doc",
+   "shot":"mimo-v26.png",
+   "src":"mimo.xiaomi.com/mimo-v2-6 · 22.09.2026",
+   "view":[0,60,1290,668],
+   "focus":[20,2149,1250,647],
+   "hl":[20,2278,1180,72],
+   "say":"Công bố trên trang Mi-Mô, ngày hai mươi hai tháng Chín.",
+   "plain":"Công bố trên trang MiMo, ngày 22.9",
+   "words":["Công","bố","trên","trang","MiMo,","ngày","22.9"],
+   "weights":[1,1,1,1,2,1,5],
+   "hot":[4,6]},
+
+  {"id":"s2","group":"g2","mode":"shot",
+   "say":"Nguyên văn: hôm nay chúng tôi mở mã nguồn dòng Mi-Mô mới.",
+   "plain":"Nguyên văn: hôm nay chúng tôi mở mã nguồn dòng MiMo mới",
+   "words":["Nguyên","văn:","hôm","nay","chúng","tôi","mở","mã","nguồn","dòng","MiMo","mới"],
+   "weights":[1,1,1,1,1,1,1,1,1,1,2,1],
+   "hot":[6,7,8,10]},
+
+  {"id":"d1","group":"g3","mode":"data","lab":"GIÁ 1 TRIỆU TOKEN","icon":"spread",
+   "say":"Một triệu tô-ken vào, Ô-pớt năm lấy năm đô.",
+   "plain":"1 triệu token vào: Opus 5 lấy 5 đô",
+   "words":["1","triệu","token","vào:","Opus","5","lấy","5","đô"],
+   "weights":[1,1,2,1,2,1,1,1,1],
+   "hot":[4,5,7,8]},
+
+  {"id":"d2","group":"g3","mode":"data",
+   "say":"Mi-Mô Pro lấy khoảng bốn mươi lăm xu.",
+   "plain":"MiMo Pro lấy khoảng 45 xu",
+   "words":["MiMo","Pro","lấy","khoảng","45","xu"],
+   "weights":[2,1,1,1,3,1],
+   "hot":[4,5]},
+
+  {"id":"d3","group":"g3","mode":"data",
+   "say":"Rẻ hơn mười một lần cho cùng một lượng chữ.",
+   "plain":"Rẻ hơn 11 lần cho cùng một lượng chữ",
+   "words":["Rẻ","hơn","11","lần","cho","cùng","một","lượng","chữ"],
+   "weights":[1,1,2,1,1,1,1,1,1],
+   "hot":[0,1,2,3]},
+
+  {"id":"c1","group":"g4","mode":"step","lab":"CÒN GÌ NỮA","icon":"chip",
+   "cards":[{"n":"01","t":"Giấy phép MIT",
+             "d":"Tải về, tự chạy, dùng cho thương mại đều được"},
+            {"n":"02","t":"Ngữ cảnh 1 triệu token",
+             "d":"Bản Pro 1.000 tỷ tham số, mỗi lượt chỉ chạy 42 tỷ"}],
+   "say":"Giấy phép em-ai-ti, tải về dùng thương mại cũng được.",
+   "plain":"Giấy phép MIT, tải về dùng thương mại cũng được",
+   "words":["Giấy","phép","MIT,","tải","về","dùng","thương","mại","cũng","được"],
+   "weights":[1,1,3,1,1,1,1,1,1,1],
+   "hot":[2,6,7]},
+
+  {"id":"c2","group":"g4","mode":"step",
+   "say":"Ngữ cảnh một triệu tô-ken, bản Pro một nghìn tỷ tham số.",
+   "plain":"Ngữ cảnh 1 triệu token, bản Pro 1.000 tỷ tham số",
+   "words":["Ngữ","cảnh","1","triệu","token,","bản","Pro","1.000","tỷ","tham","số"],
+   "weights":[1,1,1,1,2,1,1,2,1,1,1],
+   "hot":[2,3,7,8]},
+
+  {"id":"e1","group":"g5","mode":"say","lab":"NÓI CHO ĐÚNG","icon":"stop",
+   "say":"Nói cho đúng: mấy điểm ây-giần cao nhất là Xiao-mi tự đo.",
+   "plain":"Nói cho đúng: mấy điểm agent cao nhất là Xiaomi tự đo",
+   "words":["Nói","cho","đúng:","mấy","điểm","agent","cao","nhất","là","Xiaomi","tự","đo"],
+   "weights":[1,1,1,1,1,2,1,1,1,2,1,1],
+   "hot":[5,9,10,11]},
+
+  {"id":"e2","group":"g5","mode":"say",
+   "say":"Và một nghìn tỷ tham số thì máy cá nhân không tải nổi, vẫn phải gọi qua mạng.",
+   "plain":"Và 1.000 tỷ tham số thì máy cá nhân không tải nổi, vẫn phải gọi qua mạng",
+   "words":["Và","1.000","tỷ","tham","số","thì","máy","cá","nhân","không","tải","nổi,","vẫn","phải","gọi","qua","mạng"],
+   "weights":[1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+   "hot":[6,7,8,9,10,11,14,15,16]},
+
+  {"id":"outro","group":"g6","mode":"outro",
+   "say":"Mê Tếch.",
+   "plain":"Mê Tech",
+   "words":["Mê","Tech"],
+   "weights":[1,1],
+   "hot":[0,1]}
+ ]
+}
