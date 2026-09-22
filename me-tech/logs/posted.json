@@ -87,6 +87,18 @@
     "ghi_chu": "hen 27/09 14:00",
     "luc": "22.09.2026 01:36"
   },
+  "grok-47:facebook": {
+    "ghi_chu": "hen 20:00",
+    "luc": "22.09.2026 19:16"
+  },
+  "grok-47:tiktok": {
+    "ghi_chu": "hen 20:00",
+    "luc": "22.09.2026 19:13"
+  },
+  "grok-47:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "22.09.2026 19:10"
+  },
   "hacktron-openai:facebook": {
     "ghi_chu": "dang tay sau khi composer Business Suite trang trang",
     "luc": "21.09.2026 08:53"
