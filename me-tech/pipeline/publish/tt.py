@@ -40,7 +40,12 @@ ed.click()
 q.keyboard.press("Meta+a")
 q.keyboard.press("Delete")
 q.wait_for_timeout(500)
-for tok in TT_CAPTION.split(" "):
+# 23.09.2026: gõ từng phím phần chữ thì tới "vượt" con trỏ nhảy về đầu ô, caption
+# lên sóng bị xáo trộn. Phần chữ chèn một lần; chỉ hashtag mới gõ phím (để thành tag).
+body, _, tags = TT_CAPTION.partition(" #")
+q.keyboard.insert_text(body + " ")
+q.wait_for_timeout(800)
+for tok in ("#" + tags).split(" ") if tags else []:
     q.keyboard.type(tok, delay=10)
     if tok.startswith("#"):
         q.wait_for_timeout(350)
