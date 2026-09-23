@@ -46,7 +46,8 @@ if AT:
                      {"ngay": "input[placeholder='dd/mm/yyyy']",
                       "gio": "input[aria-label='hours']",
                       "phut": "input[aria-label='minutes']"},
-                     {"gio": WHEN.strftime("%H"), "phut": WHEN.strftime("%M")})
+                     {"ngay": WHEN.strftime("%d %B %Y"),
+                      "gio": WHEN.strftime("%H"), "phut": WHEN.strftime("%M")})
 
 want = "Schedule" if AT else "Share"
 bt = q.get_by_role("button")

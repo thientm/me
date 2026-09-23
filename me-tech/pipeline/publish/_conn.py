@@ -109,6 +109,14 @@ def confirm_schedule(page, fields, want):
             bad.append(f"{name} không đọc được hoặc đang TRỐNG")
         elif want.get(name) and want[name].lstrip("0") not in val.replace(":", " "):
             bad.append(f"{name} là {val!r}, muốn {want[name]!r}")
+    # Ô nào KHÔNG được nêu trong `want` thì chỉ bị kiểm "khác rỗng" — và ô ngày
+    # thì LUÔN khác rỗng vì nền tảng điền sẵn hôm nay. 22.09.2026 cả 30 bài ảnh
+    # dồn vào một ngày đúng vì lỗ này: gọi confirm_schedule mà quên đưa ngày vào
+    # `want`, nên cổng gật đầu cho một ô ngày chưa ai đụng tới.
+    thieu = [k for k in fields if k not in want]
+    if thieu:
+        bad.append("KHÔNG nêu giá trị mong muốn cho: " + ", ".join(thieu) +
+                   " — ô không nêu thì chỉ bị kiểm khác rỗng, tức là không kiểm gì")
     if bad:
         sys.exit("❌ KHÔNG bấm nút hẹn giờ: " + " · ".join(bad) +
                  "\n   Điền tay trên giao diện rồi chạy lại, hoặc bỏ --at để đăng ngay.")

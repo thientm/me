@@ -571,3 +571,38 @@ không phải để kéo tương tác. Đừng lấy nó làm cớ quay lại đ
 
 Hết 30 thẻ mà tuần sau vẫn cần thì viết thêm vào `cards/thuong-xanh.json` —
 đừng đăng lại thẻ cũ.
+
+
+## Bẫy đã trả giá: 30 bài ảnh dồn vào MỘT ngày
+
+22.09.2026. `fb_photo_batch.py` tính lịch đúng — 5 bài/ngày rải 6 ngày — và in
+ra bảng lịch nhìn rất thuyết phục. Nhưng `fb_photo.py` khi điền lên giao diện
+chỉ điền **giờ và phút**, **không bao giờ điền NGÀY**. Ô ngày giữ nguyên mặc
+định là hôm đó. Kết quả: cả 30 bài lên trong ngày 22.09, chỉ rải trong 5 khung
+giờ — đúng cái rủi ro "dồn dập dễ bị bóp reach" đã nêu ra khi chọn nhịp đăng.
+
+**Vì sao cổng `confirm_schedule` không bắt được.** Nó *có* đọc ô ngày và in ra
+màn hình `ngày: '22 September 2026'` — nhìn log thấy rất yên tâm. Nhưng ô nào
+**không được nêu trong `want`** thì chỉ bị kiểm **khác rỗng**, mà ô ngày thì
+nền tảng luôn điền sẵn hôm nay nên **luôn khác rỗng**. Cổng gật đầu cho một ô
+chưa ai đụng tới.
+
+Bài học chung, không riêng gì Facebook:
+
+> Một cổng chỉ kiểm thứ được **nêu tên**. Đọc ra và in lên màn hình **không
+> phải** là kiểm. Cổng nào nhận danh sách "cái cần kiểm" thì phải tự báo khi
+> có cái không được nêu — nếu không, chỗ quên sẽ im lặng đi qua và trông y hệt
+> như đã kiểm.
+
+Ba chỗ đã vá:
+
+1. `_conn.confirm_schedule()` **tự chặn** nếu có ô trong `fields` mà không có
+   trong `want` — quên nêu là dừng, không phải lọt.
+2. `fb.py` · `fb_photo.py` · `fb_finish.py` đều đưa **ngày** vào `want`.
+3. `fb.py` và `fb_photo.py` **chặn hẳn** khi ngày cần hẹn khác hôm nay, vì cả
+   hai đều chưa biết điền ô ngày (lịch dạng calendar, gõ chữ vào bị backdrop
+   chặn — giống YouTube, xem `yt.py`).
+
+**Còn thiếu:** phần chọn NGÀY trên lịch Facebook. Làm xong thì gỡ cổng (3) ở
+trên, đừng gỡ (1) và (2). Trước khi làm xong, `fb_photo_batch.py` chỉ xếp được
+lịch trong ngày — muốn rải nhiều ngày thì mỗi ngày chạy một lần.

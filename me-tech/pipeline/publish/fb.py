@@ -67,6 +67,12 @@ print("Original sound giữ nguyên:", "Original audio" in t)
 print("Public:", "Public" in t)
 
 if AT:
+    # fb.py KHONG dien o ngay, chi dien gio/phut -> chi hen duoc TRONG NGAY.
+    # 22.09.2026 fb_photo.py dinh dung loi nay: 30 bai don vao mot ngay.
+    if WHEN.date() != dt.date.today():
+        pw.stop()
+        sys.exit("[X] fb.py chi hen duoc TRONG NGAY (muon %s, hom nay %s)."
+                 % (WHEN.strftime("%d/%m"), dt.date.today().strftime("%d/%m")))
     # Business Suite có sẵn "Schedule" ở bước Share
     q.get_by_text("Schedule", exact=True).first.click()
     q.wait_for_timeout(3000)
@@ -92,7 +98,10 @@ if AT:
                      {"ngày": "input[placeholder='dd/mm/yyyy']",
                       "giờ": "input[aria-label='hours']",
                       "phút": "input[aria-label='minutes']"},
-                     {"giờ": WHEN.strftime("%H"), "phút": WHEN.strftime("%M")})
+                     # NGAY phai co trong `want`. O nao khong neu thi chi bi
+                     # kiem khac rong — ma o ngay luon khac rong.
+                     {"ngày": WHEN.strftime("%d %B %Y"),
+                      "giờ": WHEN.strftime("%H"), "phút": WHEN.strftime("%M")})
     q.screenshot(path="_scratch/fb_sched.png")
 
 # nút Share thật nằm cuối danh sách (đầu danh sách là tab "Share")

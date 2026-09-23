@@ -114,6 +114,21 @@ def main():
     print("mo ta:", tb.inner_text()[:80].replace("\n", " "))
 
     if WHEN:
+        # === CONG NGAY — dung go ===
+        # 22.09.2026: ca 30 the do don vao MOT ngay thay vi rai sau ngay.
+        # Ly do: doan nay chi dien GIO va PHUT, khong bao gio dien NGAY, nen
+        # o ngay giu nguyen mac dinh la hom nay. confirm_schedule co doc o
+        # ngay, nhung `want` khong co khoa "ngay" nen no chi kiem KHAC RONG —
+        # ma o ngay luon khac rong, nen luon lot.
+        # Chua lam duoc phan chon ngay (lich dang calendar, phai bam o ngay,
+        # go chu vao bi backdrop chan — giong YouTube). Nen tam thoi CHAN HAN:
+        # khac ngay thi dung, dung doan.
+        if WHEN.date() != dt.date.today():
+            pw.stop()
+            sys.exit("[X] fb_photo.py chi hen duoc TRONG NGAY.\n"
+                     "    Muon %s nhung hom nay la %s.\n"
+                     "    Chay lai dung ngay do, hoac lam phan chon ngay truoc."
+                     % (WHEN.strftime("%d/%m"), dt.date.today().strftime("%d/%m")))
         q.get_by_text("Set date and time", exact=True).first.click()
         q.wait_for_timeout(3000)
         for lab, val in (("hours", WHEN.strftime("%H")),
@@ -129,7 +144,8 @@ def main():
                          {"ngay": "input[placeholder='dd/mm/yyyy']",
                           "gio": "input[aria-label='hours']",
                           "phut": "input[aria-label='minutes']"},
-                         {"gio": WHEN.strftime("%H"), "phut": WHEN.strftime("%M")})
+                         {"ngay": WHEN.strftime("%d %B %Y"),
+                          "gio": WHEN.strftime("%H"), "phut": WHEN.strftime("%M")})
         q.screenshot(path="_scratch/fbphoto_sched.png")
 
     want = "Schedule" if WHEN else "Post"
