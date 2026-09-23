@@ -1,0 +1,118 @@
+{
+ "slug": "gpt6-sol-luna",
+ "voice": "Xuân Vĩnh",
+ "brand": "MÊ TECH",
+ "kicker": "OPENAI · MÔ HÌNH MỚI",
+ "date": "23.09.2026",
+ "gap": 0.24,
+ "gap_group": 0.60,
+ "lead_in": 0.40,
+ "tail": 2.20,
+ "speed": 1.10,
+ "outro": {"mark": "Mê Tech", "handle": "mecongnghe40"},
+
+ "data": {
+  "cells": 100, "unit": 1, "suffix": "%",
+  "unitLabel": "1 ô = 1% giá vào của Sol",
+  "parkLabel": "phần rẻ hơn",
+  "stages": [
+   {"at":[6,1],  "fill":100, "color":"was", "label":"Sol · 2 đô"},
+   {"at":[6,10], "fill":5,   "color":"now", "label":"Luna · 0,10 đô"}
+  ]
+ },
+
+ "segments": [
+  {"id":"hook","group":"g1","mode":"say","lab":"GIẢM MỘT NỬA","icon":"bolt",
+   "say":"Ô-pen Ây Ai vừa ra Ji Pi Ti sáu, giá giảm một nửa.",
+   "plain":"OpenAI vừa ra GPT-6, giá giảm một nửa",
+   "words":["OpenAI","vừa","ra","GPT-6,","giá","giảm","một","nửa"],
+   "weights":[4,1,1,4,1,1,1,1],
+   "hot":[0,3,5,6,7]},
+
+  {"id":"hook2","group":"g1","mode":"say",
+   "say":"Hai bản mới tên là Sôn và Lu-na.",
+   "plain":"Hai bản mới tên là Sol và Luna",
+   "words":["Hai","bản","mới","tên","là","Sol","và","Luna"],
+   "weights":[1,1,1,1,1,1,1,2],
+   "hot":[0,5,7]},
+
+  {"id":"s1","group":"g2","mode":"shot","lab":"TRANG CỦA OPENAI","icon":"doc",
+   "shot":"gpt6-sol-luna.png",
+   "src":"openai.com/index/introducing-gpt-6-sol-and-luna · 22.09.2026",
+   "view":[150,1650,990,512],
+   "focus":[72,2960,1146,594],
+   "hl":[90,3380,1080,140],
+   "say":"Công bố trên trang chủ Ô-pen Ây Ai, ngày hai mươi hai tháng Chín.",
+   "plain":"Công bố trên trang chủ OpenAI, ngày 22.9",
+   "words":["Công","bố","trên","trang","chủ","OpenAI,","ngày","22.9"],
+   "weights":[1,1,1,1,1,4,1,5],
+   "hot":[3,4,5,7]},
+
+  {"id":"s2","group":"g2","mode":"shot",
+   "say":"Bảng giá ghi Sôn từ bốn đô xuống hai đô, mỗi triệu tô-ken.",
+   "plain":"Bảng giá ghi Sol từ 4 đô xuống 2 đô, mỗi triệu token",
+   "words":["Bảng","giá","ghi","Sol","từ","4","đô","xuống","2","đô","mỗi","triệu","token"],
+   "weights":[1,1,1,1,1,1,1,1,1,1,1,1,2],
+   "hot":[3,5,8,12]},
+
+  {"id":"s3","group":"g2","mode":"shot",
+   "say":"Còn Lu-na chỉ mười xu vào, năm mươi xu ra.",
+   "plain":"Còn Luna chỉ 10 xu vào, 50 xu ra",
+   "words":["Còn","Luna","chỉ","10","xu","vào,","50","xu","ra"],
+   "weights":[1,2,1,1,1,1,2,1,1],
+   "hot":[1,3,6]},
+
+  {"id":"d1","group":"g3","mode":"data","lab":"RẺ HƠN 20 LẦN","icon":"model",
+   "say":"So với Sôn, Lu-na rẻ bằng một phần hai mươi.",
+   "plain":"So với Sol, Luna rẻ bằng 1/20",
+   "words":["So","với","Sol,","Luna","rẻ","bằng","1/20"],
+   "weights":[1,1,1,2,1,1,4],
+   "hot":[2,3,6]},
+
+  {"id":"d2","group":"g3","mode":"data",
+   "say":"Một trăm ô là giá của Sôn, Lu-na chỉ còn năm ô.",
+   "plain":"100 ô là giá của Sol, Luna chỉ còn 5 ô",
+   "words":["100","ô","là","giá","của","Sol,","Luna","chỉ","còn","5","ô"],
+   "weights":[2,1,1,1,1,1,2,1,1,1,1],
+   "hot":[0,6,9]},
+
+  {"id":"c1","group":"g4","mode":"step","lab":"ĐIỂM CODE","icon":"chip",
+   "cards":[{"n":"01","t":"Sol · 68,8%",
+             "d":"DeepSWE v1.1, mức nỗ lực tối đa"},
+            {"n":"02","t":"Luna · 66,6%",
+             "d":"Kém 2,2 điểm, rẻ hơn 20 lần"}],
+   "say":"Bài kiểm code của hãng, Sôn đạt sáu tám phẩy tám phần trăm.",
+   "plain":"Bài kiểm code của hãng, Sol đạt 68,8%",
+   "words":["Bài","kiểm","code","của","hãng,","Sol","đạt","68,8%"],
+   "weights":[1,1,1,1,1,1,1,6],
+   "hot":[2,5,7]},
+
+  {"id":"c2","group":"g4","mode":"step",
+   "say":"Lu-na kém hai phẩy hai điểm, mà rẻ hơn hai mươi lần.",
+   "plain":"Luna kém 2,2 điểm, mà rẻ hơn 20 lần",
+   "words":["Luna","kém","2,2","điểm,","mà","rẻ","hơn","20","lần"],
+   "weights":[2,1,3,1,1,1,1,2,1],
+   "hot":[0,2,5,7]},
+
+  {"id":"e1","group":"g5","mode":"say","lab":"NÓI CHO ĐÚNG","icon":"stop",
+   "say":"Nói cho đúng: các con số này là hãng tự công bố.",
+   "plain":"Nói cho đúng: các con số này là hãng tự công bố",
+   "words":["Nói","cho","đúng:","các","con","số","này","là","hãng","tự","công","bố"],
+   "weights":[1,1,1,1,1,1,1,1,1,1,1,1],
+   "hot":[8,9,10,11]},
+
+  {"id":"e2","group":"g5","mode":"say",
+   "say":"Và giá mỗi tô-ken rẻ đi không có nghĩa hoá đơn giảm y hệt.",
+   "plain":"Và giá mỗi token rẻ đi không có nghĩa hoá đơn giảm y hệt",
+   "words":["Và","giá","mỗi","token","rẻ","đi","không","có","nghĩa","hoá","đơn","giảm","y","hệt"],
+   "weights":[1,1,1,2,1,1,1,1,1,1,1,1,1,1],
+   "hot":[3,9,10,11]},
+
+  {"id":"outro","group":"g6","mode":"outro",
+   "say":"Mê Tếch.",
+   "plain":"Mê Tech",
+   "words":["Mê","Tech"],
+   "weights":[1,1],
+   "hot":[0,1]}
+ ]
+}
