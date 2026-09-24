@@ -453,6 +453,13 @@ Viết thiếu `:not(.on)` thì vệt vàng tắt ngóm và cả câu xám đề
 Kéo theo một luật nội dung: `lab` của trạm đầu phải **mang tin**, đừng để
 "TIN CHÍNH". `HAI NGHÌN TỶ ĐÔ` nói được điều gì đó; `TIN CHÍNH` thì không.
 
+**Câu móc — đang thử từ 24.09.2026** (`reviews/2026-09-w4-review.md`): tuần đầu
+chỉ **25%** view Facebook giữ quá giây thứ 3, APV YouTube ~55% so với ~70% của
+Shorts. Câu đầu mở kiểu "X vừa ra Y" bắt người xem đợi mới biết có gì cho mình.
+Luật thử: câu 1 **nói kết quả/lợi ích ngay**, ≤ 10 chữ, ≤ 2 giây — tên hãng để
+sang câu 2. Mẫu: "Giờ nói một câu, ChatGPT tự làm ra file." Sau 5 bài so lại tỷ
+lệ giữ 3 giây và APV; không hơn thì bỏ.
+
 ## Điểm tin nhanh — khi không đủ một tin đủ nóng
 
 Ngày nào không có tin nào đủ sức đứng riêng thì gộp **3 tin** thành một bài, thay
