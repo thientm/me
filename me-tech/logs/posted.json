@@ -238,5 +238,17 @@
   "un-agent-brief:youtube": {
     "ghi_chu": "hen 08:00",
     "luc": "22.09.2026 07:18"
+  },
+  "un-security-council-ai:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "24.09.2026 09:07"
+  },
+  "un-security-council-ai:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "24.09.2026 09:05"
+  },
+  "un-security-council-ai:youtube": {
+    "ghi_chu": "dang ngay",
+    "luc": "24.09.2026 09:04"
   }
 }
