@@ -453,12 +453,38 @@ Viết thiếu `:not(.on)` thì vệt vàng tắt ngóm và cả câu xám đề
 Kéo theo một luật nội dung: `lab` của trạm đầu phải **mang tin**, đừng để
 "TIN CHÍNH". `HAI NGHÌN TỶ ĐÔ` nói được điều gì đó; `TIN CHÍNH` thì không.
 
-**Câu móc — đang thử từ 24.09.2026** (`reviews/2026-09-w4-review.md`): tuần đầu
-chỉ **25%** view Facebook giữ quá giây thứ 3, APV YouTube ~55% so với ~70% của
-Shorts. Câu đầu mở kiểu "X vừa ra Y" bắt người xem đợi mới biết có gì cho mình.
-Luật thử: câu 1 **nói kết quả/lợi ích ngay**, ≤ 10 chữ, ≤ 2 giây — tên hãng để
-sang câu 2. Mẫu: "Giờ nói một câu, ChatGPT tự làm ra file." Sau 5 bài so lại tỷ
-lệ giữ 3 giây và APV; không hơn thì bỏ.
+### Câu móc — chốt 24.09.2026
+
+Tuần đầu làm video (`reviews/2026-09-w4-review.md`): chỉ **25%** view Facebook
+giữ quá giây thứ 3, APV YouTube ~55% so với ~70% của Shorts. Câu đầu kiểu
+"X vừa ra Y" bắt người xem đợi mới biết có gì cho mình.
+
+**Ba luật cứng — `validate.py` chặn:**
+
+1. Câu 1 **≤ 10 chữ, ≤ 2 giây**, đọc được ngay khung hình đầu
+2. **Không mở bằng tên hãng** — tên hãng để câu 2, làm phần "giải thích"
+3. Câu 1 phải **đúng với nguồn từng chữ**. Chỗ nào hụt thì câu 2 bù ngay,
+   không đợi tới trạm "NÓI CHO ĐÚNG". Kênh là "AI dễ hiểu": được sốc, được
+   gây tò mò, **không được sai** — bị lừa ở giây thứ 5 thì mất uy tín lâu hơn
+   cái lợi một lượt lướt
+
+**Năm kiểu móc** — khai `"hook": <1–5>` ở khoá gốc file nội dung:
+
+| # | Kiểu | Cơ chế | Mẫu |
+|---|---|---|---|
+| 1 | Con số sốc | con số ngược với điều người xem nghĩ | "Rẻ hơn Claude 11 lần. Mà ngang sức." |
+| 2 | Chuyện khó tin | nghe như phim | "Một AI vừa tự hack ba công ty thật." |
+| 3 | Nói vào người xem | "bạn" + việc của bạn | "Giờ nói một câu, ChatGPT tự làm ra file." |
+| 4 | Bỏ lửng | nêu kết quả, giấu nguyên nhân | "Ba người vào được máy của OpenAI. Không phá gì cả." |
+| 5 | Đảo ngược | hãng nói A, thực tế B | "Chip mạnh nhất Trung Quốc. Nhưng chưa ai được mua." |
+
+Chọn kiểu hợp với tin, không ép. Tin nào cũng hợp nhiều kiểu thì **xoay vòng**
+— tra kiểu của 3 bài gần nhất trong log, chọn kiểu khác.
+
+**Đo — bắt buộc:** dòng log mỗi bài ghi `móc: kiểu N · "<câu 1>"`. Sau 24h điền
+thêm `giữ 3s FB: x%` (3-second views ÷ views, trong Business Suite) và `APV YT: y%`.
+Mốc so: **25%** và **~55%**. Sau ~10 bài xếp hạng 5 kiểu, kiểu nào thua cả
+hai mốc thì bỏ khỏi bảng.
 
 ## Điểm tin nhanh — khi không đủ một tin đủ nóng
 

@@ -116,6 +116,22 @@ def check(path):
             if not gs[0].get("lab"):
                 err.append("roundup: trạm tin '%s' thiếu 'lab' — mỗi tin phải ghi nguồn" % g)
 
+    # === CỔNG CÂU MÓC — đừng gỡ ===
+    # 24.09.2026: tuần đầu video chỉ 25% view FB giữ quá giây 3. Luật câu móc
+    # nằm ở AGENTS.md "Câu móc"; cổng này giữ cho nó khỏi lặng lẽ rơi như luật
+    # ảnh dẫn nguồn từng rơi. Điểm tin nhanh bỏ qua: câu đầu của nó là mục lục.
+    if d.get("kind") != "roundup":
+        if d.get("hook") not in (1, 2, 3, 4, 5):
+            err.append('thiếu "hook": <1–5> ở khoá gốc — kiểu câu móc, xem AGENTS.md "Câu móc"')
+        h = segs[0]
+        if len(h.get("words") or []) > 10:
+            err.append("câu móc %d chữ — tối đa 10, đọc xong trong 2 giây"
+                       % len(h["words"]))
+        brand = (d.get("kicker") or "").split("·")[0].strip().lower()
+        first = " ".join(h.get("words") or []).lower()
+        if brand and first.startswith(brand):
+            err.append("câu móc mở bằng tên hãng '%s' — để tên hãng sang câu 2" % brand)
+
     # === CỔNG ẢNH DẪN NGUỒN — đừng gỡ ===
     # 21.09.2026: 4/5 bài gần nhất KHÔNG có trạm 'shot' nào. Luật về ảnh dẫn
     # nguồn có trong AGENTS.md nhưng chỉ là MÔ TẢ cách làm, không cổng nào bắt
