@@ -29,3 +29,7 @@ me-tech/pipeline/publish/ACTIVE
 me-tech/pipeline/shots/*.png
 me-tech/pipeline/publish/*.png
 me-tech/pipeline/publish/__pycache__/
+
+# Crypto Dashboard runtime cache
+crypto/dashboard/data/cache_rates.json
+

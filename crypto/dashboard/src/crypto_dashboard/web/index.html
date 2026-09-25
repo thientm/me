@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Liquidity Cockpit — Hard Floor 540M VND</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <div class="cockpit-container">
+    
+    <!-- HEADER & TICKERS -->
+    <header class="cockpit-header">
+      <div class="header-brand">
+        <div class="brand-badge-group">
+          <span class="badge badge-tag">INSTITUTIONAL PORTFOLIO LENS</span>
+          <span id="network-status" class="badge badge-success">🟢 REALTIME</span>
+          <span class="badge badge-pill font-mono" id="data-timestamp-badge">🕒 Cập nhật: <span id="data-timestamp-val">Đang tải...</span></span>
+        </div>
+        <h1 id="brand-title" class="brand-title">CRYPTO PORTFOLIO & LIQUIDITY COCKPIT</h1>
+        <span class="brand-subtitle">Antigravity Autonomous Discipline Engine · Kế hoạch rút vốn BĐS Cuối tháng 10/2026 (Hạn chót 31/10/2026)</span>
+      </div>
+      <div class="header-meta">
+        <div class="tickers-bar">
+          <div class="ticker-pill">BTC: <strong id="ticker-btc" class="font-mono text-cyan">$84,278.00</strong></div>
+          <div class="ticker-pill">SOL: <strong id="ticker-sol" class="font-mono text-cyan">$115.03</strong></div>
+          <div class="ticker-pill">P2P: <strong id="ticker-p2p" class="font-mono text-cyan">25,911 ₫</strong></div>
+        </div>
+        <button id="btn-refresh" class="btn btn-secondary btn-icon" title="Làm mới dữ liệu từ Binance">⟳ Làm mới</button>
+      </div>
+    </header>
+
+    <!-- COMPONENT 1: EXECUTION ALERT BANNER (Satisfies test_f10_02: 'alert-banner', '540', '0/13 missed orders') -->
+    <aside id="alert-banner" class="alert-banner alert-pulse danger" role="alert">
+      <div class="alert-content-wrapper">
+        <div class="alert-badge-group">
+          <span class="beacon-dot"></span>
+          <span class="badge badge-defcon1">KỶ LUẬT THOÁI VỐN (DEFCON-1)</span>
+          <span class="badge badge-hard-floor">SÀN CỨNG 540TR</span>
+          <span class="badge badge-delay">50 NGÀY DO DỰ (0/13 LỆNH ĐỀ XUẤT)</span>
+        </div>
+        <div class="alert-body">
+          <h2 class="alert-heading">CẢNH BÁO KỶ LUẬT: 0/13 LỆNH ĐÃ THỰC THI (50 NGÀY CHẬM TRỄ)</h2>
+          <p id="alert-message" class="alert-text">
+            TTS đạt <strong>550.643.256 ₫</strong> (vượt ngưỡng Sàn Cứng <strong>540.000.000 ₫</strong>). 
+            Kích hoạt quy tắc nhị phân: <strong>BÁN NGAY 50% GIÁ TRỊ COIN (XẢ SẠCH 55,28 SOL) VÀ RÚT TOÀN BỘ STABLES VỀ BANK!</strong>
+            Hôm nay: Đến hạn <strong>Tranche 1 (0,035327 BTC ~ 74,4tr VND)</strong> trước 20:00 VN.
+          </p>
+        </div>
+        <div class="alert-actions">
+          <button id="btn-banner-copy" class="btn btn-danger btn-sm">📋 Sao chép Lệnh Binance</button>
+          <button id="btn-banner-agy" class="btn btn-warning btn-sm">⚡ Chạy agy Review</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COMPONENT 2: KEY METRICS COCKPIT (Satisfies test_f10_03: 'metric') -->
+    <section class="metrics-section" aria-label="Key Metrics Cockpit">
+      <div class="metrics-row">
+        <!-- Metric Card 1: TTS -->
+        <div class="metric-card" id="card-tts">
+          <div class="metric-header">
+            <span class="metric-title">TỔNG TÀI SẢN (TTS)</span>
+            <span id="val-floor-badge" class="badge badge-success">≥ 540TR LỜI BẤT NGỜ</span>
+          </div>
+          <div class="metric-body">
+            <div id="val-tts-vnd" class="metric-value font-mono">550.643.256 ₫</div>
+            <div id="val-tts-usd" class="metric-subvalue font-mono">$21,235.76 USD</div>
+          </div>
+          <div class="metric-footer">
+            <span class="text-secondary">Đệm sàn 540tr:</span>
+            <strong id="val-floor-cushion" class="font-mono text-success">+10.643.256 ₫ (+1,97%)</strong>
+          </div>
+        </div>
+
+        <!-- Metric Card 2: Cashout Progress -->
+        <div class="metric-card" id="card-cashout">
+          <div class="metric-header">
+            <span class="metric-title">TIẾN ĐỘ RÚT TIỀN (CASHOUT)</span>
+            <span class="badge badge-danger">CHƯA BẢO VỆ</span>
+          </div>
+          <div class="metric-body">
+            <div id="val-cashout-progress" class="metric-value font-mono text-danger">0,0%</div>
+            <div id="val-cashout-amount" class="metric-subvalue font-mono">0 ₫ / 540.000.000 ₫</div>
+            <div class="progress-track mt-2">
+              <div id="cashout-progress-bar" class="progress-fill bg-danger" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="metric-footer">
+            <span class="text-secondary">Hạn chót:</span>
+            <span id="val-cashout-note" class="text-warning">Cuối tháng 10/2026 (Còn 36 ngày)</span>
+          </div>
+        </div>
+
+        <!-- Metric Card 3: Portfolio Allocation -->
+        <div class="metric-card" id="card-portfolio">
+          <div class="metric-header">
+            <span class="metric-title">TỶ TRỌNG DANH MỤC</span>
+            <span class="badge badge-warning">RỦI RO TẬP TRUNG</span>
+          </div>
+          <div class="metric-body">
+            <div id="portfolio-summary" class="text-xs text-secondary mb-1">BTC: 63,2% | SOL: 30,1% | USDT: 6,7%</div>
+            <div id="portfolio-table-container">
+              <table class="table-mini" id="portfolio-table">
+                <tbody>
+                  <tr>
+                    <td><strong>BTC</strong> (0.1593)</td>
+                    <td class="text-right font-mono">348,1tr ₫</td>
+                    <td class="text-right font-mono text-cyan">63,2%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>SOL</strong> (55.28)</td>
+                    <td class="text-right font-mono">165,9tr ₫</td>
+                    <td class="text-right font-mono text-warning">30,1% <span class="badge-tag-danger">XẢ</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>USDT</strong> ($1,415)</td>
+                    <td class="text-right font-mono">36,7tr ₫</td>
+                    <td class="text-right font-mono text-success">6,7% <span class="badge-tag-success">RÚT</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric Card 4: Cost of Delay -->
+        <div class="metric-card" id="card-delay">
+          <div class="metric-header">
+            <span class="metric-title">THUẾ CHẦN CHỪ (COST OF DELAY)</span>
+            <span class="badge badge-danger">50 NGÀY DO DỰ</span>
+          </div>
+          <div class="metric-body">
+            <div id="val-hesitation-tax" class="metric-value font-mono text-danger">-32.600.000 ₫</div>
+            <div id="val-hourly-burn" class="metric-subvalue font-mono text-danger">🔥 38.750 đ / giờ</div>
+          </div>
+          <div class="metric-footer">
+            <span class="text-secondary">Nguy cơ giá đất 2027:</span>
+            <strong id="val-land-hazard" class="font-mono text-danger">+370.000.000 ₫</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENT 2.5: TREND & PORTFOLIO INTELLIGENCE PANEL -->
+    <section class="intel-section cockpit-panel mt-4" aria-label="Portfolio Intelligence and Trend">
+      <div class="panel-header d-flex justify-between align-center">
+        <div>
+          <h2 class="panel-title">XU HƯỚNG TÀI SẢN & NHẬN ĐỊNH DANH MỤC (PORTFOLIO INTELLIGENCE)</h2>
+          <span class="text-secondary text-xs">Phân tích đa chiều về vị thế, độ nhạy cảm rủi ro và các kịch bản hành động</span>
+        </div>
+        <div class="d-flex align-center gap-2">
+          <span class="text-xs text-muted" id="intel-last-run">Đánh giá gần nhất: <strong>Hôm nay (Thời gian thực)</strong></span>
+          <button id="btn-trigger-intel" class="btn btn-primary btn-sm">⚡ Phân Tích Danh Mục</button>
+        </div>
+      </div>
+      <div class="intel-grid mt-3">
+        <!-- Trend Sparkline Card -->
+        <div class="intel-card intel-chart-box">
+          <div class="intel-card-header d-flex justify-between align-center">
+            <span class="intel-card-title">BIẾN ĐỘNG TTS 7 NGÀY QUA</span>
+            <span class="text-xs text-cyan font-mono">+18,4tr (+3,45%)</span>
+          </div>
+          <div class="trend-chart-container mt-2">
+            <svg viewBox="0 0 400 100" class="trend-svg" width="100%" height="90">
+              <defs>
+                <linearGradient id="trend-area-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <line x1="20" y1="75" x2="380" y2="75" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <text x="380" y="71" fill="#ef4444" font-size="9" text-anchor="end" font-family="monospace">SÀN CỨNG 540M</text>
+              <path d="M 20,80 L 70,78 L 130,82 L 190,70 L 250,65 L 310,58 L 370,52" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+              <polygon points="20,80 70,78 130,82 190,70 250,65 310,58 370,52 370,95 20,95" fill="url(#trend-area-grad)"/>
+              <circle cx="370" cy="52" r="4" fill="#38bdf8" stroke="#0b0f19" stroke-width="2"/>
+              <text x="370" y="44" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">550,6M</text>
+            </svg>
+          </div>
+          <div class="trend-dates d-flex justify-between text-xs text-muted font-mono mt-1">
+            <span>18/09 (532M)</span>
+            <span>20/09 (535M)</span>
+            <span>22/09 (544M)</span>
+            <span>Hôm nay (550,6M)</span>
+          </div>
+        </div>
+
+        <!-- Strategic Synthesis Box -->
+        <div class="intel-card intel-synthesis-box">
+          <div class="intel-card-header">
+            <span class="intel-card-title">ĐÁNH GIÁ VỊ THẾ & ĐỘ NHẠY CẢM RỦI RO</span>
+          </div>
+          <div class="intel-bullets-list mt-2 text-sm">
+            <div class="intel-bullet-item">
+              <span class="bullet-tag tag-status">VỊ THẾ</span>
+              <span>TTS đạt 550,6M VND — đang ở dải <strong>≥540tr LỜI BẤT NGỜ</strong>. Đệm bảo vệ chỉ đạt <strong>+1,97% (+10,6M)</strong>, cực kỳ mỏng manh trước 1 nhịp chỉnh 2-3% của thị trường.</span>
+            </div>
+            <div class="intel-bullet-item">
+              <span class="bullet-tag tag-beta">RỦI RO BETA</span>
+              <span>SOL chiếm 30,1% danh mục (~165,9M VND) với độ biến động beta cao. Nếu SOL rơi về $95, TTS sẽ lập tức thủng sàn 540M xuống 538M VND.</span>
+            </div>
+            <div class="intel-bullet-item">
+              <span class="bullet-tag tag-action">HÀNH ĐỘNG</span>
+              <span>Kích hoạt lệnh chốt lời 50%: Bán sạch SOL + rút 1.415 USDT P2P về ngân hàng, khóa ngay <strong>202,5tr VND tiền mặt</strong>, triệt tiêu nguy cơ vỡ nợ vay BĐS.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID LAYOUT: SIMULATION (8 cols) & MACRO COUNTDOWN (4 cols) -->
+    <div class="cockpit-grid mt-4">
+      
+      <!-- COMPONENT 3: WHAT-IF SIMULATION (Satisfies test_f10_03: 'simulat') -->
+      <section class="simulation-section cockpit-panel" id="simulation-panel" aria-label="What-If Simulation Engine">
+        <div class="panel-header">
+          <h2 class="panel-title">MÔ PHỎNG KỊCH BẢN THỊ TRƯỜNG & SÀN CỨNG 540TR (WHAT-IF SIMULATION)</h2>
+          <span class="text-secondary text-xs">Kéo thanh trượt để kiểm tra mức độ an toàn trước cú sốc giá</span>
+        </div>
+        
+        <!-- Controls & Sliders -->
+        <div class="sim-controls">
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <label for="slider-btc-shock">Sốc Giá BTC (%):</label>
+              <span class="font-mono"><span id="val-btc-shock-display">0%</span> (<span id="val-btc-sim-price">$84,278</span>)</span>
+            </div>
+            <input type="range" id="slider-btc-shock" class="range-slider" min="-50" max="20" step="1" value="0">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <label for="slider-sol-shock">Sốc Giá SOL (%):</label>
+              <span class="font-mono"><span id="val-sol-shock-display">0%</span> (<span id="val-sol-sim-price">$115.03</span>)</span>
+            </div>
+            <input type="range" id="slider-sol-shock" class="range-slider" min="-60" max="30" step="1" value="0">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label-row">
+              <label for="slider-p2p-rate">Tỷ giá P2P (VND):</label>
+              <span class="font-mono" id="val-p2p-rate-display">25.911 ₫</span>
+            </div>
+            <input type="range" id="slider-p2p-rate" class="range-slider" min="24000" max="27000" step="50" value="25911">
+          </div>
+        </div>
+
+        <!-- Quick Preset Buttons -->
+        <div class="preset-buttons-row">
+          <button id="btn-preset-dump" class="btn btn-outline btn-sm">Dump -10%</button>
+          <button id="btn-preset-crash" class="btn btn-outline btn-sm">Sập -20%</button>
+          <button id="btn-preset-btc70k" class="btn btn-outline btn-sm">BTC $70k (Test F11)</button>
+          <button id="btn-preset-reset" class="btn btn-secondary btn-sm">⟳ Đặt lại Giá Spot</button>
+        </div>
+
+        <!-- Dynamic Safety Buffer Bar (vs 540M Hard Floor) -->
+        <div class="safety-bar-wrapper mt-3">
+          <div class="d-flex justify-between text-xs mb-1">
+            <span class="text-secondary">Thước đo an toàn so với Sàn Cứng 540tr:</span>
+            <span id="sim-safety-text" class="font-mono text-success font-bold">+10.643.256 ₫ (AN TOÀN)</span>
+          </div>
+          <div class="safety-track" id="sim-safety-bar-container">
+            <div class="hard-floor-marker" id="sim-hard-floor-marker" title="Sàn Cứng 540.000.000 VND">540M</div>
+            <div id="sim-safety-bar" class="safety-fill bg-success" style="width: 52%;"></div>
+          </div>
+        </div>
+
+        <!-- Side-by-Side Scenarios -->
+        <div class="scenarios-comparison-grid mt-3">
+          <!-- Scenario A -->
+          <div class="scenario-card card-safe" id="card-scenario-a">
+            <div class="scenario-badge text-success">🟢 KỊCH BẢN A: BÁN 50% HÔM NAY (PLAN 540TR)</div>
+            <div class="scenario-row"><span>Tiền mặt an toàn đã khóa:</span> <strong id="sim-a-cash" class="font-mono text-success">256.993.628 ₫</strong></div>
+            <div class="scenario-row"><span>TTS sau cú sốc:</span> <strong id="sim-a-tts" class="font-mono">498.684.519 ₫</strong></div>
+            <div class="scenario-row"><span>Xác suất thủng sàn 540tr:</span> <strong id="sim-a-ruin" class="font-mono text-success">&lt; 4,2% (AN TOÀN)</strong></div>
+            <div class="scenario-row"><span>Số cần vay BĐS:</span> <strong id="sim-a-gap" class="font-mono">596,3tr (Dưới trần 615tr)</strong></div>
+            <p class="scenario-note text-success text-xs mt-2">Đã khóa tiền mặt, danh mục chống đỡ được cú sập lớn mà không vỡ kế hoạch làm sổ đỏ.</p>
+          </div>
+
+          <!-- Scenario B -->
+          <div class="scenario-card card-danger" id="card-scenario-b">
+            <div class="scenario-badge text-danger">🚨 KỊCH BẢN B: GIỮ 100% COIN (DO DỰ / TRÌ HOÃN)</div>
+            <div class="scenario-row"><span>Tiền mặt an toàn:</span> <strong id="sim-b-cash" class="font-mono text-danger">0 ₫</strong></div>
+            <div class="scenario-row"><span>TTS sau cú sốc:</span> <strong id="sim-b-tts" class="font-mono text-danger">462.028.519 ₫</strong></div>
+            <div class="scenario-row"><span>Xác suất thủng sàn 540tr:</span> <strong id="sim-b-ruin" class="font-mono text-danger">37,0% (NGUY CƠ CAO)</strong></div>
+            <div class="scenario-row"><span>Số cần vay BĐS:</span> <strong id="sim-b-gap" class="font-mono text-danger">633,0tr (VƯỢT TRẦN 615TR)</strong></div>
+            <p class="scenario-note text-danger text-xs mt-2">Đâm thủng sàn cứng 540tr! Không đủ tiền nộp đất, phương án vay BĐS đổ bể.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPONENT 4: MACRO COUNTDOWN & BĐS DEBT (Satisfies test_f10_03: 'macro', 'countdown') -->
+      <section class="macro-section cockpit-panel" id="macro-panel" aria-label="Macro Countdown & BĐS Debt">
+        <div class="panel-header">
+          <h2 class="panel-title">ĐỒNG HỒ VĨ MÔ & NGHĨA VỤ BĐS</h2>
+          <span class="text-secondary text-xs">Đếm ngược các mốc rủi ro cao</span>
+        </div>
+
+        <div class="countdowns-list">
+          <div class="countdown-item urgent">
+            <div class="countdown-info">
+              <span class="countdown-title">Tranche 1 (15% gốc - 20:00 VN)</span>
+              <span class="countdown-desc">Bán 0,035327 BTC trước 20:00 hôm nay</span>
+            </div>
+            <div id="countdown-tranche-1" class="countdown-timer font-mono text-danger font-bold">07h 45m 12s</div>
+          </div>
+
+          <div class="countdown-item">
+            <div class="countdown-info">
+              <span class="countdown-title">Tranche 2 (20% gốc)</span>
+              <span class="countdown-desc">29/09/2026 (Khớp trước công bố PCE)</span>
+            </div>
+            <div id="countdown-tranche-2" class="countdown-timer font-mono text-warning">05d 08h 12m</div>
+          </div>
+
+          <div class="countdown-item urgent">
+            <div class="countdown-info">
+              <span class="countdown-title">Hạn Chốt Nguồn Vay BĐS 615tr</span>
+              <span class="countdown-desc">30/09/2026 (Quy tắc Section 7.4)</span>
+            </div>
+            <div id="countdown-bds-debt" class="countdown-timer font-mono text-danger font-bold">06d 12h 45m</div>
+          </div>
+
+          <div class="countdown-item">
+            <div class="countdown-info">
+              <span class="countdown-title">Công Bố Lạm Phát PCE Mỹ</span>
+              <span class="countdown-desc">30/09/2026 (Biến động vĩ mô)</span>
+            </div>
+            <div id="countdown-pce" class="countdown-timer font-mono">06d 08h 15m</div>
+          </div>
+
+          <div class="countdown-item">
+            <div class="countdown-info">
+              <span class="countdown-title">Hạn Chót Rút Tiền (Late Oct 2026)</span>
+              <span class="countdown-desc">31/10/2026 (Hạn chót tuyệt đối)</span>
+            </div>
+            <div id="countdown-late-oct" class="countdown-timer font-mono text-cyan">36d 12h 00m</div>
+          </div>
+        </div>
+
+        <!-- BĐS Debt Balance Gauge -->
+        <div class="bds-balance-box mt-3">
+          <div class="d-flex justify-between align-center mb-1">
+            <span class="text-secondary text-xs">CÁN CÂN VAY BĐS 615TR:</span>
+            <span id="bds-status-badge" class="badge badge-success">🟢 DƯ AN TOÀN (+70,6tr)</span>
+          </div>
+          <div class="progress-track" style="height: 10px;">
+            <div id="bds-ceiling-bar" class="progress-fill bg-success" style="width: 88%;" title="544.4M / 615M"></div>
+          </div>
+          <div class="bds-figures-row text-xs mt-2 font-mono">
+            <div>Tổng quỹ: <strong id="bds-total-budget">3,1B ₫</strong></div>
+            <div>Tự có: <strong id="bds-self-equity">2.555,6M ₫</strong></div>
+            <div>Cần vay: <strong id="bds-borrow-needed">544,4tr ₫</strong></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- COMPONENT 5: QUANT INNOVATIONS ROW (MCR-Sim, BHT-Ticker, AVC-Meter) -->
+    <section class="quant-section mt-4" aria-label="Quant Innovations">
+      <div class="quant-visualizers-row">
+        
+        <!-- Quant 1: MCR-Sim Card -->
+        <div class="quant-card" id="mcr-sim-card">
+          <div class="quant-card-header">
+            <h3 class="quant-title">MCR-Sim: Mô Phỏng Phá Sản Monte Carlo</h3>
+            <span class="badge badge-purple">10.000 Stochastic Paths</span>
+          </div>
+          <div class="quant-card-body">
+            <!-- Pure SVG Monte Carlo Distribution -->
+            <svg class="mcr-svg" viewBox="0 0 460 200" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mcr-danger-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#ef4444" stop-opacity="0.02"/>
+                </linearGradient>
+                <linearGradient id="mcr-safe-fill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#10b981" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#10b981" stop-opacity="0.02"/>
+                </linearGradient>
+              </defs>
+              <g class="mcr-grid" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4">
+                <line x1="40" y1="30" x2="430" y2="30"/>
+                <line x1="40" y1="80" x2="430" y2="80"/>
+                <line x1="40" y1="130" x2="430" y2="130"/>
+                <line x1="40" y1="170" x2="430" y2="170"/>
+              </g>
+              <path d="M 40,170 Q 90,165 140,140 T 210,85 L 210,170 Z" fill="url(#mcr-danger-fill)"/>
+              <path d="M 210,85 Q 260,40 310,35 T 420,170 L 210,170 Z" fill="url(#mcr-safe-fill)"/>
+              <path d="M 40,170 Q 90,165 140,140 T 210,85 T 280,35 T 350,80 T 420,170" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="210" y1="15" x2="210" y2="170" stroke="#ef4444" stroke-width="2" stroke-dasharray="5 3"/>
+              <rect x="150" y="8" width="120" height="18" rx="3" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+              <text x="210" y="21" fill="#fca5a5" font-size="9" font-weight="bold" text-anchor="middle" font-family="monospace">HARD FLOOR 540M</text>
+              <circle cx="120" cy="150" r="3.5" fill="#ef4444"/>
+              <text x="120" y="165" fill="#f87171" font-size="9" text-anchor="middle" font-family="monospace">VaR95 (471M)</text>
+              <circle cx="280" cy="35" r="3.5" fill="#10b981"/>
+              <text x="280" y="30" fill="#34d399" font-size="9" text-anchor="middle" font-family="monospace">P50 (550M)</text>
+              <g fill="#9ca3af" font-size="9" font-family="monospace">
+                <text x="40" y="185">400M</text>
+                <text x="120" y="185">470M</text>
+                <text x="210" y="185" fill="#ef4444" font-weight="bold">540M</text>
+                <text x="320" y="185">600M</text>
+                <text x="420" y="185">650M</text>
+              </g>
+            </svg>
+            <div class="mcr-comparison mt-2">
+              <div class="d-flex justify-between text-xs mb-1">
+                <span>Giữ 100% (Do dự):</span>
+                <span id="mcr-prob-hold" class="font-mono text-danger font-bold">37,0% THỦNG SÀN</span>
+              </div>
+              <div class="progress-track"><div id="mcr-prob-hold-bar" class="progress-fill bg-danger" style="width: 37%;"></div></div>
+              <div class="d-flex justify-between text-xs mt-2 mb-1">
+                <span>Bán 50% theo Ngưỡng 540tr:</span>
+                <span id="mcr-prob-sell" class="font-mono text-success font-bold">4,2% (AN TOÀN)</span>
+              </div>
+              <div class="progress-track"><div id="mcr-prob-sell-bar" class="progress-fill bg-success" style="width: 4.2%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quant 2: BHT-Ticker Card -->
+        <div class="quant-card" id="bht-ticker-card">
+          <div class="quant-card-header">
+            <h3 class="quant-title">BHT-Ticker: Thuế Chần Chừ & 10 Phút Cam Kết</h3>
+            <span class="badge badge-danger">38.750 đ / GIỜ</span>
+          </div>
+          <div class="quant-card-body">
+            <div class="bht-flex-container">
+              <!-- Circular Commitment Timer SVG -->
+              <div class="bht-clock-wrapper">
+                <svg class="bht-ring-svg" viewBox="0 0 140 140" width="120" height="120">
+                  <circle cx="70" cy="70" r="54" fill="none" stroke="#1f2937" stroke-width="8"/>
+                  <circle id="bht-countdown-circle" cx="70" cy="70" r="54" fill="none" stroke="#ef4444" stroke-width="8" stroke-linecap="round" stroke-dasharray="339.29" stroke-dashoffset="84.82" transform="rotate(-90 70 70)"/>
+                  <text id="bht-timer-text" x="70" y="66" fill="#f9fafb" font-size="18" font-weight="bold" font-family="monospace" text-anchor="middle">07:45</text>
+                  <text x="70" y="84" fill="#9ca3af" font-size="9" text-transform="uppercase" font-family="sans-serif" text-anchor="middle">COMMITMENT</text>
+                </svg>
+              </div>
+              <div class="bht-stats">
+                <span class="text-secondary text-xs">TỔNG THIỆT HẠI ĐANG ĐỐT:</span>
+                <div id="bht-total-tax" class="text-xl font-mono font-black text-danger">-39.845.200 ₫</div>
+                <div class="bht-breakdown text-xs text-muted mt-2">
+                  <div>• Lỡ đỉnh $87k: <span class="text-danger font-mono">-32,6tr</span></div>
+                  <div>• Phạt thuế chậm nộp: <span class="text-warning font-mono">-6,5tr</span></div>
+                  <div>• Trượt giá đất 2027: <span class="text-danger font-mono">+5,55tr/ngày</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quant 3: AVC-Meter Card -->
+        <div class="quant-card" id="avc-meter-card">
+          <div class="quant-card-header">
+            <h3 class="quant-title">AVC-Meter: Đệm Biến Động ATR & CPPI</h3>
+            <span class="badge badge-warning">ĐỆM QUÁ MỎNG</span>
+          </div>
+          <div class="quant-card-body">
+            <!-- 180 Degree Speedometer Gauge SVG -->
+            <svg class="avc-gauge-svg" viewBox="0 0 240 140" width="100%" height="auto">
+              <path d="M 35,110 A 85,85 0 0,1 77.5,36.4" fill="none" stroke="#ef4444" stroke-width="14" stroke-linecap="round"/>
+              <path d="M 83.5,33.0 A 85,85 0 0,1 156.5,33.0" fill="none" stroke="#f59e0b" stroke-width="14"/>
+              <path d="M 162.5,36.4 A 85,85 0 0,1 205,110" fill="none" stroke="#10b981" stroke-width="14" stroke-linecap="round"/>
+              <g id="avc-needle" transform="rotate(-75 120 110)">
+                <polygon points="116,110 120,32 124,110" fill="#f9fafb"/>
+                <circle cx="120" cy="110" r="7" fill="#ef4444" stroke="#f9fafb" stroke-width="2"/>
+              </g>
+              <text id="avc-vcr-value" x="120" y="95" fill="#ef4444" font-size="20" font-weight="900" font-family="monospace" text-anchor="middle">0.69</text>
+              <text x="120" y="112" fill="#9ca3af" font-size="9" font-family="sans-serif" text-anchor="middle">NGÀY ATR (ĐỆM)</text>
+              <text x="25" y="132" fill="#ef4444" font-size="9" font-weight="bold">0d (ĐỎ)</text>
+              <text x="120" y="20" fill="#f59e0b" font-size="9" text-anchor="middle">3.0d</text>
+              <text x="215" y="132" fill="#10b981" font-size="9" font-weight="bold" text-anchor="end">6d+ (XANH)</text>
+            </svg>
+            <div class="cppi-box mt-2 text-xs">
+              <div class="d-flex justify-between"><span>Crypto Đang Giữ:</span> <strong id="cppi-holding" class="text-danger font-mono">496,1tr ₫</strong></div>
+              <div class="d-flex justify-between"><span>Trần An Toàn CPPI:</span> <strong id="cppi-max-safe" class="text-success font-mono">114,4tr ₫</strong></div>
+              <div id="cppi-excess-risk" class="text-danger font-bold text-center mt-1">⚠️ VƯỢT TRẦN NGUY HIỂM: +381,7 TRIỆU VND</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPONENT 6: ANTIGRAVITY ACTION CENTER & agy CLI BRIDGE -->
+    <section class="action-center-section cockpit-panel mt-4" id="action-center" aria-label="Antigravity Action Center">
+      <div class="panel-header d-flex justify-between align-center">
+        <div>
+          <h2 class="panel-title">TRUNG TÂM HÀNH ĐỘNG ÉP KỶ LUẬT & ANTIGRAVITY CLI BRIDGE</h2>
+          <span class="text-secondary text-xs">Sinh lệnh thực thi Binance & gọi lệnh CLI agy cục bộ (không dùng API Token)</span>
+        </div>
+        <div class="action-buttons-group">
+          <button id="btn-copy-orders" class="btn btn-primary btn-sm">📋 Sao chép Lệnh Binance (10-Min Sheet)</button>
+          <button id="btn-run-agy" class="btn btn-warning btn-sm">⚡ Chạy agy Review (Local CLI)</button>
+          <button id="btn-dryrun-agy" class="btn btn-secondary btn-sm">🧪 Dry Run agy</button>
+          <button id="btn-view-command" class="btn btn-secondary btn-sm">💻 Xem Lệnh Shell</button>
+        </div>
+      </div>
+
+      <!-- 10-Minute Executable Order Sheet -->
+      <div class="orders-sheet-wrapper mt-3" id="orders-sheet-container">
+        <h3 class="orders-heading">BẢNG LỆNH THỰC THI 10 PHÚT (10-MINUTE EXECUTABLE ORDER SHEET)</h3>
+        <table class="table-orders" id="orders-table">
+          <thead>
+            <tr>
+              <th>Ưu tiên</th>
+              <th>Kênh thực thi</th>
+              <th>Hành động</th>
+              <th>Cặp / Tài sản</th>
+              <th>Khối lượng</th>
+              <th>Giá dự kiến</th>
+              <th>Thu về VND</th>
+              <th>Thời hạn (Deadline)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="order-p2p">
+              <td><span class="badge-priority p1">1</span></td>
+              <td>Binance P2P</td>
+              <td><strong class="text-success">RÚT STABLES SANG VND</strong></td>
+              <td>USDT</td>
+              <td class="font-mono">1.415,00 USDT</td>
+              <td class="font-mono">≥ 25.900 ₫</td>
+              <td class="font-mono text-success">36.650.000 ₫</td>
+              <td><span class="badge-tag-danger">Ngay lập tức</span></td>
+            </tr>
+            <tr class="order-spot-sol">
+              <td><span class="badge-priority p2">2</span></td>
+              <td>Binance Spot</td>
+              <td><strong class="text-warning">MARKET SELL (XẢ HẾT)</strong></td>
+              <td>SOL/USDT</td>
+              <td class="font-mono">55,28 SOL</td>
+              <td class="font-mono">~$115,03</td>
+              <td class="font-mono text-warning">165.874.131 ₫</td>
+              <td><span class="badge-tag-danger">Ngay lập tức</span></td>
+            </tr>
+            <tr class="order-spot-btc">
+              <td><span class="badge-priority p3">3</span></td>
+              <td>Binance Spot</td>
+              <td><strong class="text-cyan">LIMIT SELL TRANCHE 1</strong></td>
+              <td>BTC/USDT</td>
+              <td class="font-mono">0,04155 BTC</td>
+              <td class="font-mono">$84.278</td>
+              <td class="font-mono text-cyan">90.786.520 ₫</td>
+              <td><span class="badge-tag-warning">Trước 20:00 VN</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- agy Console Drawer -->
+      <div class="agy-console-box mt-3" id="agy-console-drawer">
+        <div class="console-header d-flex justify-between align-center">
+          <span class="font-mono text-xs text-muted">TERMINAL STREAM: /Users/thien.tm/.local/bin/agy -p "Review crypto..."</span>
+          <div class="d-flex align-center gap-2">
+            <div id="agy-spinner" class="spinner-small" style="display: none;"></div>
+            <button id="btn-close-console" class="btn btn-secondary btn-xs" title="Thu gọn console">_</button>
+          </div>
+        </div>
+        <pre id="agy-console" class="code-terminal">Ready. Nhấn [⚡ Chạy agy Review] để kích hoạt quy trình đánh giá Section 7.5 tự động qua Antigravity CLI cục bộ.</pre>
+      </div>
+    </section>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  </div>
+
+  <!-- SCRIPT BINDING (Satisfies test_f10_01, test_f10_04) -->
+  <script src="app.js"></script>
+</body>
+</html>

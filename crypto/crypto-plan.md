@@ -301,10 +301,8 @@ Giá quy đổi tính trên danh mục thật (0,15931 BTC + 55,28 SOL + $1.415 
 
 | Band | TTS | ≈ BTC / SOL | Hành động |
 |---|---|---|---|
-| 🟢 Lời bất ngờ | **≥530tr** | ≥$80.897 / $111,51 | **Bán thêm 50% NGAY**, ngoài lịch ← **ĐANG Ở ĐÂY (532,7tr)** |
-| 🟠 Sát sàn trên | **516-530tr** | $78.602-80.897 | Tranche kế tiếp **→ 40%, thực thi trong 24h**, không chờ đúng ngày |
-| 🔴 Đệm sàn | **500-516tr** | $75.978-78.602 | **Bán 60% crypto trong 24h.** Đây là đệm đúng **1 ngày ATR danh mục (≈3,05% ≈ 16tr)** — không phải vùng chờ |
-| ⛔ Hard floor | **<500tr** | <$75.978 / $104,73 | **Bán sạch ngay, market.** Không bàn. *(user nâng từ 440tr, 21/09)* |
+| 🟢 Lời bất ngờ | **≥540tr** | ≥$82.400 / $113,50 | **Bán thêm 50% NGAY**, ngoài lịch |
+| ⛔ Hard floor | **<540tr** | <$82.400 / $113,50 | **Bán sạch ngay, market.** Sàn cứng đã gộp cùng mốc chốt lời. *(user nâng từ 500tr lên 540tr, 24/09)* |
 
 > **Sàn 500tr đã xoá "dải giữa".** Ở v2.1 vùng "theo đúng lịch, không làm gì thêm" rộng 45tr (470-515). Ở v2.2 nó rộng **0**: từ 532,7tr xuống 500tr chỉ có 32,7tr, mà một ngày ATR danh mục đã là ~16tr. Đây là cái giá của sàn cao, và nó là lý do vì sao sàn cao **bắt buộc** đi kèm bán bớt — không phải một lựa chọn phong cách.
 > ~~Band v2.1: ≥530 / 515-530 / dải giữa 470-515 / 450-470 / <450 / hard floor <440.~~ Các ô dưới 500tr đã chết theo định nghĩa: chạm 500 là bán sạch, không còn gì để phân band.
@@ -335,7 +333,7 @@ Giá quy đổi tính trên danh mục thật (0,15931 BTC + 55,28 SOL + $1.415 
 | Điều kiện | Hành động | Ưu tiên |
 |---|---|---|
 | Nhóm 4 báo RỦI RO kênh rút (pháp lý/P2P/khoá TK) | Market sell ALL → VND trong 24h | 1 |
-| Từ 11/10 (<14 ngày tới 25/10) | Market sell ALL, bất kể giá | 1 |
+| Hạn chót lấy tiền nộp sổ đỏ | Cuối tháng 10/2026 (Kỳ vọng nhịp FOMO cuối T10) | 1 |
 | **TTS < 500tr** | Market sell ALL → VND | 1 |
 | Dấu hiệu hạn chế tài khoản Binance | Kích hoạt N4 ngay, không chờ review | 1 |
 

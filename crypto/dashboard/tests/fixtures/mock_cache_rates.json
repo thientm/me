@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-09-24T12:00:00Z",
+  "rates": {
+    "BTCUSDT": 84262.0,
+    "SOLUSDT": 115.72,
+    "USDT_VND_P2P": 25930.0
+  },
+  "metadata": {
+    "source": "cache",
+    "status": "valid"
+  }
+}

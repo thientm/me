@@ -15,6 +15,7 @@ Router cho agent/bản thân: đọc file nào tuỳ câu hỏi/tác vụ.
 | Log diễn biến BĐS theo tháng | `real-estate/logs/{YYYY-MM}.md` |
 | Kế hoạch Crypto (exit strategy, playbook) | `crypto/crypto-plan.md` |
 | Log giao dịch/review crypto theo tuần/tháng | `crypto/logs/{YYYY-MM}.md` |
+| Cockpit Dashboard & Công cụ quản trị Crypto | `crypto/dashboard/` |
 | Kế hoạch cưới (khảo sát, ngân sách) | `wedding/wedding-plan.md` |
 | **🎬 Kênh Mê Tech — điểm vào duy nhất, @ file này là đủ** | `me-tech/AGENTS.md` |
 
