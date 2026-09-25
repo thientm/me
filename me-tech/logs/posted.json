@@ -67,6 +67,18 @@
     "ghi_chu": "hen 25/09 14:00",
     "luc": "22.09.2026 01:22"
   },
+  "claude-art-enzyme:facebook": {
+    "ghi_chu": "hen 07:00",
+    "luc": "25.09.2026 06:32"
+  },
+  "claude-art-enzyme:tiktok": {
+    "ghi_chu": "hen 07:00",
+    "luc": "25.09.2026 06:29"
+  },
+  "claude-art-enzyme:youtube": {
+    "ghi_chu": "hen 07:00",
+    "luc": "25.09.2026 06:27"
+  },
   "context-window:facebook-photo": {
     "ghi_chu": "hen 22/09 11:00",
     "luc": "22.09.2026 00:59"
@@ -187,6 +199,18 @@
     "ghi_chu": "hen 23/09 09:30",
     "luc": "22.09.2026 01:05"
   },
+  "openai-medicare-au:facebook": {
+    "ghi_chu": "dang lai (ban 12:52 Failed to publish) + dich giong Meta AI",
+    "luc": "25.09.2026 13:05"
+  },
+  "openai-medicare-au:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "25.09.2026 12:54"
+  },
+  "openai-medicare-au:youtube": {
+    "ghi_chu": "dang ngay",
+    "luc": "25.09.2026 12:51"
+  },
   "opus55:facebook": {
     "ghi_chu": "hen 08:00",
     "luc": "23.09.2026 07:15"
@@ -226,6 +250,18 @@
   "suno-lawsuit:youtube": {
     "ghi_chu": "backfill",
     "luc": "20.09.2026 21:07"
+  },
+  "talos-closedquorum:facebook": {
+    "ghi_chu": "hen 20:00",
+    "luc": "24.09.2026 18:21"
+  },
+  "talos-closedquorum:tiktok": {
+    "ghi_chu": "hen 20:00",
+    "luc": "24.09.2026 18:18"
+  },
+  "talos-closedquorum:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "24.09.2026 18:15"
   },
   "toc-do-web:facebook-photo": {
     "ghi_chu": "hen 27/09 11:00",

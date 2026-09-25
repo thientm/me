@@ -17,5 +17,15 @@ me-tech/pipeline/demo/.frames/
 me-tech/pipeline/demo/snap/
 **/__pycache__/
 me-tech/pipeline/publish/_scratch/
+# file tạm lúc dựng/đăng: ảnh dò, contact sheet, log build, script dò một lần
+me-tech/pipeline/_scratch/
+# file từng bài: cả luồng dựng → đăng chạy trọn trên MỘT máy, đăng xong là hết giá trị.
+# Chống trùng giữa các máy dựa vào me-tech/logs/ (commit), không dựa vào mấy file này.
+me-tech/pipeline/content/*.json
+!me-tech/pipeline/content/lawzero.json
+!me-tech/pipeline/content/_roundup-template.json
+me-tech/pipeline/publish/meta_*.py
+me-tech/pipeline/publish/ACTIVE
+me-tech/pipeline/shots/*.png
 me-tech/pipeline/publish/*.png
 me-tech/pipeline/publish/__pycache__/

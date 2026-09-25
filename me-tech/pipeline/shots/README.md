@@ -1,9 +1,8 @@
-# Ảnh dẫn nguồn — ĐẦU VÀO, không phải đầu ra
+# Ảnh dẫn nguồn — đầu vào của bài đang dựng, chỉ để trên máy
 
-Ảnh chụp trang gốc cho trạm `mode: "shot"`. Để ở đây chứ **không** để trong
-`render/shots/`: `render/` nằm trong `.gitignore`, nên ảnh để đó là mất — và mất
-ảnh thì **không dựng lại được bài cũ**. 21.09.2026 phát hiện `render/shots/` đã
-rỗng, tức là bài `hacktron-openai` không dựng lại được nữa.
+Ảnh chụp trang gốc cho trạm `mode: "shot"`. Từ 25.09.2026 ảnh **không commit**
+(`*.png` trong `.gitignore`): một bài dựng → đăng trọn trên một máy, đăng xong là
+hết giá trị. Xem `me-tech/AGENTS.md` mục "Chạy trên nhiều máy".
 
 Chụp:
 

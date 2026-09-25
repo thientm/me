@@ -47,7 +47,7 @@ cd pipeline && ./run.sh content/<slug>.json
 ### 4 · Đăng
 | Nền tảng | Khung giờ | Ghi chú |
 |---|---|---|
-| Facebook Reels | 08:00 / 12:00 / 20:00 | qua **Business Suite**, tư cách Page, Public |
+| Facebook Reels | 08:00 / 12:00 / 20:00 | qua **Business Suite**, tư cách Page, Public · **luôn bật Share to Facebook story + Translate your voice with Meta AI** (chốt 25.09.2026, `fb.py` tự bật và chặn Share nếu chưa bật) |
 | YouTube Shorts | cùng khung | cùng file, không xuất lại |
 | TikTok | lệch 30 phút | cùng file · **không chọn nhạc TikTok**, giữ Original sound |
 
@@ -57,6 +57,12 @@ Caption từng nền tảng: `pipeline/publish/meta.py`.
 
 ### 5 · Ghi log
 1 dòng/bài vào `logs/{YYYY-MM}.md`. Sau 24h cập nhật reach/views.
+- **Soát Facebook trước khi ghi log** (chốt 25.09.2026): mở bài trong Business Suite,
+  xác nhận **Share to Facebook story = bật** và **Translate your voice with Meta AI = On**.
+  Dòng log FB phải ghi `story ✓ · dịch giọng ✓`; thiếu cái nào thì ghi rõ và báo Thiện.
+  Nhãn trạng thái phải sạch — thấy **"Failed to publish"** thì bài chưa lên, dù đã có dòng.
+- Sau 24h ghi thêm bài đó có nhãn **High-quality creative** của Facebook không
+  (`HQ ✓` / `HQ ✗`) — xem mục "Nhãn High-quality creative" bên dưới.
 
 ---
 
@@ -81,13 +87,14 @@ Sửa bất kỳ dòng nào dưới đây thì phải **đo được lý do**, �
 | Khung **dựng** | **07:00 · 11:00 · 19:00** | trước giờ đăng 1 tiếng, tác vụ định kỳ tự chạy |
 | Thứ tự đăng | **YouTube → TikTok → Facebook** | ít lỗi nhất trước, hỏng thì hỏng ở cái cuối |
 
-**Năm cổng tự động — đừng gỡ:**
+**Sáu cổng tự động — đừng gỡ:**
 
 1. `validate.py` — soát file nội dung **trước** TTS (1 giây thay vì 100)
 2. `build.py` — **dừng** nếu độ dài ngoài 32–38s (dùng `--tts-only` để sửa nhanh gấp 3)
 3. `safezone.py` — **chặn** nếu >2% mực rơi vào vùng bị UI che
 4. `_conn.confirm_schedule()` — **không cho bấm** nút hẹn giờ khi ô giờ còn trống
 5. `validate.py` — **chặn** bài không có trạm `shot` nào (xem "Ảnh dẫn nguồn là bắt buộc")
+6. `fb.py` — **không bấm Share** khi chưa bật share story + dịch giọng Meta AI (đọc lại dòng "On · Voice translation")
 
 **Bốn luật nội dung:**
 
@@ -141,9 +148,8 @@ Thật sự không có nguồn để chụp (tin đồn rò rỉ, chưa hãng n�
 "no_shot": "tin đồn rò rỉ, chưa có trang chính thức nào để chụp"
 ```
 
-Ảnh nguồn nằm ở **`pipeline/shots/`** — đây là **đầu vào**, được commit.
-Không để ở `render/shots/`: `render/` nằm trong `.gitignore`, để đó là mất ảnh,
-mà mất ảnh thì **không dựng lại được bài cũ** (đã xảy ra với `hacktron-openai`).
+Ảnh nguồn để ở **`pipeline/shots/`** — chỉ nằm trên máy, **không commit** (chốt 25.09.2026,
+xem "Chạy trên nhiều máy"). Tin daily đăng xong là hết giá trị, không có nhu cầu dựng lại bài cũ.
 
 ```bash
 cd pipeline
@@ -337,6 +343,28 @@ Bước 3 đã là script hoàn toàn: TTS chạy local, Whisper chạy local, f
 Bước 4 hiện dùng Chrome vì selector hay đổi. **Có thể script hoá bằng API chính thức** — Facebook Graph API (Reels lên Page), YouTube Data API (`videos.insert`), TikTok Content Posting API. Cả ba đều cần đăng ký app và được duyệt. Khi xong bước đó thì bước 4 cũng thành script, và cả quy trình chỉ còn bước 1–2 cần agent.
 
 
+## Chạy trên nhiều máy — chốt 25.09.2026
+
+Luồng có thể chạy ở nhiều máy, **git là đường đồng bộ duy nhất**. Video `render/*.mp4`
+không vào git (nặng), nên **một bài dựng → đăng trọn trên MỘT máy**; máy khác không
+tiếp tục dở dang được. Đăng xong thì file của bài đó hết giá trị.
+
+| Commit | Chỉ để trên máy (`.gitignore`) |
+|---|---|
+| `logs/*.md`, **`logs/posted.json`** — chống trùng giữa các máy | `pipeline/content/<slug>.json` |
+| code `pipeline/`, `publish/*.py`, `pronounce.json`, `uv.lock`… | `publish/meta_<slug>.py` |
+| `AGENTS.md`, `me-tech-plan.md`, `reviews/` | `publish/ACTIVE` — con trỏ bài đang chọn của riêng máy đó |
+| mẫu: `content/lawzero.json`, `_roundup-template.json`, `_schema-cu/`, `publish/meta.py` | `pipeline/shots/*.png`, `_scratch/`, `render/`, `.venv/`, `.work/` |
+
+**Hai luật cứng:**
+1. **`git pull` trước khi chọn tin; đăng xong commit + push `logs/` ngay** (chỉ `me-tech/logs/`
+   và file luật/code mình sửa, không kéo theo mục khác). Lớp chặn trùng 1 (`posted.json`)
+   chỉ có tác dụng khi nó được đồng bộ kịp.
+2. **Mỗi lúc chỉ MỘT máy chạy tác vụ định kỳ.** Hai máy cùng chạy 19:02 thì cả hai thấy
+   "chưa có bài" rồi cùng đăng — lớp 2 (quét kênh) chỉ cứu được YouTube.
+
+File trên máy dọn được sau ~7 ngày (bài đã có dòng log + đủ 3 khoá trong `posted.json`).
+
 ## Chống đăng trùng — ba lớp, đừng gỡ lớp nào
 
 21.09.2026 kênh YouTube có **hai bản công khai trùng nhau**. Nguyên nhân: phiên
@@ -433,6 +461,42 @@ DevTools:
 ```bash
 curl -s -X PUT "http://127.0.0.1:9333/json/new?https://www.tiktok.com/tiktokstudio/content"
 ```
+
+## Nhãn "High-quality creative" của Facebook — chỉ là ĐẦU VÀO, không phải mục tiêu
+
+Ghi 25.09.2026, lúc Thiện hỏi có dùng nhãn này để cải tiến được không.
+
+Business Suite gắn nhãn này cho một số reel. Rê chuột vào thì Facebook tự giải thích:
+*"Posts with visually engaging content are more likely to capture attention and drive
+engagement"*, kèm nút **Boost** ngay bên dưới. Tức là nó chấm **phần hình**, và gắn với
+việc mời chạy quảng cáo. Nó không phải điểm chất lượng chung cho cả ba nền tảng.
+
+Số liệu lúc 25.09 13:15, 19 reel:
+
+| Nhóm | Có nhãn |
+|---|---|
+| Không có trạm `shot` (18–21/09) | **0/7** |
+| Có `shot`, không có lưới `data` | 1/7 (hacktron) |
+| Có `shot` + lưới `data` | **3/5** (mimo, grok, alibaba — trượt: opus55, gpt6) |
+
+Nhãn **không đi cùng kết quả**:
+
+| | Reach | Giữ 3s (3s views ÷ views) | Xem trung bình |
+|---|---|---|---|
+| 4 bài có nhãn | 13 – 361 (Alibaba chỉ 13) | 18 – 27% | 3 – 7s |
+| bài không nhãn, cùng thời kỳ | 16 – 253 | 25 – 35% (R&D Index 35%, GLM 31%) | 2 – 8s |
+
+Nên đọc là:
+- **Gợi ý yếu** là ảnh nguồn thật + lưới số liệu làm Facebook thấy hình "bắt mắt".
+  Hai thứ đó vốn đã là luật (ảnh nguồn bắt buộc, `data` cho câu có số), nên **không
+  có việc gì mới phải làm vì nhãn này**.
+- **Đừng tối ưu cho nhãn.** Nó không kéo reach hay giữ chân trên chính Facebook,
+  và không có gì cho thấy TikTok/YouTube dùng tiêu chí tương tự.
+- **Mẫu còn quá nhỏ và bị lẫn thời gian**: cả 4 nhãn đều rơi vào bài 21–23/09, còn
+  chưa rõ Facebook gắn nhãn sau bao lâu (bài 24–25/09 có thể chưa được chấm).
+  Cứ ghi `HQ ✓/✗` ở mốc 24h, đủ ~20 bài mới xét lại cùng đợt xếp hạng 5 kiểu móc.
+
+Chỉ số chung cho cả ba nền tảng vẫn là **giữ 3s FB** và **APV YT** (xem "Câu móc").
 
 ## Hai giây đầu — móc giữ người xem
 

@@ -66,6 +66,33 @@ t = q.inner_text("body")
 print("Original sound giữ nguyên:", "Original audio" in t)
 print("Public:", "Public" in t)
 
+# Chốt 25.09.2026 (Thiện): mỗi reel đều share lên story + dịch giọng Meta AI.
+# Có thể Facebook nhớ sau lần bật đầu, nhưng không tin — lần nào cũng đọc lại, tắt thì bật.
+story = q.get_by_role("switch", name="Share to Facebook story").first
+if story.get_attribute("aria-checked") != "true":
+    story.click()
+    q.wait_for_timeout(1500)
+# Dịch giọng: tick ô mở hộp thoại, bật switch trong đó rồi Save. aria-checked của
+# ô tick không đáng tin (đọc lệch sau khi Save) -> đọc dòng "On · Voice translation".
+TR_ON = re.compile(r"On\s*\W\s*Voice translation")
+if not TR_ON.search(q.inner_text("body")):
+    q.get_by_text("Translate your voice with Meta AI", exact=True).first.click()
+    q.wait_for_timeout(5000)
+    dl = q.locator("[role=dialog]").filter(has_text="Translate voices with Meta AI").last
+    sw = dl.get_by_role("switch", name="Translate voices with Meta AI").first
+    if sw.get_attribute("aria-checked") != "true":
+        sw.click()
+        q.wait_for_timeout(3000)
+    dl.get_by_role("button", name="Save").click()
+    q.wait_for_timeout(4000)
+ok_story = story.get_attribute("aria-checked") == "true"
+ok_tr = bool(TR_ON.search(q.inner_text("body")))
+print("Share to story:", ok_story, "| Dich giong Meta AI:", ok_tr)
+if not (ok_story and ok_tr):
+    q.screenshot(path="_scratch/fb_toggles.png")
+    pw.stop()
+    sys.exit("[X] story/dich giong chua bat - KHONG bam Share. Xem _scratch/fb_toggles.png")
+
 if AT:
     # fb.py KHONG dien o ngay, chi dien gio/phut -> chi hen duoc TRONG NGAY.
     # 22.09.2026 fb_photo.py dinh dung loi nay: 30 bai don vao mot ngay.
