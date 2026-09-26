@@ -47,7 +47,7 @@ cd pipeline && ./run.sh content/<slug>.json
 ### 4 · Đăng
 | Nền tảng | Khung giờ | Ghi chú |
 |---|---|---|
-| Facebook Reels | 08:00 / 12:00 / 20:00 | qua **Business Suite**, tư cách Page, Public · **luôn bật Share to Facebook story + Translate your voice with Meta AI** (chốt 25.09.2026, `fb.py` tự bật và chặn Share nếu chưa bật) |
+| Facebook Reels | 08:00 / 12:00 / 20:00 | qua **Business Suite**, tư cách Page, Public · **luôn bật Share to Facebook story** (chốt 25.09.2026, `fb.py` tự bật và chặn Share nếu chưa bật) · **không** bật dịch giọng Meta AI (bỏ 26.09.2026 — Meta giới hạn số lượt, hết lượt là kẹt cả bài) |
 | YouTube Shorts | cùng khung | cùng file, không xuất lại |
 | TikTok | lệch 30 phút | cùng file · **không chọn nhạc TikTok**, giữ Original sound |
 
@@ -58,8 +58,8 @@ Caption từng nền tảng: `pipeline/publish/meta.py`.
 ### 5 · Ghi log
 1 dòng/bài vào `logs/{YYYY-MM}.md`. Sau 24h cập nhật reach/views.
 - **Soát Facebook trước khi ghi log** (chốt 25.09.2026): mở bài trong Business Suite,
-  xác nhận **Share to Facebook story = bật** và **Translate your voice with Meta AI = On**.
-  Dòng log FB phải ghi `story ✓ · dịch giọng ✓`; thiếu cái nào thì ghi rõ và báo Thiện.
+  xác nhận **Share to Facebook story = bật**.
+  Dòng log FB phải ghi `story ✓`; thiếu thì ghi rõ và báo Thiện.
   Nhãn trạng thái phải sạch — thấy **"Failed to publish"** thì bài chưa lên, dù đã có dòng.
 - Sau 24h ghi thêm bài đó có nhãn **High-quality creative** của Facebook không
   (`HQ ✓` / `HQ ✗`) — xem mục "Nhãn High-quality creative" bên dưới.
@@ -94,7 +94,7 @@ Sửa bất kỳ dòng nào dưới đây thì phải **đo được lý do**, �
 3. `safezone.py` — **chặn** nếu >2% mực rơi vào vùng bị UI che
 4. `_conn.confirm_schedule()` — **không cho bấm** nút hẹn giờ khi ô giờ còn trống
 5. `validate.py` — **chặn** bài không có trạm `shot` nào (xem "Ảnh dẫn nguồn là bắt buộc")
-6. `fb.py` — **không bấm Share** khi chưa bật share story + dịch giọng Meta AI (đọc lại dòng "On · Voice translation")
+6. `fb.py` — **không bấm Share** khi chưa bật share story
 
 **Bốn luật nội dung:**
 
@@ -599,9 +599,13 @@ cũng còn ~50 phút đệm.
 
 ### Nếu không dựng được bài
 
-Báo rõ vì sao rồi **dừng**. Đừng đăng bài kém chất lượng cho đủ khung — bỏ một
-khung không mất gì (reach trần ~2% số người theo dõi bất kể giờ nào), còn một bài
+Báo rõ vì sao rồi **dừng**. Đừng đăng bài kém chất lượng cho đủ khung — bài
 sai nguồn thì ở lại trên kênh.
+
+**Trễ giờ hay thiếu tin thì KHÔNG phải lý do bỏ khung** (Thiện chốt 26.09.2026, sau
+khi hai khung 25/09 20:00 và 26/09 08:00 bị bỏ vì tác vụ chạy trễ). Tác vụ chạy trễ
+thì vẫn dựng đủ cổng rồi **đăng ngay** khi xong; không có tin đủ nóng thì làm
+**điểm tin nhanh**. Chỉ dừng khi cổng an toàn hỏng không sửa được.
 
 
 ## Thẻ ảnh Facebook — bộ thứ hai, KHÁC bộ video
