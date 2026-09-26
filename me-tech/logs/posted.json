@@ -223,6 +223,18 @@
     "ghi_chu": "hen 23/09 09:30",
     "luc": "22.09.2026 01:05"
   },
+  "niq-ai-shopping:facebook": {
+    "ghi_chu": "hen 20:00",
+    "luc": "26.09.2026 15:03"
+  },
+  "niq-ai-shopping:tiktok": {
+    "ghi_chu": "hen 20:30",
+    "luc": "26.09.2026 15:01"
+  },
+  "niq-ai-shopping:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "26.09.2026 14:59"
+  },
   "openai-medicare-au:facebook": {
     "ghi_chu": "dang lai (ban 12:52 Failed to publish) + dich giong Meta AI",
     "luc": "25.09.2026 13:05"
