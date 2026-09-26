@@ -583,6 +583,22 @@ có ai ngồi đó để bắt lỗi thay.
 Một tiếng đệm là để **có chỗ hỏng mà sửa**, không phải để làm cho nhanh. Một bài
 mất ~30 phút, còn lại là biên an toàn.
 
+### Giám sát viên — `ops/watchdog.sh` (26.09.2026)
+
+Tác vụ định kỳ chạy **trong** một session Claude: session bận/treo hay máy ngủ thì nó
+trễ (25–26/09 trễ 30–45 phút liền ba lần) và không lịch nào trong cùng session gỡ được.
+Giám sát viên chạy **ngoài** Claude bằng launchd, lúc HH:40 · HH:55 · 10 phút sau giờ đăng:
+
+1. `ops/slot_status.py <giờ>` đọc `posted.json` — khung đủ 3 nền tảng thì thôi
+2. tiến trình pipeline chạy >30 phút → TERM/KILL (không đụng Chrome)
+3. `.run/build.lock` được chạm trong 20 phút → job khác đang chạy, thôi.
+   **Job nào đang dựng/đăng cũng phải giữ khoá và `touch` nó ở mỗi bước**
+4. còn lại → giữ khoá, mở Chrome nếu tắt, chạy `claude -p` (allowlist lệnh, tối đa 50 phút)
+   để đăng nốt nền tảng thiếu hoặc dựng cả bài
+
+Cài/gỡ: `ops/install.sh` / `ops/install.sh --remove` (Thiện tự cài). Chạy thử không
+gọi Claude: `DRY=1 ops/watchdog.sh`. Log: `~/Library/Logs/metech-watchdog.log`.
+
 ### Thứ tự đăng: YouTube → TikTok → Facebook
 
 Xếp theo mức ít lỗi, đo từ thực tế 18–21.09:

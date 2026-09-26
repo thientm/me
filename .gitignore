@@ -47,3 +47,6 @@ thien-tran/.browser-profile
 # thien-tran specifics
 thien-tran/publish/_scratch/
 thien-tran/publish/*.png
+
+# khoá chống chạy song song giữa tác vụ định kỳ và giám sát viên (me-tech/ops/watchdog.sh)
+me-tech/.run/
