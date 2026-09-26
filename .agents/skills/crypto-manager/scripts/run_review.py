@@ -22,12 +22,16 @@ from dataclasses import dataclass, asdict
 
 # Add src to sys.path if running within project
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent.parent
-SRC_DIR = PROJECT_ROOT / "src"
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+WORKSPACE_ROOT = SCRIPT_DIR.parents[3]  # .agents/skills/crypto-manager/scripts -> repo root
+SRC_CANDIDATES = [
+    WORKSPACE_ROOT / "crypto" / "dashboard" / "src",
+    WORKSPACE_ROOT / "src",
+    SCRIPT_DIR.parent.parent.parent / "src",
+    Path("/Users/thien.tm/teamwork_projects/crypto_dashboard/src"),
+]
+for p in SRC_CANDIDATES:
+    if p.exists() and str(p) not in sys.path:
+        sys.path.insert(0, str(p))
 
 try:
     from crypto_engine.config import (
@@ -52,8 +56,14 @@ try:
     ENGINE_LOADED = True
 except ImportError:
     ENGINE_LOADED = False
-    CRYPTO_PLAN_PATH = Path("/Users/thien.tm/Documents/me/crypto/crypto-plan.md")
-    CRYPTO_LOGS_DIR = Path("/Users/thien.tm/Documents/me/crypto/logs")
+    _CANDIDATE_REPOS = [
+        Path("/Users/thientm/Documents/GitHub/me"),
+        WORKSPACE_ROOT,
+        Path("/Users/thien.tm/Documents/me"),
+    ]
+    _repo = next((p for p in _CANDIDATE_REPOS if (p / "crypto" / "crypto-plan.md").exists()), Path("/Users/thien.tm/Documents/me"))
+    CRYPTO_PLAN_PATH = _repo / "crypto" / "crypto-plan.md"
+    CRYPTO_LOGS_DIR = _repo / "crypto" / "logs"
     CACHE_RATES_FILE = Path("/Users/thien.tm/teamwork_projects/crypto_dashboard/data/cache_rates.json")
     HARD_FLOOR_VND = 540_000_000.0
     CASH_OUT_DEADLINE_STR = "2026-10-31"

@@ -9,13 +9,22 @@ Enforces domain constraints updated on 2026-09-24:
 from pathlib import Path
 
 # Paths to personal personal-os repository
-PERSONAL_REPO_DIR = Path("/Users/thien.tm/Documents/me")
+_CANDIDATE_REPOS = [
+    Path("/Users/thientm/Documents/GitHub/me"),
+    Path(__file__).resolve().parents[4],
+    Path("/Users/thien.tm/Documents/me"),
+]
+PERSONAL_REPO_DIR = next((p for p in _CANDIDATE_REPOS if (p / "crypto" / "crypto-plan.md").exists()), Path("/Users/thien.tm/Documents/me"))
 CRYPTO_PLAN_PATH = PERSONAL_REPO_DIR / "crypto" / "crypto-plan.md"
 CRYPTO_LOGS_DIR = PERSONAL_REPO_DIR / "crypto" / "logs"
 REAL_ESTATE_PLAN_PATH = PERSONAL_REPO_DIR / "real-estate" / "real-estate-plan.md"
 
 # Project paths
-PROJECT_ROOT = Path("/Users/thien.tm/teamwork_projects/crypto_dashboard")
+_CANDIDATE_PROJECT_ROOTS = [
+    Path(__file__).resolve().parents[2],
+    Path("/Users/thien.tm/teamwork_projects/crypto_dashboard"),
+]
+PROJECT_ROOT = next((p for p in _CANDIDATE_PROJECT_ROOTS if p.exists()), Path("/Users/thien.tm/teamwork_projects/crypto_dashboard"))
 DATA_DIR = PROJECT_ROOT / "data"
 CACHE_RATES_FILE = DATA_DIR / "cache_rates.json"
 
