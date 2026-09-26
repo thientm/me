@@ -1,0 +1,44 @@
+{
+ "slug": "test10s",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "APPLE AI · 26.09.2026",
+ "date": "26.09.2026",
+ "hook": 2,
+ "speed": 1.2,
+ "no_shot": "bản test 10 giây, không cần ảnh dẫn nguồn",
+ "gap": 0.20,
+ "lead_in": 0.30,
+ "tail": 1.80,
+ "outro": {
+   "mark": "Thiện Trần", 
+   "socials": [
+     {"platform": "facebook", "handle": "/thientm"},
+     {"platform": "tiktok", "handle": "/thientranx"},
+     {"platform": "youtube", "handle": "/thientm"}
+   ]
+ },
+
+ "segments": [
+  {"id":"hook","group":"g1","mode":"say","lab":"TIN CHÍNH",
+   "say":"Áp-pồ đang dồn toàn lực vào siêu phẩm mới.",
+   "plain":"Apple đang dồn toàn lực vào siêu phẩm mới",
+   "words":["Apple","đang","dồn","toàn","lực","vào","siêu","phẩm","mới"],
+   "weights":[2,1,1,1,1,1,2,2,1],
+   "hot":[0,6,7]},
+
+  {"id":"m1","group":"g2","mode":"say",
+   "say":"Đó chính là rô bốt gia đình giá ngàn đô.",
+   "plain":"Đó chính là robot gia đình giá ngàn đô",
+   "words":["Đó","chính","là","robot","gia","đình","giá","ngàn","đô"],
+   "weights":[1,1,1,2,1,1,1,2,2],
+   "hot":[3,7,8]},
+
+  {"id":"outro","group":"g3","mode":"outro",
+   "say":"Thiện Trần.",
+   "plain":"Thiện Trần",
+   "words":["Thiện","Trần"],
+   "weights":[2,2],
+   "hot":[0,1]}
+ ]
+}

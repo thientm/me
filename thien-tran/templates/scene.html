@@ -1,0 +1,569 @@
+<!doctype html><meta charset="utf-8">
+<title>Me Tech scene</title>
+<style>
+:root{
+  --ink:#050515;          /* nền đen xanh cyberpunk */
+  --paper:#E8ECF0;        /* chữ đã đọc — trắng xanh nhạt */
+  --ghost:rgba(232,236,240,.11);   /* chữ chưa đọc */
+  --ghost0:rgba(232,236,240,.56);  /* chữ chưa đọc Ở TRẠM ĐẦU */
+  --mute:#6b7280;
+  --now:#00FFCC;          /* cyan neon */
+  --was:#4A9EAF;          /* teal trước */
+}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink);
+  font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--paper);
+  -webkit-font-smoothing:antialiased}
+
+#plane{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;
+  background-image:radial-gradient(rgba(232,236,240,.12) 2px, transparent 2.1px);
+  background-size:60px 60px}
+#glow{position:absolute;left:0;top:0;width:1600px;height:1600px;margin:-800px 0 0 -800px;
+  pointer-events:none;will-change:transform,opacity;
+  background:radial-gradient(circle, rgba(0,255,204,.12), transparent 62%)}
+
+.st{position:absolute;will-change:opacity}
+.lab{font-size:23px;letter-spacing:.34em;font-weight:800;color:var(--now);
+  margin-bottom:28px;min-height:26px}
+/* Hình vẽ bằng nét — VẼ theo giọng, không phải ảnh dán vào.
+   Chỉ dùng hình tả đúng thứ đang nói. Không logo, không hình trang trí. */
+.ico{display:block;margin:0 0 26px;overflow:visible}
+.ico path,.ico circle,.ico rect,.ico line,.ico polyline{
+  fill:none;stroke:var(--now);stroke-width:5;
+  stroke-linecap:round;stroke-linejoin:round;
+  vector-effect:non-scaling-stroke}
+.ico .dim{stroke:var(--was)}
+.ico .fill{fill:var(--now);stroke:none}
+.line{font-weight:800;letter-spacing:-.022em;line-height:1.16}
+.line + .line{margin-top:26px}
+.w{display:inline-block;margin-right:.34em;position:relative;color:var(--ghost);transition:color 0.15s, text-shadow 0.15s}
+.w.on{color:var(--paper)}
+.w.hot.on{color:var(--now);text-shadow:0 0 25px rgba(0,255,204,0.5)}
+/* MÓC — hai giây đầu quyết định người xem ở lại hay lướt qua.
+   Ở các trạm sau, chữ chưa đọc mờ 11% là đúng: người xem đang NGHE, chữ chỉ
+   theo giọng. Nhưng ở trạm ĐẦU thì chưa có gì để nghe — người vừa lướt tới,
+   mắt đọc trước tai. Hiện từng chữ một ở đó nghĩa là hai giây đầu gần như
+   trống. Nên trạm đầu: CẢ CÂU đọc được ngay từ khung hình số 1, vệt vàng vẫn
+   chạy theo giọng để mắt biết đang tới đâu. */
+/* CHỈ chữ chưa đọc. `.st.hook .w` là BA lớp, đè cả `.w.on` lẫn `.w.hot.on`
+   — viết thiếu `:not(.on)` thì vệt vàng theo giọng tắt ngóm, cả câu xám đều. */
+.st.hook .w:not(.on){color:var(--ghost0)}
+.st.hook .lab{opacity:.55;font-size:21px}   /* nhãn nhường chỗ cho câu móc */
+.w i{position:absolute;left:0;bottom:-.08em;height:4px;width:0;
+  background:var(--now);display:block}
+.und{height:5px;background:var(--now);width:0;margin-top:30px}
+
+.dwrap{position:relative}
+.dwrap canvas{display:block}
+.dread{margin-top:26px;display:flex;align-items:baseline;gap:16px}
+.dread .big{font-size:120px;font-weight:800;letter-spacing:-.045em;line-height:1;
+  font-variant-numeric:tabular-nums}
+.dread .u{font-size:32px;font-weight:700;color:var(--mute)}
+.dleg{margin-top:8px;font-size:24px;font-weight:600;color:var(--mute)}
+
+.card{position:relative;width:830px}
+.card + .card{margin-top:54px}
+.card .n{font-size:26px;font-weight:800;letter-spacing:.26em;color:var(--now);
+  margin-bottom:18px}
+.card .t{font-size:62px;font-weight:800;letter-spacing:-.022em;line-height:1.1}
+.card .d{margin-top:16px;font-size:30px;font-weight:600;color:var(--mute);line-height:1.35}
+.card .bar{height:5px;background:var(--now);width:0;margin-top:20px}
+.card .line{font-size:34px;margin-top:24px;opacity:.85}
+
+/* Trạm dẫn nguồn: ảnh chụp CHÍNH TRANG GỐC, luôn kèm dòng ghi xuất xứ.
+   Không dùng cho ảnh trong bài báo — xem capture.py. */
+/* Ô KÍNH nhìn vào trang gốc. Ảnh chụp ở khổ ĐIỆN THOẠI (xem capture.py --phone)
+   nên dòng ngắn ~40 ký tự; đẩy vào đúng đoạn đang dẫn thì chữ đạt ~32px trong
+   khung — đọc được. Đưa cả trang khổ máy tính vào thì chữ chỉ còn 5px, là ảnh
+   trang trí chứ không phải trích dẫn. */
+.shotwrap{position:relative;width:830px}
+.shotview{position:relative;width:830px;height:430px;overflow:hidden;
+  border:3px solid rgba(0,255,204,.55);background:#F5F1E8}
+.shotinner{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+.shotinner img{display:block}
+.shotinner .hl{position:absolute;background:rgba(0,255,204,.20);
+  border-bottom:6px solid var(--now);width:0}
+.shotwrap .src{margin-top:14px;font-size:22px;font-weight:600;color:var(--mute);
+  letter-spacing:.04em}
+.shotwrap .src b{color:var(--now);font-weight:700}
+
+/* Chuỗi bước: mỗi hộp một chặng THẬT trong câu chuyện, sáng dần theo lời.
+   Dùng khi nội dung là "từ A sang B sang C" — đừng dùng để trang trí. */
+.flow{width:830px}
+.fnode{position:relative;border:3px solid rgba(245,241,232,.16);border-radius:6px;
+  padding:26px 30px;opacity:.22}
+.fnode.on{border-color:var(--now);opacity:1}
+.fnode .ft{font-size:46px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.fnode .fd{margin-top:10px;font-size:27px;font-weight:600;color:var(--mute);line-height:1.3}
+.farrow{height:52px;display:flex;align-items:center;justify-content:center;opacity:.22}
+.farrow.on{opacity:1}
+.farrow svg{width:34px;height:44px;overflow:visible}
+.farrow path{fill:none;stroke:var(--now);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+
+.outro{text-align:center}
+.outro .mark{font-size:132px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.outro .hd{margin-top:22px;font-size:28px;font-weight:600;letter-spacing:.1em;
+  color:var(--mute);display:flex;align-items:center;justify-content:center;gap:30px;}
+.outro .hd .soc{display:flex;align-items:center;gap:10px;}
+.outro .hd svg{width:28px;height:28px;fill:currentColor;}
+.outro canvas{position:absolute;left:50%;top:50%;margin:-450px 0 0 -450px;
+  pointer-events:none}
+
+#vig{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(138% 84% at 50% 47%, transparent 40%, rgba(14,13,11,.93) 100%)}
+.hud{position:absolute;font-size:22px;letter-spacing:.28em;font-weight:700;
+  color:rgba(245,241,232,.34)}
+/* VÙNG AN TOÀN 3 NỀN TẢNG: x 80–930 · y 250–1500. Mọi thứ phải nằm trong đây.
+   Trên y<250: logo/tab/search · dưới y>1500: caption+username · x>930 khi y>900: cột nút.
+   Đo ngày 19.09.2026 trên chính Short của kênh, không lấy theo blog. */
+#hudL{left:85px;top:276px}
+#hudR{right:85px;top:276px;color:rgba(245,241,232,.22)}
+#hudB{left:85px;top:318px;color:rgba(245,241,232,.20);font-size:20px}
+.prog{position:absolute;left:0;top:254px;height:5px;background:var(--now)}
+</style>
+<div id="stage">
+  <div id="plane"><div id="glow"></div></div>
+  <div id="vig"></div>
+  <div class="hud" id="hudL"></div>
+  <div class="hud" id="hudR"></div>
+  <div class="hud" id="hudB"></div>
+  <div class="prog" id="prog"></div>
+</div>
+<script src="deck.js"></script>
+<script src="data.js"></script>
+<script>
+const TL=window.TL, SEG=TL.segments, D=window.DECK, G=D.groups;
+const cl=(x,a,b)=>Math.min(b,Math.max(a,x));
+const ease=x=>1-Math.pow(1-x,3);
+const eSine=x=>-(Math.cos(Math.PI*x)-1)/2;
+const fmt=n=>(Math.round(n*10)/10).toFixed(1).replace('.',',');
+
+document.getElementById('hudL').textContent=D.brand;
+document.getElementById('hudR').textContent=D.date;
+document.getElementById('hudB').textContent=D.kicker;
+
+const plane=document.getElementById('plane'), glow=document.getElementById('glow');
+
+// ---- hình vẽ bằng nét: mỗi hình tả một thứ CÓ THẬT trong câu ----
+// Toạ độ trong khung 100×100. Chỉ hình vật thể chung, không bao giờ là logo.
+const ICON={
+  chip:'<rect x="26" y="26" width="48" height="48" rx="4"/><rect x="40" y="40" width="20" height="20"/>'+
+       '<line x1="38" y1="16" x2="38" y2="26"/><line x1="50" y1="16" x2="50" y2="26"/><line x1="62" y1="16" x2="62" y2="26"/>'+
+       '<line x1="38" y1="74" x2="38" y2="84"/><line x1="50" y1="74" x2="50" y2="84"/><line x1="62" y1="74" x2="62" y2="84"/>'+
+       '<line x1="16" y1="38" x2="26" y2="38"/><line x1="16" y1="50" x2="26" y2="50"/><line x1="16" y1="62" x2="26" y2="62"/>'+
+       '<line x1="74" y1="38" x2="84" y2="38"/><line x1="74" y1="50" x2="84" y2="50"/><line x1="74" y1="62" x2="84" y2="62"/>',
+  lock:'<rect x="24" y="46" width="52" height="38" rx="6"/><path d="M36 46V34a14 14 0 0 1 28 0v12"/><circle cx="50" cy="65" r="5" class="fill"/>',
+  key:'<circle cx="34" cy="50" r="15"/><line x1="49" y1="50" x2="84" y2="50"/><line x1="72" y1="50" x2="72" y2="62"/><line x1="82" y1="50" x2="82" y2="60"/>',
+  eye:'<path d="M10 50s16-22 40-22 40 22 40 22-16 22-40 22S10 50 10 50z"/><circle cx="50" cy="50" r="11"/>',
+  spread:'<circle cx="20" cy="50" r="9"/><circle cx="80" cy="22" r="7"/><circle cx="80" cy="50" r="7"/><circle cx="80" cy="78" r="7"/>'+
+         '<path d="M29 50h14"/><path d="M43 50c14 0 16-28 30-28"/><path d="M43 50h30"/><path d="M43 50c14 0 16 28 30 28"/>',
+  doc:'<path d="M28 14h30l16 16v56a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4z"/><path d="M58 14v16h16"/>'+
+      '<line x1="36" y1="48" x2="64" y2="48"/><line x1="36" y1="60" x2="64" y2="60"/><line x1="36" y1="72" x2="54" y2="72"/>',
+  clock:'<circle cx="50" cy="50" r="34"/><path d="M50 30v22l15 9"/>',
+  warn:'<path d="M50 16 88 80H12z"/><line x1="50" y1="42" x2="50" y2="60"/><circle cx="50" cy="70" r="3.5" class="fill"/>',
+  model:'<rect x="22" y="30" width="56" height="44" rx="8"/><circle cx="39" cy="50" r="5" class="fill"/><circle cx="61" cy="50" r="5" class="fill"/>'+
+        '<line x1="50" y1="18" x2="50" y2="30"/><circle cx="50" cy="15" r="4"/>',
+  building:'<rect x="24" y="28" width="52" height="58" rx="3"/><line x1="36" y1="42" x2="44" y2="42"/><line x1="56" y1="42" x2="64" y2="42"/>'+
+           '<line x1="36" y1="56" x2="44" y2="56"/><line x1="56" y1="56" x2="64" y2="56"/><line x1="44" y1="86" x2="44" y2="70"/><line x1="56" y1="86" x2="56" y2="70"/><path d="M44 70h12"/>',
+  question:'<circle cx="50" cy="50" r="34"/><path d="M40 40a10 10 0 1 1 13 10c-2 1-3 3-3 6"/><circle cx="50" cy="68" r="3.5" class="fill"/>',
+  chat:'<path d="M18 26h64a4 4 0 0 1 4 4v34a4 4 0 0 1-4 4H44L26 84V68h-8a4 4 0 0 1-4-4V30a4 4 0 0 1 4-4z"/>'+
+       '<circle cx="36" cy="47" r="3.5" class="fill"/><circle cx="50" cy="47" r="3.5" class="fill"/><circle cx="64" cy="47" r="3.5" class="fill"/>',
+  stop:'<circle cx="50" cy="50" r="32"/><line x1="38" y1="38" x2="62" y2="62"/>',
+  bolt:'<path d="M56 12 28 56h18l-6 32 30-46H52z"/>'
+};
+function drawIcon(name, size){
+  const d=ICON[name]; if(!d) return null;
+  const sv=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  sv.setAttribute('class','ico');
+  sv.setAttribute('viewBox','0 0 100 100');
+  sv.setAttribute('width',size); sv.setAttribute('height',size);
+  sv.innerHTML=d;
+  return sv;
+}
+// Đo SAU khi đã gắn vào trang: getTotalLength ném lỗi trên phần tử chưa render.
+function measureIcon(sv){
+  sv.querySelectorAll('*').forEach(e=>{
+    if(e.classList.contains('fill')) return;
+    let L=120;
+    try{ if(e.getTotalLength) L=e.getTotalLength()||120; }catch(_){}
+    e.dataset.len=L;
+    e.style.strokeDasharray=L; e.style.strokeDashoffset=L;
+  });
+}
+
+// ---- chữ ăn theo giọng: xương sống, có mặt ở mọi chế độ ----
+function words(si, size, from, to){
+  const seg=SEG[si], hot=new Set(D.hot[si]||[]);
+  from=from||0; to=(to===undefined)?seg.words.length:to;
+  const d=document.createElement('div');
+  d.className='line'; d.style.fontSize=size+'px';
+  d.dataset.from=from; d.dataset.seg=si;
+  for(let k=from;k<to;k++){
+    const e=document.createElement('span');
+    e.className='w'+(hot.has(k)?' hot':'');
+    e.innerHTML=seg.words[k].w+'<i></i>';
+    d.appendChild(e);
+  }
+  return d;
+}
+const LIT=[];                                   // mọi dòng chữ cần bật sáng
+function lit(node){ LIT.push(node); return node; }
+function litAll(t){
+  for(const n of LIT){
+    const seg=SEG[+n.dataset.seg], from=+n.dataset.from;
+    for(let j=0;j<n.children.length;j++){
+      // chữ chạy TRƯỚC giọng một chút: đi sau thì thấy hỏng, đi trước thì thấy tự nhiên
+      const w=seg.words[from+j], sp=n.children[j], wa=w.a-0.08;
+      const on=t>=wa;
+      sp.classList.toggle('on',on);
+      const r=cl((t-wa)/Math.max(w.b-wa,.08),0,1);
+      sp.firstElementChild.style.width=(on&&r<1? r*100:0)+'%';
+    }
+  }
+}
+
+// cỡ chữ theo độ dài câu VÀ số câu trong trạm — trạm ba dòng thì chữ phải nhỏ lại
+function sayFont(si, lines){
+  const n=SEG[si].plain.length;
+  const base = n>52?68 : n>38?80 : n>26?92 : 104;
+  return Math.round(base * (lines>=3 ? 0.62 : lines===2 ? 0.78 : 1));
+}
+
+// ---- dựng các trạm: mỗi group một trạm, xếp so le trên mặt phẳng ----
+const STEP_Y=1500, X_ODD=150, X_EVEN=210;
+const PW=2400, PH=400+G.length*STEP_Y+800;
+plane.style.width=PW+'px'; plane.style.height=PH+'px';
+
+const ST=[];
+G.forEach((g,gi)=>{
+  const el=document.createElement('div');
+  el.className='st'+(g.mode==='outro'?' outro':'')+(gi===0?' hook':'');
+  const x=(gi%2===0)?X_ODD:X_EVEN, y=340+gi*STEP_Y;
+  el.style.left=x+'px'; el.style.top=y+'px';
+  el.style.width='830px';          // 850 an toàn − 10px hở mỗi bên
+  plane.appendChild(el);
+
+  if(g.icon && g.mode!=='outro'){
+    const sv=drawIcon(g.icon, 132);
+    if(sv) el.appendChild(sv);
+  }
+  if(g.lab && g.mode!=='outro')
+    el.insertAdjacentHTML('beforeend','<div class="lab">'+g.lab+'</div>');
+
+  const rec={el, g, gi, x, y, bars:[], und:null, cards:[], ico:el.querySelector('.ico')};
+  if(rec.ico) measureIcon(rec.ico);
+
+  if(g.mode==='say'){
+    g.segs.forEach(si=>el.appendChild(lit(words(si, sayFont(si, g.segs.length)))));
+    el.insertAdjacentHTML('beforeend','<div class="und"></div>');
+    rec.und=el.querySelector('.und');
+
+  }else if(g.mode==='data'){
+    el.insertAdjacentHTML('beforeend',
+      '<div class="dwrap"><canvas class="grid" width="840" height="560"></canvas>'+
+      '<div class="dread"><span class="big">0,0</span>'+
+      '<span class="u">'+(D.data.suffix||'')+'</span></div>'+
+      '<div class="dleg"></div></div>');
+    g.segs.forEach(si=>el.appendChild(lit(words(si, 44))));
+    rec.grid=el.querySelector('.grid').getContext('2d');
+    rec.big=el.querySelector('.big'); rec.leg=el.querySelector('.dleg');
+
+  }else if(g.mode==='step'){
+    const sp=g.splitAt, seg0=g.segs[0], w=SEG[seg0].words.length;
+    (g.cards||[]).forEach((c,i)=>{
+      const cd=document.createElement('div'); cd.className='card';
+      cd.innerHTML='<div class="n">'+c.n+'</div><div class="t">'+c.t+'</div>'+
+                   '<div class="d">'+(c.d||'')+'</div><div class="bar"></div>';
+      // thẻ nào mang chữ nấy: hoặc theo câu riêng, hoặc cắt một câu tại splitAt
+      if(g.segs.length>1 && g.segs[i]!==undefined) cd.appendChild(lit(words(g.segs[i],34)));
+      else if(sp!==null && sp!==undefined) cd.appendChild(lit(words(seg0,34, i===0?0:sp, i===0?sp:w)));
+      el.appendChild(cd);
+      rec.cards.push({el:cd, bar:cd.querySelector('.bar')});
+    });
+    // MỤC LỤC (điểm tin nhanh): nhiều thẻ nhưng chỉ MỘT câu và không splitAt.
+    // Câu đó nói về cả cụm, không thuộc thẻ nào — cho nó một dòng riêng dưới
+    // các thẻ, và các thẻ sáng lên đều tay theo thời lượng câu.
+    rec.index = (g.segs.length===1 && (sp===null||sp===undefined) && rec.cards.length>1);
+    if(rec.index) el.appendChild(lit(words(seg0, 40)));
+
+  }else if(g.mode==='shot'){
+    const hl=g.hl ? '<div class="hl" style="left:'+g.hl[0]+'px;top:'+g.hl[1]+
+                    'px;height:'+g.hl[3]+'px" data-w="'+g.hl[2]+'"></div>' : '';
+    el.insertAdjacentHTML('beforeend',
+      '<div class="shotwrap"><div class="shotview"><div class="shotinner">'+
+      '<img src="'+g.shot+'" alt="">'+hl+'</div></div>'+
+      '<div class="src"><b>Nguồn:</b> '+(g.src||'')+'</div></div>');
+    g.segs.forEach(si=>el.appendChild(lit(words(si, 40))));
+    rec.inner=el.querySelector('.shotinner');
+    rec.hl=el.querySelector('.hl');
+    rec.view=g.view; rec.focus=g.focus;
+
+  }else if(g.mode==='flow'){
+    const fw=document.createElement('div'); fw.className='flow';
+    (g.nodes||[]).forEach((nd,i)=>{
+      if(i) fw.insertAdjacentHTML('beforeend',
+        '<div class="farrow"><svg viewBox="0 0 34 44"><path d="M17 2v34M6 27l11 11 11-11"/></svg></div>');
+      fw.insertAdjacentHTML('beforeend',
+        '<div class="fnode"><div class="ft">'+nd.t+'</div>'+
+        (nd.d?'<div class="fd">'+nd.d+'</div>':'')+'</div>');
+    });
+    el.appendChild(fw);
+    g.segs.forEach(si=>el.appendChild(lit(words(si, 34))));
+    rec.fnodes=[...fw.querySelectorAll('.fnode')];
+    rec.farrows=[...fw.querySelectorAll('.farrow')];
+
+  }else{  // outro — cảnh kết dùng chung, không bao giờ đổi
+    el.insertAdjacentHTML('beforeend','<canvas class="ring" width="900" height="900"></canvas>');
+    const m=lit(words(g.segs[0],132)); m.classList.add('mark'); el.appendChild(m);
+    
+    const ICONS = {
+      facebook: '<svg viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>',
+      tiktok: '<svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 15.68a6.34 6.34 0 0 0 6.27 6.28A6.34 6.34 0 0 0 15.82 17V8.58a8.31 8.31 0 0 0 4.24 1.25V6.4a5.1 5.1 0 0 1-1.47.29z"/></svg>',
+      youtube: '<svg viewBox="0 0 24 24"><path d="M21.582 6.186a2.686 2.686 0 0 0-1.884-1.895C17.986 3.85 12 3.85 12 3.85s-5.986 0-7.698.441a2.686 2.686 0 0 0-1.884 1.895C2 7.9 2 12 2 12s0 4.1.418 5.814a2.686 2.686 0 0 0 1.884 1.895C6.014 20.15 12 20.15 12 20.15s5.986 0 7.698-.441a2.686 2.686 0 0 0 1.884-1.895C22 16.1 22 12 22 12s0-4.1-.418-5.814zM9.99 15.422V8.578L15.935 12l-5.945 3.422z"/></svg>'
+    };
+    
+    let hdHtml = '';
+    if (D.outro.socials) {
+      hdHtml = D.outro.socials.map(s => `<div class="soc">${ICONS[s.platform] || ''} <span>${s.handle}</span></div>`).join('');
+    } else {
+      hdHtml = D.outro.handle || '';
+    }
+    el.insertAdjacentHTML('beforeend',`<div class="hd">${hdHtml}</div>`);
+    rec.ring=el.querySelector('.ring').getContext('2d');
+  }
+  ST.push(rec);
+});
+// Xếp lại theo chiều cao THẬT của từng trạm, chừa khoảng đủ rộng để khi máy quay
+// dừng ở trạm này thì trạm bên cạnh nằm ngoài khung. Zoom cũng theo chiều cao:
+// trạm ba dòng tự lùi ra, trạm một dòng tự tiến vào — khung hình luôn đầy vừa phải.
+const GAP_Y=980, FIT=1150;   // dải cho nội dung: y 350→1500 (dưới dòng thương hiệu)
+let cur=340;
+ST.forEach(r=>{
+  const h=r.el.offsetHeight;
+  r.y=cur; r.el.style.top=cur+'px';
+  const w=r.el.offsetWidth;
+  r.cy=cur+h/2; r.cx=r.x+w/2;
+  // zoom bị chặn cả bởi chiều cao lẫn chiều ngang — phóng quá là chữ bị cắt mép
+  r.wmax=830/w;                  // phóng to quá là chữ chui dưới cột nút phải
+  r.zoom=cl(Math.min(FIT/Math.max(h,320), r.wmax), 0.58, 1.05);
+  cur += h + GAP_Y;
+});
+plane.style.height=(cur+600)+'px';
+
+// ---- lưới số liệu: số nói bằng hình, mỗi ô là một đơn vị thật ----
+const DD=D.data||{};
+const COLS=20, CW=41, CH=44, SQ=32, GX=2, GY=6, PARK_Y=506;   // 20×41=820 ≤ 830
+const gp=i=>[GX+(i%COLS)*CW, GY+((i/COLS)|0)*CH];
+const pk=k=>[GX+(k%74)*11.3, PARK_Y+((k/74)|0)*22];
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const HUE={now:'#FFAE2B', was:'#7E9A87'};
+const wordAt=a=>SEG[a[0]].words[a[1]];
+
+function dataState(t){
+  let from=0, cur=0, col='now', leg='', peak=0;
+  for(const s of (DD.stages||[])){
+    const w=wordAt(s.at), A=w.a, B=w.b+0.30;
+    const p=eio(cl((t-A)/Math.max(B-A,.2),0,1));
+    cur=from+(s.fill-from)*p;
+    if(t>=A) { col=s.color||'now'; leg=s.label||''; }
+    // peak chỉ tính các mốc ĐÃ chạy xong. Tính cả mốc đang chạy thì mọi ô
+    // chưa tô đều bị vẽ thành "ô bị loại đang bay đi" — lúc đếm lên nhìn như hỏng.
+    peak=Math.max(peak, from);
+    if(p<1) break;
+    from=s.fill;
+    peak=Math.max(peak, s.fill);
+  }
+  return {cur, col, leg, peak:Math.max(peak,cur)};
+}
+
+function drawData(rec,t){
+  const g=rec.grid, S=dataState(t), shown=Math.round(S.cur);
+  g.clearRect(0,0,840,560);
+  g.strokeStyle='rgba(245,241,232,.09)'; g.lineWidth=1;
+  for(let i=0;i<DD.cells;i++){ const [x,y]=gp(i); g.strokeRect(x+.5,y+.5,SQ,SQ); }
+
+  for(let i=0;i<DD.cells;i++){
+    const [gx,gy]=gp(i);
+    if(i<shown){ g.globalAlpha=1; g.fillStyle=HUE[S.col]; g.fillRect(gx,gy,SQ,SQ); continue; }
+    if(i>=S.peak) continue;
+    const p=cl((i-S.cur)/26,0,1);            // ô vừa bị bỏ đi thì đang bay xuống
+    const [sx,sy]=pk(i-shown);
+    const x=gx+(sx-gx)*p, y=gy+(sy-gy)*p, s=SQ+(7-SQ)*p;
+    g.globalAlpha=1-0.42*p; g.fillStyle=HUE.was; g.fillRect(x,y,s,s);
+  }
+  g.globalAlpha=1;
+  if(DD.parkLabel && S.peak>shown+2){
+    g.fillStyle='rgba(126,154,135,.6)';
+    g.font='600 21px "Be Vietnam Pro", sans-serif';
+    g.fillText(DD.parkLabel, GX, PARK_Y-16);
+  }
+  // đơn vị nguyên (việc làm, người, con chip) thì không hiện số lẻ
+  const v=S.cur*(DD.unit||1);
+  rec.big.textContent=Number.isInteger(DD.unit||1)
+    ? Math.round(v).toLocaleString('vi-VN') : fmt(v);
+  rec.big.style.color=HUE[S.col];
+  rec.leg.textContent=[S.leg, DD.unitLabel].filter(Boolean).join(' · ');
+}
+
+// ---- cảnh kết: vòng sóng nở theo đúng tiếng chuông ----
+const OUTRO_A=SEG[SEG.length-1].start, CHIME=OUTRO_A-0.30;
+function drawRing(rec,t){
+  const g=rec.ring; g.clearRect(0,0,900,900);
+  for(let k=0;k<2;k++){
+    const p=cl((t-CHIME-k*0.17)/1.5,0,1);
+    if(p<=0||p>=1) continue;
+    const e=1-Math.pow(1-p,2.4);
+    g.strokeStyle='rgba(255,174,43,'+(0.55*(1-p)).toFixed(3)+')';
+    g.lineWidth=5-3.2*p;
+    g.beginPath(); g.arc(450,450,50+e*390,0,7); g.stroke();
+  }
+}
+
+// ---- máy quay: mỗi trạm một điểm dừng ----
+// Tốc độ giữ quanh 1.150 px/giây và vào–ra bằng nhịp sin, nên không nhức mắt.
+// Đây là con số đã chốt: đừng tăng lên cho "đỡ sốt ruột".
+const SPEED=1150, MV_MIN=0.85, MV_MAX=1.80;
+// LUẬT CỨNG: không bao giờ rời một trạm trước khi chữ cuối của nó đã sáng xong
+// và đứng yên đủ HOLD giây để đọc. Thà tới trạm sau muộn còn hơn cắt mất đuôi câu.
+const HOLD=0.40;
+const lastWordEnd=r=>{
+  const s=SEG[r.g.segs[r.g.segs.length-1]];
+  return s.words[s.words.length-1].b;
+};
+
+const KEY=[];
+ST.forEach((r,i)=>{
+  const first=SEG[r.g.segs[0]];
+  const cam={x:r.cx, y:r.cy, s:r.zoom};
+  if(i===0){ KEY.push({s0:0, s1:Math.max(first.start-0.15, 0.2), c:cam}); }
+  else{
+    const prev=KEY[KEY.length-1];
+    const dist=Math.hypot(cam.x-prev.c.x, cam.y-prev.c.y);
+    const mv=cl(dist/SPEED, MV_MIN, MV_MAX);
+    const want=first.start-0.15-mv;             // lý tưởng: tới ngay trước câu sau
+    const s0=Math.max(want, lastWordEnd(ST[i-1])+HOLD, prev.s1);
+    KEY.push({s0, s1:s0+mv, c:cam});
+  }
+  // trạm số liệu: đẩy chậm vào đúng lúc con số cuối được đọc
+  if(r.g.mode==='data' && (DD.stages||[]).length){
+    const last=DD.stages[DD.stages.length-1], prev=KEY[KEY.length-1];
+    const s0=Math.max(wordAt(last.at).a-0.55, prev.s1);
+    KEY.push({s0, s1:s0+1.80,
+              c:{x:r.cx, y:r.cy-30, s:Math.min(r.zoom*1.09, r.wmax)}});
+  }
+});
+// lúc trạm thứ i bắt đầu bị bỏ lại — dùng cho cả việc mờ dần
+ST.forEach((r,i)=>{ r.leave = (i+1<ST.length)
+  ? KEY.find(k=>k.c.x===ST[i+1].cx && k.c.y===ST[i+1].cy).s0 : TL.total; });
+
+function camAt(t){
+  let a=KEY[0].c, b=KEY[0].c, p=1;
+  for(let i=1;i<KEY.length;i++){
+    if(t>=KEY[i].s0){ a=KEY[i-1].c; b=KEY[i].c;
+      p=eSine(cl((t-KEY[i].s0)/Math.max(KEY[i].s1-KEY[i].s0,.01),0,1)); }
+  }
+  return {x:a.x+(b.x-a.x)*p, y:a.y+(b.y-a.y)*p, s:a.s+(b.s-a.s)*p};
+}
+
+const prog=document.getElementById('prog');
+const N=SEG.length;
+
+window.seek=function(t){
+  const c=camAt(t);
+  const dx=Math.sin(t*0.26)*7, dy=Math.cos(t*0.19)*5;   // trôi rất nhẹ, không chết cứng
+  const s=c.s*(1+Math.sin(t*0.16)*0.0022);
+  // Neo vào tâm DẢI NỘI DUNG (505, 925) — không phải tâm khung (540, 960),
+  // cũng không phải tâm vùng an toàn (505, 875): dòng thương hiệu + kicker nằm
+  // ở y 276–345, neo cao hơn thì đầu trạm đè lên nó, chữ chồng chữ.
+  plane.style.transform='translate('+(505-c.x*s+dx).toFixed(2)+'px,'
+    +(925-c.y*s+dy).toFixed(2)+'px) scale('+s.toFixed(4)+')';
+  glow.style.transform='translate('+c.x.toFixed(0)+'px,'+c.y.toFixed(0)+'px)';
+  glow.style.opacity=(0.62+0.30*Math.sin(t*0.55)).toFixed(3);
+
+  litAll(t);
+
+  ST.forEach(r=>{
+    const segs=r.g.segs;
+    const a=SEG[segs[0]].start-0.95;
+    const last=segs[segs.length-1];
+    // chỉ mờ đi khi máy quay thật sự bắt đầu rời trạm, không mờ theo mốc cứng
+    // TRẠM ĐẦU không có nhịp hiện ra: người vừa lướt tới, khung hình đầu tiên
+    // phải đã đọc được. Hiện dần ở đây = vứt đi nửa giây đắt nhất của clip.
+    const near=(r.gi===0?1:cl((t-a)/0.75,0,1))*(1-cl((t-r.leave)/0.75,0,1));
+    r.el.style.opacity=(0.13+0.87*near).toFixed(3);
+
+    if(r.und){
+      const g0=SEG[segs[0]], g1=SEG[last];
+      r.und.style.width=(ease(cl((t-g0.start)/Math.max(g1.end-g0.start,.1),0,1))*830).toFixed(0)+'px';
+    }
+    if(r.ico){
+      // nét vẽ chạy trong 0,7 giây ngay trước chữ đầu tiên — hình xong thì lời tới
+      const a=SEG[segs[0]].start-0.55;
+      const p=ease(cl((t-a)/0.70,0,1));
+      r.ico.querySelectorAll('*').forEach(e=>{
+        if(e.classList.contains('fill')){ e.style.opacity=(p>0.85?(p-0.85)/0.15:0).toFixed(3); return; }
+        e.style.strokeDashoffset=((+e.dataset.len)*(1-p)).toFixed(1);
+      });
+    }
+    if(r.inner){
+      // Hai nhịp: (1) mở ra cả trang để thấy đây là trang thật,
+      //           (2) đẩy vào đúng đoạn đang dẫn cho đọc được.
+      const VW=830, VH=430;
+      const a0=SEG[segs[0]].start-0.35;                 // bắt đầu mở
+      const a1=SEG[segs.length>1?segs[1]:segs[0]].start-0.25;  // bắt đầu đẩy vào
+      const fit=rc=>{ const s=Math.min(VW/rc[2], VH/rc[3]);
+                      return {s, x:-rc[0]*s+(VW-rc[2]*s)/2, y:-rc[1]*s+(VH-rc[3]*s)/2}; };
+      const A=fit(r.view||[0,0,1290,668]), B=fit(r.focus||r.view||[0,0,1290,668]);
+      const p=eSine(cl((t-a1)/1.30,0,1));
+      const s=A.s+(B.s-A.s)*p, x=A.x+(B.x-A.x)*p, y=A.y+(B.y-A.y)*p;
+      r.inner.style.transform='translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px) scale('+s.toFixed(4)+')';
+      const op=ease(cl((t-a0)/0.55,0,1));
+      r.inner.parentElement.style.opacity=op.toFixed(3);
+      if(r.hl){
+        // vệt tô sáng chạy qua dòng then chốt, chỉ sau khi đã đẩy vào xong
+        const q=ease(cl((t-a1-1.30)/0.70,0,1));
+        r.hl.style.width=(q*(+r.hl.dataset.w)).toFixed(0)+'px';
+      }
+    }
+    if(r.fnodes){
+      // chia đều các chặng trong khoảng thời gian trạm đang nói
+      const s0=SEG[segs[0]].start, s1=SEG[segs[segs.length-1]].end;
+      const n=r.fnodes.length, step=(s1-s0)/Math.max(n,1);
+      r.fnodes.forEach((e,i)=>{
+        e.classList.toggle('on', t>=s0+step*i-0.20);
+        if(i) r.farrows[i-1].classList.toggle('on', t>=s0+step*i-0.45);
+      });
+    }
+    if(r.grid) drawData(r,t);
+    if(r.ring) drawRing(r,t);
+
+    // hai thẻ bước cùng khung: chuyển chú ý bằng độ sáng, máy quay đứng yên
+    r.cards.forEach((cd,i)=>{
+      const sp=r.g.splitAt, s0=SEG[segs[0]];
+      let A,B;
+      if(segs.length>1 && segs[i]!==undefined){ A=SEG[segs[i]].start; B=SEG[segs[i]].end; }
+      else if(r.index){
+        // mục lục: chia đều thời lượng câu cho các thẻ — không có splitAt để bám
+        const d=(s0.end-s0.start)/r.cards.length;
+        A=s0.start+d*i; B=A+d;
+      }
+      else { A=i===0?s0.words[0].a:s0.words[sp].a;
+             B=i===0?s0.words[sp-1].b:s0.words[s0.words.length-1].b; }
+      const nxt=(i<r.cards.length-1)
+        ? (segs.length>1&&segs[i+1]!==undefined ? SEG[segs[i+1]].start
+           : r.index ? B : s0.words[sp].a)
+        : 1e9;
+      const on=cl((t-A+0.7)/0.6,0,1)*(1-cl((t-nxt+0.15)/0.6,0,1)*0.62);
+      // Thẻ bước: thẻ chưa tới thì mờ hẳn, vì người xem chỉ cần nhìn một thẻ.
+      // MỤC LỤC thì ngược lại — cả ba tiêu đề phải đọc được ngay giây đầu,
+      // đó chính là lý do người ta ở lại xem. Nên sàn 0,62 thay vì 0,30.
+      const floor=r.index?0.62:0.30;
+      cd.el.style.opacity=(floor+(1-floor)*on).toFixed(3);
+      cd.bar.style.width=(ease(cl((t-A)/Math.max(B-A,.1),0,1))*760).toFixed(0)+'px';
+    });
+  });
+
+  prog.style.width=(t/TL.total*1080).toFixed(1)+'px';
+};
+window.seek(0);
+</script>

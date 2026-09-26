@@ -1,0 +1,80 @@
+{
+ "slug": "deepseek",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "AI INSIGHT · 26.09.2026",
+ "date": "26.09.2026",
+ "hook": 2,
+ "speed": 1.2,
+ "gap": 0.20,
+ "lead_in": 0.30,
+ "tail": 1.80,
+ "outro": {
+   "mark": "Thiện Trần",
+   "socials": [
+     {"platform": "facebook", "handle": "/thientm"},
+     {"platform": "tiktok", "handle": "/thientranx"},
+     {"platform": "youtube", "handle": "/thientm"}
+   ]
+ },
+
+ "segments": [
+  {"id":"hook","group":"g1","mode":"say","lab":"GÓC NHÌN",
+   "say":"Kỷ nguyên đốt tiền làm ây ai vừa bị dập tắt.",
+   "plain":"Kỷ nguyên đốt tiền làm AI vừa bị dập tắt",
+   "words":["Kỷ","nguyên","đốt","tiền","làm","AI","vừa","bị","dập","tắt"],
+   "weights":[1,1,2,2,1,2,1,1,2,2],
+   "hot":[2,3,5,8,9]},
+
+  {"id":"m1","group":"g2","mode":"shot","lab":"CON SỐ",
+   "say":"Mô hình đíp sít vừa chứng minh chỉ cần sáu triệu đô.",
+   "plain":"Mô hình DeepSeek vừa chứng minh chỉ cần 6 triệu đô",
+   "words":["Mô","hình","DeepSeek","vừa","chứng","minh","chỉ","cần","6","triệu","đô"],
+   "weights":[1,1,2,1,1,1,1,1,2,2,1],
+   "hot":[2,8,9,10],
+   "shot":"deepseek-cost.png","src":"TechCrunch · Báo cáo AI",
+   "box":[130, 20, 260, 580], "zoom":1.0, "pan":[0, 0]},
+
+  {"id":"m2","group":"g2","mode":"shot",
+   "say":"Trong khi các ông lớn tiêu tốn hàng trăm triệu đô.",
+   "plain":"Trong khi các ông lớn tiêu tốn hàng trăm triệu đô",
+   "words":["Trong","khi","các","ông","lớn","tiêu","tốn","hàng","trăm","triệu","đô"],
+   "weights":[1,1,1,1,2,1,1,1,2,2,1],
+   "hot":[4,8,9,10]},
+
+  {"id":"m3","group":"g3","mode":"say","lab":"BẢN CHẤT",
+   "say":"Bí mật nằm ở kiến trúc tối ưu chứ không phải số lượng chip.",
+   "plain":"Bí mật nằm ở kiến trúc tối ưu chứ không phải số lượng chip",
+   "words":["Bí","mật","nằm","ở","kiến","trúc","tối","ưu","chứ","không","phải","số","lượng","chip"],
+   "weights":[1,1,1,1,2,2,2,2,1,1,1,1,1,2],
+   "hot":[4,5,6,7,13]},
+
+  {"id":"m4","group":"g4","mode":"say","lab":"TÁC ĐỘNG",
+   "say":"Điều này có nghĩa chi phí dùng ây ai sẽ rẻ đi gấp mười lần.",
+   "plain":"Điều này có nghĩa chi phí dùng AI sẽ rẻ đi gấp 10 lần",
+   "words":["Điều","này","có","nghĩa","chi","phí","dùng","AI","sẽ","rẻ","đi","gấp","10","lần"],
+   "weights":[1,1,1,1,1,1,1,2,1,2,1,1,2,1],
+   "hot":[7,9,12,13]},
+
+  {"id":"m5","group":"g5","mode":"say","lab":"CƠ HỘI",
+   "say":"Lập trình viên và doanh nghiệp nhỏ nay đã có thể tự làm chủ.",
+   "plain":"Lập trình viên và doanh nghiệp nhỏ nay đã có thể tự làm chủ",
+   "words":["Lập","trình","viên","và","doanh","nghiệp","nhỏ","nay","đã","có","thể","tự","làm","chủ"],
+   "weights":[2,2,2,1,2,2,1,1,1,1,1,2,2,2],
+   "hot":[0,1,2,4,5,11,12,13]},
+
+  {"id":"m6","group":"g6","mode":"say","lab":"KẾT LUẬN",
+   "say":"Cuộc đua tới đây sẽ thuộc về ai tạo ra giá trị thực tế.",
+   "plain":"Cuộc đua tới đây sẽ thuộc về ai tạo ra giá trị thực tế",
+   "words":["Cuộc","đua","tới","đây","sẽ","thuộc","về","ai","tạo","ra","giá","trị","thực","tế"],
+   "weights":[1,2,1,1,1,1,1,1,1,1,2,2,2,2],
+   "hot":[1,10,11,12,13]},
+
+  {"id":"outro","group":"g7","mode":"outro",
+   "say":"Thiện Trần.",
+   "plain":"Thiện Trần",
+   "words":["Thiện","Trần"],
+   "weights":[2,2],
+   "hot":[0,1]}
+ ]
+}

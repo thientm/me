@@ -1,0 +1,44 @@
+{
+ "slug": "demo_ai",
+ "voice": "Adam bựa",
+ "brand": "ME BRAND",
+ "kicker": "AI MỚI · 26.09.2026",
+ "date": "26.09.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.40,
+ "tail": 2.20,
+ "outro": {"mark": "Me Brand", "handle": "mebrand"},
+
+ "segments": [
+  {"id":"hook","group":"g1","mode":"say","lab":"TIN CHÍNH",
+   "say":"Dự án bí mật tỷ đô của ô-pân ây-ai.",
+   "plain":"Dự án bí mật tỷ đô của OpenAI",
+   "words":["Dự","án","bí","mật","tỷ","đô","của","OpenAI"],
+   "weights":[1,1,3,3,5,5,1,1],
+   "hot":[2,3,4,5]},
+
+  {"id":"m1","group":"g2","mode":"shot",
+   "shot":"reuters-stargate.png",
+   "src":"Reuters",
+   "say":"Họ lên kế hoạch xây dựng một siêu máy tính một trăm tỷ đô la.",
+   "plain":"Họ lên kế hoạch xây dựng siêu máy tính 100 tỷ USD",
+   "words":["Họ","lên","kế","hoạch","xây","dựng","siêu","máy","tính","100","tỷ","USD"],
+   "weights":[1,1,1,1,1,1,3,3,3,4,4,1],
+   "hot":[9,10]},
+   
+  {"id":"m2","group":"g2","mode":"shot",
+   "say":"Dự án mang tên mã là Sờ-ta-gết.",
+   "plain":"Dự án mang tên mã là Stargate",
+   "words":["Dự","án","mang","tên","mã","là","Stargate"],
+   "weights":[1,1,1,1,1,1,5],
+   "hot":[6]},
+
+  {"id":"outro","group":"g3","mode":"outro",
+   "say":"Theo dõi kênh mi bơ ran.",
+   "plain":"Theo dõi kênh Me Brand",
+   "words":["Theo","dõi","kênh","Me","Brand"],
+   "weights":[1,1,1,2,2],
+   "hot":[3,4]}
+ ]
+}
