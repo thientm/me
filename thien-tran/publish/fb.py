@@ -77,33 +77,7 @@ if DRAFT:
 else:
     pub_btn = p.get_by_role("button", name=re.compile(r"^(Post|Publish|Đăng)$", re.I)).first
     if pub_btn.is_visible() and pub_btn.is_enabled():
-        
-    # TỰ ĐỘNG CHUYỂN SANG PUBLIC (CÔNG KHAI) NẾU ĐANG LÀ ONLY ME/FRIENDS
-    print("🔍 Đang kiểm tra quyền riêng tư (Audience)...")
-    try:
-        # Tìm nút có chữ Only me hoặc Friends
-        audience_btn = p.locator('div[role="button"]').filter(has_text=re.compile(r"^(Only me|Chỉ mình tôi|Friends|Bạn bè)\s*(Only me|Chỉ mình tôi|Friends|Bạn bè)$", re.I)).first
-        if audience_btn.is_visible():
-            print("🔒 Phát hiện đang ở chế độ rêng tư, tiến hành mở Public...")
-            audience_btn.click()
-            p.wait_for_timeout(1500)
-            
-            # Chọn Public
-            public_opt = p.locator('div[role="radio"]').filter(has_text=re.compile(r"Public|Công khai", re.I)).first
-            if public_opt.is_visible():
-                public_opt.click()
-                p.wait_for_timeout(1000)
-            
-            # Lưu lại
-            save_btn = p.get_by_role("button", name=re.compile(r"Save|Lưu", re.I)).first
-            if save_btn.is_visible():
-                save_btn.click()
-                p.wait_for_timeout(1500)
-                print("✅ Đã chuyển thành công sang Public!")
-    except Exception as e:
-        print("⚠️ Không thể đổi quyền Public tự động (Có thể nó đã là Public sẵn). Bỏ qua.")
-
-    print("🚀 Đang bấm Đăng (Publish)...")
+        print("🚀 Đang bấm Đăng (Publish)...")
         pub_btn.click()
         p.wait_for_timeout(10000)
         print("✅ Đã đăng thành công Reel lên trang cá nhân Facebook!")
