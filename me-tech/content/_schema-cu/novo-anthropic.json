@@ -1,0 +1,51 @@
+{
+ "slug": "novo-anthropic",
+ "voice": "Xuân Vĩnh",
+ "date_label": "TIN AI · 17.09.2026",
+ "gap": 0.30,
+ "lead_in": 0.60,
+ "tail": 2.20,
+ "segments": [
+  {"id":"hook","scene":"hook",
+   "say":"Một báo cáo thử nghiệm lâm sàng ba trăm trang, viết xong trong mười phút.",
+   "show":{"type":"hook","line1":"Báo cáo 300 trang","line2":"viết xong trong<br>10 phút"}},
+
+  {"id":"what","scene":"what",
+   "say":"Novo Nordisk, hãng dược đứng sau Ozempic, vừa bắt tay với Anthropic.",
+   "show":{"type":"title","kicker":"Hãng dược đứng sau Ozempic","title":"Novo × Anthropic"}},
+  {"id":"what2","scene":"what",
+   "say":"Không phải chatbot trả lời câu hỏi, mà là agent đọc dữ liệu và viết tài liệu nghiên cứu thuốc.",
+   "show":{"type":"body","text":"Không phải chatbot hỏi đáp.<br>Là agent <b>đọc dữ liệu</b> và<br><b>viết tài liệu</b> nghiên cứu thuốc."}},
+
+  {"id":"nh","scene":"nums","say":"Bốn con số đáng chú ý.",
+   "show":{"type":"header","title":"4 con số <em>đáng chú ý</em>"}},
+  {"id":"n1","scene":"nums",
+   "say":"Mười phút, thay cho hơn mười tuần, để làm xong một bộ hồ sơ lâm sàng.",
+   "show":{"type":"num","value":10,"dec":0,"prefix":"","suffix":" phút","label":"thay cho hơn 10 tuần,<br>cho 1 bộ hồ sơ lâm sàng"}},
+  {"id":"n2","scene":"nums",
+   "say":"Chín mươi phần trăm thời gian viết báo cáo được cắt đi.",
+   "show":{"type":"num","value":90,"dec":0,"prefix":"","suffix":"%","label":"thời gian viết<br>báo cáo được cắt"}},
+  {"id":"n3","scene":"nums",
+   "say":"Chín mươi lăm phần trăm công sức làm hồ sơ kiểm định thiết bị cũng giảm theo.",
+   "show":{"type":"num","value":95,"dec":0,"prefix":"","suffix":"%","label":"công sức làm hồ sơ<br>kiểm định thiết bị"}},
+  {"id":"n4","scene":"nums",
+   "say":"Và hơn sáu mươi cơ sở dữ liệu khoa học được nối thẳng vào.",
+   "show":{"type":"num","value":60,"dec":0,"prefix":"","suffix":"+","label":"cơ sở dữ liệu khoa học<br>nối thẳng vào Claude"}},
+
+  {"id":"wh","scene":"where","say":"Vậy điều này nói lên chuyện gì?",
+   "show":{"type":"header","title":"Nói lên <em>chuyện gì?</em>"}},
+  {"id":"w1","scene":"where",
+   "say":"Thứ nhất, khâu giấy tờ từng ngốn hàng tháng trời giờ tính bằng phút.",
+   "show":{"type":"bullet","name":"Thuốc ra thị trường nhanh hơn","sub":"khâu giấy tờ từng ngốn hàng tháng"}},
+  {"id":"w2","scene":"where",
+   "say":"Thứ hai, một người viết hồ sơ y khoa trước đây làm được hai phẩy ba báo cáo mỗi năm.",
+   "show":{"type":"bullet","name":"Nghề viết hồ sơ y khoa đổi","sub":"trước đây 2,3 báo cáo mỗi người mỗi năm"}},
+  {"id":"w3","scene":"where",
+   "say":"Thứ ba, cùng công thức đó dùng được cho hồ sơ pháp lý và báo cáo kiểm định ở Việt Nam.",
+   "show":{"type":"bullet","name":"Không riêng ngành dược","sub":"hồ sơ pháp lý, kiểm định, báo cáo dài"}},
+
+  {"id":"cta","scene":"cta",
+   "say":"Theo dõi Mê Tech để không bỏ lỡ tin AI nào nhé.",
+   "show":{"type":"cta","text":"Theo dõi <em>Mê Tech</em><br>để không lỡ tin AI."}}
+ ]
+}

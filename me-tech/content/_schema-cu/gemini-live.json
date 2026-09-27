@@ -1,0 +1,148 @@
+{
+ "slug": "gemini-live",
+ "voice": "Xuân Vĩnh",
+ "date_label": "TIN AI · 17.09.2026",
+ "gap": 0.3,
+ "lead_in": 0.6,
+ "tail": 2.2,
+ "segments": [
+  {
+   "id": "hook",
+   "scene": "hook",
+   "say": "Trợ lý giọng nói vừa hết cái tật im bặt năm giây.",
+   "show": {
+    "type": "hook",
+    "line1": "Trợ lý giọng nói",
+    "line2": "hết im bặt<br>5 giây"
+   }
+  },
+  {
+   "id": "what",
+   "scene": "what",
+   "say": "Google ra mắt Gemini ba chấm tám Live. Điểm hay nhất không nằm ở benchmark: nó vừa nghĩ vừa nói.",
+   "show": {
+    "type": "title",
+    "kicker": "Google vừa ra mắt",
+    "title": "Gemini 3.8 Live"
+   }
+  },
+  {
+   "id": "what2",
+   "scene": "what",
+   "say": "Hỏi xong, nó nói để mình kiểm tra nhé, rồi tra cứu ngầm.",
+   "show": {
+    "type": "body",
+    "text": "Hỏi xong không còn im bặt —<br>nó nói <b>“để mình kiểm tra nhé”</b><br>rồi tra cứu ngầm."
+   }
+  },
+  {
+   "id": "nh",
+   "scene": "nums",
+   "say": "Có bốn con số đáng chú ý.",
+   "show": {
+    "type": "header",
+    "title": "4 con số <em>đáng chú ý</em>"
+   }
+  },
+  {
+   "id": "n1",
+   "scene": "nums",
+   "say": "Tám mươi hai phẩy sáu, đứng đầu bảng chất lượng hội thoại giọng nói.",
+   "show": {
+    "type": "num",
+    "value": 82.6,
+    "dec": 1,
+    "prefix": "",
+    "suffix": "",
+    "label": "#1 bảng chất lượng<br>hội thoại giọng nói"
+   }
+  },
+  {
+   "id": "n2",
+   "scene": "nums",
+   "say": "Chín mươi bảy ngôn ngữ, tự đổi ngay giữa câu.",
+   "show": {
+    "type": "num",
+    "value": 97,
+    "dec": 0,
+    "prefix": "",
+    "suffix": "",
+    "label": "ngôn ngữ, tự đổi<br>ngay giữa câu"
+   }
+  },
+  {
+   "id": "n3",
+   "scene": "nums",
+   "say": "Chín mươi bảy phẩy bảy phần trăm điểm hiểu âm thanh.",
+   "show": {
+    "type": "num",
+    "value": 97.7,
+    "dec": 1,
+    "prefix": "",
+    "suffix": "%",
+    "label": "điểm hiểu âm thanh<br>Big Bench Audio"
+   }
+  },
+  {
+   "id": "n4",
+   "scene": "nums",
+   "say": "Và khoảng sáu nghìn đồng cho mười phút nói chuyện.",
+   "show": {
+    "type": "num",
+    "value": 6000,
+    "dec": 0,
+    "prefix": "~",
+    "suffix": "đ",
+    "label": "cho 10 phút<br>hội thoại qua API"
+   }
+  },
+  {
+   "id": "wh",
+   "scene": "where",
+   "say": "Vậy dùng được ở đâu?",
+   "show": {
+    "type": "header",
+    "title": "Dùng ở <em>đâu?</em>"
+   }
+  },
+  {
+   "id": "w1",
+   "scene": "where",
+   "say": "Search Live, miễn phí, có cả hai bản.",
+   "show": {
+    "type": "bullet",
+    "name": "Search Live",
+    "sub": "miễn phí, có cả 2 bản"
+   }
+  },
+  {
+   "id": "w2",
+   "scene": "where",
+   "say": "App Gemini và Workspace, dành cho gói trả phí.",
+   "show": {
+    "type": "bullet",
+    "name": "App Gemini &amp; Workspace",
+    "sub": "bản Extended Thinking, gói Pro/Ultra"
+   }
+  },
+  {
+   "id": "w3",
+   "scene": "where",
+   "say": "Và Gemini API, cho anh em lập trình.",
+   "show": {
+    "type": "bullet",
+    "name": "Gemini API / AI Studio",
+    "sub": "cho anh em dev"
+   }
+  },
+  {
+   "id": "cta",
+   "scene": "cta",
+   "say": "Theo dõi Mê Tech để không bỏ lỡ tin AI nào nhé.",
+   "show": {
+    "type": "cta",
+    "text": "Theo dõi <em>Mê Tech</em><br>để không lỡ tin AI."
+   }
+  }
+ ]
+}
