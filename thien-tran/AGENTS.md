@@ -33,3 +33,6 @@
 - **Facebook**: 
   - Nút xuất bản chính thức mang tên **"Post"** (hoặc Đăng). Tránh click nhầm vào nút thả xuống "Scheduling options Publish now". Dùng `re.compile(r"^(Post|Publish|Đăng)$", re.I)`.
   - **LƯU Ý QUAN TRỌNG VỀ QUYỀN RIÊNG TƯ (AUDIENCE)**: Facebook cá nhân hay bị mặc định trạng thái `Only me` (Chỉ mình tôi). Kịch bản upload FB cần (và phải) kiểm tra nút Audience ở bước cuối và chuyển sang `Public` (Công khai) trước khi bấm Post.
+
+## 5. LUẬT TỐI ƯU TRẢI NGHIỆM NGƯỜI XEM (UX)
+- **Outro tĩnh lặng**: Ở segment outro (cuối video), **TUYỆT ĐỐI KHÔNG ĐƯỢC CÓ KEY `say`**, `plain`, `words`, hay `weights`. Không để AI đọc tên kênh, không kêu gọi follow. Chỉ để mảng cấu trúc hình ảnh `{"id":"outro", "group":"...", "mode":"outro"}`. Hệ thống sẽ tự động chỉ chèn tiếng Chime (Sound effect) cực ngắn và hiển thị logo để tối ưu tính lặp lại (loop) của video trên Tiktok/Shorts.

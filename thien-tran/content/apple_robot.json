@@ -1,0 +1,297 @@
+{
+ "slug": "apple_robot",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "APPLE ROBOTICS · 27.09.2026",
+ "date": "27.09.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Áp-pồ vừa khai tử xe điện để làm rô bốt.",
+   "plain": "Apple vừa khai tử xe điện để làm robot.",
+   "words": [
+    "Apple",
+    "vừa",
+    "khai",
+    "tử",
+    "xe",
+    "điện",
+    "để",
+    "làm",
+    "robot"
+   ],
+   "weights": [
+    2,
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2
+   ],
+   "hot": [
+    0,
+    4,
+    5,
+    8
+   ]
+  },
+  {
+   "id": "m1",
+   "group": "g2",
+   "mode": "shot",
+   "shot": "apple-robotics.png",
+   "src": "Bloomberg",
+   "say": "Theo bờ lum bớt, hàng trăm kỹ sư đang làm một màn hình gắn trên tay cơ khí.",
+   "plain": "Theo Bloomberg, hàng trăm kỹ sư đang làm một màn hình gắn trên tay cơ khí.",
+   "words": [
+    "Theo",
+    "Bloomberg,",
+    "hàng",
+    "trăm",
+    "kỹ",
+    "sư",
+    "đang",
+    "làm",
+    "một",
+    "màn",
+    "hình",
+    "gắn",
+    "trên",
+    "tay",
+    "cơ",
+    "khí"
+   ],
+   "weights": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    9,
+    10,
+    13,
+    14,
+    15
+   ]
+  },
+  {
+   "id": "m2",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Nó tích hợp Áp-pồ In-teo-li-dừn và biết xoay theo giọng nói của bạn.",
+   "plain": "Nó tích hợp Apple Intelligence và biết xoay theo giọng nói của bạn.",
+   "words": [
+    "Nó",
+    "tích",
+    "hợp",
+    "Apple",
+    "Intelligence",
+    "và",
+    "biết",
+    "xoay",
+    "theo",
+    "giọng",
+    "nói",
+    "của",
+    "bạn"
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    2,
+    3,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    7,
+    9,
+    10
+   ]
+  },
+  {
+   "id": "m3",
+   "group": "g3",
+   "mode": "say",
+   "say": "Tại sao Áp-pồ lại làm thứ này?",
+   "plain": "Tại sao Apple lại làm thứ này?",
+   "words": [
+    "Tại",
+    "sao",
+    "Apple",
+    "lại",
+    "làm",
+    "thứ",
+    "này?"
+   ],
+   "weights": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2
+   ]
+  },
+  {
+   "id": "m4",
+   "group": "g4",
+   "mode": "say",
+   "say": "Sự thật là kính vi sừn pờ rồ quá ế, họ đang tuyệt vọng tìm lối thoát mới sau ai phôn.",
+   "plain": "Sự thật là kính Vision Pro quá ế, họ đang tuyệt vọng tìm lối thoát mới sau iPhone.",
+   "words": [
+    "Sự",
+    "thật",
+    "là",
+    "kính",
+    "Vision",
+    "Pro",
+    "quá",
+    "ế,",
+    "họ",
+    "đang",
+    "tuyệt",
+    "vọng",
+    "tìm",
+    "lối",
+    "thoát",
+    "mới",
+    "sau",
+    "iPhone"
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    3,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "hot": [
+    4,
+    5,
+    7,
+    10,
+    11,
+    17
+   ]
+  },
+  {
+   "id": "m5",
+   "group": "g5",
+   "mode": "say",
+   "say": "Một chiếc ai pát giá ngàn đô biết gật đầu, liệu có đáng tiền?",
+   "plain": "Một chiếc iPad giá ngàn đô biết gật đầu, liệu có đáng tiền?",
+   "words": [
+    "Một",
+    "chiếc",
+    "iPad",
+    "giá",
+    "ngàn",
+    "đô",
+    "biết",
+    "gật",
+    "đầu,",
+    "liệu",
+    "có",
+    "đáng",
+    "tiền?"
+   ],
+   "weights": [
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2
+   ],
+   "hot": [
+    2,
+    4,
+    5,
+    7,
+    8,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g6",
+   "mode": "outro"
+  }
+ ]
+}
