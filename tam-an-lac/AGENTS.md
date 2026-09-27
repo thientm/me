@@ -13,3 +13,9 @@ Target Audience: Normal middle and high age (35-65+).
 ## Audio & Outro Rules
 - **Voice**: Use TTS preset `Thiền Tâm Đức` (Northern, meditative storytelling).
 - **Outro**: Silent outro optimized for looping across 3 platforms. No TTS reading channel name or CTA. Use a temple bell/chime to trigger a seamless loop.
+
+## Publishing & Platforms
+The automated publishing scripts should use the local isolated Chrome profile (`chrome_profile/`) to maintain logged-in sessions for these platforms:
+- **YouTube Shorts**: https://www.youtube.com/@tamanlac.youtube
+- **TikTok**: https://www.tiktok.com/@tamanlac.tiktok
+- **Facebook Reels**: https://www.facebook.com/tamanlac.fb

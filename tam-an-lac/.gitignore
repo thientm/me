@@ -1,0 +1,6 @@
+chrome_profile/
+content/**/frames/
+content/**/*.mp4
+content/**/*.wav
+__pycache__/
+.DS_Store
