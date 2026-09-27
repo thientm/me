@@ -33,3 +33,17 @@ me-tech/pipeline/publish/__pycache__/
 # Crypto Dashboard runtime cache
 crypto/dashboard/data/cache_rates.json
 
+# thien-tran channel output & private profiles
+thien-tran/render/
+thien-tran/.work/
+thien-tran/.browser/
+thien-tran/.browser
+thien-tran/.browser-profile/
+thien-tran/.browser-profile
+**/.browser-profile/
+**/*browser-profile*
+
+
+# thien-tran specifics
+thien-tran/publish/_scratch/
+thien-tran/publish/*.png

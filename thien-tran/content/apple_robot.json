@@ -291,7 +291,10 @@
   {
    "id": "outro",
    "group": "g6",
-   "mode": "outro"
+   "mode": "outro",
+   "words": [],
+   "weights": [],
+   "plain": ""
   }
  ]
 }
