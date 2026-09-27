@@ -1,0 +1,18 @@
+{
+  "_note": "Từ viết tắt / từ nước ngoài mà bộ phiên âm của VieNeu đọc sai hoặc nuốt. Chỉ khớp đúng chữ hoa, có ranh giới từ, nên không đụng tới từ tiếng Việt cùng mặt chữ (vd 'ai').",
+  "AI": "ây ai",
+  "API": "ây pi ai",
+  "UI": "diu ai",
+  "UX": "diu ích",
+  "GPT": "gi pi ti",
+  "LLM": "eo eo em",
+  "CPU": "xi pi diu",
+  "GPU": "gi pi diu",
+  "RAM": "ram",
+  "SDK": "ét đi ca",
+  "IDE": "ai đi i",
+  "OK": "ô kê",
+  "IT": "ai ti",
+  "CEO": "xi i âu",
+  "USB": "diu ét bi"
+}
