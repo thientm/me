@@ -11,7 +11,11 @@ import shutil
 import subprocess
 from typing import List, Dict, Any, Optional, Union
 
-DEFAULT_AGY_PATH = "/Users/thien.tm/.local/bin/agy"
+DEFAULT_AGY_PATH = (
+    "/Users/thientm/.local/bin/agy"
+    if os.path.exists("/Users/thientm/.local/bin/agy")
+    else os.path.expanduser("~/.local/bin/agy")
+)
 DEFAULT_PROMPT = (
     "Review crypto portfolio according to crypto-plan.md, "
     "evaluate 540tr hard floor and generate action proposals."
@@ -20,8 +24,18 @@ DEFAULT_PROMPT = (
 
 def find_agy_binary() -> str:
     """Locate the agy CLI binary using search path or system PATH."""
-    if os.path.exists(DEFAULT_AGY_PATH) and os.access(DEFAULT_AGY_PATH, os.X_OK):
-        return DEFAULT_AGY_PATH
+    candidate_paths = [
+        DEFAULT_AGY_PATH,
+        os.path.expanduser("~/.local/bin/agy"),
+        os.path.expanduser("~/.gemini/antigravity-cli/bin/agy"),
+        "/Users/thientm/.local/bin/agy",
+        "/Users/thien.tm/.local/bin/agy",
+        "/opt/homebrew/bin/agy",
+        "/usr/local/bin/agy",
+    ]
+    for p in candidate_paths:
+        if os.path.exists(p) and os.access(p, os.X_OK):
+            return p
     which_path = shutil.which("agy")
     if which_path:
         return which_path
@@ -57,8 +71,8 @@ def generate_agy_command(
     if add_dirs:
         dirs_list = [add_dirs] if isinstance(add_dirs, str) else add_dirs
         for d in dirs_list:
-            if isinstance(d, str) and os.path.exists(d):
-                cmd.extend(["--add-dir", d])
+            if isinstance(d, str) and d.strip():
+                cmd.extend(["--add-dir", d.strip()])
 
     return cmd
 
@@ -67,7 +81,7 @@ def execute_agy_cli(
     action: Optional[str] = "review",
     add_dirs: Optional[Union[List[str], str]] = None,
     dry_run: bool = False,
-    timeout: int = 60
+    timeout: int = 120
 ) -> Dict[str, Any]:
     """
     Execute local agy CLI command safely via subprocess.
@@ -83,12 +97,26 @@ def execute_agy_cli(
             "args": cmd,
         }
 
+    env = os.environ.copy()
+    candidate_bins = [
+        os.path.expanduser("~/.local/bin"),
+        os.path.expanduser("~/.gemini/antigravity-cli/bin"),
+        "/opt/homebrew/bin",
+        "/usr/local/bin",
+    ]
+    current_path = env.get("PATH", "")
+    for b in candidate_bins:
+        if b not in current_path:
+            current_path = f"{b}:{current_path}"
+    env["PATH"] = current_path
+
     try:
         proc = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
-            timeout=timeout
+            timeout=timeout,
+            env=env,
         )
         parsed = None
         if proc.stdout:

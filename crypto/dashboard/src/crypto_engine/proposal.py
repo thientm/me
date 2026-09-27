@@ -48,11 +48,19 @@ def generate_markdown_review(
     dist_str = f"{'+' if eval_matrix.distance_to_floor_vnd >= 0 else ''}{format_vnd_tr(eval_matrix.distance_to_floor_vnd)}"
     dist_pct_str = f"{'+' if eval_matrix.distance_to_floor_pct >= 0 else ''}{eval_matrix.distance_to_floor_pct:.1f}%"
 
+    if eval_matrix.missed_recommendations_count == 0:
+        discipline_line = (
+            "> ℹ️ **CHU KỲ MỚI (Từ 27/09/2026):** Đã reset theo dõi kỷ luật theo yêu cầu. "
+            "Bắt đầu Sprint 1 tháng cuối (hạn 31/10/2026) — 0 lệnh trễ tuần này."
+        )
+    else:
+        discipline_line = f"> ⚠️ **CẢNH BÁO KỶ LUẬT:** 0/{eval_matrix.missed_recommendations_count} khuyến nghị bán được thực thi trong suốt chu kỳ (toàn bộ khuyến nghị trước đây đều bị bỏ lỡ)."
+
     lines = [
         f"## {date_label}: Deep Review — [TTS: {tts_str} | Band: {eval_matrix.active_band} | Khuyến nghị Lệnh 10 Phút]",
         "",
-        f"> ⚠️ **CẢNH BÁO KỶ LUẬT:** 0/{eval_matrix.missed_recommendations_count} khuyến nghị bán được thực thi trong suốt chu kỳ (toàn bộ khuyến nghị trước đây đều bị bỏ lỡ).",
-        "> **Cost of Delay:** Mất đỉnh: −32,6tr | Nguy cơ trượt bảng giá đất 2027: +370tr | Phạt chậm nộp: 930.000 đ/ngày.",
+        discipline_line,
+        "> **Kế hoạch 1 tháng:** Sprint thoát vốn bảo vệ sàn cứng 540tr VND trước ngày 31/10/2026.",
         "",
         "### Input",
         f"- **TTS:** {tts_str} (VND đã rút: {format_vnd_tr(snapshot.withdrawn_vnd)} + Crypto: {format_vnd_tr(snapshot.crypto_vnd)}) | Sàn cứng Hard Floor: 540.000.000 VND",

@@ -37,10 +37,10 @@
           <span class="beacon-dot"></span>
           <span class="badge badge-defcon1">KỶ LUẬT THOÁI VỐN (DEFCON-1)</span>
           <span class="badge badge-hard-floor">SÀN CỨNG 540TR</span>
-          <span class="badge badge-delay">50 NGÀY DO DỰ (0/13 LỆNH ĐỀ XUẤT)</span>
+          <span class="badge badge-delay" id="alert-delay-badge" data-historical="50 NGÀY DO DỰ (0/13 LỆNH ĐỀ XUẤT)">SPRINT 1 THÁNG CUỐI (27/09 - 31/10)</span>
         </div>
         <div class="alert-body">
-          <h2 class="alert-heading">CẢNH BÁO KỶ LUẬT: 0/13 LỆNH ĐÃ THỰC THI (50 NGÀY CHẬM TRỄ)</h2>
+          <h2 class="alert-heading" id="alert-heading" data-historical="CẢNH BÁO KỶ LUẬT: 0/13 LỆNH ĐÃ THỰC THI (50 NGÀY CHẬM TRỄ)">KẾ HOẠCH THOÁT VỐN 1 THÁNG CUỐI (HẠN CHÓT 31/10/2026)</h2>
           <p id="alert-message" class="alert-text">
             TTS đạt <strong>550.643.256 ₫</strong> (vượt ngưỡng Sàn Cứng <strong>540.000.000 ₫</strong>). 
             Kích hoạt quy tắc nhị phân: <strong>BÁN NGAY 50% GIÁ TRỊ COIN (XẢ SẠCH 55,28 SOL) VÀ RÚT TOÀN BỘ STABLES VỀ BANK!</strong>
@@ -550,7 +550,7 @@
       <!-- agy Console Drawer -->
       <div class="agy-console-box mt-3" id="agy-console-drawer">
         <div class="console-header d-flex justify-between align-center">
-          <span class="font-mono text-xs text-muted">TERMINAL STREAM: /Users/thien.tm/.local/bin/agy -p "Review crypto..."</span>
+          <span class="font-mono text-xs text-muted" id="agy-cmd-preview">TERMINAL STREAM: agy -p "Review crypto..."</span>
           <div class="d-flex align-center gap-2">
             <div id="agy-spinner" class="spinner-small" style="display: none;"></div>
             <button id="btn-close-console" class="btn btn-secondary btn-xs" title="Thu gọn console">_</button>

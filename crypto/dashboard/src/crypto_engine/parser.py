@@ -89,8 +89,19 @@ def extract_withdrawn_vnd(text: str) -> float:
     return 0.0
 
 
+def extract_is_reset(text: str) -> bool:
+    """Detect if an entry resets the missed recommendations discipline alert."""
+    return bool(
+        re.search(r"reset\s+(?:cảnh\s+báo|kỷ\s+luật|chu\s+kỳ|alert)", text, re.IGNORECASE)
+        or re.search(r"chu\s+kỳ\s+mới.*?0\s+lệnh\s+trễ", text, re.IGNORECASE)
+        or re.search(r"0/0\s+khuyến\s+nghị", text, re.IGNORECASE)
+    )
+
+
 def extract_missed_count(text: str) -> int:
     """Extract count of unexecuted recommendations (e.g. 0/13 or 0/14)."""
+    if extract_is_reset(text):
+        return 0
     patterns = [
         r"0/(\d+)\s+khuyến\s+nghị",
         r"Lệnh\s+thực\s+thi[:\s*]+0/(\d+)",
@@ -235,6 +246,7 @@ def parse_logs(logs_path_or_dir: Optional[Union[Path, str]] = None) -> Dict[str,
 
     total_withdrawn = 0.0
     missed_count = 13
+    has_explicit_reset = False
     latest_date = None
     entries_count = 0
 
@@ -256,9 +268,17 @@ def parse_logs(logs_path_or_dir: Optional[Union[Path, str]] = None) -> Dict[str,
                 w = extract_withdrawn_vnd(sec)
                 if w > total_withdrawn:
                     total_withdrawn = w
-                mc = extract_missed_count(sec)
-                if mc > missed_count:
-                    missed_count = mc
+                if extract_is_reset(sec):
+                    has_explicit_reset = True
+                    missed_count = 0
+                elif not has_explicit_reset:
+                    mc = extract_missed_count(sec)
+                    if mc > missed_count:
+                        missed_count = mc
+                else:
+                    mc = extract_missed_count(sec)
+                    if mc > missed_count:
+                        missed_count = mc
                 first_line = sec.splitlines()[0]
                 dm = re.search(r"(\d{4}-\d{2}-\d{2})", first_line)
                 if dm:

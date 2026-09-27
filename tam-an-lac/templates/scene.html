@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<script src="gsap.min.js"></script>
+<style>
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    src: local('Be Vietnam Pro Bold'), local('BeVietnamPro-Bold');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Be Vietnam Pro';
+    src: local('Be Vietnam Pro Medium'), local('BeVietnamPro-Medium');
+    font-weight: 500;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: #0A0907;
+    overflow: hidden;
+    font-family: 'Be Vietnam Pro', -apple-system, sans-serif;
+  }
+  #stage {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+  }
+
+  /* Image Layers with independent smooth camera zoom */
+  .bg-layer {
+    position: absolute;
+    inset: -60px;
+    background-size: cover;
+    background-position: center 35%;
+    will-change: transform, opacity;
+  }
+  #bg1 {
+    background-image: url('buddha_1.jpg');
+    z-index: 1;
+    opacity: 1;
+  }
+  #bg2 {
+    background-image: url('buddha_2.jpg');
+    z-index: 2;
+    opacity: 0;
+  }
+  #bg3 {
+    background-image: url('buddha_3.jpg');
+    z-index: 3;
+    opacity: 0;
+  }
+
+  #vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: radial-gradient(circle at 50% 40%, rgba(0,0,0,0) 45%, rgba(10,9,7,0.50) 90%),
+                linear-gradient(to bottom, rgba(14,13,11,0.5) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0.05) 45%, rgba(10,9,7,0.78) 72%, rgba(10,9,7,0.96) 100%);
+    pointer-events: none;
+  }
+
+  #particles {
+    position: absolute;
+    inset: 0;
+    z-index: 11;
+    pointer-events: none;
+  }
+
+  #header {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: #E2A336;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.95);
+    opacity: 0.92;
+  }
+
+  #watermark {
+    position: absolute;
+    top: 190px;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    opacity: 0.85;
+  }
+  #watermark img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(226, 163, 54, 0.6);
+  }
+  #watermark span {
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.1em;
+  }
+
+  #sub-container {
+    position: absolute;
+    bottom: 530px; /* Safe zone: 1080x1920 */
+    left: 90px;
+    right: 90px;
+    height: 250px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .cue {
+    position: absolute;
+    width: 100%;
+    font-size: 76px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: #F7F7F7;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.95), 0 2px 8px rgba(0,0,0,0.98);
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .hot {
+    color: #E2A336;
+  }
+
+  .outro-text {
+    font-size: 84px;
+    letter-spacing: 0.08em;
+    color: #E2A336;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg1" class="bg-layer"></div>
+  <div id="bg2" class="bg-layer"></div>
+  <div id="bg3" class="bg-layer"></div>
+
+  <canvas id="particles" width="1080" height="1920"></canvas>
+  <div id="vignette"></div>
+  <div id="header">☸ LỜI PHẬT DẠY</div>
+  <div id="watermark">
+    <img src="../avatar.jpg" alt="Logo">
+    <span>TÂM AN LẠC</span>
+  </div>
+
+  <div id="sub-container">
+    <div id="c1" class="cue">Nếu có người mang rác tặng bạn,<br>bạn có nhận không? <span class="hot">Chắc chắn là không</span>.</div>
+    <div id="c2" class="cue">Bạn không nhận, thì đống rác đó...<br><span class="hot">vẫn thuộc về người mang đến</span>.</div>
+    <div id="c3" class="cue">Lời chê bai, sự cay nghiệt cũng vậy.<br>Người gieo <span class="hot">khẩu nghiệp</span> tự gánh quả báo.</div>
+    <div id="c4" class="cue">Bạn không bận lòng, thì tâm bạn mãi<br><span class="hot">thanh tịnh như hoa sen</span>.</div>
+    <div id="c5" class="cue">Đỉnh cao của sự buông bỏ, không phải trả đũa...<br>mà là <span class="hot">bình thản mỉm cười và bước tiếp</span>.</div>
+    <div id="c6" class="cue"><span class="outro-text">VẠN SỰ TÙY DUYÊN</span></div>
+  </div>
+</div>
+
+<script>
+  // 1. Subtle ambient particles
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  const P_COUNT = 32;
+  const particles = [];
+  for (let i = 0; i < P_COUNT; i++) {
+    particles.push({
+      x: Math.random() * 1080,
+      y: Math.random() * 1920,
+      r: Math.random() * 2.2 + 1.0,
+      speedY: Math.random() * 18 + 10,
+      driftX: Math.random() * 10 + 4,
+      driftFreq: Math.random() * 0.8 + 0.4,
+      phase: Math.random() * Math.PI * 2,
+      baseAlpha: Math.random() * 0.28 + 0.12
+    });
+  }
+
+  function drawParticles(t) {
+    ctx.clearRect(0, 0, 1080, 1920);
+    for (let p of particles) {
+      const curY = (p.y - p.speedY * t) % 1920;
+      const y = curY < 0 ? curY + 1920 : curY;
+      const x = p.x + Math.sin(t * p.driftFreq + p.phase) * p.driftX;
+      const alpha = p.baseAlpha * (0.85 + 0.15 * Math.sin(t * 1.5 + p.phase));
+
+      ctx.beginPath();
+      ctx.arc(x, y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(245, 195, 95, ${alpha.toFixed(3)})`;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = 'rgba(245, 195, 95, 0.4)';
+      ctx.fill();
+    }
+  }
+
+  // 2. Build GSAP Master Timeline
+  const tl = gsap.timeline({ paused: true });
+
+  // Camera Zoom Scene 1 (0s -> 10.2s)
+  tl.to("#bg1", {
+    scale: 1.075,
+    y: -35,
+    duration: 10.5,
+    ease: "power1.inOut"
+  }, 0);
+
+  // Transition to Scene 2 (Lotus Pond) at 9.8s
+  tl.to("#bg2", {
+    opacity: 1,
+    duration: 0.9,
+    ease: "power2.inOut"
+  }, 9.8);
+  tl.to("#bg2", {
+    scale: 1.078,
+    y: -38,
+    duration: 11.5,
+    ease: "power1.inOut"
+  }, 9.8);
+
+  // Transition to Scene 3 (Sunset Compassion Buddha) at 21.0s
+  tl.to("#bg3", {
+    opacity: 1,
+    duration: 0.9,
+    ease: "power2.inOut"
+  }, 21.0);
+  tl.to("#bg3", {
+    scale: 1.075,
+    y: -36,
+    duration: 10.5,
+    ease: "power1.inOut"
+  }, 21.0);
+
+  // Subtitle cue helper
+  function addCue(id, start, end, fadeInDur = 0.32, fadeOutDur = 0.28) {
+    tl.to(id, {
+      opacity: 1,
+      y: 0,
+      duration: fadeInDur,
+      ease: "power2.out"
+    }, start);
+
+    tl.to(id, {
+      opacity: 0,
+      y: -14,
+      duration: fadeOutDur,
+      ease: "power2.in"
+    }, end - fadeOutDur);
+  }
+
+  // Exact speech timings
+  addCue("#c1", 0.45, 5.50);
+  addCue("#c2", 5.60, 9.80);
+  addCue("#c3", 10.20, 16.30);
+  addCue("#c4", 16.40, 21.00);
+  addCue("#c5", 21.40, 27.80);
+
+  // Outro
+  tl.to("#c6", {
+    opacity: 1,
+    y: 0,
+    duration: 0.50,
+    ease: "power2.out"
+  }, 28.2);
+
+  // 3. Playwright Hook
+  window.seek = function(t) {
+    tl.seek(t, false);
+    drawParticles(t);
+  };
+
+  // Preview initial frame
+  window.seek(1.5);
+</script>
+</body>
+</html>

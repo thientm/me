@@ -373,16 +373,39 @@ function renderAllViews() {
 function renderAlertBanner() {
   const banner = document.getElementById("alert-banner");
   const msgEl = document.getElementById("alert-message");
+  const delayBadge = document.getElementById("alert-delay-badge");
+  const heading = document.getElementById("alert-heading");
   if (!banner || !msgEl) return;
 
   const tts = (State.valuation && State.valuation.tts_vnd) || 550643256;
   const isAboveFloor = tts >= HARD_FLOOR_VND;
+  const missedCount = (State.disciplineGate && State.disciplineGate.unexecuted_recommendations_count != null)
+    ? State.disciplineGate.unexecuted_recommendations_count
+    : ((State.matrix && State.matrix.missed_recommendations_count) || 0);
+
+  if (delayBadge) {
+    if (missedCount === 0) {
+      delayBadge.textContent = "SPRINT 1 THÁNG CUỐI (27/09 - 31/10)";
+      delayBadge.className = "badge badge-tag";
+    } else {
+      delayBadge.textContent = `${missedCount} LỆNH CHƯA THỰC THI`;
+      delayBadge.className = "badge badge-delay";
+    }
+  }
+
+  if (heading) {
+    if (missedCount === 0) {
+      heading.textContent = "KẾ HOẠCH THOÁT VỐN 1 THÁNG CUỐI: BẢO VỆ SÀN CỨNG 540TR";
+    } else {
+      heading.textContent = `CẢNH BÁO KỶ LUẬT: 0/${missedCount} LỆNH ĐÃ THỰC THI`;
+    }
+  }
 
   if (isAboveFloor) {
-    banner.className = "alert-banner alert-pulse danger";
+    banner.className = missedCount === 0 ? "alert-banner warning" : "alert-banner alert-pulse danger";
     msgEl.innerHTML = `TTS đạt <strong>${formatVND(tts)}</strong> (vượt ngưỡng Sàn Cứng <strong>${formatVND(HARD_FLOOR_VND)}</strong>). ` +
-      `Kích hoạt quy tắc nhị phân: <strong>BÁN NGAY 50% GIÁ TRỊ COIN (XẢ SẠCH 55,28 SOL) VÀ RÚT TOÀN BỘ STABLES VỀ BANK!</strong> ` +
-      `Hôm nay 24/09: Đến hạn <strong>Tranche 1 (0,035327 BTC ~ 74,4tr VND)</strong> trước 20:00 VN.`;
+      `Kích hoạt quy tắc nhị phân: <strong>BÁN 50% GIÁ TRỊ COIN (XẢ SẠCH 55,28 SOL) VÀ RÚT TOÀN BỘ STABLES VỀ BANK!</strong> ` +
+      `Kế hoạch 1 tháng: Thoát vốn từng tuần theo Glidepath v3.0, hoàn tất 100% trước 25/10/2026.`;
   } else {
     banner.className = "alert-banner alert-pulse danger";
     msgEl.innerHTML = `🚨 BÁO ĐỘNG ĐỎ: TTS ĐÂM THỦNG SÀN CỨNG 540TR (${formatVND(tts)} < 540.000.000 ₫). ` +
@@ -775,7 +798,14 @@ async function runAgyExecution(dryRun = false) {
       }
     });
 
-    const output = (res && res.stdout) || (res && res.data && res.data.stdout) || JSON.stringify(res, null, 2);
+    let output = "";
+    if (res?.data?.parsed?.response) {
+      output = res.data.parsed.response;
+    } else if (res?.parsed?.response) {
+      output = res.parsed.response;
+    } else {
+      output = (res && res.stdout) || (res && res.data && res.data.stdout) || JSON.stringify(res, null, 2);
+    }
     const now = new Date();
     const pad = (n) => n.toString().padStart(2, '0');
     const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
@@ -813,7 +843,7 @@ async function viewAgyCommand() {
     method: "POST",
     body: JSON.stringify({ action: "review" })
   }, {
-    command: `/Users/thien.tm/.local/bin/agy -p "Review crypto portfolio according to crypto-plan.md, evaluate 540tr hard floor and generate action proposals." --dangerously-skip-permissions --output-format json`
+    command: `agy -p "Review crypto portfolio according to crypto-plan.md, evaluate 540tr hard floor and generate action proposals." --dangerously-skip-permissions --output-format json`
   });
 
   const cmd = res.command || (res.data && res.data.command) || res;

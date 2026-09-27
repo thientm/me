@@ -68,11 +68,19 @@ def format_section_7_5_review(
 
     borrow_needed_tr = borrow_needed_vnd / 1_000_000.0
 
+    if missed_count == 0:
+        disc_line = (
+            "> ℹ️ **CHU KỲ MỚI (Từ 27/09/2026):** Đã reset theo dõi kỷ luật theo yêu cầu. "
+            "Bắt đầu Sprint 1 tháng cuối (hạn 31/10/2026) — 0 lệnh trễ tuần này."
+        )
+    else:
+        disc_line = f"> ⚠️ **CẢNH BÁO KỶ LUẬT:** 0/{missed_count} khuyến nghị bán được thực thi (chưa thực hiện bất kỳ lệnh bán nào)."
+
     lines = [
         f"## {date_label}: Review — TTS {tts_tr:,.1f}tr ({tts_vnd:,.0f} VND) | Band: {active_band}",
         "",
-        f"> ⚠️ **CẢNH BÁO KỶ LUẬT:** 0/{missed_count} khuyến nghị bán được thực thi (chưa thực hiện bất kỳ lệnh bán nào).",
-        "> **Cost of Delay:** Mất đỉnh: −32,6tr | Nguy cơ trượt bảng giá đất 2027: +370tr | Phạt chậm nộp: 930.000 đ/ngày.",
+        disc_line,
+        "> **Kế hoạch 1 tháng:** Sprint thoát vốn bảo vệ sàn cứng 540tr VND trước ngày 31/10/2026.",
         "",
         "### Input",
         f"- **TTS:** **{tts_tr:,.1f}tr VND** (VND đã rút: {withdrawn_tr:,.1f}tr + Crypto: {crypto_tr:,.1f}tr)",

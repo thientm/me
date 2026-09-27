@@ -69,23 +69,25 @@ Vì toàn bộ số tiền này **được dùng làm quỹ dự trữ làm sổ
 
 ---
 
-## 5. Lộ trình Exit — Glidepath v2.1  *(thay bảng milestone T8/T9/T10, 18/09/2026)*
+## 5. Lộ trình Exit — Glidepath v3.0 (Kế hoạch 1 tháng cuối: 27/09/2026 → 31/10/2026)
 
-Bảng cũ (3 giai đoạn T8 → T9 → T10, mục tiêu ~414tr, hạn 25/10) đã hết giá trị: nó lập khi port còn 414tr và trước khi có override 11/10. **Lịch thi hành duy nhất là bảng dưới**, cơ chế đầy đủ ở mục 7.3.
+> ℹ️ **CẬP NHẬT 27/09/2026:**
+> - Reset bộ đếm cảnh báo kỷ luật từ tuần này theo yêu cầu của user, tập trung toàn lực vào sprint 1 tháng cuối.
+> - Hạn chót không đổi: **31/10/2026** (Late October 2026) — còn đúng **34 ngày**.
+> - Sàn cứng không đổi: **540.000.000 VND**.
+> - Danh mục gốc thực tế: **0,15931 BTC + 55,28 SOL + 1.415 USDT** (TTS: ~560,2tr VND).
 
-Đơn vị là **số lượng coin**, không phải giá trị VND — giá trị dao động, số lượng thì không. Gốc: **0,15931 BTC + 55,28 SOL** (đo 18/09).
+### Lịch thi hành Glidepath v3.0 (Chia 4 tuần hành động):
 
-**v2.2 (21/09)** — band ≥530tr nổ nên tranche 11/10 và một nửa 07/10 được kéo về HÔM NAY. Giá quy đổi @$81.344/$112,13, P2P 25.895.
+| Tuần | Thời gian | Thao tác bán / rút | Chi tiết lệnh | ≈VND ước tính | Luỹ kế VND | % Hoàn thành | Mục đích chiến lược |
+|---|---|---|---|---|---|---|---|
+| **Tuần 1** | **27/09 – 03/10** | **Stables + 100% SOL + 25% BTC** | Rút 1.415 USDT + Bán 55,28 SOL + Bán 0,04016 BTC | **~298,2tr** | **298,2tr** | **53,2%** | **Khóa an toàn 53% tiền mặt**, xả sạch rủi ro SOL đỉnh, bất tử sàn cứng 540tr |
+| **Tuần 2** | **04/10 – 10/10** | **Tranche BTC số 2** | Bán 0,04000 BTC ra USDT rồi rút VND | **~88,0tr** | **386,2tr** | **68,9%** | Rút nguồn đối ứng thuế đất |
+| **Tuần 3** | **11/10 – 17/10** | **Tranche BTC số 3** | Bán 0,04000 BTC ra USDT rồi rút VND | **~88,0tr** | **474,2tr** | **84,6%** | Về đích trước mốc Override <14 ngày (17/10) |
+| **Tuần 4** | **18/10 – 25/10** | **Tất toán nốt BTC còn lại** | Bán nốt ~0,03915 BTC ra USDT rồi rút VND | **~86,0tr** | **~560,2tr** | **100,0%** | **Hoàn tất 100% tiền mặt trong bank trước 25/10** |
+| **Đệm** | **26/10 – 31/10** | **Đệm an toàn 6 ngày** | Danh mục 100% VND | — | **560,2tr** | **100,0%** | Dự phòng trục trặc ngân hàng, sẵn sàng giải ngân BĐS |
 
-| Ngày | Bán | BTC | SOL | ≈VND | Luỹ kế |
-|---|---|---|---|---|---|
-| **21/09** | **stables + 50% giá trị coin** *(band ≥530tr)* | 0,04155 | **55,28 (hết SOL)** | **284,7tr** | **284,7tr (53,4%)** |
-| **24/09** | 15% gốc | 0,035327 | — | 74,4tr | 359,1tr (67,4%) |
-| **29/09** ⚠️ | 20% gốc — **kéo lên trước PCE 30/09** | 0,047102 | — | 99,2tr | 458,3tr (86,0%) |
-| **07/10** | 15% gốc (hết) | 0,035327 | — | 74,4tr | **532,7tr (100%)** |
-| ~~11/10~~ | **BIẾN MẤT** — không còn cục nào phải bán đúng ngày hạn cứng | — | — | — | — |
-
-> Đây chính là thứ agent đòi ngày 18/09 và user đã trả lời bằng cách nới. Band ≥530tr trả lại: đuôi 11/10 từ 35% về **0**, và kế hoạch kết thúc **07/10, sớm hơn override #1 bốn ngày**.
+*(Lịch sử Glidepath v2.2 ngày 21/09 và v2.1 ngày 18/09 được lưu giữ trong nhật ký `logs/2026-09.md`)*.
 
 ~~Bảng v2.1 (18/09) — 15/20/30/35 theo lịch 24/09 · 30/09 · 07/10 · 11/10, luỹ kế 30/09 chỉ 200,3tr (39,7%).~~
 

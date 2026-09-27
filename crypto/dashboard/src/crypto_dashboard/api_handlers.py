@@ -44,6 +44,7 @@ KNOWN_ROUTES: Dict[str, List[str]] = {
     "/api/simulate": ["POST"],
     "/api/macro": ["GET"],
     "/api/trend": ["GET"],
+    "/api/strategies": ["GET"],
     "/api/agy/command": ["POST"],
     "/api/agy/execute": ["POST"],
 }
@@ -238,6 +239,145 @@ def get_macro_data(tts_vnd: float = 550643256.0) -> Dict[str, Any]:
     }
 
 
+def build_dual_strategies(
+    snapshot: ValuationSnapshot,
+    matrix: MatrixEvaluation
+) -> Dict[str, Any]:
+    """
+    Constructs dual execution roadmaps:
+    Mode A: BĐS Glidepath v3.0 (Target: 31/10/2026 cashout for 3.1B land deed)
+    Mode B: Maximum Port Trend-Riding (Postpone land deed, ride Q4 wave with trailing stop & ladder)
+    """
+    mode_a_orders = matrix.orders_sheet
+
+    p2p = snapshot.p2p_rate
+    btc_p = snapshot.btc_price
+    sol_p = snapshot.sol_price
+
+    mode_b_orders = [
+        {
+            "step": 1,
+            "action": "WITHDRAW",
+            "symbol": "USDT",
+            "symbol_pair": "USDT/VND",
+            "order_type": "P2P_SELL",
+            "qty": snapshot.stables_usd,
+            "price": p2p,
+            "price_target": p2p,
+            "est_vnd": snapshot.stables_usd * p2p,
+            "estimated_vnd": snapshot.stables_usd * p2p,
+            "deadline": "Ngay lập tức",
+            "reason": "Rút sạch 1.415 USDT ra VND (loại bỏ rủi ro sàn Binance)",
+            "note": "Rút sạch 1.415 USDT ra VND (loại bỏ rủi ro sàn Binance)",
+        },
+        {
+            "step": 2,
+            "action": "SELL",
+            "symbol": "SOL",
+            "symbol_pair": "SOLUSDT",
+            "order_type": "MARKET",
+            "qty": snapshot.sol_qty,
+            "price": sol_p,
+            "price_target": sol_p,
+            "est_vnd": snapshot.sol_qty * sol_p * p2p,
+            "estimated_vnd": snapshot.sol_qty * sol_p * p2p,
+            "deadline": "Trong tuần 1",
+            "reason": "Chốt lời 100% SOL ở đỉnh SOL/BTC percentile 98.9% (hoặc swap BTC), loại bỏ coin beta cao",
+            "note": "Chốt lời 100% SOL ở đỉnh SOL/BTC percentile 98.9% (hoặc swap BTC), loại bỏ coin beta cao",
+        },
+        {
+            "step": 3,
+            "action": "STOP_MARKET",
+            "symbol": "BTC",
+            "symbol_pair": "BTCUSDT",
+            "order_type": "STOP_MARKET",
+            "qty": round(snapshot.btc_qty, 5),
+            "price": 78500.0,
+            "price_target": 78500.0,
+            "est_vnd": snapshot.btc_qty * 78500.0 * p2p,
+            "estimated_vnd": snapshot.btc_qty * 78500.0 * p2p,
+            "deadline": "GTC (Cài ngay)",
+            "reason": "Cài giáp bảo hiểm Stop-Market BTC tại $78,500 (Bảo vệ TTS không âm dưới 520tr VND)",
+            "note": "Cài giáp bảo hiểm Stop-Market BTC tại $78,500 (Bảo vệ TTS không âm dưới 520tr VND)",
+        },
+        {
+            "step": 4,
+            "action": "LIMIT",
+            "symbol": "BTC",
+            "symbol_pair": "BTCUSDT",
+            "order_type": "LIMIT_SELL",
+            "qty": 0.04000,
+            "price": 90200.0,
+            "price_target": 90200.0,
+            "est_vnd": 0.04000 * 90200.0 * p2p,
+            "estimated_vnd": 0.04000 * 90200.0 * p2p,
+            "deadline": "GTC (Treo sẵn)",
+            "reason": "Thang L1 ($90.2k): Bán 25% BTC khi sóng 1 bùng nổ (TTS đạt ~595tr VND)",
+            "note": "Thang L1 ($90.2k): Bán 25% BTC khi sóng 1 bùng nổ (TTS đạt ~595tr VND)",
+        },
+        {
+            "step": 5,
+            "action": "LIMIT",
+            "symbol": "BTC",
+            "symbol_pair": "BTCUSDT",
+            "order_type": "LIMIT_SELL",
+            "qty": 0.04000,
+            "price": 96500.0,
+            "price_target": 96500.0,
+            "est_vnd": 0.04000 * 96500.0 * p2p,
+            "estimated_vnd": 0.04000 * 96500.0 * p2p,
+            "deadline": "GTC (Treo sẵn)",
+            "reason": "Thang L2 ($96.5k): Bán 25% BTC tiếp theo (TTS đạt ~635tr VND)",
+            "note": "Thang L2 ($96.5k): Bán 25% BTC tiếp theo (TTS đạt ~635tr VND)",
+        },
+        {
+            "step": 6,
+            "action": "LIMIT",
+            "symbol": "BTC",
+            "symbol_pair": "BTCUSDT",
+            "order_type": "LIMIT_SELL",
+            "qty": 0.04000,
+            "price": 103000.0,
+            "price_target": 103000.0,
+            "est_vnd": 0.04000 * 103000.0 * p2p,
+            "estimated_vnd": 0.04000 * 103000.0 * p2p,
+            "deadline": "GTC (Treo sẵn)",
+            "reason": "Thang L3 ($103k): Bán 25% BTC (TTS đạt ~675tr - CHÍNH THỨC VƯỢT GỐC 650TR)",
+            "note": "Thang L3 ($103k): Bán 25% BTC (TTS đạt ~675tr - CHÍNH THỨC VƯỢT GỐC 650TR)",
+        },
+    ]
+
+    return {
+        "active_mode": "a",
+        "mode_a": {
+            "id": "a",
+            "title": "Chế độ A: BĐS Glidepath v3.0 (Kỷ luật Sổ Đỏ 2026)",
+            "tag": "ƯU TIÊN BĐS & AN TOÀN",
+            "badge_class": "badge-success",
+            "deadline": "31/10/2026 (Hoàn tất rút 100% trước 25/10/2026)",
+            "primary_goal": "Khóa cứng 540tr - 560tr VND tiền mặt ngân hàng, bảo đảm an toàn làm sổ đất Phù Đổng.",
+            "bds_impact": "Bảo đảm nộp thuế đất năm 2026; né tăng giá đất 2027, tiết kiệm ~370 triệu VND.",
+            "methodology": "Thoát vốn 4 tuần cố định (Tuần 1: 53.2% -> Tuần 2: 68.9% -> Tuần 3: 84.6% -> Tuần 4: 100%).",
+            "week_1_action": "Rút 1.415 USDT + Xả sạch 55.28 SOL + Bán 0.04016 BTC -> Thu về ~298 triệu VND tiền mặt.",
+            "risk_profile": "Rủi ro thị trường = 0% sau khi rút vốn.",
+            "orders": mode_a_orders,
+        },
+        "mode_b": {
+            "id": "b",
+            "title": "Chế độ B: Maximum Port Trend-Riding (Hoãn BĐS, Gồng Sóng Q4)",
+            "tag": "GỒNG SÓNG & TỐI ĐA HÓA",
+            "badge_class": "badge-warning",
+            "deadline": "Linh hoạt Q4/2026 (Không bán ép ngày 31/10)",
+            "primary_goal": "Tối đa hóa tài sản crypto, đón sóng Uptober & Bầu cử Mỹ (Target BTC $90k - $100k+, TTS 600 - 680tr).",
+            "bds_impact": "Chấp nhận hoãn làm sổ đất sang năm 2027 (chấp nhận rủi ro bảng giá đất tăng +370 triệu VND hoặc tìm nguồn vay khác).",
+            "methodology": "Không bán theo ngày cố định. Dùng Trailing Stop Ratchet ($78.5k BTC) + Limit Ladder GTC ($90k - $96k - $103k).",
+            "week_1_action": "Rút 1.415 USDT + Xả/Swap SOL sang BTC + Cài Stop-Market $78,500 + Treo sẵn 3 lệnh Limit chốt lời.",
+            "risk_profile": "Cần crypto tăng >+66% để bù khoản trượt giá đất 370tr; có giáp Stop-Market bảo vệ vốn ở $78.5k.",
+            "orders": mode_b_orders,
+        }
+    }
+
+
 def handle_api_route(
     method: str, path: str, body: Optional[Union[Dict[str, Any], Any]] = None
 ) -> Tuple[int, Dict[str, Any]]:
@@ -386,6 +526,7 @@ def handle_api_route(
                 "Bán ngay 50% coin (xả sạch SOL) và rút Stables."
             ),
         }
+        dual_strategies = build_dual_strategies(snapshot, matrix)
 
         return 200, {
             "status": "ok",
@@ -395,6 +536,7 @@ def handle_api_route(
                 "portfolio": portfolio,
                 "market_rates": market_rates,
                 "discipline_gate": discipline_gate,
+                "dual_strategies": dual_strategies,
             },
         }
 
@@ -402,6 +544,8 @@ def handle_api_route(
     if norm_path == "/api/matrix":
         holdings = parse_crypto_plan()
         rates = get_rates(offline_only=False)
+        logs_data = parse_logs()
+        missed_count = logs_data.get("missed_recommendations_count", 0)
         snapshot = calculate_tts(
             btc_qty=holdings.get("btc_qty", FALLBACK_BTC_QTY),
             sol_qty=holdings.get("sol_qty", FALLBACK_SOL_QTY),
@@ -420,6 +564,7 @@ def handle_api_route(
             sol_price=snapshot.sol_price,
             p2p_rate=snapshot.p2p_rate,
             withdrawn_vnd=snapshot.withdrawn_vnd,
+            missed_count=missed_count,
             snapshot=snapshot,
         )
 
@@ -593,6 +738,40 @@ def handle_api_route(
                 "bht_ticker": bht_data,
                 "avc_meter": avc_data,
             },
+        }
+
+    # Route: GET /api/strategies
+    if norm_path == "/api/strategies":
+        holdings = parse_crypto_plan()
+        rates = get_rates(offline_only=False)
+        logs_data = parse_logs()
+        missed_count = logs_data.get("missed_recommendations_count", 0)
+        snapshot = calculate_tts(
+            btc_qty=holdings.get("btc_qty", FALLBACK_BTC_QTY),
+            sol_qty=holdings.get("sol_qty", FALLBACK_SOL_QTY),
+            stables_usd=holdings.get("stables_usd", FALLBACK_STABLES_USD),
+            btc_price=rates.get("BTCUSDT", FALLBACK_BTC_PRICE),
+            sol_price=rates.get("SOLUSDT", FALLBACK_SOL_PRICE),
+            p2p_rate=rates.get("USDT_VND_P2P", FALLBACK_P2P_RATE),
+            withdrawn_vnd=holdings.get("withdrawn_vnd", 0.0),
+        )
+        matrix = evaluate_binary_matrix(
+            tts_vnd=snapshot.tts_vnd,
+            btc_qty=snapshot.btc_qty,
+            sol_qty=snapshot.sol_qty,
+            stables_usd=snapshot.stables_usd,
+            btc_price=snapshot.btc_price,
+            sol_price=snapshot.sol_price,
+            p2p_rate=snapshot.p2p_rate,
+            withdrawn_vnd=snapshot.withdrawn_vnd,
+            missed_count=missed_count,
+            snapshot=snapshot,
+        )
+        dual = build_dual_strategies(snapshot, matrix)
+        return 200, {
+            "status": "ok",
+            "timestamp": timestamp,
+            "data": dual,
         }
 
     # Route: POST /api/agy/command

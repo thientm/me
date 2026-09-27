@@ -185,6 +185,8 @@ def handle_status(args: argparse.Namespace) -> int:
     """Handler for 'status' subcommand."""
     holdings = parse_crypto_plan()
     rates = get_rates(offline_only=args.offline)
+    logs_data = parse_logs()
+    missed_count = logs_data.get("missed_recommendations_count", 0)
 
     snapshot = calculate_tts(
         btc_qty=holdings.get("btc_qty", FALLBACK_BTC_QTY),
@@ -204,6 +206,7 @@ def handle_status(args: argparse.Namespace) -> int:
         sol_price=snapshot.sol_price,
         p2p_rate=snapshot.p2p_rate,
         withdrawn_vnd=snapshot.withdrawn_vnd,
+        missed_count=missed_count,
         snapshot=snapshot,
     )
 
@@ -249,8 +252,10 @@ def handle_status(args: argparse.Namespace) -> int:
     print("╔═══════════════════════════════════════════════════════════════════════════╗")
     print("║              CRYPTO LIQUIDITY COCKPIT — REALTIME STATUS                  ║")
     print(f"║                     {snapshot.timestamp[:19]} (UTC)                        ║")
-    print("╠═══════════════════════════════════════════════════════════════════════════╣")
-    print("║ 🚨 BÁO ĐỘNG ĐỎ: 0/13 KHUYẾN NGHỊ BÁN ĐÃ ĐƯỢC THỰC THI (TRỄ 50 NGÀY)      ║")
+    if matrix.missed_recommendations_count == 0:
+        print("║ ℹ️ CHU KỲ MỚI (27/09 - 31/10): RESET THEO DÕI KỶ LUẬT (SPRINT 1 THÁNG CUỐI) ║")
+    else:
+        print(f"║ 🚨 BÁO ĐỘNG ĐỎ: 0/{matrix.missed_recommendations_count:<2} KHUYẾN NGHỊ BÁN ĐÃ ĐƯỢC THỰC THI (TRỄ 50 NGÀY)      ║")
     print(f"║    Band: {matrix.active_band:<18} (TTS: {snapshot.tts_vnd/1e6:.1f}tr VND)                   ║")
     print("║    Hành động: BÁN 50% COIN (XẢ SẠCH SOL) + RÚT HẾT STABLES NGAY           ║")
     print("╠═══════════════════════════════════════════════════════════════════════════╣")
@@ -277,6 +282,8 @@ def handle_review(args: argparse.Namespace) -> int:
     """Handler for 'review' subcommand."""
     holdings = parse_crypto_plan()
     rates = get_rates(offline_only=False)
+    logs_data = parse_logs()
+    missed_count = logs_data.get("missed_recommendations_count", 0)
 
     snapshot = calculate_tts(
         btc_qty=holdings.get("btc_qty", FALLBACK_BTC_QTY),
@@ -296,6 +303,7 @@ def handle_review(args: argparse.Namespace) -> int:
         sol_price=snapshot.sol_price,
         p2p_rate=snapshot.p2p_rate,
         withdrawn_vnd=snapshot.withdrawn_vnd,
+        missed_count=missed_count,
         snapshot=snapshot,
     )
     macro = get_macro_data(tts_vnd=snapshot.tts_vnd)
@@ -307,6 +315,7 @@ def handle_review(args: argparse.Namespace) -> int:
         action_summary="Kích hoạt Take-Profit 50%: Bán sạch 55.28 SOL và rút 1.415 USDT.",
         borrow_needed_vnd=macro["bds_financial_gap"]["borrow_needed_vnd"],
         date_str=snapshot.timestamp[:10],
+        missed_count=missed_count,
     )
 
     if args.save_log and not args.dry_run:
