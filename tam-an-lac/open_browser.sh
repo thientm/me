@@ -17,6 +17,6 @@ exec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
   --remote-debugging-port=$PORT \
   --no-first-run \
   --no-default-browser-check \
-  "https://studio.youtube.com" \
+  "https://studio.youtube.com/channel/UCjEteQMJ4zzFV9_iKvChpvA" \
   "https://www.tiktok.com/creator-center/upload?from=upload" \
-  "https://business.facebook.com"
+  "https://business.facebook.com/latest/reels_composer?page_id=686899491163120"
