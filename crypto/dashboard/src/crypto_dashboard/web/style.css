@@ -1004,3 +1004,94 @@ body.dark-theme {
     justify-content: space-between;
   }
 }
+
+/* ==========================================================================
+   Dual Strategy Command Hub (Mode A: BĐS vs Mode B: Max Port)
+   ========================================================================== */
+.strategy-hub-section {
+  border-left: 4px solid var(--accent-cyan);
+}
+
+.dual-strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.dual-strategy-grid.single-a #card-strategy-b {
+  display: none;
+}
+
+.dual-strategy-grid.single-a #card-strategy-a {
+  grid-column: span 2;
+}
+
+.dual-strategy-grid.single-b #card-strategy-a {
+  display: none;
+}
+
+.dual-strategy-grid.single-b #card-strategy-b {
+  grid-column: span 2;
+}
+
+.strategy-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+.strategy-card.active-card {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.strategy-icon {
+  font-size: 1.5rem;
+}
+
+.strategy-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.strategy-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  background: var(--bg-code);
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+}
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  gap: 8px;
+}
+
+.meta-label {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.meta-val {
+  font-weight: 600;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .dual-strategy-grid {
+    grid-template-columns: 1fr;
+  }
+  .dual-strategy-grid.single-a #card-strategy-a,
+  .dual-strategy-grid.single-b #card-strategy-b {
+    grid-column: span 1;
+  }
+}
+

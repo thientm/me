@@ -30,6 +30,9 @@ const State = {
   },
   disciplineGate: null,
   matrix: null,
+  dualStrategies: null,
+  strategyView: 'both', // 'a', 'b', or 'both'
+  activeOrdersMode: 'a', // 'a' or 'b'
   macroEvents: [],
   bdsGap: null,
   trend: null,
@@ -248,6 +251,10 @@ async function fetchInitialData() {
     State.portfolio = statusData.portfolio || OfflineOracle.status.portfolio;
     State.marketRates = statusData.market_rates || OfflineOracle.status.market_rates;
     State.disciplineGate = statusData.discipline_gate || OfflineOracle.status.discipline_gate;
+
+    if (statusData.dual_strategies) {
+      State.dualStrategies = statusData.dual_strategies;
+    }
 
     // Sync simulation reference prices
     if (State.marketRates) {
@@ -680,31 +687,118 @@ function renderQuantVisualizers() {
   if (excessEl) excessEl.textContent = "⚠️ VƯỢT TRẦN NGUY HIỂM: +381,7 TRIỆU VND";
 }
 
+// --- DUAL STRATEGY CONTROLLERS ---
+window.selectStrategyView = function(mode) {
+  State.strategyView = mode;
+  const btnA = document.getElementById("btn-mode-a");
+  const btnB = document.getElementById("btn-mode-b");
+  const btnBoth = document.getElementById("btn-mode-both");
+  const grid = document.getElementById("strategy-cards-grid");
+
+  if (btnA) btnA.className = mode === 'a' ? "btn btn-sm btn-primary active-mode-btn" : "btn btn-sm btn-secondary";
+  if (btnB) btnB.className = mode === 'b' ? "btn btn-sm btn-primary active-mode-btn" : "btn btn-sm btn-secondary";
+  if (btnBoth) btnBoth.className = mode === 'both' ? "btn btn-sm btn-primary active-mode-btn" : "btn btn-sm btn-secondary";
+
+  if (grid) {
+    grid.classList.remove("single-a", "single-b");
+    if (mode === 'a') grid.classList.add("single-a");
+    if (mode === 'b') grid.classList.add("single-b");
+  }
+};
+
+window.applyOrdersMode = function(mode) {
+  State.activeOrdersMode = mode;
+  const badge = document.getElementById("orders-mode-badge");
+  const btnA = document.getElementById("btn-toggle-orders-a");
+  const btnB = document.getElementById("btn-toggle-orders-b");
+  const cardBtnA = document.getElementById("btn-apply-card-a");
+  const cardBtnB = document.getElementById("btn-apply-card-b");
+  const cardA = document.getElementById("card-strategy-a");
+  const cardB = document.getElementById("card-strategy-b");
+
+  if (badge) {
+    if (mode === 'a') {
+      badge.textContent = "ĐANG XEM: CHẾ ĐỘ A (BĐS GLIDEPATH)";
+      badge.className = "badge badge-success font-mono";
+    } else {
+      badge.textContent = "ĐANG XEM: CHẾ ĐỘ B (MAXIMUM PORT)";
+      badge.className = "badge badge-warning font-mono";
+    }
+  }
+
+  if (btnA) btnA.className = mode === 'a' ? "btn btn-xs btn-primary" : "btn btn-xs btn-secondary";
+  if (btnB) btnB.className = mode === 'b' ? "btn btn-xs btn-primary" : "btn btn-xs btn-secondary";
+
+  if (cardBtnA) {
+    cardBtnA.textContent = mode === 'a' ? "✓ Đang Áp Dụng Lệnh Mode A" : "🧭 Áp Dụng Lệnh Mode A";
+    cardBtnA.className = mode === 'a' ? "btn btn-success btn-xs" : "btn btn-outline btn-xs";
+  }
+
+  if (cardBtnB) {
+    cardBtnB.textContent = mode === 'b' ? "✓ Đang Áp Dụng Lệnh Mode B" : "🚀 Áp Dụng Lệnh Mode B";
+    cardBtnB.className = mode === 'b' ? "btn btn-warning btn-xs" : "btn btn-outline btn-xs";
+  }
+
+  if (cardA) cardA.classList.toggle("active-card", mode === 'a');
+  if (cardB) cardB.classList.toggle("active-card", mode === 'b');
+
+  renderOrdersTable();
+  showToast(mode === 'a' ? "🧭 Bảng lệnh chuyển sang Chế Độ A (BĐS Glidepath)" : "🚀 Bảng lệnh chuyển sang Chế Độ B (Maximum Port Trend-Riding)", "info");
+};
+
+function getActiveOrdersList() {
+  const mode = State.activeOrdersMode || 'a';
+  if (mode === 'b') {
+    if (State.dualStrategies && State.dualStrategies.mode_b && State.dualStrategies.mode_b.orders) {
+      return State.dualStrategies.mode_b.orders;
+    }
+    const p2p = (State.marketRates && State.marketRates.usdt_vnd_p2p) || 26011;
+    const solP = (State.marketRates && State.marketRates.sol_usdt) || 120.66;
+    return [
+      { step: 1, action: "WITHDRAW", channel: "P2P", symbol: "USDT", qty: 1415.0, price: p2p, estimated_vnd: 1415.0 * p2p, deadline: "Ngay lập tức", reason: "Rút 100% Stables ra VND (loại bỏ rủi ro Binance)" },
+      { step: 2, action: "MARKET_SELL", channel: "SPOT", symbol: "SOL", qty: 55.28, price: solP, estimated_vnd: 55.28 * solP * p2p, deadline: "Trong tuần 1", reason: "Chốt lời SOL ở đỉnh SOL/BTC 98.9% (hoặc swap BTC)" },
+      { step: 3, action: "STOP_MARKET", channel: "SPOT", symbol: "BTC", qty: 0.15931, price: 78500.0, estimated_vnd: 0.15931 * 78500.0 * p2p, deadline: "GTC (Cài ngay)", reason: "Cài Stop-Market $78,500 bảo vệ TTS >= 520tr VND" },
+      { step: 4, action: "LIMIT_SELL", channel: "SPOT", symbol: "BTC", qty: 0.04000, price: 90200.0, estimated_vnd: 0.04000 * 90200.0 * p2p, deadline: "GTC (Treo sẵn)", reason: "Thang L1 ($90.2k): Bán 25% BTC khi sóng 1 bùng nổ (TTS ~595tr)" },
+      { step: 5, action: "LIMIT_SELL", channel: "SPOT", symbol: "BTC", qty: 0.04000, price: 96500.0, estimated_vnd: 0.04000 * 96500.0 * p2p, deadline: "GTC (Treo sẵn)", reason: "Thang L2 ($96.5k): Bán 25% BTC tiếp theo (TTS ~635tr)" },
+      { step: 6, action: "LIMIT_SELL", channel: "SPOT", symbol: "BTC", qty: 0.04000, price: 103000.0, estimated_vnd: 0.04000 * 103000.0 * p2p, deadline: "GTC (Treo sẵn)", reason: "Thang L3 ($103k): Bán 25% BTC (TTS đạt ~675tr - VƯỢT GỐC 650TR)" }
+    ];
+  }
+  return (State.matrix && State.matrix.orders_sheet) || OfflineOracle.matrix.orders_sheet || [];
+}
+
 function renderOrdersTable() {
   const table = document.getElementById("orders-table");
-  if (!table || !State.matrix || !State.matrix.orders_sheet) return;
+  if (!table) return;
 
   const tbody = table.querySelector("tbody");
   if (!tbody) return;
 
-  const orders = State.matrix.orders_sheet;
+  const orders = getActiveOrdersList();
   if (!orders || orders.length === 0) return;
 
   tbody.innerHTML = "";
-  orders.forEach(ord => {
+  orders.forEach((ord, idx) => {
     const tr = document.createElement("tr");
-    const pClass = ord.priority === 1 ? "p1" : (ord.priority === 2 ? "p2" : "p3");
-    const actionColor = ord.priority === 1 ? "text-success" : (ord.priority === 2 ? "text-warning" : "text-cyan");
-    const tagColor = ord.priority === 3 ? "badge-tag-warning" : "badge-tag-danger";
+    const priority = ord.priority || ord.step || (idx + 1);
+    const pClass = priority === 1 ? "p1" : (priority === 2 ? "p2" : (priority === 3 ? "p3" : "p2"));
+    const actStr = (ord.action || ord.order_type || "").toUpperCase();
+    const isStop = actStr.includes("STOP");
+    const isLimit = actStr.includes("LIMIT");
+    const isWithdraw = actStr.includes("WITHDRAW");
+    const actionColor = isStop ? "text-danger" : (isLimit ? "text-cyan" : (isWithdraw ? "text-success" : "text-warning"));
+    const tagColor = isStop ? "badge-tag-danger" : (isLimit ? "badge-tag-warning" : "badge-tag-danger");
+    const channel = (ord.channel === "P2P" || ord.symbol_pair === "USDT/VND" || ord.order_type === "P2P_SELL") ? "Binance P2P" : "Binance Spot";
+    const sym = ord.symbol || (ord.symbol_pair ? ord.symbol_pair.replace("USDT", "") : "BTC");
+    const estVal = ord.estimated_vnd || ord.est_vnd || 0;
 
     tr.innerHTML = `
-      <td><span class="badge-priority ${pClass}">${ord.priority}</span></td>
-      <td>${ord.channel === "P2P" ? "Binance P2P" : "Binance Spot"}</td>
-      <td><strong class="${actionColor}">${ord.action.replace(/_/g, " ")}</strong></td>
-      <td>${ord.symbol}</td>
-      <td class="font-mono">${formatCrypto(ord.qty, ord.symbol.replace("USDT", ""))}</td>
-      <td class="font-mono">${ord.channel === "P2P" ? formatVND(ord.price) : "$" + Number(ord.price).toLocaleString()}</td>
-      <td class="font-mono ${actionColor}">${formatVND(ord.estimated_vnd)}</td>
+      <td><span class="badge-priority ${pClass}">${priority}</span></td>
+      <td>${channel}</td>
+      <td><strong class="${actionColor}">${actStr.replace(/_/g, " ")}</strong></td>
+      <td>${sym}</td>
+      <td class="font-mono">${formatCrypto(ord.qty, sym.replace("USDT", ""))}</td>
+      <td class="font-mono">${channel.includes("P2P") ? formatVND(ord.price) : "$" + Number(ord.price).toLocaleString()}</td>
+      <td class="font-mono ${actionColor}">${formatVND(estVal)}</td>
       <td><span class="${tagColor}">${ord.deadline || "Ngay lập tức"}</span></td>
     `;
     tbody.appendChild(tr);
@@ -735,13 +829,24 @@ function showToast(message, type = "success") {
 
 // 8. ACTIONS & COMMANDS
 async function copyOrderSheet() {
-  const orders = (State.matrix && State.matrix.orders_sheet) || OfflineOracle.matrix.orders_sheet;
-  let text = `=== 10-MINUTE EXECUTABLE ORDER SHEET (HARD FLOOR 540TR) ===\n`;
+  const mode = State.activeOrdersMode || 'a';
+  const orders = getActiveOrdersList();
+  let text = mode === 'a' 
+    ? `=== BẢNG LỆNH CHẾ ĐỘ A: BĐS GLIDEPATH (HẠN 31/10/2026) ===\n`
+    : `=== BẢNG LỆNH CHẾ ĐỘ B: MAXIMUM PORT TREND-RIDING (SÓNG Q4) ===\n`;
   text += `Thời gian tạo: ${new Date().toLocaleString("vi-VN")}\n`;
-  text += `Mục tiêu: Thoát vốn khẩn cấp bảo vệ sàn cứng 540.000.000 VND\n\n`;
+  text += mode === 'a'
+    ? `Mục tiêu: Thoát vốn 100% về bank trước 25/10 để làm sổ đất Phù Đổng (né tăng giá đất 2027)\n\n`
+    : `Mục tiêu: Tối đa hóa lợi nhuận Q4, cài Trailing Stop $78.5k + Thang chốt lời $90k-$103k\n\n`;
 
-  orders.forEach(o => {
-    text += `${o.priority}. [${o.channel.toUpperCase()}] ${o.action.replace(/_/g, " ")}: ${o.qty} ${o.symbol} @ ${o.price} -> ${formatVND(o.estimated_vnd)} (Hạn: ${o.deadline})\n`;
+  orders.forEach((o, idx) => {
+    const num = o.priority || o.step || (idx + 1);
+    const act = (o.action || o.order_type || "").replace(/_/g, " ");
+    const channel = (o.channel === "P2P" || o.symbol_pair === "USDT/VND" || o.order_type === "P2P_SELL") ? "P2P" : "SPOT";
+    const sym = o.symbol || (o.symbol_pair ? o.symbol_pair.replace("USDT", "") : "BTC");
+    const priceStr = channel === "P2P" ? `${formatVND(o.price)}` : `$${Number(o.price).toLocaleString()}`;
+    const est = formatVND(o.estimated_vnd || o.est_vnd || 0);
+    text += `${num}. [${channel}] ${act}: ${o.qty} ${sym} @ ${priceStr} -> ${est} (Hạn: ${o.deadline || "Ngay"})\n   Ghi chú: ${o.reason || o.note || ""}\n`;
   });
   text += `\n=============================================================`;
 
@@ -757,7 +862,7 @@ async function copyOrderSheet() {
       document.execCommand("copy");
       document.body.removeChild(ta);
     }
-    showToast("📋 Đã sao chép 10-Minute Order Sheet vào bộ nhớ tạm!", "success");
+    showToast(mode === 'a' ? "📋 Đã sao chép Bảng Lệnh Chế Độ A (BĐS Glidepath)!" : "📋 Đã sao chép Bảng Lệnh Chế Độ B (Maximum Port)!", "success");
   } catch (err) {
     showToast("Không thể sao chép tự động: " + err.message, "error");
   }

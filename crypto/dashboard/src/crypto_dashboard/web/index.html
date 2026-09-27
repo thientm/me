@@ -481,6 +481,109 @@
       </div>
     </section>
 
+    <!-- COMPONENT 5.5: DUAL STRATEGY COMMAND HUB (MODE A: BĐS GLIDEPATH vs MODE B: MAXIMUM PORT) -->
+    <section class="cockpit-panel strategy-hub-section mt-4" id="strategy-hub" aria-label="Dual Strategy Command Hub">
+      <div class="panel-header d-flex justify-between align-center flex-wrap gap-2">
+        <div>
+          <div class="d-flex align-center gap-2">
+            <h2 class="panel-title">DUAL-STRATEGY COMMAND HUB: 2 LỘ TRÌNH ĐIỀU HÀNH</h2>
+            <span class="badge badge-tag">TWO-ROAD MATRIX</span>
+          </div>
+          <span class="text-secondary text-xs">So sánh trực quan & điều hướng thực thi: Kỷ Luật BĐS 2026 vs. Tối Đa Hóa Danh Mục Q4</span>
+        </div>
+        <div class="strategy-switcher-buttons d-flex gap-2">
+          <button id="btn-mode-a" class="btn btn-sm btn-primary active-mode-btn" onclick="selectStrategyView('a')">
+            🧭 Chế Độ A: BĐS Glidepath (Hạn 31/10)
+          </button>
+          <button id="btn-mode-b" class="btn btn-sm btn-secondary" onclick="selectStrategyView('b')">
+            🚀 Chế Độ B: Maximum Port (Gồng Sóng Q4)
+          </button>
+          <button id="btn-mode-both" class="btn btn-sm btn-secondary" onclick="selectStrategyView('both')">
+            ⚡ Xem Song Song (Dual View)
+          </button>
+        </div>
+      </div>
+
+      <!-- Strategy Comparison Grid -->
+      <div class="dual-strategy-grid mt-3" id="strategy-cards-grid">
+        <!-- Card A: BĐS Glidepath -->
+        <div class="strategy-card active-card" id="card-strategy-a">
+          <div class="strategy-card-header d-flex justify-between align-center">
+            <div class="d-flex align-center gap-2">
+              <span class="strategy-icon">🧭</span>
+              <div>
+                <h3 class="strategy-title">Chế Độ A: BĐS Glidepath v3.0</h3>
+                <span class="strategy-subtitle text-xs text-muted">Kỷ luật sổ đỏ 3,1 tỷ · Hạn chót 31/10/2026</span>
+              </div>
+            </div>
+            <span class="badge badge-success">ƯU TIÊN AN TOÀN BĐS</span>
+          </div>
+          <div class="strategy-card-body mt-2">
+            <div class="strategy-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Mục tiêu tối thượng:</span>
+                <span class="meta-val text-success">Khóa cứng 540tr - 560tr tiền mặt về bank trước 25/10/2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Lợi ích tài chính:</span>
+                <span class="meta-val text-cyan">Né tăng giá đất 2027 (+8%~15%), tiết kiệm ~370 triệu VND</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Cơ chế quản trị:</span>
+                <span class="meta-val text-primary">Thoát vốn 4 tuần theo Glidepath (53% -> 69% -> 85% -> 100%)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Hành động tuần 1:</span>
+                <span class="meta-val text-warning">Rút 1.415 USDT + Xả sạch SOL + Bán 0.04 BTC (Thu ~298tr VND)</span>
+              </div>
+            </div>
+            <div class="strategy-action-bar mt-3 d-flex justify-between align-center">
+              <span class="text-xs text-muted">Rủi ro thị trường: <strong>0% sau khi rút</strong></span>
+              <button id="btn-apply-card-a" class="btn btn-success btn-xs" onclick="applyOrdersMode('a')">✓ Đang Áp Dụng Lệnh Mode A</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card B: Maximum Port Trend-Riding -->
+        <div class="strategy-card" id="card-strategy-b">
+          <div class="strategy-card-header d-flex justify-between align-center">
+            <div class="d-flex align-center gap-2">
+              <span class="strategy-icon">🚀</span>
+              <div>
+                <h3 class="strategy-title">Chế Độ B: Maximum Port Trend-Riding</h3>
+                <span class="strategy-subtitle text-xs text-muted">Hoãn BĐS sang 2027 · Gồng sóng Uptober & US Election</span>
+              </div>
+            </div>
+            <span class="badge badge-warning">GỒNG SÓNG & TỐI ĐA HÓA</span>
+          </div>
+          <div class="strategy-card-body mt-2">
+            <div class="strategy-meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Mục tiêu tối thượng:</span>
+                <span class="meta-val text-warning">Tối đa hóa tài sản crypto, target BTC $90k - $100k+ (TTS >650tr)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Đánh đổi BĐS:</span>
+                <span class="meta-val text-danger">Chấp nhận đất 2027 tăng ~370tr (cần crypto tăng >+66% để bù)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Cơ chế kỷ luật:</span>
+                <span class="meta-val text-primary">Không bán theo ngày; Trailing Stop $78.5k + Thang chốt lời Limit GTC</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Hành động tuần 1:</span>
+                <span class="meta-val text-cyan">Rút USDT + Bán/Swap SOL + Treo Limit L1-L3 + Stop-Market $78,500</span>
+              </div>
+            </div>
+            <div class="strategy-action-bar mt-3 d-flex justify-between align-center">
+              <span class="text-xs text-muted">Giáp bảo hiểm: <strong>Stop-Market $78.5k</strong></span>
+              <button id="btn-apply-card-b" class="btn btn-outline btn-xs" onclick="applyOrdersMode('b')">⚡ Áp Dụng Lệnh Mode B</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- COMPONENT 6: ANTIGRAVITY ACTION CENTER & agy CLI BRIDGE -->
     <section class="action-center-section cockpit-panel mt-4" id="action-center" aria-label="Antigravity Action Center">
       <div class="panel-header d-flex justify-between align-center">
@@ -498,7 +601,16 @@
 
       <!-- 10-Minute Executable Order Sheet -->
       <div class="orders-sheet-wrapper mt-3" id="orders-sheet-container">
-        <h3 class="orders-heading">BẢNG LỆNH THỰC THI 10 PHÚT (10-MINUTE EXECUTABLE ORDER SHEET)</h3>
+        <div class="d-flex justify-between align-center flex-wrap gap-2 mb-2">
+          <div class="d-flex align-center gap-2">
+            <h3 class="orders-heading mb-0">BẢNG LỆNH THỰC THI (ORDER SHEET)</h3>
+            <span id="orders-mode-badge" class="badge badge-success font-mono">ĐANG XEM: CHẾ ĐỘ A (BĐS GLIDEPATH)</span>
+          </div>
+          <div class="orders-mode-toggle d-flex gap-2">
+            <button id="btn-toggle-orders-a" class="btn btn-xs btn-primary" onclick="applyOrdersMode('a')">🧭 Lệnh Mode A</button>
+            <button id="btn-toggle-orders-b" class="btn btn-xs btn-secondary" onclick="applyOrdersMode('b')">🚀 Lệnh Mode B</button>
+          </div>
+        </div>
         <table class="table-orders" id="orders-table">
           <thead>
             <tr>
