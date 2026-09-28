@@ -39,6 +39,18 @@
     "ghi_chu": "hen 12:30",
     "luc": "21.09.2026 09:29"
   },
+  "anthropic-malaysia-election:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "28.09.2026 11:59"
+  },
+  "anthropic-malaysia-election:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "28.09.2026 12:01"
+  },
+  "anthropic-malaysia-election:youtube": {
+    "ghi_chu": "dang ngay",
+    "luc": "28.09.2026 11:57"
+  },
   "ban-asi-act:facebook": {
     "ghi_chu": "dang ngay",
     "luc": "26.09.2026 11:59"
