@@ -271,6 +271,18 @@
     "ghi_chu": "hen 20:00",
     "luc": "26.09.2026 14:59"
   },
+  "nvidia-agent-safety:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "28.09.2026 20:07"
+  },
+  "nvidia-agent-safety:tiktok": {
+    "ghi_chu": "hen 20:30",
+    "luc": "28.09.2026 20:06"
+  },
+  "nvidia-agent-safety:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "28.09.2026 20:03"
+  },
   "openai-medicare-au:facebook": {
     "ghi_chu": "dang lai (ban 12:52 Failed to publish) + dich giong Meta AI",
     "luc": "25.09.2026 13:05"
