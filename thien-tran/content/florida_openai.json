@@ -1,0 +1,415 @@
+{
+ "slug": "florida_openai",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "OPENAI BỊ KIỆN · 28.09.2026",
+ "date": "29.09.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "FLORIDA KIỆN OPENAI",
+   "say": "Một bang muốn duyệt AI trước khi làm.",
+   "plain": "Một bang muốn duyệt AI trước khi làm",
+   "words": [
+    "Một",
+    "bang",
+    "muốn",
+    "duyệt",
+    "AI",
+    "trước",
+    "khi",
+    "làm"
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Đó là Flo-ri-đa, nhắm vào Ô-pen Ây Ai.",
+   "plain": "Đó là Florida, nhắm vào OpenAI",
+   "words": [
+    "Đó",
+    "là",
+    "Florida,",
+    "nhắm",
+    "vào",
+    "OpenAI"
+   ],
+   "weights": [
+    1,
+    1,
+    3,
+    1,
+    1,
+    4
+   ],
+   "hot": [
+    2,
+    5
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "SỰ THẬT · ĐƠN NỘP TÒA",
+   "shot": "florida-openai-motion.png",
+   "src": "myfloridalegal.com · đơn nộp tòa 28.09.2026",
+   "view": [
+    0,
+    100,
+    1290,
+    668
+   ],
+   "focus": [
+    0,
+    580,
+    1290,
+    668
+   ],
+   "hl": [
+    295,
+    1115,
+    860,
+    110
+   ],
+   "say": "Ngày hai mươi tám tháng Chín, tổng chưởng lý Flo ri đa nộp đơn bốn mươi chín trang lên tòa.",
+   "plain": "Ngày 28.9, tổng chưởng lý Florida nộp đơn 49 trang lên tòa.",
+   "words": [
+    "Ngày",
+    "28.9,",
+    "tổng",
+    "chưởng",
+    "lý",
+    "Florida",
+    "nộp",
+    "đơn",
+    "49",
+    "trang",
+    "lên",
+    "tòa."
+   ],
+   "weights": [
+    1,
+    5,
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    4,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    5,
+    8
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Yêu cầu số một: cấm làm mọi mô hình ây ai nếu chưa có bên thứ ba độc lập duyệt.",
+   "plain": "Yêu cầu số một: cấm làm mọi mô hình AI nếu chưa có bên thứ ba độc lập duyệt.",
+   "words": [
+    "Yêu",
+    "cầu",
+    "số",
+    "một:",
+    "cấm",
+    "làm",
+    "mọi",
+    "mô",
+    "hình",
+    "AI",
+    "nếu",
+    "chưa",
+    "có",
+    "bên",
+    "thứ",
+    "ba",
+    "độc",
+    "lập",
+    "duyệt."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    13,
+    14,
+    15,
+    18
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g3",
+   "mode": "say",
+   "lab": "SỰ THẬT",
+   "say": "Đơn còn xin cấm trẻ vị thành niên ở Flo ri đa dùng Chát gi pi ti, trong lúc chờ xử.",
+   "plain": "Đơn còn xin cấm trẻ vị thành niên ở Florida dùng ChatGPT, trong lúc chờ xử.",
+   "words": [
+    "Đơn",
+    "còn",
+    "xin",
+    "cấm",
+    "trẻ",
+    "vị",
+    "thành",
+    "niên",
+    "ở",
+    "Florida",
+    "dùng",
+    "ChatGPT,",
+    "trong",
+    "lúc",
+    "chờ",
+    "xử."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    1,
+    4,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    11
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g4",
+   "mode": "say",
+   "lab": "HYPE HAY THẬT",
+   "say": "Nhưng khoan, đây mới là đơn xin của bên nguyên. Tòa chưa ra phán quyết nào cả.",
+   "plain": "Nhưng khoan, đây mới là đơn xin của bên nguyên. Tòa chưa ra phán quyết nào cả.",
+   "words": [
+    "Nhưng",
+    "khoan,",
+    "đây",
+    "mới",
+    "là",
+    "đơn",
+    "xin",
+    "của",
+    "bên",
+    "nguyên.",
+    "Tòa",
+    "chưa",
+    "ra",
+    "phán",
+    "quyết",
+    "nào",
+    "cả."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    5,
+    6,
+    11
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g5",
+   "mode": "say",
+   "lab": "SUY LUẬN",
+   "say": "Nếu tòa đồng ý, một bang sẽ nhúng tay thẳng vào việc làm mô hình ây ai.",
+   "plain": "Nếu tòa đồng ý, một bang sẽ nhúng tay thẳng vào việc làm mô hình AI.",
+   "words": [
+    "Nếu",
+    "tòa",
+    "đồng",
+    "ý,",
+    "một",
+    "bang",
+    "sẽ",
+    "nhúng",
+    "tay",
+    "thẳng",
+    "vào",
+    "việc",
+    "làm",
+    "mô",
+    "hình",
+    "AI."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "hot": [
+    5,
+    7,
+    8
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g6",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: thắng hay thua, vụ này sẽ thành bản mẫu cho các bang khác.",
+   "plain": "Góc nhìn của mình: thắng hay thua, vụ này sẽ thành bản mẫu cho các bang khác.",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "thắng",
+    "hay",
+    "thua,",
+    "vụ",
+    "này",
+    "sẽ",
+    "thành",
+    "bản",
+    "mẫu",
+    "cho",
+    "các",
+    "bang",
+    "khác."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    11,
+    12,
+    15
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g7",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

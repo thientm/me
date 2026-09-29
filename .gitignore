@@ -50,3 +50,4 @@ thien-tran/publish/*.png
 
 # khoá chống chạy song song giữa tác vụ định kỳ và giám sát viên (me-tech/ops/watchdog.sh)
 me-tech/.run/
+**/_pubkit/

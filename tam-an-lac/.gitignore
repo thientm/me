@@ -4,3 +4,5 @@ content/**/*.mp4
 content/**/*.wav
 __pycache__/
 .DS_Store
+_scratch/
+content/**/build*.log

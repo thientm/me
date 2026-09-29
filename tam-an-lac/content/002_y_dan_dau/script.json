@@ -1,0 +1,17 @@
+{
+  "slug": "002_y_dan_dau",
+  "voice": "Thiền Tâm Đức",
+  "source": "Kinh Pháp Cú (Dhammapada), phẩm Song Yếu, kệ 2 — bản dịch HT. Thích Minh Châu",
+  "lead_in": 0.45,
+  "gap": 0.65,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Hạnh phúc của bạn, bắt đầu từ đâu?"},
+    {"id": "s2", "text": "Kinh Pháp Cú, bài kệ thứ hai."},
+    {"id": "s3", "text": "Ý dẫn đầu các pháp. Ý làm chủ, ý tạo."},
+    {"id": "s4", "text": "Nếu với ý thanh tịnh, nói lên hay hành động,"},
+    {"id": "s5", "text": "an lạc bước theo sau, như bóng không rời hình."},
+    {"id": "s6", "text": "Trước khi nói, trước khi làm, hãy dừng lại một hơi thở."},
+    {"id": "s7", "text": "Giữ cho tâm trong lành, bình an sẽ theo bạn, như chiếc bóng."}
+  ]
+}

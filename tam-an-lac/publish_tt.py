@@ -1,14 +1,19 @@
 """Đăng lên TikTok cho kênh Tâm An Lạc. Một tab duy nhất, đầy đủ caption."""
 import os
 import re
+import sys
+import json
+from identity import require_identity, guard, record, seen_on_platform
 import time
 from playwright.sync_api import sync_playwright
 import urllib.request
 
-ROOT_DIR = "/Users/thientm/Documents/GitHub/me/tam-an-lac"
-VIDEO_PATH = os.path.join(ROOT_DIR, "content", "001_khau_nghiep", "video.mp4")
-CAPTION = "Đỉnh cao của sự buông bỏ - Lời Phật Dạy 🙏 #tamanlac #phatphap #trietly #cuocsong #loiphatday"
-PORT = 9555
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))  # 29.09.2026: bỏ /Users/thientm/... cứng
+SLUG = next((a for a in sys.argv[1:] if not a.startswith("-")), "002_y_dan_dau")
+VIDEO_PATH = os.path.join(ROOT_DIR, "content", SLUG, "video.mp4")
+META = json.load(open(os.path.join(ROOT_DIR, "content", SLUG, "meta.json"), encoding="utf-8"))
+CAPTION = META["tt_caption"]
+PORT = int(os.environ.get("TAL_PORT", "9555"))  # 29.09.2026: cổng đổi được (Chrome dùng chung)
 
 OVERLAY = "div.TUXModal-overlay"
 
@@ -40,6 +45,11 @@ def main():
     with sync_playwright() as p:
         browser = p.chromium.connect_over_cdp(f"http://127.0.0.1:{PORT}")
         ctx = browser.contexts[0]
+        guard(SLUG, "tiktok")
+        require_identity(ctx, "tiktok")
+        n = seen_on_platform(ctx, "tiktok", CAPTION.split(" #")[0][:40])
+        if n:
+            sys.exit(f"[X] TikTok đã có {n} bài trùng caption — không upload lại.")
         q = ctx.new_page()
         q.set_default_timeout(120000)
 
@@ -85,6 +95,11 @@ def main():
 
             caption_text = ed.inner_text()[:120]
             print(f"  -> Caption: {caption_text}")
+            # 27.09.2026 caption lên sóng bị rỗng -> đọc lại, sai thì KHÔNG bấm Post
+            if CAPTION.split(" #")[0][:30] not in " ".join(ed.inner_text().split()):
+                q.screenshot(path=os.path.join(ROOT_DIR, "_scratch", "tt_caption_fail.png"))
+                print("❌ Caption không vào ô mô tả — dừng, không bấm Post.")
+                return
 
             # 4. Chờ TikTok kiểm tra xong
             print("  -> Chờ TikTok kiểm tra video...")
@@ -106,7 +121,9 @@ def main():
             clear_overlay(q)
             q.wait_for_timeout(14000)
 
-            print("✅ [TikTok] Đã đăng thành công với đầy đủ caption!")
+            q.screenshot(path=os.path.join(ROOT_DIR, "_scratch", "tt_done.png"))
+            record(SLUG, "tiktok", "dang ngay")
+            print("✅ [TikTok] Đã bấm Post.")
             print("  -> URL:", q.url)
 
         except Exception as e:

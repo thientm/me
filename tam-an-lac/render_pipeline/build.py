@@ -1,4 +1,5 @@
 import os
+import sys
 import shutil
 import subprocess
 import time
@@ -8,32 +9,35 @@ import numpy as np
 from vieneu import Vieneu
 from playwright.sync_api import sync_playwright
 
-ROOT = "/Users/thientm/Documents/GitHub/me/tam-an-lac"
-OUT_DIR = os.path.join(ROOT, "content", "001_khau_nghiep")
-HTML = os.path.join(ROOT, "templates", "scene.html")
+# 29.09.2026: bỏ đường dẫn cứng /Users/thientm/... (máy cũ) — tính từ vị trí file.
+# Dùng: python render_pipeline/build.py <slug>   (content/<slug>/script.json [+ scene.html])
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SLUG = sys.argv[1] if len(sys.argv) > 1 else "001_khau_nghiep"
+OUT_DIR = os.path.join(ROOT, "content", SLUG)
+HTML = os.path.join(OUT_DIR, "scene.html")
+if not os.path.exists(HTML):
+    HTML = os.path.join(ROOT, "templates", "scene.html")
 FRAMES_DIR = os.path.join(OUT_DIR, "frames")
-BELL = "/Users/thientm/Documents/GitHub/me/core-video-engine/bell.wav" # just in case, I will also fall back to thien-tran if it doesn't exist
 AUDIO_WAV = os.path.join(OUT_DIR, "voice.wav")
 OUTPUT_MP4 = os.path.join(OUT_DIR, "video.mp4")
+SCRIPT = json.load(open(os.path.join(OUT_DIR, "script.json"), encoding="utf-8"))
+VOICE = SCRIPT.get("voice", "Thiền Tâm Đức")
 
 SR = 48000
 FPS = 30
 W, H = 1080, 1920
 
-SEGMENTS = [
-    {
-        "id": "s1",
-        "text": "Nếu có người mang rác đến tặng bạn, bạn có nhận không? Chắc chắn là không. Bạn không nhận, thì đống rác đó, vẫn thuộc về người mang đến."
-    },
-    {
-        "id": "s2",
-        "text": "Lời chê bai, sự cay nghiệt của người đời cũng như vậy. Người gieo khẩu nghiệp tự gánh quả báo. Bạn không bận lòng, thì tâm bạn mãi thanh tịnh như hoa sen."
-    },
-    {
-        "id": "s3",
-        "text": "Đỉnh cao của sự buông bỏ, không phải là trả đũa, mà là bình thản mỉm cười và bước tiếp."
-    }
-]
+SEGMENTS = SCRIPT["segments"]
+
+
+def synth_bell(sr=SR, dur=6.0):
+    """Chuông chùa tự tổng hợp (không bản quyền). Máy này không có temple_bell.wav nào."""
+    t = np.arange(int(dur * sr)) / sr
+    out = np.zeros_like(t)
+    for mult, amp, tau in [(1.0, 1.0, 3.2), (2.76, 0.45, 1.8), (5.40, 0.22, 0.9), (8.93, 0.10, 0.5)]:
+        out += amp * np.sin(2 * np.pi * 196.0 * mult * t) * np.exp(-t / tau)
+    out *= np.clip(t / 0.006, 0, 1) * (1 + 0.04 * np.sin(2 * np.pi * 1.3 * t))
+    return (out / np.abs(out).max() * 0.55).astype(np.float32)
 
 def save_wav(audio_data, path, sample_rate=SR):
     peak = float(np.abs(audio_data).max()) or 1.0
@@ -49,37 +53,44 @@ def generate_audio():
     os.makedirs(OUT_DIR, exist_ok=True)
     tts = Vieneu()
     parts = []
-    parts.append(np.zeros(int(0.5 * SR), dtype=np.float32))
-    cursor = 0.5
+    lead = SCRIPT.get("lead_in", 0.5)
+    parts.append(np.zeros(int(lead * SR), dtype=np.float32))
+    cursor = lead
+    timing = []
     
     for i, seg in enumerate(SEGMENTS):
         print(f"Đang sinh đoạn {i+1}: {seg['text'][:40]}...", flush=True)
-        a = tts.infer(seg["text"], voice="Thiền Tâm Đức")
+        a = np.asarray(tts.infer(seg["text"], voice=VOICE), dtype=np.float32)
         dur = len(a) / SR
+        timing.append({"id": seg["id"], "start": round(cursor, 3), "end": round(cursor + dur, 3)})
+        print(f"   {seg['id']}: {dur:.2f}s", flush=True)
         parts.append(a)
         cursor += dur
-        gap = 0.55
+        gap = SCRIPT.get("gap", 0.55)
         parts.append(np.zeros(int(gap * SR), dtype=np.float32))
         cursor += gap
 
-    tail = 2.8
+    cursor -= gap  # không cộng khoảng lặng sau câu cuối
+    parts.pop()
+    tail = SCRIPT.get("tail", 2.8)
     parts.append(np.zeros(int(tail * SR), dtype=np.float32))
     total_dur = cursor + tail
 
     vo = np.concatenate(parts)
 
-    bell_path = "/Users/thientm/Documents/GitHub/me/thien-tran/render/vo/temple_bell.wav"
-    if not os.path.exists(bell_path):
-        bell_path = "/Users/thientm/Documents/GitHub/me/core-video-engine/assets/temple_bell.wav"
-        
-    if os.path.exists(bell_path):
-        with wave.open(bell_path, 'rb') as bw:
-            bdata = np.frombuffer(bw.readframes(bw.getnframes()), dtype=np.int16).astype(np.float32) / 32767.0
-        bell_idx = int((cursor - 0.2) * SR)
-        blen = min(len(bdata), len(vo) - bell_idx)
-        if blen > 0:
-            vo[bell_idx:bell_idx + blen] += bdata[:blen] * 0.70
+    bdata = synth_bell()
+    bell_idx = int((cursor + 0.25) * SR)
+    blen = min(len(bdata), len(vo) - bell_idx)
+    if blen > 0:
+        fade = np.linspace(1, 0, blen) ** 0.5
+        vo[bell_idx:bell_idx + blen] += bdata[:blen] * fade * 0.70
+    else:
+        raise SystemExit("❌ Không chèn được chuông kết")
 
+    json.dump({"slug": SLUG, "voice": VOICE, "total": round(total_dur, 3), "segments": timing},
+              open(os.path.join(OUT_DIR, "timing.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    with open(os.path.join(OUT_DIR, "timing.js"), "w", encoding="utf-8") as f:
+        f.write("window.TIMING = " + json.dumps({"total": round(total_dur, 3), "segments": timing}) + ";\n")
     save_wav(vo, AUDIO_WAV)
     print(f"Audio xong: {total_dur:.2f}s tại {AUDIO_WAV}")
     return total_dur
@@ -126,5 +137,7 @@ def render_video(total_dur):
     print(f"XONG! Video xuất tại: {OUTPUT_MP4}", flush=True)
 
 if __name__ == "__main__":
-    dur = generate_audio()
+    dur = generate_audio() if "--skip-tts" not in sys.argv else json.load(open(os.path.join(OUT_DIR, "timing.json")))["total"]
+    if not 30 <= dur <= 45:
+        print(f"⚠ Thời lượng {dur:.1f}s nằm ngoài 30–45s", flush=True)
     render_video(dur)
