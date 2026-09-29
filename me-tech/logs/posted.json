@@ -115,6 +115,18 @@
     "ghi_chu": "hen 07:00",
     "luc": "25.09.2026 06:27"
   },
+  "claude-sonnet-55:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "29.09.2026 11:42"
+  },
+  "claude-sonnet-55:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "29.09.2026 11:45"
+  },
+  "claude-sonnet-55:youtube": {
+    "ghi_chu": "dang ngay",
+    "luc": "29.09.2026 11:40"
+  },
   "context-window:facebook-photo": {
     "ghi_chu": "hen 22/09 11:00",
     "luc": "22.09.2026 00:59"
