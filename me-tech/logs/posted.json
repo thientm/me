@@ -235,6 +235,18 @@
     "ghi_chu": "hen 25/09 18:30",
     "luc": "22.09.2026 01:25"
   },
+  "meta-enterprise-platform:facebook": {
+    "ghi_chu": "hen 08:00",
+    "luc": "29.09.2026 07:40"
+  },
+  "meta-enterprise-platform:tiktok": {
+    "ghi_chu": "hen 08:30",
+    "luc": "29.09.2026 07:44"
+  },
+  "meta-enterprise-platform:youtube": {
+    "ghi_chu": "hen 08:00",
+    "luc": "29.09.2026 07:42"
+  },
   "mimo-v26:facebook": {
     "ghi_chu": "hen 12:00",
     "luc": "22.09.2026 11:18"
