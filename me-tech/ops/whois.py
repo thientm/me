@@ -3,6 +3,12 @@
     python3 whois.py 9444 --yt UCvoMD_dBm8z1i-Zd8Pwu7mQ --tt thientranx
 """
 import sys, re, json
+import os
+try:
+    import playwright  # noqa: F401
+except ModuleNotFoundError:  # chạy bằng python3 hệ thống → tự chuyển sang venv của me-tech
+    _py = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline", ".venv", "bin", "python")
+    os.execv(_py, [_py] + sys.argv)
 from playwright.sync_api import sync_playwright
 port = sys.argv[1]
 args = sys.argv[2:]
