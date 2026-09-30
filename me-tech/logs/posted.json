@@ -319,6 +319,18 @@
     "ghi_chu": "hen 20:00",
     "luc": "28.09.2026 20:03"
   },
+  "openai-dots:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "30.09.2026 07:40"
+  },
+  "openai-dots:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "30.09.2026 07:42"
+  },
+  "openai-dots:youtube": {
+    "ghi_chu": "dang ngay",
+    "luc": "30.09.2026 07:38"
+  },
   "openai-medicare-au:facebook": {
     "ghi_chu": "dang lai (ban 12:52 Failed to publish) + dich giong Meta AI",
     "luc": "25.09.2026 13:05"
