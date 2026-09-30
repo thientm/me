@@ -19,3 +19,21 @@ The automated publishing scripts should use the local isolated Chrome profile (`
 - **YouTube Shorts**: https://www.youtube.com/@tamanlac.youtube
 - **TikTok**: https://www.tiktok.com/@tamanlac.tiktok
 - **Facebook Reels**: https://www.facebook.com/tamanlac.fb
+
+## Content Rules — chốt 30.09.2026 (Thiện)
+- **Không giảng nội dung kinh.** Không đọc nguyên văn kệ/kinh, không dùng lời dịch Hán-Việt cổ ("Ý dẫn đầu các pháp", "phẩm Song Yếu"…), không nêu tên kinh hay số kệ trong lời đọc — người nghe 35–65+ thấy khó hiểu, lướt qua.
+- **Nói về lời dạy của Phật bằng lời đời thường**: một bài học sống (buông bỏ, nhẫn nhịn, biết đủ, lời nói, giận dữ, cha mẹ, vô thường…), kể bằng một tình huống quen thuộc (gia đình, công việc, tuổi già, con cái), rồi một điều làm được ngay hôm nay.
+- Mạch 30–45s: câu mở chạm đúng nỗi lòng người nghe (≤2 giây, dạng câu hỏi hoặc tình huống) → điều Phật dạy, nói giản dị → ví dụ đời thường → một việc nhỏ để thực hành → chuông.
+- **Không bịa lời Phật.** Mỗi bài phải dựa trên một lời dạy có thật; nguồn (kinh, kệ, bản dịch) chỉ ghi ở `script.json` → `"source"` và mô tả YouTube, **không đọc trong video**. Không có nguồn chắc chắn thì nói "lời Phật dạy về…" ở dạng khái quát, không dựng câu trích dẫn.
+- Không hứa hẹn tâm linh (phước báu, đổi vận, chữa bệnh), không so sánh tôn giáo, không chính trị.
+
+## Quy trình một bài (tạm, tới khi gộp engine — xem kế hoạch gộp 29.09.2026)
+Lịch: 3 khung như me-tech — 08:00, 12:00, 20:00 (dựng trước ~2 tiếng). Orchestrator giao cho một sub-agent mỗi khung.
+1. **Nội dung:** chép `content/002_y_dan_dau/` sang `content/<NNN>_<slug>/`, viết lại `script.json` (luật ở trên, `voice` = "Thiền Tâm Đức"), `meta.json` (yt_title, yt_desc có nguồn, tt_caption, fb_caption, fb_tags). `scene.html` chép từ bài trước — cue chữ lấy từ `window.TIMING`, ảnh `../../templates/buddha_{1,2,3}.jpg` (đổi thứ tự cho khác bài trước; chưa có công cụ sinh ảnh).
+2. **Dựng:** `cd tam-an-lac && SSL_CERT_FILE=../me-tech/pipeline/ca-bundle.pem ../me-tech/pipeline/.venv/bin/python render_pipeline/build.py <slug>` → `content/<slug>/video.mp4`. Soát: câu mở ≤2s, 30–45s, contact sheet (chữ 78px, Y 1050–1420, ≤3 dòng).
+3. **Đăng YT + TT** bằng bộ script me-tech đã chép ở `_pubkit/a/publish/` (cổng 9555, kênh `UCjEteQMJ4zzFV9_iKvChpvA`):
+   - `./open_browser.sh` nếu 9555 tắt → `python3 ../me-tech/ops/fresh_browser.py 9555` → `python3 ../me-tech/ops/whois.py 9555 --yt UCjEteQMJ4zzFV9_iKvChpvA --tt tamanlac.tiktok` (sai thì DỪNG).
+   - `cp content/<slug>/video.mp4 _pubkit/<slug>.mp4`; viết `_pubkit/a/publish/meta_<slug>.py` (VIDEO tuyệt đối tới bản chép, YT_TITLE không emoji, YT_DESC, FB_CAPTION = fb_caption + tags, TT_CAPTION); ghi slug vào `_pubkit/a/publish/ACTIVE`.
+   - `cd _pubkit/a/publish && PY=../../../../me-tech/pipeline/.venv/bin/python`: `$PY yt.py [--at HH:MM]` → `$PY yt_verify.py`; `$PY tt.py [--at HH:MM]` (tự bấm "Got it") → `$PY tt_verify.py`. Đọc MÃ THOÁT.
+4. **Đăng FB** qua Chrome me-tech 9333 (tài khoản thientm quản lý Page): cùng thư mục, `$PY fb.py [--at HH:MM]` → `$PY fb_verify.py` (bản chép của me-tech fb.py, `ASSET` = Page Tâm An Lạc, nối 9333 qua `_conn_fb.py`). Giữ khoá `mkdir ../me-tech/.run/fb9333.lock` trong lúc đăng FB, xong `rmdir`. **Không** chạy fresh_browser trên 9333, không bấm Switch profile.
+5. **Log:** thêm entry vào `logs/<YYYY-MM>.md` (append-only). Sổ chống trùng: `_pubkit/logs/posted.json`.

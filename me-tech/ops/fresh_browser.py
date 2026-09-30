@@ -33,6 +33,10 @@ def main():
     own = "--own-lock" in sys.argv   # job đang giữ khoá tự gọi thì được dọn
     if not own and os.path.exists(LOCK) and time.time() - os.path.getmtime(LOCK) < 1200:
         sys.exit("[X] có job đang giữ khoá build.lock — không dọn tab")
+    # FB của thien-tran / tam-an-lac cũng đăng qua Chrome me-tech: đang giữ khoá này là đang có tab soạn bài
+    fb = os.path.join(os.path.dirname(LOCK), "fb9333.lock")
+    if port == 9333 and os.path.exists(fb) and time.time() - os.path.getmtime(fb) < 1800:
+        sys.exit("[X] kênh khác đang đăng FB qua 9333 (fb9333.lock) — không dọn tab")
     try:
         tabs = [t for t in json.loads(call(port, "/json/list")) if t.get("type") == "page"]
     except Exception:
