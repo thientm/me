@@ -28,7 +28,8 @@ def fresh(name, secs):
 def main():
     port = int(sys.argv[1])
     own = "--own-lock" in sys.argv
-    if not own and fresh("build.lock", 1200):
+    # build.lock là khoá của job me-tech — chỉ chặn Chrome me-tech (9333), không chặn 9444/9555
+    if port == 9333 and not own and fresh("build.lock", 1200):
         sys.exit("[X] có job đang giữ build.lock — không tắt Chrome")
     if port == 9333 and fresh("fb9333.lock", 1800):
         sys.exit("[X] kênh khác đang đăng FB qua 9333 (fb9333.lock) — không tắt")

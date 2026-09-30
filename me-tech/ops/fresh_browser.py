@@ -31,7 +31,8 @@ def call(port, path, method="GET"):
 def main():
     port = int(sys.argv[1])
     own = "--own-lock" in sys.argv   # job đang giữ khoá tự gọi thì được dọn
-    if not own and os.path.exists(LOCK) and time.time() - os.path.getmtime(LOCK) < 1200:
+    # build.lock là khoá của job me-tech — chỉ chặn Chrome me-tech (9333), không chặn 9444/9555
+    if port == 9333 and not own and os.path.exists(LOCK) and time.time() - os.path.getmtime(LOCK) < 1200:
         sys.exit("[X] có job đang giữ khoá build.lock — không dọn tab")
     # FB của thien-tran / tam-an-lac cũng đăng qua Chrome me-tech: đang giữ khoá này là đang có tab soạn bài
     fb = os.path.join(os.path.dirname(LOCK), "fb9333.lock")
