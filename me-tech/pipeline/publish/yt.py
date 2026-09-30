@@ -75,6 +75,9 @@ p.wait_for_timeout(600)
 
 d = p.locator("#description-textarea #textbox").first
 d.click()
+# kênh có "Upload defaults" thì ô mô tả đã điền sẵn chữ cũ — xoá trước (30.09.2026, tam-an-lac dính mô tả LMHT)
+p.keyboard.press("Meta+a")
+p.keyboard.press("Delete")
 d.type(YT_DESC, delay=3)
 p.wait_for_timeout(600)
 

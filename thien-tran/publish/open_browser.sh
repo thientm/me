@@ -13,11 +13,5 @@ echo "🚀 Đang mở Chrome cho kênh Thiện Trần..."
 echo "📂 Profile: $PROFILE"
 echo "🔌 Debug Port: $PORT"
 
-exec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-  --user-data-dir="$PROFILE" \
-  --remote-debugging-port=$PORT \
-  --no-first-run \
-  --no-default-browser-check \
-  "https://studio.youtube.com" \
-  "https://www.tiktok.com/tiktokstudio/upload" \
-  "https://business.facebook.com"
+# 30.09.2026: mở nền + thu nhỏ, không cướp chuột — xem me-tech/ops/open_chrome.py
+exec python3 "$(cd "$(dirname "$0")" && git rev-parse --show-toplevel)/me-tech/ops/open_chrome.py" 9444

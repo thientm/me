@@ -19,6 +19,13 @@ import sys
 import time
 import urllib.request
 
+try:
+    import playwright  # noqa: F401
+except ModuleNotFoundError:  # python3 hệ thống → chạy lại bằng venv của me-tech (cần playwright để mở tab nền)
+    _py = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline", ".venv", "bin", "python")
+    if os.path.exists(_py):
+        os.execv(_py, [_py] + sys.argv)
+
 LOCK = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".run", "build.lock")
 
 
@@ -42,10 +49,25 @@ def main():
         tabs = [t for t in json.loads(call(port, "/json/list")) if t.get("type") == "page"]
     except Exception:
         sys.exit(f"[X] Chrome chưa chạy ở cổng {port}")
-    keep = json.loads(call(port, "/json/new?about:blank", "PUT"))["id"]
+    # tab trống mở NỀN + thu nhỏ cửa sổ — /json/new bật Chrome lên trước mặt (cướp chuột)
+    keep = quiet_blank_tab(port)
     for t in tabs:
         call(port, f"/json/close/{t['id']}")
     print(f"[OK] cổng {port}: đóng {len(tabs)} tab, còn 1 tab trống ({keep[:8]})")
+
+
+def quiet_blank_tab(port):
+    try:
+        from playwright.sync_api import sync_playwright
+    except ModuleNotFoundError:   # python3 hệ thống không có playwright → mở kiểu cũ
+        return json.loads(call(port, "/json/new?about:blank", "PUT"))["id"]
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline", "publish"))
+    from _conn import quiet
+    with sync_playwright() as pw:
+        b = pw.chromium.connect_over_cdp(f"http://127.0.0.1:{port}")
+        quiet(b, b.contexts[0])
+        s = b.new_browser_cdp_session()
+        return s.send("Target.createTarget", {"url": "about:blank", "background": True})["targetId"]
 
 
 if __name__ == "__main__":

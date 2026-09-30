@@ -10,12 +10,15 @@ except ModuleNotFoundError:  # chạy bằng python3 hệ thống → tự chuy�
     _py = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline", ".venv", "bin", "python")
     os.execv(_py, [_py] + sys.argv)
 from playwright.sync_api import sync_playwright
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "pipeline", "publish"))
+from _conn import quiet  # thu nhỏ Chrome + tab nền, không cướp chuột
 port = sys.argv[1]
 args = sys.argv[2:]
 exp = dict(zip(args[0::2], args[1::2]))  # --yt UC... --tt user
 with sync_playwright() as pw:
     b = pw.chromium.connect_over_cdp(f"http://127.0.0.1:{port}")
     ctx = b.contexts[0]
+    quiet(b, ctx)
     p = ctx.new_page()
     p.goto("https://studio.youtube.com/", wait_until="domcontentloaded", timeout=60000); p.wait_for_timeout(9000)
     m = re.search(r"/channel/(UC[\w-]+)", p.url)

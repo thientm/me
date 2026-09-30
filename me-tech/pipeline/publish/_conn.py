@@ -22,11 +22,7 @@ from playwright.sync_api import sync_playwright
 PORT = 9333
 PROFILE = "~/.me-tech-browser"
 
-LAUNCH = (
-    '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" '
-    f'--user-data-dir="$HOME/.me-tech-browser" --remote-debugging-port={PORT} '
-    '--no-first-run --no-default-browser-check &'
-)
+LAUNCH = f"python3 me-tech/ops/open_chrome.py {PORT}   (chạy từ gốc repo; mở nền, không cướp chuột)"
 
 
 def alive():
@@ -46,7 +42,29 @@ def connect():
         )
     pw = sync_playwright().start()
     b = pw.chromium.connect_over_cdp(f"http://127.0.0.1:{PORT}")
+    quiet(b, b.contexts[0])
     return pw, b, b.contexts[0]
+
+
+def quiet(b, ctx):
+    """Chạy ngầm, không cướp chuột (30.09.2026): thu nhỏ cửa sổ Chrome và cho
+    ctx.new_page() mở tab ở chế độ nền. ctx.new_page() gốc của Playwright bật
+    cửa sổ lên trước mặt Thiện; Target.createTarget background=True thì không.
+    Đã thử: tab nền trong cửa sổ thu nhỏ vẫn goto/click/gõ phím/chụp ảnh bình thường."""
+    s = b.new_browser_cdp_session()
+    for t in s.send("Target.getTargets")["targetInfos"]:
+        if t["type"] == "page":
+            try:
+                wid = s.send("Browser.getWindowForTarget", {"targetId": t["targetId"]})["windowId"]
+                s.send("Browser.setWindowBounds", {"windowId": wid, "bounds": {"windowState": "minimized"}})
+            except Exception:
+                pass
+
+    def new_page():
+        with ctx.expect_page() as ev:
+            s.send("Target.createTarget", {"url": "about:blank", "background": True})
+        return ev.value
+    ctx.new_page = new_page
 
 
 def require_login(ctx, which):

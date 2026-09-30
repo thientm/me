@@ -26,10 +26,15 @@ Không tách bạch được 100% giữa `launch_persistent_context` và `pkill`
 ## Mở trình duyệt một lần, rồi mới chạy script
 
 ```bash
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-  --user-data-dir="$HOME/.me-tech-browser" \
-  --remote-debugging-port=9333 --no-first-run --no-default-browser-check &
+python3 me-tech/ops/open_chrome.py 9333     # từ gốc repo
 ```
+
+**Chạy nền, không cướp chuột (30.09.2026)** — Thiện đang dùng máy thì Chrome không được
+nhảy lên trước mặt. `open_chrome.py` mở bằng `open -gna` (không đưa lên trước) rồi thu nhỏ
+cửa sổ; `_conn.connect()` gọi `quiet()`: thu nhỏ cửa sổ và cho `ctx.new_page()` mở tab
+**nền** (`Target.createTarget background=True`). `new_page()` gốc của Playwright bật cửa sổ
+lên lại — script mới đừng tự tạo tab bằng cách khác, đừng gọi `bring_to_front()`.
+Đã thử: tab nền trong cửa sổ thu nhỏ vẫn goto/click/gõ phím/chụp ảnh, timer không bị chậm.
 
 Script nối vào qua CDP (`_conn.py`), **không tự mở trình duyệt** — nhờ vậy phiên
 đăng nhập giữ nguyên và Thiện nhìn được mọi thao tác.

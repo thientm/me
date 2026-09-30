@@ -12,11 +12,5 @@ echo "🚀 Đang mở Chrome cho kênh Tâm An Lạc..."
 echo "📂 Profile: $PROFILE"
 echo "🔌 Debug Port: $PORT"
 
-exec "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-  --user-data-dir="$PROFILE" \
-  --remote-debugging-port=$PORT \
-  --no-first-run \
-  --no-default-browser-check \
-  "https://studio.youtube.com/channel/UCjEteQMJ4zzFV9_iKvChpvA" \
-  "https://www.tiktok.com/creator-center/upload?from=upload" \
-  "https://business.facebook.com/latest/reels_composer?page_id=686899491163120"
+# 30.09.2026: mở nền + thu nhỏ, không cướp chuột — xem me-tech/ops/open_chrome.py
+exec python3 "$(cd "$(dirname "$0")" && git rev-parse --show-toplevel)/me-tech/ops/open_chrome.py" 9555

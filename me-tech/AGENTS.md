@@ -589,6 +589,12 @@ có ai ngồi đó để bắt lỗi thay.
 Một tiếng đệm là để **có chỗ hỏng mà sửa**, không phải để làm cho nhanh. Một bài
 mất ~30 phút, còn lại là biên an toàn.
 
+### Chrome chạy nền, không cướp chuột — `ops/open_chrome.py` (30.09.2026)
+
+Thiện chốt: Chrome kênh không được nháy lên trước mặt khi Thiện đang dùng máy. Mở Chrome
+**chỉ** bằng `python3 me-tech/ops/open_chrome.py <9333|9444|9555>` (mở nền + thu nhỏ).
+`_conn.connect()` và `whois.py` tự thu nhỏ và mở tab nền. Chi tiết: `pipeline/publish/README.md`.
+
 ### Mở browser là dọn tab trước — `ops/fresh_browser.py` (30.09.2026)
 
 Thiện chốt: mỗi lần mở lại một Chrome để làm việc, **tắt hết tab đang mở trước**.
