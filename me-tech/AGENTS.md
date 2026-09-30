@@ -583,6 +583,20 @@ có ai ngồi đó để bắt lỗi thay.
 Một tiếng đệm là để **có chỗ hỏng mà sửa**, không phải để làm cho nhanh. Một bài
 mất ~30 phút, còn lại là biên an toàn.
 
+### Mở browser là dọn tab trước — `ops/fresh_browser.py` (30.09.2026)
+
+Thiện chốt: mỗi lần mở lại một Chrome để làm việc, **tắt hết tab đang mở trước**.
+Tab cũ (composer FB các ngày trước, trang Studio, trang đọc tin) làm script bắt nhầm
+tab và che hộp thoại. Chạy ngay sau khi giữ khoá, trước bước chụp nguồn/đăng bài:
+
+```bash
+python3 ops/fresh_browser.py 9333 --own-lock   # me-tech; 9444 thien-tran; 9555 tam-an-lac
+```
+
+Script mở một tab trống rồi đóng các tab khác qua CDP — **không** tắt Chrome, không pkill.
+Hai ngoại lệ: không dọn khi job khác đang giữ khoá (tab soạn bài của nó có thể đang
+"Publishing"), và không dọn giữa chừng một lần đăng — `*_finish.py` cần tab đang mở.
+
 ### Giám sát viên — `ops/watchdog.sh` (26.09.2026)
 
 Tác vụ định kỳ chạy **trong** một session Claude: session bận/treo hay máy ngủ thì nó
