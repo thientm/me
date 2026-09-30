@@ -29,7 +29,7 @@ The automated publishing scripts should use the local isolated Chrome profile (`
 
 ## Quy trình một bài (tạm, tới khi gộp engine — xem kế hoạch gộp 29.09.2026)
 Lịch: 3 khung như me-tech — 08:00, 12:00, 20:00 (dựng trước ~2 tiếng). Orchestrator giao cho một sub-agent mỗi khung.
-1. **Nội dung:** chép `content/002_y_dan_dau/` sang `content/<NNN>_<slug>/`, viết lại `script.json` (luật ở trên, `voice` = "Thiền Tâm Đức"), `meta.json` (yt_title, yt_desc có nguồn, tt_caption, fb_caption, fb_tags). `scene.html` chép từ bài trước — cue chữ lấy từ `window.TIMING`, ảnh `../../templates/buddha_{1,2,3}.jpg` (đổi thứ tự cho khác bài trước; chưa có công cụ sinh ảnh).
+1. **Nội dung:** chép `content/002_y_dan_dau/` sang `content/<NNN>_<slug>/`, viết lại `script.json` (luật ở trên, `voice` = "Thiền Tâm Đức"), `meta.json` (yt_title, yt_desc có nguồn, tt_caption, fb_caption, fb_tags). `scene.html` chép từ bài trước — cue chữ lấy từ `window.TIMING`. **Ảnh: sinh MỚI cho từng bài** (luật gốc: ảnh AI, ánh sáng tự nhiên) bằng `../me-tech/pipeline/.venv/bin/python render_pipeline/gen_images.py <slug> "<cảnh 1>" "<cảnh 2>" "<cảnh 3>"` → `content/<slug>/img_{1,2,3}.jpg` (1080x1920), scene.html trỏ `url('img_1.jpg')`…; mỗi cảnh tả đúng nội dung câu đang đọc; sổ `logs/images.json` — không dùng lại ảnh đã dùng.
 2. **Dựng:** `cd tam-an-lac && SSL_CERT_FILE=../me-tech/pipeline/ca-bundle.pem ../me-tech/pipeline/.venv/bin/python render_pipeline/build.py <slug>` → `content/<slug>/video.mp4`. Soát: câu mở ≤2s, 30–45s, contact sheet (chữ 78px, Y 1050–1420, ≤3 dòng).
 3. **Đăng YT + TT** bằng bộ script me-tech đã chép ở `_pubkit/a/publish/` (cổng 9555, kênh `UCjEteQMJ4zzFV9_iKvChpvA`):
    - `./open_browser.sh` nếu 9555 tắt → `python3 ../me-tech/ops/fresh_browser.py 9555` → `python3 ../me-tech/ops/whois.py 9555 --yt UCjEteQMJ4zzFV9_iKvChpvA --tt tamanlac.tiktok` (sai thì DỪNG).
@@ -37,3 +37,9 @@ Lịch: 3 khung như me-tech — 08:00, 12:00, 20:00 (dựng trước ~2 tiếng
    - `cd _pubkit/a/publish && PY=../../../../me-tech/pipeline/.venv/bin/python`: `$PY yt.py [--at HH:MM]` → `$PY yt_verify.py`; `$PY tt.py [--at HH:MM]` (tự bấm "Got it") → `$PY tt_verify.py`. Đọc MÃ THOÁT.
 4. **Đăng FB** qua Chrome me-tech 9333 (tài khoản thientm quản lý Page): cùng thư mục, `$PY fb.py [--at HH:MM]` → `$PY fb_verify.py` (bản chép của me-tech fb.py, `ASSET` = Page Tâm An Lạc, nối 9333 qua `_conn_fb.py`). Giữ khoá `mkdir ../me-tech/.run/fb9333.lock` trong lúc đăng FB, xong `rmdir`. **Không** chạy fresh_browser trên 9333, không bấm Switch profile.
 5. **Log:** thêm entry vào `logs/<YYYY-MM>.md` (append-only). Sổ chống trùng: `_pubkit/logs/posted.json`.
+- **Xong kênh là tắt Chrome** (chốt 30.09.2026): đăng + verify xong → `python3 ../me-tech/ops/close_browser.py 9555` (CDP Browser.close, không pkill). Không tự tắt 9333 — orchestrator tắt khi cả 3 kênh xong.
+
+## Ảnh AI — Antigravity CLI `agy` (30.09.2026)
+- `gen_images.py` gọi `agy -p` (công cụ `generate_image`, model ảnh `gemini-3.1-flash-image`), tự dừng agy khi ảnh ghi xong (agy không tự thoát).
+- **Quota tài khoản hiện tại rất thấp: ~1 ảnh / ~5 giờ** (lỗi 429 RESOURCE_EXHAUSTED "You have exhausted your capacity on this model"). Script báo `[X] HẾT QUOTA … reset sau …` ngay.
+- Khi hết quota (TẠM, chờ Thiện chốt cách xử lý): dùng ảnh AI đã sinh trước mà **chưa dùng trong 7 ngày** theo `logs/images.json`; không có thì dùng `templates/buddha_*.jpg` và ghi rõ "ảnh dùng lại (hết quota agy)" trong log bài.

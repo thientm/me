@@ -603,6 +603,12 @@ Script mở một tab trống rồi đóng các tab khác qua CDP — **không**
 Hai ngoại lệ: không dọn khi job khác đang giữ khoá (tab soạn bài của nó có thể đang
 "Publishing"), và không dọn giữa chừng một lần đăng — `*_finish.py` cần tab đang mở.
 
+**Xong kênh là tắt Chrome kênh đó** (chốt 30.09.2026): đăng + verify xong →
+`python3 ops/close_browser.py <cổng> --own-lock`. Gửi CDP `Browser.close` (như Cmd+Q,
+cookie được lưu) — **không** pkill. Bài hẹn giờ nằm trên máy chủ nền tảng, tắt Chrome
+không ảnh hưởng. Chrome me-tech 9333 chỉ tắt khi **cả 3 kênh** xong khung, vì FB của
+thien-tran và tam-an-lac cũng đi qua nó (script tự chặn khi còn `fb9333.lock`).
+
 ### Giám sát viên — `ops/watchdog.sh` (26.09.2026)
 
 Tác vụ định kỳ chạy **trong** một session Claude: session bận/treo hay máy ngủ thì nó
