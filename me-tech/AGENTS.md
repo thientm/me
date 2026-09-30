@@ -177,6 +177,12 @@ Toạ độ tính bằng pixel trong file ảnh. Hai nhịp: mở ra cả trang 
 |---|---|
 | Blog chính hãng, hồ sơ toà án, trang tài liệu, bảng đo chính thức | **Ảnh trong bài báo** — có giấy phép của hãng tin |
 | Chỉ phần đang được dẫn (tiêu đề, đoạn nêu số) | Cả bài, hay phần hướng dẫn kỹ thuật |
+| **Chart / bảng số liệu có sẵn trên trang nguồn** (benchmark, giá, điểm-theo-chi-phí) | Chart tự vẽ lại rồi ghi là của hãng |
+
+**Trang nguồn có chart số liệu thì ưu tiên chụp chart** (chốt 30.09.2026): một trạm
+`shot` dẫn đúng chart đó, `focus`/`hl` vào cột hay điểm đang được đọc, `src` như mọi ảnh
+nguồn. Chart thật của hãng đáng tin và dễ hiểu hơn một đoạn chữ nêu số. Chụp khổ
+`--phone`; chart ngang quá hẹp ở 430px thì chụp khổ rộng hơn rồi cắt riêng khối chart.
 
 `validate.py` chặn nếu có `shot` mà thiếu `src` — ảnh dẫn nguồn **bắt buộc** ghi xuất xứ
 trên màn hình. Ảnh rộng 740px (không phải 830): để full width thì trạm cao quá,

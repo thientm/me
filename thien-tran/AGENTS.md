@@ -14,6 +14,7 @@
 - **Cấu trúc JSON**:
   - `hook` phải < 10 từ. Đi thẳng vào vấn đề.
   - Phải có ít nhất 1 trạm `mode: "shot"` kèm ảnh chụp màn hình chứng minh (Fact).
+  - **Trang nguồn có chart/bảng số liệu (benchmark, giá, chi phí…) thì ưu tiên chụp chart** làm trạm `shot` (focus/hl vào cột/điểm đang nói, ghi `src`) — chốt 30.09.2026. Không tự vẽ lại chart rồi gán cho hãng.
   - Hai trạm liên tiếp dùng chung 1 ảnh thì đều phải dùng `mode: "shot"`.
   - Mảng `words` và `weights` phải luôn bằng nhau.
   - Outro luôn là: `{"mark": "Thiện Trần", "socials": [{"platform": "facebook", "handle": "/thientm"}, {"platform": "tiktok", "handle": "/thientranx"}, {"platform": "youtube", "handle": "/thientm"}]}`
