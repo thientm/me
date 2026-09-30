@@ -1,0 +1,457 @@
+{
+ "slug": "openai_gpt61_sol",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "OPENAI DEVDAY · 29.09.2026",
+ "date": "30.09.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "GPT-6.1 SOL · GIÁ 1/5 ASTRA",
+   "say": "Gần hàng đỉnh, giá chỉ một phần năm.",
+   "plain": "Gần hàng đỉnh, giá chỉ một phần năm",
+   "words": [
+    "Gần",
+    "hàng",
+    "đỉnh,",
+    "giá",
+    "chỉ",
+    "một",
+    "phần",
+    "năm"
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    2,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Đó là bản Xôn mới, hãng Ô-pen Ây Ai vừa tung ra hôm qua.",
+   "plain": "Đó là bản Sol mới, hãng OpenAI vừa tung ra hôm qua.",
+   "words": [
+    "Đó",
+    "là",
+    "bản",
+    "Sol",
+    "mới,",
+    "hãng",
+    "OpenAI",
+    "vừa",
+    "tung",
+    "ra",
+    "hôm",
+    "qua."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    4,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    6
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "SỰ THẬT · TRANG OPENAI",
+   "shot": "openai-gpt61-sol.png",
+   "src": "openai.com · Introducing GPT-6.1 Sol · 29.09.2026",
+   "view": [
+    0,
+    540,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    770,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    790,
+    390,
+    105
+   ],
+   "say": "Hãng ghi: gần bằng Át-tra, bản đầu bảng, giá chỉ một phần năm.",
+   "plain": "Hãng ghi: gần bằng Astra, bản đầu bảng, giá chỉ một phần năm.",
+   "words": [
+    "Hãng",
+    "ghi:",
+    "gần",
+    "bằng",
+    "Astra,",
+    "bản",
+    "đầu",
+    "bảng,",
+    "giá",
+    "chỉ",
+    "một",
+    "phần",
+    "năm."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    7,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "lab": "BIỂU ĐỒ · DEEPSWE",
+   "shot": "openai-gpt61-sol.png",
+   "src": "openai.com · DeepSWE v1.1 · số liệu do OpenAI đo",
+   "view": [
+    0,
+    2700,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    2925,
+    430,
+    223
+   ],
+   "hl": [
+    100,
+    2995,
+    290,
+    65
+   ],
+   "say": "Bài thi lập trình Díp-soe: điểm ngang Át-tra, chi phí mỗi việc chỉ cỡ một phần năm.",
+   "plain": "Bài thi lập trình DeepSWE: điểm ngang Astra, chi phí mỗi việc chỉ cỡ một phần năm.",
+   "words": [
+    "Bài",
+    "thi",
+    "lập",
+    "trình",
+    "DeepSWE:",
+    "điểm",
+    "ngang",
+    "Astra,",
+    "chi",
+    "phí",
+    "mỗi",
+    "việc",
+    "chỉ",
+    "cỡ",
+    "một",
+    "phần",
+    "năm."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    6,
+    7,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "say",
+   "lab": "SỰ THẬT · GIÁ",
+   "say": "Giá ây pi ai: hai đô một triệu tô-ken vào, mười đô ra.",
+   "plain": "Giá API: 2 đô một triệu token vào, 10 đô ra.",
+   "words": [
+    "Giá",
+    "API:",
+    "2",
+    "đô",
+    "một",
+    "triệu",
+    "token",
+    "vào,",
+    "10",
+    "đô",
+    "ra."
+   ],
+   "weights": [
+    1,
+    3,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    3,
+    8,
+    9
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "say",
+   "lab": "HYPE HAY THẬT",
+   "say": "Nhưng khoan: mọi điểm số ở đây do chính hãng tự đo. Việc khoa học khó nhất, Át-tra vẫn hơn.",
+   "plain": "Nhưng khoan: mọi điểm số ở đây do chính hãng tự đo. Việc khoa học khó nhất, Astra vẫn hơn.",
+   "words": [
+    "Nhưng",
+    "khoan:",
+    "mọi",
+    "điểm",
+    "số",
+    "ở",
+    "đây",
+    "do",
+    "chính",
+    "hãng",
+    "tự",
+    "đo.",
+    "Việc",
+    "khoa",
+    "học",
+    "khó",
+    "nhất,",
+    "Astra",
+    "vẫn",
+    "hơn."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1
+   ],
+   "hot": [
+    8,
+    9,
+    10,
+    15,
+    17
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "say",
+   "lab": "SUY LUẬN",
+   "say": "Với dân làm sản phẩm, rẻ mà đủ giỏi mới là thứ làm nhẹ hoá đơn mỗi tháng.",
+   "plain": "Với dân làm sản phẩm, rẻ mà đủ giỏi mới là thứ làm nhẹ hoá đơn mỗi tháng.",
+   "words": [
+    "Với",
+    "dân",
+    "làm",
+    "sản",
+    "phẩm,",
+    "rẻ",
+    "mà",
+    "đủ",
+    "giỏi",
+    "mới",
+    "là",
+    "thứ",
+    "làm",
+    "nhẹ",
+    "hoá",
+    "đơn",
+    "mỗi",
+    "tháng."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    5,
+    8,
+    13,
+    14
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: cuộc đua ây ai giờ là cuộc đua giá, không chỉ ai thông minh nhất.",
+   "plain": "Góc nhìn của mình: cuộc đua AI giờ là cuộc đua giá, không chỉ ai thông minh nhất.",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "cuộc",
+    "đua",
+    "AI",
+    "giờ",
+    "là",
+    "cuộc",
+    "đua",
+    "giá,",
+    "không",
+    "chỉ",
+    "ai",
+    "thông",
+    "minh",
+    "nhất."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    6,
+    11
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}
