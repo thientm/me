@@ -1,0 +1,517 @@
+{
+ "slug": "ftc_frontier_probe",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "FTC · ĐIỀU TRA AI · 30.09.2026",
+ "date": "01.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "FTC ĐIỀU TRA CÁC LAB AI LỚN",
+   "say": "Vừa hứa tự quản, đã bị điều tra.",
+   "plain": "Vừa hứa tự quản, đã bị điều tra.",
+   "words": [
+    "Vừa",
+    "hứa",
+    "tự",
+    "quản,",
+    "đã",
+    "bị",
+    "điều",
+    "tra."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    2,
+    3,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Đó là Ép Ti Xi Mỹ, nhắm vào Ô-pen Ây Ai và nhiều hãng ây ai khác.",
+   "plain": "Đó là FTC Mỹ, nhắm vào OpenAI và nhiều hãng AI khác.",
+   "words": [
+    "Đó",
+    "là",
+    "FTC",
+    "Mỹ,",
+    "nhắm",
+    "vào",
+    "OpenAI",
+    "và",
+    "nhiều",
+    "hãng",
+    "AI",
+    "khác."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    6,
+    9
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "SỰ THẬT · FTC XÁC NHẬN 30.09",
+   "shot": "ftc-frontier-probe.png",
+   "src": "CBS News · 30.09.2026 · người phát ngôn FTC",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    600,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    630,
+    398,
+    140
+   ],
+   "say": "Người phát ngôn xác nhận: xét xem các hãng có phạm luật bảo vệ người tiêu dùng.",
+   "plain": "Người phát ngôn xác nhận: xét xem các hãng có phạm luật bảo vệ người tiêu dùng.",
+   "words": [
+    "Người",
+    "phát",
+    "ngôn",
+    "xác",
+    "nhận:",
+    "xét",
+    "xem",
+    "các",
+    "hãng",
+    "có",
+    "phạm",
+    "luật",
+    "bảo",
+    "vệ",
+    "người",
+    "tiêu",
+    "dùng."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    9,
+    10,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "lab": "LỆNH BUỘC KHAI · CẢ METR",
+   "shot": "ftc-frontier-probe.png",
+   "src": "Reuters (qua BNN Bloomberg) · quan chức FTC · 30.09.2026",
+   "view": [
+    0,
+    600,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1560,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    1632,
+    398,
+    94
+   ],
+   "say": "Họ sẽ ra lệnh buộc nộp tài liệu, gọi lãnh đạo ra khai, cả nhóm kiểm định Mét-tơ.",
+   "plain": "Họ sẽ ra lệnh buộc nộp tài liệu, gọi lãnh đạo ra khai, cả nhóm kiểm định METR.",
+   "words": [
+    "Họ",
+    "sẽ",
+    "ra",
+    "lệnh",
+    "buộc",
+    "nộp",
+    "tài",
+    "liệu,",
+    "gọi",
+    "lãnh",
+    "đạo",
+    "ra",
+    "khai,",
+    "cả",
+    "nhóm",
+    "kiểm",
+    "định",
+    "METR."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    5,
+    8,
+    9,
+    11,
+    16
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "lab": "CHỦ TỊCH FTC · NGƯỜI RA LỆNH CHỊU",
+   "shot": "ftc-frontier-probe.png",
+   "src": "Reuters (qua BNN Bloomberg) · Andrew Ferguson, 9.2026",
+   "view": [
+    0,
+    1560,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1742,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    1769,
+    398,
+    92
+   ],
+   "say": "Chủ tịch Phớt-gơ-sơn: cho ây ai thử tấn công mà gây hại, người ra lệnh chịu.",
+   "plain": "Chủ tịch Ferguson: cho AI thử tấn công mà gây hại, người ra lệnh chịu.",
+   "words": [
+    "Chủ",
+    "tịch",
+    "Ferguson:",
+    "cho",
+    "AI",
+    "thử",
+    "tấn",
+    "công",
+    "mà",
+    "gây",
+    "hại,",
+    "người",
+    "ra",
+    "lệnh",
+    "chịu."
+   ],
+   "weights": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    3,
+    5,
+    6,
+    8,
+    9,
+    13
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "lab": "HÔM TRƯỚC · NHÀ TRẮNG KHEN TỰ QUẢN",
+   "shot": "ftc-frontier-probe.png",
+   "src": "CBS News · Nhà Trắng 29.09.2026",
+   "view": [
+    0,
+    1742,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    955,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    967,
+    398,
+    206
+   ],
+   "say": "Trong khi hôm trước, Tổng thống Trăm còn khen các hãng tự quản rất tốt.",
+   "plain": "Trong khi hôm trước, Tổng thống Trump còn khen các hãng tự quản rất tốt.",
+   "words": [
+    "Trong",
+    "khi",
+    "hôm",
+    "trước,",
+    "Tổng",
+    "thống",
+    "Trump",
+    "còn",
+    "khen",
+    "các",
+    "hãng",
+    "tự",
+    "quản",
+    "rất",
+    "tốt."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    6,
+    8,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "say",
+   "lab": "HYPE HAY THẬT",
+   "say": "Nhưng nhớ: mới là điều tra, chưa có cáo buộc hay án phạt nào.",
+   "plain": "Nhưng nhớ: mới là điều tra, chưa có cáo buộc hay án phạt nào.",
+   "words": [
+    "Nhưng",
+    "nhớ:",
+    "mới",
+    "là",
+    "điều",
+    "tra,",
+    "chưa",
+    "có",
+    "cáo",
+    "buộc",
+    "hay",
+    "án",
+    "phạt",
+    "nào."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    5,
+    6,
+    8,
+    9,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: lời hứa tự nguyện không phải lá chắn, luật cũ vẫn bắt hãng trả giá.",
+   "plain": "Góc nhìn của mình: lời hứa tự nguyện không phải lá chắn, luật cũ vẫn bắt hãng trả giá.",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "lời",
+    "hứa",
+    "tự",
+    "nguyện",
+    "không",
+    "phải",
+    "lá",
+    "chắn,",
+    "luật",
+    "cũ",
+    "vẫn",
+    "bắt",
+    "hãng",
+    "trả",
+    "giá."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    6,
+    7,
+    9,
+    10,
+    12,
+    13,
+    16,
+    17
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

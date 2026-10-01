@@ -1,0 +1,31 @@
+[
+ {
+  "slug": "005_buong_chuyen_ngay",
+  "file": "content/005_buong_chuyen_ngay/img_1.jpg",
+  "scene": "A middle-aged Vietnamese woman sitting quietly by an open wooden window at night, soft moonlight on her face, a cup of tea beside her, thoughtful and a little tired, warm lamp glow, peaceful home interior",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "30.09.2026 18:36",
+  "ghi_chu": "ghi tay: gen_images.py thoát ở img_2 (agy 'interrupted') trước khi ghi sổ"
+ },
+ {
+  "slug": "007_an_cham_buoi_trua",
+  "file": "content/007_an_cham_buoi_trua/img_1.jpg",
+  "scene": "A middle-aged Vietnamese office worker eating lunch alone at a desk in a hurry, rice box in one hand and phone in the other, tired eyes, midday sunlight through window blinds",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "01.10.2026 10:22"
+ },
+ {
+  "slug": "007_an_cham_buoi_trua",
+  "file": "content/007_an_cham_buoi_trua/img_2.jpg",
+  "scene": "A simple Vietnamese family lunch tray on a wooden table: a bowl of white rice, vegetables, a small bowl of soup, chopsticks resting, soft midday light, steam rising, peaceful",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "01.10.2026 10:23"
+ },
+ {
+  "slug": "007_an_cham_buoi_trua",
+  "file": "content/007_an_cham_buoi_trua/img_3.jpg",
+  "scene": "An older Vietnamese woman eating slowly and calmly by an open window at noon, holding a bowl of rice with both hands, gentle smile, warm natural light, green garden outside",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "01.10.2026 10:25"
+ }
+]

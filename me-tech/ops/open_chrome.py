@@ -55,7 +55,7 @@ def main():
     with sync_playwright() as pw:
         b = pw.chromium.connect_over_cdp(f"http://127.0.0.1:{port}")
         quiet(b, b.contexts[0])
-    print(f"[OK] Chrome cổng {port} đang chạy nền (thu nhỏ)")
+    print(f"[OK] Chrome cổng {port} đang chạy (mở nền, không thu nhỏ — xem _conn.quiet)")
 
 
 if __name__ == "__main__":

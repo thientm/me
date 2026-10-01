@@ -1,0 +1,18 @@
+{
+  "slug": "007_an_cham_buoi_trua",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về ăn uống điều độ và tỉnh thức: Kinh Thùng Đồ Ăn (Doṇapāka Sutta, Tương Ưng Bộ kinh, Tương Ưng Kosala, SN 3.13) — Phật dạy vua Pasenadi: người luôn chánh niệm, biết vừa phải khi ăn, thì cảm thọ giảm bớt, thân nhẹ nhàng (bản dịch HT. Thích Minh Châu); và lời dạy \"biết tiết độ trong ăn uống\" (bhojane mattaññutā) trong nhiều kinh Trung Bộ, Tăng Chi Bộ. Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Bữa trưa, ăn vội?"},
+    {"id": "s2", "text": "Phật dạy: ăn vừa đủ, và ăn trong tỉnh thức."},
+    {"id": "s3", "text": "Ăn vừa đủ, thân nhẹ, lòng cũng nhẹ."},
+    {"id": "s4", "text": "Vừa ăn vừa lướt điện thoại, vừa lo việc buổi chiều,"},
+    {"id": "s5", "text": "ăn hết bát cơm mà chẳng biết cơm ngon thế nào."},
+    {"id": "s6", "text": "Trưa nay, hãy ăn chậm lại một chút,"},
+    {"id": "s7", "text": "nhai kỹ từng miếng, và nhớ ơn người đã nấu bữa cơm này."},
+    {"id": "s8", "text": "Ăn chậm, lòng an."}
+  ]
+}
