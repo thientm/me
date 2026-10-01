@@ -1,0 +1,18 @@
+{
+  "slug": "005_buong_chuyen_ngay",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về sống với hiện tại, không ôm quá khứ, không lo trước tương lai: Kinh Nhất Dạ Hiền Giả (Bhaddekaratta Sutta, Trung Bộ kinh số 131) — \"Quá khứ không truy tìm, tương lai không ước vọng; quá khứ đã đoạn tận, tương lai lại chưa đến; chỉ có pháp hiện tại, tuệ quán chính ở đây\" (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Đêm về còn nặng lòng?"},
+    {"id": "s2", "text": "Phật dạy: chuyện đã qua, hãy để nó qua."},
+    {"id": "s3", "text": "Ngày mai chưa tới, đừng vội lo trước."},
+    {"id": "s4", "text": "Lời nặng lúc chiều, việc còn dở ngày mai,"},
+    {"id": "s5", "text": "cứ ôm vào giấc ngủ, chỉ thêm nặng lòng."},
+    {"id": "s6", "text": "Tối nay, khi đặt lưng xuống,"},
+    {"id": "s7", "text": "hãy thở chậm, và nhủ: chuyện hôm nay, để lại hôm nay."},
+    {"id": "s8", "text": "Buông xuống, lòng nhẹ tênh."}
+  ]
+}

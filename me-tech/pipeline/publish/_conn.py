@@ -51,6 +51,10 @@ def quiet(b, ctx):
     ctx.new_page() mở tab ở chế độ nền. ctx.new_page() gốc của Playwright bật
     cửa sổ lên trước mặt Thiện; Target.createTarget background=True thì không.
     Đã thử: tab nền trong cửa sổ thu nhỏ vẫn goto/click/gõ phím/chụp ảnh bình thường."""
+    # TẮT 30.09.2026 19:05 — cửa sổ thu nhỏ/tab nền thì Chrome không vẽ khung hình:
+    # p.screenshot() trên YouTube Studio treo, renderer tab kẹt luôn (yt.py me-tech 9333 +
+    # tam-an-lac 9555 cùng kẹt ở bản nháp khung 20:00). Tin cậy đăng bài > không cướp chuột.
+    return
     s = b.new_browser_cdp_session()
     for t in s.send("Target.getTargets")["targetInfos"]:
         if t["type"] == "page":
