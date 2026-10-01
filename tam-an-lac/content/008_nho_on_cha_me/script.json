@@ -1,0 +1,18 @@
+{
+  "slug": "008_nho_on_cha_me",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về ơn cha mẹ: Kinh Khó Trả Ơn (Tăng Chi Bộ kinh, chương Hai pháp, AN 2.33) — Phật dạy có hai người khó trả ơn là mẹ và cha, dù một vai cõng mẹ, một vai cõng cha suốt trăm năm cũng chưa trả đủ ơn; và lời dạy về hai hạng người khó tìm ở đời: người làm ơn trước và người biết ơn, nhớ ơn (Tăng Chi Bộ, chương Hai pháp) (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Lâu chưa gọi mẹ?"},
+    {"id": "s2", "text": "Phật dạy: ơn cha mẹ sâu nặng, cả đời mình cũng khó đền cho trọn."},
+    {"id": "s3", "text": "Người biết ơn và nhớ ơn là người hiếm có ở đời."},
+    {"id": "s4", "text": "Mình mải lo việc, lo con, cứ hẹn mai rồi gọi về,"},
+    {"id": "s5", "text": "còn ở quê, mẹ cầm điện thoại, ngồi chờ cả buổi tối."},
+    {"id": "s6", "text": "Tối nay, hãy gọi cho cha mẹ một cuộc,"},
+    {"id": "s7", "text": "chỉ cần hỏi: bố mẹ ăn cơm chưa, hôm nay có khỏe không."},
+    {"id": "s8", "text": "Nhớ ơn, lòng ấm."}
+  ]
+}

@@ -1,0 +1,526 @@
+{
+ "slug": "elevenlabs_22b",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "ELEVENLABS · ĐỊNH GIÁ · 30.09.2026",
+ "date": "01.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "ELEVENLABS ĐẠT ĐỊNH GIÁ 22 TỶ USD",
+   "say": "Tám tháng, giá hãng giọng nói gấp đôi.",
+   "plain": "Tám tháng, giá hãng giọng nói gấp đôi.",
+   "words": [
+    "Tám",
+    "tháng,",
+    "giá",
+    "hãng",
+    "giọng",
+    "nói",
+    "gấp",
+    "đôi."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    1,
+    2,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Đó là I-lơ-vần Láp, giờ được định giá hai mươi hai tỷ đô.",
+   "plain": "Đó là ElevenLabs, giờ được định giá 22 tỷ đô.",
+   "words": [
+    "Đó",
+    "là",
+    "ElevenLabs,",
+    "giờ",
+    "được",
+    "định",
+    "giá",
+    "22",
+    "tỷ",
+    "đô."
+   ],
+   "weights": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "SỰ THẬT · CÔNG BỐ 30.09",
+   "shot": "elevenlabs-22b.png",
+   "src": "elevenlabs.io/blog · 30.09.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    40,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    52,
+    402,
+    200
+   ],
+   "say": "Hãng tự công bố hôm ba mươi tháng chín: gấp đôi mức định giá hồi tháng Hai.",
+   "plain": "Hãng tự công bố hôm 30/9: gấp đôi mức định giá hồi tháng Hai.",
+   "words": [
+    "Hãng",
+    "tự",
+    "công",
+    "bố",
+    "hôm",
+    "30/9:",
+    "gấp",
+    "đôi",
+    "mức",
+    "định",
+    "giá",
+    "hồi",
+    "tháng",
+    "Hai."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    6,
+    7,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "lab": "300 TRIỆU USD · NHÂN VIÊN BÁN CỔ PHẦN",
+   "shot": "elevenlabs-22b.png",
+   "src": "elevenlabs.io/blog · 30.09.2026",
+   "view": [
+    0,
+    40,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    330,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    355,
+    402,
+    92
+   ],
+   "say": "Nhưng đây là đợt nhân viên bán ba trăm triệu đô cổ phần, không phải vốn mới rót vào công ty.",
+   "plain": "Nhưng đây là đợt nhân viên bán 300 triệu đô cổ phần, không phải vốn mới rót vào công ty.",
+   "words": [
+    "Nhưng",
+    "đây",
+    "là",
+    "đợt",
+    "nhân",
+    "viên",
+    "bán",
+    "300",
+    "triệu",
+    "đô",
+    "cổ",
+    "phần,",
+    "không",
+    "phải",
+    "vốn",
+    "mới",
+    "rót",
+    "vào",
+    "công",
+    "ty."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    6,
+    8,
+    9,
+    13,
+    14
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "lab": "DOANH NGHIỆP · 55% DOANH THU",
+   "shot": "elevenlabs-22b.png",
+   "src": "elevenlabs.io/blog · 30.09.2026",
+   "view": [
+    0,
+    330,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    600,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    688,
+    402,
+    62
+   ],
+   "say": "Khách doanh nghiệp giờ chiếm năm mươi lăm phần trăm doanh thu.",
+   "plain": "Khách doanh nghiệp giờ chiếm 55% doanh thu.",
+   "words": [
+    "Khách",
+    "doanh",
+    "nghiệp",
+    "giờ",
+    "chiếm",
+    "55%",
+    "doanh",
+    "thu."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    2,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "lab": "15 TRIỆU CUỘC HỘI THOẠI/TUẦN",
+   "shot": "elevenlabs-22b.png",
+   "src": "elevenlabs.io/blog · 30.09.2026",
+   "view": [
+    0,
+    600,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    880,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    900,
+    402,
+    62
+   ],
+   "say": "Trợ lý giọng nói của hãng xử lý hơn mười lăm triệu cuộc hội thoại mỗi tuần, gấp ba từ tháng Hai.",
+   "plain": "Trợ lý giọng nói của hãng xử lý hơn 15 triệu cuộc hội thoại mỗi tuần, gấp ba từ tháng Hai.",
+   "words": [
+    "Trợ",
+    "lý",
+    "giọng",
+    "nói",
+    "của",
+    "hãng",
+    "xử",
+    "lý",
+    "hơn",
+    "15",
+    "triệu",
+    "cuộc",
+    "hội",
+    "thoại",
+    "mỗi",
+    "tuần,",
+    "gấp",
+    "ba",
+    "từ",
+    "tháng",
+    "Hai."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    7,
+    8,
+    13,
+    14
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "lab": "HYPE HAY THẬT",
+   "shot": "elevenlabs-22b.png",
+   "src": "elevenlabs.io/blog · 30.09.2026",
+   "view": [
+    0,
+    880,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    907,
+    430,
+    223
+   ],
+   "hl": [
+    14,
+    1068,
+    402,
+    42
+   ],
+   "say": "Nhưng hãng không nói tổng doanh thu, chỉ nói doanh thu mảng trợ lý tăng hơn gấp ba.",
+   "plain": "Nhưng hãng không nói tổng doanh thu, chỉ nói doanh thu mảng trợ lý tăng hơn gấp ba.",
+   "words": [
+    "Nhưng",
+    "hãng",
+    "không",
+    "nói",
+    "tổng",
+    "doanh",
+    "thu,",
+    "chỉ",
+    "nói",
+    "doanh",
+    "thu",
+    "mảng",
+    "trợ",
+    "lý",
+    "tăng",
+    "hơn",
+    "gấp",
+    "ba."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    3,
+    4,
+    5,
+    15,
+    16
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: tiền lớn đang chạy theo ây ai nghe máy thay tổng đài, không phải đọc truyện.",
+   "plain": "Góc nhìn của mình: tiền lớn đang chạy theo AI nghe máy thay tổng đài, không phải đọc truyện.",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "tiền",
+    "lớn",
+    "đang",
+    "chạy",
+    "theo",
+    "AI",
+    "nghe",
+    "máy",
+    "thay",
+    "tổng",
+    "đài,",
+    "không",
+    "phải",
+    "đọc",
+    "truyện."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    9,
+    10,
+    12,
+    13
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}
