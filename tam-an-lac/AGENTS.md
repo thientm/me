@@ -42,4 +42,6 @@ Lịch: 3 khung như me-tech — 08:00, 12:00, 20:00 (dựng trước ~2 tiếng
 ## Ảnh AI — Antigravity CLI `agy` (30.09.2026)
 - `gen_images.py` gọi `agy -p` (công cụ `generate_image`, model ảnh `gemini-3.1-flash-image`), tự dừng agy khi ảnh ghi xong (agy không tự thoát).
 - **Quota tài khoản hiện tại rất thấp: ~1 ảnh / ~5 giờ** (lỗi 429 RESOURCE_EXHAUSTED "You have exhausted your capacity on this model"). Script báo `[X] HẾT QUOTA … reset sau …` ngay.
+- **"The stream was interrupted" (01.10.2026):** agy vẫn sinh xong ảnh nhưng lưu ở `~/.gemini/antigravity-cli/brain/<phiên>/<ImageName>_<ms>.jpg` và bị ngắt trước khi chép sang `content/<slug>/`. `gen_images.py` giờ tự tìm ảnh đó (theo `ImageName` trong log `.agy.jsonl`) — không cần chạy lại agy.
+- **Kho ảnh dự phòng `content/_pool/`** (ghi trong `logs/images.json`, `"slug": "_pool"`, `"chua_dung": true`): ảnh AI đã sinh mà chưa bài nào dùng. Hết quota / agy lỗi thì lấy ảnh ở đây TRƯỚC (hợp cảnh nhất), dùng xong sửa `chua_dung` thành false + ghi slug đã dùng; hết kho mới dùng `templates/buddha_*.jpg`.
 - Khi hết quota (TẠM, chờ Thiện chốt cách xử lý): dùng ảnh AI đã sinh trước mà **chưa dùng trong 7 ngày** theo `logs/images.json`; không có thì dùng `templates/buddha_*.jpg` và ghi rõ "ảnh dùng lại (hết quota agy)" trong log bài.

@@ -27,5 +27,45 @@
   "scene": "An older Vietnamese woman eating slowly and calmly by an open window at noon, holding a bowl of rice with both hands, gentle smile, warm natural light, green garden outside",
   "model": "gemini-3.8-flash-medium",
   "luc": "01.10.2026 10:25"
+ },
+ {
+  "slug": "_pool",
+  "file": "content/_pool/test_temple.jpg",
+  "scene": "sân chùa bình minh, tia nắng (ảnh thử agy 30/09)",
+  "model": "agy generate_image",
+  "luc": "30.09.2026 09:20",
+  "chua_dung": true
+ },
+ {
+  "slug": "_pool",
+  "file": "content/_pool/calm_lotus_pond.jpg",
+  "scene": "hồ sen yên tĩnh (sinh cho 005, bị ngắt trước khi chép)",
+  "model": "agy generate_image",
+  "luc": "30.09.2026 18:34",
+  "chua_dung": true
+ },
+ {
+  "slug": "_pool",
+  "file": "content/_pool/vietnamese_mother_pond.jpg",
+  "scene": "người mẹ Việt bên hồ (sinh 30/09 sáng, chưa dùng)",
+  "model": "agy generate_image",
+  "luc": "30.09.2026 09:34",
+  "chua_dung": true
+ },
+ {
+  "slug": "_pool",
+  "file": "content/_pool/elderly_mother_veranda.jpg",
+  "scene": "cụ bà ngồi hiên nhà (sinh 30/09 sáng, chưa dùng)",
+  "model": "agy generate_image",
+  "luc": "30.09.2026 09:30",
+  "chua_dung": true
+ },
+ {
+  "slug": "_pool",
+  "file": "content/_pool/mother_waiting_dusk.jpg",
+  "scene": "mẹ già ngồi ghế gỗ chờ lúc hoàng hôn (sinh cho 008, bị ngắt trước khi chép)",
+  "model": "agy generate_image",
+  "luc": "01.10.2026 18:30",
+  "chua_dung": true
  }
 ]

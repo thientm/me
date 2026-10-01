@@ -57,8 +57,32 @@ def gen_one(out_png, scene, wait=240):
         except subprocess.TimeoutExpired:
             p.kill()
     if not os.path.exists(out_png):
+        found = brain_image(log, t0)
+        if found:   # 01.10.2026: agy sinh xong nhưng "stream interrupted" trước khi chép ảnh sang out_png
+            Image.open(found).convert("RGB").save(out_png)
+            print(f"   (lấy ảnh từ thư mục brain của agy: {found})")
+    if not os.path.exists(out_png):
         sys.exit(f"[X] agy không tạo được ảnh: {scene[:60]}")
     return out_png
+
+
+def brain_image(log, t0):
+    """generate_image lưu ảnh vào ~/.gemini/antigravity-cli/brain/<phiên>/<ImageName>_<ms>.jpg|png."""
+    import glob
+    names = set()
+    try:
+        for line in open(log, encoding="utf-8"):
+            if '"generate_image"' in line and '"ImageName"' in line:
+                try:
+                    names.add(json.loads(line)["step_update"]["tool_info"]["parameters"]["ImageName"])
+                except Exception:
+                    pass
+    except Exception:
+        return None
+    brain = os.path.expanduser("~/.gemini/antigravity-cli/brain")
+    hits = [f for n in names for f in glob.glob(os.path.join(brain, "*", n + "_*"))
+            if f.lower().endswith((".jpg", ".jpeg", ".png")) and os.path.getmtime(f) >= t0 - 5]
+    return max(hits, key=os.path.getmtime) if hits else None
 
 
 def quota_error(log):
