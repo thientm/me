@@ -1,0 +1,515 @@
+{
+ "slug": "synthid_bio",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "GOOGLE DEEPMIND · SYNTHID BIO · 30.09.2026",
+ "date": "02.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "DEEPMIND GIẤU DẤU ẨN VÀO PROTEIN AI",
+   "say": "Protein do ây ai vẽ, giờ có dấu ẩn.",
+   "plain": "Protein do AI vẽ, giờ có dấu ẩn.",
+   "words": [
+    "Protein",
+    "do",
+    "AI",
+    "vẽ,",
+    "giờ",
+    "có",
+    "dấu",
+    "ẩn."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    2,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Đó là công cụ mới của Gu-gồ Đíp-mai, công bố hôm ba mươi tháng chín.",
+   "plain": "Đó là công cụ mới của Google DeepMind, công bố hôm 30/9.",
+   "words": [
+    "Đó",
+    "là",
+    "công",
+    "cụ",
+    "mới",
+    "của",
+    "Google",
+    "DeepMind,",
+    "công",
+    "bố",
+    "hôm",
+    "30/9."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    6,
+    7,
+    10
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "SYNTHID BIO · CÔNG BỐ 30.09",
+   "shot": "synthid-bio.png",
+   "src": "deepmind.google/blog · 30.09.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    470,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    540,
+    382,
+    85
+   ],
+   "say": "Dấu được giấu thẳng vào chuỗi axit amin và cấu trúc ba chiều.",
+   "plain": "Dấu được giấu thẳng vào chuỗi axit amin và cấu trúc ba chiều.",
+   "words": [
+    "Dấu",
+    "được",
+    "giấu",
+    "thẳng",
+    "vào",
+    "chuỗi",
+    "axit",
+    "amin",
+    "và",
+    "cấu",
+    "trúc",
+    "ba",
+    "chiều."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    3,
+    5,
+    6,
+    7,
+    10,
+    11
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "lab": "ĐỘ BÁM · CÓ DẤU ≈ KHÔNG DẤU",
+   "shot": "synthid-bio.png",
+   "src": "deepmind.google/blog · 30.09.2026",
+   "view": [
+    0,
+    470,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    862,
+    430,
+    223
+   ],
+   "hl": [
+    26,
+    880,
+    366,
+    205
+   ],
+   "say": "Thử thật trên ba prô-tê-in đích, độ bám của bản có dấu gần như trùng bản thường.",
+   "plain": "Thử thật trên ba protein đích, độ bám của bản có dấu gần như trùng bản thường.",
+   "words": [
+    "Thử",
+    "thật",
+    "trên",
+    "ba",
+    "protein",
+    "đích,",
+    "độ",
+    "bám",
+    "của",
+    "bản",
+    "có",
+    "dấu",
+    "gần",
+    "như",
+    "trùng",
+    "bản",
+    "thường."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    1,
+    7,
+    8,
+    12,
+    13
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "lab": "CÀI SẴN TRONG ALPHAFOLD 3",
+   "shot": "synthid-bio.png",
+   "src": "deepmind.google/blog · 30.09.2026",
+   "view": [
+    0,
+    862,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1215,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    1222,
+    384,
+    142
+   ],
+   "say": "Dấu còn cài sẵn trong An-pha-phôn ba, ai chạy cũng tự in dấu.",
+   "plain": "Dấu còn cài sẵn trong AlphaFold 3, ai chạy cũng tự in dấu.",
+   "words": [
+    "Dấu",
+    "còn",
+    "cài",
+    "sẵn",
+    "trong",
+    "AlphaFold",
+    "3,",
+    "ai",
+    "chạy",
+    "cũng",
+    "tự",
+    "in",
+    "dấu."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    6,
+    7,
+    10,
+    11
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "lab": "AI KIỂM? HÃNG TỔNG HỢP GEN",
+   "shot": "synthid-bio.png",
+   "src": "deepmind.google/blog · 30.09.2026",
+   "view": [
+    0,
+    1215,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1850,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    1930,
+    384,
+    104
+   ],
+   "say": "Người kiểm là hãng tổng hợp gen: có dấu là biết đơn đến từ mô hình đáng tin.",
+   "plain": "Người kiểm là hãng tổng hợp gen: có dấu là biết đơn đến từ mô hình đáng tin.",
+   "words": [
+    "Người",
+    "kiểm",
+    "là",
+    "hãng",
+    "tổng",
+    "hợp",
+    "gen:",
+    "có",
+    "dấu",
+    "là",
+    "biết",
+    "đơn",
+    "đến",
+    "từ",
+    "mô",
+    "hình",
+    "đáng",
+    "tin."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    4,
+    5,
+    6,
+    15,
+    16
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "lab": "GIỚI HẠN · CHƯA CHỐNG CỐ TÌNH XOÁ",
+   "shot": "synthid-bio.png",
+   "src": "deepmind.google/blog · 30.09.2026",
+   "view": [
+    0,
+    1850,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    2053,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    2072,
+    384,
+    62
+   ],
+   "say": "Nhưng hãng thừa nhận dấu chưa chống được kẻ cố tình xoá.",
+   "plain": "Nhưng hãng thừa nhận dấu chưa chống được kẻ cố tình xoá.",
+   "words": [
+    "Nhưng",
+    "hãng",
+    "thừa",
+    "nhận",
+    "dấu",
+    "chưa",
+    "chống",
+    "được",
+    "kẻ",
+    "cố",
+    "tình",
+    "xoá."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    3,
+    5,
+    6,
+    10,
+    11
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: dấu chỉ chứng minh hàng sạch, mô hình không dấu thì vẫn lọt.",
+   "plain": "Góc nhìn của mình: dấu chỉ chứng minh hàng sạch, mô hình không dấu thì vẫn lọt.",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "dấu",
+    "chỉ",
+    "chứng",
+    "minh",
+    "hàng",
+    "sạch,",
+    "mô",
+    "hình",
+    "không",
+    "dấu",
+    "thì",
+    "vẫn",
+    "lọt."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    5,
+    6,
+    8,
+    9,
+    12,
+    13,
+    16
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "009_hoi_tho_buoi_sang",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về chánh niệm hơi thở: Kinh Nhập Tức Xuất Tức Niệm (Trung Bộ kinh số 118, MN 118) — thở vô dài, biết mình thở vô dài; thở ra dài, biết mình thở ra dài; và Kinh Niệm Xứ (Trung Bộ kinh số 10) phần quán hơi thở (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {
+      "id": "s1",
+      "text": "Mở mắt là vội?"
+    },
+    {
+      "id": "s2",
+      "text": "Phật dạy: thở vào, biết mình thở vào,"
+    },
+    {
+      "id": "s3",
+      "text": "thở ra, biết mình thở ra."
+    },
+    {
+      "id": "s4",
+      "text": "Một hơi thở chậm giúp lòng lắng lại."
+    },
+    {
+      "id": "s5",
+      "text": "Mình vừa mở mắt đã với tay lấy điện thoại,"
+    },
+    {
+      "id": "s6",
+      "text": "nghĩ ngay tới việc nhà, việc cơ quan, lòng rối từ sáng sớm."
+    },
+    {
+      "id": "s7",
+      "text": "Sáng nay, trước khi bước xuống giường,"
+    },
+    {
+      "id": "s8",
+      "text": "hãy ngồi yên, thở chậm ba hơi, biết mình đang thở."
+    },
+    {
+      "id": "s9",
+      "text": "Thở chậm, ngày an."
+    }
+  ]
+}
