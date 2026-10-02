@@ -24,6 +24,8 @@ ap.add_argument("--wait", type=int, default=6000)
 ap.add_argument("--full", action="store_true")
 ap.add_argument("--phone", action="store_true",
                 help="chụp ở khổ điện thoại — trang tự xuống dòng ngắn, chữ mới đọc được trong video dọc")
+ap.add_argument("--scroll", action="store_true",
+                help="cuộn hết trang trước khi chụp — trang hiện chữ dần khi cuộn tới (vd microsoft.ai) chụp --full ra trống")
 ap.add_argument("--sel", help="chỉ chụp một phần tử (CSS selector), ví dụ đoạn văn đang dẫn")
 a = ap.parse_args()
 
@@ -53,6 +55,11 @@ with sync_playwright() as pw:
                 b.first.click(); p.wait_for_timeout(800); break
         except Exception:
             pass
+    if a.scroll:
+        h = p.evaluate("document.body.scrollHeight")
+        for y in range(0, h, 400):
+            p.evaluate(f"window.scrollTo(0,{y})"); p.wait_for_timeout(250)
+        p.evaluate("window.scrollTo(0,0)"); p.wait_for_timeout(1500)
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     if a.sel:
         el = p.locator(a.sel).first
