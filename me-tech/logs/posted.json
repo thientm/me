@@ -27,6 +27,18 @@
     "ghi_chu": "dang ngay",
     "luc": "23.09.2026 21:41"
   },
+  "amd-world-labs:facebook": {
+    "ghi_chu": "hen 12:00",
+    "luc": "30.09.2026 10:42"
+  },
+  "amd-world-labs:tiktok": {
+    "ghi_chu": "hen 12:00",
+    "luc": "30.09.2026 10:44"
+  },
+  "amd-world-labs:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "30.09.2026 10:40"
+  },
   "anthropic-ipo:facebook": {
     "ghi_chu": "hen 12:30",
     "luc": "21.09.2026 09:45"
@@ -143,6 +155,18 @@
     "ghi_chu": "dang ngay",
     "luc": "27.09.2026 20:01"
   },
+  "deepfake-light-ucla:facebook": {
+    "ghi_chu": "hen 08:00",
+    "luc": "02.10.2026 06:21"
+  },
+  "deepfake-light-ucla:tiktok": {
+    "ghi_chu": "hen 08:30",
+    "luc": "02.10.2026 06:23"
+  },
+  "deepfake-light-ucla:youtube": {
+    "ghi_chu": "hen 08:00",
+    "luc": "02.10.2026 06:19"
+  },
   "deepfake:facebook-photo": {
     "ghi_chu": "hen 27/09 09:30",
     "luc": "22.09.2026 01:33"
@@ -179,6 +203,18 @@
     "ghi_chu": "hen 24/09 09:30",
     "luc": "22.09.2026 01:12"
   },
+  "gemini-4-argon:facebook": {
+    "ghi_chu": "hen 12:00",
+    "luc": "01.10.2026 10:30"
+  },
+  "gemini-4-argon:tiktok": {
+    "ghi_chu": "hen 12:30",
+    "luc": "01.10.2026 10:32"
+  },
+  "gemini-4-argon:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "01.10.2026 10:28"
+  },
   "gemini-live-avatar:facebook": {
     "ghi_chu": "hen 15:00",
     "luc": "26.09.2026 12:01"
@@ -194,6 +230,18 @@
   "git-commit:facebook-photo": {
     "ghi_chu": "hen 27/09 14:00",
     "luc": "22.09.2026 01:36"
+  },
+  "glm53-cyber:facebook": {
+    "ghi_chu": "hen 20:00",
+    "luc": "01.10.2026 18:38"
+  },
+  "glm53-cyber:tiktok": {
+    "ghi_chu": "hen 20:30",
+    "luc": "01.10.2026 18:40"
+  },
+  "glm53-cyber:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "01.10.2026 18:36"
   },
   "gpt6-sol-luna:facebook": {
     "ghi_chu": "hen 12:00",
@@ -218,6 +266,18 @@
   "gpt61-astra-hold:youtube": {
     "ghi_chu": "dang ngay",
     "luc": "29.09.2026 19:40"
+  },
+  "gpu-smuggling-china:facebook": {
+    "ghi_chu": "hen 20:00",
+    "luc": "02.10.2026 18:42"
+  },
+  "gpu-smuggling-china:tiktok": {
+    "ghi_chu": "hen 20:30",
+    "luc": "02.10.2026 18:46"
+  },
+  "gpu-smuggling-china:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "02.10.2026 18:40"
   },
   "grok-47:facebook": {
     "ghi_chu": "hen 20:00",
@@ -250,6 +310,30 @@
   "kiem-tra-nguon:facebook-photo": {
     "ghi_chu": "hen 26/09 09:30",
     "luc": "22.09.2026 01:26"
+  },
+  "korea-ai-robots:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "01.10.2026 09:27"
+  },
+  "korea-ai-robots:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "01.10.2026 09:29"
+  },
+  "korea-ai-robots:youtube": {
+    "ghi_chu": "dang ngay",
+    "luc": "01.10.2026 09:25"
+  },
+  "mai-transcribe-stream:facebook": {
+    "ghi_chu": "hen 12:00",
+    "luc": "02.10.2026 10:32"
+  },
+  "mai-transcribe-stream:tiktok": {
+    "ghi_chu": "hen 12:30",
+    "luc": "02.10.2026 10:35"
+  },
+  "mai-transcribe-stream:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "02.10.2026 10:30"
   },
   "mat-khau:facebook-photo": {
     "ghi_chu": "hen 26/09 18:30",
@@ -454,5 +538,17 @@
   "us-china-si-dialogue:youtube": {
     "ghi_chu": "dang ngay",
     "luc": "28.09.2026 07:59"
+  },
+  "white-house-si-accord:facebook": {
+    "ghi_chu": "hen 20:00",
+    "luc": "30.09.2026 18:44"
+  },
+  "white-house-si-accord:tiktok": {
+    "ghi_chu": "hen 20:30",
+    "luc": "30.09.2026 19:00"
+  },
+  "white-house-si-accord:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "30.09.2026 18:57"
   }
 }
