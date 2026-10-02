@@ -1,0 +1,490 @@
+{
+ "slug": "mercor_accountants",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "MERCOR × RAMP · AI VS KẾ TOÁN · 01.10.2026",
+ "date": "02.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "AI VƯỢT KẾ TOÁN CPA TRÊN BÀI THI",
+   "say": "Kế toán thật vừa thua ây ai.",
+   "plain": "Kế toán thật vừa thua AI.",
+   "hot": [
+    3,
+    4,
+    5
+   ],
+   "words": [
+    "Kế",
+    "toán",
+    "thật",
+    "vừa",
+    "thua",
+    "AI."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Mơ-co thuê mười hai kế toán có chứng chỉ thi với Clâu.",
+   "plain": "Mercor thuê 12 kế toán có chứng chỉ thi với Claude.",
+   "hot": [
+    0,
+    2,
+    3,
+    4,
+    9
+   ],
+   "words": [
+    "Mercor",
+    "thuê",
+    "12",
+    "kế",
+    "toán",
+    "có",
+    "chứng",
+    "chỉ",
+    "thi",
+    "với",
+    "Claude."
+   ],
+   "weights": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "SỰ THẬT · AI 100%, NGƯỜI 37%",
+   "shot": "mercor-accountants.png",
+   "src": "mercor.com · nghiên cứu 01.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "hl": [
+    34,
+    124,
+    244,
+    50
+   ],
+   "say": "Clâu Ô-pớt năm đạt trọn điểm, mỗi bài chưa tới mười phút. Người trung bình ba mươi bảy phần trăm.",
+   "plain": "Claude Opus 5 đạt trọn điểm, mỗi bài chưa tới 10 phút. Người trung bình 37%.",
+   "hot": [
+    3,
+    4,
+    5,
+    8,
+    9,
+    10,
+    13
+   ],
+   "words": [
+    "Claude",
+    "Opus",
+    "5",
+    "đạt",
+    "trọn",
+    "điểm,",
+    "mỗi",
+    "bài",
+    "chưa",
+    "tới",
+    "10",
+    "phút.",
+    "Người",
+    "trung",
+    "bình",
+    "37%."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "lab": "CHI PHÍ · RẺ HƠN 49 LẦN",
+   "shot": "mercor-accountants.png",
+   "src": "mercor.com · nghiên cứu 01.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    232,
+    430,
+    223
+   ],
+   "hl": [
+    50,
+    272,
+    325,
+    46
+   ],
+   "say": "Tính trên mỗi tiêu chí làm đúng, ây ai rẻ hơn bốn mươi chín lần.",
+   "plain": "Tính trên mỗi tiêu chí làm đúng, AI rẻ hơn 49 lần.",
+   "hot": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "words": [
+    "Tính",
+    "trên",
+    "mỗi",
+    "tiêu",
+    "chí",
+    "làm",
+    "đúng,",
+    "AI",
+    "rẻ",
+    "hơn",
+    "49",
+    "lần."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "lab": "CHỐT SỔ THẬT · TỐT NHẤT 56,4%",
+   "shot": "mercor-accountants.png",
+   "src": "labs.ramp.com · APEX-Accounting",
+   "view": [
+    0,
+    232,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    439,
+    430,
+    223
+   ],
+   "hl": [
+    16,
+    458,
+    182,
+    62
+   ],
+   "say": "Nhưng ở bài chốt sổ thật làm cùng Ram, mô hình giỏi nhất chỉ được năm mươi sáu phần trăm.",
+   "plain": "Nhưng ở bài chốt sổ thật làm cùng Ramp, mô hình giỏi nhất chỉ được 56%.",
+   "hot": [
+    3,
+    4,
+    5,
+    13,
+    14
+   ],
+   "words": [
+    "Nhưng",
+    "ở",
+    "bài",
+    "chốt",
+    "sổ",
+    "thật",
+    "làm",
+    "cùng",
+    "Ramp,",
+    "mô",
+    "hình",
+    "giỏi",
+    "nhất",
+    "chỉ",
+    "được",
+    "56%."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "lab": "ỔN ĐỊNH · ĐÚNG CẢ 8 LẦN: 2,6%",
+   "shot": "mercor-accountants.png",
+   "src": "labs.ramp.com · APEX-Accounting",
+   "view": [
+    0,
+    439,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    631,
+    430,
+    223
+   ],
+   "hl": [
+    16,
+    751,
+    398,
+    98
+   ],
+   "say": "Chạy tám lần, chỉ hai phẩy sáu phần trăm số bài đúng cả tám.",
+   "plain": "Chạy 8 lần, chỉ 2,6% số bài đúng cả 8.",
+   "hot": [
+    1,
+    3,
+    6,
+    7,
+    8
+   ],
+   "words": [
+    "Chạy",
+    "8",
+    "lần,",
+    "chỉ",
+    "2,6%",
+    "số",
+    "bài",
+    "đúng",
+    "cả",
+    "8."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "lab": "VÌ SAO TRƯỢT · LỖI SUY LUẬN",
+   "shot": "mercor-accountants.png",
+   "src": "labs.ramp.com · APEX-Accounting",
+   "view": [
+    0,
+    631,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    877,
+    430,
+    223
+   ],
+   "hl": [
+    16,
+    911,
+    398,
+    178
+   ],
+   "say": "Bảy trên mười lỗi là do suy luận, không phải do thiếu dữ liệu.",
+   "plain": "7/10 lỗi là do suy luận, không phải do thiếu dữ liệu.",
+   "hot": [
+    0,
+    1,
+    4,
+    5
+   ],
+   "words": [
+    "7/10",
+    "lỗi",
+    "là",
+    "do",
+    "suy",
+    "luận,",
+    "không",
+    "phải",
+    "do",
+    "thiếu",
+    "dữ",
+    "liệu."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: ây ai thắng việc rõ ràng, còn chốt sổ thật vẫn cần người.",
+   "plain": "Góc nhìn của mình: AI thắng việc rõ ràng, còn chốt sổ thật vẫn cần người.",
+   "hot": [
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    13,
+    14
+   ],
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "AI",
+    "thắng",
+    "việc",
+    "rõ",
+    "ràng,",
+    "còn",
+    "chốt",
+    "sổ",
+    "thật",
+    "vẫn",
+    "cần",
+    "người."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

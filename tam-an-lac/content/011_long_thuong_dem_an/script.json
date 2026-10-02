@@ -1,0 +1,50 @@
+{
+  "slug": "011_long_thuong_dem_an",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về lòng từ (tâm thương yêu) với mình và với mọi người: Kinh Từ Bi (Metta Sutta, Kinh Tập Sn 1.8) — trải lòng từ đến mọi loài, không ôm giận hờn, không mong người khổ; và Kinh Từ (Tăng Chi Bộ, chương Mười một pháp, AN 11.16) — người tu tập lòng từ ngủ an, thức dậy an (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {
+      "id": "s1",
+      "text": "Tối nay còn giận ai?"
+    },
+    {
+      "id": "s2",
+      "text": "Phật dạy: hãy mở lòng thương,"
+    },
+    {
+      "id": "s3",
+      "text": "thương mình, thương người, cả người làm mình buồn."
+    },
+    {
+      "id": "s4",
+      "text": "Lòng thương làm cơn giận dịu đi."
+    },
+    {
+      "id": "s5",
+      "text": "Chỉ một câu nói của người nhà, của đồng nghiệp,"
+    },
+    {
+      "id": "s6",
+      "text": "mà đêm về mình trằn trọc, nghĩ mãi không thôi."
+    },
+    {
+      "id": "s7",
+      "text": "Tối nay, trước khi nhắm mắt,"
+    },
+    {
+      "id": "s8",
+      "text": "hãy nhủ thầm: mong mình bình an,"
+    },
+    {
+      "id": "s9",
+      "text": "mong người ấy cũng bình an."
+    },
+    {
+      "id": "s10",
+      "text": "Lòng thương, đêm an."
+    }
+  ]
+}

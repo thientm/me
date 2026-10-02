@@ -43,7 +43,8 @@
   "scene": "hồ sen yên tĩnh (sinh cho 005, bị ngắt trước khi chép)",
   "model": "agy generate_image",
   "luc": "30.09.2026 18:34",
-  "chua_dung": true
+  "chua_dung": false,
+  "dung_cho": "011_long_thuong_dem_an/img_3.jpg (02.10.2026, hết quota agy)"
  },
  {
   "slug": "_pool",
@@ -91,5 +92,21 @@
   "scene": "A quiet Vietnamese home courtyard at early morning, a cup of hot tea steaming on a wooden table, potted plants, gentle golden sunrise rays, calm and peaceful",
   "model": "gemini-3.8-flash-medium",
   "luc": "02.10.2026 06:15"
+ },
+ {
+  "slug": "011_long_thuong_dem_an",
+  "file": "content/011_long_thuong_dem_an/img_1.jpg",
+  "scene": "A middle-aged Vietnamese woman lying awake in bed at night, restless and troubled, staring at the ceiling, soft bluish moonlight through a window, quiet bedroom",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "02.10.2026 18:34",
+  "ghi_chu": "ghi tay: gen_images.py thoát ở img_3 (HẾT QUOTA) trước khi ghi sổ"
+ },
+ {
+  "slug": "011_long_thuong_dem_an",
+  "file": "content/011_long_thuong_dem_an/img_2.jpg",
+  "scene": "A middle-aged Vietnamese man sitting peacefully on the edge of his bed at night, hands gently resting on his chest, eyes closed, a small warm bedside lamp glowing, calm and kind expression",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "02.10.2026 18:35",
+  "ghi_chu": "ghi tay: gen_images.py thoát ở img_3 (HẾT QUOTA) trước khi ghi sổ"
  }
 ]
