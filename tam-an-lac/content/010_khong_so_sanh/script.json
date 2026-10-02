@@ -1,0 +1,19 @@
+{
+  "slug": "010_khong_so_sanh",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về không ganh tị, không so đo: Kinh Pháp Cú kệ 365 — chớ khinh điều mình được, chớ ganh tị người khác; và kệ 50 — không nên nhìn lỗi người, người làm hay không làm; nên nhìn tự chính mình, có làm hay không làm (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Lại so mình với người?"},
+    {"id": "s2", "text": "Phật dạy: đừng xem nhẹ điều mình đang có,"},
+    {"id": "s3", "text": "cũng đừng ganh với điều người khác có."},
+    {"id": "s4", "text": "Hãy nhìn lại việc của chính mình."},
+    {"id": "s5", "text": "Giờ nghỉ trưa, mình lướt điện thoại,"},
+    {"id": "s6", "text": "thấy bạn bè nhà mới, xe mới, rồi tự thấy mình kém cỏi."},
+    {"id": "s7", "text": "Trưa nay, khi lỡ so sánh,"},
+    {"id": "s8", "text": "đặt điện thoại xuống, nhủ thầm: mình đi đường mình."},
+    {"id": "s9", "text": "Thôi so sánh, lòng an."}
+  ]
+}

@@ -34,7 +34,8 @@
   "scene": "sân chùa bình minh, tia nắng (ảnh thử agy 30/09)",
   "model": "agy generate_image",
   "luc": "30.09.2026 09:20",
-  "chua_dung": true
+  "chua_dung": false,
+  "dung_cho": "010_khong_so_sanh/img_3.jpg (02.10.2026, agy interrupted)"
  },
  {
   "slug": "_pool",
@@ -58,7 +59,8 @@
   "scene": "cụ bà ngồi hiên nhà (sinh 30/09 sáng, chưa dùng)",
   "model": "agy generate_image",
   "luc": "30.09.2026 09:30",
-  "chua_dung": true
+  "chua_dung": false,
+  "dung_cho": "010_khong_so_sanh/img_2.jpg (02.10.2026, agy interrupted)"
  },
  {
   "slug": "_pool",
@@ -66,7 +68,8 @@
   "scene": "mẹ già ngồi ghế gỗ chờ lúc hoàng hôn (sinh cho 008, bị ngắt trước khi chép)",
   "model": "agy generate_image",
   "luc": "01.10.2026 18:30",
-  "chua_dung": true
+  "chua_dung": false,
+  "dung_cho": "010_khong_so_sanh/img_1.jpg (02.10.2026, agy interrupted)"
  },
  {
   "slug": "009_hoi_tho_buoi_sang",
