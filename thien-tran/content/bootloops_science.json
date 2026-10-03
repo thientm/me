@@ -1,0 +1,520 @@
+{
+ "slug": "bootloops_science",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "ANTHROPIC · BÀI KHÁCH MỜI MATTHEW SCHWARTZ · 01.10.2026",
+ "date": "03.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "say": "Đừng bắt ây ai làm nhà khoa học.",
+   "plain": "Đừng bắt AI làm nhà khoa học.",
+   "lab": "BOOTLOOPS · 36 BẢN THẢO TRONG 3 THÁNG",
+   "words": [
+    "Đừng",
+    "bắt",
+    "AI",
+    "làm",
+    "nhà",
+    "khoa",
+    "học."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    2,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Giáo sư vật lý Ha-vớt Soóc-xơ ngừng ép Clâu làm việc như người.",
+   "plain": "Giáo sư vật lý Harvard Schwartz ngừng ép Claude làm việc như người.",
+   "words": [
+    "Giáo",
+    "sư",
+    "vật",
+    "lý",
+    "Harvard",
+    "Schwartz",
+    "ngừng",
+    "ép",
+    "Claude",
+    "làm",
+    "việc",
+    "như",
+    "người."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    6,
+    8,
+    12
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Ông để Clâu dựng bộ công cụ Bút-lúp, mã nguồn mở, dùng mô hình nào cũng được.",
+   "plain": "Ông để Claude dựng bộ công cụ BootLoops, mã nguồn mở, dùng mô hình nào cũng được.",
+   "shot": "bootloops.png",
+   "src": "anthropic.com · 01.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    300,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    327,
+    369,
+    83
+   ],
+   "lab": "BOOTLOOPS · MÃ NGUỒN MỞ, MÔ HÌNH NÀO CŨNG CHẠY",
+   "words": [
+    "Ông",
+    "để",
+    "Claude",
+    "dựng",
+    "bộ",
+    "công",
+    "cụ",
+    "BootLoops,",
+    "mã",
+    "nguồn",
+    "mở,",
+    "dùng",
+    "mô",
+    "hình",
+    "nào",
+    "cũng",
+    "được."
+   ],
+   "weights": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    7,
+    8,
+    9,
+    10,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "say": "Clâu tái hiện một bài báo của ông trong khoảng hai mươi phút, ông từng mất vài tuần.",
+   "plain": "Claude tái hiện một bài báo của ông trong khoảng 20 phút, ông từng mất vài tuần.",
+   "shot": "bootloops.png",
+   "src": "anthropic.com · 01.10.2026",
+   "view": [
+    0,
+    300,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    455,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    481,
+    378,
+    83
+   ],
+   "lab": "~20 PHÚT THAY VÌ VÀI TUẦN",
+   "words": [
+    "Claude",
+    "tái",
+    "hiện",
+    "một",
+    "bài",
+    "báo",
+    "của",
+    "ông",
+    "trong",
+    "khoảng",
+    "20",
+    "phút,",
+    "ông",
+    "từng",
+    "mất",
+    "vài",
+    "tuần."
+   ],
+   "weights": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    10,
+    11,
+    15,
+    16
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "say": "Ba tháng: ba mươi sáu bản thảo, mười tám lĩnh vực, chọn từ khoảng bốn trăm bài toán.",
+   "plain": "3 tháng: 36 bản thảo, 18 lĩnh vực, chọn từ khoảng 400 bài toán.",
+   "shot": "bootloops.png",
+   "src": "anthropic.com · 01.10.2026",
+   "view": [
+    0,
+    455,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    665,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    691,
+    376,
+    110
+   ],
+   "lab": "3 THÁNG · 36 BẢN THẢO · 18 LĨNH VỰC",
+   "words": [
+    "3",
+    "tháng:",
+    "36",
+    "bản",
+    "thảo,",
+    "18",
+    "lĩnh",
+    "vực,",
+    "chọn",
+    "từ",
+    "khoảng",
+    "400",
+    "bài",
+    "toán."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    2,
+    5,
+    11
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "say": "Nhưng kết quả thường đúng kỹ thuật mà chưa hay, tới khi chuyên gia chỉ hướng.",
+   "plain": "Nhưng kết quả thường đúng kỹ thuật mà chưa hay, tới khi chuyên gia chỉ hướng.",
+   "shot": "bootloops.png",
+   "src": "anthropic.com · 01.10.2026",
+   "view": [
+    0,
+    665,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1300,
+    430,
+    223
+   ],
+   "hl": [
+    41,
+    1376,
+    351,
+    83
+   ],
+   "lab": "ĐÚNG KỸ THUẬT, NHƯNG CHƯA HAY",
+   "words": [
+    "Nhưng",
+    "kết",
+    "quả",
+    "thường",
+    "đúng",
+    "kỹ",
+    "thuật",
+    "mà",
+    "chưa",
+    "hay,",
+    "tới",
+    "khi",
+    "chuyên",
+    "gia",
+    "chỉ",
+    "hướng."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    6,
+    8,
+    9,
+    12,
+    13
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "say": "Lưu ý: ông đang là nhà nghiên cứu khách mời ở Anh-thơ-píc.",
+   "plain": "Lưu ý: ông đang là nhà nghiên cứu khách mời ở Anthropic.",
+   "shot": "bootloops.png",
+   "src": "anthropic.com · 01.10.2026",
+   "view": [
+    0,
+    1300,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1410,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    1511,
+    369,
+    57
+   ],
+   "lab": "LƯU Ý · TÁC GIẢ LÀ KHÁCH MỜI Ở ANTHROPIC",
+   "words": [
+    "Lưu",
+    "ý:",
+    "ông",
+    "đang",
+    "là",
+    "nhà",
+    "nghiên",
+    "cứu",
+    "khách",
+    "mời",
+    "ở",
+    "Anthropic."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    1,
+    8,
+    9,
+    11
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "say": "Góc nhìn của mình: ây ai lo phần tính, người giữ phần chọn câu hỏi nào đáng hỏi.",
+   "plain": "Góc nhìn của mình: AI lo phần tính, người giữ phần chọn câu hỏi nào đáng hỏi.",
+   "lab": "GÓC NHÌN",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "AI",
+    "lo",
+    "phần",
+    "tính,",
+    "người",
+    "giữ",
+    "phần",
+    "chọn",
+    "câu",
+    "hỏi",
+    "nào",
+    "đáng",
+    "hỏi."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    7,
+    8,
+    11,
+    12,
+    13,
+    15,
+    16
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

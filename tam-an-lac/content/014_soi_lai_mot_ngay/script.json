@@ -1,0 +1,19 @@
+{
+  "slug": "014_soi_lai_mot_ngay",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về tự soi xét việc mình làm như soi gương: Kinh Giáo Giới La-hầu-la ở rừng Ambala (Ambalaṭṭhikā Rāhulovāda Sutta, Trung Bộ kinh số 61, MN 61) — Phật hỏi La-hầu-la cái gương dùng để làm gì, đáp: để phản tỉnh; cũng vậy, hãy phản tỉnh trước khi làm, đang làm và sau khi làm một việc về thân, lời nói, ý nghĩ; việc nào đưa đến khổ cho mình, cho người thì từ bỏ, nhận lỗi và giữ gìn về sau; việc nào không gây khổ thì sống hoan hỷ, ngày đêm tiếp tục học tập điều lành (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Hôm nay mình sống sao?"},
+    {"id": "s2", "text": "Phật dạy: hãy soi lại việc mình làm, như soi gương."},
+    {"id": "s3", "text": "Việc nào làm khổ mình, khổ người, thì sửa."},
+    {"id": "s4", "text": "Việc nào đem lại bình an, thì cứ thế làm tiếp."},
+    {"id": "s5", "text": "Cả ngày tất bật, nói vội, làm vội,"},
+    {"id": "s6", "text": "tối về chỉ thấy mệt, chẳng kịp nhìn lại mình."},
+    {"id": "s7", "text": "Tối nay, trước khi ngủ, nhớ lại một việc tốt đã làm,"},
+    {"id": "s8", "text": "và một điều ngày mai mình sẽ làm khác đi."},
+    {"id": "s9", "text": "Soi lại, sống nhẹ."}
+  ]
+}
