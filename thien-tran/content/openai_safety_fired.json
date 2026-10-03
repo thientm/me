@@ -1,0 +1,542 @@
+{
+ "slug": "openai_safety_fired",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "OPENAI · 3 NGƯỜI NHÓM AN TOÀN BỊ CHO NGHỈ · 01.10.2026",
+ "date": "03.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "OPENAI CHO NGHỈ 3 NGƯỜI NHÓM AN TOÀN",
+   "say": "Lên tiếng, hay làm lộ bí mật?",
+   "plain": "Lên tiếng, hay làm lộ bí mật?",
+   "hot": [
+    0,
+    1,
+    4,
+    5
+   ],
+   "words": [
+    "Lên",
+    "tiếng,",
+    "hay",
+    "làm",
+    "lộ",
+    "bí",
+    "mật?"
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Ô-pen Ây Ai vừa cho nghỉ ba nhà nghiên cứu nhóm an toàn.",
+   "plain": "OpenAI vừa cho nghỉ 3 nhà nghiên cứu nhóm an toàn.",
+   "hot": [
+    0,
+    2,
+    3,
+    4,
+    9,
+    10
+   ],
+   "words": [
+    "OpenAI",
+    "vừa",
+    "cho",
+    "nghỉ",
+    "3",
+    "nhà",
+    "nghiên",
+    "cứu",
+    "nhóm",
+    "an",
+    "toàn."
+   ],
+   "weights": [
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "THEO WSJ · CHIA SẺ TIN MẬT RA NGOÀI",
+   "shot": "openai-safety-fired.png",
+   "src": "wsj.com · 01.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    650,
+    430,
+    223
+   ],
+   "hl": [
+    2,
+    706,
+    422,
+    112
+   ],
+   "say": "Theo Uôn Xtrít Giơ-nồ, họ bị cho là đưa thông tin mật cho một tổ chức bên ngoài.",
+   "plain": "Theo WSJ, họ bị cho là đưa thông tin mật cho một tổ chức bên ngoài.",
+   "hot": [
+    1,
+    5,
+    6,
+    7,
+    8
+   ],
+   "words": [
+    "Theo",
+    "WSJ,",
+    "họ",
+    "bị",
+    "cho",
+    "là",
+    "đưa",
+    "thông",
+    "tin",
+    "mật",
+    "cho",
+    "một",
+    "tổ",
+    "chức",
+    "bên",
+    "ngoài."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "lab": "OPENAI XÁC NHẬN · XỬ LÝ SAI QUY TRÌNH",
+   "shot": "openai-safety-fired.png",
+   "src": "gizmodo.com · 01.10.2026",
+   "view": [
+    0,
+    650,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    840,
+    430,
+    223
+   ],
+   "hl": [
+    12,
+    862,
+    386,
+    132
+   ],
+   "say": "Hãng xác nhận: điều tra cho thấy họ xử lý thông tin nhạy cảm sai quy trình.",
+   "plain": "Hãng xác nhận: điều tra cho thấy họ xử lý thông tin nhạy cảm sai quy trình.",
+   "hot": [
+    1,
+    2,
+    10,
+    11,
+    13,
+    14,
+    15
+   ],
+   "words": [
+    "Hãng",
+    "xác",
+    "nhận:",
+    "điều",
+    "tra",
+    "cho",
+    "thấy",
+    "họ",
+    "xử",
+    "lý",
+    "thông",
+    "tin",
+    "nhạy",
+    "cảm",
+    "sai",
+    "quy",
+    "trình."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "lab": "TỪNG VIẾT TRÊN X · \"KHÔNG VUI VỚI OPENAI\"",
+   "shot": "openai-safety-fired.png",
+   "src": "gizmodo.com · 01.10.2026",
+   "view": [
+    0,
+    840,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1370,
+    430,
+    223
+   ],
+   "hl": [
+    12,
+    1394,
+    384,
+    68
+   ],
+   "say": "Một người từng chê hãng trên ích. Tên do báo nêu, hãng chưa xác nhận.",
+   "plain": "Một người từng chê hãng trên X. Tên do báo nêu, hãng chưa xác nhận.",
+   "hot": [
+    3,
+    4,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    13
+   ],
+   "words": [
+    "Một",
+    "người",
+    "từng",
+    "chê",
+    "hãng",
+    "trên",
+    "X.",
+    "Tên",
+    "do",
+    "báo",
+    "nêu,",
+    "hãng",
+    "chưa",
+    "xác",
+    "nhận."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "lab": "2 NGÀY TRƯỚC · NYT: LÃNH ĐẠO GẠT CẢNH BÁO",
+   "shot": "openai-safety-fired.png",
+   "src": "techcrunch.com · 01.10.2026",
+   "view": [
+    0,
+    1370,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1600,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    1632,
+    374,
+    82
+   ],
+   "say": "Hai ngày trước, Niu Oóc Thai-mờ viết lãnh đạo gạt cảnh báo an toàn của nhân viên.",
+   "plain": "Hai ngày trước, New York Times viết lãnh đạo gạt cảnh báo an toàn của nhân viên.",
+   "hot": [
+    0,
+    1,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "words": [
+    "Hai",
+    "ngày",
+    "trước,",
+    "New",
+    "York",
+    "Times",
+    "viết",
+    "lãnh",
+    "đạo",
+    "gạt",
+    "cảnh",
+    "báo",
+    "an",
+    "toàn",
+    "của",
+    "nhân",
+    "viên."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "lab": "CHƯA RÕ · ĐÃ BÁO QUA KÊNH NỘI BỘ?",
+   "shot": "openai-safety-fired.png",
+   "src": "techcrunch.com · 01.10.2026",
+   "view": [
+    0,
+    1600,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1849,
+    430,
+    223
+   ],
+   "hl": [
+    24,
+    1950,
+    381,
+    108
+   ],
+   "say": "Chưa rõ ba người này đã báo qua kênh nội bộ trước hay chưa.",
+   "plain": "Chưa rõ ba người này đã báo qua kênh nội bộ trước hay chưa.",
+   "hot": [
+    0,
+    1,
+    7,
+    8,
+    9
+   ],
+   "words": [
+    "Chưa",
+    "rõ",
+    "ba",
+    "người",
+    "này",
+    "đã",
+    "báo",
+    "qua",
+    "kênh",
+    "nội",
+    "bộ",
+    "trước",
+    "hay",
+    "chưa."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: lên tiếng là quyền, mang tài liệu ra là vi phạm. Nhưng kênh nội bộ phải được nghe.",
+   "plain": "Góc nhìn của mình: lên tiếng là quyền, mang tài liệu ra là vi phạm. Nhưng kênh nội bộ phải được nghe.",
+   "hot": [
+    4,
+    5,
+    7,
+    9,
+    10,
+    13,
+    14,
+    16,
+    17,
+    20
+   ],
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "lên",
+    "tiếng",
+    "là",
+    "quyền,",
+    "mang",
+    "tài",
+    "liệu",
+    "ra",
+    "là",
+    "vi",
+    "phạm.",
+    "Nhưng",
+    "kênh",
+    "nội",
+    "bộ",
+    "phải",
+    "được",
+    "nghe."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}
