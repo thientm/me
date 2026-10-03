@@ -403,6 +403,18 @@
     "ghi_chu": "hen 20:00",
     "luc": "28.09.2026 20:03"
   },
+  "oai-restart-slack:facebook": {
+    "ghi_chu": "hen 20:00",
+    "luc": "03.10.2026 18:53"
+  },
+  "oai-restart-slack:tiktok": {
+    "ghi_chu": "hen 20:30",
+    "luc": "03.10.2026 19:28"
+  },
+  "oai-restart-slack:youtube": {
+    "ghi_chu": "hen 20:00",
+    "luc": "03.10.2026 19:26"
+  },
   "openai-dots:facebook": {
     "ghi_chu": "dang ngay",
     "luc": "30.09.2026 07:40"
