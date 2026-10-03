@@ -1,0 +1,19 @@
+{
+  "slug": "012_giot_nho_day_binh",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy đừng xem thường việc thiện nhỏ: Kinh Pháp Cú kệ 122 (phẩm Ác) — chớ khinh điều thiện nhỏ, nghĩ rằng chẳng đến với mình; như nước nhỏ từng giọt cũng làm đầy bình, người trí chất chứa điều thiện dần dần mà đầy (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Việc nhỏ có ích gì?"},
+    {"id": "s2", "text": "Phật dạy: đừng xem thường việc tốt nhỏ."},
+    {"id": "s3", "text": "Như nước nhỏ từng giọt, lâu ngày cũng đầy bình."},
+    {"id": "s4", "text": "Mình hay nghĩ phải làm việc gì to tát,"},
+    {"id": "s5", "text": "nên bỏ qua một lời hỏi thăm, một lần nhường đường."},
+    {"id": "s6", "text": "Mà chính điều nhỏ ấy làm người khác ấm lòng."},
+    {"id": "s7", "text": "Sáng nay, hãy làm một việc tốt thật nhỏ:"},
+    {"id": "s8", "text": "rót cốc nước cho người nhà, hỏi thăm hàng xóm."},
+    {"id": "s9", "text": "Giọt nhỏ, đầy bình."}
+  ]
+}

@@ -1,0 +1,462 @@
+{
+ "slug": "ramp_ai_index_oct",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "RAMP AI INDEX · TUẦN 21–27.09.2026",
+ "date": "03.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "lab": "DOANH NGHIỆP MỸ DÙNG AI NHIỀU, CHI ÍT ĐI",
+   "say": "Dùng ây ai nhiều hơn, trả ít tiền hơn.",
+   "plain": "Dùng AI nhiều hơn, trả ít tiền hơn.",
+   "hot": [
+    2,
+    5,
+    6
+   ],
+   "words": [
+    "Dùng",
+    "AI",
+    "nhiều",
+    "hơn,",
+    "trả",
+    "ít",
+    "tiền",
+    "hơn."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Dữ liệu chi tiêu của bảy mươi nghìn công ty Mỹ trên Ram.",
+   "plain": "Dữ liệu chi tiêu của 70.000 công ty Mỹ trên Ramp.",
+   "hot": [
+    5,
+    10
+   ],
+   "words": [
+    "Dữ",
+    "liệu",
+    "chi",
+    "tiêu",
+    "của",
+    "70.000",
+    "công",
+    "ty",
+    "Mỹ",
+    "trên",
+    "Ramp."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "lab": "SỰ THẬT · 56,1% DOANH NGHIỆP TRẢ TIỀN AI",
+   "shot": "ramp-ai-index.png",
+   "src": "ramp.com/data/ai-index · Ramp AI Index",
+   "view": [
+    0,
+    0,
+    430,
+    568
+   ],
+   "focus": [
+    0,
+    130,
+    430,
+    223
+   ],
+   "hl": [
+    286,
+    153,
+    140,
+    20
+   ],
+   "say": "Năm mươi sáu phần trăm đã trả tiền ây ai, gấp hai lần rưỡi số chính phủ.",
+   "plain": "56% đã trả tiền AI, gấp 2,5 lần số chính phủ.",
+   "hot": [
+    0,
+    4,
+    6,
+    7
+   ],
+   "words": [
+    "56%",
+    "đã",
+    "trả",
+    "tiền",
+    "AI,",
+    "gấp",
+    "2,5",
+    "lần",
+    "số",
+    "chính",
+    "phủ."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "lab": "GIÁ TOKEN · $1,15 → ~$0,70",
+   "shot": "ramp-ai-index.png",
+   "src": "ramp.com/data/ai-index · Ramp AI Index",
+   "view": [
+    0,
+    568,
+    430,
+    476
+   ],
+   "focus": [
+    0,
+    690,
+    430,
+    223
+   ],
+   "hl": [
+    330,
+    842,
+    82,
+    34
+   ],
+   "say": "Nhưng giá tô-ken rơi từ một đô mười lăm tháng ba, còn khoảng bảy mươi xu.",
+   "plain": "Nhưng giá token rơi từ 1,15 đô tháng 3, còn khoảng 70 xu.",
+   "hot": [
+    3,
+    5,
+    11,
+    12
+   ],
+   "words": [
+    "Nhưng",
+    "giá",
+    "token",
+    "rơi",
+    "từ",
+    "1,15",
+    "đô",
+    "tháng",
+    "3,",
+    "còn",
+    "khoảng",
+    "70",
+    "xu."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "lab": "TOP 1% · CHI/NHÂN VIÊN −9,7%",
+   "shot": "ramp-ai-index.png",
+   "src": "ramp.com/data/ai-index · Ramp AI Index",
+   "view": [
+    0,
+    1044,
+    430,
+    590
+   ],
+   "focus": [
+    0,
+    1180,
+    430,
+    223
+   ],
+   "hl": [
+    296,
+    1222,
+    134,
+    22
+   ],
+   "say": "Nhóm chi mạnh nhất cắt gần mười phần trăm, còn bảy nghìn hai trăm đô mỗi người.",
+   "plain": "Nhóm chi mạnh nhất cắt gần 10%, còn 7.200 đô mỗi người.",
+   "hot": [
+    2,
+    4,
+    6,
+    8
+   ],
+   "words": [
+    "Nhóm",
+    "chi",
+    "mạnh",
+    "nhất",
+    "cắt",
+    "gần",
+    "10%,",
+    "còn",
+    "7.200",
+    "đô",
+    "mỗi",
+    "người."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "lab": "TIỀN TOKEN · ANTHROPIC 51%",
+   "shot": "ramp-ai-index.png",
+   "src": "ramp.com/data/ai-index · Ramp AI Index",
+   "view": [
+    0,
+    1634,
+    430,
+    372
+   ],
+   "focus": [
+    0,
+    1760,
+    430,
+    223
+   ],
+   "hl": [
+    60,
+    1826,
+    368,
+    26
+   ],
+   "say": "Tuần cuối tháng chín, Anh-thơ-píc thu năm mốt phần trăm tiền tô-ken.",
+   "plain": "Tuần cuối tháng 9, Anthropic thu 51% tiền token.",
+   "hot": [
+    4,
+    6,
+    7
+   ],
+   "words": [
+    "Tuần",
+    "cuối",
+    "tháng",
+    "9,",
+    "Anthropic",
+    "thu",
+    "51%",
+    "tiền",
+    "token."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "lab": "LƯỢNG TOKEN · OPENAI 53,3%",
+   "shot": "ramp-ai-index.png",
+   "src": "ramp.com/data/ai-index · Ramp AI Index",
+   "view": [
+    0,
+    2006,
+    430,
+    372
+   ],
+   "focus": [
+    0,
+    2130,
+    430,
+    223
+   ],
+   "hl": [
+    60,
+    2196,
+    368,
+    26
+   ],
+   "say": "Nhưng đếm tô-ken, Ô-pen Ây Ai dẫn, năm mươi ba phần trăm. Tô-ken Clâu đắt hơn.",
+   "plain": "Nhưng đếm token, OpenAI dẫn, 53%. Token Claude đắt hơn.",
+   "hot": [
+    3,
+    4,
+    5,
+    8
+   ],
+   "words": [
+    "Nhưng",
+    "đếm",
+    "token,",
+    "OpenAI",
+    "dẫn,",
+    "53%.",
+    "Token",
+    "Claude",
+    "đắt",
+    "hơn."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "lab": "GÓC NHÌN",
+   "say": "Góc nhìn của mình: chi giảm không phải ây ai xẹp, mà khách đã biết chọn mô hình rẻ.",
+   "plain": "Góc nhìn của mình: chi giảm không phải AI xẹp, mà khách đã biết chọn mô hình rẻ.",
+   "hot": [
+    5,
+    9,
+    14,
+    17
+   ],
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "chi",
+    "giảm",
+    "không",
+    "phải",
+    "AI",
+    "xẹp,",
+    "mà",
+    "khách",
+    "đã",
+    "biết",
+    "chọn",
+    "mô",
+    "hình",
+    "rẻ."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

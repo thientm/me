@@ -52,7 +52,8 @@
   "scene": "người mẹ Việt bên hồ (sinh 30/09 sáng, chưa dùng)",
   "model": "agy generate_image",
   "luc": "30.09.2026 09:34",
-  "chua_dung": true
+  "chua_dung": false,
+  "dung_cho": "012_giot_nho_day_binh/img_2.jpg (03.10.2026, agy HẾT QUOTA)"
  },
  {
   "slug": "_pool",
