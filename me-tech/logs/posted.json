@@ -63,6 +63,18 @@
     "ghi_chu": "dang ngay",
     "luc": "28.09.2026 11:57"
   },
+  "apple-full-disk-access:facebook": {
+    "ghi_chu": "hen 12:00",
+    "luc": "04.10.2026 11:19"
+  },
+  "apple-full-disk-access:tiktok": {
+    "ghi_chu": "hen 12:30",
+    "luc": "04.10.2026 11:39"
+  },
+  "apple-full-disk-access:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "04.10.2026 11:13"
+  },
   "ban-asi-act:facebook": {
     "ghi_chu": "dang ngay",
     "luc": "26.09.2026 11:59"
@@ -374,6 +386,18 @@
   "multimodal:facebook-photo": {
     "ghi_chu": "hen 25/09 11:00",
     "luc": "22.09.2026 01:20"
+  },
+  "muse-gadgets:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "04.10.2026 10:25"
+  },
+  "muse-gadgets:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "04.10.2026 09:28"
+  },
+  "muse-gadgets:youtube": {
+    "ghi_chu": "dang tre ~08:35 (khung 08:00; script bao loi nhung Studio: Public)",
+    "luc": "04.10.2026 09:11"
   },
   "nhiet-do:facebook-photo": {
     "ghi_chu": "hen 23/09 09:30",
