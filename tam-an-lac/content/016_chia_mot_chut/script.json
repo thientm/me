@@ -1,0 +1,19 @@
+{
+  "slug": "016_chia_mot_chut",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về cho đi, sẻ chia: Kinh Bố Thí (Dāna Sutta, Kinh Phật Thuyết Như Vậy — Itivuttaka 26) — nếu chúng sinh biết như Ta biết quả của bố thí và chia sẻ, họ sẽ không ăn khi chưa cho; dù là miếng ăn cuối cùng, họ cũng không ăn mà không chia sẻ nếu có người nhận; và Kinh Bố Thí Sáu Chi Phần (Tăng Chi Bộ kinh, chương Sáu pháp, AN 6.37) — người cho, trước khi cho thì vui, khi đang cho thì tâm tịnh tín, sau khi cho thì hoan hỷ (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Ăn trưa một mình?"},
+    {"id": "s2", "text": "Phật dạy: có gì, dù ít, hãy biết sẻ chia."},
+    {"id": "s3", "text": "Dù chỉ còn một miếng, cũng có thể chia cho người bên cạnh."},
+    {"id": "s4", "text": "Cho đi một chút, lòng mình nhẹ hơn, vui hơn."},
+    {"id": "s5", "text": "Giờ cơm trưa, mình hay cắm cúi ăn vội,"},
+    {"id": "s6", "text": "chẳng để ý người ngồi ngay bên cạnh."},
+    {"id": "s7", "text": "Trưa nay, có món ngon, hãy mời người bên cạnh một miếng,"},
+    {"id": "s8", "text": "hoặc rót cốc nước cho bác bảo vệ, cô lao công."},
+    {"id": "s9", "text": "Chia một chút, vui cả hai."}
+  ]
+}

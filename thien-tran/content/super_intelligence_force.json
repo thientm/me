@@ -1,0 +1,504 @@
+{
+ "slug": "super_intelligence_force",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "NHÀ TRẮNG · \"SUPER INTELLIGENCE FORCE\" · 03.10.2026",
+ "date": "04.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "say": "Trùm tình báo Mỹ giờ lo luôn ây ai.",
+   "plain": "Trùm tình báo Mỹ giờ lo luôn AI.",
+   "lab": "TRÙM TÌNH BÁO MỸ THÀNH \"SA HOÀNG AI\"",
+   "words": [
+    "Trùm",
+    "tình",
+    "báo",
+    "Mỹ",
+    "giờ",
+    "lo",
+    "luôn",
+    "AI."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Nhà Trắng lập nhóm Siêu Trí Tuệ, do trùm tình báo Giây Clây-tơn dẫn đầu.",
+   "plain": "Nhà Trắng lập nhóm Siêu Trí Tuệ, do trùm tình báo Jay Clayton dẫn đầu.",
+   "words": [
+    "Nhà",
+    "Trắng",
+    "lập",
+    "nhóm",
+    "Siêu",
+    "Trí",
+    "Tuệ,",
+    "do",
+    "trùm",
+    "tình",
+    "báo",
+    "Jay",
+    "Clayton",
+    "dẫn",
+    "đầu."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Theo Uôn Xtrít Giơ-nồ, nhóm có một trăm hai mươi ngày để báo cáo rủi ro và cơ hội của ây ai.",
+   "plain": "Theo WSJ, nhóm có 120 ngày để báo cáo rủi ro và cơ hội của AI.",
+   "shot": "super-intelligence-force.png",
+   "src": "wsj.com · 03.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "hl": [
+    2,
+    14,
+    398,
+    84
+   ],
+   "lab": "THEO WSJ · 120 NGÀY ĐỂ BÁO CÁO",
+   "words": [
+    "Theo",
+    "WSJ,",
+    "nhóm",
+    "có",
+    "120",
+    "ngày",
+    "để",
+    "báo",
+    "cáo",
+    "rủi",
+    "ro",
+    "và",
+    "cơ",
+    "hội",
+    "của",
+    "AI."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    9,
+    10,
+    12,
+    13
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "say": "Chữ sa hoàng ây ai là từ nguồn giấu tên, Nhà Trắng chưa công bố.",
+   "plain": "Chữ \"sa hoàng AI\" là từ nguồn giấu tên, Nhà Trắng chưa công bố.",
+   "shot": "super-intelligence-force.png",
+   "src": "cnbc.com · 03.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    240,
+    430,
+    223
+   ],
+   "hl": [
+    13,
+    262,
+    382,
+    57
+   ],
+   "lab": "\"SA HOÀNG AI\" · THEO NGUỒN TIN GIẤU TÊN",
+   "words": [
+    "Chữ",
+    "\"sa",
+    "hoàng",
+    "AI\"",
+    "là",
+    "từ",
+    "nguồn",
+    "giấu",
+    "tên,",
+    "Nhà",
+    "Trắng",
+    "chưa",
+    "công",
+    "bố."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    7,
+    8,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "say": "Ngành ây ai vẫn tự quản là chính.",
+   "plain": "Ngành AI vẫn tự quản là chính.",
+   "shot": "super-intelligence-force.png",
+   "src": "Investing.com qua Yahoo Finance · 03.10.2026",
+   "view": [
+    0,
+    240,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    800,
+    430,
+    223
+   ],
+   "hl": [
+    8,
+    840,
+    389,
+    68
+   ],
+   "lab": "NGÀNH AI VẪN TỰ QUẢN LÀ CHÍNH",
+   "words": [
+    "Ngành",
+    "AI",
+    "vẫn",
+    "tự",
+    "quản",
+    "là",
+    "chính."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    6
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "say": "Clây-tơn muốn mượn khung rủi ro của Phét và ét-e-xi.",
+   "plain": "Clayton muốn mượn khung rủi ro của Fed và SEC.",
+   "shot": "super-intelligence-force.png",
+   "src": "Investing.com qua Yahoo Finance · 03.10.2026",
+   "view": [
+    0,
+    800,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1100,
+    430,
+    223
+   ],
+   "hl": [
+    8,
+    1156,
+    389,
+    101
+   ],
+   "lab": "MÔ HÌNH: KHUNG RỦI RO CỦA FED VÀ SEC",
+   "words": [
+    "Clayton",
+    "muốn",
+    "mượn",
+    "khung",
+    "rủi",
+    "ro",
+    "của",
+    "Fed",
+    "và",
+    "SEC."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    5,
+    7,
+    9
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "say": "Điều lệ: chặn đe doạ, nhưng không ra luật cản đổi mới.",
+   "plain": "Điều lệ: chặn đe doạ, nhưng không ra luật cản đổi mới.",
+   "shot": "super-intelligence-force.png",
+   "src": "Investing.com qua Yahoo Finance · 03.10.2026",
+   "view": [
+    0,
+    1100,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1231,
+    430,
+    223
+   ],
+   "hl": [
+    8,
+    1340,
+    383,
+    101
+   ],
+   "lab": "ĐIỀU LỆ · CHẶN RỦI RO, KHÔNG SIẾT LUẬT",
+   "words": [
+    "Điều",
+    "lệ:",
+    "chặn",
+    "đe",
+    "doạ,",
+    "nhưng",
+    "không",
+    "ra",
+    "luật",
+    "cản",
+    "đổi",
+    "mới."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "say": "Góc nhìn của mình: không luật mới thì phải có người kiểm thật. Bốn tháng nữa sẽ rõ: gác cổng, hay chỉ là tên kêu.",
+   "plain": "Góc nhìn của mình: không luật mới thì phải có người kiểm thật. 4 tháng nữa sẽ rõ: gác cổng, hay chỉ là tên kêu.",
+   "lab": "GÓC NHÌN",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "không",
+    "luật",
+    "mới",
+    "thì",
+    "phải",
+    "có",
+    "người",
+    "kiểm",
+    "thật.",
+    "4",
+    "tháng",
+    "nữa",
+    "sẽ",
+    "rõ:",
+    "gác",
+    "cổng,",
+    "hay",
+    "chỉ",
+    "là",
+    "tên",
+    "kêu."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    11,
+    12,
+    18,
+    19,
+    23,
+    24
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}
