@@ -1,0 +1,46 @@
+{
+  "slug": "017_con_ben_nhau",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về vô thường và sự chia lìa với người thân yêu: Kinh Các Chủ Đề Cần Phải Quán Sát (Upajjhatthana Sutta, Tăng Chi Bộ kinh, chương Năm pháp, AN 5.57) — năm điều nên thường quán sát, trong đó có: tất cả những gì thân yêu, ưa thích của ta rồi sẽ đổi khác, sẽ phải chia lìa (bản dịch HT. Thích Minh Châu); và Kinh Giáo Thọ Thi-ca-la-việt (Sigālovāda Sutta, Trường Bộ kinh số 31, DN 31) — lời dạy về bổn phận thương yêu, chăm sóc giữa cha mẹ và con cái, vợ và chồng. Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.15,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {
+      "id": "s1",
+      "text": "Tối nay ai bên bạn?"
+    },
+    {
+      "id": "s2",
+      "text": "Phật dạy: người thân yêu, rồi có ngày xa nhau."
+    },
+    {
+      "id": "s3",
+      "text": "Biết vậy, càng thương nhau khi còn bên nhau."
+    },
+    {
+      "id": "s4",
+      "text": "Còn ngồi chung mâm cơm, là còn quý lắm."
+    },
+    {
+      "id": "s5",
+      "text": "Vậy mà tối về, mỗi người một cái điện thoại,"
+    },
+    {
+      "id": "s6",
+      "text": "ngồi cạnh nhau mà chẳng nói với nhau câu nào."
+    },
+    {
+      "id": "s7",
+      "text": "Tối nay, cất điện thoại một lúc, hỏi han người nhà một câu,"
+    },
+    {
+      "id": "s8",
+      "text": "nắm tay cha mẹ, ôm con một cái."
+    },
+    {
+      "id": "s9",
+      "text": "Còn bên nhau, hãy thương cho trọn."
+    }
+  ]
+}
