@@ -1,0 +1,518 @@
+{
+ "slug": "teamhuman_slowdown",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "#TEAMHUMAN · TEAMHUMAN.ORG · 05.10.2026",
+ "date": "05.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "say": "Iu-túp-bơ lớn đòi ây ai chậm lại.",
+   "plain": "YouTuber lớn đòi AI chậm lại.",
+   "lab": "#TEAMHUMAN: YOUTUBER 300M+ SUB ĐÒI LÀM CHẬM AI",
+   "words": [
+    "YouTuber",
+    "lớn",
+    "đòi",
+    "AI",
+    "chậm",
+    "lại."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Hàng chục kênh vừa ký chiến dịch Tim Hiu-mần.",
+   "plain": "Hàng chục kênh vừa ký chiến dịch Team Human.",
+   "words": [
+    "Hàng",
+    "chục",
+    "kênh",
+    "vừa",
+    "ký",
+    "chiến",
+    "dịch",
+    "Team",
+    "Human."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    7,
+    8
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Trang tự ghi hơn ba trăm triệu sub, dẫn đầu là Mác Râu-bơ và Cớt-xơ-ghét.",
+   "plain": "Trang tự ghi hơn 300 triệu sub, dẫn đầu là Mark Rober và Kurzgesagt.",
+   "shot": "teamhuman.png",
+   "src": "teamhuman.org · trang chiến dịch, đọc 05.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    330,
+    430,
+    223
+   ],
+   "hl": [
+    55,
+    395,
+    190,
+    26
+   ],
+   "lab": "TEAMHUMAN.ORG · SỐ SUB DO CHIẾN DỊCH TỰ GHI",
+   "words": [
+    "Trang",
+    "tự",
+    "ghi",
+    "hơn",
+    "300",
+    "triệu",
+    "sub,",
+    "dẫn",
+    "đầu",
+    "là",
+    "Mark",
+    "Rober",
+    "và",
+    "Kurzgesagt."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    10,
+    11,
+    13
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "say": "Họ đòi chưa xây ây ai khôn hơn người tới khi giới khoa học đồng ý là an toàn.",
+   "plain": "Họ đòi chưa xây AI khôn hơn người tới khi giới khoa học đồng ý là an toàn.",
+   "shot": "teamhuman.png",
+   "src": "teamhuman.org · trang chiến dịch, đọc 05.10.2026",
+   "view": [
+    0,
+    330,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    745,
+    430,
+    223
+   ],
+   "hl": [
+    18,
+    866,
+    393,
+    81
+   ],
+   "lab": "“NO SMARTER-THAN-HUMAN AI” · TỚI KHI AN TOÀN",
+   "words": [
+    "Họ",
+    "đòi",
+    "chưa",
+    "xây",
+    "AI",
+    "khôn",
+    "hơn",
+    "người",
+    "tới",
+    "khi",
+    "giới",
+    "khoa",
+    "học",
+    "đồng",
+    "ý",
+    "là",
+    "an",
+    "toàn."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    5,
+    6,
+    7,
+    16,
+    17
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "say": "Cách làm: theo dõi chip như nguyên liệu hạt nhân, Mỹ và Trung Quốc cùng giảm tốc.",
+   "plain": "Cách làm: theo dõi chip như nguyên liệu hạt nhân, Mỹ và Trung Quốc cùng giảm tốc.",
+   "shot": "teamhuman.png",
+   "src": "teamhuman.org · trang chiến dịch, đọc 05.10.2026",
+   "view": [
+    0,
+    745,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1062,
+    430,
+    223
+   ],
+   "hl": [
+    217,
+    1088,
+    169,
+    29
+   ],
+   "lab": "CANH CHIP AI · MỸ–TRUNG CÙNG GIẢM TỐC",
+   "words": [
+    "Cách",
+    "làm:",
+    "theo",
+    "dõi",
+    "chip",
+    "như",
+    "nguyên",
+    "liệu",
+    "hạt",
+    "nhân,",
+    "Mỹ",
+    "và",
+    "Trung",
+    "Quốc",
+    "cùng",
+    "giảm",
+    "tốc."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    8,
+    9,
+    14,
+    15,
+    16
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "say": "Số chiến dịch tự đưa: sáu mươi tám phần trăm cử tri ủng hộ tạm dừng ây ai mạnh.",
+   "plain": "Số chiến dịch tự đưa: 68% cử tri ủng hộ tạm dừng AI mạnh.",
+   "shot": "teamhuman.png",
+   "src": "teamhuman.org · trang chiến dịch, đọc 05.10.2026",
+   "view": [
+    0,
+    1062,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1530,
+    430,
+    223
+   ],
+   "hl": [
+    60,
+    1715,
+    60,
+    38
+   ],
+   "lab": "68% · SỐ CHIẾN DỊCH TỰ ĐƯA, KHÔNG NÊU NGUỒN",
+   "words": [
+    "Số",
+    "chiến",
+    "dịch",
+    "tự",
+    "đưa:",
+    "68%",
+    "cử",
+    "tri",
+    "ủng",
+    "hộ",
+    "tạm",
+    "dừng",
+    "AI",
+    "mạnh."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    5,
+    10,
+    11
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "say": "Chữ ký sẽ gửi Mỹ và châu Âu; trang ghi không trả tiền kênh nào để ký.",
+   "plain": "Chữ ký sẽ gửi Mỹ và châu Âu; trang ghi không trả tiền kênh nào để ký.",
+   "shot": "teamhuman.png",
+   "src": "teamhuman.org · trang chiến dịch, đọc 05.10.2026",
+   "view": [
+    0,
+    1530,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1830,
+    430,
+    223
+   ],
+   "hl": [
+    16,
+    1990,
+    364,
+    58
+   ],
+   "lab": "CENTER FOR AI SAFETY HẬU THUẪN · “NO CREATORS WERE PAID”",
+   "words": [
+    "Chữ",
+    "ký",
+    "sẽ",
+    "gửi",
+    "Mỹ",
+    "và",
+    "châu",
+    "Âu;",
+    "trang",
+    "ghi",
+    "không",
+    "trả",
+    "tiền",
+    "kênh",
+    "nào",
+    "để",
+    "ký."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    6,
+    7,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "say": "Góc nhìn của mình: tiếng nói lớn, nhưng chưa rõ hãm tới đâu, ai kiểm, Mỹ Trung có chịu không.",
+   "plain": "Góc nhìn của mình: tiếng nói lớn, nhưng chưa rõ hãm tới đâu, ai kiểm, Mỹ Trung có chịu không.",
+   "lab": "GÓC NHÌN",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "tiếng",
+    "nói",
+    "lớn,",
+    "nhưng",
+    "chưa",
+    "rõ",
+    "hãm",
+    "tới",
+    "đâu,",
+    "ai",
+    "kiểm,",
+    "Mỹ",
+    "Trung",
+    "có",
+    "chịu",
+    "không."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    12,
+    13,
+    14
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}
