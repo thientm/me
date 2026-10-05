@@ -255,6 +255,18 @@
     "ghi_chu": "hen 20:00",
     "luc": "01.10.2026 18:36"
   },
+  "google-oss-vrp-pause:facebook": {
+    "ghi_chu": "hen 12:00",
+    "luc": "05.10.2026 10:31"
+  },
+  "google-oss-vrp-pause:tiktok": {
+    "ghi_chu": "hen 12:30",
+    "luc": "05.10.2026 10:34"
+  },
+  "google-oss-vrp-pause:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "05.10.2026 10:29"
+  },
   "gpt6-sol-luna:facebook": {
     "ghi_chu": "hen 12:00",
     "luc": "23.09.2026 11:19"
