@@ -1,0 +1,516 @@
+{
+ "slug": "google_rrsi",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "GOOGLE CLOUD AI RESEARCH · ARXIV 21.09.2026",
+ "date": "05.10.2026",
+ "hook": 2,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "say": "Ây ai càng tự sửa, càng học tủ.",
+   "plain": "AI càng tự sửa, càng học tủ.",
+   "lab": "AI TỰ SỬA MÌNH LẠI ĐI HỌC TỦ",
+   "words": [
+    "AI",
+    "càng",
+    "tự",
+    "sửa,",
+    "càng",
+    "học",
+    "tủ."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    5,
+    6
+   ]
+  },
+  {
+   "id": "hook2",
+   "group": "g1",
+   "mode": "say",
+   "say": "Nhóm Gu-gồ vừa công bố cách chữa, thử trên tám bộ đề.",
+   "plain": "Nhóm Google vừa công bố cách chữa, thử trên 8 bộ đề.",
+   "words": [
+    "Nhóm",
+    "Google",
+    "vừa",
+    "công",
+    "bố",
+    "cách",
+    "chữa,",
+    "thử",
+    "trên",
+    "8",
+    "bộ",
+    "đề."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    5,
+    8,
+    9,
+    10
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Ây-giần tự sửa khung làm việc mãi: đề quen điểm tăng, đề lạ thì tụt.",
+   "plain": "Agent tự sửa khung làm việc mãi: đề quen điểm tăng, đề lạ thì tụt.",
+   "lab": "TỰ SỬA HARNESS · ĐỀ QUEN TĂNG, ĐỀ LẠ TỤT",
+   "words": [
+    "Agent",
+    "tự",
+    "sửa",
+    "khung",
+    "làm",
+    "việc",
+    "mãi:",
+    "đề",
+    "quen",
+    "điểm",
+    "tăng,",
+    "đề",
+    "lạ",
+    "thì",
+    "tụt."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    7,
+    8,
+    9,
+    12,
+    13,
+    14
+   ],
+   "view": [
+    0,
+    0,
+    430,
+    453
+   ],
+   "focus": [
+    0,
+    230,
+    430,
+    223
+   ],
+   "hl": [
+    160,
+    262,
+    250,
+    105
+   ],
+   "shot": "google-rrsi.png",
+   "src": "arxiv.org/abs/2609.24972 · Google · 21.09.2026"
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "say": "Mê-ta Hác-nét được chín mươi ba điểm đề quen, sang đề lạ gần như đứng yên.",
+   "plain": "Meta-Harness được 93 điểm đề quen, sang đề lạ gần như đứng yên.",
+   "lab": "META-HARNESS · 93 ĐIỂM ĐỀ QUEN",
+   "words": [
+    "Meta-Harness",
+    "được",
+    "93",
+    "điểm",
+    "đề",
+    "quen,",
+    "sang",
+    "đề",
+    "lạ",
+    "gần",
+    "như",
+    "đứng",
+    "yên."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    2,
+    4,
+    5,
+    8,
+    9,
+    12
+   ],
+   "view": [
+    0,
+    779,
+    430,
+    275
+   ],
+   "focus": [
+    0,
+    779,
+    430,
+    223
+   ],
+   "hl": [
+    0,
+    840,
+    430,
+    30
+   ],
+   "shot": "google-rrsi.png",
+   "src": "arxiv.org/abs/2609.24972 · Google · 21.09.2026"
+  },
+  {
+   "id": "s3",
+   "group": "g3",
+   "mode": "shot",
+   "say": "Hai cách khác còn tụt dưới mức ban đầu.",
+   "plain": "Hai cách khác còn tụt dưới mức ban đầu.",
+   "lab": "AHE, TTHE · ĐỀ LẠ TỤT DƯỚI MỨC GỐC",
+   "words": [
+    "Hai",
+    "cách",
+    "khác",
+    "còn",
+    "tụt",
+    "dưới",
+    "mức",
+    "ban",
+    "đầu."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "view": [
+    0,
+    779,
+    430,
+    275
+   ],
+   "focus": [
+    0,
+    779,
+    430,
+    223
+   ],
+   "hl": [
+    0,
+    867,
+    430,
+    31
+   ],
+   "shot": "google-rrsi.png",
+   "src": "arxiv.org/abs/2609.24972 · Google · 21.09.2026"
+  },
+  {
+   "id": "s4",
+   "group": "g4",
+   "mode": "shot",
+   "say": "Cách mới của Gu-gồ chịu điểm đề quen thấp nhất, nhưng đề lạ lên bốn ba phẩy sáu.",
+   "plain": "Cách mới của Google chịu điểm đề quen thấp nhất, nhưng đề lạ lên 43,6.",
+   "lab": "RRSI · ĐỀ LẠ 39,7 → 43,6",
+   "words": [
+    "Cách",
+    "mới",
+    "của",
+    "Google",
+    "chịu",
+    "điểm",
+    "đề",
+    "quen",
+    "thấp",
+    "nhất,",
+    "nhưng",
+    "đề",
+    "lạ",
+    "lên",
+    "43,6."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    1,
+    8,
+    12,
+    13
+   ],
+   "view": [
+    0,
+    477,
+    430,
+    278
+   ],
+   "focus": [
+    0,
+    500,
+    430,
+    223
+   ],
+   "hl": [
+    132,
+    522,
+    112,
+    182
+   ],
+   "shot": "google-rrsi.png",
+   "src": "arxiv.org/abs/2609.24972 · Google · 21.09.2026"
+  },
+  {
+   "id": "s5",
+   "group": "g5",
+   "mode": "shot",
+   "say": "Bí quyết: siết số chỗ sửa, loại mẹo gài theo đề, tốn thêm tô-ken phải đổi bằng điểm.",
+   "plain": "Bí quyết: siết số chỗ sửa, loại mẹo gài theo đề, tốn thêm token phải đổi bằng điểm.",
+   "lab": "SIẾT SỬA ĐỔI · 2,42 VS 3,8 TRIỆU TOKEN",
+   "words": [
+    "Bí",
+    "quyết:",
+    "siết",
+    "số",
+    "chỗ",
+    "sửa,",
+    "loại",
+    "mẹo",
+    "gài",
+    "theo",
+    "đề,",
+    "tốn",
+    "thêm",
+    "token",
+    "phải",
+    "đổi",
+    "bằng",
+    "điểm."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    3,
+    4,
+    7,
+    8,
+    15,
+    16,
+    17
+   ],
+   "view": [
+    0,
+    779,
+    430,
+    275
+   ],
+   "focus": [
+    0,
+    831,
+    430,
+    223
+   ],
+   "hl": [
+    0,
+    989,
+    430,
+    62
+   ],
+   "shot": "google-rrsi.png",
+   "src": "arxiv.org/abs/2609.24972 · Google · 21.09.2026"
+  },
+  {
+   "id": "s6",
+   "group": "g6",
+   "mode": "say",
+   "say": "Góc nhìn của mình: điểm benchmark đẹp chưa chắc dùng được. Chọn ây-giần, hãy thử trên việc thật của bạn.",
+   "plain": "Góc nhìn của mình: điểm benchmark đẹp chưa chắc dùng được. Chọn agent, hãy thử trên việc thật của bạn.",
+   "lab": "GÓC NHÌN",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "điểm",
+    "benchmark",
+    "đẹp",
+    "chưa",
+    "chắc",
+    "dùng",
+    "được.",
+    "Chọn",
+    "agent,",
+    "hãy",
+    "thử",
+    "trên",
+    "việc",
+    "thật",
+    "của",
+    "bạn."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    14,
+    16,
+    17
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g7",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

@@ -130,5 +130,12 @@
   "scene": "A serene Buddha statue in a quiet Vietnamese temple courtyard at dusk, soft lantern glow and fading golden light, gentle mist, peaceful evening",
   "model": "gemini-3.8-flash-medium",
   "luc": "04.10.2026 18:37"
+ },
+ {
+  "slug": "018_khen_che_nhu_gio",
+  "file": "content/018_khen_che_nhu_gio/img_1.jpg",
+  "scene": "A middle-aged Vietnamese woman sitting alone by a wooden window in the early morning, holding a cup of tea, thoughtful and slightly sad expression as if remembering hurtful words, soft morning light",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "05.10.2026 07:51"
  }
 ]
