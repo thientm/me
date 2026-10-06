@@ -137,5 +137,26 @@
   "scene": "A middle-aged Vietnamese woman sitting alone by a wooden window in the early morning, holding a cup of tea, thoughtful and slightly sad expression as if remembering hurtful words, soft morning light",
   "model": "gemini-3.8-flash-medium",
   "luc": "05.10.2026 07:51"
+ },
+ {
+  "slug": "022_tien_sach_long_yen",
+  "file": "content/022_tien_sach_long_yen/img_1.jpg",
+  "scene": "A middle-aged Vietnamese worker in simple work clothes sitting on a low wooden stool at noon in a small workshop doorway, resting, eating from a simple rice lunch box, calm and content, soft midday light through the doorway",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "06.10.2026 10:37"
+ },
+ {
+  "slug": "022_tien_sach_long_yen",
+  "file": "content/022_tien_sach_long_yen/img_2.jpg",
+  "scene": "Close-up of weathered working hands of a Vietnamese man holding a bowl of rice with chopsticks at a simple wooden table, warm natural noon light",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "06.10.2026 10:39"
+ },
+ {
+  "slug": "022_tien_sach_long_yen",
+  "file": "content/022_tien_sach_long_yen/img_3.jpg",
+  "scene": "A peaceful stone Buddha statue in a quiet Vietnamese temple courtyard at midday, soft sunlight through banyan leaves, serene",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "06.10.2026 10:41"
  }
 ]
