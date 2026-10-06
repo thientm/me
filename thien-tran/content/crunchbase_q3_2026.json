@@ -1,0 +1,470 @@
+{
+ "slug": "crunchbase_q3_2026",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "CRUNCHBASE NEWS · 05.10.2026",
+ "date": "06.10.2026",
+ "hook": 1,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "say": "Cứ ba đồng vốn, gần hai đồng vào ây ai.",
+   "plain": "Cứ 3 đồng vốn, gần 2 đồng vào AI.",
+   "lab": "AI HÚT 64% VỐN MẠO HIỂM QUÝ 3/2026",
+   "words": [
+    "Cứ",
+    "3",
+    "đồng",
+    "vốn,",
+    "gần",
+    "2",
+    "đồng",
+    "vào",
+    "AI."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    4,
+    5,
+    7
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Theo Crăn-bết, quý ba vốn mạo hiểm toàn cầu đạt một trăm năm mươi chín tỷ đô, giảm hai lăm phần trăm so với quý trước.",
+   "plain": "Theo Crunchbase, quý 3 vốn mạo hiểm toàn cầu đạt 159 tỷ đô, giảm 25% so với quý trước.",
+   "shot": "crunchbase-q3-2026.png",
+   "src": "news.crunchbase.com · Gené Teare, 05.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "hl": [
+    222,
+    172,
+    115,
+    22
+   ],
+   "lab": "CRUNCHBASE · Q3/2026: 159 TỶ USD, −25% QOQ, +53% YOY",
+   "words": [
+    "Theo",
+    "Crunchbase,",
+    "quý",
+    "3",
+    "vốn",
+    "mạo",
+    "hiểm",
+    "toàn",
+    "cầu",
+    "đạt",
+    "159",
+    "tỷ",
+    "đô,",
+    "giảm",
+    "25%",
+    "so",
+    "với",
+    "quý",
+    "trước."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    7,
+    8,
+    11
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "say": "Riêng startup ây ai lấy một trăm lẻ hai tỷ, tức sáu mươi tư phần trăm.",
+   "plain": "Riêng startup AI lấy 102 tỷ, tức 64%.",
+   "shot": "crunchbase-q3-2026.png",
+   "src": "news.crunchbase.com · Gené Teare, 05.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    240,
+    430,
+    223
+   ],
+   "hl": [
+    37,
+    284,
+    355,
+    26
+   ],
+   "lab": "AI: 102 TỶ USD = 64% VỐN TOÀN CẦU",
+   "words": [
+    "Riêng",
+    "startup",
+    "AI",
+    "lấy",
+    "102",
+    "tỷ,",
+    "tức",
+    "64%."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    4,
+    5,
+    7
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "say": "Kỷ lục hai mươi bảy công ty gọi vốn từ một tỷ đô, ôm khoảng một phần ba tổng tiền.",
+   "plain": "Kỷ lục 27 công ty gọi vốn từ 1 tỷ đô, ôm khoảng 1/3 tổng tiền.",
+   "shot": "crunchbase-q3-2026.png",
+   "src": "news.crunchbase.com · Gené Teare, 05.10.2026",
+   "view": [
+    0,
+    240,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    480,
+    430,
+    223
+   ],
+   "hl": [
+    37,
+    509,
+    355,
+    85
+   ],
+   "lab": "27 VÒNG TỶ ĐÔ · ~1/3 TỔNG VỐN QUÝ",
+   "words": [
+    "Kỷ",
+    "lục",
+    "27",
+    "công",
+    "ty",
+    "gọi",
+    "vốn",
+    "từ",
+    "1",
+    "tỷ",
+    "đô,",
+    "ôm",
+    "khoảng",
+    "1/3",
+    "tổng",
+    "tiền."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    1,
+    6,
+    7,
+    11
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "say": "Lớn nhất là Đa-ta-brích và Sêf Siêu-pơ-in-te-li-giần, mỗi bên năm tỷ đô.",
+   "plain": "Lớn nhất là Databricks và Safe Superintelligence, mỗi bên 5 tỷ đô.",
+   "shot": "crunchbase-q3-2026.png",
+   "src": "news.crunchbase.com · Gené Teare, 05.10.2026",
+   "view": [
+    0,
+    480,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    720,
+    430,
+    223
+   ],
+   "hl": [
+    37,
+    733,
+    355,
+    90
+   ],
+   "lab": "DATABRICKS · SSI: MỖI BÊN 5 TỶ USD",
+   "words": [
+    "Lớn",
+    "nhất",
+    "là",
+    "Databricks",
+    "và",
+    "Safe",
+    "Superintelligence,",
+    "mỗi",
+    "bên",
+    "5",
+    "tỷ",
+    "đô."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    3,
+    5,
+    6,
+    9
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "say": "Cột xanh đậm là vòng từ một tỷ đô, phình to suốt năm nay.",
+   "plain": "Cột xanh đậm là vòng từ 1 tỷ đô, phình to suốt năm nay.",
+   "shot": "crunchbase-q3-2026.png",
+   "src": "news.crunchbase.com · Gené Teare, 05.10.2026",
+   "view": [
+    0,
+    720,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    960,
+    430,
+    223
+   ],
+   "hl": [
+    318,
+    1010,
+    50,
+    80
+   ],
+   "lab": "VÒNG ≥1 TỶ USD PHÌNH TO TỪ Q1/2026",
+   "words": [
+    "Cột",
+    "xanh",
+    "đậm",
+    "là",
+    "vòng",
+    "từ",
+    "1",
+    "tỷ",
+    "đô,",
+    "phình",
+    "to",
+    "suốt",
+    "năm",
+    "nay."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    2,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "say",
+   "say": "Góc nhìn của mình: tiền không chia đều mà dồn vào vài ông lớn; startup nhỏ phải sống bằng doanh thu thật.",
+   "plain": "Góc nhìn của mình: tiền không chia đều mà dồn vào vài ông lớn; startup nhỏ phải sống bằng doanh thu thật.",
+   "lab": "GÓC NHÌN",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "tiền",
+    "không",
+    "chia",
+    "đều",
+    "mà",
+    "dồn",
+    "vào",
+    "vài",
+    "ông",
+    "lớn;",
+    "startup",
+    "nhỏ",
+    "phải",
+    "sống",
+    "bằng",
+    "doanh",
+    "thu",
+    "thật."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    5,
+    6,
+    10,
+    11,
+    12,
+    18,
+    19
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

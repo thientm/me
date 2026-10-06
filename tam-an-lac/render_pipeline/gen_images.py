@@ -29,8 +29,12 @@ MODEL = os.environ.get("AGY_MODEL", "gemini-3.8-flash-medium")
 
 def gen_one(out_png, scene, wait=240):
     d = os.path.dirname(out_png)
-    prompt = (f"Use your image generation tool to create ONE image. {STYLE} Scene: {scene} "
-              f"Save it as a PNG file at exactly this path: {out_png} . Do nothing else.")
+    # 06.10.2026: agy giao generate_image cho subagent `image-generator` (invoke_subagent) rồi kết lượt
+    # → phiên -p đóng, subagent bị "interrupted" trước khi sinh ảnh. Bắt agy chờ tới khi có file.
+    prompt = (f"Create ONE image (use the image-generator subagent if that is how image generation works). "
+              f"{STYLE} Scene: {scene} Save it as a PNG file at exactly this path: {out_png} . "
+              f"IMPORTANT: do NOT end your turn after dispatching. Keep calling the wait tool and checking "
+              f"with list_dir until that PNG file exists, then finish. Do not investigate anything else.")
     log = out_png + ".agy.jsonl"
     p = subprocess.Popen(["agy", "-p", prompt, "--add-dir", d, "--model", MODEL,
                           "--print-timeout", f"{wait}s", "--dangerously-skip-permissions",
