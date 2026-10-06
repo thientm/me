@@ -158,5 +158,27 @@
   "scene": "A peaceful stone Buddha statue in a quiet Vietnamese temple courtyard at midday, soft sunlight through banyan leaves, serene",
   "model": "gemini-3.8-flash-medium",
   "luc": "06.10.2026 10:41"
+ },
+ {
+  "slug": "023_vo_chong_quy_nhau",
+  "file": "content/023_vo_chong_quy_nhau/img_1.jpg",
+  "scene": "A middle-aged Vietnamese wife cooking dinner in a simple warm home kitchen in the early evening, steam rising from a pot, soft warm light from a window at dusk, calm and peaceful",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "06.10.2026 18:40",
+  "ghi_chu": "gen_images báo lỗi (subagent lưu ảnh ở brain/<phiên>), lấy tay từ brain/1aeefc4d…/img_1_1791286840637.jpg"
+ },
+ {
+  "slug": "023_vo_chong_quy_nhau",
+  "file": "content/023_vo_chong_quy_nhau/img_2.jpg",
+  "scene": "A middle-aged Vietnamese couple sitting together at a simple wooden dinner table at home in the evening with bowls of rice and dishes, the husband smiling gently at his wife, warm soft lamp light, tender and peaceful",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "06.10.2026 18:43"
+ },
+ {
+  "slug": "023_vo_chong_quy_nhau",
+  "file": "content/023_vo_chong_quy_nhau/img_3.jpg",
+  "scene": "A peaceful stone Buddha statue in a quiet Vietnamese temple courtyard at dusk, soft golden evening light and gentle mist, serene",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "06.10.2026 18:45"
  }
 ]

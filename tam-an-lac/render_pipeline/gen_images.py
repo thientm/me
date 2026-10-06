@@ -27,7 +27,7 @@ STYLE = ("Photorealistic vertical 9:16 image, serene and natural, soft natural l
 MODEL = os.environ.get("AGY_MODEL", "gemini-3.8-flash-medium")
 
 
-def gen_one(out_png, scene, wait=240):
+def gen_one(out_png, scene, wait=300):
     d = os.path.dirname(out_png)
     # 06.10.2026: agy giao generate_image cho subagent `image-generator` (invoke_subagent) rồi kết lượt
     # → phiên -p đóng, subagent bị "interrupted" trước khi sinh ảnh. Bắt agy chờ tới khi có file.
@@ -52,6 +52,11 @@ def gen_one(out_png, scene, wait=240):
             if sz > 50_000 and sz == last:      # đã ghi xong (kích thước đứng yên)
                 break
             last = sz
+        # 06.10.2026 (tối): subagent image-generator lưu ảnh ở brain/<phiên>/ mà log phiên chính
+        # không có ImageName → dò thẳng thư mục brain của phiên; thấy ảnh đứng yên thì dừng.
+        if not os.path.exists(out_png) and session_image(log, t0):
+            time.sleep(4)
+            break
         if p.poll() is not None and not os.path.exists(out_png):
             break
     if p.poll() is None:
@@ -61,7 +66,7 @@ def gen_one(out_png, scene, wait=240):
         except subprocess.TimeoutExpired:
             p.kill()
     if not os.path.exists(out_png):
-        found = brain_image(log, t0)
+        found = brain_image(log, t0) or session_image(log, t0)
         if found:   # 01.10.2026: agy sinh xong nhưng "stream interrupted" trước khi chép ảnh sang out_png
             Image.open(found).convert("RGB").save(out_png)
             print(f"   (lấy ảnh từ thư mục brain của agy: {found})")
@@ -86,6 +91,19 @@ def brain_image(log, t0):
     brain = os.path.expanduser("~/.gemini/antigravity-cli/brain")
     hits = [f for n in names for f in glob.glob(os.path.join(brain, "*", n + "_*"))
             if f.lower().endswith((".jpg", ".jpeg", ".png")) and os.path.getmtime(f) >= t0 - 5]
+    return max(hits, key=os.path.getmtime) if hits else None
+
+
+def session_image(log, t0):
+    """Ảnh .jpg/.png bất kỳ trong brain/<conversation_id>/ của phiên agy này, mới hơn t0."""
+    import glob
+    try:
+        cid = json.loads(open(log, encoding="utf-8").readline())["conversation_id"]
+    except Exception:
+        return None
+    d = os.path.join(os.path.expanduser("~/.gemini/antigravity-cli/brain"), cid)
+    hits = [f for f in glob.glob(os.path.join(d, "*")) if f.lower().endswith((".jpg", ".jpeg", ".png"))
+            and os.path.getmtime(f) >= t0 - 5 and os.path.getsize(f) > 50_000]
     return max(hits, key=os.path.getmtime) if hits else None
 
 
@@ -123,7 +141,8 @@ def main():
         led = json.load(open(LEDGER, encoding="utf-8"))
     except Exception:
         led = []
-    for i, scene in enumerate(scenes, 1):
+    start = int(os.environ.get("GEN_START", "1"))   # chạy tiếp từ ảnh thứ N (ảnh trước đã có)
+    for i, scene in enumerate(scenes, start):
         png = os.path.join(out, f"img_{i}.png")
         jpg = os.path.join(out, f"img_{i}.jpg")
         if os.path.exists(png):

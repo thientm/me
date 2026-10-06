@@ -1,0 +1,521 @@
+{
+ "slug": "deepseek_funding",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "BLOOMBERG · THE DECODER · 06.10.2026",
+ "date": "06.10.2026",
+ "hook": 1,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "group": "g1",
+   "mode": "say",
+   "say": "Hãng pin rót tiền cho ây ai.",
+   "plain": "Hãng pin rót tiền cho AI.",
+   "lab": "DEEPSEEK GỌI ≥12 TỶ USD · CATL, TENCENT GÓP LỚN NHẤT",
+   "words": [
+    "Hãng",
+    "pin",
+    "rót",
+    "tiền",
+    "cho",
+    "AI."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    1,
+    2,
+    3,
+    5
+   ]
+  },
+  {
+   "id": "s1",
+   "group": "g2",
+   "mode": "shot",
+   "say": "Đíp-xích sắp gọi được ít nhất mười hai tỷ đô, theo Blum-bơ.",
+   "plain": "DeepSeek sắp gọi được ít nhất 12 tỷ USD, theo Bloomberg.",
+   "shot": "deepseek-funding.png",
+   "src": "the-decoder.com · dẫn Bloomberg, 06.10.2026",
+   "view": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    0,
+    430,
+    223
+   ],
+   "hl": [
+    12,
+    17,
+    298,
+    90
+   ],
+   "lab": "DEEPSEEK SẮP GỌI ≥12 TỶ USD · IPO 2027",
+   "words": [
+    "DeepSeek",
+    "sắp",
+    "gọi",
+    "được",
+    "ít",
+    "nhất",
+    "12",
+    "tỷ",
+    "USD,",
+    "theo",
+    "Bloomberg."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    0,
+    4,
+    5,
+    6,
+    7,
+    10
+   ]
+  },
+  {
+   "id": "s2",
+   "group": "g3",
+   "mode": "shot",
+   "say": "Mục tiêu đầu chỉ bảy tỷ rưỡi, giờ có thể chạm mười lăm tỷ.",
+   "plain": "Mục tiêu đầu chỉ 7,5 tỷ, giờ có thể chạm 15 tỷ.",
+   "shot": "deepseek-funding.png",
+   "src": "the-decoder.com · dẫn Bloomberg, 06.10.2026",
+   "view": [
+    0,
+    640,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    664,
+    430,
+    223
+   ],
+   "hl": [
+    12,
+    730,
+    383,
+    63
+   ],
+   "lab": "MỤC TIÊU ~7,5 TỶ → CÓ THỂ ~15 TỶ USD",
+   "words": [
+    "Mục",
+    "tiêu",
+    "đầu",
+    "chỉ",
+    "7,5",
+    "tỷ,",
+    "giờ",
+    "có",
+    "thể",
+    "chạm",
+    "15",
+    "tỷ."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    5,
+    9,
+    10,
+    11
+   ]
+  },
+  {
+   "id": "s3",
+   "group": "g4",
+   "mode": "shot",
+   "say": "Góp nhiều nhất là hãng pin Xi-ây-ti-eo và Ten-xần.",
+   "plain": "Góp nhiều nhất là hãng pin CATL và Tencent.",
+   "shot": "deepseek-funding.png",
+   "src": "the-decoder.com · dẫn Bloomberg, 06.10.2026",
+   "view": [
+    0,
+    664,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    700,
+    430,
+    223
+   ],
+   "hl": [
+    12,
+    814,
+    357,
+    63
+   ],
+   "lab": "CATL (PIN) & TENCENT: GÓP NHIỀU NHẤT",
+   "words": [
+    "Góp",
+    "nhiều",
+    "nhất",
+    "là",
+    "hãng",
+    "pin",
+    "CATL",
+    "và",
+    "Tencent."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    1,
+    2,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "id": "s4",
+   "group": "g5",
+   "mode": "shot",
+   "say": "Đíp-xích tính lên sàn đầu năm hai không hai bảy.",
+   "plain": "DeepSeek tính lên sàn đầu năm 2027.",
+   "shot": "deepseek-funding.png",
+   "src": "the-decoder.com · dẫn Bloomberg, 06.10.2026",
+   "view": [
+    0,
+    1000,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    1024,
+    430,
+    223
+   ],
+   "hl": [
+    12,
+    1062,
+    274,
+    35
+   ],
+   "lab": "IPO DỰ KIẾN ĐẦU 2027",
+   "words": [
+    "DeepSeek",
+    "tính",
+    "lên",
+    "sàn",
+    "đầu",
+    "năm",
+    "2027."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "id": "s5",
+   "group": "g6",
+   "mode": "shot",
+   "say": "Họ từng không cần vốn ngoài; tháng sáu mới gọi lần đầu, khoảng bảy tỷ tư.",
+   "plain": "Họ từng không cần vốn ngoài; tháng 6 mới gọi lần đầu, khoảng 7,4 tỷ.",
+   "shot": "deepseek-funding.png",
+   "src": "the-decoder.com · dẫn Bloomberg, 06.10.2026",
+   "view": [
+    0,
+    1272,
+    430,
+    252
+   ],
+   "focus": [
+    0,
+    1272,
+    430,
+    252
+   ],
+   "hl": [
+    12,
+    1338,
+    365,
+    63
+   ],
+   "lab": "06/2026: VÒNG VỐN NGOÀI ĐẦU TIÊN ~7,4 TỶ USD",
+   "words": [
+    "Họ",
+    "từng",
+    "không",
+    "cần",
+    "vốn",
+    "ngoài;",
+    "tháng",
+    "6",
+    "mới",
+    "gọi",
+    "lần",
+    "đầu,",
+    "khoảng",
+    "7,4",
+    "tỷ."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    2,
+    3,
+    4,
+    5,
+    10,
+    11,
+    13,
+    14
+   ]
+  },
+  {
+   "id": "s6",
+   "group": "g7",
+   "mode": "shot",
+   "say": "Lưu ý: số liệu theo nguồn tin giấu tên, các bên chưa xác nhận.",
+   "plain": "Lưu ý: số liệu theo nguồn tin giấu tên, các bên chưa xác nhận.",
+   "shot": "deepseek-funding.png",
+   "src": "the-decoder.com · dẫn Bloomberg, 06.10.2026",
+   "view": [
+    0,
+    700,
+    430,
+    223
+   ],
+   "focus": [
+    0,
+    730,
+    430,
+    223
+   ],
+   "hl": [
+    12,
+    786,
+    389,
+    63
+   ],
+   "lab": "THEO NGUỒN TIN GIẤU TÊN · CHƯA XÁC NHẬN",
+   "words": [
+    "Lưu",
+    "ý:",
+    "số",
+    "liệu",
+    "theo",
+    "nguồn",
+    "tin",
+    "giấu",
+    "tên,",
+    "các",
+    "bên",
+    "chưa",
+    "xác",
+    "nhận."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    5,
+    6,
+    7,
+    8,
+    11,
+    12,
+    13
+   ]
+  },
+  {
+   "id": "s7",
+   "group": "g8",
+   "mode": "say",
+   "say": "Góc nhìn của mình: ây ai giờ tốn như làm nhà máy, cần chip và điện; hãng pin rót tiền là cược vào chính cơn khát đó.",
+   "plain": "Góc nhìn của mình: AI giờ tốn như làm nhà máy, cần chip và điện; hãng pin rót tiền là cược vào chính cơn khát đó.",
+   "lab": "GÓC NHÌN",
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "AI",
+    "giờ",
+    "tốn",
+    "như",
+    "làm",
+    "nhà",
+    "máy,",
+    "cần",
+    "chip",
+    "và",
+    "điện;",
+    "hãng",
+    "pin",
+    "rót",
+    "tiền",
+    "là",
+    "cược",
+    "vào",
+    "chính",
+    "cơn",
+    "khát",
+    "đó."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "hot": [
+    4,
+    6,
+    9,
+    10,
+    12,
+    14,
+    16,
+    17,
+    20,
+    23,
+    24
+   ]
+  },
+  {
+   "id": "outro",
+   "group": "g9",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

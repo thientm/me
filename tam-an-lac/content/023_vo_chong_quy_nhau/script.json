@@ -1,0 +1,19 @@
+{
+  "slug": "023_vo_chong_quy_nhau",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về bổn phận vợ chồng đối với nhau: Kinh Giáo Thọ Thi-ca-la-việt (Sigālovāda Sutta, Trường Bộ kinh số 31, DN 31) — người chồng đối với vợ: kính trọng vợ, không bất kính, trung thành, giao quyền trong nhà, sắm cho vợ đồ trang sức; người vợ đối với chồng: làm tốt việc nhà, khéo tiếp đón bà con, trung thành, giữ gìn tài sản, khéo léo và siêng năng (bản dịch HT. Thích Minh Châu). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.1,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Tối nay ai nấu cơm?"},
+    {"id": "s2", "text": "Phật dạy: vợ chồng sống với nhau, phải biết quý trọng nhau,"},
+    {"id": "s3", "text": "không coi thường, không nặng lời, một lòng lo cho nhau."},
+    {"id": "s4", "text": "Ở với nhau lâu, người ta hay quên một lời cảm ơn,"},
+    {"id": "s5", "text": "coi bát cơm, chén nước người kia lo là chuyện đương nhiên."},
+    {"id": "s6", "text": "Tối nay, ăn xong, hãy nói với người ấy một câu:"},
+    {"id": "s7", "text": "Cơm ngon lắm, cảm ơn mình."},
+    {"id": "s8", "text": "Một câu nhỏ thôi, mà ấm cả căn nhà."},
+    {"id": "s9", "text": "Vợ chồng quý nhau, từ những điều nhỏ."}
+  ]
+}
