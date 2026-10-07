@@ -51,3 +51,6 @@ thien-tran/publish/*.png
 # khoá chống chạy song song giữa tác vụ định kỳ và giám sát viên (me-tech/ops/watchdog.sh)
 me-tech/.run/
 **/_pubkit/
+
+# file từng bài thien-tran: chống trùng dựa vào thien-tran/logs/ (commit)
+thien-tran/content/*.json

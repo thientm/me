@@ -1,1 +1,0 @@
-window.TIMING = {"total": 31.87, "segments": [{"id": "s1", "start": 0.45, "end": 3.09}, {"id": "s2", "start": 3.74, "end": 6.22}, {"id": "s3", "start": 6.87, "end": 10.39}, {"id": "s4", "start": 11.04, "end": 14.32}, {"id": "s5", "start": 14.97, "end": 18.49}, {"id": "s6", "start": 19.14, "end": 22.98}, {"id": "s7", "start": 23.63, "end": 28.27}]};

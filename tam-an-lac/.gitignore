@@ -6,3 +6,6 @@ __pycache__/
 .DS_Store
 _scratch/
 content/**/build*.log
+
+# file từng bài: đăng xong là hết giá trị; chống trùng dựa vào logs/ (commit)
+content/
