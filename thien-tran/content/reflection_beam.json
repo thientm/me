@@ -1,0 +1,514 @@
+{
+ "slug": "reflection_beam",
+ "voice": "Adam bựa",
+ "brand": "Thiện Trần",
+ "kicker": "REFLECTION AI · 05.10.2026",
+ "date": "07.10.2026",
+ "hook": 1,
+ "gap": 0.24,
+ "lead_in": 0.4,
+ "tail": 2.2,
+ "speed": 1.1,
+ "outro": {
+  "mark": "Thiện Trần",
+  "socials": [
+   {
+    "platform": "facebook",
+    "handle": "/thientm"
+   },
+   {
+    "platform": "tiktok",
+    "handle": "/thientranx"
+   },
+   {
+    "platform": "youtube",
+    "handle": "/thientm"
+   }
+  ]
+ },
+ "segments": [
+  {
+   "id": "hook",
+   "mode": "say",
+   "say": "Model mở phương Tây vẫn đuổi theo.",
+   "plain": "Model mở phương Tây vẫn đuổi theo.",
+   "lab": "REFLECTION BEAM: MODEL MỞ 501 TỶ, VẪN SAU KIMI K3",
+   "hot": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6
+   ],
+   "words": [
+    "Model",
+    "mở",
+    "phương",
+    "Tây",
+    "vẫn",
+    "đuổi",
+    "theo."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "group": "g1"
+  },
+  {
+   "id": "s1",
+   "mode": "shot",
+   "say": "Ri-phléc-sần vừa giới thiệu Beam, model trọng số mở năm trăm lẻ một tỷ tham số.",
+   "plain": "Reflection vừa giới thiệu Beam, model trọng số mở 501 tỷ tham số.",
+   "lab": "REFLECTION RA BEAM · 501 TỶ THAM SỐ · TRỌNG SỐ MỞ",
+   "hot": [
+    0,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "shot": "reflection-beam.png",
+   "view": [
+    0,
+    0,
+    1290,
+    705
+   ],
+   "focus": [
+    0,
+    60,
+    1290,
+    668
+   ],
+   "hl": [
+    42,
+    108,
+    1161,
+    341
+   ],
+   "words": [
+    "Reflection",
+    "vừa",
+    "giới",
+    "thiệu",
+    "Beam,",
+    "model",
+    "trọng",
+    "số",
+    "mở",
+    "501",
+    "tỷ",
+    "tham",
+    "số."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "src": "reflection.ai · Introducing Beam · 05.10.2026",
+   "group": "g2"
+  },
+  {
+   "id": "s2",
+   "mode": "shot",
+   "say": "Hãng tự nhận ngang các model mở lớn hơn, nhưng Ki-mi K3 của Trung Quốc vẫn mạnh hơn.",
+   "plain": "Hãng tự nhận ngang các model mở lớn hơn, nhưng Kimi K3 của Trung Quốc vẫn mạnh hơn.",
+   "lab": "CHÍNH HÃNG THỪA NHẬN: KIMI K3 VẪN MẠNH HƠN",
+   "hot": [
+    2,
+    3,
+    10,
+    11,
+    13,
+    14,
+    16,
+    17
+   ],
+   "shot": "reflection-beam.png",
+   "view": [
+    0,
+    765,
+    1290,
+    765
+   ],
+   "focus": [
+    0,
+    930,
+    1290,
+    430
+   ],
+   "hl": [
+    42,
+    1179,
+    1134,
+    153
+   ],
+   "words": [
+    "Hãng",
+    "tự",
+    "nhận",
+    "ngang",
+    "các",
+    "model",
+    "mở",
+    "lớn",
+    "hơn,",
+    "nhưng",
+    "Kimi",
+    "K3",
+    "của",
+    "Trung",
+    "Quốc",
+    "vẫn",
+    "mạnh",
+    "hơn."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "src": "reflection.ai · Introducing Beam · 05.10.2026",
+   "group": "g3"
+  },
+  {
+   "id": "s3",
+   "mode": "shot",
+   "say": "Điểm ăn tiền là độ rẻ: hãng ước tính điểm ngang, mà tốn sức tính ít hơn ba đến bốn lần.",
+   "plain": "Điểm ăn tiền là độ rẻ: hãng ước tính điểm ngang, mà tốn sức tính ít hơn 3 đến 4 lần.",
+   "lab": "ƯỚC TÍNH CỦA HÃNG · ĐEN: BEAM · CAM: GLM-5.2",
+   "hot": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    9,
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "shot": "reflection-beam.png",
+   "view": [
+    0,
+    1590,
+    1290,
+    726
+   ],
+   "focus": [
+    690,
+    1745,
+    600,
+    455
+   ],
+   "hl": [
+    885,
+    1858,
+    50,
+    145
+   ],
+   "words": [
+    "Điểm",
+    "ăn",
+    "tiền",
+    "là",
+    "độ",
+    "rẻ:",
+    "hãng",
+    "ước",
+    "tính",
+    "điểm",
+    "ngang,",
+    "mà",
+    "tốn",
+    "sức",
+    "tính",
+    "ít",
+    "hơn",
+    "3",
+    "đến",
+    "4",
+    "lần."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "src": "reflection.ai · Introducing Beam · 05.10.2026",
+   "group": "g4"
+  },
+  {
+   "id": "s4",
+   "mode": "shot",
+   "say": "Họ luyện trên mười nghìn năm trăm chip Gi-bi ba trăm suốt bốn tuần, hơn một trăm triệu lượt chạy thử.",
+   "plain": "Họ luyện trên 10.500 chip GB300 suốt 4 tuần, hơn 100 triệu lượt chạy thử.",
+   "lab": "10.500 GPU GB300 · 4 TUẦN · HƠN 100 TRIỆU LƯỢT",
+   "hot": [
+    3,
+    5,
+    7,
+    8,
+    10,
+    11,
+    12
+   ],
+   "shot": "reflection-beam.png",
+   "view": [
+    0,
+    2376,
+    1290,
+    621
+   ],
+   "focus": [
+    0,
+    2540,
+    1290,
+    300
+   ],
+   "hl": [
+    42,
+    2574,
+    1125,
+    225
+   ],
+   "words": [
+    "Họ",
+    "luyện",
+    "trên",
+    "10.500",
+    "chip",
+    "GB300",
+    "suốt",
+    "4",
+    "tuần,",
+    "hơn",
+    "100",
+    "triệu",
+    "lượt",
+    "chạy",
+    "thử."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "src": "reflection.ai · Introducing Beam · 05.10.2026",
+   "group": "g5"
+  },
+  {
+   "id": "s5",
+   "mode": "shot",
+   "say": "Trọng số hẹn phát hành cuối tháng này, giờ mới mở đăng ký dùng sớm.",
+   "plain": "Trọng số hẹn phát hành cuối tháng này, giờ mới mở đăng ký dùng sớm.",
+   "lab": "TRỌNG SỐ HẸN RA CUỐI THÁNG 10",
+   "hot": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    11,
+    12,
+    13
+   ],
+   "shot": "reflection-beam.png",
+   "view": [
+    0,
+    3057,
+    1290,
+    621
+   ],
+   "focus": [
+    0,
+    3220,
+    1290,
+    300
+   ],
+   "hl": [
+    42,
+    3255,
+    1131,
+    225
+   ],
+   "words": [
+    "Trọng",
+    "số",
+    "hẹn",
+    "phát",
+    "hành",
+    "cuối",
+    "tháng",
+    "này,",
+    "giờ",
+    "mới",
+    "mở",
+    "đăng",
+    "ký",
+    "dùng",
+    "sớm."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "src": "reflection.ai · Introducing Beam · 05.10.2026",
+   "group": "g6"
+  },
+  {
+   "id": "s6",
+   "mode": "say",
+   "say": "Góc nhìn của mình: model mở giờ đua nhau về độ rẻ, và doanh nghiệp là bên hưởng lợi trước.",
+   "plain": "Góc nhìn của mình: model mở giờ đua nhau về độ rẻ, và doanh nghiệp là bên hưởng lợi trước.",
+   "lab": "GÓC NHÌN",
+   "hot": [
+    4,
+    5,
+    7,
+    10,
+    11,
+    13,
+    14,
+    17,
+    18
+   ],
+   "words": [
+    "Góc",
+    "nhìn",
+    "của",
+    "mình:",
+    "model",
+    "mở",
+    "giờ",
+    "đua",
+    "nhau",
+    "về",
+    "độ",
+    "rẻ,",
+    "và",
+    "doanh",
+    "nghiệp",
+    "là",
+    "bên",
+    "hưởng",
+    "lợi",
+    "trước."
+   ],
+   "weights": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "group": "g7"
+  },
+  {
+   "id": "outro",
+   "group": "g8",
+   "mode": "outro",
+   "plain": "",
+   "words": [],
+   "weights": []
+  }
+ ]
+}

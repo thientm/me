@@ -1,0 +1,19 @@
+{
+  "slug": "026_bot_mot_chen",
+  "voice": "Thiền Tâm Đức",
+  "source": "Lời Phật dạy về tác hại của rượu say với người tại gia: Kinh Giáo Thọ Thi-ca-la-việt (Sigālovāda Sutta, Trường Bộ kinh số 31, DN 31) — đam mê rượu có sáu nguy hại: tài sản hiện tại bị tổn thất, tranh chấp tăng trưởng, bệnh tật dễ xâm nhập, thanh danh bị tổn thương, làm điều không biết xấu hổ, trí lực bị yếu kém (HT. Thích Minh Châu dịch). Lời đọc là diễn giải đời thường của kênh, không phải trích nguyên văn.",
+  "lead_in": 0.1,
+  "gap": 0.75,
+  "tail": 3.6,
+  "segments": [
+    {"id": "s1", "text": "Tối nay có nhậu không?"},
+    {"id": "s2", "text": "Phật dạy: rượu say làm hao tiền của, sinh cãi vã, sinh bệnh tật."},
+    {"id": "s3", "text": "Say rồi, mình nói những lời mà lúc tỉnh chẳng bao giờ nói."},
+    {"id": "s4", "text": "Một chén cho vui, nhưng chén nối chén, thì người nhà phải chờ."},
+    {"id": "s5", "text": "Vợ con ngồi chờ cơm, mâm cơm nguội dần,"},
+    {"id": "s6", "text": "sáng ra đầu đau, trong nhà lời qua tiếng lại."},
+    {"id": "s7", "text": "Tối nay, nếu có cuộc, uống ít thôi,"},
+    {"id": "s8", "text": "rồi về sớm, ngồi ăn với nhà một bữa cơm."},
+    {"id": "s9", "text": "Bớt một chén, thêm một bữa cơm nhà."}
+  ]
+}

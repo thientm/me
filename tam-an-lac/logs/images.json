@@ -5,7 +5,8 @@
   "scene": "A middle-aged Vietnamese woman sitting quietly by an open wooden window at night, soft moonlight on her face, a cup of tea beside her, thoughtful and a little tired, warm lamp glow, peaceful home interior",
   "model": "gemini-3.8-flash-medium",
   "luc": "30.09.2026 18:36",
-  "ghi_chu": "ghi tay: gen_images.py thoát ở img_2 (agy 'interrupted') trước khi ghi sổ"
+  "ghi_chu": "ghi tay: gen_images.py thoát ở img_2 (agy 'interrupted') trước khi ghi sổ",
+  "dung_lai": "026_bot_mot_chen/img_1.jpg (07.10.2026, agy interrupted 2 lần — ảnh dùng lại, đã quá 7 ngày từ 005)"
  },
  {
   "slug": "007_an_cham_buoi_trua",
