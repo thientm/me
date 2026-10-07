@@ -439,6 +439,18 @@
     "ghi_chu": "hen 12:00",
     "luc": "22.09.2026 11:13"
   },
+  "mistral-large-4:facebook": {
+    "ghi_chu": "hen 12:00",
+    "luc": "07.10.2026 10:52"
+  },
+  "mistral-large-4:tiktok": {
+    "ghi_chu": "hen 12:30",
+    "luc": "07.10.2026 10:50"
+  },
+  "mistral-large-4:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "07.10.2026 10:47"
+  },
   "mo-hinh-mo:facebook-photo": {
     "ghi_chu": "hen 23/09 14:00",
     "luc": "22.09.2026 01:07"
