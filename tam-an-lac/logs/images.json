@@ -180,5 +180,26 @@
   "scene": "A peaceful stone Buddha statue in a quiet Vietnamese temple courtyard at dusk, soft golden evening light and gentle mist, serene",
   "model": "gemini-3.8-flash-medium",
   "luc": "06.10.2026 18:45"
+ },
+ {
+  "slug": "025_cham_nguoi_om",
+  "file": "content/025_cham_nguoi_om/img_1.jpg",
+  "scene": "An adult Vietnamese daughter sitting quietly beside her elderly sick mother lying in a simple bed at home, gently holding her hand, soft natural window light at midday, tender and calm",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "07.10.2026 10:39"
+ },
+ {
+  "slug": "025_cham_nguoi_om",
+  "file": "content/025_cham_nguoi_om/img_2.jpg",
+  "scene": "Close-up of hands carrying a steaming bowl of hot rice porridge on a small tray through a quiet Vietnamese home at noon, soft warm natural light",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "07.10.2026 10:43"
+ },
+ {
+  "slug": "025_cham_nguoi_om",
+  "file": "content/025_cham_nguoi_om/img_3.jpg",
+  "scene": "A peaceful stone Buddha statue with a compassionate gentle expression in a quiet Vietnamese temple garden at noon, soft sunlight filtering through leaves, serene",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "07.10.2026 10:44"
  }
 ]
