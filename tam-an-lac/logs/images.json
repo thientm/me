@@ -13,7 +13,8 @@
   "file": "content/007_an_cham_buoi_trua/img_1.jpg",
   "scene": "A middle-aged Vietnamese office worker eating lunch alone at a desk in a hurry, rice box in one hand and phone in the other, tired eyes, midday sunlight through window blinds",
   "model": "gemini-3.8-flash-medium",
-  "luc": "01.10.2026 10:22"
+  "luc": "01.10.2026 10:22",
+  "dung_lai": "028_khong_noi_sau_lung/img_1.jpg (08.10.2026 12:00, agy interrupted, không có ảnh — ảnh dùng lại, đủ 7 ngày từ 007 đăng 01.10 12:00)"
  },
  {
   "slug": "007_an_cham_buoi_trua",
@@ -27,7 +28,8 @@
   "file": "content/007_an_cham_buoi_trua/img_3.jpg",
   "scene": "An older Vietnamese woman eating slowly and calmly by an open window at noon, holding a bowl of rice with both hands, gentle smile, warm natural light, green garden outside",
   "model": "gemini-3.8-flash-medium",
-  "luc": "01.10.2026 10:25"
+  "luc": "01.10.2026 10:25",
+  "dung_lai": "028_khong_noi_sau_lung/img_2.jpg (08.10.2026 12:00, agy interrupted, không có ảnh — ảnh dùng lại, đủ 7 ngày từ 007 đăng 01.10 12:00)"
  },
  {
   "slug": "_pool",
