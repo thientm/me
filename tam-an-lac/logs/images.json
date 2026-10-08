@@ -81,14 +81,16 @@
   "file": "content/009_hoi_tho_buoi_sang/img_1.jpg",
   "scene": "A middle-aged Vietnamese woman just waking up at dawn, sitting on the edge of her bed, reaching hurriedly for her phone with a worried face, dim bluish early morning light through a window",
   "model": "gemini-3.8-flash-medium",
-  "luc": "02.10.2026 06:14"
+  "luc": "02.10.2026 06:14",
+  "dung_lai": "030_long_nhu_dat/img_1.jpg (09.10.2026 08:00, agy interrupted, không có ảnh — ảnh dùng lại, đủ 7 ngày từ 009 đăng 02.10 08:00)"
  },
  {
   "slug": "009_hoi_tho_buoi_sang",
   "file": "content/009_hoi_tho_buoi_sang/img_2.jpg",
   "scene": "A middle-aged Vietnamese man sitting still by an open window at sunrise, eyes gently closed, one hand resting on his chest, taking a slow deep breath, soft golden light and morning mist outside",
   "model": "gemini-3.8-flash-medium",
-  "luc": "02.10.2026 06:15"
+  "luc": "02.10.2026 06:15",
+  "dung_lai": "030_long_nhu_dat/img_2.jpg (09.10.2026 08:00, agy interrupted, không có ảnh — ảnh dùng lại, đủ 7 ngày từ 009 đăng 02.10 08:00)"
  },
  {
   "slug": "009_hoi_tho_buoi_sang",

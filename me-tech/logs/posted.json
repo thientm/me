@@ -39,6 +39,18 @@
     "ghi_chu": "hen 12:00",
     "luc": "30.09.2026 10:40"
   },
+  "anthropic-aup-abuse:facebook": {
+    "ghi_chu": "hen 08:00",
+    "luc": "09.10.2026 06:43"
+  },
+  "anthropic-aup-abuse:tiktok": {
+    "ghi_chu": "hen 08:30",
+    "luc": "09.10.2026 06:45"
+  },
+  "anthropic-aup-abuse:youtube": {
+    "ghi_chu": "hen 08:00",
+    "luc": "09.10.2026 06:41"
+  },
   "anthropic-ipo:facebook": {
     "ghi_chu": "hen 12:30",
     "luc": "21.09.2026 09:45"
