@@ -54,3 +54,5 @@ me-tech/.run/
 
 # file từng bài thien-tran: chống trùng dựa vào thien-tran/logs/ (commit)
 thien-tran/content/*.json
+thien-tran/shots/*.png
+thien-tran/_scratch/
