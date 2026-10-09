@@ -187,6 +187,18 @@
     "ghi_chu": "hen 08:00",
     "luc": "08.10.2026 06:44"
   },
+  "claude-motion-dashboards:facebook": {
+    "ghi_chu": "hen 12:20",
+    "luc": "09.10.2026 11:44"
+  },
+  "claude-motion-dashboards:tiktok": {
+    "ghi_chu": "hen 12:30",
+    "luc": "09.10.2026 11:38"
+  },
+  "claude-motion-dashboards:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "09.10.2026 11:36"
+  },
   "claude-sonnet-55:facebook": {
     "ghi_chu": "dang ngay",
     "luc": "29.09.2026 11:42"
