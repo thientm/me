@@ -18,6 +18,7 @@ Router cho agent/bản thân: đọc file nào tuỳ câu hỏi/tác vụ.
 | Cockpit Dashboard & Công cụ quản trị Crypto | `crypto/dashboard/` |
 | Kế hoạch cưới (khảo sát, ngân sách) | `wedding/wedding-plan.md` |
 | **🎬 Kênh Mê Tech — điểm vào duy nhất, @ file này là đủ** | `me-tech/AGENTS.md` |
+| **🌸 Kênh Tâm An Lạc — điểm vào duy nhất, @ file này là đủ** | `tam-an-lac/AGENTS.md` |
 
 ## Quy tắc chung
 - File `*-plan.md`: bán tĩnh, chỉ sửa khi chiến lược/mục tiêu thật sự đổi.

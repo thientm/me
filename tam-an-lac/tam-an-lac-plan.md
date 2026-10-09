@@ -5,7 +5,7 @@ Build a highly engaging, automated short-video brand focused on Buddhist teachin
 
 ## Strategy
 1.  **Content**: Synthesize viral, comforting, and mindful quotes or stories.
-2.  **Visuals**: Use serene AI-generated backgrounds with smooth GSAP-powered animations and large, highly readable text.
+2.  **Visuals**: Focus on serene, majestic Buddha & Bodhisattva imagery (diverse compositions, materials, sacred lighting) with smooth GSAP-powered animations and large, highly readable text to maximize retention and comment engagement (reverence, blessings).
 3.  **Audio**: Use the `Thiền Tâm Đức` voice for a calming effect.
 4.  **Looping**: Implement a silent, chime-based outro to maximize loop rates and retention on all 3 platforms.
 5.  **Automation**: Leverage the `core-video-engine` to automate TTS, timing, frame rendering (via Playwright + GSAP), and assembly.

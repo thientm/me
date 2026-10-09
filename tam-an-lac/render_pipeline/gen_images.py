@@ -20,10 +20,12 @@ from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEDGER = os.path.join(ROOT, "logs", "images.json")
-STYLE = ("Photorealistic vertical 9:16 image, serene and natural, soft natural light "
-         "(god rays, mist or golden hour), calm Buddhist mood, Vietnamese setting where fitting. "
-         "No text, no letters, no watermark, no logos. Leave the lower-middle third visually calm "
-         "(it will carry subtitles).")
+STYLE = ("Photorealistic vertical 9:16 image, serene, majestic and sacred Buddhist atmosphere, "
+         "compassionate Buddha or sacred temple setting, soft natural light (divine golden rays, "
+         "ethereal mist, warm temple lanterns or peaceful golden hour), deeply calming and reverent, "
+         "Vietnamese and Asian traditional Buddhist aesthetic where fitting. "
+         "No text, no letters, no watermark, no logos, no distorted anatomy. "
+         "Leave the lower-middle third visually calm (it will carry subtitles).")
 MODEL = os.environ.get("AGY_MODEL", "gemini-3.8-flash-medium")
 
 

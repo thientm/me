@@ -6,9 +6,10 @@ Target Audience: Normal middle and high age (35-65+).
 
 ## Visual Rules
 - **Text**: Show text larger (approx 78px) for readability.
-- **Effects**: No artificial geometric overlays or harsh effects (no HTML halos). Visuals must be completely serene, natural, and calm. Use AI-generated images with natural lighting (e.g., god rays).
+- **Effects**: No artificial geometric overlays or harsh effects (no HTML halos). Visuals must be completely serene, natural, and calm. Use AI-generated images with natural lighting (e.g., god rays, golden hour, misty morning).
 - **Animation**: Use GSAP for buttery-smooth Ken Burns zooms and text cross-dissolves. Ken Burns zoom should be slightly faster (e.g., ~7.8% zoom over 12s).
 - **Safezone**: Follow standard 9:16 safezones (Y: 1050px to 1420px approx) to ensure compatibility across YouTube Shorts, TikTok, and Facebook Reels.
+- **Chủ đề hình ảnh chủ đạo (chốt 09.10.2026 - Thiện)**: **Ưu tiên hình ảnh Đức Phật, Bồ Tát và không gian tâm linh trang nghiêm, từ bi**. Người xem 35–65+ có xu hướng dừng lại chiêm ngưỡng lâu hơn và chủ động bình luận ("Nam Mô A Di Đà Phật", "Nam Mô Quán Thế Âm Bồ Tát", cầu an, chúc phúc) khi thấy tôn tượng Phật đẹp, linh thiêng, thanh tịnh.
 
 ## Audio & Outro Rules
 - **Voice**: Use TTS preset `Thiền Tâm Đức` (Northern, meditative storytelling).
@@ -27,9 +28,42 @@ The automated publishing scripts should use the local isolated Chrome profile (`
 - **Không bịa lời Phật.** Mỗi bài phải dựa trên một lời dạy có thật; nguồn (kinh, kệ, bản dịch) chỉ ghi ở `script.json` → `"source"` và mô tả YouTube, **không đọc trong video**. Không có nguồn chắc chắn thì nói "lời Phật dạy về…" ở dạng khái quát, không dựng câu trích dẫn.
 - Không hứa hẹn tâm linh (phước báu, đổi vận, chữa bệnh), không so sánh tôn giáo, không chính trị.
 
+## Quy tắc sinh ảnh AI & Định hướng hình Phật — chốt 09.10.2026 (Thiện)
+- **Mục tiêu**: Chấm dứt tình trạng ảnh bị trùng lặp (người ngồi u sầu bên cửa sổ/bàn ăn lặp đi lặp lại), tăng mạnh khả năng giữ chân người xem (retention) và lôi kéo tương tác bình luận (gieo duyên niệm Phật, bái Phật cầu an).
+- **Tỷ trọng hình ảnh Phật trong bài (3 cảnh)**:
+  - Tối thiểu 1–2 cảnh (hoặc cả 3 cảnh tuỳ nội dung bài) phải xuất hiện hình tượng Đức Phật, Bồ Tát hoặc không gian cửa Phật/chiêm bái trang nghiêm, thanh tịnh.
+  - Cảnh 1 (Hook mở đầu 0–15s): Khuyến khích đặt ngay hình ảnh Đức Phật / Bồ Tát hoặc khoảnh khắc chiêm bái linh thiêng để tạo visual hook ấn tượng, thu hút người xem dừng lại ngay từ 3 giây đầu thay vì cảnh người đời thường mệt mỏi u uất.
+- **Nguyên tắc chống trùng lặp & Đa dạng hoá (Diversity Rules)**:
+  - Tuyệt đối không lặp lại cùng một dáng tượng đá hay một góc máy qua các bài liên tiếp.
+  - **Luân phiên các Tôn tượng & Cõi thiền**:
+    + *Đức Phật Thích Ca Mâu Ni*: Tọa thiền tĩnh định dưới cội Bồ Đề, rừng thiền tĩnh mịch, lá bồ đề rơi nhẹ, ánh nắng sớm (god rays) ban mai rọi chiếu.
+    + *Đức Phật A Di Đà*: Tiếp dẫn phóng quang từ bi, ánh hào quang vàng kim ấm áp, tỏa rạng giữa đài sen và mây lành.
+    + *Bồ Tát Quán Thế Âm*: Y trắng thanh thoát, đứng trên tòa sen giữa non xanh nước biếc hoặc biển mây, tay cầm cành dương liễu và bình cam lồ cứu khổ ban vui.
+    + *Đức Phật Di Lặc*: Nụ cười hoan hỷ, an nhiên tự tại giữa thiên nhiên non nước.
+    + *Đa dạng chất liệu & không gian*:
+      * Tượng đá rêu phong cổ kính hàng trăm năm trên vách núi thiêng hùng vĩ giữa sương mù bảng lảng.
+      * Tượng đồng/vàng cổ ánh kim uy nghiêm trong chánh điện thanh tịnh, lung linh ánh nến hoa đăng và làn hương trầm thoang thoảng.
+      * Tượng ngọc trắng thanh khiết, dịu mát trong không gian thiền định.
+      * Đại tượng Phật khổng lồ sừng sững trên đỉnh núi cao giữa biển mây bao la.
+      * Tranh Phật cổ phong cách bích họa sơn mài hoặc lụa thủy mặc thoát tục.
+    + *Hình ảnh chiêm bái & hành trì thành kính*:
+      * Người con Phật / cụ già tóc bạc chắp tay búp sen thành kính trước Phật đài ấm cúng.
+      * Đôi bàn tay dâng hoa sen thơm cúng dường Phật, thả hoa đăng bên dòng suối thiền.
+  - **Đa dạng góc máy (Cinematic Compositions)**:
+    + *Cận cảnh (Close-up)*: Nụ cười vi tiếu từ bi, đôi mắt khép hờ an lạc của Đức Phật, thủ ấn thiền định / vô úy / tiếp dẫn.
+    + *Trung cảnh (Medium)*: Tôn tượng Phật ngự bên bờ hồ sen thơm ngát, bên hiên chùa rêu phong hoặc dưới bóng cây bồ đề cổ thụ.
+    + *Toàn cảnh hùng vĩ (Wide/Majestic)*: Đại tượng Phật giữa thiên nhiên núi non kỳ vĩ, trời mây khoáng đạt.
+    + *Góc chiêm bái (Reverence angle)*: Góc nhìn qua vai hoặc từ phía sau của người đệ tử/hành hương hướng lên Đức Phật trang nghiêm.
+  - **Đa dạng thời khắc & Ánh sáng**:
+    + *Bình minh*: Nắng sớm trong trẻo xuyên qua sương mai (morning god rays).
+    + *Hoàng hôn*: Sắc vàng cam ấm áp, tĩnh lặng buông xuống mái chùa và tôn tượng (golden hour).
+    + *Đêm trăng thanh*: Trăng rằm vằng vặc rọi xuống tượng Phật và mặt hồ sen tĩnh lặng, hoa đăng trôi nhẹ.
+- **Yêu cầu đối với cảnh đời thường (nếu có 1 cảnh)**:
+  - Tránh các motif lặp lại u uất (ngồi buồn nhìn điện thoại, gục đầu mệt mỏi). Nếu đưa cảnh đời thường vào, cảnh phải dung dị, bình yên, có tính chất hướng thiện hoặc gắn liền với sự thanh tịnh (ngồi thiền tĩnh tâm, thắp nén nhang, tưới hoa, bước chân an lạc trong vườn quê...).
+
 ## Quy trình một bài (tạm, tới khi gộp engine — xem kế hoạch gộp 29.09.2026)
 Lịch: 3 khung như me-tech — 08:00, 12:00, 20:00 (dựng trước ~2 tiếng). Orchestrator giao cho một sub-agent mỗi khung.
-1. **Nội dung:** chép `content/002_y_dan_dau/` sang `content/<NNN>_<slug>/`, viết lại `script.json` (luật ở trên, `voice` = "Thiền Tâm Đức"), `meta.json` (yt_title, yt_desc có nguồn, tt_caption, fb_caption, fb_tags). `scene.html` chép từ bài trước — cue chữ lấy từ `window.TIMING`. **Ảnh: sinh MỚI cho từng bài** (luật gốc: ảnh AI, ánh sáng tự nhiên) bằng `../me-tech/pipeline/.venv/bin/python render_pipeline/gen_images.py <slug> "<cảnh 1>" "<cảnh 2>" "<cảnh 3>"` → `content/<slug>/img_{1,2,3}.jpg` (1080x1920), scene.html trỏ `url('img_1.jpg')`…; mỗi cảnh tả đúng nội dung câu đang đọc; sổ `logs/images.json` — không dùng lại ảnh đã dùng.
+1. **Nội dung:** chép `content/002_y_dan_dau/` sang `content/<NNN>_<slug>/`, viết lại `script.json` (luật ở trên, `voice` = "Thiền Tâm Đức"), `meta.json` (yt_title, yt_desc có nguồn, tt_caption, fb_caption, fb_tags). `scene.html` chép từ bài trước — cue chữ lấy từ `window.TIMING`. **Ảnh: sinh MỚI cho từng bài, tuân thủ nghiêm ngặt Quy tắc sinh ảnh AI & Định hướng hình Phật** (ưu tiên hình ảnh Phật, đổi mới góc máy/bối cảnh so với các bài trước trong `logs/images.json`) bằng `../me-tech/pipeline/.venv/bin/python render_pipeline/gen_images.py <slug> "<cảnh 1>" "<cảnh 2>" "<cảnh 3>"` → `content/<slug>/img_{1,2,3}.jpg` (1080x1920), scene.html trỏ `url('img_1.jpg')`…; mỗi cảnh tả đúng nội dung câu đang đọc; sổ `logs/images.json` — không dùng lại ảnh đã dùng.
 2. **Dựng:** `cd tam-an-lac && SSL_CERT_FILE=../me-tech/pipeline/ca-bundle.pem ../me-tech/pipeline/.venv/bin/python render_pipeline/build.py <slug>` → `content/<slug>/video.mp4`. Soát: câu mở ≤2s, 30–45s, contact sheet (chữ 78px, Y 1050–1420, ≤3 dòng).
 3. **Đăng YT + TT** bằng bộ script me-tech đã chép ở `_pubkit/a/publish/` (cổng 9555, kênh `UCjEteQMJ4zzFV9_iKvChpvA`):
    - `./open_browser.sh` (gọi `me-tech/ops/open_chrome.py`, mở nền không cướp chuột) nếu 9555 tắt → `python3 ../me-tech/ops/fresh_browser.py 9555` → `python3 ../me-tech/ops/whois.py 9555 --yt UCjEteQMJ4zzFV9_iKvChpvA --tt tamanlac.tiktok` (sai thì DỪNG).
