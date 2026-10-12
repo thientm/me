@@ -58,5 +58,9 @@ thien-tran/content/
 thien-tran/shots/*.png
 thien-tran/_scratch/
 core-video-engine/.work/
+
+# Telegram bot runtime
+ops/telegram/.bot.pid
+ops/telegram/*.log
 # Engagement bot local runtime logs
 me-tech/ops/engagement/logs/*.log

@@ -1,6 +1,6 @@
-"""Lightweight Telegram Bot HTTP client using standard urllib."""
 import json
 import logging
+import ssl
 import urllib.request
 import urllib.error
 from typing import Optional, Dict, Any
@@ -8,6 +8,12 @@ from typing import Optional, Dict, Any
 from ops.telegram import config
 
 logger = logging.getLogger(__name__)
+
+def _get_ssl_context() -> ssl.SSLContext:
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+    return ctx
 
 def send_message(
     text: str,
@@ -49,7 +55,7 @@ def send_message(
     )
 
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=timeout, context=_get_ssl_context()) as resp:
             content = resp.read().decode("utf-8")
             return json.loads(content)
     except urllib.error.HTTPError as e:
@@ -118,7 +124,7 @@ def send_photo(
     )
 
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=timeout, context=_get_ssl_context()) as resp:
             content = resp.read().decode("utf-8")
             return json.loads(content)
     except Exception as e:
