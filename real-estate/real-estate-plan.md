@@ -43,10 +43,10 @@ Luật sư chốt làm **2 bước, theo thứ tự: sang tên trước → làm
 
 | Bước | Việc | Trạng thái | Mốc dự kiến | Ghi chú |
 |---|---|---|---|---|
-| **0** | Bán coin lấy thanh khoản | 🔴 Đang chạy, **chậm** | Deadline nội bộ **1/9/2026** | Xem `crypto/crypto-plan.md`. Tới 21/8 vẫn **chưa bán gì**. |
+| **0** | Bán coin lấy thanh khoản | 🟡 Đang chạy Sprint | Deadline **31/10/2026** | Xem `crypto/crypto-plan.md`. Sàn cứng bảo vệ vốn 540tr. |
 | **0** | Đo đạc / trích đo bản đồ địa chính | ⬜ Chưa bắt đầu | Làm ngay | Làm song song, tiết kiệm 1-2 tuần khi nộp hồ sơ. |
-| **1** | **Sang tên: bố mẹ → con** (tặng cho, toàn bộ 150m² CLN) | ⬜ Chưa bắt đầu | T9/2026 | Miễn TNCN 10% + miễn lệ phí trước bạ 0,5%. Phí công chứng tính trên giá trị CLN (thấp) → chỉ ~300-750k + lệ phí hành chính ~300k-1tr. Cần giấy khai sinh chứng minh quan hệ. |
-| **2** | **Làm sổ: nộp hồ sơ chuyển mục đích 80m²** (con đứng tên nộp) | ⬜ Chưa bắt đầu | Nộp **đầu T10/2026** | ⚠️ **Nộp hồ sơ KHÔNG khoá được giá.** Giá áp theo **ngày ban hành quyết định cho phép chuyển mục đích**, không phải ngày nộp (Luật Đất đai 2024; NĐ 50/2026 cũng chốt hạn mức theo mốc này). → Mốc thật cần về đích: **có quyết định trước 31/12/2026**. Nộp đầu T10 để còn ~3 tháng đệm. |
+| **1** | **Sang tên: bố mẹ → con** (tặng cho, toàn bộ 150m² CLN) | ⬜ Chưa bắt đầu | T9-T10/2026 | Miễn TNCN 10% + miễn lệ phí trước bạ 0,5%. Phí công chứng tính trên giá trị CLN (thấp) → chỉ ~300-750k + lệ phí hành chính ~300k-1tr. Cần giấy khai sinh chứng minh quan hệ. |
+| **2** | **Làm sổ: nộp hồ sơ chuyển mục đích 80m²** (con đứng tên nộp) | ⬜ Chưa bắt đầu | Nộp **T10/2026** | ⚠️ **Nộp hồ sơ KHÔNG khoá được giá.** Giá áp theo **ngày ban hành quyết định cho phép chuyển mục đích**, không phải ngày nộp (Luật Đất đai 2024; NĐ 50/2026 cũng chốt hạn mức theo mốc này). → Mốc thật cần về đích: **có quyết định trước 31/12/2026**. Nộp đầu T10 để còn ~3 tháng đệm. |
 | **2** | Đóng tiền sử dụng đất (~3,02 tỷ; tổng chi kể cả phí ~3,1 tỷ) | ⬜ Chưa bắt đầu | T10-T11/2026 | Yêu cầu **giấy báo nộp tiền chính thức** từ cơ quan thuế. Nộp trong **30 ngày** kể từ ngày có quyết định. |
 | **3** | Nhận sổ đỏ mới (80m² đất ở + 70m² CLN, đứng tên con) | ⬜ Chưa bắt đầu | T12/2026 - T1/2027 | |
 | **4** | Chờ đủ 183 ngày → bán toàn bộ 150m² | ⬜ Chưa bắt đầu | ~T6-T7/2027 | 🔴 Mốc đếm chưa chắc chắn — xem "Rủi ro đang mở". |
@@ -55,22 +55,22 @@ Luật sư chốt làm **2 bước, theo thứ tự: sang tên trước → làm
 > **Cái giá phải trả:** chèn 15-30 ngày vào đúng giai đoạn chạy đua giá 38tr/m². → Chốt hạn: nếu tới **giữa T9/2026** (không phải cuối T9 — vì mốc thật là *ngày có quyết định*, không phải ngày nộp) mà bước 1 chưa xong, cân nhắc bỏ qua sang tên và để bố mẹ nộp hồ sơ luôn.
 > 💸 **Giá của việc trượt sang bảng giá 2027** *(research 2026-08-25)*: kỳ vọng **~370tr**, dải cơ sở 240-460tr, xấu nhất ~900tr. Đủ lớn để giữ mốc cứng và chạy đua với thời gian.
 
-### Tài chính *(chốt 2026-08-21 theo số user xác nhận)*
+### Tài chính *(Chuẩn hóa 12/10/2026 theo xác nhận mới nhất của user)*
 
-| Nguồn / khoản | Số tiền |
-|---|---|
-| Tiền mặt cá nhân | 705tr |
-| Bố mẹ cho (tiền mặt) | 1.300tr |
-| Crypto (bán dứt điểm trước 1/9) | **480tr** |
-| **TỔNG VỐN TỰ CÓ** | **2.485tr** |
-| Dự trù chi phí ra sổ 80m² (tất cả: tiền sử dụng đất + trích đo + công chứng + lệ phí) | **3.100tr** |
-| **THIẾU → PHẢI VAY** | **615tr** |
+| Nguồn / khoản | Số tiền | Ghi chú trạng thái |
+|---|---|---|
+| Tiền mặt cá nhân | **830tr** | Đã sẵn sàng 100% trong tài khoản ngân hàng cá nhân |
+| Tiền gia đình hỗ trợ | **1.300tr** | Đã gửi tiết kiệm an toàn trong ngân hàng |
+| Crypto (BTC 0.15931 + SOL 55.28) | **~512,5tr** | Tính theo giá live 12/10 (sàn cứng kỷ luật 540tr, hạn 31/10) |
+| **TỔNG VỐN TỰ CÓ HUY ĐỘNG** | **~2.642,5tr - 2.670tr** | Tiền mặt ngân hàng chắc chắn: 2.130tr (830 + 1.300) |
+| Dự trù chi phí ra sổ 80m² (tất cả chi phí) | **3.100tr** | Tiền sử dụng đất + trích đo + công chứng + lệ phí |
+| **THIẾU → PHẢI VAY DỰ KIẾN** | **~430tr - 457,5tr** | **Dưới ngưỡng 500tr → ĐÃ DỠ BỎ CỜ ĐỎ NỢ CAO** (Dư an toàn +157,5tr đến +185tr so với trần 615tr) |
 
 - **Không có nguồn nào khác** ngoài 3 khoản trên. Lương từ nay dành cho chi phí cưới (theo thoả thuận với người yêu) → không tính vào đây.
-- Mỗi 40tr crypto bán được = 40tr gap giảm. Crypto về 400tr thì gap thành 695tr.
-- **Tiền phải sẵn TRƯỚC khi nộp hồ sơ**: thời hạn nộp tiền sử dụng đất là **30 ngày kể từ ngày nhận quyết định** (Điều 121 Luật Đất đai 2024); chậm nộp phạt 0,03%/ngày, quá ~90 ngày có thể **bị huỷ quyết định**. → Chốt nguồn 615tr là việc của **T9**, không để tới T10.
+- Tiền mặt chắc chắn trong ngân hàng đã đạt **2.130tr (68.7% tổng ngân sách)**. Phần nợ chỉ còn ~14-15% tổng chi phí.
+- **Tiền phải sẵn TRƯỚC khi nộp hồ sơ**: thời hạn nộp tiền sử dụng đất là **30 ngày kể từ ngày nhận quyết định** (Điều 121 Luật Đất đai 2024); chậm nộp phạt 0,03%/ngày, quá ~90 ngày có thể **bị huỷ quyết định**.
 
-**Nguồn 615tr — thứ tự ưu tiên** (lãi tính cho ~10 tháng, T11/2026 → T7/2027):
+**Nguồn vay dự kiến (~430-457,5tr — trần an toàn 615tr)**:
 
 | Hình thức | Lãi/năm | Tổng lãi | Ghi chú |
 |---|---|---|---|

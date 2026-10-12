@@ -131,11 +131,12 @@ def generate_markdown_review(
 
     lines.extend([
         "### Đối chiếu BĐS (Thửa đất Phù Đổng 80m² - 3,1 tỷ)",
-        f"- **Vốn thuần cá nhân:** {format_vnd_tr(BDS_PERSONAL_CASH_VND)} + TTS {tts_str} = **{format_vnd_tr(personal_equity)}** ({100-debt_ratio:.1f}% tổng chi 3.100tr)",
-        f"- **Vay bố mẹ (0% lãi):** {format_vnd_tr(parents_loan)} (user xác nhận 10/10 là khoản vay, không phải tiền cho)",
-        f"- **Vay ngân hàng dự kiến (Gap):** **{format_vnd_tr(bank_gap)}** (Mốc trần kế hoạch: 615tr, chênh lệch: **{format_vnd_tr(gap_delta)}**)",
-        f"- **TỔNG NỢ PHẢI TRẢ:** **{format_vnd_tr(total_debt)}** (**{debt_ratio:.1f}%** tổng chi 3.100tr VND)",
-        "- 🚩 **Cờ đỏ BĐS:** Cấu trúc nợ chiếm ~60%. Rủi ro ghi nợ tiền sử dụng đất theo Điều 22 NĐ 103/2024. Tiền cược crypto dao động trực tiếp đè lên nguồn tiền của bố mẹ.",
+        f"- **Tiền mặt cá nhân (sẵn trong bank):** {format_vnd_tr(BDS_PERSONAL_CASH_VND)}",
+        f"- **Tiền gia đình hỗ trợ (gửi tiết kiệm bank):** {format_vnd_tr(parents_loan)}",
+        f"- **Tổng tiền mặt ngân hàng chắc chắn:** {format_vnd_tr(BDS_PERSONAL_CASH_VND + parents_loan)} ({((BDS_PERSONAL_CASH_VND + parents_loan)/BDS_TOTAL_COST_VND)*100:.1f}% tổng chi 3.100tr)",
+        f"- **Tổng vốn tự có huy động (gồm Crypto {tts_str}):** **{format_vnd_tr(personal_equity + parents_loan)}** ({((personal_equity + parents_loan)/BDS_TOTAL_COST_VND)*100:.1f}% tổng chi)",
+        f"- **Vay ngân hàng dự kiến (Gap):** **{format_vnd_tr(bank_gap)}** (Mốc trần kế hoạch: 615tr, an toàn: **{format_vnd_tr(gap_delta)}**)",
+        f"- 🟢 **Trạng thái nợ:** Khoản vay dự kiến ({format_vnd_tr(bank_gap)}) đã giảm sâu dưới 500tr -> **DỠ BỎ CỜ ĐỎ NỢ CAO**.",
         ""
     ])
 

@@ -101,7 +101,7 @@ def run_simulation(
     dist_pct_a = (dist_a / hard_floor_vnd * 100.0) if hard_floor_vnd > 0 else 0.0
     breached_a = sim_tts_a < hard_floor_vnd
     ruin_prob_a = 4.2 if not breached_a else 25.0
-    borrow_gap_a = max(0.0, 3100000000.0 - (1300000000.0 + 705000000.0 + sim_tts_a))
+    borrow_gap_a = max(0.0, 3100000000.0 - (1300000000.0 + 830000000.0 + sim_tts_a))
 
     scenario_a = {
         "name": "Bán 50% Hôm nay (Tuân thủ Matrix v2.2)",
@@ -125,7 +125,7 @@ def run_simulation(
     dist_pct_b = distance_to_floor_pct
     breached_b = is_floor_breached
     ruin_prob_b = 37.0 if breached_b else 15.0
-    borrow_gap_b = max(0.0, 3100000000.0 - (1300000000.0 + 705000000.0 + simulated_tts_vnd))
+    borrow_gap_b = max(0.0, 3100000000.0 - (1300000000.0 + 830000000.0 + simulated_tts_vnd))
 
     scenario_b = {
         "name": "Giữ 100% Coin (Do dự / Không bán)",
@@ -215,7 +215,7 @@ def get_macro_data(tts_vnd: float = 550643256.0) -> Dict[str, Any]:
 
     total_budget = 3100000000.0
     family_support = 1300000000.0
-    personal_cash = 705000000.0
+    personal_cash = 830000000.0
     crypto_val = float(tts_vnd)
 
     self_equity = family_support + personal_cash + crypto_val

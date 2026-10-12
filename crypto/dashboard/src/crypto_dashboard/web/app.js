@@ -11,7 +11,7 @@ const BASE_CAPITAL_VND = 650000000;
 const TOTAL_BDS_BUDGET_VND = 3100000000;
 const BORROW_CEILING_VND = 615000000;
 const FAMILY_SUPPORT_VND = 1300000000;
-const PERSONAL_CASH_VND = 705000000;
+const PERSONAL_CASH_VND = 830000000;
 const STATUTORY_HOURLY_BURN_VND = 38750;
 const BURN_PER_SECOND_VND = 38750 / 3600; // ~10.7638 VND/sec
 const COMMITMENT_TOTAL_SECONDS = 600; // 10 minutes
@@ -120,12 +120,12 @@ const OfflineOracle = {
     bds_financial_gap: {
       total_budget_vnd: 3100000000.0,
       parents_support_vnd: 1300000000.0,
-      personal_cash_vnd: 705000000.0,
-      crypto_tts_current_vnd: 550643256.0,
-      total_self_equity_vnd: 2555643256.0,
-      borrow_needed_vnd: 544356744.0,
+      personal_cash_vnd: 830000000.0,
+      crypto_tts_current_vnd: 512544000.0,
+      total_self_equity_vnd: 2642544000.0,
+      borrow_needed_vnd: 457456000.0,
       borrow_ceiling_vnd: 615000000.0,
-      cushion_vnd: 70643256.0,
+      cushion_vnd: 157544000.0,
       is_within_ceiling: true
     }
   },

@@ -9,8 +9,8 @@
 ## Mục tiêu lớn (theo năm)
 
 ### 2026 - 2027
-- **2026**: Sang tên thửa đất quê từ bố mẹ sang mình (T9), rồi tự đứng tên nộp hồ sơ xin 80m² thổ cư (T10) — tổng chi ra sổ **~3,1 tỷ**, vốn tự có **2.485tr** (705tr cá nhân + 1.300tr bố mẹ + 480tr crypto), **vay thêm 615tr**. Xem `real-estate/real-estate-plan.md`.
-- **2027**: Nhận sổ (T12/2026-T1/2027) → đủ 183 ngày → ký bán toàn bộ thửa (~T6-T7/2027) → tất toán khoản vay 615tr → giữ tiền mặt ròng.
+- **2026**: Sang tên thửa đất quê từ bố mẹ sang mình (T9-T10), rồi tự đứng tên nộp hồ sơ xin 80m² thổ cư (T10) — tổng chi ra sổ **~3,1 tỷ**, vốn tự có **~2.642,5tr** (830tr cá nhân trong bank + 1.300tr gia đình gửi bank + crypto BTC/SOL ~512,5tr), **vay thêm ~430-457,5tr** (giảm sâu từ trần 615tr). Xem `real-estate/real-estate-plan.md`.
+- **2027**: Nhận sổ (T12/2026-T1/2027) → đủ 183 ngày → ký bán toàn bộ thửa (~T6-T7/2027) → tất toán khoản vay ~450tr → giữ tiền mặt ròng.
 - **2028**: Cùng vợ góp mua chung cư *(trừ khi mốc cưới đổi — xem `wedding/wedding-plan.md`)*.
 - Vì sao quan trọng: đưa tài sản về chính danh đứng tên mình, tối ưu giá trị thửa đất, và tạo dòng tiền sạch cho chỗ ở.
 - Liên quan domain: real-estate / finance / portfolio / wedding
@@ -19,11 +19,11 @@
 
 ### G-01: Sang tên + làm 80m² thổ cư & Bán toàn bộ đất quê
 - loại: dài hạn
-- target: Sang tên bố mẹ → mình (T9/2026), tự đứng tên nộp hồ sơ lên 80m² thổ cư (T10/2026, tổng chi ~3,1 tỷ — vay thêm 615tr), ra sổ, đủ 183 ngày rồi bán toàn bộ và tất toán nợ.
+- target: Sang tên bố mẹ → mình, tự đứng tên nộp hồ sơ lên 80m² thổ cư (T10/2026, tổng chi ~3,1 tỷ — vay thêm ~430-457,5tr), ra sổ, đủ 183 ngày rồi bán toàn bộ và tất toán nợ.
 - deadline: T7/2027
-- progress: 10%
+- progress: 15%
 - linked_to: Mục tiêu 2026-2027
-- last_updated: 2026-08-21
+- last_updated: 2026-10-12
 
 ### G-02: Góp mua chung cư cùng vợ
 - loại: dài hạn

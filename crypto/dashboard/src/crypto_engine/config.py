@@ -37,7 +37,7 @@ OVERRIDE_DAYS_THRESHOLD: int = 14          # <14 days to deadline triggers emerg
 # Authoritative measured holdings fallback
 FALLBACK_BTC_QTY: float = 0.15931
 FALLBACK_SOL_QTY: float = 55.28
-FALLBACK_STABLES_USD: float = 1415.0
+FALLBACK_STABLES_USD: float = 0.0
 FALLBACK_WITHDRAWN_VND: float = 0.0
 
 # Baseline market rates fallback
@@ -48,7 +48,7 @@ FALLBACK_P2P_RATE: float = 25930.0
 # Real Estate (BĐS Phù Đổng 80m2) parameters
 BDS_TOTAL_COST_VND: float = 3_100_000_000.0
 BDS_PARENTS_CASH_VND: float = 1_300_000_000.0
-BDS_PERSONAL_CASH_VND: float = 705_000_000.0
+BDS_PERSONAL_CASH_VND: float = 830_000_000.0
 BDS_DEBT_CEILING_VND: float = 615_000_000.0
 BDS_PLANNED_LOAN_VND: float = BDS_DEBT_CEILING_VND
 BDS_DELAY_PENALTY_HOURLY: float = 38_750.0  # 930k VND/day

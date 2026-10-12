@@ -33,17 +33,17 @@
 - **Time Horizon:** Cực ngắn. Deadline nộp hồ sơ sổ đỏ là **Đầu tháng 11/2026** (Chỉ còn khoảng 3 tháng).
 - **Khẩu vị rủi ro:** Cực kỳ thận trọng. Ưu tiên bảo toàn số vốn **>500tr** hiện có *(sàn nâng 21/09)* để kịp đắp vào tiền làm sổ đỏ BĐS, không được phép để hao hụt thêm quá sâu.
 
-## 2. Target Allocation & Tình trạng hiện tại (đo 2026-09-21 08:40)
+## 2. Target Allocation & Tình trạng hiện tại (Cập nhật 12/10/2026)
 
-| Tài sản | SL | Giá | Giá trị | Định hướng xử lý |
-|---|---|---|---|---|
-| **BTC** | **0,15931** | $81.344 | **335,6tr** (63,0%) | Giữ lại **0,11776 BTC** sau lệnh band hôm nay. Stop-market **$75.900** (ratchet thứ Năm). |
-| **SOL** | **55,28** | $112,13 | **160,5tr** (30,1%) | **XẢ TOÀN BỘ trong lệnh band ≥530tr hôm nay** — SOL bán trước theo quy tắc thứ tự, và SOL/BTC đang ở percentile 98,9%. |
-| **Stables** (USDT+USDC) | ~$1.415 | — | **36,6tr** (6,9%) | **Rút ra VND ngay** — không chịu rủi ro giá, không lý do trì hoãn. **Sang ngày thứ 7 chưa làm.** |
-| **BNB** | dust | — | — | Phí giao dịch. |
+| Tài sản | SL | Giá Spot Live | Giá trị USD | Quy đổi VND | Định hướng xử lý |
+|---|---|---|---|---|---|
+| **BTC** | **0,15931** | ~$84.140 | ~$13.404 | ~349,6tr (68,2%) | Bán bớt ~0.0425 BTC chốt 50% vốn, phần còn lại 0.1168 BTC đặt STOP_MARKET GTC $81.040. |
+| **SOL** | **55,28** | ~$113,0 | ~$6.250 | ~163,0tr (31,8%) | **XẢ TOÀN BỘ ra USDT** — SOL/BTC ở percentile 98,9%, ATR 4,51%/ngày, ưu tiên khử rủi ro. |
+| **Stables** (USDT+USDC) | **$0.00** | — | $0 | **0tr (0%)** | Đã sạch stables, tiền rút về tài khoản ngân hàng cá nhân (nằm trong 830tr VND). |
+| **BNB** | dust | — | — | — | Phí giao dịch. |
+| **TỔNG CRYPTO** | — | — | **~$19.654** | **~512,5tr** | **Sàn cứng kỷ luật: 540.000.000 VND** (Hạn chót 31/10/2026) |
 
-> **Quy tắc số lượng (thêm 07/09): số lượng coin dùng để tính port phải là số ĐO** (đọc từ app/số dư sàn, hoặc suy từ % phân bổ user chụp từ app) — **không bao giờ là số SUY từ cơ cấu cũ**. Bảng suy 21/08 từng lệch −11% ở BNSOL, gây báo sai port +3,7% (~20tr). Mỗi lần user báo số mới từ app → cập nhật bảng này, ghi ngày.
-> ~~Snapshot 18/09: BTC 0,15931 @ $77.253 · SOL 55,28 @ $104,49 · stables $1.415 → 504,2tr.~~ ~~Snapshot 07/09: BTC 0,1593 · SOL 55,3 · USDT 721 · USDC 695.~~ ~~Snapshot 04/08: BTC 64,53% · BNSOL 25,74% · USDC 5,13% · ONDO 4,58%.~~
+> **Ghi chú danh mục:** Danh mục crypto hiện chỉ còn 2 tài sản duy nhất là **BTC** và **SOL**. Toàn bộ tiền mặt cá nhân đã nằm an toàn trong tài khoản ngân hàng (**830tr VND**), tiền gia đình hỗ trợ gửi tiết kiệm ngân hàng (**1.300tr VND**). Tổng tiền mặt ngân hàng chắc chắn là **2.130tr VND**.
 
 ## 3. Nguyên tắc & Chiến lược tối ưu (Optimization Strategy)
 Vì toàn bộ số tiền này **được dùng làm quỹ dự trữ làm sổ đỏ (deadline T11/2026)**, chiến lược sẽ thiên về **phòng thủ & rút lui (Exit Strategy)** thay vì tối ưu lợi nhuận:
@@ -381,30 +381,30 @@ Giá quy đổi tính trên danh mục thật (0,15931 BTC + 55,28 SOL + $1.415 
 
 ### 7.4 Bước 4 — Đối chiếu kế hoạch BĐS
 
-> ⚠️ **Đồng bộ 21/09:** công thức cũ dùng *3 tỷ* và *433tr* — hai số này lệch với `real-estate/real-estate-plan.md` mục "Tài chính" (chốt 21/08): chi phí ra sổ **3.100tr**, gap kế hoạch **615tr** (giả định crypto bán được 480tr). Dùng số của real-estate-plan, nó mới hơn.
+> ⚠️ **Đồng bộ 12/10/2026:** Chuẩn hóa theo số dư thực tế mới nhất: Chi phí ra sổ **3.100tr**, tiền gia đình gửi ngân hàng **1.300tr**, tiền mặt cá nhân trong ngân hàng **830tr**, trần nợ kế hoạch cũ **615tr**.
 
 ```
-Vốn tự có dự phóng tại T11/2026
-  = 1.300tr (bố mẹ, tiền mặt)
-  +   705tr (cá nhân)
-  + TTS crypto thực tế          ← thay cho giả định 480tr
+Vốn tự có huy động
+  = 1.300tr (tiền gia đình gửi tiết kiệm trong ngân hàng)
+  +   830tr (tiền mặt cá nhân sẵn sàng trong tài khoản ngân hàng)
+  + TTS crypto thực tế (BTC 0.15931 + SOL 55.28, sàn cứng 540tr)
   (lương đã cam kết cho chi phí cưới → KHÔNG tính vào đây)
 
-Số cần vay = 3.100tr − Vốn tự có dự phóng
-Δ = Số cần vay − 615tr (mức đã chốt ở real-estate-plan)
+Tiền mặt chắc chắn trong ngân hàng = 1.300tr + 830tr = 2.130tr (68.7% tổng ngân sách)
+Số cần vay = 3.100tr − Vốn tự có huy động
+Δ = Số cần vay − 615tr (trần nợ kế hoạch cũ)
 ```
 
-**Bảng đối chiếu tại các mức TTS (21/09):**
+**Bảng đối chiếu tại các mức TTS (12/10/2026):**
 
-| TTS crypto | Vốn tự có | Gap phải vay | Δ vs 615tr |
-|---|---|---|---|
-| **532,7tr (hiện tại)** | 2.537,7tr | **562,3tr** | **−52,7tr** ✅ |
-| 500tr (sàn) | 2.505,0tr | 595,0tr | −20,0tr |
-| 450tr | 2.455,0tr | 645,0tr | +30,0tr |
+| TTS crypto | Vốn tự có | Gap phải vay | Δ vs trần 615tr | Trạng thái nợ |
+|---|---|---|---|---|
+| **540,0tr (Sàn cứng)** | 2.670,0tr | **430,0tr** | **−185,0tr** ✅ | 🟢 An toàn (<500tr) |
+| **512,5tr (Live 12/10)** | 2.642,5tr | **457,5tr** | **−152,5tr** ✅ | 🟢 An toàn (<500tr) |
+| 450,0tr (Sập sâu) | 2.580,0tr | **520,0tr** | **−95,0tr** ✅ | ⚠️ Cận ngưỡng 500tr |
 
 Ngưỡng cảnh báo:
-- **Δ > +50tr** → nêu rõ mốc hết nợ bị lùi bao lâu; cảnh báo nếu chạm/vượt mốc cưới đầu 2028.
-- **Số cần vay > 500tr** → cờ đỏ: cấu trúc vay đang giả định phần lớn là 0% lãi từ người thân / ghi nợ tiền sử dụng đất. **Hiện gap 562tr > 500tr → cờ đỏ ĐANG BẬT**, và Rủi ro #1 của real-estate-plan (có được ghi nợ tiền sử dụng đất theo Điều 22 NĐ 103/2024 không) **vẫn chưa có câu trả lời** — đây là khoản 615tr, lớn hơn mọi biến động giá crypto trong plan này. real-estate-plan tự đặt hạn: *"Chốt nguồn 615tr là việc của T9, không để tới T10."* Còn **9 ngày**.
+- **Số cần vay < 500tr** → **CỜ ĐỎ NỢ CAO ĐÃ ĐƯỢC DỠ BỎ**. Nhờ vốn cá nhân tích lũy đạt 830tr trong ngân hàng và gia đình gửi 1.300tr, khoản vay ngân hàng dự kiến đã tụt xuống còn ~430-457,5tr (chỉ chiếm ~14% chi phí làm sổ), tạo vùng đệm an toàn lớn.
 
 ### 7.5 Bước 5 — Ghi log
 

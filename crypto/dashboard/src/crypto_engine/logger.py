@@ -101,7 +101,7 @@ def format_section_7_5_review(
         "",
         "### Đối chiếu BĐS",
         f"- **Tổng ngân sách làm sổ 80m²:** {BDS_TOTAL_COST_VND / 1e6:,.0f}tr VND.",
-        f"- **Vốn tự có huy động:** {(BDS_PARENTS_CASH_VND + BDS_PERSONAL_CASH_VND + tts_vnd) / 1e6:,.1f}tr (Bố mẹ 1.300tr + Cá nhân 705tr + Crypto {tts_tr:,.1f}tr).",
+        f"- **Vốn tự có huy động:** {(BDS_PARENTS_CASH_VND + BDS_PERSONAL_CASH_VND + tts_vnd) / 1e6:,.1f}tr (Gia đình {BDS_PARENTS_CASH_VND/1e6:,.0f}tr + Cá nhân {BDS_PERSONAL_CASH_VND/1e6:,.0f}tr + Crypto {tts_tr:,.1f}tr).",
         f"- **Số tiền cần vay (Gap):** **{borrow_needed_tr:,.1f}tr VND** (So với trần kế hoạch 615tr: chênh lệch {(borrow_needed_vnd - BDS_DEBT_CEILING_VND) / 1e6:+,.1f}tr).",
         "- **Cờ đỏ BĐS:** Rủi ro ghi nợ tiền sử dụng đất theo Điều 22 NĐ 103/2024 (Khoản vay 615tr).",
         "",

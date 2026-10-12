@@ -35,18 +35,18 @@ Automates portfolio valuation, binary matrix evaluation (540tr hard floor), exec
    - DO NOT repeat unexecuted recommendations without highlighting them at the very top (0/13 missed orders audit).
    - DO NOT propose new thresholds or rules when existing rules remain unexecuted.
 
-## Authoritative Parameters (2026-09-24 Critical Update)
+## Authoritative Parameters (2026-10-12 Critical Update)
 - **Hard Floor (Sàn cứng)**: `540,000,000 VND`
 - **Take-Profit Trigger**: `TTS >= 540,000,000 VND`
 - **Cash-out Deadline**: Late October 2026 (`2026-10-31`)
 - **Measured Holdings** (from `crypto-plan.md`):
   * BTC: `0.15931`
   * SOL: `55.28`
-  * Stables: `$1,415.00`
+  * Stables: `$0.00` (Đã rút sạch về tài khoản ngân hàng cá nhân)
 - **BĐS Target**:
   * Total Land Sổ Đỏ Cost: `3,100,000,000 VND`
-  * Planned Loan Gap: `615,000,000 VND`
-  * Self-funded Cash: Parents (`1,300,000,000 VND`) + Personal (`705,000,000 VND`)
+  * Planned Loan Gap: `~430,000,000 - 457,500,000 VND` (Dưới trần 615tr: an toàn +157,5tr đến +185tr; dỡ bỏ cờ đỏ >500tr)
+  * Self-funded Cash: Family (`1,300,000,000 VND` saved in bank) + Personal (`830,000,000 VND` in user bank)
 
 ## Execution Procedure
 
