@@ -59,6 +59,10 @@ thien-tran/shots/*.png
 thien-tran/_scratch/
 core-video-engine/.work/
 
+# Auto-engagement bot runtime logs & ledger
+me-tech/ops/engagement/logs/
+
+
 # Telegram bot runtime
 ops/telegram/.bot.pid
 ops/telegram/*.log

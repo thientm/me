@@ -130,3 +130,33 @@ def send_photo(
     except Exception as e:
         logger.error("Failed to send photo: %s", e)
         return {"ok": False, "description": str(e)}
+
+def set_bot_commands(commands: Optional[list] = None) -> Dict[str, Any]:
+    """Register menu commands with Telegram to show the native Menu popup button."""
+    token = config.TELEGRAM_BOT_TOKEN
+    if not token:
+        return {"ok": False, "description": "Token not configured."}
+
+    if commands is None:
+        commands = [
+            {"command": "status", "description": "📊 Dashboard 3 kênh & tiến độ khung giờ"},
+            {"command": "crypto", "description": "💰 Tra cứu TTS Crypto & tỷ giá live"},
+            {"command": "dryrun", "description": "🔍 Kiểm tra bài đăng video trước khi render"},
+            {"command": "doctor", "description": "🩺 Kiểm tra sức khỏe môi trường (ffmpeg, chrome)"},
+            {"command": "help", "description": "❓ Xem hướng dẫn sử dụng & trợ giúp"},
+        ]
+
+    url = f"https://api.telegram.org/bot{token}/setMyCommands"
+    data = json.dumps({"commands": commands}).encode("utf-8")
+    req = urllib.request.Request(
+        url,
+        data=data,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=10.0, context=_get_ssl_context()) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        logger.error("Failed to set bot commands: %s", e)
+        return {"ok": False, "description": str(e)}
