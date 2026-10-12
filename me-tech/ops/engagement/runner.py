@@ -41,12 +41,35 @@ def parse_args(args_list=None):
     parser.add_argument("--platform", choices=["yt", "fb", "tt", "all"], default="all", help="Target platform")
     parser.add_argument("--dry-run", action="store_true", help="Run in dry-run mode (no real clicks/replies)")
     parser.add_argument("--limit", type=int, default=5, help="Limit number of replies per platform")
+    parser.add_argument("--notify-telegram", action="store_true", help="Send summary card to Telegram")
     return parser.parse_args(args_list)
 
 def build_channel_targets(channel_choice: str) -> list[dict]:
     if channel_choice == "all":
         return [CHANNEL_CONFIGS["metech"], CHANNEL_CONFIGS["tamanlac"]]
     return [CHANNEL_CONFIGS[channel_choice]]
+
+def aggregate_stats(results: list[dict]) -> dict:
+    stats = {
+        "replies": 0,
+        "hearts": 0,
+        "likes": 0,
+        "spam": 0,
+        "sample_replies": []
+    }
+    for item in results:
+        actions = item.get("actions", [])
+        if "reply" in actions:
+            stats["replies"] += 1
+            if item.get("reply_text"):
+                stats["sample_replies"].append(item["reply_text"])
+        if "heart" in actions:
+            stats["hearts"] += 1
+        if "like" in actions:
+            stats["likes"] += 1
+        if "skip_spam" in actions:
+            stats["spam"] += 1
+    return stats
 
 def main():
     args = parse_args()
@@ -69,6 +92,7 @@ def main():
         for tgt in targets:
             ch_name = tgt["name"]
             print(f"=== Đang xử lý kênh: {ch_name} (Dry-run: {args.dry_run}) ===")
+            ch_results = []
 
             # YouTube
             if args.platform in ["yt", "all"]:
@@ -81,6 +105,7 @@ def main():
                     dry_run=args.dry_run,
                     limit_replies=args.limit
                 )
+                ch_results.extend(yt_res)
                 print(f"[{ch_name}] YouTube hoàn tất: {len(yt_res)} tương tác.")
 
             # Facebook Business
@@ -94,6 +119,7 @@ def main():
                     dry_run=args.dry_run,
                     limit_replies=args.limit
                 )
+                ch_results.extend(fb_res)
                 print(f"[{ch_name}] Facebook hoàn tất: {len(fb_res)} tương tác.")
 
             # TikTok Studio
@@ -106,7 +132,21 @@ def main():
                     dry_run=args.dry_run,
                     limit_replies=args.limit
                 )
+                ch_results.extend(tt_res)
                 print(f"[{ch_name}] TikTok hoàn tất: {len(tt_res)} tương tác.")
+
+            if args.notify_telegram:
+                ch_stats = aggregate_stats(ch_results)
+                try:
+                    from ops.telegram import notifier
+                    notifier.notify_engagement_report(
+                        channel=ch_name,
+                        stats=ch_stats,
+                        dry_run=args.dry_run
+                    )
+                    print(f"[{ch_name}] Đã gửi báo cáo kết quả tương tác tới Telegram.")
+                except Exception as e:
+                    print(f"[{ch_name}] Lỗi gửi báo cáo Telegram: {e}")
 
     finally:
         eng_lock.release()

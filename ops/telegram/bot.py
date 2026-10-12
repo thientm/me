@@ -23,6 +23,7 @@ HELP_TEXT = """👋 <b>Chào Thiện!</b> Jarvis Bot Personal OS đang trực tu
 • <code>/status</code> — Xem Dashboard 3 kênh & tiến độ khung giờ
 • <code>/crypto</code> — Tra cứu Tổng Tài Sản & thị trường Crypto
 • <code>/dryrun</code> — Kiểm tra nhanh kịch bản & assets 3 kênh
+• <code>/engage</code> — Quét & kiểm tra bình luận tương tác tự động
 • <code>/doctor</code> — Chẩn đoán môi trường hệ thống (ffmpeg, font, venv)
 • <code>/help</code>   — Hướng dẫn sử dụng"""
 
@@ -143,6 +144,26 @@ def handle_command(text: str, chat_id: str) -> None:
             for issue in doc["issues"]:
                 lines.append(f"  - {issue}")
         client.send_message("\n".join(lines), chat_id=chat_id)
+
+    elif cmd == "/engage":
+        target_ch = args[0] if len(args) > 0 else "metech"
+        client.send_message(f"⏳ Đang quét và kiểm tra tương tác bình luận kênh <code>{target_ch}</code>...", chat_id=chat_id)
+        import os
+        import subprocess
+        try:
+            cmd_args = [
+                "me-tech/pipeline/.venv/bin/python",
+                "me-tech/ops/engagement/runner.py",
+                "--channel", target_ch,
+                "--limit", "3",
+                "--dry-run",
+                "--notify-telegram"
+            ]
+            env = os.environ.copy()
+            env["PYTHONPATH"] = "me-tech/ops/engagement:."
+            subprocess.run(cmd_args, env=env, timeout=60, check=True)
+        except Exception as e:
+            client.send_message(f"❌ Lỗi chạy engage: {e}", chat_id=chat_id)
 
     else:
         client.send_message(f"❓ Không nhận diện được lệnh: <code>{cmd}</code>. Gõ <code>/help</code> để xem hướng dẫn.", chat_id=chat_id)

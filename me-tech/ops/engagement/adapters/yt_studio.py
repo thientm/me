@@ -72,24 +72,38 @@ class YouTubeStudioAdapter(BaseAdapter):
 
                 # Locate comment cards
                 cards = page.locator("ytcp-comment-thread").all()
+                if len(cards) == 0:
+                    for chip in page.locator("ytcp-chip").all():
+                        chip_text = chip.inner_text()
+                        if "Response status" in chip_text or "Trạng thái phản hồi" in chip_text:
+                            close_btn = chip.locator(".close-button, #close-button, ytcp-icon-button, button").first
+                            if close_btn.is_visible():
+                                close_btn.click()
+                                page.wait_for_timeout(3000)
+                                cards = page.locator("ytcp-comment-thread").all()
+                                break
+
+                print(f"[{channel_name}] Tìm thấy {len(cards)} thẻ bình luận trên YouTube Studio.")
                 processed_replies = 0
 
                 for card in cards:
                     try:
-                        comment_text_el = card.locator("#content-text")
+                        comment_text_el = card.locator("#content-text").first
                         if not comment_text_el.is_visible():
                             continue
                         text = comment_text_el.inner_text().strip()
-                        author_el = card.locator("#author-text")
+                        author_el = card.locator("#name, #author-text").first
                         author = author_el.inner_text().strip() if author_el.is_visible() else "Khán giả"
-                        cid = f"yt_{channel_name}_{hash(text + author)}"
+                        yt_comment = card.locator("ytcp-comment").first
+                        native_cid = yt_comment.get_attribute("comment-id") if yt_comment.is_visible() else None
+                        cid = f"yt_{native_cid}" if native_cid else f"yt_{channel_name}_{hash(text + author)}"
 
                         if ledger and ledger.has(cid):
                             continue
 
                         category = classify_comment(text, channel_name)
                         if category == "spam":
-                            if ledger:
+                            if ledger and not dry_run:
                                 ledger.record(cid, author, ["skip_spam"], "")
                             continue
 
@@ -97,7 +111,7 @@ class YouTubeStudioAdapter(BaseAdapter):
                         reply_text = ""
 
                         # 1. Creator Heart
-                        heart_btn = card.locator("#creator-heart-button")
+                        heart_btn = card.locator("#creator-heart-button").first
                         if heart_btn.is_visible():
                             if not dry_run:
                                 heart_btn.click()
@@ -105,7 +119,7 @@ class YouTubeStudioAdapter(BaseAdapter):
                             actions.append("heart")
 
                         # 2. Like
-                        like_btn = card.locator("#like-button")
+                        like_btn = card.locator("#like-button").first
                         if like_btn.is_visible():
                             if not dry_run:
                                 like_btn.click()
@@ -119,31 +133,32 @@ class YouTubeStudioAdapter(BaseAdapter):
                             else:
                                 reply_text = generate_smart_reply(text, channel_name)
 
-                            reply_btn = card.locator("#reply-button")
+                            reply_btn = card.locator("#reply-button").first
                             if reply_btn.is_visible() and reply_text:
                                 if not dry_run:
                                     reply_btn.click()
                                     self.random_delay(1.0, 2.0)
-                                    input_box = card.locator("#contenteditable-root")
+                                    input_box = card.locator("textarea#textarea, #contenteditable-root, textarea").first
                                     input_box.fill(reply_text)
                                     self.random_delay(1.5, 3.0)
-                                    submit_btn = card.locator("#submit-button")
+                                    submit_btn = card.locator("#submit-button, ytcp-button#submit-button").first
                                     submit_btn.click()
-                                    self.random_delay(2.0, 4.0)
+                                    self.random_delay(2.5, 4.0)
                                 actions.append("reply")
                                 processed_replies += 1
 
-                        if ledger:
+                        if ledger and not dry_run:
                             ledger.record(cid, author, actions, reply_text)
                         results.append({"id": cid, "actions": actions, "reply_text": reply_text})
 
-                    except Exception:
+                    except Exception as ex:
+                        print(f"[{channel_name}] Card processing error: {ex}")
                         continue
 
                 page.close()
             except Exception as e:
                 print(f"[YouTubeStudioAdapter] Error connecting or scanning: {e}")
 
-        if ledger:
+        if ledger and not dry_run:
             ledger.save()
         return results

@@ -100,6 +100,40 @@ def notify_alert(
     card = "\n".join(lines)
     return client.send_message(card, parse_mode="HTML", dry_run=dry_run)
 
+def notify_engagement_report(
+    channel: str,
+    stats: Dict[str, Any],
+    dry_run: bool = False,
+) -> Dict[str, Any]:
+    """Format and send Auto-Engagement Report card to Telegram."""
+    now_str = datetime.now().strftime("%d/%m %H:%M")
+    mode_str = " (DRY-RUN)" if dry_run else ""
+    lines = [
+        f"💬 <b>AUTO-ENGAGEMENT REPORT{mode_str}</b>  <i>({now_str})</i>\n",
+        f"<b>Channel:</b> <code>{html.escape(channel.upper())}</code>",
+    ]
+
+    total_replies = stats.get("replies", 0)
+    total_hearts = stats.get("hearts", 0)
+    total_likes = stats.get("likes", 0)
+    total_spam = stats.get("spam", 0)
+
+    lines.append(f"<b>Actions:</b> 💬 {total_replies} phản hồi · ❤️ {total_hearts} tim · 👍 {total_likes} thích")
+    if total_spam:
+        lines.append(f"🛡️ <b>Spam đã chặn:</b> {total_spam}")
+
+    sample_replies = stats.get("sample_replies", [])
+    if sample_replies:
+        lines.append("\n📝 <b>Mẫu phản hồi đã gửi:</b>")
+        for sr in sample_replies[:2]:
+            cleaned_sr = html.escape(sr.strip().replace("\n", " "))
+            if len(cleaned_sr) > 90:
+                cleaned_sr = cleaned_sr[:87] + "..."
+            lines.append(f"• <i>\"{cleaned_sr}\"</i>")
+
+    card = "\n".join(lines)
+    return client.send_message(card, parse_mode="HTML", dry_run=dry_run)
+
 def send_custom_notification(
     title: str,
     message: str,
@@ -113,3 +147,4 @@ def send_custom_notification(
         f"━━━━━━━━━━━━━━━━━━━━"
     )
     return client.send_message(card, parse_mode="HTML", dry_run=dry_run)
+

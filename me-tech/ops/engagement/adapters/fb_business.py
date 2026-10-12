@@ -67,7 +67,7 @@ class FacebookBusinessAdapter(BaseAdapter):
 
                         category = classify_comment(text, channel_name)
                         if category == "spam":
-                            if ledger:
+                            if ledger and not dry_run:
                                 ledger.record(cid, "Facebook User", ["skip_spam"], "")
                             continue
 
@@ -104,7 +104,7 @@ class FacebookBusinessAdapter(BaseAdapter):
                                 actions.append("reply")
                                 processed_replies += 1
 
-                        if ledger:
+                        if ledger and not dry_run:
                             ledger.record(cid, "Facebook User", actions, reply_text)
                         results.append({"id": cid, "actions": actions, "reply_text": reply_text})
 
@@ -115,6 +115,6 @@ class FacebookBusinessAdapter(BaseAdapter):
             except Exception as e:
                 print(f"[FacebookBusinessAdapter] Error: {e}")
 
-        if ledger:
+        if ledger and not dry_run:
             ledger.save()
         return results
