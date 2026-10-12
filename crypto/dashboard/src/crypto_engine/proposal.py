@@ -121,17 +121,21 @@ def generate_markdown_review(
         )
     lines.append("")
 
-    # Real Estate Alignment
-    total_own_equity = BDS_PARENTS_CASH_VND + BDS_PERSONAL_CASH_VND + snapshot.tts_vnd
-    bds_gap = BDS_TOTAL_COST_VND - total_own_equity
-    gap_delta = bds_gap - BDS_DEBT_CEILING_VND
+    # Real Estate Alignment (Correction 10/10: 1.300tr là VAY BỐ MẸ 0% lãi, không phải tiền cho)
+    personal_equity = BDS_PERSONAL_CASH_VND + snapshot.tts_vnd
+    parents_loan = BDS_PARENTS_CASH_VND
+    bank_gap = BDS_TOTAL_COST_VND - personal_equity - parents_loan
+    total_debt = parents_loan + bank_gap
+    debt_ratio = (total_debt / BDS_TOTAL_COST_VND) * 100.0
+    gap_delta = bank_gap - BDS_DEBT_CEILING_VND
 
     lines.extend([
         "### Đối chiếu BĐS (Thửa đất Phù Đổng 80m² - 3,1 tỷ)",
-        f"- **Bố mẹ hỗ trợ:** {format_vnd_tr(BDS_PARENTS_CASH_VND)} | **Vốn cá nhân:** {format_vnd_tr(BDS_PERSONAL_CASH_VND)} | **TTS Crypto:** {tts_str}",
-        f"- **Tổng vốn tự có:** {format_vnd_tr(total_own_equity)} / 3.100tr VND.",
-        f"- **Số tiền cần vay (Gap):** **{format_vnd_tr(bds_gap)}** (Mốc trần kế hoạch: 615tr, chênh lệch: **{format_vnd_tr(gap_delta)}**).",
-        "- 🚩 **Cờ đỏ BĐS:** Rủi ro ghi nợ tiền sử dụng đất theo Điều 22 NĐ 103/2024 (Khoản 615tr, hạn chốt nguồn tháng 9/2026).",
+        f"- **Vốn thuần cá nhân:** {format_vnd_tr(BDS_PERSONAL_CASH_VND)} + TTS {tts_str} = **{format_vnd_tr(personal_equity)}** ({100-debt_ratio:.1f}% tổng chi 3.100tr)",
+        f"- **Vay bố mẹ (0% lãi):** {format_vnd_tr(parents_loan)} (user xác nhận 10/10 là khoản vay, không phải tiền cho)",
+        f"- **Vay ngân hàng dự kiến (Gap):** **{format_vnd_tr(bank_gap)}** (Mốc trần kế hoạch: 615tr, chênh lệch: **{format_vnd_tr(gap_delta)}**)",
+        f"- **TỔNG NỢ PHẢI TRẢ:** **{format_vnd_tr(total_debt)}** (**{debt_ratio:.1f}%** tổng chi 3.100tr VND)",
+        "- 🚩 **Cờ đỏ BĐS:** Cấu trúc nợ chiếm ~60%. Rủi ro ghi nợ tiền sử dụng đất theo Điều 22 NĐ 103/2024. Tiền cược crypto dao động trực tiếp đè lên nguồn tiền của bố mẹ.",
         ""
     ])
 

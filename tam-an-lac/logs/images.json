@@ -206,5 +206,26 @@
   "scene": "A peaceful stone Buddha statue with a compassionate gentle expression in a quiet Vietnamese temple garden at noon, soft sunlight filtering through leaves, serene",
   "model": "gemini-3.8-flash-medium",
   "luc": "07.10.2026 10:44"
+ },
+ {
+  "slug": "035_bua_trua_an_lanh",
+  "file": "content/035_bua_trua_an_lanh/img_1.jpg",
+  "scene": "Tôn tượng Phật Thích Ca Mâu Ni tọa thiền thanh tịnh dưới bóng cây cổ thụ, ánh nắng ban trưa ấm áp rọi chiếu, hoa sen nở ngát",
+  "model": "gemini-3.8-flash-medium",
+  "luc": "11.10.2026 10:02"
+ },
+ {
+  "slug": "035_bua_trua_an_lanh",
+  "file": "content/035_bua_trua_an_lanh/img_2.jpg",
+  "scene": "Mâm cơm chay thanh đạm trên bàn gỗ mộc bên khung cửa sổ nắng trưa thanh tịnh, bát cơm bốc khói nhẹ, chén canh thanh mát, an yên",
+  "model": "gemini-3.8-flash-medium (dung lai tu 007_an_cham_buoi_trua, cach >10 ngay)",
+  "luc": "11.10.2026 10:03"
+ },
+ {
+  "slug": "035_bua_trua_an_lanh",
+  "file": "content/035_bua_trua_an_lanh/img_3.jpg",
+  "scene": "Tôn tượng Bồ Tát Quán Thế Âm từ bi thanh thoát giữa non nước mây lành (template buddha_3.jpg)",
+  "model": "templates/buddha_3.jpg",
+  "luc": "11.10.2026 10:03"
  }
 ]

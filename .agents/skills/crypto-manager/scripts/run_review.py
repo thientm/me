@@ -29,7 +29,7 @@ SRC_CANDIDATES = [
     SCRIPT_DIR.parent.parent.parent / "src",
     Path("/Users/thien.tm/teamwork_projects/crypto_dashboard/src"),
 ]
-for p in SRC_CANDIDATES:
+for p in reversed(SRC_CANDIDATES):
     if p.exists() and str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
@@ -179,11 +179,13 @@ def main():
         stables_usd = plan_dict.get("stables_usd", FALLBACK_STABLES_USD)
         withdrawn_vnd = logs_dict.get("withdrawn_vnd", 0.0)
         missed_count = logs_dict.get("missed_recommendations_count", 13)
+        if withdrawn_vnd >= 36_000_000.0:
+            stables_usd = 0.0
     else:
         btc_qty = FALLBACK_BTC_QTY
         sol_qty = FALLBACK_SOL_QTY
-        stables_usd = FALLBACK_STABLES_USD
-        withdrawn_vnd = 0.0
+        withdrawn_vnd = 36_900_000.0
+        stables_usd = 0.0
         missed_count = 13
 
     # 2. Get rates

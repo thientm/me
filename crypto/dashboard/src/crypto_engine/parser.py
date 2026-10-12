@@ -70,12 +70,13 @@ def normalize_stables_usd(val_str: str) -> float:
 def extract_withdrawn_vnd(text: str) -> float:
     """Extract withdrawn VND amount into bank account from text."""
     patterns = [
-        r"Tiến\s+độ\s+luỹ\s+kế\s+rút\s+VND[:\s*]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)?",
-        r"Tiến\s+độ\s+rút\s+VND[:\s*]+([0-9.,]+)\s*(?:tr|triệu|đ|VND|/)",
-        r"VND\s+đã\s+rút[:\s*]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
-        r"Tiền\s+mặt\s+đã\s+rút[:\s*]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
-        r"Đã\s+rút\s+VND[:\s*]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
-        r"Đã\s+rút[:\s*]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
+        r"Tiến\s+độ\s+luỹ\s+kế\s+rút\s+VND[:\s*≈~]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)?",
+        r"Tiến\s+độ\s+rút\s+VND[:\s*≈~]+([0-9.,]+)\s*(?:tr|triệu|đ|VND|/)",
+        r"VND\s+đã\s+rút[:\s*≈~]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
+        r"Tiền\s+mặt\s+đã\s+rút[:\s*≈~]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
+        r"Đã\s+rút\s+VND[:\s*≈~]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
+        r"Đã\s+rút[:\s*≈~]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
+        r"Luỹ\s+kế\s+VND\s+thực[:\s*≈~]+([0-9.,]+)\s*(?:tr|triệu|đ|VND)",
     ]
     for pat in patterns:
         m = re.search(pat, text, re.IGNORECASE)
