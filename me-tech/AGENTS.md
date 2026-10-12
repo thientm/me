@@ -27,6 +27,7 @@ Agent làm theo đúng thứ tự dưới. Dừng lại ở hai chốt duyệt.
 ### 1 · Chọn tin
 - Đọc `logs/{YYYY-MM}.md` → `grep -i "<từ khoá>" logs/*.md` để **chống trùng**
 - Research tin AI 24–48h. Ưu tiên: có góc ứng dụng cho người Việt bình thường > có số kiểm chứng được > chưa nằm trong log
+- **Tích hợp Superpowers (`brainstorming`)**: Trước khi viết kịch bản, chạy brainstorming nhanh 3 góc khai thác ứng dụng thực tế cho người Việt ("AI dễ hiểu") và 3 phương án hook mở đầu, chọn góc nhìn sắc bén nhất.
 
 ### 2 · Viết kịch bản
 - Tạo `pipeline/content/<slug>.json`, lấy `pipeline/content/lawzero.json` làm mẫu
@@ -57,6 +58,7 @@ Caption từng nền tảng: `pipeline/publish/meta.py`.
 
 ### 5 · Ghi log
 1 dòng/bài vào `logs/{YYYY-MM}.md`. Sau 24h cập nhật reach/views.
+- **Tích hợp Superpowers (`verification-before-completion`)**: Bắt buộc chỉ ghi log khi có bằng chứng xác minh (exit code 0 từ các script verify, trạng thái Scheduled/Published sạch, không có lỗi).
 - **Soát Facebook trước khi ghi log** (chốt 25.09.2026): mở bài trong Business Suite,
   xác nhận **Share to Facebook story = bật**.
   Dòng log FB phải ghi `story ✓`; thiếu thì ghi rõ và báo Thiện.

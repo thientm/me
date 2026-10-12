@@ -41,6 +41,7 @@
 ## 6. QUY TRÌNH MỘT BÀI (tạm, tới khi gộp engine — kế hoạch gộp 29.09.2026)
 Lịch: 3 khung như me-tech — 08:00, 12:00, 20:00 (dựng trước ~2 tiếng). Orchestrator giao cho một sub-agent mỗi khung.
 1. **Tin:** AI/tech 24–48h, nguồn gốc chính thức; không trùng chủ đề đã đăng ở `logs/` (được trùng me-tech nhưng phải góc nhìn khác — FACT/INFERENCE/OPINION). Không chụp ảnh bài báo.
+   - **Tích hợp Superpowers (`brainstorming`)**: Mổ xẻ tin tức theo tam giác FACT (số liệu) vs INFERENCE (suy luận) vs OPINION (quan điểm), bóc tách Hype vs Substance, brainstorm hook <10 từ (≤2,5s) cực sắc và chọn benchmark/chart đắt giá nhất làm trạm `shot`.
 2. **Nội dung:** `content/<slug>.json` (voice "Adam bựa", brand "Thiện Trần", outro socials như mục 2). Học từ me-tech: câu 1 ≤10 chữ và **≤2,5 giây**, không mở bằng tên hãng; nhãn trạm đầu phải mang tin (không "TIN CHÍNH"); tên hãng/sản phẩm viết phiên âm trong `say` ("Ô-pen Ây Ai", "Flo-ri-đa", "Clâu", "Anh-thơ-píc"); 32–38s.
 3. **Dựng:** `cd core-video-engine && SSL_CERT_FILE=../me-tech/pipeline/ca-bundle.pem ../me-tech/pipeline/.venv/bin/python build.py ../thien-tran/content/<slug>.json` → `render/<slug>.mp4`. Cổng Whisper/safezone phải qua; soát contact sheet.
 4. **Đăng YT + TT** bằng bộ script me-tech ở `_pubkit/a/publish/` (cổng 9444, kênh `UCvoMD_dBm8z1i-Zd8Pwu7mQ`):
@@ -49,4 +50,5 @@ Lịch: 3 khung như me-tech — 08:00, 12:00, 20:00 (dựng trước ~2 tiếng
    - `$PY yt.py [--at HH:MM]` → `$PY yt_verify.py`; `$PY tt.py [--at HH:MM]` → `$PY tt_verify.py` (PY = me-tech venv). Đọc MÃ THOÁT.
 5. **Đăng FB trang cá nhân** qua Chrome me-tech 9333 (đang đăng nhập thientm): `$PY fb_profile.py` (điền, chụp `_scratch/fb_profile_draft.png`) → soát ảnh (Public, caption đủ, không còn menu gợi ý hashtag, "safe to publish") → `$PY fb_profile.py --post` → xác nhận ở facebook.com/thientm/reels. Giữ khoá `mkdir ../me-tech/.run/fb9333.lock` trong lúc đăng, xong `rmdir`. Không chạy fresh_browser trên 9333. Lưu ý: URL tab tự đổi sang reel người khác dù hộp soạn vẫn mở — đừng tin URL.
 6. **Log:** `logs/<YYYY-MM>.md` (append-only, một dòng/bài). Sổ chống trùng: `_pubkit/logs/posted.json`.
+   - **Tích hợp Superpowers (`verification-before-completion`)**: Bắt buộc chỉ ghi log khi toàn bộ script verify (`yt_verify.py`, `tt_verify.py`) trả về mã 0 và FB Profile Reels đã được kiểm tra đăng thành công ở chế độ Public.
 - **Xong kênh là tắt Chrome** (chốt 30.09.2026): đăng + verify xong → `python3 ../me-tech/ops/close_browser.py 9444` (CDP Browser.close, không pkill). Không tự tắt 9333 — orchestrator tắt khi cả 3 kênh xong.
