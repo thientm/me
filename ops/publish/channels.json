@@ -1,0 +1,32 @@
+{
+  "me-tech": {
+    "name": "me-tech",
+    "cdp_port": 9333,
+    "fb_cdp_port": 9333,
+    "yt_channel_id": "UCnElgDX9q_AYGdFc2oDuWUA",
+    "tt_username": "me-tech",
+    "fb_type": "page_business_suite",
+    "fb_asset_id": "403727472998689",
+    "browser_profile": "~/.me-tech-browser"
+  },
+  "thien-tran": {
+    "name": "thien-tran",
+    "cdp_port": 9444,
+    "fb_cdp_port": 9333,
+    "yt_channel_id": "UCvoMD_dBm8z1i-Zd8Pwu7mQ",
+    "tt_username": "thientranx",
+    "fb_type": "personal_profile",
+    "fb_asset_id": null,
+    "browser_profile": "~/.thien-tran-browser"
+  },
+  "tam-an-lac": {
+    "name": "tam-an-lac",
+    "cdp_port": 9555,
+    "fb_cdp_port": 9333,
+    "yt_channel_id": "UCjEteQMJ4zzFV9_iKvChpvA",
+    "tt_username": "tamanlac.tiktok",
+    "fb_type": "page_business_suite",
+    "fb_asset_id": "page_tam_an_lac",
+    "browser_profile": "tam-an-lac/chrome_profile"
+  }
+}
