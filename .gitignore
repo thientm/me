@@ -58,3 +58,5 @@ thien-tran/content/
 thien-tran/shots/*.png
 thien-tran/_scratch/
 core-video-engine/.work/
+# Engagement bot local runtime logs
+me-tech/ops/engagement/logs/*.log
