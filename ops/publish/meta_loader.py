@@ -78,8 +78,11 @@ def load_meta(channel: str, slug: str, root_dir: Optional[str] = None, legacy_di
             spec = importlib.util.spec_from_file_location("legacy_meta_" + slug.replace("-", "_"), l_py)
             mod = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(mod)
+            v_path = getattr(mod, "VIDEO", "")
+            if v_path and not os.path.isabs(v_path):
+                v_path = os.path.normpath(os.path.join(os.path.dirname(l_py), v_path))
             return MetaData(
-                video_path=getattr(mod, "VIDEO", ""),
+                video_path=v_path,
                 yt_title=getattr(mod, "YT_TITLE", ""),
                 yt_desc=getattr(mod, "YT_DESC", ""),
                 fb_caption=getattr(mod, "FB_CAPTION", ""),
