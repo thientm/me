@@ -59,8 +59,21 @@ if [ ! -d "$MODEL_CACHE" ] || [ "$(du -sm "$MODEL_CACHE" 2>/dev/null | cut -f1)"
   echo "  ⓘ Model chưa có đủ trong cache — lần chạy này sẽ tải ~1GB (VieNeu + Whisper), chậm hơn bình thường."
 fi
 
-[ "${1:-}" = "--doctor" ] && { echo "✅ môi trường sẵn sàng"; exit 0; }
-[ $# -eq 0 ] && { echo "Dùng: ./run.sh content/<slug>.json"; exit 1; }
+if [ "${1:-}" = "--doctor" ]; then
+  PYTHONPATH="../.." python3 -m ops.render.cli --doctor
+  exit $?
+fi
+
+if [ "${1:-}" = "--dry-run" ]; then
+  if [ -z "${2:-}" ]; then
+    echo "Dùng: ./run.sh --dry-run content/<slug>.json"; exit 1
+  fi
+  SLUG="$(basename "$2" .json)"
+  PYTHONPATH="../.." python3 -m ops.render.cli --channel me-tech --slug "$SLUG" --dry-run
+  exit $?
+fi
+
+[ $# -eq 0 ] && { echo "Dùng: ./run.sh content/<slug>.json [--dry-run]"; exit 1; }
 
 echo "── dựng"
 exec ./.venv/bin/python build.py "$@"
