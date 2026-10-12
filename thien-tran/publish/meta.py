@@ -11,34 +11,39 @@ Vi sao: truoc day moi lan doi bai phai sua tay meta.py, nen khong the chuan bi
 san hai bai trong mot ngay - bai sau de len bai truoc. Ba khung dang mot ngay
 thi phai xep hang duoc.
 """
-import importlib.util
 import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ACTIVE = os.path.join(HERE, "ACTIVE")
 
+# Tìm REPO_ROOT để nạp ops.publish
+REPO_ROOT = HERE
+while REPO_ROOT and REPO_ROOT != "/" and not os.path.exists(os.path.join(REPO_ROOT, "ops", "publish", "meta_loader.py")):
+    REPO_ROOT = os.path.dirname(REPO_ROOT)
+
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
+from ops.publish.meta_loader import load_meta
+
 try:
-    SLUG = open(ACTIVE, encoding="utf-8").read().strip()
+    with open(ACTIVE, encoding="utf-8") as f:
+        SLUG = f.read().strip()
 except FileNotFoundError:
     sys.exit("[X] chua chon bai nao. Chay:  python3 use.py <slug>")
 
-_path = os.path.join(HERE, "meta_%s.py" % SLUG)
-if not os.path.exists(_path):
-    sys.exit("[X] khong co %s\n    Cac bai dang co: %s"
-             % (os.path.basename(_path),
-                ", ".join(sorted(f[5:-3] for f in os.listdir(HERE)
-                                 if f.startswith("meta_") and f.endswith(".py")))))
+try:
+    _m = load_meta(channel="thien-tran", slug=SLUG, root_dir=REPO_ROOT, legacy_dir=HERE)
+except Exception as e:
+    sys.exit(f"[X] {e}")
 
-_spec = importlib.util.spec_from_file_location("meta_" + SLUG.replace("-", "_"), _path)
-_m = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(_m)
-
-VIDEO = _m.VIDEO
-YT_TITLE = _m.YT_TITLE
-YT_DESC = _m.YT_DESC
-FB_CAPTION = _m.FB_CAPTION
-TT_CAPTION = _m.TT_CAPTION
+VIDEO = _m.video_path
+YT_TITLE = _m.yt_title
+YT_DESC = _m.yt_desc
+FB_CAPTION = _m.fb_caption
+TT_CAPTION = _m.tt_caption
 
 if not os.path.exists(VIDEO):
-    sys.exit("[X] khong thay file video: %s" % VIDEO)
+    pass
+
