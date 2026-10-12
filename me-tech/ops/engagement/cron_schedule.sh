@@ -5,7 +5,7 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 cd "$REPO_DIR"
 
-LOG_FILE="$HOME/Library/Logs/engagement_bot.log"
+LOG_FILE="$REPO_DIR/me-tech/ops/engagement/logs/engagement_bot.log"
 mkdir -p "$(dirname "$LOG_FILE")"
 
 echo "=== [$(date '+%Y-%m-%d %H:%M:%S')] Khởi động Auto Engagement Bot ===" >> "$LOG_FILE"

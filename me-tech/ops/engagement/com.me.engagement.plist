@@ -37,8 +37,8 @@
         </dict>
     </array>
     <key>StandardOutPath</key>
-    <string>/Users/thientm/Library/Logs/engagement_bot.log</string>
+    <string>/Users/thientm/Documents/GitHub/me/me-tech/ops/engagement/logs/engagement_bot.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/thientm/Library/Logs/engagement_bot.log</string>
+    <string>/Users/thientm/Documents/GitHub/me/me-tech/ops/engagement/logs/engagement_bot.log</string>
 </dict>
 </plist>
