@@ -20,9 +20,10 @@ logger = logging.getLogger(__name__)
 HELP_TEXT = """👋 <b>Chào Thiện!</b> Jarvis Bot Personal OS đang trực tuyến.
 
 <b>Các lệnh điều khiển:</b>
-• <code>/status</code> — Xem Dashboard 3 kênh & tiến độ khung giờ
-• <code>/crypto</code> — Tra cứu Tổng Tài Sản & thị trường Crypto
-• <code>/dryrun</code> — Kiểm tra nhanh kịch bản & assets 3 kênh
+• <code>/crypto</code> — Quản trị rủi ro & danh mục Crypto (Sàn 500tr, Cơ cấu coin, Bảng lệnh 10p)
+• <code>/review</code> — Master Review ALL toàn bộ hệ thống (Tài chính, BĐS 3.1 tỷ, Crypto, Video 3 kênh)
+• <code>/status</code> — Xem Dashboard 3 kênh video & tiến độ khung giờ
+• <code>/dryrun</code> — Kiểm tra nhanh kịch bản & assets 3 kênh video
 • <code>/engage</code> — Quét & kiểm tra bình luận tương tác tự động
 • <code>/doctor</code> — Chẩn đoán môi trường hệ thống (ffmpeg, font, venv)
 • <code>/help</code>   — Hướng dẫn sử dụng"""
@@ -40,8 +41,17 @@ def _get_updates(offset: Optional[int] = None, timeout: int = 30) -> List[Dict[s
         with urllib.request.urlopen(req, timeout=timeout + 5, context=client._get_ssl_context()) as resp:
             data = json.loads(resp.read().decode("utf-8"))
             return data.get("result", [])
+    except urllib.error.HTTPError as e:
+        if e.code == 409:
+            logger.warning("getUpdates 409 Conflict: another instance is running. Backing off 25s...")
+            time.sleep(25)
+        else:
+            logger.error("getUpdates HTTP error %s: %s", e.code, e)
+            time.sleep(5)
+        return []
     except Exception as e:
         logger.error("getUpdates failed: %s", e)
+        time.sleep(3)
         return []
 
 def handle_command(text: str, chat_id: str) -> None:
@@ -80,8 +90,8 @@ def handle_command(text: str, chat_id: str) -> None:
         client.send_message("\n".join(lines), chat_id=chat_id)
 
     elif cmd == "/crypto":
-        # Tra cứu số dư và thị trường crypto mới nhất
-        client.send_message("⏳ Đang tra cứu số dư và tỷ giá Crypto...", chat_id=chat_id)
+        # Tra cứu số dư và quản trị rủi ro danh mục crypto (thuần túy Crypto)
+        client.send_message("⏳ Đang tra cứu danh mục Crypto & tính toán quản trị rủi ro...", chat_id=chat_id)
         try:
             from crypto.dashboard.data_collector import fetch_realtime_metrics
             metrics = fetch_realtime_metrics()
@@ -90,13 +100,28 @@ def handle_command(text: str, chat_id: str) -> None:
                 btc_price=metrics["btc_price"],
                 sol_price=metrics["sol_price"],
                 p2p_rate=metrics["p2p_rate"],
-                floor_vnd=metrics.get("floor_vnd", 540_000_000),
+                floor_vnd=metrics.get("floor_vnd", 500_000_000),
                 action_note=metrics.get("recommendation", ""),
                 chat_id=chat_id,
+                crypto_data=metrics,
             )
         except Exception as e:
             logger.error("Lỗi tra cứu crypto: %s", e, exc_info=True)
             client.send_message(f"❌ Không thể tra cứu dữ liệu Crypto: {e}", chat_id=chat_id)
+
+    elif cmd in ("/review", "/all"):
+        # Master Review ALL: Toàn bộ Personal OS (Tài chính, BĐS 3.1 tỷ, Crypto, Video 3 kênh)
+        client.send_message("⏳ Đang chạy Personal OS Master Review (ALL: Tài chính, BĐS, Crypto, Video)...", chat_id=chat_id)
+        try:
+            from crypto.dashboard.data_collector import run_master_review_all
+            review_all = run_master_review_all()
+            notifier.notify_master_review(
+                review_all_data=review_all,
+                chat_id=chat_id,
+            )
+        except Exception as e:
+            logger.error("Lỗi chạy Master Review ALL: %s", e, exc_info=True)
+            client.send_message(f"❌ Không thể chạy Master Review: {e}", chat_id=chat_id)
 
     elif cmd == "/dryrun":
         target_ch = args[0] if len(args) > 0 else "me-tech"
@@ -194,9 +219,37 @@ def poll_once(offset: Optional[int] = None) -> Optional[int]:
 
     return last_id
 
+BOT_COMMANDS = [
+    {"command": "crypto", "description": "💰 Quản trị Crypto & tỷ giá live (Sàn 500tr)"},
+    {"command": "review", "description": "📑 Master Review ALL (Tài chính, BĐS, Crypto, Video)"},
+    {"command": "status", "description": "📊 Dashboard 3 kênh video & tiến độ khung giờ"},
+    {"command": "engage", "description": "💬 Quét & tương tác bình luận tự động"},
+    {"command": "dryrun", "description": "🔍 Kiểm tra Gate 1 & Gate 2 kịch bản video"},
+    {"command": "doctor", "description": "🩺 Kiểm tra sức khỏe môi trường (ffmpeg, chrome)"},
+    {"command": "help", "description": "❓ Hướng dẫn sử dụng bot & danh sách lệnh"}
+]
+
+def register_bot_commands() -> bool:
+    """Register commands with Telegram Bot API so they appear in autocomplete menu."""
+    token = config.TELEGRAM_BOT_TOKEN
+    if not token:
+        return False
+    url = f"https://api.telegram.org/bot{token}/setMyCommands"
+    payload = json.dumps({"commands": BOT_COMMANDS}).encode("utf-8")
+    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=10, context=client._get_ssl_context()) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            return data.get("ok", False)
+    except Exception as e:
+        logger.warning("Could not register bot commands: %s", e)
+        return False
+
 def run_daemon() -> None:
     """Run persistent polling daemon."""
     print("🤖 Jarvis Telegram Bot Daemon is starting...")
+    if register_bot_commands():
+        print("✅ Đã đồng bộ danh sách lệnh lên menu Telegram.")
     offset = None
     while True:
         try:

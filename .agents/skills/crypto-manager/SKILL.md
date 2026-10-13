@@ -3,7 +3,7 @@ name: crypto-manager
 description: >-
   Automated review and discipline manager for personal crypto portfolio following
   crypto-plan.md and AGENTS.md rules. Activates when user asks to review crypto portfolio,
-  evaluate 540tr hard floor, calculate Total Net Worth (TTS), check missed recommendations,
+  evaluate 500tr hard floor, calculate Total Net Worth (TTS), check missed recommendations,
   run daily or weekly portfolio review, or generate Binance 10-minute exit order sheets.
 allowed-tools: Bash(python3 *), Bash(curl *), view_file, write_to_file, replace_file_content
 metadata:
@@ -19,7 +19,7 @@ metadata:
 
 # Crypto Portfolio Manager (`crypto-manager`)
 
-Automates portfolio valuation, binary matrix evaluation (540tr hard floor), execution audit (0/13 missed orders warning), and standardized Section 7.5 reviews for the personal crypto portfolio.
+Automates portfolio valuation, binary matrix evaluation (500tr hard floor), execution audit (0/13 missed orders warning), and standardized Section 7.5 reviews for the personal crypto portfolio.
 
 ## Inviolable Rules (AGENTS.md & crypto-plan.md)
 
@@ -35,9 +35,9 @@ Automates portfolio valuation, binary matrix evaluation (540tr hard floor), exec
    - DO NOT repeat unexecuted recommendations without highlighting them at the very top (0/13 missed orders audit).
    - DO NOT propose new thresholds or rules when existing rules remain unexecuted.
 
-## Authoritative Parameters (2026-10-12 Critical Update)
-- **Hard Floor (Sàn cứng)**: `540,000,000 VND`
-- **Take-Profit Trigger**: `TTS >= 540,000,000 VND`
+## Authoritative Parameters (2026-09-21 Critical Update)
+- **Hard Floor (Sàn cứng)**: `500,000,000 VND`
+- **Take-Profit Trigger**: `TTS >= 500,000,000 VND`
 - **Cash-out Deadline**: Late October 2026 (`2026-10-31`)
 - **Measured Holdings** (from `crypto-plan.md`):
   * BTC: `0.15931`
@@ -86,18 +86,18 @@ curl -s -X POST -H "Content-Type: application/json" -H "User-Agent: Mozilla/5.0"
 
 #### Step 3: Compute Valuation & Distance to Floor
 - `TTS (VND) = VND_withdrawn + (BTC_qty * BTC_price + SOL_qty * SOL_price + Stables_USD) * P2P_rate`
-- `Distance to Floor (VND) = TTS - 540,000,000`
+- `Distance to Floor (VND) = TTS - 500,000,000`
 
 #### Step 4: Binary Decision Matrix Evaluation
-1. **If TTS >= 540,000,000 VND**:
-   - Status: `TAKE_PROFIT_540M` ("Lời bất ngờ")
+1. **If TTS >= 500,000,000 VND**:
+   - Status: `TAKE_PROFIT_500M` ("Lời bất ngờ")
    - Action: Kích hoạt Take-profit 50% NGAY LẬP TỨC ngoài lịch.
    - Priority Execution:
      1. Rút 100% Stables ra VND qua P2P.
      2. Bán SẠCH 100% SOL (55.28 SOL) ra USDT rồi rút VND (SOL rủi ro cao, SOL/BTC đỉnh).
      3. Bán thêm BTC ra USDT để tổng giá trị bán đạt đúng 50% coin.
      4. Đặt lệnh Stop-Market GTC cho lượng BTC còn lại.
-2. **If TTS < 540,000,000 VND**:
+2. **If TTS < 500,000,000 VND**:
    - Status: `HARD_FLOOR_BREACH` ("EMERGENCY THỦNG SÀN")
    - Action: EMERGENCY! Market Sell ALL ra VND ngay lập tức! Bán toàn bộ BTC, SOL, rút toàn bộ Stables ra VND trong 24 giờ.
 

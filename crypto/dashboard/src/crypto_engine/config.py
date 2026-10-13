@@ -1,8 +1,8 @@
 """
 Configuration and constants for the Crypto Portfolio Management Engine.
-Enforces domain constraints updated on 2026-09-24:
-- Hard Floor: 540,000,000 VND (540tr)
-- Binary Decision Matrix (>=540tr: Take profit 50%; <540tr: Emergency Market Sell ALL)
+Enforces domain constraints updated on 2026-09-21:
+- Hard Floor: 500,000,000 VND (500tr)
+- Binary Decision Matrix (>=500tr: Take profit 50%; <500tr: Emergency Market Sell ALL)
 - Cash-out Deadline: Late October 2026 (2026-10-31)
 """
 
@@ -28,8 +28,8 @@ PROJECT_ROOT = next((p for p in _CANDIDATE_PROJECT_ROOTS if p.exists()), Path("/
 DATA_DIR = PROJECT_ROOT / "data"
 CACHE_RATES_FILE = DATA_DIR / "cache_rates.json"
 
-# Financial thresholds & parameters (2026-09-24 Critical Update)
-HARD_FLOOR_VND: float = 540_000_000.0
+# Financial thresholds & parameters (Authoritative Hard Floor 500tr)
+HARD_FLOOR_VND: float = 500_000_000.0
 INITIAL_CAPITAL_VND: float = 650_000_000.0
 CASH_OUT_DEADLINE_STR: str = "2026-10-31"  # Late October 2026
 OVERRIDE_DAYS_THRESHOLD: int = 14          # <14 days to deadline triggers emergency liquidation

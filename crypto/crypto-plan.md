@@ -387,7 +387,7 @@ Giá quy đổi tính trên danh mục thật (0,15931 BTC + 55,28 SOL + $1.415 
 Vốn tự có huy động
   = 1.300tr (tiền gia đình gửi tiết kiệm trong ngân hàng)
   +   830tr (tiền mặt cá nhân sẵn sàng trong tài khoản ngân hàng)
-  + TTS crypto thực tế (BTC 0.15931 + SOL 55.28, sàn cứng 540tr)
+  + TTS crypto thực tế (BTC 0.15931 + SOL 55.28, sàn cứng 500tr)
   (lương đã cam kết cho chi phí cưới → KHÔNG tính vào đây)
 
 Tiền mặt chắc chắn trong ngân hàng = 1.300tr + 830tr = 2.130tr (68.7% tổng ngân sách)
@@ -399,7 +399,7 @@ Số cần vay = 3.100tr − Vốn tự có huy động
 
 | TTS crypto | Vốn tự có | Gap phải vay | Δ vs trần 615tr | Trạng thái nợ |
 |---|---|---|---|---|
-| **540,0tr (Sàn cứng)** | 2.670,0tr | **430,0tr** | **−185,0tr** ✅ | 🟢 An toàn (<500tr) |
+| **500,0tr (Sàn cứng)** | 2.630,0tr | **470,0tr** | **−145,0tr** ✅ | 🟢 An toàn (<500tr) |
 | **512,5tr (Live 12/10)** | 2.642,5tr | **457,5tr** | **−152,5tr** ✅ | 🟢 An toàn (<500tr) |
 | 450,0tr (Sập sâu) | 2.580,0tr | **520,0tr** | **−95,0tr** ✅ | ⚠️ Cận ngưỡng 500tr |
 

@@ -31,7 +31,7 @@ def main():
             btc_price=84_140,
             sol_price=113.0,
             p2p_rate=25_895,
-            floor_vnd=540_000_000,
+            floor_vnd=500_000_000,
             action_note="Ưu tiên xả toàn bộ SOL ra USDT để khóa rủi ro.",
             dry_run=args.dry_run
         )

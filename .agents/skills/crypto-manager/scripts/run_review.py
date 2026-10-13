@@ -65,7 +65,7 @@ except ImportError:
     CRYPTO_PLAN_PATH = _repo / "crypto" / "crypto-plan.md"
     CRYPTO_LOGS_DIR = _repo / "crypto" / "logs"
     CACHE_RATES_FILE = Path("/Users/thien.tm/teamwork_projects/crypto_dashboard/data/cache_rates.json")
-    HARD_FLOOR_VND = 540_000_000.0
+    HARD_FLOOR_VND = 500_000_000.0
     CASH_OUT_DEADLINE_STR = "2026-10-31"
     FALLBACK_BTC_QTY = 0.15931
     FALLBACK_SOL_QTY = 55.28
@@ -224,7 +224,7 @@ def main():
         dist_vnd = tts_vnd - HARD_FLOOR_VND
         dist_pct = (dist_vnd / HARD_FLOOR_VND) * 100.0
         active_band = "TAKE_PROFIT_540M" if tts_vnd >= HARD_FLOOR_VND else "HARD_FLOOR_BREACH"
-        md_output = f"## Automated Review — TTS: {tts_vnd/1e6:.1f}tr | Band: {active_band}\nHard Floor: 540tr."
+        md_output = f"## Automated Review — TTS: {tts_vnd/1e6:.1f}tr | Band: {active_band}\nHard Floor: 500tr."
         structured = {
             "tts_vnd": tts_vnd,
             "crypto_vnd": crypto_vnd,
