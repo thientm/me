@@ -71,6 +71,37 @@ def aggregate_stats(results: list[dict]) -> dict:
             stats["spam"] += 1
     return stats
 
+import urllib.request
+import subprocess
+
+def is_port_alive(port: int) -> bool:
+    try:
+        urllib.request.urlopen(f"http://127.0.0.1:{port}/json/version", timeout=1.5)
+        return True
+    except Exception:
+        return False
+
+def ensure_port(port: int) -> bool:
+    """Returns True if Chrome was started by this call."""
+    if is_port_alive(port):
+        return False
+    try:
+        root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+        script = os.path.join(root_dir, "me-tech", "ops", "open_chrome.py")
+        subprocess.run([sys.executable, script, str(port)], check=True, timeout=35)
+        return True
+    except Exception as e:
+        print(f"[Runner] Không thể mở Chrome cổng {port}: {e}")
+        return False
+
+def close_port(port: int) -> None:
+    try:
+        root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+        script = os.path.join(root_dir, "me-tech", "ops", "close_browser.py")
+        subprocess.run([sys.executable, script, str(port)], timeout=15)
+    except Exception as e:
+        print(f"[Runner] Lỗi đóng Chrome cổng {port}: {e}")
+
 def main():
     args = parse_args()
 
@@ -93,47 +124,61 @@ def main():
             ch_name = tgt["name"]
             print(f"=== Đang xử lý kênh: {ch_name} (Dry-run: {args.dry_run}) ===")
             ch_results = []
+            started_ports = set()
 
-            # YouTube
-            if args.platform in ["yt", "all"]:
-                print(f"[{ch_name}] Đang quét YouTube Studio (cổng {tgt['yt_port']})...")
-                yt = YouTubeStudioAdapter(port=tgt["yt_port"])
-                yt_res = yt.scan_and_engage(
-                    channel_id=tgt["yt_channel_id"],
-                    channel_name=ch_name,
-                    ledger=ledger,
-                    dry_run=args.dry_run,
-                    limit_replies=args.limit
-                )
-                ch_results.extend(yt_res)
-                print(f"[{ch_name}] YouTube hoàn tất: {len(yt_res)} tương tác.")
+            # Ensure required ports are running
+            required_ports = set(filter(None, [tgt.get("yt_port"), tgt.get("fb_port"), tgt.get("tt_port")]))
+            for p in required_ports:
+                if ensure_port(p):
+                    started_ports.add(p)
 
-            # Facebook Business
-            if args.platform in ["fb", "all"]:
-                print(f"[{ch_name}] Đang quét Facebook Business Inbox (cổng {tgt['fb_port']})...")
-                fb = FacebookBusinessAdapter(port=tgt["fb_port"])
-                fb_res = fb.scan_and_engage(
-                    asset_id=tgt["fb_asset_id"],
-                    channel_name=ch_name,
-                    ledger=ledger,
-                    dry_run=args.dry_run,
-                    limit_replies=args.limit
-                )
-                ch_results.extend(fb_res)
-                print(f"[{ch_name}] Facebook hoàn tất: {len(fb_res)} tương tác.")
+            try:
+                # YouTube
+                if args.platform in ["yt", "all"]:
+                    print(f"[{ch_name}] Đang quét YouTube Studio (cổng {tgt['yt_port']})...")
+                    yt = YouTubeStudioAdapter(port=tgt["yt_port"])
+                    yt_res = yt.scan_and_engage(
+                        channel_id=tgt["yt_channel_id"],
+                        channel_name=ch_name,
+                        ledger=ledger,
+                        dry_run=args.dry_run,
+                        limit_replies=args.limit
+                    )
+                    ch_results.extend(yt_res)
+                    print(f"[{ch_name}] YouTube hoàn tất: {len(yt_res)} tương tác.")
 
-            # TikTok Studio
-            if args.platform in ["tt", "all"]:
-                print(f"[{ch_name}] Đang quét TikTok Studio (cổng {tgt['tt_port']})...")
-                tt = TikTokStudioAdapter(port=tgt["tt_port"])
-                tt_res = tt.scan_and_engage(
-                    channel_name=ch_name,
-                    ledger=ledger,
-                    dry_run=args.dry_run,
-                    limit_replies=args.limit
-                )
-                ch_results.extend(tt_res)
-                print(f"[{ch_name}] TikTok hoàn tất: {len(tt_res)} tương tác.")
+                # Facebook Business
+                if args.platform in ["fb", "all"]:
+                    print(f"[{ch_name}] Đang quét Facebook Business Inbox (cổng {tgt['fb_port']})...")
+                    fb = FacebookBusinessAdapter(port=tgt["fb_port"])
+                    fb_res = fb.scan_and_engage(
+                        asset_id=tgt["fb_asset_id"],
+                        channel_name=ch_name,
+                        ledger=ledger,
+                        dry_run=args.dry_run,
+                        limit_replies=args.limit
+                    )
+                    ch_results.extend(fb_res)
+                    print(f"[{ch_name}] Facebook hoàn tất: {len(fb_res)} tương tác.")
+
+                # TikTok Studio
+                if args.platform in ["tt", "all"]:
+                    print(f"[{ch_name}] Đang quét TikTok Studio (cổng {tgt['tt_port']})...")
+                    tt = TikTokStudioAdapter(port=tgt["tt_port"])
+                    tt_res = tt.scan_and_engage(
+                        channel_name=ch_name,
+                        ledger=ledger,
+                        dry_run=args.dry_run,
+                        limit_replies=args.limit
+                    )
+                    ch_results.extend(tt_res)
+                    print(f"[{ch_name}] TikTok hoàn tất: {len(tt_res)} tương tác.")
+
+            finally:
+                for p in started_ports:
+                    if p != 9333:  # Giữ cổng 9333 cho FB chung
+                        print(f"[{ch_name}] Đóng Chrome cổng {p} sau khi tương tác xong...")
+                        close_port(p)
 
             if args.notify_telegram:
                 ch_stats = aggregate_stats(ch_results)

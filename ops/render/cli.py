@@ -129,6 +129,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         extra_flags.append("--vo-only")
 
     env = dict(os.environ)
+    env["HF_HUB_OFFLINE"] = "1"
     ca_pem = os.path.join(root_dir, "me-tech", "pipeline", "ca-bundle.pem")
     if os.path.exists(ca_pem):
         env["SSL_CERT_FILE"] = ca_pem

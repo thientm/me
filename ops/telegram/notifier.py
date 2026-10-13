@@ -16,6 +16,7 @@ def notify_crypto_review(
     floor_vnd: float = 540_000_000,
     action_note: str = "",
     dry_run: bool = False,
+    chat_id: Optional[str] = None,
 ) -> Dict[str, Any]:
     """Format and send Crypto Review card following mobile-first best practices."""
     now_str = datetime.now().strftime("%d/%m %H:%M")
@@ -42,7 +43,7 @@ def notify_crypto_review(
     lines.append("⏳ <i>Hạn chót bảo toàn vốn: 31/10/2026</i>")
     card = "\n".join(lines)
 
-    return client.send_message(card, parse_mode="HTML", dry_run=dry_run)
+    return client.send_message(card, parse_mode="HTML", dry_run=dry_run, chat_id=chat_id)
 
 def notify_pipeline_status(
     slot: str,

@@ -1,6 +1,8 @@
 import os
 import json
 import glob
+import re
+import datetime as dt
 from typing import List, Tuple, Optional
 
 MODES = {"say", "data", "step", "shot", "flow", "outro"}
@@ -134,5 +136,31 @@ def validate_zen_meditation(content_path: str, content_dir: Optional[str] = None
 
     if not (28.0 <= est_duration <= 50.0):
         warnings.append(f"Thời lượng ước tính ({est_duration}s) nằm ngoài khoảng lý tưởng (30–45s)")
+
+    # Kiểm tra chống trùng lặp câu mở đầu (Anti-monotony Hook & Keyword Check)
+    first_seg_text = segs[0].get("text", "").strip() if segs else ""
+    if first_seg_text:
+        root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        now_month = dt.datetime.now().strftime("%Y-%m")
+        log_path = os.path.join(root_dir, "tam-an-lac", "logs", f"{now_month}.md")
+        if os.path.exists(log_path):
+            try:
+                with open(log_path, "r", encoding="utf-8") as lf:
+                    log_content = lf.read()
+                recent_hooks = re.findall(r'Mở:\s*["“]([^"”]+)["”]', log_content)
+                if recent_hooks:
+                    last_3 = recent_hooks[-3:]
+                    first_words = first_seg_text.split()[:2]
+                    prefix = " ".join(first_words).lower()
+                    for prev_hook in last_3:
+                        prev_prefix = " ".join(prev_hook.split()[:2]).lower()
+                        if prefix == prev_prefix and len(prefix) > 4:
+                            warnings.append(
+                                f"Trùng lặp cấu trúc mở đầu: '{prefix}' đã xuất hiện ở bài gần nhất ('{prev_hook}'). "
+                                f"Bắt buộc đổi mới theo quy tắc Hook Diversity trong tam-an-lac/AGENTS.md."
+                            )
+                            break
+            except Exception:
+                pass
 
     return errors, warnings, est_duration

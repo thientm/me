@@ -85,7 +85,16 @@ def main():
     run([PY, os.path.join(HERE, "deck.py"), cpath, os.path.join(WORK, "deck.js")])
     run([PY, os.path.join(HERE, "music.py"), str(total + 0.6), os.path.join(WORK, "bed.wav")])
     run([PY, os.path.join(HERE, "chime.py"), os.path.join(WORK, "chime.wav")])
-    shutil.copy(os.path.join(PROJ_ROOT, "templates", "scene.html"), os.path.join(WORK, "scene.html"))
+    template_candidates = [
+        os.path.join(PROJ_ROOT, "templates", "scene.html"),
+        os.path.join(PROJ_ROOT, "scene.html"),
+        os.path.join(os.path.dirname(PROJ_ROOT), "templates", "scene.html"),
+        os.path.join(HERE, "scene.html"),
+    ]
+    scene_src = next((p for p in template_candidates if os.path.exists(p)), None)
+    if not scene_src:
+        raise FileNotFoundError(f"Cannot find scene.html in candidates: {template_candidates}")
+    shutil.copy(scene_src, os.path.join(WORK, "scene.html"))
 
     # ảnh dẫn nguồn của trạm mode 'shot' phải nằm cạnh scene.html thì trình duyệt mới tải được
     for seg in json.load(open(cpath, encoding="utf-8"))["segments"]:

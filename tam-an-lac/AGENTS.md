@@ -21,12 +21,31 @@ The automated publishing scripts should use the local isolated Chrome profile (`
 - **TikTok**: https://www.tiktok.com/@tamanlac.tiktok
 - **Facebook Reels**: https://www.facebook.com/tamanlac.fb
 
-## Content Rules — chốt 30.09.2026 (Thiện)
+## Content Rules — chốt 30.09.2026 & bổ sung 13.10.2026 (Thiện)
 - **Không giảng nội dung kinh.** Không đọc nguyên văn kệ/kinh, không dùng lời dịch Hán-Việt cổ ("Ý dẫn đầu các pháp", "phẩm Song Yếu"…), không nêu tên kinh hay số kệ trong lời đọc — người nghe 35–65+ thấy khó hiểu, lướt qua.
 - **Nói về lời dạy của Phật bằng lời đời thường**: một bài học sống (buông bỏ, nhẫn nhịn, biết đủ, lời nói, giận dữ, cha mẹ, vô thường…), kể bằng một tình huống quen thuộc (gia đình, công việc, tuổi già, con cái), rồi một điều làm được ngay hôm nay.
 - Mạch 30–45s: câu mở chạm đúng nỗi lòng người nghe (≤2 giây, dạng câu hỏi hoặc tình huống) → điều Phật dạy, nói giản dị → ví dụ đời thường → một việc nhỏ để thực hành → chuông.
 - **Không bịa lời Phật.** Mỗi bài phải dựa trên một lời dạy có thật; nguồn (kinh, kệ, bản dịch) chỉ ghi ở `script.json` → `"source"` và mô tả YouTube, **không đọc trong video**. Không có nguồn chắc chắn thì nói "lời Phật dạy về…" ở dạng khái quát, không dựng câu trích dẫn.
 - Không hứa hẹn tâm linh (phước báu, đổi vận, chữa bệnh), không so sánh tôn giáo, không chính trị.
+
+## Luật chống trùng lặp nội dung & Cấm rập khuôn (Anti-Fatigue & Diversity Rules — chốt 13.10.2026 - Thiện)
+- **Quy tắc trượt 5 bài (Rolling 5-slot Check)**:
+  - Trước khi viết kịch bản, agent **BẮT BUỘC đọc ngược 5 bài gần nhất trong `logs/{YYYY-MM}.md`** cùng khung giờ (hoặc toàn kênh) để đối chiếu chủ đề và câu hook.
+  - **NGHIÊM CẤM trùng lặp motif**: Trong 5 bài cùng khung giờ liên tiếp, tuyệt đối không khai thác lại cùng 1 chủ đề hành vi (ví dụ: cấm dùng lại motif *"ngồi ăn cơm trưa vội / nhai chậm / nuốt vội"* trong 5 bài trưa liên tiếp).
+- **Cấm rập khuôn câu mở đầu (Hook Syntax Diversity)**:
+  - Cấm mở đầu bằng cùng một trạng từ thời gian quá 2 bài liên tiếp (ví dụ: không được liên tiếp dùng *"Trưa nay...", "Trưa rồi...", "Sáng ra...", "Đêm nay..."*).
+  - Bắt buộc luân phiên 5 cấu trúc câu mở đầu (≤2s):
+    1. *Trạng thái cảm xúc / Nỗi niềm bế tắc*: "Có việc gì làm bạn nghẹn lòng?", "Vừa nhận một tin không vui?", "Sáng nay làm hỏng việc, trưa có nuốt trôi không?"
+    2. *Tình huống hành động bộc phát*: "Định buông một lời nặng, dừng lại một nhịp...", "Vừa cãi nhau với đồng nghiệp...", "Nghe người ta bàn tán, lòng có dao động?"
+    3. *Chiêm bái & Hướng tâm tĩnh tại*: "Một phút ngắm nụ cười Đức Phật, lòng nhẹ đi một nửa...", "Ngẩng đầu nhìn trời cao, mây vẫn trôi thong thả..."
+    4. *Tâm sự đời thường mộc mạc*: "Nửa ngày bươn chải, thấy mình kiệt sức...", "Chạy ngược chạy xuôi, quên mất thân này cũng biết mệt..."
+    5. *Chiêm nghiệm nhân sinh*: "Càng tranh hơn thua, lòng càng chật chội...", "Giữ bực bội trong người, chẳng khác nào tự uống thuốc độc..."
+- **Ma trận 5 góc khai thác luân phiên cho khung trưa (Noon Rotation Matrix)**:
+  1. *Bế tắc việc sáng, lo âu việc chiều*: Buông việc đã qua, an trú hiện tại, không mang lo âu vào buổi chiều.
+  2. *Thị phi, đố kỵ & so bì công sở/buôn bán*: Lời Phật về giữ tâm như đất, không nói sau lưng, tránh xa bàn tán vô bổ.
+  3. *Dưỡng thân & Chợp mắt chánh niệm 15 phút*: Buông lỏng vầng trán, bờ vai, thở sâu hồi phục năng lượng cho thân tâm.
+  4. *Nặng gánh cơm áo & Tự ti so sánh*: Lời Phật về "biết đủ là an vui", trân trọng mái ấm và sự nỗ lực của chính mình.
+  5. *Chiêm bái Đức Phật / Bồ Tát Quán Thế Âm giữa ngày*: Khoảng lặng tâm linh thanh tịnh giữa dòng đời hối hả, hướng thiện và cầu an.
 
 ## Quy tắc sinh ảnh AI & Định hướng hình Phật — chốt 09.10.2026 (Thiện)
 - **Mục tiêu**: Chấm dứt tình trạng ảnh bị trùng lặp (người ngồi u sầu bên cửa sổ/bàn ăn lặp đi lặp lại), tăng mạnh khả năng giữ chân người xem (retention) và lôi kéo tương tác bình luận (gieo duyên niệm Phật, bái Phật cầu an).

@@ -547,6 +547,14 @@
     "ghi_chu": "dang ngay",
     "luc": "05.10.2026 08:27"
   },
+  "microsoft-agent-emergency-brake:facebook": {
+    "ghi_chu": "dang ngay",
+    "luc": "13.10.2026 08:57"
+  },
+  "microsoft-agent-emergency-brake:tiktok": {
+    "ghi_chu": "dang ngay",
+    "luc": "13.10.2026 08:55"
+  },
   "microsoft-agent-emergency-brake:youtube": {
     "ghi_chu": "dang ngay",
     "luc": "13.10.2026 08:52"
@@ -562,6 +570,18 @@
   "microsoft-decision-1:youtube": {
     "ghi_chu": "hen 12:00",
     "luc": "11.10.2026 10:30"
+  },
+  "microsoft-maia-300-gigawatt:facebook": {
+    "ghi_chu": "hen 12:00",
+    "luc": "13.10.2026 10:17"
+  },
+  "microsoft-maia-300-gigawatt:tiktok": {
+    "ghi_chu": "hen 12:30",
+    "luc": "13.10.2026 10:14"
+  },
+  "microsoft-maia-300-gigawatt:youtube": {
+    "ghi_chu": "hen 12:00",
+    "luc": "13.10.2026 10:10"
   },
   "mimo-v26:facebook": {
     "ghi_chu": "hen 12:00",

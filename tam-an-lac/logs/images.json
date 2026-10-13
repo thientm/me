@@ -227,5 +227,12 @@
   "scene": "Tôn tượng Bồ Tát Quán Thế Âm từ bi thanh thoát giữa non nước mây lành (template buddha_3.jpg)",
   "model": "templates/buddha_3.jpg",
   "luc": "11.10.2026 10:03"
+ },
+ {
+  "slug": "040_ngoi_lai_bua_trua",
+  "file": "content/040_ngoi_lai_bua_trua/img_2.jpg",
+  "scene": "Mâm cơm chay thanh đạm trên bàn gỗ mộc bên khung cửa sổ nắng trưa thanh tịnh (dùng lại từ 007_an_cham_buoi_trua, tạo 01.10, cách 12 ngày > 7 ngày)",
+  "model": "content/007_an_cham_buoi_trua/img_2.jpg",
+  "luc": "13.10.2026 10:40"
  }
 ]

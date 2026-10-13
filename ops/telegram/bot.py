@@ -90,19 +90,13 @@ def handle_command(text: str, chat_id: str) -> None:
                 btc_price=metrics["btc_price"],
                 sol_price=metrics["sol_price"],
                 p2p_rate=metrics["p2p_rate"],
-                floor_vnd=540_000_000,
-                action_note=metrics.get("recommendation", "")
+                floor_vnd=metrics.get("floor_vnd", 540_000_000),
+                action_note=metrics.get("recommendation", ""),
+                chat_id=chat_id,
             )
         except Exception as e:
-            # Fallback nếu module riêng chưa sẵn sàng
-            notifier.notify_crypto_review(
-                tts_vnd=742_000_000,
-                btc_price=64_250,
-                sol_price=152.4,
-                p2p_rate=25_410,
-                floor_vnd=540_000_000,
-                action_note="Danh mục ổn định trên sàn cứng 540tr."
-            )
+            logger.error("Lỗi tra cứu crypto: %s", e, exc_info=True)
+            client.send_message(f"❌ Không thể tra cứu dữ liệu Crypto: {e}", chat_id=chat_id)
 
     elif cmd == "/dryrun":
         target_ch = args[0] if len(args) > 0 else "me-tech"
