@@ -68,3 +68,4 @@ ops/telegram/.bot.pid
 ops/telegram/*.log
 # Engagement bot local runtime logs
 me-tech/ops/engagement/logs/*.log
+/_scratch

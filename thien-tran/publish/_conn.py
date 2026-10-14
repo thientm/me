@@ -39,12 +39,14 @@ def require_login(ctx, which):
         "facebook": ("https://www.facebook.com/thientm?locale=vi_VN", "login"),
         "tiktok": ("https://www.tiktok.com/tiktokstudio/upload", "/login"),
     }[which]
-    p = ctx.new_page()
+    p = ctx.pages[0] if ctx.pages else ctx.new_page()
     p.goto(probe[0], wait_until="domcontentloaded", timeout=60000)
+    p.wait_for_timeout(4000)
     url = p.url
-    p.close()
     if probe[1] in url:
         sys.exit(
             f"❌ Chưa đăng nhập {which.upper()}.\n"
             f"   Mở Chrome ở cổng {PORT}, đăng nhập tay vào {probe[0]} rồi chạy lại."
         )
+    print(f"✅ {which}: còn đăng nhập")
+    return p

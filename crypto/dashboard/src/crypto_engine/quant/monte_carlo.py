@@ -10,7 +10,7 @@ import math
 import random
 from typing import Dict, Any, Optional, Tuple, List, Union
 
-DEFAULT_HARD_FLOOR_VND: float = 540_000_000.0
+DEFAULT_HARD_FLOOR_VND: float = 500_000_000.0
 DEFAULT_HORIZON_DAYS: int = 37  # 2026-09-24 to 2026-10-31 Late October cashout deadline
 DEFAULT_N_SIMS: int = 1000
 DEFAULT_RHO: float = 0.78       # BTC-SOL empirical correlation

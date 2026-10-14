@@ -12,9 +12,11 @@ case "$1" in
     fi
     echo "🚀 Starting Jarvis Telegram Bot daemon..."
     cd "$DIR"
-    nohup python3 -m ops.telegram.bot > "$LOG_FILE" 2>&1 &
-    echo $! > "$PID_FILE"
-    echo "✓ Bot started with PID $! (logs: $LOG_FILE)"
+    nohup python3 -u -m ops.telegram.bot > "$LOG_FILE" 2>&1 &
+    PID=$!
+    disown $PID
+    echo $PID > "$PID_FILE"
+    echo "✓ Bot started with PID $PID (logs: $LOG_FILE)"
     ;;
 
   stop)

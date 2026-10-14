@@ -62,7 +62,11 @@ def check_channel_slot(channel: str, slot: int, today: Optional[dt.date] = None,
 
                 note = v.get("ghi_chu", "")
                 if note.startswith("hen "):
-                    ok = note[4:6] == f"{slot:02d}"
+                    part = note[4:].strip().split(":")[0]
+                    try:
+                        ok = int(part) == slot
+                    except ValueError:
+                        ok = False
                 else:
                     # Chấp nhận bài đăng ngay trong khung chuẩn bị 2 tiếng trước slot
                     ok = luc >= dt.datetime.combine(t_date, dt.time(max(slot - 2, 0)))

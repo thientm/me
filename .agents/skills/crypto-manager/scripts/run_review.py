@@ -223,7 +223,7 @@ def main():
         tts_vnd = withdrawn_vnd + crypto_vnd
         dist_vnd = tts_vnd - HARD_FLOOR_VND
         dist_pct = (dist_vnd / HARD_FLOOR_VND) * 100.0
-        active_band = "TAKE_PROFIT_540M" if tts_vnd >= HARD_FLOOR_VND else "HARD_FLOOR_BREACH"
+        active_band = "TAKE_PROFIT_500M" if tts_vnd >= HARD_FLOOR_VND else "HARD_FLOOR_BREACH"
         md_output = f"## Automated Review — TTS: {tts_vnd/1e6:.1f}tr | Band: {active_band}\nHard Floor: 500tr."
         structured = {
             "tts_vnd": tts_vnd,
@@ -300,7 +300,7 @@ def main():
     band = structured.get("active_band", "")
     if band == "HARD_FLOOR_BREACH":
         sys.exit(2)
-    elif band == "TAKE_PROFIT_540M":
+    elif band in ("TAKE_PROFIT_500M", "TAKE_PROFIT_540M"):
         sys.exit(3)
     else:
         sys.exit(0)

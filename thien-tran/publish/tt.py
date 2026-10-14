@@ -21,12 +21,12 @@ if AT:
     print("hen:", WHEN.strftime("%d/%m/%Y %H:%M"))
 
 pw, b, ctx = connect()
-require_login(ctx, "tiktok")
-q = ctx.new_page()
+q = require_login(ctx, "tiktok")
 q.set_default_timeout(120000)
 
-q.goto("https://www.tiktok.com/tiktokstudio/upload?from=webapp", wait_until="domcontentloaded")
-q.wait_for_timeout(10000)
+if "tiktokstudio/upload" not in q.url:
+    q.goto("https://www.tiktok.com/tiktokstudio/upload?from=webapp", wait_until="domcontentloaded")
+q.wait_for_timeout(6000)
 q.locator("input[type=file]").first.set_input_files(VIDEO)
 print("da chon file, cho upload…")
 for _ in range(30):

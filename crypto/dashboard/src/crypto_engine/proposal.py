@@ -60,10 +60,10 @@ def generate_markdown_review(
         f"## {date_label}: Deep Review — [TTS: {tts_str} | Band: {eval_matrix.active_band} | Khuyến nghị Lệnh 10 Phút]",
         "",
         discipline_line,
-        "> **Kế hoạch 1 tháng:** Sprint thoát vốn bảo vệ sàn cứng 540tr VND trước ngày 31/10/2026.",
+        "> **Kế hoạch 1 tháng:** Sprint thoát vốn bảo vệ sàn cứng 500tr VND trước ngày 31/10/2026.",
         "",
         "### Input",
-        f"- **TTS:** {tts_str} (VND đã rút: {format_vnd_tr(snapshot.withdrawn_vnd)} + Crypto: {format_vnd_tr(snapshot.crypto_vnd)}) | Sàn cứng Hard Floor: 540.000.000 VND",
+        f"- **TTS:** {tts_str} (VND đã rút: {format_vnd_tr(snapshot.withdrawn_vnd)} + Crypto: {format_vnd_tr(snapshot.crypto_vnd)}) | Sàn cứng Hard Floor: 500.000.000 VND",
         f"- **Khoảng cách sàn:** {dist_str} ({dist_pct_str}) | Còn **{eval_matrix.days_to_deadline} ngày** tới hạn chót {eval_matrix.deadline_date}",
         "",
         "| Tài sản | Số lượng ĐO | Giá Spot | Giá trị USD | Quy đổi VND | Tỷ trọng |",
@@ -94,14 +94,14 @@ def generate_markdown_review(
         "- **N2 Vĩ mô Crypto:** F&G Greed (~74), ETF ròng duy trì dòng tiền tổ chức.",
         "- **N3 Vi mô Kỹ thuật:** ATR14 BTC 2,70% | ATR14 SOL 4,51% | SOL/BTC percentile 98,9% (đỉnh 90 ngày).",
         f"- **N4 Pháp lý VN & Kênh rút:** THÔNG SUỐT | Tỷ giá P2P realtime: {snapshot.p2p_rate:,.0f} VND/USDT.",
-        f"→ **Band Trục 2:** `{eval_matrix.active_band}` | Sàn cứng 540tr cách {dist_str} ({dist_pct_str}).",
+        f"→ **Band Trục 2:** `{eval_matrix.active_band}` | Sàn cứng 500tr cách {dist_str} ({dist_pct_str}).",
         ""
     ])
 
     # Decision & Order Sheet
     lines.extend([
         "### Quyết định & Bảng Lệnh 10 Phút (10-minute Executable Order Sheet)",
-        f"- **Trạng thái Matrix:** `{eval_matrix.active_band}` (Quy tắc Nhị phân 540tr).",
+        f"- **Trạng thái Matrix:** `{eval_matrix.active_band}` (Quy tắc Nhị phân 500tr).",
         f"- **Overrides kích hoạt:** {', '.join(eval_matrix.overrides_triggered) if eval_matrix.overrides_triggered else 'Không có.'}",
         "",
         "| # | Thao tác | Cặp / Kênh | Loại lệnh | Khối lượng | Giá / Điều kiện | VND ước tính | Thời hạn | Ghi chú |",
@@ -142,8 +142,8 @@ def generate_markdown_review(
 
     # Scenarios & Sensitivity Matrix
     lines.extend([
-        "### Kịch bản & Insight (Độ nhạy Sàn 540tr)",
-        "| Biến động | BTC | SOL | TTS mô phỏng | So với Sàn cứng 540tr |",
+        "### Kịch bản & Insight (Độ nhạy Sàn 500tr)",
+        "| Biến động | BTC | SOL | TTS mô phỏng | So với Sàn cứng 500tr |",
         "|---|---|---|---|---|",
         f"| **+10%** | ${snapshot.btc_price*1.10:,.0f} | ${snapshot.sol_price*1.10:,.2f} | {format_vnd_tr(snapshot.tts_vnd + (btc_vnd+sol_vnd)*0.10)} | An toàn (Vượt sàn {(snapshot.tts_vnd + (btc_vnd+sol_vnd)*0.10 - HARD_FLOOR_VND)/1e6:,.1f}tr) |",
         f"| **0%** | ${snapshot.btc_price:,.0f} | ${snapshot.sol_price:,.2f} | {tts_str} | {dist_str} ({dist_pct_str}) |",
@@ -151,7 +151,7 @@ def generate_markdown_review(
         f"| **−10%** | ${snapshot.btc_price*0.90:,.0f} | ${snapshot.sol_price*0.90:,.2f} | {format_vnd_tr(snapshot.tts_vnd - (btc_vnd+sol_vnd)*0.10)} | 🔴 THỦNG SÀN NGHIÊM TRỌNG |",
         "",
         "**Trigger thay đổi khuyến nghị:**",
-        "1. TTS tụt dưới 540tr VND bất kỳ lúc nào -> Chuyển ngay sang Emergency Market Sell ALL.",
+        "1. TTS tụt dưới 500tr VND bất kỳ lúc nào -> Chuyển ngay sang Emergency Market Sell ALL.",
         "2. Phát hiện bất kỳ hạn chế tài khoản Binance hoặc P2P -> Market sell toàn bộ trong 24h.",
         "3. Chạm mốc ngày 17/10/2026 (<14 ngày tới hạn chót) -> Market sell toàn bộ không phụ thuộc giá.",
         ""

@@ -42,7 +42,8 @@ def scan(title, ctx=None):
     if ctx is None:
         from _conn import connect
         pw, _b, ctx = connect()
-    p = ctx.new_page()
+    yt_pages = [x for x in ctx.pages if "studio.youtube.com" in x.url]
+    p = yt_pages[0] if yt_pages else (ctx.pages[0] if ctx.pages else ctx.new_page())
     try:
         p.set_default_timeout(60000)
         p.goto("https://studio.youtube.com/channel/%s/videos/short" % CH,
@@ -65,7 +66,8 @@ def scan(title, ctx=None):
         return pub, draft
     finally:
         try:
-            p.close()
+            if len(ctx.pages) > 1:
+                p.close()
         except Exception:
             pass
         if pw is not None:

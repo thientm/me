@@ -34,7 +34,7 @@ from .config import (
 def format_section_7_5_review(
     tts_vnd: float,
     withdrawn_vnd: float = 0.0,
-    active_band: str = "TAKE_PROFIT_540M",
+    active_band: str = "TAKE_PROFIT_500M",
     action_summary: str = "Bán 50% coin (xả sạch SOL, rút Stables)",
     borrow_needed_vnd: Optional[float] = None,
     date_str: Optional[str] = None,
@@ -80,11 +80,11 @@ def format_section_7_5_review(
         f"## {date_label}: Review — TTS {tts_tr:,.1f}tr ({tts_vnd:,.0f} VND) | Band: {active_band}",
         "",
         disc_line,
-        "> **Kế hoạch 1 tháng:** Sprint thoát vốn bảo vệ sàn cứng 540tr VND trước ngày 31/10/2026.",
+        "> **Kế hoạch 1 tháng:** Sprint thoát vốn bảo vệ sàn cứng 500tr VND trước ngày 31/10/2026.",
         "",
         "### Input",
         f"- **TTS:** **{tts_tr:,.1f}tr VND** (VND đã rút: {withdrawn_tr:,.1f}tr + Crypto: {crypto_tr:,.1f}tr)",
-        f"- **Sàn cứng Hard Floor:** **540.000.000 VND (540tr)** | Khoảng cách tới sàn 540tr: **{dist_tr:+,.1f}tr ({dist_vnd / HARD_FLOOR_VND * 100:+,.2f}%)**",
+        f"- **Sàn cứng Hard Floor:** **500.000.000 VND (500tr)** | Khoảng cách tới sàn 500tr: **{dist_tr:+,.1f}tr ({dist_vnd / HARD_FLOOR_VND * 100:+,.2f}%)**",
         f"- **Tỷ trọng đo lường:** BTC {btc_qty} @ ${btc_price:,.0f} · SOL {sol_qty} @ ${sol_price:,.2f} · Stables ${stables_usd:,.0f} · Tỷ giá P2P {p2p_rate:,.0f} VND/USDT",
         f"- **Hạn chót rút vốn:** Cuối tháng 10/2026 ({CASH_OUT_DEADLINE_STR})",
         "",
@@ -97,7 +97,7 @@ def format_section_7_5_review(
         "",
         "### Quyết định",
         f"- **Khuyến nghị hành động:** {action_summary}",
-        f"- **Quy tắc thực thi:** {'Kích hoạt Take Profit 50% ngay lập tức (xả sạch SOL trước, rút sạch Stables ra VND)' if tts_vnd >= HARD_FLOOR_VND else 'EMERGENCY: Đâm thủng Hard Floor 540tr -> Market Sell ALL ngay lập tức ra VND!'}",
+        f"- **Quy tắc thực thi:** {'Kích hoạt Take Profit 50% ngay lập tức (xả sạch SOL trước, rút sạch Stables ra VND)' if tts_vnd >= HARD_FLOOR_VND else 'EMERGENCY: Đâm thủng Hard Floor 500tr -> Market Sell ALL ngay lập tức ra VND!'}",
         "",
         "### Đối chiếu BĐS",
         f"- **Tổng ngân sách làm sổ 80m²:** {BDS_TOTAL_COST_VND / 1e6:,.0f}tr VND.",
@@ -107,8 +107,8 @@ def format_section_7_5_review(
         "",
         "### Kịch bản & Insight",
         f"1. **Rủi ro số 1 (615tr):** Chưa chốt nguồn vay tiền sử dụng đất trước thời hạn 30/09.",
-        f"2. **Rủi ro số 2 (540tr):** Đâm thủng sàn cứng 540tr nếu giá giảm mà không thực hiện chốt lời 50%.",
-        f"3. **Độ nhạy giá:** Biến động giảm 5% đưa TTS về {tts_tr * 0.95:,.1f}tr (cách sàn 540tr: {(tts_vnd * 0.95 - HARD_FLOOR_VND) / 1e6:+,.1f}tr).",
+        f"2. **Rủi ro số 2 (500tr):** Đâm thủng sàn cứng 500tr nếu giá giảm mà không thực hiện chốt lời 50%.",
+        f"3. **Độ nhạy giá:** Biến động giảm 5% đưa TTS về {tts_tr * 0.95:,.1f}tr (cách sàn 500tr: {(tts_vnd * 0.95 - HARD_FLOOR_VND) / 1e6:+,.1f}tr).",
         ""
     ]
     return "\n".join(lines)

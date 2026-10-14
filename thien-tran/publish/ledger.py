@@ -18,7 +18,7 @@ import sys
 import datetime as dt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PATH = os.path.abspath(os.path.join(HERE, "..", "..", "logs", "posted.json"))
+PATH = os.path.abspath(os.path.join(HERE, "..", "logs", "posted.json"))
 
 
 def _load():

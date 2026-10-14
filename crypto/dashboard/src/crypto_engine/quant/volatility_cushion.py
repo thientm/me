@@ -9,7 +9,7 @@ from __future__ import annotations
 import math
 from typing import Dict, Any, Optional, Union
 
-DEFAULT_HARD_FLOOR_VND: float = 540_000_000.0
+DEFAULT_HARD_FLOOR_VND: float = 500_000_000.0
 DEFAULT_PORTFOLIO_ATR_PCT: float = 0.0310  # 3.10% daily portfolio ATR
 DEFAULT_CPPI_MULTIPLIER: float = 3.0       # k = 3.0 (3-sigma cushion buffer)
 

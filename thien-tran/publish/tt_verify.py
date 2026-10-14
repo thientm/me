@@ -22,8 +22,8 @@ def main():
     want = norm(sys.argv[1] if len(sys.argv) > 1 else TT_CAPTION.split("#")[0][:40])
     print("-- doi chieu moc: <<%s>>" % want)
     pw, b, ctx = connect()
+    p = ctx.pages[0] if ctx.pages else ctx.new_page()
     try:
-        p = ctx.new_page()
         p.set_default_timeout(60000)
         p.goto("https://www.tiktok.com/tiktokstudio/content",
                wait_until="domcontentloaded")

@@ -31,10 +31,10 @@ from .valuation import ValuationSnapshot
 
 @dataclass
 class MatrixEvaluation:
-    hard_floor_vnd: float            # 540,000,000.0
-    active_band: str                 # "TAKE_PROFIT_540M" | "HARD_FLOOR_BREACH" | "OVERRIDE_EMERGENCY"
-    distance_to_floor_vnd: float     # tts_vnd - 540,000,000
-    distance_to_floor_pct: float     # (distance_to_floor_vnd / 540,000,000) * 100
+    hard_floor_vnd: float            # 500,000,000.0
+    active_band: str                 # "TAKE_PROFIT_500M" | "HARD_FLOOR_BREACH" | "OVERRIDE_EMERGENCY"
+    distance_to_floor_vnd: float     # tts_vnd - 500,000,000
+    distance_to_floor_pct: float     # (distance_to_floor_vnd / 500,000,000) * 100
     urgent_action_required: bool
     missed_recommendations_count: int
     orders_sheet: List[Dict[str, Any]]
@@ -188,7 +188,7 @@ def calculate_take_profit_orders(
         })
         step += 1
 
-    # 6. Stop-Market on remaining BTC to lock in 540tr floor
+    # 6. Stop-Market on remaining BTC to lock in 500tr floor
     remaining_btc = max(0.0, btc_qty - btc_to_sell)
     if remaining_btc > 0.0 and btc_price > 0.0:
         total_safe_cash = (
@@ -199,11 +199,11 @@ def calculate_take_profit_orders(
         )
         if total_safe_cash >= HARD_FLOOR_VND:
             stop_price = round(btc_price * 0.88, 1)
-            reason = "Stop trailing 12% bảo vệ lợi nhuận (Sàn 540tr đã an toàn 100% bằng tiền mặt)"
+            reason = "Stop trailing 12% bảo vệ lợi nhuận (Sàn 500tr đã an toàn 100% bằng tiền mặt)"
         else:
             required_floor_deficit = HARD_FLOOR_VND - total_safe_cash
             stop_price = round(required_floor_deficit / (remaining_btc * p2p_rate), 1)
-            reason = "Stop-Market GTC bảo vệ sàn cứng 540.000.000 VND cho phần BTC còn lại"
+            reason = "Stop-Market GTC bảo vệ sàn cứng 500.000.000 VND cho phần BTC còn lại"
 
         orders.append({
             "step": step,
@@ -379,7 +379,7 @@ def evaluate_binary_matrix(
             reason_prefix="OVERRIDE EMERGENCY"
         )
     elif tts_vnd >= HARD_FLOOR_VND:
-        active_band = "TAKE_PROFIT_540M"
+        active_band = "TAKE_PROFIT_500M"
         urgent = True
         orders = calculate_take_profit_orders(
             btc_qty=btc_qty,
@@ -400,7 +400,7 @@ def evaluate_binary_matrix(
             btc_price=btc_price,
             sol_price=sol_price,
             p2p_rate=p2p_rate,
-            reason_prefix="HARD FLOOR BREACHED (<540tr)"
+            reason_prefix="HARD FLOOR BREACHED (<500tr)"
         )
 
     return MatrixEvaluation(
