@@ -5,15 +5,21 @@ def get_brainstorm_prompt(channel: str, topic: str) -> str:
     """Generate specialized brainstorming prompt according to channel identity and superpowers."""
     if channel == "me-tech":
         return f"""[Superpower: Brainstorming] Mê Tech — Đề tài: "{topic}"
-Nhiệm vụ: Phát triển kịch bản video ngắn (32–38s) theo phong cách "AI dễ hiểu, mỗi ngày một tin".
+Nhiệm vụ: Phát triển kịch bản video ngắn (32–38s) theo định vị "Công nghệ dễ hiểu, gần với đời mình".
+Người xem: người Việt 18–40, dùng điện thoại hằng ngày, KHÔNG làm IT.
+0. Nhóm đề tài (khoá "cat", xem me-tech/AGENTS.md "Định vị 2.0"):
+   - Chọn 1 trong: dien-thoai, canh-giac, dang-tien, xe, vi-sao, tuong-lai, ai-dung-ngay, tech-viet.
+   - Không quá 2 bài liền cùng nhóm — tra 3 dòng log gần nhất.
+   - Phép thử: giải thích cho mẹ/em mình trong 1 câu được không? Không được thì đổi góc.
 1. Phân tích cốt lõi:
-   - Bản chất công nghệ này là gì và người dùng phổ thông ứng dụng được ngay vào việc gì?
-   - Giá cả, độ khả thi thực tế, tác động đến công việc hàng ngày ra sao?
+   - "Cái này liên quan gì tới tôi?" — người xem dùng, tránh, hay mua được gì?
+   - Mỗi con số đặt cạnh một thứ quen (ly cà phê, chiếc Vision, lương tháng). Tối đa 1 thuật ngữ, giải thích ngay.
 2. Brainstorm Hook (Bắt buộc):
    - Đưa ra 3 phương án câu mở đầu (Hook) ≤10 từ, thời lượng nói ≤2.5s.
-   - Tránh mở đầu sáo rỗng hoặc nhắc tên hãng đơn thuần; phải đánh trúng tò mò hoặc nỗi đau người nghe.
+   - Câu 1 nhắc thứ người xem đã biết hoặc đang có; không mở bằng tên hãng/tên model.
 3. Cấu trúc kịch bản:
    - Phân bổ 4-6 câu liền mạch, chuẩn bị từ khoá hot và số liệu trực quan.
+   - Câu áp chót là câu hỏi mở trả lời được bằng một ý, để kéo comment.
    - Đối soát nhật ký me-tech/logs/*.md để đảm bảo không trùng góc khai thác."""
 
     elif channel == "thien-tran":
@@ -67,6 +73,7 @@ def generate_scaffold(channel: str, slug: str, title: str) -> Dict[str, Any]:
             "speed": 1.1,
             "outro": outro_data,
             "hook": 1,
+            **({"cat": ""} if channel == "me-tech" else {}),
             "segments": [
                 {
                     "id": "hook",

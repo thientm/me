@@ -2,7 +2,8 @@
 
 > **@ đúng file này là đủ.** Nó trỏ tới mọi thứ còn lại.
 > Kênh: Facebook Page "Mê Tech" (facebook.com/mecongnghe40) · TikTok · YouTube Shorts
-> Định vị: "AI dễ hiểu" — tin AI tiếng Việt, ngắn, luôn có góc ứng dụng thực tế.
+> Định vị (từ 16.10.2026): **"Công nghệ dễ hiểu, gần với đời mình"** — 8 nhóm đề tài, AI chỉ là một nhóm.
+> Lý do, tỷ lệ, mục tiêu đo, lộ trình Remotion: `me-tech-plan.md` mục 0.
 
 ## Môi trường — agent không cần lo
 
@@ -26,11 +27,15 @@ Agent làm theo đúng thứ tự dưới. Dừng lại ở hai chốt duyệt.
 
 ### 1 · Chọn tin
 - Đọc `logs/{YYYY-MM}.md` → `grep -i "<từ khoá>" logs/*.md` để **chống trùng**
-- Research tin AI 24–48h. Ưu tiên: có góc ứng dụng cho người Việt bình thường > có số kiểm chứng được > chưa nằm trong log
-- **Tích hợp Superpowers (`brainstorming`)**: Trước khi viết kịch bản, chạy brainstorming nhanh 3 góc khai thác ứng dụng thực tế cho người Việt ("AI dễ hiểu") và 3 phương án hook mở đầu, chọn góc nhìn sắc bén nhất.
+- **Chọn nhóm trước, tin sau.** Tra `cat` của 3 dòng log gần nhất → chọn nhóm theo tỷ lệ ở
+  mục "Định vị 2.0" bên dưới (không quá 2 bài liền cùng nhóm) → rồi mới research đề tài 24–48h trong nhóm đó
+- Ưu tiên: người không làm IT thấy liên quan tới mình > có số kiểm chứng được, so được với thứ quen > chưa nằm trong log
+- Phép thử: **giải thích cho mẹ/em mình trong 1 câu được không?** Không được → bỏ hoặc đổi góc
+- **Tích hợp Superpowers (`brainstorming`)**: Trước khi viết kịch bản, chạy brainstorming nhanh 3 góc "cái này liên quan gì tới tôi" cho người Việt và 3 phương án hook mở đầu, chọn góc nhìn sắc bén nhất.
 
 ### 2 · Viết kịch bản
 - Tạo `pipeline/content/<slug>.json`, lấy `pipeline/content/lawzero.json` làm mẫu
+- Khai `"cat": "<nhóm>"` ở khoá gốc — `validate.py` chặn nếu thiếu hoặc lạ (xem "Định vị 2.0")
 - **Độ dài chốt: 32–38 giây** (~12–14 câu). `build.py` tự cảnh báo nếu lệch ra ngoài
 - Mỗi câu khai một `mode` và một `group` — xem **Ngữ pháp hình** bên dưới
 - Luật chữ: số trong `say` viết bằng chữ, trong `words` viết bằng chữ số, kèm `weights`
@@ -58,6 +63,7 @@ Caption từng nền tảng: `pipeline/publish/meta.py`.
 
 ### 5 · Ghi log
 1 dòng/bài vào `logs/{YYYY-MM}.md`. Sau 24h cập nhật reach/views.
+- Cột Ghi chú **mở đầu bằng `cat: <nhóm>`** — review 30/10 xếp hạng theo nhóm, thiếu là mất mẫu.
 - **Tích hợp Superpowers (`verification-before-completion`)**: Bắt buộc chỉ ghi log khi có bằng chứng xác minh (exit code 0 từ các script verify, trạng thái Scheduled/Published sạch, không có lỗi).
 - **Soát Facebook trước khi ghi log** (chốt 25.09.2026): mở bài trong Business Suite,
   xác nhận **Share to Facebook story = bật**.
@@ -65,6 +71,41 @@ Caption từng nền tảng: `pipeline/publish/meta.py`.
   Nhãn trạng thái phải sạch — thấy **"Failed to publish"** thì bài chưa lên, dù đã có dòng.
 - Sau 24h ghi thêm bài đó có nhãn **High-quality creative** của Facebook không
   (`HQ ✓` / `HQ ✗`) — xem mục "Nhãn High-quality creative" bên dưới.
+
+---
+
+## Định vị 2.0 — chốt 16.10.2026
+
+Bốn tuần tin AI thuần: giữ 3s FB 25%, ~40 follow / 16K view. Bài thắng duy nhất (Xiaomi MiMo,
+×14 trung vị) thắng nhờ **so với tên quen + giá**, không nhờ model. Nút thắt là **đề tài**
+quá chuyên môn, không phải câu móc. Đầy đủ: `me-tech-plan.md` mục 0.
+
+**Tám nhóm — khoá `"cat"`, `validate.py` chặn nếu thiếu/lạ:**
+
+| `cat` | Nhóm | Khối | Tỷ lệ khối |
+|---|---|---|---|
+| `dien-thoai` | 📱 Điện thoại & đồ dùng hằng ngày | Đời thường | **40%** |
+| `canh-giac` | 🛡️ Cảnh giác công nghệ (lừa đảo, deepfake) | Đời thường | |
+| `dang-tien` | 💰 Đáng tiền không? (so giá, mua hay chờ) | Đời thường | |
+| `xe` | 🚗 Xe tương lai (Tesla, xe bay, VinFast, robotaxi) | Wow | **30%** |
+| `vi-sao` | 🔬 Cái này hoạt động thế nào? | Wow | |
+| `tuong-lai` | 🚀 Tương lai gần (robot, AR, vũ trụ) | Wow | |
+| `ai-dung-ngay` | 🤖 AI dùng được ngay — chỉ lợi ích, không benchmark | AI | **20%** |
+| `tech-viet` | 🇻🇳 Tech Việt — hoặc tin AI thật sự lớn | Tin lớn | **10%** |
+| `diem-tin` | Điểm tin nhanh (`kind: "roundup"`, tự gán) | — | — |
+
+**Không quá 2 bài liền cùng nhóm.** Không làm nữa, trừ khi có góc đời thường rõ: chip/hạ tầng,
+kỹ thuật huấn luyện, benchmark thuần, nghiên cứu học thuật, chính sách AI nước ngoài.
+
+**Bốn luật viết thêm** (cộng với luật câu móc bên dưới):
+
+1. Câu 1 nhắc **thứ người xem đã biết hoặc đang có** — "Điện thoại bạn đang cầm…"
+2. Mỗi con số đặt **cạnh một thứ quen** — "rẻ bằng ly cà phê", "đắt bằng ba chiếc Vision"
+3. **Tối đa 1 thuật ngữ/bài**, giải thích ngay trong câu đó
+4. Câu áp chót là **câu hỏi mở** trả lời được bằng một ý — kéo comment
+
+Đề tài "wow" (xe bay, robot) dễ bị thổi phồng nhất — trạm "NÓI CHO ĐÚNG" ở đó là bắt buộc thật sự.
+Video/ảnh sinh bằng AI phải ghi **"Minh hoạ bằng AI"** trên màn hình.
 
 ---
 
@@ -536,7 +577,7 @@ giữ quá giây thứ 3, APV YouTube ~55% so với ~70% của Shorts. Câu đ�
 1. Câu 1 **≤ 10 chữ, ≤ 2 giây**, đọc được ngay khung hình đầu
 2. **Không mở bằng tên hãng** — tên hãng để câu 2, làm phần "giải thích"
 3. Câu 1 phải **đúng với nguồn từng chữ**. Chỗ nào hụt thì câu 2 bù ngay,
-   không đợi tới trạm "NÓI CHO ĐÚNG". Kênh là "AI dễ hiểu": được sốc, được
+   không đợi tới trạm "NÓI CHO ĐÚNG". Kênh là "công nghệ dễ hiểu": được sốc, được
    gây tò mò, **không được sai** — bị lừa ở giây thứ 5 thì mất uy tín lâu hơn
    cái lợi một lượt lướt
 

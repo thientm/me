@@ -12,6 +12,11 @@ import json, sys
 
 MODES = {"say", "data", "step", "shot", "flow", "outro"}
 
+# 16.10.2026: định vị 2.0 — 8 nhóm đề tài, xem AGENTS.md "Định vị 2.0".
+# `diem-tin` chỉ dành cho kind "roundup".
+CATS = {"dien-thoai", "canh-giac", "dang-tien", "xe", "vi-sao", "tuong-lai",
+        "ai-dung-ngay", "tech-viet", "diem-tin"}
+
 # Hiệu chỉnh từ ba bài đã dựng thật (lawzero · glm53 · rnd-index):
 # 136–141 âm tiết ↔ 36,6–37,6 giây → 0,268 giây/âm tiết, sai số ±3%.
 SEC_PER_SYL = 0.268
@@ -115,6 +120,19 @@ def check(path):
                 continue
             if not gs[0].get("lab"):
                 err.append("roundup: trạm tin '%s' thiếu 'lab' — mỗi tin phải ghi nguồn" % g)
+
+    # === CỔNG NHÓM ĐỀ TÀI — đừng gỡ ===
+    # 16.10.2026: bốn tuần tin AI thuần, giữ 3s FB chỉ 25%. Đổi sang 8 nhóm
+    # đề tài đời thường; review 30/10 xếp hạng theo nhóm nên thiếu `cat` là
+    # mất mẫu. Điểm tin nhanh mặc định `diem-tin`.
+    cat = d.get("cat") or ("diem-tin" if d.get("kind") == "roundup" else None)
+    if cat is None:
+        err.append('thiếu "cat" ở khoá gốc — nhóm đề tài, một trong: '
+                   + ", ".join(sorted(CATS - {"diem-tin"})))
+    elif cat not in CATS:
+        err.append('"cat": "%s" không có trong 8 nhóm — xem AGENTS.md "Định vị 2.0"' % cat)
+    elif cat == "diem-tin" and d.get("kind") != "roundup":
+        err.append('"cat": "diem-tin" chỉ dành cho điểm tin nhanh (kind "roundup")')
 
     # === CỔNG CÂU MÓC — đừng gỡ ===
     # 24.09.2026: tuần đầu video chỉ 25% view FB giữ quá giây 3. Luật câu móc

@@ -6,7 +6,8 @@ class TestOrchestratorBrainstorm(unittest.TestCase):
         prompt = get_brainstorm_prompt("me-tech", topic="Claude 3.7 Sonnet Released")
         self.assertIn("Mê Tech", prompt)
         self.assertIn("Claude 3.7 Sonnet Released", prompt)
-        self.assertIn("AI dễ hiểu", prompt)
+        self.assertIn("Công nghệ dễ hiểu", prompt)
+        self.assertIn("dien-thoai", prompt)
         self.assertIn("hook", prompt.lower())
 
     def test_thien_tran_prompt(self):

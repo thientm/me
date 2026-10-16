@@ -1,6 +1,7 @@
 {
  "_doc": "MẪU ĐIỂM TIN NHANH — dùng khi trong ngày không đủ một tin đủ nóng để đứng riêng. Chép file này, đổi slug/date và ba tin. Đừng sửa cấu trúc trạm. Xem AGENTS.md mục 'Điểm tin nhanh'.",
  "kind": "roundup",
+ "cat": "diem-tin",
  "slug": "diemtin-DDMM",
  "voice": "Xuân Vĩnh",
  "brand": "MÊ TECH",

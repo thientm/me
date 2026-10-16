@@ -48,7 +48,7 @@ def caption_for(slug):
         lines += ["", "• " + plain(r["t"])]
         if r.get("d"):
             lines[-1] += "\n  " + plain(r["d"])
-    lines += ["", "Mê Tech — AI dễ hiểu, mỗi ngày một tin.", "",
+    lines += ["", "Mê Tech — Công nghệ dễ hiểu, gần với đời mình.", "",
               "#AI #congnghe #MeTech #hocAI"]
     return "\n".join(lines)
 

@@ -1,10 +1,141 @@
-# Mê Tech — Plan vận hành kênh nội dung AI
+# Mê Tech — Plan vận hành kênh nội dung công nghệ
 
-Kênh: Facebook Page **Mê Tech** (facebook.com/mecongnghe40) + **TikTok** (TikTok Studio).
-Định vị: "AI dễ hiểu" — tin AI tiếng Việt, ngắn gọn, luôn có góc ứng dụng thực tế, mỗi bài ít nhất 1 ảnh.
+Kênh: Facebook Page **Mê Tech** (facebook.com/mecongnghe40) + **TikTok** + **YouTube Shorts**.
+Định vị (từ 16.10.2026): **"Công nghệ dễ hiểu, gần với đời mình"** — xem mục 0.
+Định vị cũ "AI dễ hiểu" (tin AI thuần) đã bị thay thế, lý do ở mục 0.1.
 
 > File này là bán tĩnh. Chỉ sửa khi chiến lược/nhịp đăng thật sự đổi.
 > Log từng bài đã đăng: `me-tech/logs/{YYYY-MM}.md` (append-only).
+
+---
+
+## 0. Định vị 2.0 — chốt 16.10.2026
+
+### 0.1 Vì sao đổi
+
+Bốn tuần làm video (18/09 → 15/10), số liệu ở `reviews/2026-09-w4-review.md` và `logs/`:
+
+| Dấu hiệu | Số | Đọc ra |
+|---|---|---|
+| Bài thắng | Xiaomi MiMo **5.943** view TikTok (×14 trung vị) | thắng nhờ **so với tên quen + giá** ("ngang Claude, rẻ hơn 11 lần"), không nhờ bản thân model |
+| Bài yếu | R&D Index, GLM tự viết hạ tầng, Hội đồng Bảo an | đề tài trừu tượng, người xem không có chỗ bám |
+| Giữ 3 giây FB | **25%** | 3/4 người lướt đi trước khi hiểu bài nói gì |
+| View → follow | ~40 follow / ~16K view | người xem không thấy kênh **dành cho mình** |
+| Log tháng 10 | chip 2nm, Fork and Flush, benchmark, arXiv, red team… | vẫn là tin **ngành AI**, nói với dân trong nghề |
+
+Câu móc đã sửa (24/09) nhưng **đề tài** vẫn chuyên môn — móc hay tới đâu cũng không cứu được một
+đề tài người xem không quan tâm. Nút thắt là **chọn đề tài**, không phải cách kể.
+
+### 0.2 Định vị mới
+
+> **Mê Tech — Công nghệ dễ hiểu, gần với đời mình.**
+> Mỗi video trả lời một câu: *"Cái này liên quan gì tới tôi?"*
+
+AI vẫn là một nhóm đề tài, **không còn là cả kênh**. Ba điều không đổi: nói đúng nguồn
+(trạm "NÓI CHO ĐÚNG" + ảnh dẫn nguồn), 32–38 giây, một file cho cả ba nền tảng.
+
+Người xem mục tiêu: người Việt 18–40, dùng điện thoại hằng ngày, **không** làm IT.
+Phép thử trước khi chốt đề tài: *giải thích cho mẹ/em mình trong 1 câu được không?* Không được → bỏ hoặc đổi góc.
+
+### 0.3 Tám nhóm đề tài — khoá `"cat"` trong file nội dung
+
+| `cat` | Nhóm | Ví dụ đề tài | Vì sao |
+|---|---|---|---|
+| `dien-thoai` | 📱 Điện thoại & đồ dùng hằng ngày | "iPhone mới đắt hơn 5 triệu vì đâu?", "Sạc qua đêm có hại pin không?" | ai cũng cầm, search + share mạnh |
+| `xe` | 🚗 Xe tương lai | Tesla, xe bay, robotaxi, VinFast, BYD | hình ảnh "wow", xe điện đang nóng ở VN |
+| `canh-giac` | 🛡️ Cảnh giác công nghệ | deepfake giả giọng người thân, app đọc trộm tin nhắn, lừa đảo qua QR | hữu ích → share cho cả nhà, kéo follow tốt nhất |
+| `ai-dung-ngay` | 🤖 AI dùng được ngay | "Nói một câu, ChatGPT làm xong file Excel" | giữ thế mạnh AI nhưng chỉ còn **lợi ích**, bỏ benchmark |
+| `vi-sao` | 🔬 Cái này hoạt động thế nào? | Face ID nhận ra mặt ra sao? Starlink phát sóng thế nào? | trả lời một câu tò mò, sống lâu (evergreen) |
+| `tuong-lai` | 🚀 Tương lai gần | robot giúp việc, kính AR, du lịch vũ trụ | gây tò mò, hợp dựng hình động |
+| `dang-tien` | 💰 Đáng tiền không? | so giá, so cấu hình, "mua hay chờ" | lặp đúng công thức bài MiMo |
+| `tech-viet` | 🇻🇳 Tech Việt | VinFast, Viettel, startup Việt, AI tiếng Việt | tự hào → comment + share |
+
+Ngoài ra `diem-tin` cho bài điểm tin nhanh (`kind: "roundup"`, validate tự gán).
+
+**Tỷ lệ thử 2 tuần (16/10 → 30/10):**
+
+| Khối | Nhóm | Tỷ lệ | ~Bài/tuần (21 bài) |
+|---|---|---|---|
+| Đời thường | `dien-thoai` · `canh-giac` · `dang-tien` | **40%** | 8 |
+| Wow | `xe` · `vi-sao` · `tuong-lai` | **30%** | 6 |
+| AI dùng được | `ai-dung-ngay` | **20%** | 4 |
+| Tin lớn | `tech-viet` hoặc tin AI thật sự lớn (GPT-6, Gemini mới…) | **10%** | 2–3 |
+
+Luật xoay: **không quá 2 bài liền cùng `cat`**. Tra 3 dòng log gần nhất trước khi chọn.
+
+**Không làm nữa** (trừ khi có góc đời thường rõ ràng): chip/hạ tầng trung tâm dữ liệu,
+kỹ thuật huấn luyện model, benchmark thuần, nghiên cứu học thuật, chính sách AI nước ngoài
+không đụng tới người Việt.
+
+### 0.4 Luật viết mới — áp từ bài đầu tiên
+
+1. **Câu 1 nhắc thứ người xem đã biết hoặc đang có** — "Điện thoại bạn đang cầm…",
+   "Chiếc xe này bay được…". Không mở bằng tên model/tên hãng (`validate.py` đã chặn tên hãng).
+2. **Mỗi con số đặt cạnh một thứ quen** — "rẻ bằng một ly cà phê", "nhanh bằng một cái chớp mắt",
+   "đắt bằng ba chiếc Honda Vision". Số trơn không có mốc so thì người xem không cảm được.
+3. **Thuật ngữ tối đa 1 từ/bài**, và phải giải thích ngay trong câu đó.
+4. **Kết bằng câu hỏi mở** trước outro — "Bạn có dám ngồi xe bay không?" — để kéo comment.
+   Câu hỏi phải trả lời được bằng một chữ/một ý (có/không, chọn A/B).
+5. Giữ nguyên: trạm "NÓI CHO ĐÚNG", ≥1 trạm `shot`, 5 kiểu móc (mục "Câu móc" trong `AGENTS.md`).
+   Đề tài "wow" (xe bay, robot) **dễ bị thổi phồng nhất** — chỗ đó trạm "NÓI CHO ĐÚNG" quan trọng nhất.
+
+### 0.5 Nguồn đề tài
+
+Tin AI có sẵn nguồn hằng ngày (the-decoder…); các nhóm mới thì không. Ba nguồn:
+
+- **Tin nóng 24–48h** theo nhóm: newsroom hãng (Apple, Samsung, Tesla, VinFast), GSMArena,
+  The Verge, Electrek, VnExpress Số hoá, cảnh báo của Bộ Công an/NCSC về lừa đảo.
+- **Câu hỏi người xem**: comment trên cả 3 nền tảng, gợi ý tìm kiếm TikTok/YouTube
+  ("sạc pin…", "có nên mua…").
+- **Kho evergreen** `vi-sao` + `dang-tien`: chuẩn bị sẵn 10 đề tài trong `content/_ideas.md`
+  để ngày không có tin nóng vẫn có bài tốt thay vì lấp bằng tin AI ngành.
+
+### 0.6 Hình ảnh — thử Remotion
+
+Pipeline hiện tại (`scene.html` → Playwright chụp frame → ffmpeg) giữ nguyên làm **đường chính**.
+Remotion thử song song, không thay thế ngay.
+
+| Giai đoạn | Việc | Xong khi |
+|---|---|---|
+| R1 | Dựng `me-tech/remotion/` (Remotion + React), đọc **cùng** `content/<slug>.json` + `vo.wav` + mốc từng chữ từ `words.py` | ra được 1 video 1080×1920 khớp giọng từng chữ |
+| R2 | Template đầu tiên: **so sánh A vs B** (`dang-tien`) — 2 cột, thanh số chạy, mốc quen | qua được `safezone.py` |
+| R3 | Template **vật thể 3D** (`@remotion/three`): điện thoại xoay, chỉ vào camera/chip/pin | 1 bài `dien-thoai` |
+| R4 | Footage thật (`<OffthreadVideo>`): video chính chủ của hãng, stock B-roll; phủ chữ + số lên trên | 1 bài `xe` |
+| R5 | So 5 bài Remotion vs 5 bài pipeline cũ, cùng nhóm đề tài | quyết giữ/bỏ |
+
+Giới hạn cần biết:
+- Remotion **không tự sinh** cảnh xe bay/Tesla chân thực — cần footage hãng/stock, hoặc video AI
+  (Veo, Kling…). Video AI **bắt buộc** ghi "Minh hoạ bằng AI" trên màn hình.
+- Footage hãng: chỉ dùng từ newsroom/press kit chính chủ, ghi nguồn như ảnh `shot`.
+- License: Remotion miễn phí cho cá nhân / công ty ≤3 người; lớn hơn phải mua license công ty.
+
+### 0.7 Đo — chốt sau 2 tuần (30/10/2026)
+
+Mốc so là review tuần 4/9. Mỗi dòng log thêm `cat: <nhóm>`; review 30/10 xếp hạng theo nhóm.
+
+| Chỉ số | Mốc cũ | Mục tiêu 30/10 |
+|---|---|---|
+| Giữ 3 giây FB | 25% | **≥ 35%** |
+| APV YouTube | ~55% | **≥ 65%** |
+| TikTok view trung vị | 435 | **≥ 800** |
+| Follow mới / 1.000 view (cả 3 nền tảng) | ~2,5 | **≥ 5** |
+| Comment / bài (cả 3 nền tảng) | ~1 | **≥ 5** |
+
+Quyết định ở review 30/10:
+- Nhóm nào thua mốc cũ ở **cả** giữ 3s lẫn view trung vị → giảm còn 1 bài/tuần hoặc bỏ.
+- Nhóm nào đạt mục tiêu → tăng tỷ lệ.
+- Remotion: giữ nếu 5 bài Remotion hơn 5 bài pipeline cũ (cùng nhóm) ở giữ 3s **và** APV.
+
+### 0.8 Việc cần làm
+
+- [x] Ghi định vị, nhóm đề tài, luật viết vào file này + `AGENTS.md` (16/10)
+- [x] `validate.py` chặn bài thiếu `"cat"` hoặc `cat` lạ (16/10)
+- [x] Prompt brainstorm (`ops/orchestrator/brainstorm.py`) + caption ảnh FB theo định vị mới (16/10)
+- [ ] Viết `content/_ideas.md` — 10 đề tài evergreen `vi-sao` / `dang-tien`
+- [ ] Đổi tên/mô tả Page, bio TikTok + YouTube sang "Công nghệ dễ hiểu"
+- [ ] Hashtag caption theo nhóm (`#dienthoai`, `#xedien`, `#luadao`…) thay vì `#AI` mặc định — agent viết trong `meta_<slug>.py` mỗi bài
+- [ ] Remotion R1 → R2
+- [ ] Review 30/10 theo mục 0.7
 
 ---
 
@@ -43,7 +174,7 @@ Ba cơ chế: (1) tự cạnh tranh — cùng một tệp follower nhỏ bị ch
 Gõ với agent: *"chạy daily Mê Tech"*. Agent làm theo đúng thứ tự sau.
 
 1. **Đọc log** `me-tech/logs/{YYYY-MM}.md` (và tháng trước nếu cần) → nắm chủ đề đã đăng.
-2. **Research** tin AI 24–48h qua. Chọn theo thứ tự ưu tiên:
+2. **Research** đề tài 24–48h trong nhóm đã chọn (mục 0.3). Chọn theo thứ tự ưu tiên:
    - có góc ứng dụng được cho người Việt bình thường (tiền, công việc, lừa đảo, học hành)
    - có con số cụ thể, kiểm chứng được
    - chưa nằm trong log
@@ -198,7 +329,7 @@ Ba giai đoạn. Giai đoạn 1 làm ở đâu cũng được; giai đoạn 2 ph
 ### Giai đoạn 1 — Nội dung
 
 1. **Chống trùng**: `grep -i "<từ khoá>" me-tech/logs/*.md`. Trùng chủ đề thì bỏ, trừ khi có diễn biến mới thật sự.
-2. **Research** tin AI 24–48h qua. Ưu tiên: có góc ứng dụng cho người Việt bình thường > có con số kiểm chứng được > chưa nằm trong log.
+2. **Research** đề tài trong nhóm đã chọn (mục 0.3). Ưu tiên: người không làm IT thấy liên quan tới mình > có con số kiểm chứng được > chưa nằm trong log.
 3. **Viết `pipeline/content/<slug>.json`.** Đây là file duy nhất phải soạn cho mỗi bài. Quy tắc:
    - **Mỗi câu = một nhịp hình.** Câu nào nói ra thì thứ tương ứng hiện lên màn hình.
    - Gom các câu cùng một khung hình vào chung `scene`.
