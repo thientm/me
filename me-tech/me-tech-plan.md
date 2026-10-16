@@ -103,6 +103,38 @@ Remotion thử song song, không thay thế ngay.
 | R4 | Footage thật (`<OffthreadVideo>`): video chính chủ của hãng, stock B-roll; phủ chữ + số lên trên | 1 bài `xe` |
 | R5 | So 5 bài Remotion vs 5 bài pipeline cũ, cùng nhóm đề tài | quyết giữ/bỏ |
 
+**Dùng tối đa Remotion Agent Skills** — 12 skill chính thức (`remotion-dev/skills`, v4.0.536)
+đã cài ở `.claude/skills/remotion-*`, khoá phiên bản ở `skills-lock.json`. Cập nhật:
+`npx skills update`. Agent viết code Remotion **phải đi qua skill**, không viết theo trí nhớ —
+`remotion-best-practices` là cửa vào, tự gọi các skill con.
+
+| Skill / file luật | Dùng vào việc gì ở Mê Tech | Giai đoạn |
+|---|---|---|
+| `remotion-create` | dựng khung `me-tech/remotion/` | R1 |
+| `remotion-markup` › `parameters.md` | Zod schema = cấu trúc `content/<slug>.json` → một template, mỗi bài chỉ đổi JSON | R1 |
+| `remotion-markup` › `calculate-metadata.md` | độ dài video tự lấy theo `vo.wav` — giữ nguyên luật "kịch bản quyết định độ dài" | R1 |
+| `remotion-captions` › `display-captions.md` | chữ sáng theo giọng từng chữ — đổi mốc của `words.py` sang kiểu `Caption` | R1 |
+| `remotion-markup` › `google-fonts.md` / `local-fonts.md` | Be Vietnam Pro | R1 |
+| `remotion-markup` › `measuring-text.md` | chữ vừa khít bề ngang trạm 830px, không tràn vùng an toàn | R1 |
+| `remotion-markup` › `transitions.md`, `motion-blur.md` | lia giữa trạm mượt hơn (vẫn giữ trần 1150 px/s) | R2 |
+| `remotion-markup` › `text-highlights.md` | khoanh tròn/gạch chân/tô số (`hot`) kiểu vẽ tay — hợp `dang-tien` | R2 |
+| `remotion-markup` › `sfx.md`, `audio.md` | tiếng "whoosh" khi lia, "ding" khi số hiện; trộn nhạc nền `music.py` | R2 |
+| `remotion-markup` › `3d.md` | điện thoại / xe 3D xoay (React Three Fiber) | R3 |
+| `remotion-markup` › `lottie.md`, `effects.md`, `light-leaks.md` | icon động, hiệu ứng ánh sáng cho nhóm `tuong-lai` | R3 |
+| `remotion-markup` › `embedding-videos.md`, `video-editing.md`, `cropping.md`, `color-correction.md` | footage chính chủ của hãng (Tesla, VinFast…) cắt dọc 9:16, chỉnh màu đồng bộ | R4 |
+| `remotion-maps` | bản đồ động: VinFast bán ở đâu, vùng phủ Starlink, đường bay xe bay | R4 |
+| `remotion-studio` + `remotion-interactivity` | **chốt 2 duyệt video**: Thiện xem trong Studio, kéo/sửa chữ trực tiếp thay vì nhờ agent dựng lại | R2 |
+| `remotion-render` | xuất 1080×1920, H.264, sau đó vẫn qua `safezone.py` | R1 |
+| `remotion-multimedia` | đo độ dài audio/video bằng Mediabunny | R1 |
+| `remotion-docs`, `remotion-upgrade` | tra tài liệu mới nhất, nâng cấp phiên bản | khi cần |
+| `remotion-saas` | **không dùng** — kênh không cần app | — |
+
+**Luật đè lên skill:**
+- `voiceover.md` mặc định dùng **ElevenLabs** — **bỏ qua**. Giọng vẫn là `tts.py` local (Xuân Vĩnh) +
+  cổng Whisper; Remotion chỉ nhận `vo.wav` + mốc từng chữ.
+- Sáu cổng tự động trong `AGENTS.md` vẫn áp cho video Remotion: `validate.py` trước, `safezone.py` sau render.
+- Skill chạy với toàn quyền của agent — khi `npx skills update` thì đọc diff trước khi commit.
+
 Giới hạn cần biết:
 - Remotion **không tự sinh** cảnh xe bay/Tesla chân thực — cần footage hãng/stock, hoặc video AI
   (Veo, Kling…). Video AI **bắt buộc** ghi "Minh hoạ bằng AI" trên màn hình.
@@ -134,7 +166,8 @@ Quyết định ở review 30/10:
 - [ ] Viết `content/_ideas.md` — 10 đề tài evergreen `vi-sao` / `dang-tien`
 - [ ] Đổi tên/mô tả Page, bio TikTok + YouTube sang "Công nghệ dễ hiểu"
 - [ ] Hashtag caption theo nhóm (`#dienthoai`, `#xedien`, `#luadao`…) thay vì `#AI` mặc định — agent viết trong `meta_<slug>.py` mỗi bài
-- [ ] Remotion R1 → R2
+- [x] Cài Remotion Agent Skills vào `.claude/skills/` (16/10)
+- [ ] Remotion R1 → R2 — đi qua `remotion-best-practices`, theo bảng skill ở mục 0.6
 - [ ] Review 30/10 theo mục 0.7
 
 ---

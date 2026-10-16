@@ -107,6 +107,10 @@ kỹ thuật huấn luyện, benchmark thuần, nghiên cứu học thuật, ch�
 Đề tài "wow" (xe bay, robot) dễ bị thổi phồng nhất — trạm "NÓI CHO ĐÚNG" ở đó là bắt buộc thật sự.
 Video/ảnh sinh bằng AI phải ghi **"Minh hoạ bằng AI"** trên màn hình.
 
+**Remotion (đang thử, song song pipeline cũ):** code Remotion phải viết qua skill
+`remotion-best-practices` (đã cài ở `.claude/skills/`). Bảng skill ↔ việc và luật đè
+(không dùng ElevenLabs, vẫn qua `safezone.py`): `me-tech-plan.md` mục 0.6.
+
 ---
 
 ## Chốt lại — mọi quyết định đã khoá
